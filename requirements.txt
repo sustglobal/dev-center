@@ -1,5 +1,4 @@
 plotly
 numpy
 pandas
-chart_studio
 jupyter
