@@ -5,7 +5,7 @@ In this repository, you'll find a collection of [Jupyter notebooks](http://jupyt
 ## Install and use these notebooks
 
 ### System Prerequisites
-* [Python 3](https://www.python.org/downloads/release/python-370/)
+* [Python 3](https://www.python.org/downloads/release/python-380/)
 
 ### Clone or update repo:
 
@@ -14,4 +14,18 @@ If you've never cloned the Sust Global dev-center repo, run the following:
 ```bash
 git clone https://github.com/sustglobal/dev-center.git
 cd notebooks
+```
+
+### Set Up
+
+```bash
+virtualenv -p `which python3` venv
+source venv/bin/activate
+pip3 install -r requirements.txt
+```
+
+### Run the notebooks
+
+```bash
+jupyter notebook
 ```
