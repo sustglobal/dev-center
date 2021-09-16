@@ -1,37 +1,161 @@
-## Welcome to GitHub Pages
+# Sust Global API Documentation
 
-You can use the [editor on GitHub](https://github.com/sustglobal/dev-center/edit/master/docs/index.md) to maintain and preview the content for your website in Markdown files.
+## Overview
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Sust Global enables customers in the financial service space with physical risk exposure assessments using our climate intelligence product offering. Sust Global's API is a RESTful API interface to Sust Global's climate intelligence capabilities. 
 
-### Markdown
+Sust Global API is intended to enable users with the following capaibilities:
+- Trigger the creation of physical climate risk exposure data for a specific collection of assets (sites) defined by the user
+- Enable direct access to climate risk data for download and replication in user's data stores and data warehouses for use in the user's own analysis and application development. 
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## How to become a Sust Developer
 
-```markdown
-Syntax highlighted code block
+Using the Sust Global API requires that you have a Sust API key: if you don't already have an account with us, you can [reach out](mailto:sales@sustglobal.com) to us for an API key.
 
-# Header 1
-## Header 2
-### Header 3
+Once you're signed up, you can find your API key in your account settings. 
 
-- Bulleted
-- List
+## API Endpoints
 
-1. Numbered
-2. List
+The `/create` endpoint allows users to trigger and create a risk data collection based on a single asset or an input csv file where each row corresponds to an asset in an asset collection. 
 
-**Bold** and _Italic_ and `Code` text
+The `/collections` end point list the collections that a user has access to. The user can query the API for the assets, risk datasets and risk summaries associated with any specific collection in the list of collections.
 
-[Link](url) and ![Image](src)
+## Retrieve collections
+
+```bash
+/v1/riskdataset/collections
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+### Required parameters
+None
 
-### Jekyll Themes
+### Response
+The response is a list of collections accessible to the user with the specified key. Each item in the list would have the following properties:
+- `id`: id of the collection
+- `date_creation`: date of creation of the collection
+- `date_validation`: date of validation of the resulting risk data collection
+- `collection_name`: user defined name of the collection
+- `collection_name_api`: name of the collection for access by API end points
+- `status`: status of the risk collection dataset
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/sustglobal/dev-center/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+### Example Usage
+`curl -X GET "https://sustglobal.io/api/v1/riskdataset/collections/?api_key=YOUR_SUST_API_KEY"`
 
-### Support or Contact
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+## Retrieve assets in a collection
+
+```bash
+/v1/riskdataset/{selected_collection}/assets/sync
+```
+
+### Required parameters
+Requires the user the specify the asset collection for which the assets are retrived
+- `selected_collection`
+- `rows`: number of items retrieved (max:250)
+- `page`: number of the page retrieved 
+
+### Response
+The response is a list of assets in a collection accessible to the user with the specified key. Each item in the list would have the following properties:
+- `id`: id of the asset 
+- `entity_name`: name of the asset
+- `lat`: latitude of the asset
+- `lng`: longitude of the asset
+- `address`: address of the asset (could be blank)
+- `type`: user defined type of the asset
+- `tag`: user assigned tag to the asset (could be blank)
+- `price`: user assigned price to the asset (could be blank)
+
+### Example Usage
+`curl -X GET "https://sustglobal.io/api/v1/riskdataset/{selected_collection}/assets/sync?api_key="YOUR_SUST_API_KEY"`
+
+
+## Retrieve items in a risk dataset for a specific collection
+
+```bash
+/v1/riskdataset/{selected_collection}/assets/sync
+```
+
+### Required parameters
+Requires the user the specify the asset collection for which the assets are retrived
+- `selected_collection`
+- `risk_type`: risk type of interest [fire/flood/SPEI/SLR/heatwaves]
+- `scenario`: define the climate scenario [ssp126/ssp245/ssp585]
+- `start_date`: define the start date from which the collection is filtered
+- `end_date`: define the end date to which the collection is filtered
+- `rows`: number of items retrieved (max:250)
+- `page`: number of the page retrieved 
+
+### Response
+The response is a list of items in a risk dataset for a specific collection accessible to the user with the specified key. Each item in the list would have the following properties:
+- `id`: id of the risk dataset item 
+- `collection`: name of the collection
+- `risk_type`: risk type
+- `scenario`: climate scenario 
+- `date_validated`: date when the assigned risk dataset has been validated
+- `asset_id`: id of the asset to which this risk dataset item belongs
+- `risk_exposure`: annual or monthly risk exposure as floating point values
+
+### Example Usage
+`curl -X GET "https://sustglobal.io/api/v1/riskdataset/{selected_collection}/items&risk_type={risk_type}&scenario={scenario}?api_key="YOUR_SUST_API_KEY"`
+
+## Retrieve risk data summary for a specific collection
+
+```bash
+/v1/riskdataset/{selected_collection}/assets/sync
+```
+
+### Required parameters
+Requires the user the specify the asset collection for which the assets are retrived
+- `selected_collection`
+- `rows`: number of items retrieved (max:250)
+- `page`: number of the page retrieved 
+
+### Response
+The response is a list of summary items in a risk dataset for a specific collection accessible to the user with the specified key. Each item in the list would have the following properties:
+- `id`: id of the risk dataset item 
+- `collection`: name of the collection
+- `risk_type`: risk type
+- `scenario`: climate scenario 
+- `date_validated`: date when the assigned risk dataset has been validated
+- `asset_id`: id of the asset to which this risk dataset item belongs
+- `risk_summary`: a summary label for each of the risk types [fire/flood/SPEI/SLR]
+
+### Example Usage
+`curl -X GET "https://sustglobal.io/api/v1/riskdataset/{selected_collection}/summary?api_key="YOUR_SUST_API_KEY"`
+
+## Post asset for creation of risk dataset
+
+```bash
+/v1/riskdataset/create
+```
+
+### Required parameters
+Requires the user the specify the asset collection for which the assets are retrived
+- `collection_name`: name of the collection assigned to the asset
+- `lat`: latitude of the asset
+- `lng`: longitude of the asset
+- `type`: type of the asset 
+
+### Response
+The response is a list of summary items in a risk dataset for a specific collection accessible to the user with the specified key. Each item in the list would have the following properties:
+- `id`: id of creation request 
+- `collection`: name of the collection
+
+### Example Usage
+`curl -X GET "https://sustglobal.io/api/v1/riskdataset/create&lat={lat}&lng={lng}&collection={collection_name}&type={type}?api_key="YOUR_SUST_API_KEY"`
+
+
+## Citing Sust Global API
+
+From a concept to adoption by an emerging group of early adopters, many people have invested time and energy in developing and enabling access to Sust Global's capabilities. Please cite Sust Global when using our data and insights. To cite Sust Global's data in publications, please use the following:
+
+Sust Inc (2021). Sust Global Application Programming Interface: Transforming frontier climate science to actionable data. https://sustglobal.github.io/dev-center/.
+```
+@Misc{,
+  author =    {Sust Global Team},
+  organization = {Sust Inc},
+  title =     {Sust Global Application Programming Interface: Transforming frontier climate science to actionable data},
+  year =      {2021--},
+  url = "https://sustglobal.github.io/dev-center/"
+}
+```
