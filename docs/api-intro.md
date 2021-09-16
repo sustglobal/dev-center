@@ -1,7 +1,8 @@
-# Sust Global API Introduction
+---
+title: Sust Global API Introduction
+---
 
-## Overview
-{:.no_toc}
+# Sust Global API Introduction
 
 Sust Global enables customers in the financial service space with physical risk exposure assessments using our climate intelligence product offering. Sust Global's API is a RESTful API interface to Sust Global's climate intelligence capabilities. 
 
