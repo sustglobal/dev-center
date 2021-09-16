@@ -1,4 +1,4 @@
-# Sust Global Dev Center
+## Sust Global Dev Center
 
 This is the home of Sust Global's developer tools, guides and reference documentation.
 
