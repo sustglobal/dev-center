@@ -78,7 +78,7 @@ The response is a list of assets in a collection accessible to the user with the
 ## Retrieve items in a risk dataset for a specific collection
 
 ```bash
-/v1/riskdataset/{selected_collection}/assets/sync
+/v1/riskdataset/{selected_collection}/items
 ```
 
 ### Required parameters
@@ -107,7 +107,7 @@ The response is a list of items in a risk dataset for a specific collection acce
 ## Retrieve risk data summary for a specific collection
 
 ```bash
-/v1/riskdataset/{selected_collection}/assets/sync
+/v1/riskdataset/{selected_collection}/summary
 ```
 
 ### Required parameters
