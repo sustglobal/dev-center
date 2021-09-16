@@ -7,9 +7,10 @@ title: Sust Global API Introduction
 Sust Global enables customers in the financial service space with physical risk exposure assessments using our climate intelligence product offering. Sust Global's API is a RESTful API interface to Sust Global's climate intelligence capabilities. 
 
 Sust Global API is intended to enable users with the following capaibilities:
-- Trigger the creation of physical climate risk exposure data for a specific collection of assets (sites) defined by the user
-- Enable direct access to climate risk data for download and replication in user's data stores and data warehouses for use in the user's own analysis and application development. 
+* Trigger the creation of physical climate risk exposure data for a specific collection of assets (sites) defined by the user
+* Enable direct access to climate risk data for download and replication in user's data stores and data warehouses for use in the user's own analysis and application development.
 
+The topics covered in this document include:
 * Table of Contents
 {:toc}
 
@@ -157,10 +158,10 @@ From a concept to adoption by an emerging group of early adopters, many people h
 Sust Inc (2021). Sust Global Application Programming Interface: Transforming frontier climate science to actionable data. https://sustglobal.github.io/dev-center/.
 ```
 @Misc{,
-  author =    {Sust Global Team},
+  author       = {Sust Global Team},
   organization = {Sust Inc},
-  title =     {Sust Global Application Programming Interface: Transforming frontier climate science to actionable data},
-  year =      {2021--},
-  url = "https://sustglobal.github.io/dev-center/"
+  title        = {Sust Global Application Programming Interface: Transforming frontier climate science to actionable data},
+  year         = {2021--},
+  url          = "https://sustglobal.github.io/dev-center/"
 }
 ```
