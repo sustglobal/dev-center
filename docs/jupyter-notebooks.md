@@ -17,13 +17,17 @@ cd jupyter-notebooks
 
 ## Set Up
 
+Install the python dependencies needed to run our Jupyter notebooks:
+
 ```bash
 virtualenv -p python3 venv
 source venv/bin/activate
 pip3 install -r requirements.txt
 ```
 
-## Run the notebooks
+## Run a Notebook
+
+Start up a Jupyter notebook server:
 
 ```bash
 jupyter notebook
