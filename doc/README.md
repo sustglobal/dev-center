@@ -39,7 +39,7 @@ The response is a list of collections accessible to the user with the specified 
 - `status`: status of the risk collection dataset
 
 ### Example Usage
-`curl -X GET "https://sustglobal.github.io/api/v1/riskdataset/collections/?api_key=YOUR_SUST_API_KEY"`
+`curl -X GET "https://sustglobal.io/api/v1/riskdataset/collections/?api_key=YOUR_SUST_API_KEY"`
 
 
 ## Retrieve assets in a collection
@@ -66,7 +66,7 @@ The response is a list of assets in a collection accessible to the user with the
 - `price`: user assigned price to the asset (could be blank)
 
 ### Example Usage
-`curl -X GET "https://sustglobal.github.io/api/v1/riskdataset/{selected_collection}/assets/sync?api_key="YOUR_SUST_API_KEY"`
+`curl -X GET "https://sustglobal.io/api/v1/riskdataset/{selected_collection}/assets/sync?api_key="YOUR_SUST_API_KEY"`
 
 
 ## Retrieve items in a risk dataset for a specific collection
@@ -96,7 +96,7 @@ The response is a list of items in a risk dataset for a specific collection acce
 - `risk_exposure`: annual or monthly risk exposure as floating point values
 
 ### Example Usage
-`curl -X GET "https://sustglobal.github.io/api/v1/riskdataset/{selected_collection}/items&risk_type={risk_type}&scenario={scenario}?api_key="YOUR_SUST_API_KEY"`
+`curl -X GET "https://sustglobal.io/api/v1/riskdataset/{selected_collection}/items&risk_type={risk_type}&scenario={scenario}?api_key="YOUR_SUST_API_KEY"`
 
 ## Retrieve risk data summary for a specific collection
 
@@ -121,7 +121,7 @@ The response is a list of summary items in a risk dataset for a specific collect
 - `risk_summary`: a summary label for each of the risk types [fire/flood/SPEI/SLR]
 
 ### Example Usage
-`curl -X GET "https://sustglobal.github.io/api/v1/riskdataset/{selected_collection}/summary?api_key="YOUR_SUST_API_KEY"`
+`curl -X GET "https://sustglobal.io/api/v1/riskdataset/{selected_collection}/summary?api_key="YOUR_SUST_API_KEY"`
 
 ## Post asset for creation of risk dataset
 
@@ -142,7 +142,7 @@ The response is a list of summary items in a risk dataset for a specific collect
 - `collection`: name of the collection
 
 ### Example Usage
-`curl -X GET "https://sustglobal.github.io/api/v1/riskdataset/create&lat={lat}&lng={lng}&collection={collection_name}&type={type}?api_key="YOUR_SUST_API_KEY"`
+`curl -X GET "https://sustglobal.io/api/v1/riskdataset/create&lat={lat}&lng={lng}&collection={collection_name}&type={type}?api_key="YOUR_SUST_API_KEY"`
 
 
 ## Citing Sust Global API
