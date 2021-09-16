@@ -2,7 +2,7 @@
 
 ## Overview
 
-Sust Global enables customers in the financial service space with physical risk exposure assessments using our SaaS climate intelligence product offering. Sust Global's API is a RESTful API interface to Sust Global's climate intelligence capabilities. 
+Sust Global enables customers in the financial service space with physical risk exposure assessments using our climate intelligence product offering. Sust Global's API is a RESTful API interface to Sust Global's climate intelligence capabilities. 
 
 Sust Global API is intended to enable users with the following capaibilities:
 - Trigger the creation of physical climate risk exposure data for a specific collection of assets (sites) defined by the user
@@ -140,24 +140,21 @@ Requires the user the specify the asset collection for which the assets are retr
 The response is a list of summary items in a risk dataset for a specific collection accessible to the user with the specified key. Each item in the list would have the following properties:
 - `id`: id of creation request 
 - `collection`: name of the collection
-- `collection`: id of the new collection
 
 ### Example Usage
 `curl -X GET "https://sustglobal.github.io/api/v1/riskdataset/create&lat={lat}&lng={lng}&collection={collection_name}&type={type}?api_key="YOUR_SUST_API_KEY"`
 
 
-## Citing Sust API
+## Citing Sust Global API
 
-From a concept to adoption by an emerging group of early adopters, many people have invested time and energy in developing and enabling access to Sust Global's capabilities. Please cite Sust Global when using our data and insights.
+From a concept to adoption by an emerging group of early adopters, many people have invested time and energy in developing and enabling access to Sust Global's capabilities. Please cite Sust Global when using our data and insights. To cite Sust Global's data in publications, please use the following:
 
-To cite Sust Global's data in publications, please use the following:
-
-Sust Inc (2021). Sust Global Application Program Interface: Transforming frontier cliamate scicence to actionable intelligence. https://sustglobal.github.io/dev-center/.
+Sust Inc (2021). Sust Global Application Programming Interface: Transforming frontier cliamate scicence to actionable intelligence. https://sustglobal.github.io/dev-center/.
 ```
 @Misc{,
   author =    {Sust Global Team},
   organization = {Sust Inc},
-  title =     {Sust Global Application Program Interface: Transforming frontier cliamate scicence to actionable intelligence.},
+  title =     {Sust Global Application Programming Interface: Transforming frontier cliamate scicence to actionable intelligence},
   year =      {2021--},
   url = "https://sustglobal.github.io/dev-center/"
 }
