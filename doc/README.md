@@ -149,12 +149,12 @@ The response is a list of summary items in a risk dataset for a specific collect
 
 From a concept to adoption by an emerging group of early adopters, many people have invested time and energy in developing and enabling access to Sust Global's capabilities. Please cite Sust Global when using our data and insights. To cite Sust Global's data in publications, please use the following:
 
-Sust Inc (2021). Sust Global Application Programming Interface: Transforming frontier cliamate scicence to actionable intelligence. https://sustglobal.github.io/dev-center/.
+Sust Inc (2021). Sust Global Application Programming Interface: Transforming frontier climate science to actionable data. https://sustglobal.github.io/dev-center/.
 ```
 @Misc{,
   author =    {Sust Global Team},
   organization = {Sust Inc},
-  title =     {Sust Global Application Programming Interface: Transforming frontier cliamate scicence to actionable intelligence},
+  title =     {Sust Global Application Programming Interface: Transforming frontier climate science to actionable data},
   year =      {2021--},
   url = "https://sustglobal.github.io/dev-center/"
 }
