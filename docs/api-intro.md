@@ -1,3 +1,7 @@
+---
+layout: default
+has_toc: true
+---
 # Sust Global API Introduction
 
 ## Overview
