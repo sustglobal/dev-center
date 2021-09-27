@@ -129,6 +129,23 @@ The response is a list of summary items in a risk dataset for a specific collect
 ### Example Usage
 `curl -X GET "https://sustglobal.io/api/v1/riskdataset/{selected_collection}/summary?api_key="YOUR_SUST_API_KEY"`
 
+
+## Post collection for creation of risk dataset
+```bash
+/v1/create
+```
+
+### Required parameters
+Requires the user the specify the asset collection for which the assets are retrived
+- `collection_name`: name of the collection
+- `file_name`: name of the file with asset data based on Sust intake template
+
+### Response
+The response is status code. `200` indicates successful post of new asset collection.
+
+### Example Usage
+`curl -X POST "https://sustglobal.io/api/v1/create/{collection_name}/assets?api_key="YOUR_SUST_API_KEY" -F "asset=@{file_name};type=text/csv"`
+
 ## Post asset for creation of risk dataset
 
 ```bash
