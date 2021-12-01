@@ -29,14 +29,14 @@ The `/collections` end point list the collections that a user has access to. The
 
 ## Retrieve collections
 
-```bash
-/v1/riskdataset/collections
-```
+`GET /v1/riskdataset/collections`
 
 ### Required parameters
+
 None
 
 ### Response
+
 The response is a list of collections accessible to the user with the specified key. Each item in the list would have the following properties:
 - `id`: id of the collection
 - `date_creation`: date of creation of the collection
@@ -46,22 +46,24 @@ The response is a list of collections accessible to the user with the specified 
 - `status`: status of the risk collection dataset
 
 ### Example Usage
-`curl -X GET "https://sustglobal.io/api/v1/riskdataset/collections/?api_key=YOUR_SUST_API_KEY"`
 
+```
+curl -X GET "https://sustglobal.io/api/v1/riskdataset/collections/?api_key=YOUR_SUST_API_KEY"
+```
 
 ## Retrieve assets in a collection
 
-```bash
-/v1/riskdataset/{selected_collection}/assets/sync
-```
+`GET /v1/riskdataset/{selected_collection}/assets/sync`
 
 ### Required parameters
+
 Requires the user the specify the asset collection for which the assets are retrived
 - `selected_collection`
 - `rows`: number of items retrieved (max:250)
 - `page`: number of the page retrieved 
 
 ### Response
+
 The response is a list of assets in a collection accessible to the user with the specified key. Each item in the list would have the following properties:
 - `id`: id of the asset 
 - `entity_name`: name of the asset
@@ -73,16 +75,18 @@ The response is a list of assets in a collection accessible to the user with the
 - `price`: user assigned price to the asset (could be blank)
 
 ### Example Usage
-`curl -X GET "https://sustglobal.io/api/v1/riskdataset/{selected_collection}/assets/sync?api_key="YOUR_SUST_API_KEY"`
+
+```
+curl -X GET "https://sustglobal.io/api/v1/riskdataset/{selected_collection}/assets/sync?api_key="YOUR_SUST_API_KEY"
+```
 
 
 ## Retrieve items in a risk dataset for a specific collection
 
-```bash
-/v1/riskdataset/{selected_collection}/items
-```
+`GET /v1/riskdataset/{selected_collection}/items`
 
 ### Required parameters
+
 Requires the user the specify the asset collection for which the assets are retrived
 - `selected_collection`
 - `risk_type`: risk type of interest [fire/flood/SPEI/SLR/heatwaves]
@@ -93,6 +97,7 @@ Requires the user the specify the asset collection for which the assets are retr
 - `page`: number of the page retrieved 
 
 ### Response
+
 The response is a list of items in a risk dataset for a specific collection accessible to the user with the specified key. Each item in the list would have the following properties:
 - `id`: id of the risk dataset item 
 - `collection`: name of the collection
@@ -103,21 +108,24 @@ The response is a list of items in a risk dataset for a specific collection acce
 - `risk_exposure`: annual or monthly risk exposure as floating point values
 
 ### Example Usage
-`curl -X GET "https://sustglobal.io/api/v1/riskdataset/{selected_collection}/items&risk_type={risk_type}&scenario={scenario}?api_key="YOUR_SUST_API_KEY"`
+
+```
+curl -X GET "https://sustglobal.io/api/v1/riskdataset/{selected_collection}/items&risk_type={risk_type}&scenario={scenario}?api_key="YOUR_SUST_API_KEY"
+```
 
 ## Retrieve risk data summary for a specific collection
 
-```bash
-/v1/riskdataset/{selected_collection}/summary
-```
+`GET /v1/riskdataset/{selected_collection}/summary`
 
 ### Required parameters
+
 Requires the user the specify the asset collection for which the assets are retrived
 - `selected_collection`
 - `rows`: number of items retrieved (max:250)
 - `page`: number of the page retrieved 
 
 ### Response
+
 The response is a list of summary items in a risk dataset for a specific collection accessible to the user with the specified key. Each item in the list would have the following properties:
 - `id`: id of the risk dataset item 
 - `collection`: name of the collection
@@ -128,52 +136,65 @@ The response is a list of summary items in a risk dataset for a specific collect
 - `risk_summary`: a summary label for each of the risk types [fire/flood/SPEI/SLR]
 
 ### Example Usage
-`curl -X GET "https://sustglobal.io/api/v1/riskdataset/{selected_collection}/summary?api_key="YOUR_SUST_API_KEY"`
+
+```
+curl -X GET "https://sustglobal.io/api/v1/riskdataset/{selected_collection}/summary?api_key="YOUR_SUST_API_KEY"
+```
 
 
 ## Post collection for creation of risk dataset
-```bash
-/v1/create
-```
+
+`POST /v1/create`
 
 ### Required parameters
+
 Requires the user the specify the asset collection for which the assets are retrived
 - `collection_name`: name of the collection
 - `file_name`: name of the file with asset data based on Sust intake template
 
 ### Response
+
 The response is status code. `200` indicates successful post of new asset collection.
 
 ### Example Usage
-`curl -X POST "https://sustglobal.io/api/v1/create/{collection_name}/assets?api_key="YOUR_SUST_API_KEY" -F "asset=@{file_name};type=text/csv"`
+
+```
+curl -X POST "https://sustglobal.io/api/v1/create/{collection_name}/assets?api_key="YOUR_SUST_API_KEY" -F "asset=@{file_name};type=text/csv"
+```
 
 ## Post asset for creation of risk dataset
 
-```bash
-/v1/riskdataset/create
-```
+`POST /v1/riskdataset/create`
 
 ### Required parameters
+
 Requires the user the specify the asset collection for which the assets are retrived
+
 - `collection_name`: name of the collection assigned to the asset
 - `lat`: latitude of the asset
 - `lng`: longitude of the asset
 - `type`: type of the asset 
 
 ### Response
+
 The response is a list of summary items in a risk dataset for a specific collection accessible to the user with the specified key. Each item in the list would have the following properties:
 - `id`: id of creation request 
 - `collection`: name of the collection
 
 ### Example Usage
-`curl -X GET "https://sustglobal.io/api/v1/riskdataset/create&lat={lat}&lng={lng}&collection={collection_name}&type={type}?api_key="YOUR_SUST_API_KEY"`
 
+```
+curl -X GET "https://sustglobal.io/api/v1/riskdataset/create&lat={lat}&lng={lng}&collection={collection_name}&type={type}?api_key="YOUR_SUST_API_KEY"
+```
 
 ## Citing Sust Global API
 
 From a concept to adoption by an emerging group of early adopters, many people have invested time and energy in developing and enabling access to Sust Global's capabilities. Please cite Sust Global when using our data and insights. To cite Sust Global's data in publications, please use the following:
 
+```
 Sust Inc (2021). Sust Global Application Programming Interface: Transforming frontier climate science to actionable data. https://sustglobal.github.io/dev-center/.
+```
+
 ```
 @Misc{,
   author       = {Sust Global Team},
