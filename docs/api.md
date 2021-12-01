@@ -1,4 +1,5 @@
 ---
+layout: default
 title: Sust Global API Introduction
 ---
 
