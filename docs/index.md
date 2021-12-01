@@ -1,9 +1,7 @@
 ---
 layout: default
-title: Sust Global Dev Center
+title: Sust Global Developer Center
 ---
-
-# Sust Global Dev Center
 
 This is the home of [Sust Global's](https://www.sustglobal.com/) developer tools, guides and reference documentation.
 
