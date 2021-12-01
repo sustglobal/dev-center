@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Sust Global Developer Center
 ---
 

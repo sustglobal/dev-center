@@ -4,3 +4,9 @@ kramdown:
   toc_levels: 2..2
 
 title: Sust Global Developer Center
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
