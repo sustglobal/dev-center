@@ -12,6 +12,10 @@ h3 {
   
 }
 
+a {
+  text-decoration: none;
+}
+
 #topnav {
   background-color: #2e2e2e;
 }
@@ -45,4 +49,16 @@ pre.highlight {
   padding: 5px 10px;
   background-color: #ccc;
   width: 100%;
+}
+
+#markdown-toc {
+  width: 300px;
+  background-color: #ccc;
+  padding: 20px 10px 20px 10px;
+  float: right!important;
+  border: 1px solid #2e2e2e;
+}
+
+#markdown-toc li {
+  margin: 0 0 0 20px;
 }
