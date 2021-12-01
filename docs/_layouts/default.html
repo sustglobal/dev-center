@@ -38,9 +38,26 @@
       </div>
     </nav>
 
-    <div class="container" id="content">
-      <h1>{{ page.title | default: site.title }}</h1>
-      {{ content }}
+    <div class="container" id="allcontent">
+	  <div class="row">
+
+		<div class="col-md-9">
+          <div id="innercontent">
+            <h1>{{ page.title | default: site.title }}</h1>
+            {{ content | inject_anchors }}
+		  </div>
+		</div>
+
+		{% if page.toc %}
+		<div class="col-3">
+          <div id="toc-container">
+            {{ content | toc_only }}
+		  </div> 
+		</div> 
+		{% endif %}
+
+      </div>
+
     </div>
 
   </body>

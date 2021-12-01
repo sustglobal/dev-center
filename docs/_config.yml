@@ -1,7 +1,9 @@
 theme: null
 markdown: kramdown
-kramdown:
-  toc_levels: 2..2
+
+toc:
+  min_level: 2
+  max_level: 2
 
 title: Sust Global Developer Center
 
@@ -10,3 +12,6 @@ defaults:
       path: ""
     values:
       layout: "default"
+
+plugins:
+  - jekyll-toc

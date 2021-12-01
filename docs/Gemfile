@@ -4,3 +4,5 @@ gem 'jekyll'
 gem 'jekyll-theme-tactile'
 
 gem "webrick", "~> 1.7"
+
+gem "jekyll-toc", "~> 0.17.1"
