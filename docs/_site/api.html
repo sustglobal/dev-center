@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="shortcut icon" type="image/ico" href="assets/images/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href='https://use.fontawesome.com/releases/v5.8.1/css/all.css'>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+            integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+            crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+            integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/assets/css/main.css?v=">
+
+    <title>Sust Global API Introduction</title>
+
+  </head>
+
+  <body>
+
+    <nav id="topnav" class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container">
+
+        <a class="navbar-brand" href="/">
+          <img src="/assets/images/sust-HexLogoONLYwhite.png" />
+          <span>Developer Center</span>
+        </a>
+
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="https://explorer.sustglobal.io/">
+              Climate Explorer
+              <i class="fas fa-external-link-alt fa-sm"></i>
+            </a>
+          </li>
+        </ul>
+
+      </div>
+    </nav>
+
+    <div class="container" id="allcontent">
+      <div class="d-flex flex-direction-row flex-nowrap">
+
+        <div class="flex-grow-1 col-9">
+          <div id="innercontent">
+            <h1>Sust Global API Introduction</h1>
+            <p>Sust Global enables customers in the financial service space with physical risk exposure assessments using our climate intelligence product offering. Sust Global’s API is a RESTful API interface to Sust Global’s climate intelligence capabilities.</p>
+
+<p>Sust Global API is intended to enable users with the following capaibilities:</p>
+<ul>
+  <li>Trigger the creation of physical climate risk exposure data for a specific collection of assets (sites) defined by the user</li>
+  <li>Enable direct access to climate risk data for download and replication in user’s data stores and data warehouses for use in the user’s own analysis and application development.</li>
+</ul>
+
+<h2 id="how-to-become-a-sust-developer">
+<a class="anchor" href="#how-to-become-a-sust-developer" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to become a Sust Developer</h2>
+
+<p>Using the Sust Global API requires that you have a Sust API key: if you don’t already have an account with us, you can <a href="mailto:sales@sustglobal.com">reach out</a> to us for an API key.</p>
+
+<p>Once you’re signed up, you can find your API key in your account settings.</p>
+
+<h2 id="api-endpoints">
+<a class="anchor" href="#api-endpoints" aria-hidden="true"><span class="octicon octicon-link"></span></a>API Endpoints</h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">/create</code> endpoint allows users to trigger and create a risk data collection based on a single asset or an input csv file where each row corresponds to an asset in an asset collection.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">/collections</code> end point list the collections that a user has access to. The user can query the API for the assets, risk datasets and risk summaries associated with any specific collection in the list of collections.</p>
+
+<h2 id="retrieve-collections">
+<a class="anchor" href="#retrieve-collections" aria-hidden="true"><span class="octicon octicon-link"></span></a>Retrieve collections</h2>
+
+<p><code class="language-plaintext highlighter-rouge">GET /v1/riskdataset/collections</code></p>
+
+<h3 id="required-parameters">Required parameters</h3>
+
+<p>None</p>
+
+<h3 id="response">Response</h3>
+
+<p>The response is a list of collections accessible to the user with the specified key. Each item in the list would have the following properties:</p>
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">id</code>: id of the collection</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">date_creation</code>: date of creation of the collection</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">date_validation</code>: date of validation of the resulting risk data collection</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">collection_name</code>: user defined name of the collection</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">collection_name_api</code>: name of the collection for access by API end points</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">status</code>: status of the risk collection dataset</li>
+</ul>
+
+<h3 id="example-usage">Example Usage</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -X GET "https://sustglobal.io/api/v1/riskdataset/collections/?api_key=YOUR_SUST_API_KEY"
+</code></pre></div></div>
+
+<h2 id="retrieve-assets-in-a-collection">
+<a class="anchor" href="#retrieve-assets-in-a-collection" aria-hidden="true"><span class="octicon octicon-link"></span></a>Retrieve assets in a collection</h2>
+
+<p><code class="language-plaintext highlighter-rouge">GET /v1/riskdataset/{selected_collection}/assets/sync</code></p>
+
+<h3 id="required-parameters-1">Required parameters</h3>
+
+<p>Requires the user the specify the asset collection for which the assets are retrived</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">selected_collection</code></li>
+  <li>
+<code class="language-plaintext highlighter-rouge">rows</code>: number of items retrieved (max:250)</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">page</code>: number of the page retrieved</li>
+</ul>
+
+<h3 id="response-1">Response</h3>
+
+<p>The response is a list of assets in a collection accessible to the user with the specified key. Each item in the list would have the following properties:</p>
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">id</code>: id of the asset</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">entity_name</code>: name of the asset</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">lat</code>: latitude of the asset</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">lng</code>: longitude of the asset</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">address</code>: address of the asset (could be blank)</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">type</code>: user defined type of the asset</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">tag</code>: user assigned tag to the asset (could be blank)</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">price</code>: user assigned price to the asset (could be blank)</li>
+</ul>
+
+<h3 id="example-usage-1">Example Usage</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -X GET "https://sustglobal.io/api/v1/riskdataset/{selected_collection}/assets/sync?api_key="YOUR_SUST_API_KEY"
+</code></pre></div></div>
+
+<h2 id="retrieve-items-in-a-risk-dataset-for-a-specific-collection">
+<a class="anchor" href="#retrieve-items-in-a-risk-dataset-for-a-specific-collection" aria-hidden="true"><span class="octicon octicon-link"></span></a>Retrieve items in a risk dataset for a specific collection</h2>
+
+<p><code class="language-plaintext highlighter-rouge">GET /v1/riskdataset/{selected_collection}/items</code></p>
+
+<h3 id="required-parameters-2">Required parameters</h3>
+
+<p>Requires the user the specify the asset collection for which the assets are retrived</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">selected_collection</code></li>
+  <li>
+<code class="language-plaintext highlighter-rouge">risk_type</code>: risk type of interest [fire/flood/SPEI/SLR/heatwaves]</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">scenario</code>: define the climate scenario [ssp126/ssp245/ssp585]</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">start_date</code>: define the start date from which the collection is filtered</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">end_date</code>: define the end date to which the collection is filtered</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">rows</code>: number of items retrieved (max:250)</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">page</code>: number of the page retrieved</li>
+</ul>
+
+<h3 id="response-2">Response</h3>
+
+<p>The response is a list of items in a risk dataset for a specific collection accessible to the user with the specified key. Each item in the list would have the following properties:</p>
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">id</code>: id of the risk dataset item</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">collection</code>: name of the collection</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">risk_type</code>: risk type</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">scenario</code>: climate scenario</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">date_validated</code>: date when the assigned risk dataset has been validated</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">asset_id</code>: id of the asset to which this risk dataset item belongs</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">risk_exposure</code>: annual or monthly risk exposure as floating point values</li>
+</ul>
+
+<h3 id="example-usage-2">Example Usage</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -X GET "https://sustglobal.io/api/v1/riskdataset/{selected_collection}/items&amp;risk_type={risk_type}&amp;scenario={scenario}?api_key="YOUR_SUST_API_KEY"
+</code></pre></div></div>
+
+<h2 id="retrieve-risk-data-summary-for-a-specific-collection">
+<a class="anchor" href="#retrieve-risk-data-summary-for-a-specific-collection" aria-hidden="true"><span class="octicon octicon-link"></span></a>Retrieve risk data summary for a specific collection</h2>
+
+<p><code class="language-plaintext highlighter-rouge">GET /v1/riskdataset/{selected_collection}/summary</code></p>
+
+<h3 id="required-parameters-3">Required parameters</h3>
+
+<p>Requires the user the specify the asset collection for which the assets are retrived</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">selected_collection</code></li>
+  <li>
+<code class="language-plaintext highlighter-rouge">rows</code>: number of items retrieved (max:250)</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">page</code>: number of the page retrieved</li>
+</ul>
+
+<h3 id="response-3">Response</h3>
+
+<p>The response is a list of summary items in a risk dataset for a specific collection accessible to the user with the specified key. Each item in the list would have the following properties:</p>
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">id</code>: id of the risk dataset item</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">collection</code>: name of the collection</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">risk_type</code>: risk type</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">scenario</code>: climate scenario</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">date_validated</code>: date when the assigned risk dataset has been validated</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">asset_id</code>: id of the asset to which this risk dataset item belongs</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">risk_summary</code>: a summary label for each of the risk types [fire/flood/SPEI/SLR]</li>
+</ul>
+
+<h3 id="example-usage-3">Example Usage</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -X GET "https://sustglobal.io/api/v1/riskdataset/{selected_collection}/summary?api_key="YOUR_SUST_API_KEY"
+</code></pre></div></div>
+
+<h2 id="post-collection-for-creation-of-risk-dataset">
+<a class="anchor" href="#post-collection-for-creation-of-risk-dataset" aria-hidden="true"><span class="octicon octicon-link"></span></a>Post collection for creation of risk dataset</h2>
+
+<p><code class="language-plaintext highlighter-rouge">POST /v1/create</code></p>
+
+<h3 id="required-parameters-4">Required parameters</h3>
+
+<p>Requires the user the specify the asset collection for which the assets are retrived</p>
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">collection_name</code>: name of the collection</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">file_name</code>: name of the file with asset data based on Sust intake template</li>
+</ul>
+
+<h3 id="response-4">Response</h3>
+
+<p>The response is status code. <code class="language-plaintext highlighter-rouge">200</code> indicates successful post of new asset collection.</p>
+
+<h3 id="example-usage-4">Example Usage</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -X POST "https://sustglobal.io/api/v1/create/{collection_name}/assets?api_key="YOUR_SUST_API_KEY" -F "asset=@{file_name};type=text/csv"
+</code></pre></div></div>
+
+<h2 id="post-asset-for-creation-of-risk-dataset">
+<a class="anchor" href="#post-asset-for-creation-of-risk-dataset" aria-hidden="true"><span class="octicon octicon-link"></span></a>Post asset for creation of risk dataset</h2>
+
+<p><code class="language-plaintext highlighter-rouge">POST /v1/riskdataset/create</code></p>
+
+<h3 id="required-parameters-5">Required parameters</h3>
+
+<p>Requires the user the specify the asset collection for which the assets are retrived</p>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">collection_name</code>: name of the collection assigned to the asset</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">lat</code>: latitude of the asset</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">lng</code>: longitude of the asset</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">type</code>: type of the asset</li>
+</ul>
+
+<h3 id="response-5">Response</h3>
+
+<p>The response is a list of summary items in a risk dataset for a specific collection accessible to the user with the specified key. Each item in the list would have the following properties:</p>
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">id</code>: id of creation request</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">collection</code>: name of the collection</li>
+</ul>
+
+<h3 id="example-usage-5">Example Usage</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -X GET "https://sustglobal.io/api/v1/riskdataset/create&amp;lat={lat}&amp;lng={lng}&amp;collection={collection_name}&amp;type={type}?api_key="YOUR_SUST_API_KEY"
+</code></pre></div></div>
+
+<h2 id="citing-sust-global-api">
+<a class="anchor" href="#citing-sust-global-api" aria-hidden="true"><span class="octicon octicon-link"></span></a>Citing Sust Global API</h2>
+
+<p>From a concept to adoption by an emerging group of early adopters, many people have invested time and energy in developing and enabling access to Sust Global’s capabilities. Please cite Sust Global when using our data and insights. To cite Sust Global’s data in publications, please use the following:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Sust Inc (2021). Sust Global Application Programming Interface: Transforming frontier climate science to actionable data. https://sustglobal.github.io/dev-center/.
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@Misc{,
+  author       = {Sust Global Team},
+  organization = {Sust Inc},
+  title        = {Sust Global Application Programming Interface: Transforming frontier climate science to actionable data},
+  year         = {2021--},
+  url          = "https://sustglobal.github.io/dev-center/"
+}
+</code></pre></div></div>
+
+          </div>
+        </div>
+
+        
+        <div class="col-3">
+          <div id="toc-container">
+            <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h2"><a href="#how-to-become-a-sust-developer">How to become a Sust Developer</a></li>
+<li class="toc-entry toc-h2"><a href="#api-endpoints">API Endpoints</a></li>
+<li class="toc-entry toc-h2"><a href="#retrieve-collections">Retrieve collections</a></li>
+<li class="toc-entry toc-h2"><a href="#retrieve-assets-in-a-collection">Retrieve assets in a collection</a></li>
+<li class="toc-entry toc-h2"><a href="#retrieve-items-in-a-risk-dataset-for-a-specific-collection">Retrieve items in a risk dataset for a specific collection</a></li>
+<li class="toc-entry toc-h2"><a href="#retrieve-risk-data-summary-for-a-specific-collection">Retrieve risk data summary for a specific collection</a></li>
+<li class="toc-entry toc-h2"><a href="#post-collection-for-creation-of-risk-dataset">Post collection for creation of risk dataset</a></li>
+<li class="toc-entry toc-h2"><a href="#post-asset-for-creation-of-risk-dataset">Post asset for creation of risk dataset</a></li>
+<li class="toc-entry toc-h2"><a href="#citing-sust-global-api">Citing Sust Global API</a></li>
+</ul>
+          </div>
+        </div>
+        
+
+      </div>
+
+    </div>
+
+  </body>
+</html>
