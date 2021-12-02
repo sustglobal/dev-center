@@ -15,6 +15,3 @@ defaults:
 
 plugins:
 - jekyll-toc
-
-whitelist:
-- jekyll-toc
