@@ -11,9 +11,18 @@ Local development depends on having a proper Ruby environment set up.
 Documentation is available here:
 https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/testing-your-github-pages-site-locally-with-jekyll.
 
-Once you have ruby and bundler installed, you should be able to run the following from `./docs/` and see the
+Once you have ruby and bundler installed, you should be able to run the following from `./jekyll/` and see the
 documentation site up at `http://localhost:4000`:
 
 ```
 bundle install && bundle exec jekyll serve
+```
+
+## Publishing the Site
+
+Since we rely on a nonstandard jekyll plugin, we actually have to build the site locally and check it in directy.
+Assuming you have a working dev environment (see above), you can just run the following and check in the result:
+
+```
+
 ```
