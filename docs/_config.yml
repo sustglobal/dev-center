@@ -14,4 +14,7 @@ defaults:
       layout: "default"
 
 plugins:
-  - jekyll-toc
+- jekyll-toc
+
+whitelist:
+- jekyll-toc
