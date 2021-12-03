@@ -2,9 +2,9 @@
 title: Sust Global Developer Center
 ---
 
-This is the home of [Sust Global's](https://www.sustglobal.com/) developer tools, guides and reference documentation.
+Welcome! This is the home of [Sust Global's](https://www.sustglobal.com/) developer tools, guides and reference documentation.
 
-* [Platform API](./api.html)
-* [Jupyter Notebooks](./jupyter-notebooks.html)
+* The [Climate Explorer API Guide](./api.html) is here to help you learn how to work with the Climate Explorer API.
+* Several [Jupyter Notebooks](./jupyter-notebooks.html) are provided to help you explore Sust Global datasets on your local machine.
 
-The source of this documentation and all the referenced tools are hosted on GitHub at [https://github.com/sustglobal/dev-center](https://github.com/sustglobal/dev-center).
+The Developer Center documentation and all the referenced tools are hosted on GitHub at [https://github.com/sustglobal/dev-center](https://github.com/sustglobal/dev-center).

@@ -3,7 +3,7 @@ markdown: kramdown
 
 toc:
   min_level: 2
-  max_level: 2
+  max_level: 3
 
 title: Sust Global Developer Center
 

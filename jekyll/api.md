@@ -1,185 +1,142 @@
 ---
-title: Sust Global API Introduction
+title: Climate Explorer API Guide
 toc: true
 ---
 
-Sust Global enables customers in the financial service space with physical risk exposure assessments using our climate intelligence product offering. Sust Global's API is a RESTful API interface to Sust Global's climate intelligence capabilities. 
+Sust Global enables customers in the financial service space with physical risk exposure assessments using our climate intelligence product offering. Sust Global's Climate Explorer API is a RESTful API interface to those climate intelligence capabilities. 
 
-Sust Global API is intended to enable users with the following capaibilities:
-* Trigger the creation of physical climate risk exposure data for a specific collection of assets (sites) defined by the user
-* Enable direct access to climate risk data for download and replication in user's data stores and data warehouses for use in the user's own analysis and application development.
+The API is currently enables users to access generated physical risk exposure datasets programmatically.
+This guide helps users learn how to work with the API directly.
 
-## How to become a Sust Developer
+If you do not yet have a Climate Explorer account, please contact sales@sustglobal.com.
 
-Using the Sust Global API requires that you have a Sust API key: if you don't already have an account with us, you can [reach out](mailto:sales@sustglobal.com) to us for an API key.
+## Quickstart
 
-Once you're signed up, you can find your API key in your account settings. 
+To quickly get up and going with the Climate Explorer API, you first must retrieve your API key.
+Navigate to your [Climate Explorer User Profile](https://explorer.sustglobal.io/account/profile/) and copy the value of `API Key`.
+This value will be referenced below as `$APIKEY`.
 
-## API Endpoints
-
-The `/create` endpoint allows users to trigger and create a risk data collection based on a single asset or an input csv file where each row corresponds to an asset in an asset collection. 
-
-The `/collections` end point list the collections that a user has access to. The user can query the API for the assets, risk datasets and risk summaries associated with any specific collection in the list of collections.
-
-## Retrieve collections
-
-`GET /v1/riskdataset/collections`
-
-### Required parameters
-
-None
-
-### Response
-
-The response is a list of collections accessible to the user with the specified key. Each item in the list would have the following properties:
-- `id`: id of the collection
-- `date_creation`: date of creation of the collection
-- `date_validation`: date of validation of the resulting risk data collection
-- `collection_name`: user defined name of the collection
-- `collection_name_api`: name of the collection for access by API end points
-- `status`: status of the risk collection dataset
-
-### Example Usage
+Open a local terminal, then run the following `curl` command:
 
 ```
-curl -X GET "https://sustglobal.io/api/v1/riskdataset/collections/?api_key=YOUR_SUST_API_KEY"
+curl https://explorer.sustglobal.io/api/portfolios/?api_key=$APIKEY
 ```
 
-## Retrieve assets in a collection
-
-`GET /v1/riskdataset/{selected_collection}/assets/sync`
-
-### Required parameters
-
-Requires the user the specify the asset collection for which the assets are retrived
-- `selected_collection`
-- `rows`: number of items retrieved (max:250)
-- `page`: number of the page retrieved 
-
-### Response
-
-The response is a list of assets in a collection accessible to the user with the specified key. Each item in the list would have the following properties:
-- `id`: id of the asset 
-- `entity_name`: name of the asset
-- `lat`: latitude of the asset
-- `lng`: longitude of the asset
-- `address`: address of the asset (could be blank)
-- `type`: user defined type of the asset
-- `tag`: user assigned tag to the asset (could be blank)
-- `price`: user assigned price to the asset (could be blank)
-
-### Example Usage
+The output will contain a set of all portfolios you currently may access. For example, a single portfolio named "DEMO":
 
 ```
-curl -X GET "https://sustglobal.io/api/v1/riskdataset/{selected_collection}/assets/sync?api_key="YOUR_SUST_API_KEY"
+[
+  {
+    "portfolio_id": "95f83d71cd9de1bb",
+    "portfolio_name": "DEMO",
+    "created_at": "2021-12-03T17:46:17Z",
+    "status": "Risk data available"
+  }
+]
 ```
 
-
-## Retrieve items in a risk dataset for a specific collection
-
-`GET /v1/riskdataset/{selected_collection}/items`
-
-### Required parameters
-
-Requires the user the specify the asset collection for which the assets are retrived
-- `selected_collection`
-- `risk_type`: risk type of interest [fire/flood/SPEI/SLR/heatwaves]
-- `scenario`: define the climate scenario [ssp126/ssp245/ssp585]
-- `start_date`: define the start date from which the collection is filtered
-- `end_date`: define the end date to which the collection is filtered
-- `rows`: number of items retrieved (max:250)
-- `page`: number of the page retrieved 
-
-### Response
-
-The response is a list of items in a risk dataset for a specific collection accessible to the user with the specified key. Each item in the list would have the following properties:
-- `id`: id of the risk dataset item 
-- `collection`: name of the collection
-- `risk_type`: risk type
-- `scenario`: climate scenario 
-- `date_validated`: date when the assigned risk dataset has been validated
-- `asset_id`: id of the asset to which this risk dataset item belongs
-- `risk_exposure`: annual or monthly risk exposure as floating point values
-
-### Example Usage
+This response tells us that the "DEMO" portfolio already has physical risk exposure data.
+Before we fetch any risk-related data, we will first retrieve the assets from the portfolio.
+Be sure to substitute `$PORTFOLIO` with the name of your own portfolio:
 
 ```
-curl -X GET "https://sustglobal.io/api/v1/riskdataset/{selected_collection}/items&risk_type={risk_type}&scenario={scenario}?api_key="YOUR_SUST_API_KEY"
+curl https://explorer.sustglobal.io/api/portfolios/DEMO/assets?api_key=$APIKEY
 ```
 
-## Retrieve risk data summary for a specific collection
-
-`GET /v1/riskdataset/{selected_collection}/summary`
-
-### Required parameters
-
-Requires the user the specify the asset collection for which the assets are retrived
-- `selected_collection`
-- `rows`: number of items retrieved (max:250)
-- `page`: number of the page retrieved 
-
-### Response
-
-The response is a list of summary items in a risk dataset for a specific collection accessible to the user with the specified key. Each item in the list would have the following properties:
-- `id`: id of the risk dataset item 
-- `collection`: name of the collection
-- `risk_type`: risk type
-- `scenario`: climate scenario 
-- `date_validated`: date when the assigned risk dataset has been validated
-- `asset_id`: id of the asset to which this risk dataset item belongs
-- `risk_summary`: a summary label for each of the risk types [fire/flood/SPEI/SLR]
-
-### Example Usage
+This portfolio happens to contain a single asset:
 
 ```
-curl -X GET "https://sustglobal.io/api/v1/riskdataset/{selected_collection}/summary?api_key="YOUR_SUST_API_KEY"
+[
+  {
+    "id": 9064,
+    "entity_name": "Half Dome",
+    "lat": 37.74586759398789,
+    "lng": -119.53319929681618,
+    "address": "Yosemite Valley, CA",
+    "type": "Mountain",
+    "tag": "Yosemite",
+    "price": ""
+  }
+]
 ```
 
-
-## Post collection for creation of risk dataset
-
-`POST /v1/create`
-
-### Required parameters
-
-Requires the user the specify the asset collection for which the assets are retrived
-- `collection_name`: name of the collection
-- `file_name`: name of the file with asset data based on Sust intake template
-
-### Response
-
-The response is status code. `200` indicates successful post of new asset collection.
-
-### Example Usage
+We can fetch a summary of this data with the following command.
 
 ```
-curl -X POST "https://sustglobal.io/api/v1/create/{collection_name}/assets?api_key="YOUR_SUST_API_KEY" -F "asset=@{file_name};type=text/csv"
+curl https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/datasets/physical/risk?api_key=$APIKEY
 ```
 
-## Post asset for creation of risk dataset
-
-`POST /v1/riskdataset/create`
-
-### Required parameters
-
-Requires the user the specify the asset collection for which the assets are retrived
-
-- `collection_name`: name of the collection assigned to the asset
-- `lat`: latitude of the asset
-- `lng`: longitude of the asset
-- `type`: type of the asset 
-
-### Response
-
-The response is a list of summary items in a risk dataset for a specific collection accessible to the user with the specified key. Each item in the list would have the following properties:
-- `id`: id of creation request 
-- `collection`: name of the collection
-
-### Example Usage
+The result summarizes the physical risk exposure of the asset.
+Note that the output below has been truncated.
 
 ```
-curl -X GET "https://sustglobal.io/api/v1/riskdataset/create&lat={lat}&lng={lng}&collection={collection_name}&type={type}?api_key="YOUR_SUST_API_KEY"
+[
+  {
+    "asset_id": 9064,
+    "entity_name": "Half Dome",
+    "date_validation": "2021-12-03T21:00:53Z",
+    "risk_summary": {
+      "ssp126": {
+        "fire_label": "LOW",
+        "flood_label": "LOW",
+        "heatwave_label": "LOW",
+        "drought_label": "MEDIUM",
+        "sealevelrise_label": "LOW",
+        "cyclone_label": "LOW",
+        "fire_score": 0.000709628453478217,
+        "flood_score": 0,
+	...
 ```
+
+Read through the remainder of this document from here to learn about other aspects of the API.
+
+## API Mechanics
+
+### Authentication
+
+All API requests must be authenticated using an API key.
+Find your own API key at in your [Climate Explorer User Profile](https://explorer.sustglobal.io/account/profile/).
+
+To authenticate an API request, simply pass your API key as a query parameter named `api_key`.
+For example, if your API key were "FOOBAR" then you would authenticate your request like so:
+
+```
+curl https://explorer.sustglobal.io/api/portfolios/?api_key=FOOBAR
+```
+
+### Pagination
+
+Many API endpoints support paginated requests. This allows a consumer of the API to make a series of API requests, each
+time reading a subset of the total result set.
+
+Users control pagination with the `page` and `rows` query parameters. The value of `rows` sets the maximum number of results
+that the API should return for a given `page`.
+
+The default `rows` value is 50, meaning that a client is forced to paginate their requests if more than 50 items exist in a given list.
+
+An example of pagination over a set of 120 items might work like so:
+
+1. Request one sets `page=1` and `rows=50`, receiving 50 items
+2. Request two sets `page=2` and `rows=50`, receiving 50 items
+3. Request two sets `page=3` and `rows=50`, receiving 20 items
+
+Note that once a set of items smaller in number than the value of `rows` is received from a paginated request, the client should
+halt any further requests.
+
+## API Endpoint Reference
+
+You may access the [Climate Explorer API Reference](https://explorer.sustglobal.io/redoc/), which describes every REST endpoint, parameter, request and response.
+
+## OpenAPI / Swagger
+
+The Climate Explorer API is documented using OpenAPI (Swagger).
+You may access the document at the following URI:
+
+```
+https://explorer.sustglobal.io/swagger.json
+```
+
+This URL is publicly-accessible and is automatically updated as the API evolves.
 
 ## Citing Sust Global API
 
