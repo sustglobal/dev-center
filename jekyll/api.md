@@ -3,12 +3,9 @@ title: Climate Explorer API Guide
 toc: true
 ---
 
-Sust Global enables customers in the financial service space with physical risk exposure assessments using our climate intelligence product offering. Sust Global's Climate Explorer API is a RESTful API interface to those climate intelligence capabilities. 
-
+Sust Global's Climate Explorer API is a RESTful API interface to to Sust Global's climate intelligence capabilities. 
 The API is currently enables users to access generated physical risk exposure datasets programmatically.
 This guide helps users learn how to work with the API directly.
-
-If you do not yet have a Climate Explorer account, please contact sales@sustglobal.com.
 
 ## Quickstart
 
