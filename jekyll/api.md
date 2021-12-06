@@ -143,7 +143,7 @@ This URL is publicly-accessible and is automatically updated as the API evolves.
 From a concept to adoption by an emerging group of early adopters, many people have invested time and energy in developing and enabling access to Sust Global's capabilities. Please cite Sust Global when using our data and insights. To cite Sust Global's data in publications, please use the following:
 
 ```
-Sust Inc (2021). Sust Global Application Programming Interface: Transforming frontier climate science to actionable data. https://sustglobal.github.io/dev-center/.
+Sust Inc (2021). Sust Global Application Programming Interface: Transforming frontier climate science to actionable data. https://developers.sustglobal.com.
 ```
 
 ```
@@ -152,6 +152,6 @@ Sust Inc (2021). Sust Global Application Programming Interface: Transforming fro
   organization = {Sust Inc},
   title        = {Sust Global Application Programming Interface: Transforming frontier climate science to actionable data},
   year         = {2021--},
-  url          = "https://sustglobal.github.io/dev-center/"
+  url          = "https://developers.sustglobal.com"
 }
 ```
