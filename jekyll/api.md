@@ -60,7 +60,7 @@ This portfolio happens to contain a single asset:
 We can fetch a summary of this data with the following command.
 
 ```
-curl https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/datasets/physical/risk?api_key=$APIKEY
+curl https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/datasets/physical/summary?api_key=$APIKEY
 ```
 
 The result summarizes the physical risk exposure of the asset.
