@@ -91,7 +91,7 @@ Read through the remainder of this document from here to learn about other aspec
 ## Create a Portfolio
 To create a new Portfolio run the following cURL command:
 ```
-curl https://explorer.sustglobal.io/api/portfolios/?api_key=FOOBAR&portfolio=PORTFOLIO_NAME
+curl https://explorer.sustglobal.io/api/portfolios/?api_key=$APIKEY&portfolio=PORTFOLIO_NAME
 ```
 where `PORTFOLIO_NAME` is the desired name of the new portfolio. This command will then give the following response:
 ```
@@ -106,7 +106,7 @@ where `PORTFOLIO_NAME` is the desired name of the new portfolio. This command wi
 ## Add Assets to a Portfolio
 To add or update Assets for a Portfolio run the folloing cURL command (replace `$PORTFOLIO` with the name of the portfolio assets are being added to):
 ```
-curl -F asset=@path/to/assets.csv https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/assets/import?api_key=FOOBAR 
+curl -F asset=@path/to/assets.csv https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/assets/import?api_key=$APIKEY 
 ```
 Returns the following response:
 ```
@@ -121,7 +121,7 @@ Returns the following response:
 ## Download all Assets
 To download a file containing all assets in a given portfolio, run the following command:
 ```
-curl -o path/to/save/assets.csv https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/assets/export?api_key=FOOBAR
+curl -o path/to/save/assets.csv https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/assets/export?api_key=$APIKEY
 ```
 Returns a file of assets at the supplied path and the following:
 ```
@@ -133,7 +133,7 @@ Returns a file of assets at the supplied path and the following:
 ## Download Physical Risk Exposure data
 To download an archive file of all of the risk exposure data for a supplied portfolio, run the following:
 ```
-curl -o path/to/save/risk.zip https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/datasets/physical/export?api_key=FOOBAR
+curl -o path/to/save/risk.zip https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/datasets/physical/export?api_key=$APIKEY
 ```
 Returns a ZIP archive file saved to the supplied path and the following:
 ```
