@@ -37,7 +37,7 @@ Before we fetch any risk-related data, we will first retrieve the assets from th
 Be sure to substitute `$PORTFOLIO` with the name of your own portfolio:
 
 ```
-curl https://explorer.sustglobal.io/api/portfolios/DEMO/assets?api_key=$APIKEY
+curl https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/assets?api_key=$APIKEY
 ```
 
 This portfolio happens to contain a single asset:
@@ -87,62 +87,6 @@ Note that the output below has been truncated.
 
 Read through the remainder of this document from here to learn about other aspects of the API.
 
-
-## Create a Portfolio
-To create a new Portfolio run the following cURL command:
-```
-curl https://explorer.sustglobal.io/api/portfolios/?api_key=$APIKEY&portfolio=PORTFOLIO_NAME
-```
-where `PORTFOLIO_NAME` is the desired name of the new portfolio. This command will then give the following response:
-```
-{
-  "success": [
-    "A new Portfolio was created containing no assets."
-  ],
-  "status_code": 200
-}
-```
-
-## Add Assets to a Portfolio
-To add or update Assets for a Portfolio run the folloing cURL command (replace `$PORTFOLIO` with the name of the portfolio assets are being added to):
-```
-curl -F asset=@path/to/assets.csv https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/assets/import?api_key=$APIKEY 
-```
-Returns the following response:
-```
-{
-  "success": [
-    "An operation to generate risks was created!"
-  ],
-  "status_code": 200
-}
-```
-
-## Download all Assets
-To download a file containing all assets in a given portfolio, run the following command:
-```
-curl -o path/to/save/assets.csv https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/assets/export?api_key=$APIKEY
-```
-Returns a file of assets at the supplied path and the following:
-```
- % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100   233    0   233    0     0    286      0 --:--:-- --:--:-- --:--:--   288
-```
-
-## Download Physical Risk Exposure data
-To download an archive file of all of the risk exposure data for a supplied portfolio, run the following:
-```
-curl -o path/to/save/risk.zip https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/datasets/physical/export?api_key=$APIKEY
-```
-Returns a ZIP archive file saved to the supplied path and the following:
-```
-% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100  349k    0  349k    0     0   216k      0 --:--:--  0:00:01 --:--:--  217k
-```
-
-
 ## API Mechanics
 
 ### Authentication
@@ -175,6 +119,52 @@ An example of pagination over a set of 120 items might work like so:
 
 Note that once a set of items smaller in number than the value of `rows` is received from a paginated request, the client should
 halt any further requests.
+
+## API Examples
+
+This section contains a set of example commands you can run on your machine to interact with the API.
+
+Note that many of the examples refer to environment variables that must be set manually:
+* Your API key, must be set in the `$APIKEY` environment variable. See [Authentication](#authentication) to learn more about this.
+* The `$PORTFOLIO` environment variable refers to the name of the portfolio you wish to work with. You determine this value.
+
+### Create a Portfolio
+
+To create a new portfolio, simply run the following cURL command:
+
+```
+curl -i -X POST https://explorer.sustglobal.io/api/portfolios/?api_key=$APIKEY&portfolio=$PORTFOLIO
+```
+
+### Upload Assets to a Portfolio
+
+Once you have created a portfolio, you may upload a CSV file containing your assets using the following command.
+The value of `$ASSET_FILE` must be the location of a local CSV file containing assets.
+Please see the [Climate Explorer Guide](/explorer.html) for more information about assets and CSV file requirements.
+
+```
+curl -i -F asset=@$ASSET_FILE https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/assets/import?api_key=$APIKEY 
+```
+
+### Download Portfolio Assets
+
+Download all assets in a given portfolio to a local CSV file:
+
+```
+curl -OJ https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/assets/export?api_key=$APIKEY
+```
+
+A CSV file will be written to the filesystem.
+
+### Download Physical Risk Exposure
+
+Download a ZIP archive containing the pysical risk exposure data for a specific portfolio:
+
+```
+curl -OJ https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/datasets/physical/export?api_key=$APIKEY
+```
+
+A ZIP file will be written to the filesystem.
 
 ## API Endpoint Reference
 

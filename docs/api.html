@@ -76,7 +76,7 @@ This value will be referenced below as <code class="language-plaintext highlight
 Before we fetch any risk-related data, we will first retrieve the assets from the portfolio.
 Be sure to substitute <code class="language-plaintext highlighter-rouge">$PORTFOLIO</code> with the name of your own portfolio:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl https://explorer.sustglobal.io/api/portfolios/DEMO/assets?api_key=$APIKEY
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/assets?api_key=$APIKEY
 </code></pre></div></div>
 
 <p>This portfolio happens to contain a single asset:</p>
@@ -123,56 +123,6 @@ Note that the output below has been truncated.</p>
 
 <p>Read through the remainder of this document from here to learn about other aspects of the API.</p>
 
-<h2 id="create-a-portfolio">
-<a class="anchor" href="#create-a-portfolio" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create a Portfolio</h2>
-<p>To create a new Portfolio run the following cURL command:</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl https://explorer.sustglobal.io/api/portfolios/?api_key=$APIKEY&amp;portfolio=PORTFOLIO_NAME
-</code></pre></div></div>
-<p>where <code class="language-plaintext highlighter-rouge">PORTFOLIO_NAME</code> is the desired name of the new portfolio. This command will then give the following response:</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
-  "success": [
-    "A new Portfolio was created containing no assets."
-  ],
-  "status_code": 200
-}
-</code></pre></div></div>
-
-<h2 id="add-assets-to-a-portfolio">
-<a class="anchor" href="#add-assets-to-a-portfolio" aria-hidden="true"><span class="octicon octicon-link"></span></a>Add Assets to a Portfolio</h2>
-<p>To add or update Assets for a Portfolio run the folloing cURL command (replace <code class="language-plaintext highlighter-rouge">$PORTFOLIO</code> with the name of the portfolio assets are being added to):</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -F asset=@path/to/assets.csv https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/assets/import?api_key=$APIKEY 
-</code></pre></div></div>
-<p>Returns the following response:</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
-  "success": [
-    "An operation to generate risks was created!"
-  ],
-  "status_code": 200
-}
-</code></pre></div></div>
-
-<h2 id="download-all-assets">
-<a class="anchor" href="#download-all-assets" aria-hidden="true"><span class="octicon octicon-link"></span></a>Download all Assets</h2>
-<p>To download a file containing all assets in a given portfolio, run the following command:</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -o path/to/save/assets.csv https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/assets/export?api_key=$APIKEY
-</code></pre></div></div>
-<p>Returns a file of assets at the supplied path and the following:</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100   233    0   233    0     0    286      0 --:--:-- --:--:-- --:--:--   288
-</code></pre></div></div>
-
-<h2 id="download-physical-risk-exposure-data">
-<a class="anchor" href="#download-physical-risk-exposure-data" aria-hidden="true"><span class="octicon octicon-link"></span></a>Download Physical Risk Exposure data</h2>
-<p>To download an archive file of all of the risk exposure data for a supplied portfolio, run the following:</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -o path/to/save/risk.zip https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/datasets/physical/export?api_key=$APIKEY
-</code></pre></div></div>
-<p>Returns a ZIP archive file saved to the supplied path and the following:</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100  349k    0  349k    0     0   216k      0 --:--:--  0:00:01 --:--:--  217k
-</code></pre></div></div>
-
 <h2 id="api-mechanics">
 <a class="anchor" href="#api-mechanics" aria-hidden="true"><span class="octicon octicon-link"></span></a>API Mechanics</h2>
 
@@ -209,6 +159,55 @@ that the API should return for a given <code class="language-plaintext highlight
 
 <p>Note that once a set of items smaller in number than the value of <code class="language-plaintext highlighter-rouge">rows</code> is received from a paginated request, the client should
 halt any further requests.</p>
+
+<h2 id="api-examples">
+<a class="anchor" href="#api-examples" aria-hidden="true"><span class="octicon octicon-link"></span></a>API Examples</h2>
+
+<p>This section contains a set of example commands you can run on your machine to interact with the API.</p>
+
+<p>Note that many of the examples refer to environment variables that must be set manually:</p>
+<ul>
+  <li>Your API key, must be set in the <code class="language-plaintext highlighter-rouge">$APIKEY</code> environment variable. See <a href="#authentication">Authentication</a> to learn more about this.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">$PORTFOLIO</code> environment variable refers to the name of the portfolio you wish to work with. You determine this value.</li>
+</ul>
+
+<h3 id="create-a-portfolio">
+<a class="anchor" href="#create-a-portfolio" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create a Portfolio</h3>
+
+<p>To create a new portfolio, simply run the following cURL command:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -i -X POST https://explorer.sustglobal.io/api/portfolios/?api_key=$APIKEY&amp;portfolio=$PORTFOLIO
+</code></pre></div></div>
+
+<h3 id="upload-assets-to-a-portfolio">
+<a class="anchor" href="#upload-assets-to-a-portfolio" aria-hidden="true"><span class="octicon octicon-link"></span></a>Upload Assets to a Portfolio</h3>
+
+<p>Once you have created a portfolio, you may upload a CSV file containing your assets using the following command.
+The value of <code class="language-plaintext highlighter-rouge">$ASSET_FILE</code> must be the location of a local CSV file containing assets.
+Please see the <a href="/explorer.html">Climate Explorer Guide</a> for more information about assets and CSV file requirements.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -i -F asset=@$ASSET_FILE https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/assets/import?api_key=$APIKEY 
+</code></pre></div></div>
+
+<h3 id="download-portfolio-assets">
+<a class="anchor" href="#download-portfolio-assets" aria-hidden="true"><span class="octicon octicon-link"></span></a>Download Portfolio Assets</h3>
+
+<p>Download all assets in a given portfolio to a local CSV file:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -OJ https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/assets/export?api_key=$APIKEY
+</code></pre></div></div>
+
+<p>A CSV file will be written to the filesystem.</p>
+
+<h3 id="download-physical-risk-exposure">
+<a class="anchor" href="#download-physical-risk-exposure" aria-hidden="true"><span class="octicon octicon-link"></span></a>Download Physical Risk Exposure</h3>
+
+<p>Download a ZIP archive containing the pysical risk exposure data for a specific portfolio:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -OJ https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/datasets/physical/export?api_key=$APIKEY
+</code></pre></div></div>
+
+<p>A ZIP file will be written to the filesystem.</p>
 
 <h2 id="api-endpoint-reference">
 <a class="anchor" href="#api-endpoint-reference" aria-hidden="true"><span class="octicon octicon-link"></span></a>API Endpoint Reference</h2>
@@ -251,14 +250,18 @@ You may access the document at the following URI:</p>
           <div id="toc-container">
             <ul id="toc" class="section-nav">
 <li class="toc-entry toc-h2"><a href="#quickstart">Quickstart</a></li>
-<li class="toc-entry toc-h2"><a href="#create-a-portfolio">Create a Portfolio</a></li>
-<li class="toc-entry toc-h2"><a href="#add-assets-to-a-portfolio">Add Assets to a Portfolio</a></li>
-<li class="toc-entry toc-h2"><a href="#download-all-assets">Download all Assets</a></li>
-<li class="toc-entry toc-h2"><a href="#download-physical-risk-exposure-data">Download Physical Risk Exposure data</a></li>
 <li class="toc-entry toc-h2"><a href="#api-mechanics">API Mechanics</a>
 <ul>
 <li class="toc-entry toc-h3"><a href="#authentication">Authentication</a></li>
 <li class="toc-entry toc-h3"><a href="#pagination">Pagination</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#api-examples">API Examples</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#create-a-portfolio">Create a Portfolio</a></li>
+<li class="toc-entry toc-h3"><a href="#upload-assets-to-a-portfolio">Upload Assets to a Portfolio</a></li>
+<li class="toc-entry toc-h3"><a href="#download-portfolio-assets">Download Portfolio Assets</a></li>
+<li class="toc-entry toc-h3"><a href="#download-physical-risk-exposure">Download Physical Risk Exposure</a></li>
 </ul>
 </li>
 <li class="toc-entry toc-h2"><a href="#api-endpoint-reference">API Endpoint Reference</a></li>
