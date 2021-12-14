@@ -189,20 +189,48 @@ Please see the <a href="/explorer.html">Climate Explorer Guide</a> for more info
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -i -F asset=@$ASSET_FILE https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/assets/import?api_key=$APIKEY 
 </code></pre></div></div>
 
-<h3 id="download-portfolio-assets">
-<a class="anchor" href="#download-portfolio-assets" aria-hidden="true"><span class="octicon octicon-link"></span></a>Download Portfolio Assets</h3>
+<h3 id="export-portfolio-assets">
+<a class="anchor" href="#export-portfolio-assets" aria-hidden="true"><span class="octicon octicon-link"></span></a>Export Portfolio Assets</h3>
 
-<p>Download all assets in a given portfolio to a local CSV file:</p>
+<p>It may be useful to download all assets in a given portfolio to a local CSV file.
+This is primarily useful when you intend to re-upload a modified set of assets to a portfolio.</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -OJ https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/assets/export?api_key=$APIKEY
 </code></pre></div></div>
 
 <p>A CSV file will be written to the filesystem.</p>
 
-<h3 id="download-physical-risk-exposure">
-<a class="anchor" href="#download-physical-risk-exposure" aria-hidden="true"><span class="octicon octicon-link"></span></a>Download Physical Risk Exposure</h3>
+<h3 id="fetch-physical-risk-exposure-data">
+<a class="anchor" href="#fetch-physical-risk-exposure-data" aria-hidden="true"><span class="octicon octicon-link"></span></a>Fetch Physical Risk Exposure Data</h3>
 
-<p>Download a ZIP archive containing the pysical risk exposure data for a specific portfolio:</p>
+<p>After physical risk exposure data has been generated, one may interact with it natively via the API:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -i https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/datasets/physical/items?api_key=$APIKEY
+</code></pre></div></div>
+
+<p>Note that this endpoint will contain a lot of data, so you should be familiar with pagination controls. Documentation is
+available elsewhere in this guide.</p>
+
+<p>Additional query parameters that may be useful include <code class="language-plaintext highlighter-rouge">scenario</code> and <code class="language-plaintext highlighter-rouge">risk_type</code>. An example of filtering the risk exposure
+dataset to SSP2-4.5 for wildfire-induced risk:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -i https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/datasets/physical/items?api_key=$APIKEY&amp;scenario=ssp245&amp;risk_type=wildfire
+</code></pre></div></div>
+
+<p>Please review the API Reference for documentation of all supported query parameters.</p>
+
+<h3 id="summarize-physical-risk-exposure">
+<a class="anchor" href="#summarize-physical-risk-exposure" aria-hidden="true"><span class="octicon octicon-link"></span></a>Summarize Physical Risk Exposure</h3>
+
+<p>A summary of physical risk exposure data with an optional <code class="language-plaintext highlighter-rouge">scenario</code> filter is available via API:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -i https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/datasets/physical/summary?api_key=$APIKEY
+</code></pre></div></div>
+
+<h3 id="export-physical-risk-exposure">
+<a class="anchor" href="#export-physical-risk-exposure" aria-hidden="true"><span class="octicon octicon-link"></span></a>Export Physical Risk Exposure</h3>
+
+<p>Download a ZIP archive containing the pysical risk exposure data for a specific portfolio using the following command:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -OJ https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/datasets/physical/export?api_key=$APIKEY
 </code></pre></div></div>
@@ -260,8 +288,10 @@ You may access the document at the following URI:</p>
 <ul>
 <li class="toc-entry toc-h3"><a href="#create-a-portfolio">Create a Portfolio</a></li>
 <li class="toc-entry toc-h3"><a href="#upload-assets-to-a-portfolio">Upload Assets to a Portfolio</a></li>
-<li class="toc-entry toc-h3"><a href="#download-portfolio-assets">Download Portfolio Assets</a></li>
-<li class="toc-entry toc-h3"><a href="#download-physical-risk-exposure">Download Physical Risk Exposure</a></li>
+<li class="toc-entry toc-h3"><a href="#export-portfolio-assets">Export Portfolio Assets</a></li>
+<li class="toc-entry toc-h3"><a href="#fetch-physical-risk-exposure-data">Fetch Physical Risk Exposure Data</a></li>
+<li class="toc-entry toc-h3"><a href="#summarize-physical-risk-exposure">Summarize Physical Risk Exposure</a></li>
+<li class="toc-entry toc-h3"><a href="#export-physical-risk-exposure">Export Physical Risk Exposure</a></li>
 </ul>
 </li>
 <li class="toc-entry toc-h2"><a href="#api-endpoint-reference">API Endpoint Reference</a></li>

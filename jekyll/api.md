@@ -146,9 +146,10 @@ Please see the [Climate Explorer Guide](/explorer.html) for more information abo
 curl -i -F asset=@$ASSET_FILE https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/assets/import?api_key=$APIKEY 
 ```
 
-### Download Portfolio Assets
+### Export Portfolio Assets
 
-Download all assets in a given portfolio to a local CSV file:
+It may be useful to download all assets in a given portfolio to a local CSV file.
+This is primarily useful when you intend to re-upload a modified set of assets to a portfolio.
 
 ```
 curl -OJ https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/assets/export?api_key=$APIKEY
@@ -156,9 +157,37 @@ curl -OJ https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/assets/export?
 
 A CSV file will be written to the filesystem.
 
-### Download Physical Risk Exposure
+### Fetch Physical Risk Exposure Data
 
-Download a ZIP archive containing the pysical risk exposure data for a specific portfolio:
+After physical risk exposure data has been generated, one may interact with it natively via the API:
+
+```
+curl -i https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/datasets/physical/items?api_key=$APIKEY
+```
+
+Note that this endpoint will contain a lot of data, so you should be familiar with pagination controls. Documentation is
+available elsewhere in this guide.
+
+Additional query parameters that may be useful include `scenario` and `risk_type`. An example of filtering the risk exposure
+dataset to SSP2-4.5 for wildfire-induced risk:
+
+```
+curl -i https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/datasets/physical/items?api_key=$APIKEY&scenario=ssp245&risk_type=wildfire
+```
+
+Please review the API Reference for documentation of all supported query parameters.
+
+### Summarize Physical Risk Exposure
+
+A summary of physical risk exposure data with an optional `scenario` filter is available via API:
+
+```
+curl -i https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/datasets/physical/summary?api_key=$APIKEY
+```
+
+### Export Physical Risk Exposure
+
+Download a ZIP archive containing the pysical risk exposure data for a specific portfolio using the following command:
 
 ```
 curl -OJ https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/datasets/physical/export?api_key=$APIKEY
