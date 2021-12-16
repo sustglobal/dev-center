@@ -25,7 +25,6 @@ Each of the required fields in the portfolio CSV file are documented below. All 
 | `Type`        | Type indicator for the asset. This could be a city or a company name or type of mine
 | `lat`         | Latitude of the asset in [WGS84 coordinates](https://spatialreference.org/ref/epsg/wgs84/), range within 90 to +90 degrees, at least 2 decimal places
 | `lng`         | Longitude of the asset in [WGS84 coordinates](https://spatialreference.org/ref/epsg/wgs84/), range within 180 to +180 degrees, at least 2 decimal places
-| `Asset Index` | Index to asset for reference in customer database. Can be left null.
 | `Tag`         | Any metadata. Can be left null if no relevant metadata.
 | `Address`     | Address of the location. Can be left null if there is no address.
 
