@@ -50,6 +50,11 @@ pre.highlight {
   border-radius: 3px;
 }
 
+pre code {
+  font-family: monospace;
+  font-size: 0.9rem;
+}
+
 #toc-container {
   background-color: #eee;
   padding: 10px;
