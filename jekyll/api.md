@@ -45,7 +45,8 @@ This portfolio happens to contain a single asset:
 ```
 [
   {
-    "id": 9064,
+    "portfolio_name": "DEMO",
+    "portfolio_index": 0,
     "entity_name": "Half Dome",
     "lat": 37.74586759398789,
     "lng": -119.53319929681618,
@@ -69,9 +70,9 @@ Note that the output below has been truncated.
 ```
 [
   {
-    "asset_id": 9064,
+    "portfolio_name": "DEMO",
+    "portfolio_index": 0,
     "entity_name": "Half Dome",
-    "date_validation": "2021-12-03T21:00:53Z",
     "risk_summary": {
       "ssp126": {
         "fire_label": "LOW",
@@ -82,7 +83,38 @@ Note that the output below has been truncated.
         "cyclone_label": "LOW",
         "fire_score": 0.000709628453478217,
         "flood_score": 0,
-	...
+    ...
+```
+
+To fetch the more granular timeseries data, we can use the "items" endpoint:
+
+```
+% curl https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/datasets/physical/items?api_key=$APIKEY&risk=fire&scenario=ssp585
+[
+  {
+    "portfolio_name": "DEMO",
+    "portfolio_index": 0,
+    "entity_name": "Half Dome",
+    "risk_type": "fire",
+    "scenario": "ssp585",
+    "risk_exposure": {
+      "1980": 7.366613864898682,
+      "1981": 6.839722633361816,
+      "1982": 6.405037879943848,
+      "1983": 6.664313793182373,
+      "1984": 6.624270439147949,
+      "1985": 6.821004390716553,
+      "1986": 6.622776985168457,
+      "1987": 6.634910583496094,
+      "1988": 6.496907234191895,
+      "1989": 6.295634269714356,
+      "1990": 6.6130194664001465,
+      "1991": 6.400048732757568,
+      "1992": 6.86409854888916,
+      "1993": 6.637968063354492,
+      "1994": 6.701752662658691,
+      "1995": 6.537136077880859,
+    ...
 ```
 
 Read through the remainder of this document from here to learn about other aspects of the API.
