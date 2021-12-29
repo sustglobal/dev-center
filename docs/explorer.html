@@ -56,10 +56,10 @@ If you do not yet have a Climate Explorer account, please contact <a href="mailt
 <h2 id="building-portfolios">Building Portfolios</h2>
 
 <p>Users of Climate Explorer manage collections of physical assets as “portfolios”, each of which can be represented as a CSV file.
-An example of a portfolio CSV file can be found in the Developer Center: <a href="https://github.com/sustglobal/dev-center/blob/master/resources/DEMO_combined_locations.csv">demo portfolio</a>.
+An example of a portfolio CSV file can be found in the Developer Center: <a href="https://github.com/sustglobal/dev-center/blob/master/resources/example_portfolio.csv">demo portfolio</a>.
 This demo portfolio is a useful starting point for anyone interested in building their own portfolio for use in Climate Explorer, whether via UI or API.</p>
 
-<p>Each of the required fields in the portfolio CSV file are documented below. All fields must be populated unless otherwise noted:</p>
+<p>Each of the supported fields in the portfolio CSV file are documented below:</p>
 
 <table>
   <thead>
@@ -70,28 +70,36 @@ This demo portfolio is a useful starting point for anyone interested in building
   </thead>
   <tbody>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">Entity Name</code></td>
-      <td>Name of the asset in the portfolio, could also be text string on the name of a city or location</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">Type</code></td>
-      <td>Type indicator for the asset. This could be a city or a company name or type of mine</td>
-    </tr>
-    <tr>
       <td><code class="language-plaintext highlighter-rouge">lat</code></td>
-      <td>Latitude of the asset in <a href="https://spatialreference.org/ref/epsg/wgs84/">WGS84 coordinates</a>, range within 90 to +90 degrees, at least 2 decimal places</td>
+      <td><strong>Required.</strong> Latitude of the asset in <a href="https://spatialreference.org/ref/epsg/wgs84/">WGS84 coordinates</a>, range within 90 to +90 degrees, at least 2 decimal places</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">lng</code></td>
-      <td>Longitude of the asset in <a href="https://spatialreference.org/ref/epsg/wgs84/">WGS84 coordinates</a>, range within 180 to +180 degrees, at least 2 decimal places</td>
+      <td><strong>Required.</strong> Longitude of the asset in <a href="https://spatialreference.org/ref/epsg/wgs84/">WGS84 coordinates</a>, range within 180 to +180 degrees, at least 2 decimal places</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">Tag</code></td>
-      <td>Any metadata. Can be left null if no relevant metadata.</td>
+      <td><code class="language-plaintext highlighter-rouge">entity_id</code></td>
+      <td>Meaningful identifier of asset, typically used to map into external systems.</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">Address</code></td>
-      <td>Address of the location. Can be left null if there is no address.</td>
+      <td><code class="language-plaintext highlighter-rouge">entity_name</code></td>
+      <td>Name of the asset in the portfolio, could also be text string on the name of a city or location</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">label:type</code></td>
+      <td>Type indicator for the asset. This could be a city or a company name or type of mine</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">label:address</code></td>
+      <td>Address of the asset.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">label:price</code></td>
+      <td>Value in USD of asset.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">label:&lt;KEY&gt;</code></td>
+      <td>Additional labels (any column header prefixed with <code class="language-plaintext highlighter-rouge">label:</code>) are preserved, and are not meaningful to Climate Explorer.</td>
     </tr>
   </tbody>
 </table>
