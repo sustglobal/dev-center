@@ -106,6 +106,132 @@ This demo portfolio is a useful starting point for anyone interested in building
 
 <p>Please note that portfolios are currently limited to 1000 assets in size.</p>
 
+<h2 id="historic-reporting-outcomes">Historic Reporting Outcomes</h2>
+
+<p>All reports are at a monthly cadence based on observations and historic catalogs
+covering the months from Jan 2010 to Dec 2020. Some of our datasets allow for
+higher cadence reporting, please contact us for custom requests.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Fundamental Variable / Hazard</th>
+      <th>Description</th>
+      <th>Unit</th>
+      <th>Range of Possible Values</th>
+      <th>Spatial Resolution</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Fire Exposure</td>
+      <td>MoM active fire severity based on satellite observations. We transform the <a href="https://firms2.modaps.eosdis.nasa.gov/">NASA Active Fire Data</a> to report on active fires. Note that because these values are based on satellite observations and we cannot discern wildfires from human generated fires.</td>
+      <td>Unit interval with 1.0 indicating maximum active fires recorded in a month (30 in 2020)</td>
+      <td>0.0 to 1.0</td>
+      <td>10km</td>
+    </tr>
+    <tr>
+      <td>Flooding Exposure</td>
+      <td>MoM exposure of assets to floods. We transform data from the <a href="https://floodobservatory.colorado.edu/Archives/index.html">Dartmouth Flood Observatory</a> to report on active floods at the points of interest. The severity classes are based on the recurrence interval: (class 1) Large flood events: recurrence &lt; 20 year; (class 2) Very large events: 20 year &lt; recurrence &lt; 100 year; (class 3) Extreme events: recurrence &gt; 100 years. Values are set based on severity*0.333.</td>
+      <td>Unit interval with 1.0 indicating maximum severity extreme flooding (recurrence exceeding 100 years)</td>
+      <td>0.0 to 1.0</td>
+      <td>1km</td>
+    </tr>
+    <tr>
+      <td>Cyclone Exposure</td>
+      <td>MoM asset level exposure to cyclones/hurricanes. We source cyclone tracks from the NOAA IBTRACs data source. Cyclones are tagged based on severity to a scale of 1 to 5 which is used to assign the value in the unit interval. Values are set based on severity*0.2.</td>
+      <td>Unit interval with 1.0 indicating maximum cyclone severity level 5 (example: Atlantic Cyclone Katrina-2005, Irma-2017, Dorian-2019).</td>
+      <td>0.0 to 1.0</td>
+      <td>1km</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="forward-looking-reporting-outcomes">Forward Looking Reporting Outcomes</h2>
+
+<p>All reports are at an annual cadence and our risk projects are a Year-over-Year (YoY) cadence. Some of our datasets allow for higher cadence reporting, please contact us for custom requests.</p>
+
+<p>For creating heatmaps, we assess the physical risk over the 30 year window between 2021 and 2050 and look at the maximum risk exposure to a specific hazard for an asset. We use the maximum risk exposure value to color code the asset to LOW (Green), MEDIUM (Yellow), HIGH (Red) risk categories.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Fundamental Variable / Hazard</th>
+      <th>Description</th>
+      <th>Unit</th>
+      <th>Range of Possible Values</th>
+      <th>Spatial Resolution</th>
+      <th>Heat Map Coding Range</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Annual Temperature</td>
+      <td>YoY mean annual temperature at the asset location</td>
+      <td>°C</td>
+      <td>-5 to 45</td>
+      <td>100km</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <td>Annual Precipitation</td>
+      <td>YoY total precipitation at the asset location</td>
+      <td>mm</td>
+      <td>0 to 5000</td>
+      <td>100km</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <td>Extreme Precipitation</td>
+      <td>YoY probabilistic projections of number of days in a year where precipitation exceeds 51mm</td>
+      <td>Number of days</td>
+      <td>0 to 365</td>
+      <td>100km</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <td>Wildfire Risk</td>
+      <td>YoY Percentage of exposed land within 50km radius of the asset to wildfire</td>
+      <td>Percentage</td>
+      <td>0 to 100</td>
+      <td>14km</td>
+      <td>LOW: 0.0-0.1; MEDIUM: 0.1-1.0; HIGH: &gt;1.0</td>
+    </tr>
+    <tr>
+      <td>Inland Flooding</td>
+      <td>YoY exposure of asset to floods</td>
+      <td>Probability score</td>
+      <td>0.0 to 1.0</td>
+      <td>4km</td>
+      <td>Based on number of years with probability of flood &gt;5%; LOW: 0; MEDIUM: 1-2; HIGH: &gt;=3</td>
+    </tr>
+    <tr>
+      <td>Heatwaves</td>
+      <td>YoY heatwave days per year where temperature at asset is projected to exceed 98th percentile of historic recordings</td>
+      <td>Number of days</td>
+      <td>0 to 365</td>
+      <td>100km</td>
+      <td>LOW: 0-30; MEDIUM: 30-50; HIGH: &gt;50</td>
+    </tr>
+    <tr>
+      <td>Sea Level Rise</td>
+      <td>YoY projection of sea level rise relative to 1980-2010 average sea level</td>
+      <td>Rise in meters</td>
+      <td>0.0 to 2.0</td>
+      <td>100km</td>
+      <td>LOW: &lt;0.1; MEDIUM:0.1 to 0.3; HIGH: &gt;0.3</td>
+    </tr>
+    <tr>
+      <td>Drought (SPEI)</td>
+      <td>YoY projection of standard precipitation evapo-transipiration index</td>
+      <td>Index score</td>
+      <td>-3.0 to 3.0</td>
+      <td>100km</td>
+      <td>LOW: &gt;-1.5; MEDIUM: -1.5 to -2.0; HIGH: &lt;-2.0</td>
+    </tr>
+  </tbody>
+</table>
+
           </div>
         </div>
 
