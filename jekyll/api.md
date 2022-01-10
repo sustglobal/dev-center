@@ -47,13 +47,15 @@ This portfolio happens to contain a single asset:
   {
     "portfolio_name": "DEMO",
     "portfolio_index": 0,
+    "entity_id": "",
     "entity_name": "Half Dome",
     "lat": 37.74586759398789,
     "lng": -119.53319929681618,
-    "address": "Yosemite Valley, CA",
-    "type": "Mountain",
-    "tag": "Yosemite",
-    "price": ""
+    "labels": {
+        "address": "Yosemite Valley, CA",
+        "type": "Mountain",
+        "tag": "Yosemite",
+    }
   }
 ]
 ```
@@ -72,6 +74,7 @@ Note that the output below has been truncated.
   {
     "portfolio_name": "DEMO",
     "portfolio_index": 0,
+    "entity_id": "",
     "entity_name": "Half Dome",
     "risk_summary": {
       "ssp126": {
@@ -94,6 +97,7 @@ To fetch the more granular timeseries data, we can use the "items" endpoint:
   {
     "portfolio_name": "DEMO",
     "portfolio_index": 0,
+    "entity_id": "",
     "entity_name": "Half Dome",
     "risk_type": "fire",
     "scenario": "ssp585",
