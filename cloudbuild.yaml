@@ -14,6 +14,6 @@ steps:
 
 - id: 'clients-python-publish'
   name: 'gcr.io/${PROJECT_ID}/olympia/services/auto:stable'
-  args: ['/bin/bash', '-c', 'if [ "${TAG_NAME}" != "clients-python-*" ]; then echo "Skipping publishing client"; exit 0; fi; twine upload dist/*']
+  args: ['/bin/bash', '-c', 'if [[ "${TAG_NAME}" != clients-python-* ]]; then echo "Skipping publishing client"; exit 0; fi; twine upload dist/*']
   dir: 'clients/python'
   waitFor: ['clients-python-build']
