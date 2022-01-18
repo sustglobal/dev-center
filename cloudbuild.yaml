@@ -1,0 +1,5 @@
+steps:
+- id: 'test'
+  name: 'gcr.io/${PROJECT_ID}/olympia/services/auto:stable'
+  args: ['/bin/bash', '-c', 'apt-get install -y python3-venv && python3 -m pip install --upgrade build && python3 -m build']
+  dir: 'clients/python'
