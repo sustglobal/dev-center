@@ -1,5 +1,19 @@
 steps:
-- id: 'test'
+- id: 'fetch-git'
+  name: 'gcr.io/cloud-builders/git'
+  args: ['fetch', '--tags', '--unshallow']
+
+- id: 'clients-python-build'
   name: 'gcr.io/${PROJECT_ID}/olympia/services/auto:stable'
-  args: ['/bin/bash', '-c', 'apt-get install -y python3-venv && python3 -m pip install --upgrade build && python3 -m build']
+  args: ['/bin/bash', '-c', 'apt-get install -y git python3-venv && python3 -m pip install --upgrade build && python3 -m build']
   dir: 'clients/python'
+  env:
+  - "TWINE_USERNAME=__token__"
+  - "TWINE_PASSWORD=pypi-${_PYPI_AUTH_TOKEN}"
+  waitFor: ['fetch-git']
+
+- id: 'clients-python-publish'
+  name: 'gcr.io/${PROJECT_ID}/olympia/services/auto:stable'
+  args: ['/bin/bash', '-c', 'if [ "${TAG_NAME}" != "clients-python-*" ]; then echo "Skipping publishing client"; exit 0; fi; twine upload dist/*']
+  dir: 'clients/python'
+  waitFor: ['clients-python-build']

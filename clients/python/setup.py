@@ -6,7 +6,6 @@ with pathlib.Path('requirements.txt').open() as f:
     install_requires = [str(r) for r in pkg_resources.parse_requirements(f)]
 
 setup(name='sust-api-client',
-      version='0.0.1',
       description='Sust Global API Client',
       packages=[
         'sust.api.climate_explorer',
@@ -17,4 +16,4 @@ setup(name='sust-api-client',
         'sust.api.climate_explorer.clientgen.models',
       ],
       install_requires=[install_requires],
-     )
+)
