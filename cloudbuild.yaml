@@ -15,5 +15,5 @@ steps:
   dir: 'clients/python'
   env:
   - "TWINE_USERNAME=__token__"
-  - "TWINE_PASSWORD=pypi-${_PYPI_AUTH_TOKEN}"
+  - "TWINE_PASSWORD=pypi-${_PYPI_API_TOKEN}"
   waitFor: ['clients-python-build']
