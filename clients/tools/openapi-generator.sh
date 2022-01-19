@@ -1,6 +1,6 @@
 #!/bin/bash
 
-rm -r clients/python/sust/api/climate_explorer/clientgen
+rm -r clients/python/sust/api/generated
 
 mkdir -p clients/tools/cache
 wget https://explorer.sustglobal.io/swagger.json -O clients/tools/cache/climate-explorer-openapi-spec.json
