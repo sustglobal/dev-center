@@ -1,4 +1,4 @@
 {
-	"packageName": "sust.api.climate_explorer.clientgen",
+	"packageName": "sust.api.generated.climate_explorer",
 	"generateSourceCodeOnly": true
 }
