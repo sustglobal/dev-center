@@ -12,7 +12,7 @@
             crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/assets/css/main.css?v=">
 
-    <title>Climate Explorer User Guide</title>
+    <title>Climate Explorer Quickstart Guide</title>
 
   </head>
 
@@ -43,21 +43,23 @@
 
         <div class="flex-grow-1 col-9">
           <div id="innercontent">
-            <h1>Climate Explorer User Guide</h1>
+            <h1>Climate Explorer Quickstart Guide</h1>
             <p>Climate Explorer is available at <a href="https://explorer.sustglobal.io">https://explorer.sustglobal.io</a>.
-This UI enables Sust Global customers to manage their physical asset portfolios and gain insights regarding risk exposure.</p>
+This UI enables Sust Global customers to manage their physical asset portfolios and gain insights regarding climate risk exposure.</p>
 
-<p>Developers are encouraged to integrate with Climate Explorer through an API.
+<p>Developers are encouraged to integrate with Climate Explorer through the API.
 Please read the <a href="./api.html">Climate Explorer API Guide</a> to learn about these capabilities.</p>
 
 <p>Climate Explorer is currently in beta and will be generally available in mid 2022.
 If you do not yet have a Climate Explorer account, please contact <a href="mailto:sales@sustglobal.com">sales@sustglobal.com</a>.</p>
 
-<h2 id="building-portfolios">Building Portfolios</h2>
+<h1 id="create-new-portfolios">Create New Portfolios</h1>
 
-<p>Users of Climate Explorer manage collections of physical assets as “portfolios”, each of which can be represented as a CSV file.
-An example of a portfolio CSV file can be found in the Developer Center: <a href="https://github.com/sustglobal/dev-center/blob/master/resources/example_portfolio.csv">demo portfolio</a>.
-This demo portfolio is a useful starting point for anyone interested in building their own portfolio for use in Climate Explorer, whether via UI or API.</p>
+<p>As a user of Climate Explorer, you can manage collections of physical assets as “portfolios”, each of which can be represented as a CSV file.</p>
+
+<p>To create a new portfoilio go to the <a href="https://explorer.sustglobal.io/portfolios/">Portfolio View</a> on Climate Explorer and click on the button labelled <code class="language-plaintext highlighter-rouge">New Portfolio</code>. When creating a new portfolio, make sure that the name has no gaps in it. Having given the portfolio a name, you can upload information on the phyical assets.</p>
+
+<p>An example of a portfolio CSV file can be found in the Developer Center: <a href="https://raw.githubusercontent.com/sustglobal/dev-center/master/resources/example_portfolio.csv">demo portfolio</a>. This demo portfolio is a useful starting point if you are  interested in building their own portfolio for use in Climate Explorer, whether via UI or API. Simply save the link to the demo portfolio as a CSV file and edit it before <code class="language-plaintext highlighter-rouge">uploading assets</code> on the <a href="https://explorer.sustglobal.io/portfolios/">Portfolio View</a> on Climate Explorer.</p>
 
 <p>Each of the supported fields in the portfolio CSV file are documented below:</p>
 
@@ -71,51 +73,55 @@ This demo portfolio is a useful starting point for anyone interested in building
   <tbody>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">lat</code></td>
-      <td><strong>Required.</strong> Latitude of the asset in <a href="https://spatialreference.org/ref/epsg/wgs84/">WGS84 coordinates</a>, range within 90 to +90 degrees, at least 2 decimal places</td>
+      <td><strong>Required.</strong> Latitude of the asset in degrees <a href="https://spatialreference.org/ref/epsg/4326/">WGS84 coordinates</a>, range within 90 to +90 degrees, at least 2 decimal places</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">lng</code></td>
-      <td><strong>Required.</strong> Longitude of the asset in <a href="https://spatialreference.org/ref/epsg/wgs84/">WGS84 coordinates</a>, range within 180 to +180 degrees, at least 2 decimal places</td>
+      <td><strong>Required.</strong> Longitude of the asset in degrees <a href="https://spatialreference.org/ref/epsg/4326/">WGS84 coordinates</a>, range within 180 to +180 degrees, at least 2 decimal places</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">entity_id</code></td>
-      <td>Meaningful identifier of asset, typically used to map into external systems.</td>
+      <td><strong>Optional.</strong> Meaningful identifier of asset, typically used to map into external systems.</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">entity_name</code></td>
-      <td>Name of the asset in the portfolio, could also be text string on the name of a city or location</td>
+      <td><strong>Optional.</strong> Name of the asset in the portfolio, could also be text string on the name of a city or location</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">label:type</code></td>
-      <td>Type indicator for the asset. This could be a city or a company name or type of mine</td>
+      <td><strong>Optional.</strong> Type indicator for the asset. This could be a city or a company name or type of mine</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">label:address</code></td>
-      <td>Address of the asset.</td>
+      <td><strong>Optional.</strong> Address of the asset.</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">label:price</code></td>
-      <td>Value in USD of asset.</td>
+      <td><strong>Optional.</strong> Value in USD of asset.</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">label:&lt;KEY&gt;</code></td>
-      <td>Additional labels (any column header prefixed with <code class="language-plaintext highlighter-rouge">label:</code>) are preserved, and are not meaningful to Climate Explorer.</td>
+      <td><strong>Optional.</strong> Additional labels (any column header prefixed with <code class="language-plaintext highlighter-rouge">label:</code>) are preserved in the results, and are not meaningful to Climate Explorer.</td>
     </tr>
   </tbody>
 </table>
 
-<p>Please note that portfolios are currently limited to 1000 assets in size.</p>
+<p>Note that the geocodes (lat/lng coordinates) of all the physical assets in your portfolio are required. If you only have addresses and not the geocodes, you can use the <a href="https://docs.mapbox.com/playground/geocoding/">Mapbox Geocoding Playground</a> to secure geocodes for a specific address. Alternately, you can also secure the geocodes from <a href="https://support.google.com/maps/answer/18539?hl=en&amp;co=GENIE.Platform%3DDesktop">Google Maps</a>.
+Please note that portfolios are currently limited to 5000 assets in size. Additionally account level portfolio size limits might apply. Please contact <a href="mailto:sales@sustglobal.com">sales@sustglobal.com</a> if you would like to increase your portfolio size limits.</p>
+
+<h1 id="interpret-results">Interpret results</h1>
+
+<p>As a user of Climate Explorer, you can download physical risk exposure projection results on their portfolio. Once you have created a new portfolio and uploaded assets, wait for the status to update to <code class="language-plaintext highlighter-rouge">Risk data available</code>. Once data is available, you can bulk download the risk exposure dataset as a zip file using <code class="language-plaintext highlighter-rouge">Download Risk Exposure</code> option. You can also switch over to the <a href="https://explorer.sustglobal.io/">Dashboard View</a>, select the specific portfolio you created and view the results on the interactive dashboard.</p>
 
 <h2 id="historic-reporting-outcomes">Historic Reporting Outcomes</h2>
 
-<p>All reports are at a monthly cadence based on observations and historic catalogs
-covering the months from Jan 2010 to Dec 2020. Some of our datasets allow for
+<p>All reports are generated at a monthly cadence based on observations and historic catalogs covering the months from Jan 2010 to Dec 2020. Some of our datasets allow for
 higher cadence reporting, please contact us for custom requests.</p>
 
 <table>
   <thead>
     <tr>
-      <th>Fundamental Variable / Hazard</th>
+      <th>Hazard</th>
       <th>Description</th>
       <th>Unit</th>
       <th>Range of Possible Values</th>
@@ -125,22 +131,22 @@ higher cadence reporting, please contact us for custom requests.</p>
   <tbody>
     <tr>
       <td>Fire Exposure</td>
-      <td>MoM active fire severity based on satellite observations. We transform the <a href="https://firms2.modaps.eosdis.nasa.gov/">NASA Active Fire Data</a> to report on active fires. Note that because these values are based on satellite observations and we cannot discern wildfires from human generated fires.</td>
+      <td>Monthly active fire severity based on satellite observations. We transform the <a href="https://firms2.modaps.eosdis.nasa.gov/">NASA Active Fire Data</a> to report on active fires. Note that because these values are based on satellite observations and we cannot discern wildfires from human generated fires.</td>
       <td>Unit interval with 1.0 indicating maximum active fires recorded in a month (30 in 2020)</td>
       <td>0.0 to 1.0</td>
       <td>10km</td>
     </tr>
     <tr>
       <td>Flooding Exposure</td>
-      <td>MoM exposure of assets to floods. We transform data from the <a href="https://floodobservatory.colorado.edu/Archives/index.html">Dartmouth Flood Observatory</a> to report on active floods at the points of interest. The severity classes are based on the recurrence interval: (class 1) Large flood events: recurrence &lt; 20 year; (class 2) Very large events: 20 year &lt; recurrence &lt; 100 year; (class 3) Extreme events: recurrence &gt; 100 years. Values are set based on severity*0.333.</td>
+      <td>Monthly exposure of assets to floods. We transform data from multiple flood observatories to report on active floods at the points of interest. The severity classes are based on the recurrence interval: (class 1) Large flood events: recurrence &lt; 20 year; (class 2) Very large events: 20 year &lt; recurrence &lt; 100 year; (class 3) Extreme events: recurrence &gt; 100 years. Values are set based on severity*0.333.</td>
       <td>Unit interval with 1.0 indicating maximum severity extreme flooding (recurrence exceeding 100 years)</td>
       <td>0.0 to 1.0</td>
       <td>1km</td>
     </tr>
     <tr>
       <td>Cyclone Exposure</td>
-      <td>MoM asset level exposure to cyclones/hurricanes. We source cyclone tracks from the NOAA IBTRACs data source. Cyclones are tagged based on severity to a scale of 1 to 5 which is used to assign the value in the unit interval. Values are set based on severity*0.2.</td>
-      <td>Unit interval with 1.0 indicating maximum cyclone severity level 5 (example: Atlantic Cyclone Katrina-2005, Irma-2017, Dorian-2019).</td>
+      <td>Monthly asset level exposure to cyclones/hurricanes. We source cyclone tracks from the <a href="https://www.ncdc.noaa.gov/ibtracs/">NOAA IBTRACs</a>. Cyclones are tagged based on severity to a scale of 1 to 5 which is used to assign the value in the unit interval. Values are set based on severity*0.2.</td>
+      <td>Unit interval with 1.0 indicating maximum cyclone severity level 5 (example: Katrina-2005, Irma-2017, Dorian-2019).</td>
       <td>0.0 to 1.0</td>
       <td>1km</td>
     </tr>
@@ -149,9 +155,9 @@ higher cadence reporting, please contact us for custom requests.</p>
 
 <h2 id="forward-looking-reporting-outcomes">Forward Looking Reporting Outcomes</h2>
 
-<p>All reports are at an annual cadence and our risk projects are a Year-over-Year (YoY) cadence. Some of our datasets allow for higher cadence reporting, please contact us for custom requests.</p>
+<p>All reports and supported risk projections are at annual cadence. Some of our datasets allow for higher cadence reporting, please contact us for custom requests.</p>
 
-<p>For creating heatmaps, we assess the physical risk over the 30 year window between 2021 and 2050 and look at the maximum risk exposure to a specific hazard for an asset. We use the maximum risk exposure value to color code the asset to LOW (Green), MEDIUM (Yellow), HIGH (Red) risk categories.</p>
+<p>For creating standard heatmaps, we assess the physical risk over the 30 year window between 2021 and 2050 and look at the maximum risk exposure to a specific hazard for an asset. We use the maximum risk exposure value to color code the asset to LOW (Green), MEDIUM (Yellow), HIGH (Red) risk categories.</p>
 
 <table>
   <thead>
@@ -167,7 +173,7 @@ higher cadence reporting, please contact us for custom requests.</p>
   <tbody>
     <tr>
       <td>Annual Temperature</td>
-      <td>YoY mean annual temperature at the asset location</td>
+      <td>Annual mean annual temperature at the asset location</td>
       <td>°C</td>
       <td>-5 to 45</td>
       <td>100km</td>
@@ -175,7 +181,7 @@ higher cadence reporting, please contact us for custom requests.</p>
     </tr>
     <tr>
       <td>Annual Precipitation</td>
-      <td>YoY total precipitation at the asset location</td>
+      <td>Annual total precipitation at the asset location</td>
       <td>mm</td>
       <td>0 to 5000</td>
       <td>100km</td>
@@ -183,7 +189,7 @@ higher cadence reporting, please contact us for custom requests.</p>
     </tr>
     <tr>
       <td>Extreme Precipitation</td>
-      <td>YoY probabilistic projections of number of days in a year where precipitation exceeds 51mm</td>
+      <td>Annual probabilistic projections of number of days in a year where precipitation exceeds 51mm</td>
       <td>Number of days</td>
       <td>0 to 365</td>
       <td>100km</td>
@@ -191,7 +197,7 @@ higher cadence reporting, please contact us for custom requests.</p>
     </tr>
     <tr>
       <td>Wildfire Risk</td>
-      <td>YoY Percentage of exposed land within 50km radius of the asset to wildfire</td>
+      <td>Annual Percentage of exposed land within 14km radius of the asset to wildfire</td>
       <td>Percentage</td>
       <td>0 to 100</td>
       <td>14km</td>
@@ -199,7 +205,7 @@ higher cadence reporting, please contact us for custom requests.</p>
     </tr>
     <tr>
       <td>Inland Flooding</td>
-      <td>YoY exposure of asset to floods</td>
+      <td>Annual exposure of asset to floods</td>
       <td>Probability score</td>
       <td>0.0 to 1.0</td>
       <td>4km</td>
@@ -207,7 +213,7 @@ higher cadence reporting, please contact us for custom requests.</p>
     </tr>
     <tr>
       <td>Heatwaves</td>
-      <td>YoY heatwave days per year where temperature at asset is projected to exceed 98th percentile of historic recordings</td>
+      <td>Annual heatwave days per year where temperature at asset is projected to exceed 98th percentile of historic recordings</td>
       <td>Number of days</td>
       <td>0 to 365</td>
       <td>100km</td>
@@ -215,7 +221,7 @@ higher cadence reporting, please contact us for custom requests.</p>
     </tr>
     <tr>
       <td>Sea Level Rise</td>
-      <td>YoY projection of sea level rise relative to 1980-2010 average sea level</td>
+      <td>Annual projection of sea level rise relative to average sea level at the asset over 1980-2010</td>
       <td>Rise in meters</td>
       <td>0.0 to 2.0</td>
       <td>100km</td>
@@ -223,7 +229,7 @@ higher cadence reporting, please contact us for custom requests.</p>
     </tr>
     <tr>
       <td>Drought (SPEI)</td>
-      <td>YoY projection of standard precipitation evapo-transipiration index</td>
+      <td>Annual projection of standard precipitation evapo-transipiration index</td>
       <td>Index score</td>
       <td>-3.0 to 3.0</td>
       <td>100km</td>
