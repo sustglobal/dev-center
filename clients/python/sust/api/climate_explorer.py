@@ -1,27 +1,27 @@
-import pandas as pd
+import copy
+from dataclasses import dataclass
 
 from sust.api.generated.climate_explorer import ApiClient, Configuration
 from sust.api.generated.climate_explorer.api import portfolios_api
 
-SSP126 = 'ssp126'
-SSP245 = 'ssp245'
-SSP585 = 'ssp585'
 
-scenarios = [SSP126, SSP245, SSP585]
+@dataclass(frozen=True)
+class Scenarios:
+    SSP126 = 'ssp126'
+    SSP245 = 'ssp245'
+    SSP585 = 'ssp585'
 
-FIRE = "fire"
-FLOOD = "flood"
-SPEI = "SPEI"
-SLR = "SLR"
-HEATWAVES = "heatwaves"
-OBS_FIRE = "obs_fire"
-OBS_FLOOD = "obs_flood"
-OBS_CYCLONE = "obs_cyclone"
 
-risk_types = [
-    FIRE, FLOOD, SPEI, SLR, HEATWAVES,
-    OBS_FIRE, OBS_FLOOD, OBS_CYCLONE
-]
+@dataclass(frozen=True)
+class RiskTypes:
+    FIRE = "fire"
+    FLOOD = "flood"
+    SPEI = "SPEI"
+    SLR = "SLR"
+    HEATWAVES = "heatwaves"
+    OBS_FIRE = "obs_fire"
+    OBS_FLOOD = "obs_flood"
+    OBS_CYCLONE = "obs_cyclone"
 
 
 class ClimateExplorerClient:
@@ -37,12 +37,12 @@ class ClimateExplorerClient:
         self._openapi_instance = portfolios_api.PortfoliosApi(openapi_client)
 
     def _openapi_request(self, request_name, request_args, request_kwargs):
-        rk = self._default_req_kwargs.copy()
+        rk = copy.deepcopy(self._default_req_kwargs)
         rk.update(request_kwargs)
         return getattr(self._openapi_instance, request_name)(*request_args, **rk)
 
     def _paginated_openapi_request(self, request_name, request_args, request_kwargs):
-        rk = self._default_req_kwargs.copy()
+        rk = copy.deepcopy(self._default_req_kwargs)
         rk.update(request_kwargs)
         return PageIterator(getattr(self._openapi_instance, request_name), request_args, rk)
 
@@ -64,12 +64,11 @@ class Portfolio:
     def __getitem__(self, key):
         return self._obj[key]
 
-    def assets(self, entity_id=None, labels=None):
+    def assets(self, labels=None):
         it = self._client._paginated_openapi_request('portfolios_assets_list', (self._obj['portfolio_name'],), {})
 
         objects = [
             obj for obj in it if
-              (entity_id == None or obj['entity_id'] == entity_id) and
               (labels == None or all(obj['labels'].get(k) == v for k, v in labels.items()))
         ]
 
@@ -83,10 +82,10 @@ class AssetList:
         self._objects = objects
         self._index = dict((obj['entity_id'], obj) for obj in objects)
 
-    def to_df(self):
-        return pd.DataFrame([obj.to_dict() for obj in self._objects]).set_index('portfolio_index')
+    def to_dicts(self):
+        return [obj.to_dict() for obj in self._objects]
 
-    def physical_risk_annual(self, scenario=None, risk_type=None):
+    def physical_risk_timeseries(self, scenario=None, risk_type=None):
         req_kwargs = {}
         if scenario:
             req_kwargs['scenario'] = scenario
@@ -120,7 +119,7 @@ class AssetList:
             obj_d = obj.to_dict()
             summaries = obj_d.pop('risk_summary')
             for (scenario, summary) in summaries.items():
-                obj_d_cp = obj_d.copy()
+                obj_d_cp = copy.deepcopy(obj_d)
                 obj_d_cp['scenario'] = scenario
                 obj_d_cp.update(summary)
                 objects.append(obj_d_cp)
@@ -132,16 +131,16 @@ class PhysicalRiskAnnualList:
     def __init__(self, dict_objects):
         self._dict_objects = dict_objects
 
-    def to_df(self):
-        return pd.DataFrame(self._dict_objects)
+    def to_dicts(self):
+        return self._dict_objects
 
 
 class PhysicalRiskSummaryList:
     def __init__(self, dict_objects):
         self._dict_objects = dict_objects
 
-    def to_df(self):
-        return pd.DataFrame(self._dict_objects)
+    def to_dicts(self):
+        return self._dict_objects
 
 
 class PageIterator:
