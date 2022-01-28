@@ -49,7 +49,7 @@ higher cadence reporting, please contact us for custom requests.
 | - | - | - | - | - |
 | Fire Exposure | Monthly active fire severity based on satellite observations. We transform the [NASA Active Fire Data](https://firms2.modaps.eosdis.nasa.gov/) to report on active fires. Note that because these values are based on satellite observations and we cannot discern wildfires from human generated fires. | Unit interval with 1.0 indicating maximum active fires recorded in a month (30 in 2020) | 0.0 to 1.0 | 10km |
 | Flooding Exposure | Monthly exposure of assets to floods. We transform data from multiple flood observatories to report on active floods at the points of interest. The severity classes are based on the recurrence interval: (class 1) Large flood events: recurrence < 20 year; (class 2) Very large events: 20 year < recurrence < 100 year; (class 3) Extreme events: recurrence > 100 years. Values are set based on severity*0.333. | Unit interval with 1.0 indicating maximum severity extreme flooding (recurrence exceeding 100 years) | 0.0 to 1.0 | 1km |
-| Cyclone Exposure | Monthly asset level exposure to cyclones/hurricanes. We source cyclone tracks from the [NOAA IBTRACs](https://www.ncdc.noaa.gov/ibtracs/). Cyclones are tagged based on severity to a scale of 1 to 5 which is used to assign the value in the unit interval. Values are set based on severity*0.2. | Unit interval with 1.0 indicating maximum cyclone severity level 5 (example: Katrina-2005, Irma-2017, Dorian-2019). | 0.0 to 1.0 | 1km |
+| Cyclone Exposure | Monthly asset level exposure to cyclones/hurricanes. We source cyclone tracks from the [NOAA IBTRACs](https://www.ncdc.noaa.gov/ibtracs/). Frequency of category 3/4/5 cyclones. | Frequency count | 0 to 2 | 1km |
 
 ## Forward Looking Reporting Outcomes
 
@@ -67,5 +67,5 @@ For creating standard heatmaps, we assess the physical risk over the 30 year win
 | Heatwaves | Annual heatwave days per year where temperature at asset is projected to exceed 98th percentile of historic recordings | Number of days | 0 to 365 | 100km | LOW: 0-30; MEDIUM: 30-50; HIGH: >50 | 200 |
 | Sea Level Rise | Annual projection of sea level rise relative to average sea level at the asset over 1980-2010 | Rise in meters | 0.0 to 2.0 | 100km | LOW: <0.1; MEDIUM:0.1 to 0.3; HIGH: >0.3 | 0.75 |
 | Drought (SPEI) | Annual projection of standard precipitation evapo-transipiration index | Index score | -3.0 to 3.0 | 100km | LOW: >-1.5; MEDIUM: -1.5 to -2.0; HIGH: <-2.0 | 3.0 |
-| Tropical Cyclones | Annual projection of probability of cyclone exposure | Probability score | 0.0 to 1.0 | 50km | LOW: < 0.5; MEDIUM: 0.5 to 0.7; HIGH: > 0.7 | 1.0 |
+| Tropical Cyclones | Annual projection of probability of at least one hit by a category 3/4/5 cyclone | Probability score | 0.0 to 1.0 | 50km | LOW: < 0.5; MEDIUM: 0.5 to 0.7; HIGH: > 0.7 | 1.0 |
 
