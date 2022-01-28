@@ -168,6 +168,7 @@ higher cadence reporting, please contact us for custom requests.</p>
       <th>Range of Possible Values</th>
       <th>Spatial Resolution</th>
       <th>Heat Map Coding Range</th>
+      <th>Max Risk Value</th>
     </tr>
   </thead>
   <tbody>
@@ -178,6 +179,7 @@ higher cadence reporting, please contact us for custom requests.</p>
       <td>-5 to 45</td>
       <td>100km</td>
       <td>N/A</td>
+      <td>N/A</td>
     </tr>
     <tr>
       <td>Annual Precipitation</td>
@@ -185,6 +187,7 @@ higher cadence reporting, please contact us for custom requests.</p>
       <td>mm</td>
       <td>0 to 5000</td>
       <td>100km</td>
+      <td>N/A</td>
       <td>N/A</td>
     </tr>
     <tr>
@@ -194,6 +197,7 @@ higher cadence reporting, please contact us for custom requests.</p>
       <td>0 to 365</td>
       <td>100km</td>
       <td>N/A</td>
+      <td>N/A</td>
     </tr>
     <tr>
       <td>Wildfire Risk</td>
@@ -201,7 +205,8 @@ higher cadence reporting, please contact us for custom requests.</p>
       <td>Percentage</td>
       <td>0 to 100</td>
       <td>14km</td>
-      <td>LOW: 0.0-0.1; MEDIUM: 0.1-1.0; HIGH: &gt;1.0</td>
+      <td>LOW: 0.0-0.007; MEDIUM: 0.007-1.0; HIGH: &gt;1.0</td>
+      <td>10.0</td>
     </tr>
     <tr>
       <td>Inland Flooding</td>
@@ -209,7 +214,8 @@ higher cadence reporting, please contact us for custom requests.</p>
       <td>Probability score</td>
       <td>0.0 to 1.0</td>
       <td>4km</td>
-      <td>Based on number of years with probability of flood &gt;5%; LOW: 0; MEDIUM: 1-2; HIGH: &gt;=3</td>
+      <td>Based on number of years with probability of flood &gt;5%; LOW: 0-0.5; MEDIUM: 0.3; HIGH: &gt;0.3</td>
+      <td>1.0</td>
     </tr>
     <tr>
       <td>Heatwaves</td>
@@ -218,6 +224,7 @@ higher cadence reporting, please contact us for custom requests.</p>
       <td>0 to 365</td>
       <td>100km</td>
       <td>LOW: 0-30; MEDIUM: 30-50; HIGH: &gt;50</td>
+      <td>200</td>
     </tr>
     <tr>
       <td>Sea Level Rise</td>
@@ -226,6 +233,7 @@ higher cadence reporting, please contact us for custom requests.</p>
       <td>0.0 to 2.0</td>
       <td>100km</td>
       <td>LOW: &lt;0.1; MEDIUM:0.1 to 0.3; HIGH: &gt;0.3</td>
+      <td>0.75</td>
     </tr>
     <tr>
       <td>Drought (SPEI)</td>
@@ -234,9 +242,20 @@ higher cadence reporting, please contact us for custom requests.</p>
       <td>-3.0 to 3.0</td>
       <td>100km</td>
       <td>LOW: &gt;-1.5; MEDIUM: -1.5 to -2.0; HIGH: &lt;-2.0</td>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <td>Tropical Cyclones</td>
+      <td>Annual projection of probability of cyclone exposure</td>
+      <td>Probability score</td>
+      <td>0.0 to 1.0</td>
+      <td>50km</td>
+      <td>LOW: &lt; 0.5; MEDIUM: 0.5 to 0.7; HIGH: &gt; 0.7</td>
+      <td>1.0</td>
     </tr>
   </tbody>
 </table>
+
 
           </div>
         </div>
