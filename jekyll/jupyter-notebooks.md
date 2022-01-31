@@ -2,7 +2,7 @@
 title: Jupyter Notebooks
 ---
 
-The [Jupyter notebooks](http://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/what_is_jupyter.html) contained in this repo are from the software developers, data scientists, and developer advocates at [Sust Global](https://www.sustglobal.com/). These interactive, open-source ([MIT 2021 License](https://github.com/sustglobal/dev-center/blob/main/LICENSE)) guides are designed to help you explore Planet data, work with our APIs and tools, and learn how to extract insights from our climate scenario analysis datasets.
+The [Jupyter notebooks](http://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/what_is_jupyter.html) contained in this repo are from the software developers, data scientists, and developer advocates at [Sust Global](https://www.sustglobal.com/). These interactive, open-source ([Apache 2.0 license](https://github.com/sustglobal/dev-center/blob/main/LICENSE)) guides are designed to help you explore Planet data, work with our APIs and tools, and learn how to extract insights from our climate scenario analysis datasets.
 
 
 ## Using the Notebooks
