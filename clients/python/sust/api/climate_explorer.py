@@ -3,6 +3,7 @@ from dataclasses import dataclass
 
 from sust.api.generated.climate_explorer import ApiClient, Configuration
 from sust.api.generated.climate_explorer.api import portfolios_api
+from sust.api.generated.climate_explorer.model.portfolio_create_request import PortfolioCreateRequest
 
 
 @dataclass(frozen=True)
@@ -50,6 +51,18 @@ class ClimateExplorerClient:
         #NOTE(bcwaldon): this should be paginated, but is not yet implemented in the API
         it = self._openapi_request('portfolios_list', (), {})
         return (Portfolio(self, obj) for obj in it)
+        
+    def create(self, portfolio_name):
+        req = PortfolioCreateRequest(portfolio_name)
+        obj = self._openapi_request('portfolios_create', (req,), {})
+        return Portfolio(self, obj)
+        
+    def upload_assets(self, portfolio_name, assets_path):
+        file = open(assets_path, "rb")
+        obj = self._openapi_request('portfolios_assets_import_create', (portfolio_name, file), {})
+        return obj
+    
+        
 
     def portfolio(self, portfolio_name):
         obj = self._openapi_request('portfolios_read', (portfolio_name,), {})
@@ -60,6 +73,7 @@ class Portfolio:
     def __init__(self, client, obj):
         self._client = client
         self._obj = obj
+        self.name = obj["portfolio_name"]
 
     def __getitem__(self, key):
         return self._obj[key]
@@ -73,7 +87,8 @@ class Portfolio:
         ]
 
         return AssetList(self._client, self, objects)
-
+        
+        
 
 class AssetList:
     def __init__(self, client, portfolio, objects):
