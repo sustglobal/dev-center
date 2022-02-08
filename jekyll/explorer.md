@@ -12,11 +12,13 @@ Climate Explorer is currently in beta and will be generally available in mid 202
 If you do not yet have a Climate Explorer account, please contact [sales@sustglobal.com](mailto:sales@sustglobal.com).
 
 
+# Projects in Climate Explorer
+
+As a user of Climate Explorer, you can manage collections of physical assets as "portfolios", each of which can be represented as a CSV file. Projects act as logical groupings of portfolios, and users are assigned permissions at the scope of a project: either `viewer` (read only) or `editor` (ability to create new portfolios). As a user, you will typically have access to multiple projects. For example, Sust Global will provide you with viewer access to a demo project containing demo portfolios, as well as editor access to one or more projects where you can create your own portfolios.
+
 # Create New Portfolios
 
-As a user of Climate Explorer, you can manage collections of physical assets as "portfolios", each of which can be represented as a CSV file. 
-
-To create a new portfoilio go to the [Portfolio View](https://explorer.sustglobal.io/portfolios/) on Climate Explorer and click on the button labelled `New Portfolio`. When creating a new portfolio, make sure that the name has no gaps in it. Having given the portfolio a name, you can upload information on the phyical assets. 
+To create a new portfolio go to the [Portfolio View](https://explorer.sustglobal.io/portfolios/) on Climate Explorer and click on the button labelled `New Portfolio`. When creating a new portfolio, make sure that the name has no gaps in it. Having given the portfolio a name, you can upload information on the phyical assets. 
 
 An example of a portfolio CSV file can be found in the Developer Center: [demo portfolio](https://raw.githubusercontent.com/sustglobal/dev-center/master/resources/example_portfolio.csv). This demo portfolio is a useful starting point if you are  interested in building their own portfolio for use in Climate Explorer, whether via UI or API. Simply save the link to the demo portfolio as a CSV file and edit it before `uploading assets` on the [Portfolio View](https://explorer.sustglobal.io/portfolios/) on Climate Explorer.
 
