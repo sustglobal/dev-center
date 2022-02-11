@@ -25,3 +25,7 @@ A good place to begin is `ClimateExplorerAPIDemo.ipynb`, which is a quick demons
 Note the commentary in the first cell requiring further input from you.
 
 To stop the server, simply `ctrl+C` and confirm.
+
+## Local Development
+
+Please see the documentation available in Github if you desire to work with local assets: https://github.com/sustglobal/dev-center/blob/master/jupyter-notebooks/README.md
