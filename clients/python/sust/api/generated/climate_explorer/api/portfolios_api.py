@@ -380,6 +380,7 @@ class PortfoliosApi(object):
                 'allowed_values': {
                     ('risk_type',): {
 
+                        "CYCLONES": "cyclones",
                         "FIRE": "fire",
                         "FLOOD": "flood",
                         "SPEI": "SPEI",
@@ -391,9 +392,15 @@ class PortfoliosApi(object):
                     },
                     ('scenario',): {
 
+                        "SSP126_LBD": "ssp126_lbd",
                         "SSP126": "ssp126",
+                        "SSP126_UBD": "ssp126_ubd",
+                        "SSP245_LBD": "ssp245_lbd",
                         "SSP245": "ssp245",
-                        "SSP585": "ssp585"
+                        "SSP245_UBD": "ssp245_ubd",
+                        "SSP585_LBD": "ssp585_lbd",
+                        "SSP585": "ssp585",
+                        "SSP585_UBD": "ssp585_ubd"
                     },
                 },
                 'openapi_types': {
@@ -519,6 +526,7 @@ class PortfoliosApi(object):
                     'rows',
                     'page',
                     'scenario',
+                    'window',
                 ],
                 'required': [
                     'portfolio_name',
@@ -537,9 +545,15 @@ class PortfoliosApi(object):
                 'allowed_values': {
                     ('scenario',): {
 
+                        "SSP126_LBD": "ssp126_lbd",
                         "SSP126": "ssp126",
+                        "SSP126_UBD": "ssp126_ubd",
+                        "SSP245_LBD": "ssp245_lbd",
                         "SSP245": "ssp245",
-                        "SSP585": "ssp585"
+                        "SSP245_UBD": "ssp245_ubd",
+                        "SSP585_LBD": "ssp585_lbd",
+                        "SSP585": "ssp585",
+                        "SSP585_UBD": "ssp585_ubd"
                     },
                 },
                 'openapi_types': {
@@ -553,6 +567,8 @@ class PortfoliosApi(object):
                         (int,),
                     'scenario':
                         (str,),
+                    'window':
+                        (int,),
                 },
                 'attribute_map': {
                     'portfolio_name': 'portfolio_name',
@@ -560,6 +576,7 @@ class PortfoliosApi(object):
                     'rows': 'rows',
                     'page': 'page',
                     'scenario': 'scenario',
+                    'window': 'window',
                 },
                 'location_map': {
                     'portfolio_name': 'path',
@@ -567,6 +584,7 @@ class PortfoliosApi(object):
                     'rows': 'query',
                     'page': 'query',
                     'scenario': 'query',
+                    'window': 'query',
                 },
                 'collection_format_map': {
                 }
@@ -775,6 +793,10 @@ class PortfoliosApi(object):
             _check_return_type (bool): specifies if type checking
                 should be done one the data received from the server.
                 Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
             _content_type (str/None): force body content-type.
                 Default is None and content-type will be predicted by allowed
                 content-types and body.
@@ -805,6 +827,9 @@ class PortfoliosApi(object):
         )
         kwargs['_check_return_type'] = kwargs.get(
             '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
         )
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
@@ -849,6 +874,10 @@ class PortfoliosApi(object):
             _check_return_type (bool): specifies if type checking
                 should be done one the data received from the server.
                 Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
             _content_type (str/None): force body content-type.
                 Default is None and content-type will be predicted by allowed
                 content-types and body.
@@ -879,6 +908,9 @@ class PortfoliosApi(object):
         )
         kwargs['_check_return_type'] = kwargs.get(
             '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
         )
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
@@ -925,6 +957,10 @@ class PortfoliosApi(object):
             _check_return_type (bool): specifies if type checking
                 should be done one the data received from the server.
                 Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
             _content_type (str/None): force body content-type.
                 Default is None and content-type will be predicted by allowed
                 content-types and body.
@@ -955,6 +991,9 @@ class PortfoliosApi(object):
         )
         kwargs['_check_return_type'] = kwargs.get(
             '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
         )
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
@@ -997,6 +1036,10 @@ class PortfoliosApi(object):
             _check_return_type (bool): specifies if type checking
                 should be done one the data received from the server.
                 Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
             _content_type (str/None): force body content-type.
                 Default is None and content-type will be predicted by allowed
                 content-types and body.
@@ -1027,6 +1070,9 @@ class PortfoliosApi(object):
         )
         kwargs['_check_return_type'] = kwargs.get(
             '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
         )
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
@@ -1069,6 +1115,10 @@ class PortfoliosApi(object):
             _check_return_type (bool): specifies if type checking
                 should be done one the data received from the server.
                 Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
             _content_type (str/None): force body content-type.
                 Default is None and content-type will be predicted by allowed
                 content-types and body.
@@ -1099,6 +1149,9 @@ class PortfoliosApi(object):
         )
         kwargs['_check_return_type'] = kwargs.get(
             '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
         )
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
@@ -1147,6 +1200,10 @@ class PortfoliosApi(object):
             _check_return_type (bool): specifies if type checking
                 should be done one the data received from the server.
                 Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
             _content_type (str/None): force body content-type.
                 Default is None and content-type will be predicted by allowed
                 content-types and body.
@@ -1177,6 +1234,9 @@ class PortfoliosApi(object):
         )
         kwargs['_check_return_type'] = kwargs.get(
             '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
         )
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
@@ -1219,6 +1279,10 @@ class PortfoliosApi(object):
             _check_return_type (bool): specifies if type checking
                 should be done one the data received from the server.
                 Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
             _content_type (str/None): force body content-type.
                 Default is None and content-type will be predicted by allowed
                 content-types and body.
@@ -1250,6 +1314,9 @@ class PortfoliosApi(object):
         kwargs['_check_return_type'] = kwargs.get(
             '_check_return_type', True
         )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
@@ -1279,6 +1346,7 @@ class PortfoliosApi(object):
             rows (int): Maximum number of items to return per page (min=1, max=250). [optional]
             page (int): Numerical index of current page, beginning at 1. [optional]
             scenario (str): Shared socioeconomic pathway filter. [optional]
+            window (int): Number of years forward used to determine the Physical Risk Summary. Valid windows are currently 5, 15, and 30. Defaults to 30 if nothing is provided.. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1294,6 +1362,10 @@ class PortfoliosApi(object):
             _check_return_type (bool): specifies if type checking
                 should be done one the data received from the server.
                 Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
             _content_type (str/None): force body content-type.
                 Default is None and content-type will be predicted by allowed
                 content-types and body.
@@ -1324,6 +1396,9 @@ class PortfoliosApi(object):
         )
         kwargs['_check_return_type'] = kwargs.get(
             '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
         )
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
@@ -1366,6 +1441,10 @@ class PortfoliosApi(object):
             _check_return_type (bool): specifies if type checking
                 should be done one the data received from the server.
                 Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
             _content_type (str/None): force body content-type.
                 Default is None and content-type will be predicted by allowed
                 content-types and body.
@@ -1396,6 +1475,9 @@ class PortfoliosApi(object):
         )
         kwargs['_check_return_type'] = kwargs.get(
             '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
         )
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
@@ -1435,6 +1517,10 @@ class PortfoliosApi(object):
             _check_return_type (bool): specifies if type checking
                 should be done one the data received from the server.
                 Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
             _content_type (str/None): force body content-type.
                 Default is None and content-type will be predicted by allowed
                 content-types and body.
@@ -1465,6 +1551,9 @@ class PortfoliosApi(object):
         )
         kwargs['_check_return_type'] = kwargs.get(
             '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
         )
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
@@ -1505,6 +1594,10 @@ class PortfoliosApi(object):
             _check_return_type (bool): specifies if type checking
                 should be done one the data received from the server.
                 Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
             _content_type (str/None): force body content-type.
                 Default is None and content-type will be predicted by allowed
                 content-types and body.
@@ -1535,6 +1628,9 @@ class PortfoliosApi(object):
         )
         kwargs['_check_return_type'] = kwargs.get(
             '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
         )
         kwargs['_content_type'] = kwargs.get(
             '_content_type')

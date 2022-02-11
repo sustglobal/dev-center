@@ -93,6 +93,7 @@ class PortfolioResponse(ModelNormal):
             'portfolio_id': (str,),  # noqa: E501
             'portfolio_name': (str,),  # noqa: E501
             'created_at': (datetime,),  # noqa: E501
+            'updated_at': (datetime,),  # noqa: E501
             'status': (str,),  # noqa: E501
         }
 
@@ -105,6 +106,7 @@ class PortfolioResponse(ModelNormal):
         'portfolio_id': 'portfolio_id',  # noqa: E501
         'portfolio_name': 'portfolio_name',  # noqa: E501
         'created_at': 'created_at',  # noqa: E501
+        'updated_at': 'updated_at',  # noqa: E501
         'status': 'status',  # noqa: E501
     }
 
@@ -115,13 +117,14 @@ class PortfolioResponse(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, portfolio_id, portfolio_name, created_at, status, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, portfolio_id, portfolio_name, created_at, updated_at, status, *args, **kwargs):  # noqa: E501
         """PortfolioResponse - a model defined in OpenAPI
 
         Args:
             portfolio_id (str): Unique ID of the portfolio
             portfolio_name (str): Unique name of the portfolio
             created_at (datetime): Date and time of portfolio creation (UTC)
+            updated_at (datetime): Date and time portfolio was updated (UTC)
             status (str): Current status of the portfolio (regarding physical risk exposure dataset generation)
 
         Keyword Args:
@@ -185,6 +188,7 @@ class PortfolioResponse(ModelNormal):
         self.portfolio_id = portfolio_id
         self.portfolio_name = portfolio_name
         self.created_at = created_at
+        self.updated_at = updated_at
         self.status = status
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
@@ -206,13 +210,14 @@ class PortfolioResponse(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, portfolio_id, portfolio_name, created_at, status, *args, **kwargs):  # noqa: E501
+    def __init__(self, portfolio_id, portfolio_name, created_at, updated_at, status, *args, **kwargs):  # noqa: E501
         """PortfolioResponse - a model defined in OpenAPI
 
         Args:
             portfolio_id (str): Unique ID of the portfolio
             portfolio_name (str): Unique name of the portfolio
             created_at (datetime): Date and time of portfolio creation (UTC)
+            updated_at (datetime): Date and time portfolio was updated (UTC)
             status (str): Current status of the portfolio (regarding physical risk exposure dataset generation)
 
         Keyword Args:
@@ -274,6 +279,7 @@ class PortfolioResponse(ModelNormal):
         self.portfolio_id = portfolio_id
         self.portfolio_name = portfolio_name
         self.created_at = created_at
+        self.updated_at = updated_at
         self.status = status
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \

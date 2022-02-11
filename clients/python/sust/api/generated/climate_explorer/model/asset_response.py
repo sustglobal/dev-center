@@ -61,12 +61,6 @@ class AssetResponse(ModelNormal):
         ('portfolio_name',): {
             'min_length': 1,
         },
-        ('entity_id',): {
-            'min_length': 1,
-        },
-        ('entity_name',): {
-            'min_length': 1,
-        },
     }
 
     @cached_property
