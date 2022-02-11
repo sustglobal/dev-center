@@ -23,4 +23,4 @@ steps:
   args: ['build', '-t', 'us-central1-docker.pkg.dev/sust-dev-03/sustglobal-dev-center/jupyter-notebooks:${SHORT_SHA}', '-f', 'jupyter-notebooks/Dockerfile', '.']
 
 images:
-- "gcr.io/${PROJECT_ID}/dev-center-notebooks:${SHORT_SHA}"
+- "us-central1-docker.pkg.dev/sust-dev-03/sustglobal-dev-center/jupyter-notebooks:${SHORT_SHA}"
