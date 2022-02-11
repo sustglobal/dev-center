@@ -8,13 +8,20 @@ from sust.api.generated.climate_explorer.model.portfolio_create_request import P
 
 @dataclass(frozen=True)
 class Scenarios:
+    SSP126_lbd = "ssp126_lbd"
     SSP126 = 'ssp126'
+    SSP126_ubd = "ssp126_ubd"
+    SSP245_lbd = "ssp245_lbd"
     SSP245 = 'ssp245'
+    SSP245_ubd = "ssp245_ubd"
+    SSP585_lbd = "ssp585_lbd"
     SSP585 = 'ssp585'
+    SSP585_ubd = "ssp585_ubd"
 
 
 @dataclass(frozen=True)
 class RiskTypes:
+    CYCLONE = "cyclones"
     FIRE = "fire"
     FLOOD = "flood"
     SPEI = "SPEI"
@@ -61,8 +68,6 @@ class ClimateExplorerClient:
         file = open(assets_path, "rb")
         obj = self._openapi_request('portfolios_assets_import_create', (portfolio_name, file), {})
         return obj
-    
-        
 
     def portfolio(self, portfolio_name):
         obj = self._openapi_request('portfolios_read', (portfolio_name,), {})
@@ -126,7 +131,8 @@ class AssetList:
             req_kwargs['scenario'] = scenario
 
         it = self._client._paginated_openapi_request('portfolios_datasets_physical_summary_list', (self._portfolio['portfolio_name'],), req_kwargs)
-
+        print("#$%$#"*100)
+        print(it)
         objects = []
         for obj in it:
             if obj['entity_id'] not in self._index:
