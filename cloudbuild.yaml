@@ -24,7 +24,7 @@ steps:
 
 - id: 'images-jupyter-push'
   name: 'gcr.io/cloud-builders/docker'
-  args: ['push' 'us-central1-docker.pkg.dev/sust-dev-03/sustglobal-dev-center/jupyter-notebooks:${SHORT_SHA}']
+  args: ['push', 'us-central1-docker.pkg.dev/sust-dev-03/sustglobal-dev-center/jupyter-notebooks:${SHORT_SHA}']
 
 - id: 'images-jupyter-maybe-tag-latest'
   name: 'gcr.io/cloud-builders/docker'
