@@ -19,9 +19,8 @@ steps:
   waitFor: ['clients-python-build']
 
 - id: 'images-jupyter'
-  name: 'gcr.io/${PROJECT_ID}/olympia/services/auto:stable'
-  args: ['/bin/bash', '-c', 'docker build -f jupyter-notebooks/Dockerfile . -t grc.io/sust-dev-03/dev-center-notebooks:${SHORT_SHA}']
-  waitFor: ['fetch-git']
+  name: 'docker'
+  args: ['build', '-t', 'gcr.io/${PROJECT_ID}/dev-center-notebooks:${SHORT_SHA}', '-f', 'jupyter-notebooks/Dockerfile', '.']
 
 images:
-- "grc.io/sust-dev-03/dev-center-notebooks:${SHORT_SHA}"
+- "gcr.io/${PROJECT_ID}/dev-center-notebooks:${SHORT_SHA}"
