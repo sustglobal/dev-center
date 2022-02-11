@@ -17,3 +17,11 @@ steps:
   - "TWINE_USERNAME=__token__"
   - "TWINE_PASSWORD=pypi-${_PYPI_API_TOKEN}"
   waitFor: ['clients-python-build']
+
+- id: 'images-jupyter'
+  name: 'gcr.io/${PROJECT_ID}/olympia/services/auto:stable'
+  args: ['/bin/bash', '-c', 'docker build -f jupyter-notebooks/Dockerfile . -t grc.io/sust-dev-03/dev-center-notebooks:${SHORT_SHA}']
+  waitFor: ['fetch-git']
+
+images:
+- "grc.io/sust-dev-03/dev-center-notebooks:${SHORT_SHA}"
