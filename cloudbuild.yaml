@@ -30,6 +30,3 @@ steps:
   name: 'gcr.io/cloud-builders/docker'
   entrypoint: '/bin/bash'
   args: ['-c', 'if [ "${BRANCH_NAME}" != "master"; then exit 0; fi; docker tag us-central1-docker.pkg.dev/sust-dev-03/sustglobal-dev-center/jupyter-notebooks:${SHORT_SHA} us-central1-docker.pkg.dev/sust-dev-03/sustglobal-dev-center/jupyter-notebooks:latest && docker push us-central1-docker.pkg.dev/sust-dev-03/sustglobal-dev-center/jupyter-notebooks:latest']
-
-images:
-- "us-central1-docker.pkg.dev/sust-dev-03/sustglobal-dev-center/jupyter-notebooks:${SHORT_SHA}"
