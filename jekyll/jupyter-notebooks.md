@@ -28,4 +28,4 @@ To stop the server, simply `ctrl+C` and confirm.
 
 ## Local Development
 
-Please see the documentation available in Github if you desire to work with local assets: https://github.com/sustglobal/dev-center/blob/master/jupyter-notebooks/README.md
+Please see the [documentation on Github](https://github.com/sustglobal/dev-center/blob/master/jupyter-notebooks/README.md) if you desire to work with local assets.
