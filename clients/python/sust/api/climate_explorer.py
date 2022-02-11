@@ -21,7 +21,7 @@ class Scenarios:
 
 @dataclass(frozen=True)
 class RiskTypes:
-    CYCLONE = "cyclones"
+    CYCLONES = "cyclones"
     FIRE = "fire"
     FLOOD = "flood"
     SPEI = "SPEI"
@@ -131,8 +131,6 @@ class AssetList:
             req_kwargs['scenario'] = scenario
 
         it = self._client._paginated_openapi_request('portfolios_datasets_physical_summary_list', (self._portfolio['portfolio_name'],), req_kwargs)
-        print("#$%$#"*100)
-        print(it)
         objects = []
         for obj in it:
             if obj['entity_id'] not in self._index:
