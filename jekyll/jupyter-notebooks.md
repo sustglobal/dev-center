@@ -7,24 +7,14 @@ The [Jupyter notebooks](http://jupyter-notebook-beginner-guide.readthedocs.io/en
 
 ## Using the Notebooks
 
-The quickest way to get started here is to use the included Dockerfile to run a local Jupyter notebook server.
-Start by cloning the git repository into a local directory:
+It is recommended that you start from the published docker image, which contains everything needed to run a Jupyter
+notebook server locally with all of the Developer Center notebooks.
 
-```
-git clone git@github.com:sustglobal/dev-center.git
-```
-
-Build the docker image with the following command, which must be executed from the root of the dev-center git repository:
-
-```
-docker build -f jupyter-notebooks/Dockerfile . -t sust-dev-center-notebooks
-```
-
-After the image has been built, you may start the server with the following command.
+The following command will first download the published image, then execute a server locally.
 Please note that `SUST_API_KEY` must be set to your own Climate Explorer API key:
 
 ```
-docker run -e SUST_API_KEY="YOUR-API-KEY" -v $(pwd):/home/jovyan/work -p 8888:8888 -it sust-dev-center-notebooks
+docker run -e SUST_API_KEY="YOUR-API-KEY" -p 8888:8888 --pull=always -it us-central1-docker.pkg.dev/sust-dev-03/sustglobal-dev-center/jupyter-notebooks
 ```
 
 If the command above is successful, you will be presented with a set of links to a local server.

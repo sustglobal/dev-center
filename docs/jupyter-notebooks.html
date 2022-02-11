@@ -48,21 +48,13 @@
 
 <h2 id="using-the-notebooks">Using the Notebooks</h2>
 
-<p>The quickest way to get started here is to use the included Dockerfile to run a local Jupyter notebook server.
-Start by cloning the git repository into a local directory:</p>
+<p>It is recommended that you start from the published docker image, which contains everything needed to run a Jupyter
+notebook server locally with all of the Developer Center notebooks.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone git@github.com:sustglobal/dev-center.git
-</code></pre></div></div>
-
-<p>Build the docker image with the following command, which must be executed from the root of the dev-center git repository:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker build -f jupyter-notebooks/Dockerfile . -t sust-dev-center-notebooks
-</code></pre></div></div>
-
-<p>After the image has been built, you may start the server with the following command.
+<p>The following command will first download the published image, then execute a server locally.
 Please note that <code class="language-plaintext highlighter-rouge">SUST_API_KEY</code> must be set to your own Climate Explorer API key:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run -e SUST_API_KEY="YOUR-API-KEY" -v $(pwd):/home/jovyan/work -p 8888:8888 -it sust-dev-center-notebooks
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run -e SUST_API_KEY="YOUR-API-KEY" -p 8888:8888 --pull=always -it us-central1-docker.pkg.dev/sust-dev-03/sustglobal-dev-center/jupyter-notebooks
 </code></pre></div></div>
 
 <p>If the command above is successful, you will be presented with a set of links to a local server.
