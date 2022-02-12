@@ -30,6 +30,9 @@ class RiskTypes:
     OBS_FIRE = "obs_fire"
     OBS_FLOOD = "obs_flood"
     OBS_CYCLONE = "obs_cyclone"
+    ANNUAL_PRECIP = "annual_precipitation"
+    ANNUAL_TEMP = "annual_temperature"
+    EXTREME_PRECIP = "extreme_precipitation"
 
 
 class ClimateExplorerClient:
