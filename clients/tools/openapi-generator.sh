@@ -1,9 +1,12 @@
-#!/bin/bash
+#!/bin/bash -e
 
-rm -r clients/python/sust/api/generated
+rm -fr clients/python/sust/api/generated
 
 mkdir -p clients/tools/cache
-wget https://explorer.sustglobal.io/swagger.json -O clients/tools/cache/climate-explorer-openapi-spec.json
+cachefile="clients/tools/cache/climate-explorer-openapi-spec.json"
+
+wget https://explorer.sustglobal-staging.io/swagger.json -O $cachefile
+echo $(jq '.host="explorer.sustglobal.io"' $cachefile) > $cachefile
 
 docker run --rm \
     -v $PWD:/dev-center openapitools/openapi-generator-cli generate \
@@ -12,3 +15,7 @@ docker run --rm \
     -o /dev-center/clients/python \
     -c /dev-center/clients/tools/openapi-clientgen-config-python.json \
     --skip-validate-spec
+
+# This file always gets deleted by the generator, so we return
+# it to its former glory for convenience
+git checkout clients/python/sust/api/__init__.py
