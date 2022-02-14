@@ -112,7 +112,7 @@ conf = sust.api.generated.climate_explorer.Configuration(
                  ):
         """Constructor
         """
-        self._base_path = "https://explorer.sustglobal-staging.io/api" if host is None else host
+        self._base_path = "https://explorer.sustglobal.io/api" if host is None else host
         """Default Base url
         """
         self.server_index = 0 if server_index is None and host is None else server_index
@@ -419,7 +419,7 @@ conf = sust.api.generated.climate_explorer.Configuration(
         """
         return [
             {
-                'url': "https://explorer.sustglobal-staging.io/api",
+                'url': "https://explorer.sustglobal.io/api",
                 'description': "No description provided",
             }
         ]

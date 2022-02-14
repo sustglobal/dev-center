@@ -38,10 +38,10 @@ from sust.api.generated.climate_explorer.model.physical_risk_dataset_summary_res
 from sust.api.generated.climate_explorer.model.physical_risk_metadata_response import PhysicalRiskMetadataResponse
 from sust.api.generated.climate_explorer.model.portfolio_create_request import PortfolioCreateRequest
 from sust.api.generated.climate_explorer.model.portfolio_response import PortfolioResponse
-# Defining the host is optional and defaults to https://explorer.sustglobal-staging.io/api
+# Defining the host is optional and defaults to https://explorer.sustglobal.io/api
 # See configuration.py for a list of all supported configuration parameters.
 configuration = sust.api.generated.climate_explorer.Configuration(
-    host = "https://explorer.sustglobal-staging.io/api"
+    host = "https://explorer.sustglobal.io/api"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -73,7 +73,7 @@ project = "project_example" # str | Name of project. Param only required when us
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://explorer.sustglobal-staging.io/api*
+All URIs are relative to *https://explorer.sustglobal.io/api*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
