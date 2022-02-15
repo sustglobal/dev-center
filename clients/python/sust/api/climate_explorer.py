@@ -8,15 +8,9 @@ from sust.api.generated.climate_explorer.model.portfolio_create_request import P
 
 @dataclass(frozen=True)
 class Scenarios:
-    SSP126_lbd = "ssp126_lbd"
     SSP126 = 'ssp126'
-    SSP126_ubd = "ssp126_ubd"
-    SSP245_lbd = "ssp245_lbd"
     SSP245 = 'ssp245'
-    SSP245_ubd = "ssp245_ubd"
-    SSP585_lbd = "ssp585_lbd"
     SSP585 = 'ssp585'
-    SSP585_ubd = "ssp585_ubd"
 
 
 @dataclass(frozen=True)
