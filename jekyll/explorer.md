@@ -12,13 +12,23 @@ Climate Explorer is currently in beta and will be generally available in mid 202
 If you do not yet have a Climate Explorer account, please contact [sales@sustglobal.com](mailto:sales@sustglobal.com).
 
 
+# Climate Scenarios
+
+This tool covers the following three distinct climate scenarios:
+
+1. **Strong Mitigation:** This scenario covers the optimal sustainable path, also referred to as the Green Road (SSP1-RCP2.6). It encompasses socioeconomics and representative emissions pathways for a graduate and pervasive global shift towards a more sustainable future.
+
+2. **Middle of the Road:** This scenario covers a middle path, with challenges to climate mitigation (SSP2-RCP4.5). In this scenario, environmental systems experience degradation, and although there are some improvements. overall the intensity of resource and energy use declines. This is a likely scenario if governments and policy reflect a strong sense of urgency towards climate adaptation.
+
+3. **High Emissions:** This scenario covers a future where the world continues on its current trajectory (SSP5-RCP8.5). There is continued reliance on competitive markets to produce rapid technological progress. Global markets are increasingly integrated.
+
 # Projects in Climate Explorer
 
 As a user of Climate Explorer, you can manage collections of physical assets as "portfolios", each of which can be represented as a CSV file. Projects act as logical groupings of portfolios, and users are assigned permissions at the scope of a project: either `viewer` (read only) or `editor` (ability to create new portfolios). As a user, you will typically have access to multiple projects. For example, Sust Global will provide you with viewer access to a demo project containing demo portfolios, as well as editor access to one or more projects where you can create your own portfolios.
 
 # Create New Portfolios
 
-To create a new portfolio go to the [Portfolio View](https://explorer.sustglobal.io/portfolios/) on Climate Explorer and click on the button labelled `New Portfolio`. When creating a new portfolio, make sure that the name has no gaps in it. Having given the portfolio a name, you can upload information on the phyical assets. 
+To create a new portfolio go to the [Portfolio View](https://explorer.sustglobal.io/portfolios/) on Climate Explorer and click on the button labelled `New Portfolio`. When creating a new portfolio, make sure that the name has no gaps in it. Having given the portfolio a name, you can upload information on the phyical assets.
 
 An example of a portfolio CSV file can be found in the Developer Center: [demo portfolio](https://raw.githubusercontent.com/sustglobal/dev-center/master/resources/example_portfolio.csv). This demo portfolio is a useful starting point if you are  interested in building their own portfolio for use in Climate Explorer, whether via UI or API. Simply save the link to the demo portfolio as a CSV file and edit it before `uploading assets` on the [Portfolio View](https://explorer.sustglobal.io/portfolios/) on Climate Explorer.
 
@@ -60,7 +70,7 @@ All reports and supported risk projections are at annual cadence. Some of our da
 For creating standard heatmaps, we assess the physical risk over the 30 year window between 2021 and 2050 and look at the maximum risk exposure to a specific hazard for an asset. We use the maximum risk exposure value to color code the asset to LOW (Green), MEDIUM (Yellow), HIGH (Red) risk categories.
 
 | Fundamental Variable / Hazard | Description | Unit | Range of Possible Values | Spatial Resolution | Heat Map Coding Range | Max Risk Value |
-| - | - | - | - | - | - |
+| - | - | - | - | - | - | - |
 | Annual Temperature | Annual mean annual temperature at the asset location | °C | -5 to 45 | 100km | N/A | N/A |
 | Annual Precipitation | Annual total precipitation at the asset location | mm | 0 to 5000 | 100km | N/A | N/A |
 | Extreme Precipitation | Annual probabilistic projections of number of days in a year where precipitation exceeds 51mm | Number of days | 0 to 365 | 100km | N/A | N/A |
@@ -70,4 +80,3 @@ For creating standard heatmaps, we assess the physical risk over the 30 year win
 | Sea Level Rise | Annual projection of sea level rise relative to average sea level at the asset over 1980-2010 | Rise in meters | 0.0 to 2.0 | 100km | LOW: <0.1; MEDIUM:0.1 to 0.3; HIGH: >0.3 | 0.75 |
 | Drought (SPEI) | Annual projection of standard precipitation evapo-transipiration index | Index score | -3.0 to 3.0 | 100km | LOW: >-1.5; MEDIUM: -1.5 to -2.0; HIGH: <-2.0 | 3.0 |
 | Tropical Cyclones | Annual projection of probability of at least one hit by a category 3/4/5 cyclone | Probability score | 0.0 to 1.0 | 50km | LOW: < 0.5; MEDIUM: 0.5 to 0.7; HIGH: > 0.7 | 1.0 |
-
