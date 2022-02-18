@@ -180,11 +180,6 @@ class PageIterator:
             resp = self.req_func(*self.req_args, **self.req_kwargs)
             self.cache = resp
 
-            import logging
-            log = logging.getLogger(__name__)
-            log.info("#"*100)
-            log.info(self.req_kwargs)
-
             if len(resp) < self.req_kwargs['rows']:
                 self.exhausted = True
             else:
