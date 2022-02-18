@@ -99,12 +99,14 @@ class AssetList:
     def to_dicts(self):
         return [obj.to_dict() for obj in self._objects]
 
-    def physical_risk_timeseries(self, scenario=None, risk_type=None, **kwargs):
-        req_kwargs = {**kwargs}
+    def physical_risk_timeseries(self, scenario=None, risk_type=None, page_size=100):
+        req_kwargs = {}
         if scenario:
             req_kwargs['scenario'] = scenario
         if risk_type:
             req_kwargs['risk_type'] = risk_type
+        if page_size:
+            req_kwargs["rows"] = page_size
 
         it = self._client._paginated_openapi_request('portfolios_datasets_physical_items_list', (self._portfolio['portfolio_name'],), req_kwargs)
 
@@ -119,10 +121,12 @@ class AssetList:
 
         return PhysicalRiskAnnualList(objects)
 
-    def physical_risk_summary(self, scenario=None, **kwargs):
-        req_kwargs = {**kwargs}
+    def physical_risk_summary(self, scenario=None, page_size=100):
+        req_kwargs = {}
         if scenario:
             req_kwargs['scenario'] = scenario
+        if page_size:
+            req_kwargs["rows"] = page_size
 
         it = self._client._paginated_openapi_request('portfolios_datasets_physical_summary_list', (self._portfolio['portfolio_name'],), req_kwargs)
         objects = []
@@ -175,6 +179,11 @@ class PageIterator:
         if len(self.cache) == 0 and not self.exhausted:
             resp = self.req_func(*self.req_args, **self.req_kwargs)
             self.cache = resp
+
+            import logging
+            log = logging.getLogger(__name__)
+            log.info("#"*100)
+            log.info(self.req_kwargs)
 
             if len(resp) < self.req_kwargs['rows']:
                 self.exhausted = True
