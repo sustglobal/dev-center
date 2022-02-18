@@ -99,8 +99,8 @@ class AssetList:
     def to_dicts(self):
         return [obj.to_dict() for obj in self._objects]
 
-    def physical_risk_timeseries(self, scenario=None, risk_type=None):
-        req_kwargs = {}
+    def physical_risk_timeseries(self, scenario=None, risk_type=None, **kwargs):
+        req_kwargs = {**kwargs}
         if scenario:
             req_kwargs['scenario'] = scenario
         if risk_type:
@@ -119,8 +119,8 @@ class AssetList:
 
         return PhysicalRiskAnnualList(objects)
 
-    def physical_risk_summary(self, scenario=None):
-        req_kwargs = {}
+    def physical_risk_summary(self, scenario=None, **kwargs):
+        req_kwargs = {**kwargs}
         if scenario:
             req_kwargs['scenario'] = scenario
 
