@@ -60,7 +60,7 @@ This section describes the different views in the Climate Scenario Analysis Anal
 
 #### Interactive Asset Map View
 
-![foobar](assets/images/assetview.PNG)
+![foobar](assets/images/assetview.PNG){:width="600px"}
 
 Fig 1: Asset Map View
 
