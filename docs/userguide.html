@@ -62,16 +62,16 @@
 <p>This guide covers the following three distinct climate scenarios:</p>
 <ol>
   <li>
-<strong>Strong Mitigation:</strong> This scenario covers the optimal sustainable path, also referred to as the Green Road (SSP1-RCP2.6). It encompassessocioeconomics and representative emissions pathways for a graduate and pervasive global shift towards a more sustainable future.</li>
+<strong>Strong Mitigation:</strong> This scenario covers the optimal sustainable path, also referred to as the Green Road (SSP1-RCP2.6). It encompassessocioeconomics and representative emissions pathways for a graduate and pervasive global shift towards a more sustainable future. Carbon emissions begin to decline around 2020 and global mean temperatures rise approximately 2°C by 2100, a key goal of the Paris Climate Agreement.</li>
   <li>
-<strong>Middle of the Road:</strong> This scenario covers a middle path, with challenges to climate mitigation (SSP2-RCP4.5). In this scenario, environmental systems experience degradation, and although there are some improvements. overall the intensity of resource and energy use declines. This is a likely scenario if governments and policy reflect a strong sense of urgency towards climate adaptation.</li>
+<strong>Middle of the Road:</strong> This scenario covers a middle path, with challenges to climate mitigation (SSP2-RCP4.5). In this scenario, environmental systems experience degradation, and although there are some improvements. overall the intensity of resource and energy use declines. This is a likely scenario if governments and policy reflect a strong sense of urgency towards climate adaptation. This is a likely scenario if governments and policy reflect a strong sense of urgency towards climate adaptation. Global mean temperatures rise approximately 3°C by 2100.</li>
   <li>
-<strong>High Emissions:</strong> This scenario covers a future where the world continues on its current trajectory (SSP5-RCP8.5). There is continued reliance on competitive markets to produce rapid technological progress.. Global markets are increasingly integrated.</li>
+<strong>High Emissions:</strong> This scenario covers a future where the world continues on its current trajectory (SSP5-RCP8.5). There is continued reliance on competitive markets to produce rapid technological progress.. Global markets are increasingly integrated. There is a high reliance on fossil fuels, with emissions peaking around 2090 and global mean temperatures rising approximately 5°C by 2100.</li>
 </ol>
 
 <h2 id="physical-hazard-modeling">
 <a class="anchor" href="#physical-hazard-modeling" aria-hidden="true"><span class="octicon octicon-link"></span></a>Physical Hazard Modeling</h2>
-<p>Sust Global models rising temperatures and varying precipitation at the asset level. We report on 5 acute physical hazards: Wildfire, drought, heatwaves, flooding, and sea level rise. The modeled results are stored as a time series for each specific asset within a portfolio of assets.</p>
+<p>We report on 6 acute physical hazards at the asset level: Wildfire, drought, heatwaves, flooding, sea level rise, and tropical cyclones. The modeled results are stored as time series for each specific asset within a portfolio of assets.</p>
 
 <h3 id="wildfire">
 <a class="anchor" href="#wildfire" aria-hidden="true"><span class="octicon octicon-link"></span></a>Wildfire</h3>
@@ -81,7 +81,7 @@
 
 <h3 id="drought">
 <a class="anchor" href="#drought" aria-hidden="true"><span class="octicon octicon-link"></span></a>Drought</h3>
-<p>To estimate an asset’s exposure to drought, we utilized a drought index based on CMIP6 simulations of precipitation and temperature, from which we estimate potential evapotranspiration. This is the more suitable index for agricultural assets like farms and farm production sites. The drought index, also referred to as the <a href="https://spei.csic.es/home.html">standardized precipitation evapotranspiration index (SPEI)</a>, represents the magnitude of precipitation deficits (negative magnitude) or surplus (positive magnitude) along with accounting for evaporation over the preceding 12-month period. Values between -1.5 and -2.0 indicate moderate dryness, while values below -2.0 indicate severe dryness. High risk, exceptional droughts fall below -2.0 on the standard precipitation evapotranspiration index (SPEI). Drought index values are calculated relative to a historical 1950-2014 baseline period, and future droughts can reach index values below -3.0 before being rounded off during our statistical modeling process (if the droughts are unprecedented relative to that 1950-2014 historical period).</p>
+<p>To estimate an asset’s exposure to drought, we utilized a drought index based on CMIP6 simulations of precipitation and temperature, from which we estimate potential evapotranspiration. This is the more suitable index for agricultural assets like farms and farm production sites. The drought index, also referred to as the <a href="https://spei.csic.es/home.html">standardized precipitation evapotranspiration index (SPEI)</a>, represents the magnitude of precipitation deficits (negative magnitude) or surplus (positive magnitude) along with accounting for evaporation over the preceding 12-month period. Values between -1.5 and -2.0 indicate moderate dryness, while values below -2.0 indicate severe dryness. High risk, exceptional droughts fall below -2.0 on the standard precipitation evapotranspiration index (SPEI). Drought index values are calculated relative to a historical 1950-2014 baseline period, and future droughts can reach index values below -3.0 if the droughts are unprecedented relative to that 1950-2014 historical period.</p>
 
 <h3 id="heatwaves">
 <a class="anchor" href="#heatwaves" aria-hidden="true"><span class="octicon octicon-link"></span></a>Heatwaves</h3>
@@ -93,12 +93,21 @@
 
 <p>The output metric we derive for inland flooding exposure ranges from 0 (low risk) to 1 (high risk) based on a collection of 50 simulations of inundated areas. The 50 simulations are derived from combining projections of variables like precipitation and humidity from 5 climate models with 10 hydrological models that simulate daily runoff levels. Then, high-resolution inundation modeling is performed using satellite-derived elevation maps that provide detailed views of local river networks. A value of 0 (low risk)( the most common since inland floods are inherently rare) indicates none of the simulations predicted a flood.</p>
 
-<p>Currently, all climate models are run only under a Business as Usual scenario, so the flood exposure values presented for the Strong Mitigation and Middle of the Road scenarios are identical to those in the Business as Usual scenario. We plan to expand our offering to all three scenarios in a future product update. When representing the heatmap, we look at the number of years over which 5% or above (&gt;0.05) probability of flooding is projected at the asset over a 30-year time horizon in order to categorize the asset as either LOW, MEDIUM or HIGH risk.</p>
+<p>Currently, all climate models are run only under High Emissions scenario, so the flood exposure values presented for the Strong Mitigation and Middle of the Road scenarios are identical to those in the High Emissions scenario. We plan to expand our offering to all three scenarios in a future product update. When representing the heatmap, we look at the number of years over which 5% or above (&gt;0.05) probability of flooding is projected at the asset over a 30-year time horizon in order to categorize the asset as either LOW, MEDIUM or HIGH risk.</p>
 
 <h3 id="sea-level-rise">
 <a class="anchor" href="#sea-level-rise" aria-hidden="true"><span class="octicon octicon-link"></span></a>Sea Level Rise</h3>
 <p>We utilize sea level rise models to estimate sea level rise exposure for assets within 5 kilometers of the coast. Projected sea level rise from CMIP6 climate models incorporates the effects of thermal expansion from warming of the ocean (since water expands as it warms, this is expected to be the primary component of future sea level rise). The models do not incorporate the secondary contributions of melting glaciers and ice caps, so simulations are conservative estimates of total sea level rise. Incorporating these secondary contributions would not impact the relative risk between asset locations; rather, it would likely lead to a stronger distinction in risk between the high and low emissions scenarios (though these distinctions are unlikely to manifest until at least 2050). In our assessments, we express sea level rise relative to a 1980-2010 baseline period for assets within 5km from the coast. An asset’s distance to the nearest coastline is derived using high-resolution, NASA satellite-derived estimates of coastline locations. Assets
 beyond 5km from the nearest coastline are assumed to have no sea level risk in our assessments.</p>
+
+<h3 id="tropical-cyclones">
+<a class="anchor" href="#tropical-cyclones" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tropical Cyclones</h3>
+
+<p>For forward-looking cyclone exposure, we combine the latest CMIP6-based cyclone track simulations with Sust’s bias-correction methodology to enable more accurate assessment of local exposure. The CMIP6-based cyclone track simulations are drawn from research led by the UK Met Office and the UK Centre for Environmental Data Analysis. These novel high-resolution simulations are only achievable due to recent advancements in supercomputing.</p>
+
+<p>We implement a multi-step bias-correct procedure to ensure forward-looking cyclone track simulations are more representative of intense, Category 3/4/5 tropical cyclones. We achieve this by applying correction factors to simulated wind speeds and comparing simulated cyclone tracks with observational data in high-impact coastal regions. Overall, Sust’s bias-correction steps reduce the ensemble mean error rate in coastal validation regions by up to 92%.</p>
+
+<p>Currently, all climate models are run only under a High Emissions scenario, so the cyclone exposure values presented for the Strong Mitigation and Middle of the Road scenarios are identical to those in the High Emissions scenario. Simulations were also only run out to 2050 due to their substantial computational cost. Therefore exposure values for 2051-2100 represent the mean over the 2030-2050 period. We plan to expand our offering to all three scenarios and beyond 2050 in a future product update.</p>
 
 <h3 id="description-of-dashboard-views">
 <a class="anchor" href="#description-of-dashboard-views" aria-hidden="true"><span class="octicon octicon-link"></span></a>Description of Dashboard views</h3>
@@ -182,8 +191,8 @@ b) Maximum exposure values per hazard based on 98th percentile values are listed
   <tbody>
     <tr>
       <td>Fire</td>
-      <td>&lt;=0.1</td>
-      <td>0.1-1.0</td>
+      <td>&lt;=0.08</td>
+      <td>0.08-1.0</td>
       <td>&gt;1.0</td>
     </tr>
     <tr>
@@ -209,6 +218,12 @@ b) Maximum exposure values per hazard based on 98th percentile values are listed
       <td>&lt;=0.1</td>
       <td>0.1-0.3</td>
       <td>&gt;0.3</td>
+    </tr>
+    <tr>
+      <td>Tropical Cyclone</td>
+      <td>&lt;=0.1</td>
+      <td>0.1-0.2</td>
+      <td>&gt;0.2</td>
     </tr>
   </tbody>
 </table>
@@ -253,7 +268,7 @@ b) Maximum exposure values per hazard based on 98th percentile values are listed
   <tbody>
     <tr>
       <td>Fire</td>
-      <td>0.5</td>
+      <td>10.0</td>
     </tr>
     <tr>
       <td>Flood</td>
@@ -272,13 +287,13 @@ b) Maximum exposure values per hazard based on 98th percentile values are listed
       <td>0.75</td>
     </tr>
     <tr>
-      <td>cyclone</td>
-      <td>1.3</td>
+      <td>Cyclone</td>
+      <td>.5</td>
     </tr>
   </tbody>
 </table>
 
-<p>Table 2: Normalization values based on 98% risk exposures</p>
+<p>Table 2: Normalization values for multi-hazard time series view</p>
 
 <h4 id="multi-hazard-time-series-view">Multi-hazard Time Series View</h4>
 
@@ -312,7 +327,7 @@ The dataset used for climate scenario analysis can also be accessed in raw form 
   <li>Reporting Data Type {reporting_data_type}: This field has one of the following risk parameters: annual_temperature, annual_precipitation,
 extreme_precipitation, fire, flood, heatwaves and drought(SPEI), sea level rise (SLR)</li>
   <li>Dataset Name {dataset_name}: Name assigned to project or dataset by customer or Sust Global</li>
-  <li>Scenario ID {scenarioID} : Scenario ID which would be either: ssp126 (Strong Mitigation); ssp245 (Middle of the Road); or ssp585 (Business as Usual)</li>
+  <li>Scenario ID {scenarioID} : Scenario ID which would be either: ssp126 (Strong Mitigation); ssp245 (Middle of the Road); or ssp585 (High Emissions)</li>
 </ol>
 
 <p>In every dataset CSV, each row corresponds to an asset in the data collection. We have columns for the individual asset attributes and a column for each year from 1980 to 2100. The columns for each year contain the projected risk value for a specific asset for a specific year based on the reporting outcomes description.</p>
@@ -340,10 +355,10 @@ extreme_precipitation, fire, flood, heatwaves and drought(SPEI), sea level rise 
   <li><a href="https://medium.datadriveninvestor.com/it-matters-when-its-in-your-backyard-e3f93953e282">Sust Global: Climate Risk Intelligence</a></li>
   <li><a href="https://www.carbonbrief.org/explainer-how-shared-socioeconomic-pathways-explore-future-climate-change">Explanation of Shared SocioEconomic Pathways</a></li>
   <li><a href="https://www.sciencedirect.com/science/article/abs/pii/S0921818116303770?via%3Dihub">Historic and Future Fires from Climate Models</a></li>
-  <li><a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1752-1688.1999.tb03592.x">Calculating the Standardized Precipitation Index (SPI)</a></li>
   <li><a href="https://www.nature.com/articles/s41558-018-0257-z?WT.feed_name=subjects_hydrology">Exposure and Impact from River Flooding</a></li>
   <li><a href="https://spei.csic.es/home.html">About the SPEI index</a></li>
   <li><a href="https://www.carbonbrief.org/explainer-how-climate-change-is-accelerating-sea-level-rise">Carbon Brief: How climate change is accelerating sea level rise</a></li>
+  <li><a href="https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2020GL088662">Projected Future Changes in Tropical Cyclones</a></li>
 </ol>
 
           </div>
@@ -361,6 +376,7 @@ extreme_precipitation, fire, flood, heatwaves and drought(SPEI), sea level rise 
 <li class="toc-entry toc-h3"><a href="#heatwaves">Heatwaves</a></li>
 <li class="toc-entry toc-h3"><a href="#inland-flooding">Inland Flooding</a></li>
 <li class="toc-entry toc-h3"><a href="#sea-level-rise">Sea Level Rise</a></li>
+<li class="toc-entry toc-h3"><a href="#tropical-cyclones">Tropical Cyclones</a></li>
 <li class="toc-entry toc-h3"><a href="#description-of-dashboard-views">Description of Dashboard views</a></li>
 <li class="toc-entry toc-h3"><a href="#dataset-description">Dataset Description</a></li>
 <li class="toc-entry toc-h3"><a href="#disclaimer-and-liability">Disclaimer and Liability</a></li>
