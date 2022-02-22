@@ -11,20 +11,19 @@ Contact: Gopal Erinjippurath gopal@sustglobal.com
 
 The Climate scenario analysis platform from Sust Global allows operational risk analysts, quantitative modelers and ESG analysts to assess historic, near-term and long-term impacts of climate change. We provide historic risk exposure scores for fires, floods and cyclones over the past 11 years (Jan 2010- Dec 2020). For forward-looking projections of extreme physical climate hazards, we provide risk exposures across standardized climate scenarios.
 
-In this User Guide, we:
-1) Give an overview of the outputs from climate scenario analysis; 2) Describe the hazards that we are covering in our analysis; 3) Describe the different views available within our platform; 4) Provide guidance on interpreting the results from our climate scenario analysis.
+In this User Guide, we: give an overview of the outputs from climate scenario analysis; describe the hazards that we are covering in our analysis; describe the different views available within our platform; and provide guidance on interpreting the results from our climate scenario analysis.
 
 ## Climate Scenarios
 
 Our climate scenario analysis  follows definitions set forth from the Intergovernmental Panel for Climate Change - Coupled Model Intercomparison Project-Phase 6 [IPCC CMIP6](https://www.carbonbrief.org/explainer-how-shared-socioeconomic-pathways-explore-future-climate-change). The IPCC AR6/CMIP6 combines frontier climate science from world leading scientific institutions with realistic climate scenario modeling. While still under review, we anticipate it will become a standardized form of scientific climate scenario modeling in the coming decade.
 
 This guide covers the following three distinct climate scenarios:
-1. **Strong Mitigation:** This scenario covers the optimal sustainable path, also referred to as the Green Road (SSP1-RCP2.6). It encompassessocioeconomics and representative emissions pathways for a graduate and pervasive global shift towards a more sustainable future.
-2. **Middle of the Road:** This scenario covers a middle path, with challenges to climate mitigation (SSP2-RCP4.5). In this scenario, environmental systems experience degradation, and although there are some improvements. overall the intensity of resource and energy use declines. This is a likely scenario if governments and policy reflect a strong sense of urgency towards climate adaptation.
-3. **High Emissions:** This scenario covers a future where the world continues on its current trajectory (SSP5-RCP8.5). There is continued reliance on competitive markets to produce rapid technological progress.. Global markets are increasingly integrated.
+1. **Strong Mitigation:** This scenario covers the optimal sustainable path, also referred to as the Green Road (SSP1-RCP2.6). It encompassessocioeconomics and representative emissions pathways for a graduate and pervasive global shift towards a more sustainable future. Carbon emissions begin to decline around 2020 and global mean temperatures rise approximately 2°C by 2100, a key goal of the Paris Climate Agreement.
+2. **Middle of the Road:** This scenario covers a middle path, with challenges to climate mitigation (SSP2-RCP4.5). In this scenario, environmental systems experience degradation, and although there are some improvements. overall the intensity of resource and energy use declines. This is a likely scenario if governments and policy reflect a strong sense of urgency towards climate adaptation. This is a likely scenario if governments and policy reflect a strong sense of urgency towards climate adaptation. Global mean temperatures rise approximately 3°C by 2100.
+3. **High Emissions:** This scenario covers a future where the world continues on its current trajectory (SSP5-RCP8.5). There is continued reliance on competitive markets to produce rapid technological progress.. Global markets are increasingly integrated. There is a high reliance on fossil fuels, with emissions peaking around 2090 and global mean temperatures rising approximately 5°C by 2100.
 
 ## Physical Hazard Modeling
-Sust Global models rising temperatures and varying precipitation at the asset level. We report on 5 acute physical hazards: Wildfire, drought, heatwaves, flooding, and sea level rise. The modeled results are stored as a time series for each specific asset within a portfolio of assets.
+We report on 6 acute physical hazards at the asset level: Wildfire, drought, heatwaves, flooding, sea level rise, and tropical cyclones. The modeled results are stored as time series for each specific asset within a portfolio of assets.
 
 ### Wildfire
 We represent annual fire risk by aggregating CMIP6 model simulations of monthly wildfire burned area [% of grid cell]. Wildfire [models](https://www.sciencedirect.com/science/article/abs/pii/S0921818116303770?via%3Dihub) incorporate factors such as temperature, precipitation, land cover type, and population to simulate fire occurrence and the associated area burned. We use our proprietary methodologies for wildfire super resolution [NeurIPS2020 technical reference](https://www.climatechange.ai/papers/neurips2020/45) on top of the model ensemble to enable high resolution wildfire projections. These projections are further processed using the latest satellite derived land cover maps, filtering for the urban-wildland interface to further refine the projections.
@@ -32,7 +31,7 @@ We represent annual fire risk by aggregating CMIP6 model simulations of monthly 
 For example: fire occurrence includes both lightning and human-induced ignitions, and high temperatures and drought lead to drier fuels and increased likelihood of fire.
 
 ### Drought
-To estimate an asset’s exposure to drought, we utilized a drought index based on CMIP6 simulations of precipitation and temperature, from which we estimate potential evapotranspiration. This is the more suitable index for agricultural assets like farms and farm production sites. The drought index, also referred to as the [standardized precipitation evapotranspiration index (SPEI)](https://spei.csic.es/home.html), represents the magnitude of precipitation deficits (negative magnitude) or surplus (positive magnitude) along with accounting for evaporation over the preceding 12-month period. Values between -1.5 and -2.0 indicate moderate dryness, while values below -2.0 indicate severe dryness. High risk, exceptional droughts fall below -2.0 on the standard precipitation evapotranspiration index (SPEI). Drought index values are calculated relative to a historical 1950-2014 baseline period, and future droughts can reach index values below -3.0 before being rounded off during our statistical modeling process (if the droughts are unprecedented relative to that 1950-2014 historical period).
+To estimate an asset’s exposure to drought, we utilized a drought index based on CMIP6 simulations of precipitation and temperature, from which we estimate potential evapotranspiration. This is the more suitable index for agricultural assets like farms and farm production sites. The drought index, also referred to as the [standardized precipitation evapotranspiration index (SPEI)](https://spei.csic.es/home.html), represents the magnitude of precipitation deficits (negative magnitude) or surplus (positive magnitude) along with accounting for evaporation over the preceding 12-month period. Values between -1.5 and -2.0 indicate moderate dryness, while values below -2.0 indicate severe dryness. High risk, exceptional droughts fall below -2.0 on the standard precipitation evapotranspiration index (SPEI). Drought index values are calculated relative to a historical 1950-2014 baseline period, and future droughts can reach index values below -3.0 if the droughts are unprecedented relative to that 1950-2014 historical period.
 
 ### Heatwaves
 For heatwaves, we calculate the number of days per year exceeding a temperature threshold. The temperature threshold at a given location is based on the 98th percentile of local, daily conditions during a baseline period between 1980 and 2010. Because this temperature threshold varies by location, the heatwave metric indicates anomalously high temperatures relative to what is typical at the local level.
@@ -42,79 +41,74 @@ We base our modeling of inland fluvial flooding exposure on [recent advances](ht
 
 The output metric we derive for inland flooding exposure ranges from 0 (low risk) to 1 (high risk) based on a collection of 50 simulations of inundated areas. The 50 simulations are derived from combining projections of variables like precipitation and humidity from 5 climate models with 10 hydrological models that simulate daily runoff levels. Then, high-resolution inundation modeling is performed using satellite-derived elevation maps that provide detailed views of local river networks. A value of 0 (low risk)( the most common since inland floods are inherently rare) indicates none of the simulations predicted a flood.
 
-Currently, all climate models are run only under a Business as Usual scenario, so the flood exposure values presented for the Strong Mitigation and Middle of the Road scenarios are identical to those in the Business as Usual scenario. We plan to expand our offering to all three scenarios in a future product update. When representing the heatmap, we look at the number of years over which 5% or above (>0.05) probability of flooding is projected at the asset over a 30-year time horizon in order to categorize the asset as either LOW, MEDIUM or HIGH risk.
+Currently, all climate models are run only under High Emissions scenario, so the flood exposure values presented for the Strong Mitigation and Middle of the Road scenarios are identical to those in the High Emissions scenario. We plan to expand our offering to all three scenarios in a future product update. When representing the heatmap, we look at the number of years over which 5% or above (>0.05) probability of flooding is projected at the asset over a 30-year time horizon in order to categorize the asset as either LOW, MEDIUM or HIGH risk.
 
 ### Sea Level Rise
 We utilize sea level rise models to estimate sea level rise exposure for assets within 5 kilometers of the coast. Projected sea level rise from CMIP6 climate models incorporates the effects of thermal expansion from warming of the ocean (since water expands as it warms, this is expected to be the primary component of future sea level rise). The models do not incorporate the secondary contributions of melting glaciers and ice caps, so simulations are conservative estimates of total sea level rise. Incorporating these secondary contributions would not impact the relative risk between asset locations; rather, it would likely lead to a stronger distinction in risk between the high and low emissions scenarios (though these distinctions are unlikely to manifest until at least 2050). In our assessments, we express sea level rise relative to a 1980-2010 baseline period for assets within 5km from the coast. An asset’s distance to the nearest coastline is derived using high-resolution, NASA satellite-derived estimates of coastline locations. Assets
 beyond 5km from the nearest coastline are assumed to have no sea level risk in our assessments.
 
-### Historic Reporting Parameters
-The observations for most historic parameters are at a daily cadence. However, all metrics are reported at a monthly cadence based on observations and historic catalogs covering the months from Jan 2010 to Dec 2020. Some of our datasets allow for higher cadence reporting. Please contact us for custom requests.
+### Tropical Cyclones
 
-| Fundamental Variable / Hazard | Description | Unit | Range of Possible Values | Spatial Resolution |
-| - | - | - | - | - |
-| Fire Exposure  | MoM active fire severity based on satellite observations. We transform the [NASA Active Fire](https://firms2.modaps.eosdis.nasa.gov) Data to report on active fires. Note that because these values are based on satellite observations and we cannot discern wildfires from human generated fires. | Unit interval with 1.0 indicating maximum active fires recorded in a month (30 in 2020) | 0.0 to 1.0 | 10km |
-| Flooding Exposure (inland + coastal) | MoM exposure of assets to floods. We transform data from the [Dartmouth Flood Observatory](https://floodobservatory.colorado.edu/Archives/index.html) to report on active floods at the points of interest. The severity classes are based on the recurrence interval: (class 1) Large flood events: recurrence <20 year; (class 2) Very large events: 20 year <recurrence < 100 year; (class 3) Extreme events: recurrence > 100 years. Values are set based on severity*0.333 | Unit interval with 1.0 indicating maximum severity extreme flooding (recurrence exceeding 100 years) | 0.0 to 1.0 | 1km |
-| Cyclone Exposure | MoM asset level exposure to cyclones/hurricanes. We source cyclone tracks from the [NOAA IBTRACs](https://www.ncdc.noaa.gov/ibtracs/) data source. Cyclones are tagged based on severity to a scale of 1 to 5 which is used to assign the value in the unit interval. Values are set based on severity*0.2 | Unit interval with 1.0 indicating maximum cyclone severity level 5 (example: Atlantic Cyclone Katrina-2005, Irma-2017, Dorian-2019) | 0.0 to 1.0 | 1km |
+For forward-looking cyclone exposure, we combine the latest CMIP6-based cyclone track simulations with Sust’s bias-correction methodology to enable more accurate assessment of local exposure. The CMIP6-based cyclone track simulations are drawn from research led by the UK Met Office and the UK Centre for Environmental Data Analysis. These novel high-resolution simulations are only achievable due to recent advancements in supercomputing.
 
-Table 1: Historic Risk Exposures
+We implement a multi-step bias-correct procedure to ensure forward-looking cyclone track simulations are more representative of intense, Category 3/4/5 tropical cyclones. We achieve this by applying correction factors to simulated wind speeds and comparing simulated cyclone tracks with observational data in high-impact coastal regions. Overall, Sust’s bias-correction steps reduce the ensemble mean error rate in coastal validation regions by up to 92%.
 
-### Forward-Looking Reporting Outcomes
-All variables are projected at an annual cadence. Some of our datasets allow for higher cadence reporting. Please contact us for custom requests.
-
-For creating heatmaps, we assess the physical risk over the 30 year window between 2021 and 2050, and look at the maximum risk exposure to a specific hazard for an asset. We use the maximum risk exposure value to color code the asset to LOW (Green), MEDIUM (Yellow), or HIGH (Red) risk categories.
-
-| Fundamental Variable / Hazard | Description | Unit | Range of Possible Values | Spatial Resolution | Heat Map Coding Range |
-| - | - | - | - | - | - |
-| Annual Temperature | Annual mean annual temperature at the asset location | °C | -5 to 45 | 100km | N/A | N/A |
-| Annual Precipitation | Annual total precipitation at the asset location | mm | 0 to 5000 | 100km | N/A | N/A |
-| Extreme Precipitation | Annual probabilistic projections of number of days in a year where precipitation exceeds 51mm | Number of days | 0 to 365 | 100km | N/A | N/A |
-| Wildfire Risk | YoY Percentage of exposed land within 50km radius of the asset to wildfire | Percentage | 0 to 100 | 14km | LOW: 0.0-0.007; MEDIUM: 0.007-1.0; HIGH: >1.0 | 10.0 |
-| Inland Flooding | Annual exposure of asset to floods | Probability score | 0.0 to 1.0 | 4km | Based on number of years with probability of flood >5%; LOW: 0-0.5; MEDIUM: 0.3; HIGH: >0.3 | 1.0 |
-| Heatwaves | Annual heatwave days per year where temperature at asset is projected to exceed 98th percentile of historic recordings | Number of days | 0 to 365 | 100km | LOW: 0-30; MEDIUM: 30-50; HIGH: >50 | 200 |
-| Sea Level Rise | Annual projection of sea level rise relative to average sea level at the asset over 1980-2010 | Rise in meters | 0.0 to 2.0 | 100km | LOW: <0.1; MEDIUM:0.1 to 0.3; HIGH: >0.3 | 0.75 |
-| Drought (SPEI) | Annual projection of standard precipitation evapo-transipiration index | Index score | -3.0 to 3.0 | 100km | LOW: >-1.5; MEDIUM: -1.5 to -2.0; HIGH: <-2.0 | 3.0 |
-| Tropical Cyclones | Annual projection of probability of at least one hit by a category 3/4/5 cyclone | Probability score | 0.0 to 1.0 | 50km | LOW: < 0.5; MEDIUM: 0.5 to 0.7; HIGH: > 0.7 | 1.0 |
-
-Table 2: Projected Risk Exposures
+Currently, all climate models are run only under a High Emissions scenario, so the cyclone exposure values presented for the Strong Mitigation and Middle of the Road scenarios are identical to those in the High Emissions scenario. Simulations were also only run out to 2050 due to their substantial computational cost. Therefore exposure values for 2051-2100 represent the mean over the 2030-2050 period. We plan to expand our offering to all three scenarios and beyond 2050 in a future product update.
 
 ### Description of Dashboard views
 This section describes the different views in the Climate Scenario Analysis Analytical Dashboard.
 
 #### Interactive Asset Map View
 
-![foobar](assets/images/image1.png)
+![foobar](assets/images/assetview.PNG)
 
 Fig 1: Asset Map View
 
 This view shows all assets for the selected portfolio on a map. It also acts as a controller for the asset level time series projects for the fundamental variables and the physical hazards. When hovering over a specific asset, the user can see the data attributes for the specific asset. The top bar displays the legend, indicating the color encoding of specific asset types.
 
 #### Estimated Loss View
+
+![foobar](assets/images/EstLoss.PNG)
+
 Fig 2: Estimated Loss View
 
 This view shows the distribution of asset value across different asset types in the portfolio and shows the associated loss distribution across asset types expressed as a percentage. By default, these distributions are based on forward looking scenarios. In cases where the dataset does not have an asset value associated with individual assets, all assets are by default assumed to have the same value. We provide the choice of switching from distribution by type (expressed as a percentage of the total portfolio) and estimated value at risk (in $M) through the radio button selector on the top of this view.
 
 #### Cross Scenario Loss Summary
 
+![foobar](assets/images/CrossScenario.PNG)
+
 Fig 3: Cross Scenario Loss Summary
 
 This view can be accessed by selecting the radio button “Loss Across Scenarios”. This allows the user to explore the estimated loss across different types across multiple climate scenarios. For hazards positively correlated with rising temperatures, the estimated loss can be expected to increase when going from SSP1 to SSP5. However, for some hazards like wildfire, floods and drought, we expect correlation between the SSPs and the estimated loss to be dependent on the geospatial distribution of the assets in the portfolio for each asset type.
 
 #### Temperature and Precipitation Time Series View
+
+![foobar](assets/images/AssetTimeSeries.PNG)
+
 Fig 4: Asset Time Series View
+
 This time series view shows the projected fundamental variables over different selected scenarios. The user has a choice of annual temperature, annual precipitation, and extreme precipitation. When hovering, the user can see the value of the fundamental variable at a specific year for the selected scenario. The time series line indicates the mean value and the gray band indicates the tolerance of the forward looking projects, typically one standard deviation in the projected outputs of the collection of climate models used. Increased uncertainty from the climate models surface as wider tolerance bands for specific variables. The range slider allows the user to see the time series over a specific range of years. By default, the range slider is set to the maximum time period of assessment, usually 2020-2100.
 
 #### Historic Physical Hazard Severity Time Series View
+
+![foobar](assets/images/exposure.PNG)
+
 Fig 5: Asset historic hazard severity time series view
 
 This view illustrates the severity of historic exposure to fires, floods and cyclones at a monthly scale. By default, the range slider is set to the maximum time period of assessment, covering the 11 year window ranging from 2010 to 2020.
 
 #### Forward Looking Physical Hazard Time Series View
+
+![foobar](assets/images/HistoricExp.PNG)
+
 Fig 6: Projected physical hazard time series view
 
 This time series view shows the projected YoY hazard exposure at the specific asset location. The user has a choice of wildfires, inland flooding, heatwaves and drought. When hovering, the user can see the value of the fundamental variable at a specific year for the selected scenario. The time series line indicates the mean value and the gray band indicates the tolerance of the forward looking projects, typically one standard deviation in the projected outputs of the collection of climate models used. Increased uncertainty from the climate models surface as wider tolerance bands for specific variables. The range slider allows the user to see the time series over a specific range of years. By default, the range slider is set to the maximum time period of assessment, usually set to 2021-2100.
 
 #### Risk Heat Map View
+
+![foobar](assets/images/heatmap.PNG)
 Fig 7: Risk Heatmap View
 
 This view shows the heatmap of forward looking risk for a selected physical hazard type. We project physical risk over the 30 year window between 2020 and 2050 and look at the maximum risk exposure to a specific hazard for an asset. We use the maximum risk exposure value to color code the asset to LOW (Green), MEDIUM (Yellow), or HIGH (Red) risk categories. The markers are scaled based on the extent of the loss. So the color of the marker is indicative of the severity of the hazard exposure and the size of the marker is indicative of the asset level loss estimates from the hazard.
@@ -125,19 +119,23 @@ This view shows the heatmap of forward looking risk for a selected physical haza
 
 3. The heatmap marker is scaled based on the extent of the estimated loss which is computed as 40% of the asset price * (max risk exposure for asset in step 2 / max exposure of the hazard) leading to assets with high estimated losses being marked with larger marker size on the maps.
 a) Asset price is set as $1M in the absence of values provided
-b) Maximum exposure values per hazard based on 98th percentile values are listed in Table 5.
+b) Maximum exposure values per hazard based on 98th percentile values are listed in Table 2.
 
 | RISK TYPE | Low | Medium | High |
 | - | - | - | - |
-| Fire | <=0.1 | 0.1-1.0 | >1.0 |
+| Fire | <=0.08 | 0.08-1.0 | >1.0 |
 | Flood | 0 | 0-3 | >3 |
 | Heatwave | <=30.0 | 30-50 | >50 |
 | Drought (SPEI)| <=1.5 | 1.5-2.0 | >2.0 |
 | Sea Level Rise (SLR) | <=0.1 | 0.1-0.3 | >0.3 |
+| Tropical Cyclone | <=0.1 | 0.1-0.2 | >0.2 |
 
-Table 3: Heatmap label intervals
+Table 1: Heatmap label intervals
 
 #### Summary Risk View
+
+![foobar](assets/images/RiskSummary.PNG)
+
 Fig 8: Risk Summary Table
 
 This view provides the summary of the forward looking risk exposure across different hazards for each of the asset types, providing a tabular view of the risk heat map for each of the different scenarios. The indicators are based on the average values of exposure across all assets of a specific type. Optionally on request, the indicators can be based on the maximum risk exposure value across all assets of a specific type. Optionally on request, this view can be provided for each of the assets rather than the asset types.
@@ -148,72 +146,51 @@ This view provides the summary of the forward looking risk exposure across diffe
 2. For each hazard, we would look at the mean value per year over all the different assets for a certain asset type. This would give an average value of risk exposure across all types of assets for each year in the time window.
 3. For each hazard, we would then pick the maximum risk exposure value of the mean value for each asset type over all the years in the analysis time window. We then use that value to determine the classification as LOW, MEDIUM or HIGH based on the value intervals listed below. Note that for drought (SPEI), we would use the negative of the value in the risk exposure datasets (negative drought (SPEI) values indicate risk). For flooding, we use the number of years within a decade where the risk exceeds a preset threshold (5%). This is to simulate a flood exceedance threshold from the flood exposure values.
 
-| RISK TYPE | Low | Medium | High |
-| - | - | - | - |
-| Fire | <=0.1 | 0.1-1.0 | >1.0 |
-| Flood | 0 | 0-3 | >3 |
-| Heatwave | <=30.0 | 30-50 | >50 |
-| Drought (SPEI)| <=1.5 | 1.5-2.0 | >2.0 |
-| Sea Level Rise (SLR) | <=0.1 | 0.1-0.3 | >0.3 |
-
-Table 4: Risk summary table label intervals
-
-#### Type Based Risk View
-Fig 9: Type specific Risk View
-
-This view allows the user to see forward looking risk for a group of assets of a specific type. By default we project risk for the two most common types of assets in the dataset.
-
 #### Multi-hazard Heatmap View
-Fig 10: Multi-hazard heatmap view
+
+![foobar](assets/images/MultiHazard.PNG)
+
+Fig 9: Multi-hazard heatmap view
 
 This view allows the user to see a consolidated view of risk exposure across all assets, across multiple hazards. We use fire, flood, sea level rise and cyclones to highlight risk exposures for each asset. For fire, flood, sea level rise and drought, we use the forward looking 30 year time horizon (2021-2050) by default. or cyclones, we use the historic 11 year time horizon (2010-2020). When hovering over a specific asset, you can see the dominant risk type listed (Fig 11 below). The risks are normalized based on peak risk values from the 98th percentile of the risk exposure distribution i.e. the exposure value for a specific hazard at the 98th percentile of the global exposure distribution is set to 1.0, and all values for that specific hazard are normalized to the 0.0 to 1.0 range.
 
-Fig 11: Multi-hazard heatmap view - hover view
+![foobar](assets/images/click.PNG)
+
+Fig 10: Multi-hazard heatmap view - hover view
 
 | RISK TYPE | Max value for normalization |
 | - | - |
-| Fire | 0.5 |
+| Fire | 10.0 |
 | Flood | 1.0 |
 | Heatwave | 200.00 |
 | Drought (SPEI)| 3.0 |
 | Sea Level Rise (SLR) | 0.75 |
-| cyclone | 1.3 |
+| Cyclone | .5 |
 
-Table 5: Normalization values based on 98% risk exposures
+Table 2: Normalization values for multi-hazard time series view
 
 #### Multi-hazard Time Series View
-Fig 12: Multi-hazard time series view
+
+![foobar](assets/images/timeseries.PNG)
+
+Fig 11: Multi-hazard time series view
 
 This view provides a normalized view of forward looking risk exposure of a specific selected asset in the multi-hazard heatmap view across all hazard types: fire, flood, sea level rise, heatwaves and drought, for the SSP5-85 climate scenario. Each risk type is color coded differently. For a specific highlighted asset, the user can explore the risk over the 2021-2100 time horizon through this interactive view.
 
 #### Exporting Views from the Dashboard
-Fig 13: Exporting Views
+
+![foobar](assets/images/Export.PNG)
+
+Fig 12: Exporting Views
 
 We offer interactive plots within our dashboard. Hover over the line graphs to read the values at specific time points or over the map to see details of the assets. To facilitate reporting, we offer the ability to export the current view as a PNG image file. We also allow the user to pan and zoom on the graphs and maps to explore and export views of the data as most suitable.
-
-### Asset Level Attributes
-We encode the following attributes of assets based on customer datasets:
-
-**Entity Name:** Name of the asset, in certain cases, we used a index or ID
-
-**Address:** Physical Address of the asset
-
-**Lat:** Latitude of the physical asset post geocoding
-
-**Lon:** Longitude of the physical asset post geocoding
-
-**Type:** Type assigned to the asset. In cases, where multiple types are assigned to an asset by the customer, the first described type is assigned to the asset
-
-**Tag:** Additional metadata on the asset. In cases, where multiple types are assigned to an asset by the customer, all described asset types are assigned to tag
-
-**Price:** This is the estimated value of the asset. This allows for reporting on loss distribution based on the asset values. If prices are not assigned to an asset, a default value is chosen. If the dataset has no price information, all assets are assumed to have the same value.
 
 ### Dataset Description
 The naming convention for the historic risk exposure is as follows:
 
 sustglobal_asset_his_risk_{dataset_name}.csv
 
-Here, each row corresponds to one asset location, and there are individual columns for each month from Jan 2010 to Dec 2020 for fire, flood and cyclone exposure as described in Table 1.
+Here, each row corresponds to one asset location, and there are individual columns for each month from Jan 2010 to Dec 2020 for fire, flood and cyclone exposure.
 The dataset used for climate scenario analysis can also be accessed in raw form in the CSV format. The naming convention for the CSV files is as follows:
 
 sustglobal_asset_fwd_{reporting_data_type}_risk_{dataset_name}_{scenarioID}. csv
@@ -222,9 +199,9 @@ Here are the descriptions of the naming parameters:
 1. Reporting Data Type {reporting_data_type}: This field has one of the following risk parameters: annual_temperature, annual_precipitation,
 extreme_precipitation, fire, flood, heatwaves and drought(SPEI), sea level rise (SLR)
 2. Dataset Name {dataset_name}: Name assigned to project or dataset by customer or Sust Global
-3. Scenario ID {scenarioID} : Scenario ID which would be either: ssp126 (Strong Mitigation); ssp245 (Middle of the Road); or ssp585 (Business as Usual)
+3. Scenario ID {scenarioID} : Scenario ID which would be either: ssp126 (Strong Mitigation); ssp245 (Middle of the Road); or ssp585 (High Emissions)
 
-In every dataset CSV, each row corresponds to an asset in the data collection. We have columns for the individual asset attributes and a column for each year from 1980 to 2100. The columns for each year contain the projected risk value for a specific asset for a specific year based on the reporting outcomes description in Table 2.
+In every dataset CSV, each row corresponds to an asset in the data collection. We have columns for the individual asset attributes and a column for each year from 1980 to 2100. The columns for each year contain the projected risk value for a specific asset for a specific year based on the reporting outcomes description.
 
 ### Disclaimer and Liability
 1. **Disclaimer.** While Sust Global endeavors to ensure that the information, analysis and forecasts in the Analytics Platform are correct, Sust Global will not be liable for any errors, inaccuracies or delays in content, or for any actions taken in reliance thereon.
@@ -241,7 +218,7 @@ In every dataset CSV, each row corresponds to an asset in the data collection. W
 4. [Sust Global: Climate Risk Intelligence](https://medium.datadriveninvestor.com/it-matters-when-its-in-your-backyard-e3f93953e282)
 5. [Explanation of Shared SocioEconomic Pathways](https://www.carbonbrief.org/explainer-how-shared-socioeconomic-pathways-explore-future-climate-change)
 6. [Historic and Future Fires from Climate Models](https://www.sciencedirect.com/science/article/abs/pii/S0921818116303770?via%3Dihub)
-7. [Calculating the Standardized Precipitation Index (SPI)](https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1752-1688.1999.tb03592.x)
-8. [Exposure and Impact from River Flooding](https://www.nature.com/articles/s41558-018-0257-z?WT.feed_name=subjects_hydrology)
-9. [About the SPEI index](https://spei.csic.es/home.html)
-10. [Carbon Brief: How climate change is accelerating sea level rise](https://www.carbonbrief.org/explainer-how-climate-change-is-accelerating-sea-level-rise)
+7. [Exposure and Impact from River Flooding](https://www.nature.com/articles/s41558-018-0257-z?WT.feed_name=subjects_hydrology)
+8. [About the SPEI index](https://spei.csic.es/home.html)
+9. [Carbon Brief: How climate change is accelerating sea level rise](https://www.carbonbrief.org/explainer-how-climate-change-is-accelerating-sea-level-rise)
+10. [Projected Future Changes in Tropical Cyclones](https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2020GL088662)

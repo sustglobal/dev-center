@@ -52,8 +52,7 @@
 
 <p>The Climate scenario analysis platform from Sust Global allows operational risk analysts, quantitative modelers and ESG analysts to assess historic, near-term and long-term impacts of climate change. We provide historic risk exposure scores for fires, floods and cyclones over the past 11 years (Jan 2010- Dec 2020). For forward-looking projections of extreme physical climate hazards, we provide risk exposures across standardized climate scenarios.</p>
 
-<p>In this User Guide, we:
-1) Give an overview of the outputs from climate scenario analysis; 2) Describe the hazards that we are covering in our analysis; 3) Describe the different views available within our platform; 4) Provide guidance on interpreting the results from our climate scenario analysis.</p>
+<p>In this User Guide, we: give an overview of the outputs from climate scenario analysis; describe the hazards that we are covering in our analysis; describe the different views available within our platform; and provide guidance on interpreting the results from our climate scenario analysis.</p>
 
 <h2 id="climate-scenarios">
 <a class="anchor" href="#climate-scenarios" aria-hidden="true"><span class="octicon octicon-link"></span></a>Climate Scenarios</h2>
@@ -101,191 +100,62 @@
 <p>We utilize sea level rise models to estimate sea level rise exposure for assets within 5 kilometers of the coast. Projected sea level rise from CMIP6 climate models incorporates the effects of thermal expansion from warming of the ocean (since water expands as it warms, this is expected to be the primary component of future sea level rise). The models do not incorporate the secondary contributions of melting glaciers and ice caps, so simulations are conservative estimates of total sea level rise. Incorporating these secondary contributions would not impact the relative risk between asset locations; rather, it would likely lead to a stronger distinction in risk between the high and low emissions scenarios (though these distinctions are unlikely to manifest until at least 2050). In our assessments, we express sea level rise relative to a 1980-2010 baseline period for assets within 5km from the coast. An asset’s distance to the nearest coastline is derived using high-resolution, NASA satellite-derived estimates of coastline locations. Assets
 beyond 5km from the nearest coastline are assumed to have no sea level risk in our assessments.</p>
 
-<h3 id="historic-reporting-parameters">
-<a class="anchor" href="#historic-reporting-parameters" aria-hidden="true"><span class="octicon octicon-link"></span></a>Historic Reporting Parameters</h3>
-<p>The observations for most historic parameters are at a daily cadence. However, all metrics are reported at a monthly cadence based on observations and historic catalogs covering the months from Jan 2010 to Dec 2020. Some of our datasets allow for higher cadence reporting. Please contact us for custom requests.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Fundamental Variable / Hazard</th>
-      <th>Description</th>
-      <th>Unit</th>
-      <th>Range of Possible Values</th>
-      <th>Spatial Resolution</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Fire Exposure</td>
-      <td>MoM active fire severity based on satellite observations. We transform the <a href="https://firms2.modaps.eosdis.nasa.gov">NASA Active Fire</a> Data to report on active fires. Note that because these values are based on satellite observations and we cannot discern wildfires from human generated fires.</td>
-      <td>Unit interval with 1.0 indicating maximum active fires recorded in a month (30 in 2020)</td>
-      <td>0.0 to 1.0</td>
-      <td>10km</td>
-    </tr>
-    <tr>
-      <td>Flooding Exposure (inland + coastal)</td>
-      <td>MoM exposure of assets to floods. We transform data from the <a href="https://floodobservatory.colorado.edu/Archives/index.html">Dartmouth Flood Observatory</a> to report on active floods at the points of interest. The severity classes are based on the recurrence interval: (class 1) Large flood events: recurrence &lt;20 year; (class 2) Very large events: 20 year &lt;recurrence &lt; 100 year; (class 3) Extreme events: recurrence &gt; 100 years. Values are set based on severity*0.333</td>
-      <td>Unit interval with 1.0 indicating maximum severity extreme flooding (recurrence exceeding 100 years)</td>
-      <td>0.0 to 1.0</td>
-      <td>1km</td>
-    </tr>
-    <tr>
-      <td>Cyclone Exposure</td>
-      <td>MoM asset level exposure to cyclones/hurricanes. We source cyclone tracks from the <a href="https://www.ncdc.noaa.gov/ibtracs/">NOAA IBTRACs</a> data source. Cyclones are tagged based on severity to a scale of 1 to 5 which is used to assign the value in the unit interval. Values are set based on severity*0.2</td>
-      <td>Unit interval with 1.0 indicating maximum cyclone severity level 5 (example: Atlantic Cyclone Katrina-2005, Irma-2017, Dorian-2019)</td>
-      <td>0.0 to 1.0</td>
-      <td>1km</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>Table 1: Historic Risk Exposures</p>
-
-<h3 id="forward-looking-reporting-outcomes">
-<a class="anchor" href="#forward-looking-reporting-outcomes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Forward-Looking Reporting Outcomes</h3>
-<p>All variables are projected at an annual cadence. Some of our datasets allow for higher cadence reporting. Please contact us for custom requests.</p>
-
-<p>For creating heatmaps, we assess the physical risk over the 30 year window between 2021 and 2050, and look at the maximum risk exposure to a specific hazard for an asset. We use the maximum risk exposure value to color code the asset to LOW (Green), MEDIUM (Yellow), or HIGH (Red) risk categories.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Fundamental Variable / Hazard</th>
-      <th>Description</th>
-      <th>Unit</th>
-      <th>Range of Possible Values</th>
-      <th>Spatial Resolution</th>
-      <th>Heat Map Coding Range</th>
-      <th> </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Annual Temperature</td>
-      <td>Annual mean annual temperature at the asset location</td>
-      <td>°C</td>
-      <td>-5 to 45</td>
-      <td>100km</td>
-      <td>N/A</td>
-      <td>N/A</td>
-    </tr>
-    <tr>
-      <td>Annual Precipitation</td>
-      <td>Annual total precipitation at the asset location</td>
-      <td>mm</td>
-      <td>0 to 5000</td>
-      <td>100km</td>
-      <td>N/A</td>
-      <td>N/A</td>
-    </tr>
-    <tr>
-      <td>Extreme Precipitation</td>
-      <td>Annual probabilistic projections of number of days in a year where precipitation exceeds 51mm</td>
-      <td>Number of days</td>
-      <td>0 to 365</td>
-      <td>100km</td>
-      <td>N/A</td>
-      <td>N/A</td>
-    </tr>
-    <tr>
-      <td>Wildfire Risk</td>
-      <td>YoY Percentage of exposed land within 50km radius of the asset to wildfire</td>
-      <td>Percentage</td>
-      <td>0 to 100</td>
-      <td>14km</td>
-      <td>LOW: 0.0-0.007; MEDIUM: 0.007-1.0; HIGH: &gt;1.0</td>
-      <td>10.0</td>
-    </tr>
-    <tr>
-      <td>Inland Flooding</td>
-      <td>Annual exposure of asset to floods</td>
-      <td>Probability score</td>
-      <td>0.0 to 1.0</td>
-      <td>4km</td>
-      <td>Based on number of years with probability of flood &gt;5%; LOW: 0-0.5; MEDIUM: 0.3; HIGH: &gt;0.3</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <td>Heatwaves</td>
-      <td>Annual heatwave days per year where temperature at asset is projected to exceed 98th percentile of historic recordings</td>
-      <td>Number of days</td>
-      <td>0 to 365</td>
-      <td>100km</td>
-      <td>LOW: 0-30; MEDIUM: 30-50; HIGH: &gt;50</td>
-      <td>200</td>
-    </tr>
-    <tr>
-      <td>Sea Level Rise</td>
-      <td>Annual projection of sea level rise relative to average sea level at the asset over 1980-2010</td>
-      <td>Rise in meters</td>
-      <td>0.0 to 2.0</td>
-      <td>100km</td>
-      <td>LOW: &lt;0.1; MEDIUM:0.1 to 0.3; HIGH: &gt;0.3</td>
-      <td>0.75</td>
-    </tr>
-    <tr>
-      <td>Drought (SPEI)</td>
-      <td>Annual projection of standard precipitation evapo-transipiration index</td>
-      <td>Index score</td>
-      <td>-3.0 to 3.0</td>
-      <td>100km</td>
-      <td>LOW: &gt;-1.5; MEDIUM: -1.5 to -2.0; HIGH: &lt;-2.0</td>
-      <td>3.0</td>
-    </tr>
-    <tr>
-      <td>Tropical Cyclones</td>
-      <td>Annual projection of probability of at least one hit by a category 3/4/5 cyclone</td>
-      <td>Probability score</td>
-      <td>0.0 to 1.0</td>
-      <td>50km</td>
-      <td>LOW: &lt; 0.5; MEDIUM: 0.5 to 0.7; HIGH: &gt; 0.7</td>
-      <td>1.0</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>Table 2: Projected Risk Exposures</p>
-
 <h3 id="description-of-dashboard-views">
 <a class="anchor" href="#description-of-dashboard-views" aria-hidden="true"><span class="octicon octicon-link"></span></a>Description of Dashboard views</h3>
 <p>This section describes the different views in the Climate Scenario Analysis Analytical Dashboard.</p>
 
 <h4 id="interactive-asset-map-view">Interactive Asset Map View</h4>
 
-<p><img src="assets/images/image1.png" alt="foobar"></p>
+<p><img src="assets/images/assetview.PNG" alt="foobar"></p>
 
 <p>Fig 1: Asset Map View</p>
 
 <p>This view shows all assets for the selected portfolio on a map. It also acts as a controller for the asset level time series projects for the fundamental variables and the physical hazards. When hovering over a specific asset, the user can see the data attributes for the specific asset. The top bar displays the legend, indicating the color encoding of specific asset types.</p>
 
 <h4 id="estimated-loss-view">Estimated Loss View</h4>
+
+<p><img src="assets/images/EstLoss.PNG" alt="foobar"></p>
+
 <p>Fig 2: Estimated Loss View</p>
 
 <p>This view shows the distribution of asset value across different asset types in the portfolio and shows the associated loss distribution across asset types expressed as a percentage. By default, these distributions are based on forward looking scenarios. In cases where the dataset does not have an asset value associated with individual assets, all assets are by default assumed to have the same value. We provide the choice of switching from distribution by type (expressed as a percentage of the total portfolio) and estimated value at risk (in $M) through the radio button selector on the top of this view.</p>
 
 <h4 id="cross-scenario-loss-summary">Cross Scenario Loss Summary</h4>
 
+<p><img src="assets/images/CrossScenario.PNG" alt="foobar"></p>
+
 <p>Fig 3: Cross Scenario Loss Summary</p>
 
 <p>This view can be accessed by selecting the radio button “Loss Across Scenarios”. This allows the user to explore the estimated loss across different types across multiple climate scenarios. For hazards positively correlated with rising temperatures, the estimated loss can be expected to increase when going from SSP1 to SSP5. However, for some hazards like wildfire, floods and drought, we expect correlation between the SSPs and the estimated loss to be dependent on the geospatial distribution of the assets in the portfolio for each asset type.</p>
 
 <h4 id="temperature-and-precipitation-time-series-view">Temperature and Precipitation Time Series View</h4>
-<p>Fig 4: Asset Time Series View
-This time series view shows the projected fundamental variables over different selected scenarios. The user has a choice of annual temperature, annual precipitation, and extreme precipitation. When hovering, the user can see the value of the fundamental variable at a specific year for the selected scenario. The time series line indicates the mean value and the gray band indicates the tolerance of the forward looking projects, typically one standard deviation in the projected outputs of the collection of climate models used. Increased uncertainty from the climate models surface as wider tolerance bands for specific variables. The range slider allows the user to see the time series over a specific range of years. By default, the range slider is set to the maximum time period of assessment, usually 2020-2100.</p>
+
+<p><img src="assets/images/AssetTimeSeries.PNG" alt="foobar"></p>
+
+<p>Fig 4: Asset Time Series View</p>
+
+<p>This time series view shows the projected fundamental variables over different selected scenarios. The user has a choice of annual temperature, annual precipitation, and extreme precipitation. When hovering, the user can see the value of the fundamental variable at a specific year for the selected scenario. The time series line indicates the mean value and the gray band indicates the tolerance of the forward looking projects, typically one standard deviation in the projected outputs of the collection of climate models used. Increased uncertainty from the climate models surface as wider tolerance bands for specific variables. The range slider allows the user to see the time series over a specific range of years. By default, the range slider is set to the maximum time period of assessment, usually 2020-2100.</p>
 
 <h4 id="historic-physical-hazard-severity-time-series-view">Historic Physical Hazard Severity Time Series View</h4>
+
+<p><img src="assets/images/exposure.PNG" alt="foobar"></p>
+
 <p>Fig 5: Asset historic hazard severity time series view</p>
 
 <p>This view illustrates the severity of historic exposure to fires, floods and cyclones at a monthly scale. By default, the range slider is set to the maximum time period of assessment, covering the 11 year window ranging from 2010 to 2020.</p>
 
 <h4 id="forward-looking-physical-hazard-time-series-view">Forward Looking Physical Hazard Time Series View</h4>
+
+<p><img src="assets/images/HistoricExp.PNG" alt="foobar"></p>
+
 <p>Fig 6: Projected physical hazard time series view</p>
 
 <p>This time series view shows the projected YoY hazard exposure at the specific asset location. The user has a choice of wildfires, inland flooding, heatwaves and drought. When hovering, the user can see the value of the fundamental variable at a specific year for the selected scenario. The time series line indicates the mean value and the gray band indicates the tolerance of the forward looking projects, typically one standard deviation in the projected outputs of the collection of climate models used. Increased uncertainty from the climate models surface as wider tolerance bands for specific variables. The range slider allows the user to see the time series over a specific range of years. By default, the range slider is set to the maximum time period of assessment, usually set to 2021-2100.</p>
 
 <h4 id="risk-heat-map-view">Risk Heat Map View</h4>
-<p>Fig 7: Risk Heatmap View</p>
+
+<p><img src="assets/images/heatmap.PNG" alt="foobar">
+Fig 7: Risk Heatmap View</p>
 
 <p>This view shows the heatmap of forward looking risk for a selected physical hazard type. We project physical risk over the 30 year window between 2020 and 2050 and look at the maximum risk exposure to a specific hazard for an asset. We use the maximum risk exposure value to color code the asset to LOW (Green), MEDIUM (Yellow), or HIGH (Red) risk categories. The markers are scaled based on the extent of the loss. So the color of the marker is indicative of the severity of the hazard exposure and the size of the marker is indicative of the asset level loss estimates from the hazard.</p>
 
@@ -297,7 +167,7 @@ This time series view shows the projected fundamental variables over different s
   </li>
   <li>The heatmap marker is scaled based on the extent of the estimated loss which is computed as 40% of the asset price * (max risk exposure for asset in step 2 / max exposure of the hazard) leading to assets with high estimated losses being marked with larger marker size on the maps.
 a) Asset price is set as $1M in the absence of values provided
-b) Maximum exposure values per hazard based on 98th percentile values are listed in Table 5.</li>
+b) Maximum exposure values per hazard based on 98th percentile values are listed in Table 2.</li>
 </ol>
 
 <table>
@@ -343,9 +213,12 @@ b) Maximum exposure values per hazard based on 98th percentile values are listed
   </tbody>
 </table>
 
-<p>Table 3: Heatmap label intervals</p>
+<p>Table 1: Heatmap label intervals</p>
 
 <h4 id="summary-risk-view">Summary Risk View</h4>
+
+<p><img src="assets/images/RiskSummary.PNG" alt="foobar"></p>
+
 <p>Fig 8: Risk Summary Table</p>
 
 <p>This view provides the summary of the forward looking risk exposure across different hazards for each of the asset types, providing a tabular view of the risk heat map for each of the different scenarios. The indicators are based on the average values of exposure across all assets of a specific type. Optionally on request, the indicators can be based on the maximum risk exposure value across all assets of a specific type. Optionally on request, this view can be provided for each of the assets rather than the asset types.</p>
@@ -358,62 +231,17 @@ b) Maximum exposure values per hazard based on 98th percentile values are listed
   <li>For each hazard, we would then pick the maximum risk exposure value of the mean value for each asset type over all the years in the analysis time window. We then use that value to determine the classification as LOW, MEDIUM or HIGH based on the value intervals listed below. Note that for drought (SPEI), we would use the negative of the value in the risk exposure datasets (negative drought (SPEI) values indicate risk). For flooding, we use the number of years within a decade where the risk exceeds a preset threshold (5%). This is to simulate a flood exceedance threshold from the flood exposure values.</li>
 </ol>
 
-<table>
-  <thead>
-    <tr>
-      <th>RISK TYPE</th>
-      <th>Low</th>
-      <th>Medium</th>
-      <th>High</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Fire</td>
-      <td>&lt;=0.1</td>
-      <td>0.1-1.0</td>
-      <td>&gt;1.0</td>
-    </tr>
-    <tr>
-      <td>Flood</td>
-      <td>0</td>
-      <td>0-3</td>
-      <td>&gt;3</td>
-    </tr>
-    <tr>
-      <td>Heatwave</td>
-      <td>&lt;=30.0</td>
-      <td>30-50</td>
-      <td>&gt;50</td>
-    </tr>
-    <tr>
-      <td>Drought (SPEI)</td>
-      <td>&lt;=1.5</td>
-      <td>1.5-2.0</td>
-      <td>&gt;2.0</td>
-    </tr>
-    <tr>
-      <td>Sea Level Rise (SLR)</td>
-      <td>&lt;=0.1</td>
-      <td>0.1-0.3</td>
-      <td>&gt;0.3</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>Table 4: Risk summary table label intervals</p>
-
-<h4 id="type-based-risk-view">Type Based Risk View</h4>
-<p>Fig 9: Type specific Risk View</p>
-
-<p>This view allows the user to see forward looking risk for a group of assets of a specific type. By default we project risk for the two most common types of assets in the dataset.</p>
-
 <h4 id="multi-hazard-heatmap-view">Multi-hazard Heatmap View</h4>
-<p>Fig 10: Multi-hazard heatmap view</p>
+
+<p><img src="assets/images/MultiHazard.PNG" alt="foobar"></p>
+
+<p>Fig 9: Multi-hazard heatmap view</p>
 
 <p>This view allows the user to see a consolidated view of risk exposure across all assets, across multiple hazards. We use fire, flood, sea level rise and cyclones to highlight risk exposures for each asset. For fire, flood, sea level rise and drought, we use the forward looking 30 year time horizon (2021-2050) by default. or cyclones, we use the historic 11 year time horizon (2010-2020). When hovering over a specific asset, you can see the dominant risk type listed (Fig 11 below). The risks are normalized based on peak risk values from the 98th percentile of the risk exposure distribution i.e. the exposure value for a specific hazard at the 98th percentile of the global exposure distribution is set to 1.0, and all values for that specific hazard are normalized to the 0.0 to 1.0 range.</p>
 
-<p>Fig 11: Multi-hazard heatmap view - hover view</p>
+<p><img src="assets/images/click.PNG" alt="foobar"></p>
+
+<p>Fig 10: Multi-hazard heatmap view - hover view</p>
 
 <table>
   <thead>
@@ -450,35 +278,23 @@ b) Maximum exposure values per hazard based on 98th percentile values are listed
   </tbody>
 </table>
 
-<p>Table 5: Normalization values based on 98% risk exposures</p>
+<p>Table 2: Normalization values based on 98% risk exposures</p>
 
 <h4 id="multi-hazard-time-series-view">Multi-hazard Time Series View</h4>
-<p>Fig 12: Multi-hazard time series view</p>
+
+<p><img src="assets/images/timeseries.PNG" alt="foobar"></p>
+
+<p>Fig 11: Multi-hazard time series view</p>
 
 <p>This view provides a normalized view of forward looking risk exposure of a specific selected asset in the multi-hazard heatmap view across all hazard types: fire, flood, sea level rise, heatwaves and drought, for the SSP5-85 climate scenario. Each risk type is color coded differently. For a specific highlighted asset, the user can explore the risk over the 2021-2100 time horizon through this interactive view.</p>
 
 <h4 id="exporting-views-from-the-dashboard">Exporting Views from the Dashboard</h4>
-<p>Fig 13: Exporting Views</p>
+
+<p><img src="assets/images/Export.PNG" alt="foobar"></p>
+
+<p>Fig 12: Exporting Views</p>
 
 <p>We offer interactive plots within our dashboard. Hover over the line graphs to read the values at specific time points or over the map to see details of the assets. To facilitate reporting, we offer the ability to export the current view as a PNG image file. We also allow the user to pan and zoom on the graphs and maps to explore and export views of the data as most suitable.</p>
-
-<h3 id="asset-level-attributes">
-<a class="anchor" href="#asset-level-attributes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Asset Level Attributes</h3>
-<p>We encode the following attributes of assets based on customer datasets:</p>
-
-<p><strong>Entity Name:</strong> Name of the asset, in certain cases, we used a index or ID</p>
-
-<p><strong>Address:</strong> Physical Address of the asset</p>
-
-<p><strong>Lat:</strong> Latitude of the physical asset post geocoding</p>
-
-<p><strong>Lon:</strong> Longitude of the physical asset post geocoding</p>
-
-<p><strong>Type:</strong> Type assigned to the asset. In cases, where multiple types are assigned to an asset by the customer, the first described type is assigned to the asset</p>
-
-<p><strong>Tag:</strong> Additional metadata on the asset. In cases, where multiple types are assigned to an asset by the customer, all described asset types are assigned to tag</p>
-
-<p><strong>Price:</strong> This is the estimated value of the asset. This allows for reporting on loss distribution based on the asset values. If prices are not assigned to an asset, a default value is chosen. If the dataset has no price information, all assets are assumed to have the same value.</p>
 
 <h3 id="dataset-description">
 <a class="anchor" href="#dataset-description" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dataset Description</h3>
@@ -486,7 +302,7 @@ b) Maximum exposure values per hazard based on 98th percentile values are listed
 
 <p>sustglobal_asset_his_risk_{dataset_name}.csv</p>
 
-<p>Here, each row corresponds to one asset location, and there are individual columns for each month from Jan 2010 to Dec 2020 for fire, flood and cyclone exposure as described in Table 1.
+<p>Here, each row corresponds to one asset location, and there are individual columns for each month from Jan 2010 to Dec 2020 for fire, flood and cyclone exposure.
 The dataset used for climate scenario analysis can also be accessed in raw form in the CSV format. The naming convention for the CSV files is as follows:</p>
 
 <p>sustglobal_asset_fwd_{reporting_data_type}<em>risk</em>{dataset_name}_{scenarioID}. csv</p>
@@ -499,7 +315,7 @@ extreme_precipitation, fire, flood, heatwaves and drought(SPEI), sea level rise 
   <li>Scenario ID {scenarioID} : Scenario ID which would be either: ssp126 (Strong Mitigation); ssp245 (Middle of the Road); or ssp585 (Business as Usual)</li>
 </ol>
 
-<p>In every dataset CSV, each row corresponds to an asset in the data collection. We have columns for the individual asset attributes and a column for each year from 1980 to 2100. The columns for each year contain the projected risk value for a specific asset for a specific year based on the reporting outcomes description in Table 2.</p>
+<p>In every dataset CSV, each row corresponds to an asset in the data collection. We have columns for the individual asset attributes and a column for each year from 1980 to 2100. The columns for each year contain the projected risk value for a specific asset for a specific year based on the reporting outcomes description.</p>
 
 <h3 id="disclaimer-and-liability">
 <a class="anchor" href="#disclaimer-and-liability" aria-hidden="true"><span class="octicon octicon-link"></span></a>Disclaimer and Liability</h3>
@@ -545,10 +361,7 @@ extreme_precipitation, fire, flood, heatwaves and drought(SPEI), sea level rise 
 <li class="toc-entry toc-h3"><a href="#heatwaves">Heatwaves</a></li>
 <li class="toc-entry toc-h3"><a href="#inland-flooding">Inland Flooding</a></li>
 <li class="toc-entry toc-h3"><a href="#sea-level-rise">Sea Level Rise</a></li>
-<li class="toc-entry toc-h3"><a href="#historic-reporting-parameters">Historic Reporting Parameters</a></li>
-<li class="toc-entry toc-h3"><a href="#forward-looking-reporting-outcomes">Forward-Looking Reporting Outcomes</a></li>
 <li class="toc-entry toc-h3"><a href="#description-of-dashboard-views">Description of Dashboard views</a></li>
-<li class="toc-entry toc-h3"><a href="#asset-level-attributes">Asset Level Attributes</a></li>
 <li class="toc-entry toc-h3"><a href="#dataset-description">Dataset Description</a></li>
 <li class="toc-entry toc-h3"><a href="#disclaimer-and-liability">Disclaimer and Liability</a></li>
 <li class="toc-entry toc-h3"><a href="#additional-reading">Additional Reading</a></li>
