@@ -1,5 +1,8 @@
 from .climate_explorer import (
     ClimateExplorerClient,
     Scenarios,
-    RiskTypes,
+    Hazards,
+    Indicators,
+    Measures,
+    Windows,
 )
