@@ -5,9 +5,9 @@ toc: true
 
 # Climate Scenario Analysis User Guide
 
-Last Updated: 18FEB2022
+Last Updated: `r format(Sys.Date(), "%d. %B %Y")`
 
-Contact: Gopal Erinjippurath gopal@sustglobal.com
+Contact: support@sustglobal.com
 
 The Climate scenario analysis platform from Sust Global allows operational risk analysts, quantitative modelers and ESG analysts to assess historic, near-term and long-term impacts of climate change. We provide historic risk exposure scores for fires, floods and cyclones over the past 11 years (Jan 2010- Dec 2020). For forward-looking projections of extreme physical climate hazards, we provide risk exposures across standardized climate scenarios.
 
@@ -18,7 +18,7 @@ In this User Guide, we: give an overview of the outputs from climate scenario an
 Our climate scenario analysis  follows definitions set forth from the Intergovernmental Panel for Climate Change - Coupled Model Intercomparison Project-Phase 6 [IPCC CMIP6](https://www.carbonbrief.org/explainer-how-shared-socioeconomic-pathways-explore-future-climate-change). The IPCC AR6/CMIP6 combines frontier climate science from world leading scientific institutions with realistic climate scenario modeling. While still under review, we anticipate it will become a standardized form of scientific climate scenario modeling in the coming decade.
 
 This guide covers the following three distinct climate scenarios:
-1. **Strong Mitigation:** This scenario covers the optimal sustainable path, also referred to as the Green Road (SSP1-RCP2.6). It encompassessocioeconomics and representative emissions pathways for a graduate and pervasive global shift towards a more sustainable future. Carbon emissions begin to decline around 2020 and global mean temperatures rise approximately 2°C by 2100, a key goal of the Paris Climate Agreement.
+1. **Strong Mitigation:** This scenario covers the optimal sustainable path, also referred to as the Green Road (SSP1-RCP2.6). It encompasses socioeconomics and representative emissions pathways for a graduate and pervasive global shift towards a more sustainable future. Carbon emissions begin to decline around 2020 and global mean temperatures rise approximately 2°C by 2100, a key goal of the Paris Climate Agreement.
 2. **Middle of the Road:** This scenario covers a middle path, with challenges to climate mitigation (SSP2-RCP4.5). In this scenario, environmental systems experience degradation, and although there are some improvements. overall the intensity of resource and energy use declines. This is a likely scenario if governments and policy reflect a strong sense of urgency towards climate adaptation. This is a likely scenario if governments and policy reflect a strong sense of urgency towards climate adaptation. Global mean temperatures rise approximately 3°C by 2100.
 3. **High Emissions:** This scenario covers a future where the world continues on its current trajectory (SSP5-RCP8.5). There is continued reliance on competitive markets to produce rapid technological progress.. Global markets are increasingly integrated. There is a high reliance on fossil fuels, with emissions peaking around 2090 and global mean temperatures rising approximately 5°C by 2100.
 
@@ -58,58 +58,88 @@ Currently, all climate models are run only under a High Emissions scenario, so t
 ### Description of Dashboard views
 This section describes the different views in the Climate Scenario Analysis Analytical Dashboard.
 
-#### Interactive Asset Map View
 
-![foobar](assets/images/assetview.PNG){:width="600px"}
+<center> <h3>Interactive Asset Map View </h3> </center>
 
+<p align="center">
+  <img width="460" height="300" src="assets/images/assetview.PNG">
+</p>
+
+<p align="center">
 Fig 1: Asset Map View
+</p>
 
 This view shows all assets for the selected portfolio on a map. It also acts as a controller for the asset level time series projects for the fundamental variables and the physical hazards. When hovering over a specific asset, the user can see the data attributes for the specific asset. The top bar displays the legend, indicating the color encoding of specific asset types.
 
-#### Estimated Loss View
+<center> <h3>Estimated Loss View</h3> </center>
 
-![foobar](assets/images/EstLoss.PNG)
+<p align="center">
+  <img width="460" height="300" src="assets/images/EstLoss.PNG">
+</p>
 
+<p align="center">
 Fig 2: Estimated Loss View
+</p>
 
 This view shows the distribution of asset value across different asset types in the portfolio and shows the associated loss distribution across asset types expressed as a percentage. By default, these distributions are based on forward looking scenarios. In cases where the dataset does not have an asset value associated with individual assets, all assets are by default assumed to have the same value. We provide the choice of switching from distribution by type (expressed as a percentage of the total portfolio) and estimated value at risk (in $M) through the radio button selector on the top of this view.
 
-#### Cross Scenario Loss Summary
+<center> <h3>Cross Scenario Loss Summary</h3> </center>
 
-![foobar](assets/images/CrossScenario.PNG)
+<p align="center">
+  <img width="460" height="300" src="assets/images/CrossScenario.PNG">
+</p>
 
+<p align="center">
 Fig 3: Cross Scenario Loss Summary
+</p>
 
 This view can be accessed by selecting the radio button “Loss Across Scenarios”. This allows the user to explore the estimated loss across different types across multiple climate scenarios. For hazards positively correlated with rising temperatures, the estimated loss can be expected to increase when going from SSP1 to SSP5. However, for some hazards like wildfire, floods and drought, we expect correlation between the SSPs and the estimated loss to be dependent on the geospatial distribution of the assets in the portfolio for each asset type.
 
-#### Temperature and Precipitation Time Series View
+<center> <h3>Temperature and Precipitation Time Series View</h3> </center>
 
-![foobar](assets/images/AssetTimeSeries.PNG)
+<p align="center">
+  <img width="460" height="300" src="assets/images/AssetTimeSeries.PNG">
+</p>
 
+<p align="center">
 Fig 4: Asset Time Series View
+</p>
 
 This time series view shows the projected fundamental variables over different selected scenarios. The user has a choice of annual temperature, annual precipitation, and extreme precipitation. When hovering, the user can see the value of the fundamental variable at a specific year for the selected scenario. The time series line indicates the mean value and the gray band indicates the tolerance of the forward looking projects, typically one standard deviation in the projected outputs of the collection of climate models used. Increased uncertainty from the climate models surface as wider tolerance bands for specific variables. The range slider allows the user to see the time series over a specific range of years. By default, the range slider is set to the maximum time period of assessment, usually 2020-2100.
 
-#### Historic Physical Hazard Severity Time Series View
+<center> <h3>Historic Physical Hazard Severity Time Series View</h3> </center>
 
-![foobar](assets/images/exposure.PNG)
+<p align="center">
+  <img width="460" height="300" src="assets/images/exposure.PNG">
+</p>
 
+<p align="center">
 Fig 5: Asset historic hazard severity time series view
+</p>
 
 This view illustrates the severity of historic exposure to fires, floods and cyclones at a monthly scale. By default, the range slider is set to the maximum time period of assessment, covering the 11 year window ranging from 2010 to 2020.
 
-#### Forward Looking Physical Hazard Time Series View
+<center> <h3>Forward Looking Physical Hazard Time Series View</h3> </center>
 
-![foobar](assets/images/HistoricExp.PNG)
+<p align="center">
+  <img width="460" height="300" src="assets/images/HistoricExp.PNG">
+</p>
 
+<p align="center">
 Fig 6: Projected physical hazard time series view
+</p>
 
 This time series view shows the projected YoY hazard exposure at the specific asset location. The user has a choice of wildfires, inland flooding, heatwaves and drought. When hovering, the user can see the value of the fundamental variable at a specific year for the selected scenario. The time series line indicates the mean value and the gray band indicates the tolerance of the forward looking projects, typically one standard deviation in the projected outputs of the collection of climate models used. Increased uncertainty from the climate models surface as wider tolerance bands for specific variables. The range slider allows the user to see the time series over a specific range of years. By default, the range slider is set to the maximum time period of assessment, usually set to 2021-2100.
 
-#### Risk Heat Map View
+<center> <h3>Risk Heat Map View</h3> </center>
 
-![foobar](assets/images/heatmap.PNG)
+<p align="center">
+  <img width="460" height="300" src="assets/images/heatmap.PNG">
+</p>
+
+<p align="center">
 Fig 7: Risk Heatmap View
+</p>
 
 This view shows the heatmap of forward looking risk for a selected physical hazard type. We project physical risk over the 30 year window between 2020 and 2050 and look at the maximum risk exposure to a specific hazard for an asset. We use the maximum risk exposure value to color code the asset to LOW (Green), MEDIUM (Yellow), or HIGH (Red) risk categories. The markers are scaled based on the extent of the loss. So the color of the marker is indicative of the severity of the hazard exposure and the size of the marker is indicative of the asset level loss estimates from the hazard.
 
@@ -132,11 +162,15 @@ b) Maximum exposure values per hazard based on 98th percentile values are listed
 
 Table 1: Heatmap label intervals
 
-#### Summary Risk View
+<center> <h3>Summary Risk View</h3> </center>
 
-![foobar](assets/images/RiskSummary.PNG)
+<p align="center">
+  <img width="460" height="300" src="assets/images/RiskSummary.PNG">
+</p>
 
+<p align="center">
 Fig 8: Risk Summary Table
+</p>
 
 This view provides the summary of the forward looking risk exposure across different hazards for each of the asset types, providing a tabular view of the risk heat map for each of the different scenarios. The indicators are based on the average values of exposure across all assets of a specific type. Optionally on request, the indicators can be based on the maximum risk exposure value across all assets of a specific type. Optionally on request, this view can be provided for each of the assets rather than the asset types.
 
@@ -146,17 +180,27 @@ This view provides the summary of the forward looking risk exposure across diffe
 2. For each hazard, we would look at the mean value per year over all the different assets for a certain asset type. This would give an average value of risk exposure across all types of assets for each year in the time window.
 3. For each hazard, we would then pick the maximum risk exposure value of the mean value for each asset type over all the years in the analysis time window. We then use that value to determine the classification as LOW, MEDIUM or HIGH based on the value intervals listed below. Note that for drought (SPEI), we would use the negative of the value in the risk exposure datasets (negative drought (SPEI) values indicate risk). For flooding, we use the number of years within a decade where the risk exceeds a preset threshold (5%). This is to simulate a flood exceedance threshold from the flood exposure values.
 
-#### Multi-hazard Heatmap View
+<center> <h3>Multi-hazard Heatmap View</h3> </center>
 
-![foobar](assets/images/MultiHazard.PNG)
+<p align="center">
+  <img width="460" height="300" src="assets/images/MultiHazard.PNG">
+</p>
 
+<p align="center">
 Fig 9: Multi-hazard heatmap view
+</p>
 
 This view allows the user to see a consolidated view of risk exposure across all assets, across multiple hazards. We use fire, flood, sea level rise and cyclones to highlight risk exposures for each asset. For fire, flood, sea level rise and drought, we use the forward looking 30 year time horizon (2021-2050) by default. or cyclones, we use the historic 11 year time horizon (2010-2020). When hovering over a specific asset, you can see the dominant risk type listed (Fig 11 below). The risks are normalized based on peak risk values from the 98th percentile of the risk exposure distribution i.e. the exposure value for a specific hazard at the 98th percentile of the global exposure distribution is set to 1.0, and all values for that specific hazard are normalized to the 0.0 to 1.0 range.
 
-![foobar](assets/images/click.PNG)
+<center> <h3>Multi-hazard heatmap view - hover view</h3> </center>
 
+<p align="center">
+  <img width="460" height="300" src="assets/images/click.PNG">
+</p>
+
+<p align="center">
 Fig 10: Multi-hazard heatmap view - hover view
+</p>
 
 | RISK TYPE | Max value for normalization |
 | - | - |
@@ -169,19 +213,27 @@ Fig 10: Multi-hazard heatmap view - hover view
 
 Table 2: Normalization values for multi-hazard time series view
 
-#### Multi-hazard Time Series View
+<center> <h3>Multi-hazard Time Series View</h3> </center>
 
-![foobar](assets/images/timeseries.PNG)
+<p align="center">
+  <img width="460" height="300" src="assets/images/timeseries.PNG">
+</p>
 
+<p align="center">
 Fig 11: Multi-hazard time series view
+</p>
 
 This view provides a normalized view of forward looking risk exposure of a specific selected asset in the multi-hazard heatmap view across all hazard types: fire, flood, sea level rise, heatwaves and drought, for the SSP5-85 climate scenario. Each risk type is color coded differently. For a specific highlighted asset, the user can explore the risk over the 2021-2100 time horizon through this interactive view.
 
-#### Exporting Views from the Dashboard
+<center> <h3>Exporting Views from the Dashboard</h3> </center>
 
-![foobar](assets/images/Export.PNG)
+<p align="center">
+  <img width="460" height="300" src="assets/images/Export.PNG">
+</p>
 
+<p align="center">
 Fig 12: Exporting Views
+</p>
 
 We offer interactive plots within our dashboard. Hover over the line graphs to read the values at specific time points or over the map to see details of the assets. To facilitate reporting, we offer the ability to export the current view as a PNG image file. We also allow the user to pan and zoom on the graphs and maps to explore and export views of the data as most suitable.
 
