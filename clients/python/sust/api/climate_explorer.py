@@ -7,6 +7,13 @@ from sust.api.generated.climate_explorer.model.portfolio_create_request import P
 
 
 @dataclass(frozen=True)
+class Windows:
+    YEARS_5 = 5
+    YEARS_15 = 15
+    YEARS_30 = 30
+
+
+@dataclass(frozen=True)
 class Scenarios:
     SSP126 = 'ssp126'
     SSP245 = 'ssp245'
@@ -14,16 +21,35 @@ class Scenarios:
 
 
 @dataclass(frozen=True)
-class RiskTypes:
-    CYCLONES = "cyclones"
-    FIRE = "fire"
-    FLOOD = "flood"
-    SPEI = "SPEI"
-    SLR = "SLR"
-    HEATWAVES = "heatwaves"
-    OBS_FIRE = "obs_fire"
-    OBS_FLOOD = "obs_flood"
-    OBS_CYCLONE = "obs_cyclone"
+class Hazards:
+    CYCLONE = "cyclone"
+    WILDFIRE = "wildfire"
+    FLOOD_POTENTIAL = "flood_potential"
+    WATER_STRESS = "water_stress"
+    SEA_LEVEL_RISE = "sea_level_rise"
+    HEATWAVE = "heatwave"
+
+
+@dataclass(frozen=True)
+class Indicators:
+    EXTREME_PRECIPITATION = "extreme_precip"
+    SPEI = "spei_norm"
+    INLAND_FLOOD_PROBABILITY = "inland_flood_prob"
+    FREQUENCY = "freq"
+    OBSERVED_FREQUENCY = "obs_freq"
+    CHANGE = "change"
+    TEMPERATURE = "temp"
+    OBSERVED_SCORE = "obs_score"
+    PROBABILITY = "prob"
+    BURNED_AREA = "burned_area_norm"
+    PRECIPITATION = "precip"
+
+
+@dataclass(frozen=True)
+class Measures:
+    LOWER_BOUND = "lb"
+    MIDPOINT = "mid"
+    UPPER_BOUND = "ub"
 
 
 class ClimateExplorerClient:
@@ -87,14 +113,18 @@ class Portfolio:
 
         return AssetList(self, objects)
 
-    def physical_risk_timeseries(self, scenario=None, risk_type=None, page_size=100):
+    def physical_risk_timeseries(self, scenario=None, hazard=None, indicator=None, measure=None, page_size=None):
         req_kwargs = {}
         if scenario:
             req_kwargs['scenario'] = scenario
-        if risk_type:
-            req_kwargs['risk_type'] = risk_type
+        if hazard:
+            req_kwargs['hazard'] = hazard
+        if indicator:
+            req_kwargs['indicator'] = indicator
+        if measure:
+            req_kwargs['measure'] = measure
         if page_size:
-            req_kwargs["rows"] = page_size
+            req_kwargs['rows'] = page_size
 
         it = self._client._paginated_openapi_request('portfolios_datasets_physical_items_list', (self.name,), req_kwargs)
 
@@ -107,10 +137,14 @@ class Portfolio:
 
         return PhysicalRiskTimeseriesList(objects)
 
-    def physical_risk_summary(self, scenario=None, page_size=100):
+    def physical_risk_summary(self, scenario=None, hazard=None, window=None, page_size=None):
         req_kwargs = {}
         if scenario:
             req_kwargs['scenario'] = scenario
+        if hazard:
+            req_kwargs['hazard'] = hazard
+        if window:
+            req_kwargs['window'] = window
         if page_size:
             req_kwargs["rows"] = page_size
 
@@ -118,12 +152,10 @@ class Portfolio:
         objects = []
         for obj in it:
             obj_d = obj.to_dict()
-            summaries = obj_d.pop('risk_summary')
-            for (scenario, summary) in summaries.items():
-                obj_d_cp = copy.deepcopy(obj_d)
-                obj_d_cp['scenario'] = scenario
-                obj_d_cp.update(summary)
-                objects.append(obj_d_cp)
+            summaries = obj_d.pop('risk_summaries')
+            for summary in summaries:
+                summary.update(obj_d)
+                objects.append(summary)
 
         return PhysicalRiskSummaryList(objects)
 
@@ -137,13 +169,13 @@ class AssetList:
     def to_dicts(self):
         return [obj.to_dict() for obj in self._objects]
 
-    def physical_risk_timeseries(self, scenario=None, risk_type=None, page_size=100):
-        lst = self._portfolio.physical_risk_timeserise(scenario=scenario, risk_type=risk_type, page_size=page_size)
+    def physical_risk_timeseries(self, **kwargs):
+        lst = self._portfolio.physical_risk_timeseries(**kwargs)
         filtered = [do for do in lst.to_dicts() if do['portfolio_index'] in self._index]
         return PhysicalRiskTimeseriesList(filtered)
 
-    def physical_risk_summary(self, scenario=None, page_size=100):
-        lst = self._portfolio.physical_risk_summary(scenario=scenario, page_size=page_size)
+    def physical_risk_summary(self, **kwargs):
+        lst = self._portfolio.physical_risk_summary(**kwargs)
         filtered = [do for do in lst.to_dicts() if do['portfolio_index'] in self._index]
         return PhysicalRiskSummaryList(filtered)
 
