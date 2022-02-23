@@ -509,12 +509,14 @@ with sust.api.generated.climate_explorer.ApiClient(configuration) as api_client:
     api_instance = portfolios_api.PortfoliosApi(api_client)
     portfolio_name = "portfolio_name_example" # str | Name for portfolio
     project = "project_example" # str | Name of project. Param only required when user may access more than one. (optional)
-    risk_type = "cyclones" # str | Climate hazard filter (optional)
+    hazard = "wildfire" # str | Climate hazard filter (optional)
+    indicator = "prob" # str | Risk indicator filter (optional)
+    measure = "mid" # str | Indicator measure filter (optional)
     start_date = "start_date_example" # str | Left boundary of time range filter in format YYYY-MM-DD (optional)
     end_date = "end_date_example" # str | Right boundary of time range filter in format YYYY-MM-DD (optional)
     rows = 1 # int | Maximum number of items to return per page (min=1, max=250) (optional)
     page = 1 # int | Numerical index of current page, beginning at 1 (optional)
-    scenario = "ssp126_lbd" # str | Shared socioeconomic pathway filter (optional)
+    scenario = "ssp126" # str | Shared socioeconomic pathway filter (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -528,7 +530,7 @@ with sust.api.generated.climate_explorer.ApiClient(configuration) as api_client:
     # and optional values
     try:
         # Get Physical Risk Exposure Data
-        api_response = api_instance.portfolios_datasets_physical_items_list(portfolio_name, project=project, risk_type=risk_type, start_date=start_date, end_date=end_date, rows=rows, page=page, scenario=scenario)
+        api_response = api_instance.portfolios_datasets_physical_items_list(portfolio_name, project=project, hazard=hazard, indicator=indicator, measure=measure, start_date=start_date, end_date=end_date, rows=rows, page=page, scenario=scenario)
         pprint(api_response)
     except sust.api.generated.climate_explorer.ApiException as e:
         print("Exception when calling PortfoliosApi->portfolios_datasets_physical_items_list: %s\n" % e)
@@ -541,7 +543,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **portfolio_name** | **str**| Name for portfolio |
  **project** | **str**| Name of project. Param only required when user may access more than one. | [optional]
- **risk_type** | **str**| Climate hazard filter | [optional]
+ **hazard** | **str**| Climate hazard filter | [optional]
+ **indicator** | **str**| Risk indicator filter | [optional]
+ **measure** | **str**| Indicator measure filter | [optional]
  **start_date** | **str**| Left boundary of time range filter in format YYYY-MM-DD | [optional]
  **end_date** | **str**| Right boundary of time range filter in format YYYY-MM-DD | [optional]
  **rows** | **int**| Maximum number of items to return per page (min&#x3D;1, max&#x3D;250) | [optional]
@@ -701,8 +705,9 @@ with sust.api.generated.climate_explorer.ApiClient(configuration) as api_client:
     project = "project_example" # str | Name of project. Param only required when user may access more than one. (optional)
     rows = 1 # int | Maximum number of items to return per page (min=1, max=250) (optional)
     page = 1 # int | Numerical index of current page, beginning at 1 (optional)
-    scenario = "ssp126_lbd" # str | Shared socioeconomic pathway filter (optional)
-    window = 1 # int | Number of years forward used to determine the Physical Risk Summary. Valid windows are currently 5, 15, and 30. Defaults to 30 if nothing is provided. (optional)
+    scenario = "ssp126" # str | Shared socioeconomic pathway filter (optional)
+    window = 1 # int | Number of years forward used to determine the Physical Risk Summary. Valid windows are currently 5, 15, and 30 (optional)
+    hazard = "wildfire" # str | Climate hazard filter (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -716,7 +721,7 @@ with sust.api.generated.climate_explorer.ApiClient(configuration) as api_client:
     # and optional values
     try:
         # Get Physical Risk Exposure Summary
-        api_response = api_instance.portfolios_datasets_physical_summary_list(portfolio_name, project=project, rows=rows, page=page, scenario=scenario, window=window)
+        api_response = api_instance.portfolios_datasets_physical_summary_list(portfolio_name, project=project, rows=rows, page=page, scenario=scenario, window=window, hazard=hazard)
         pprint(api_response)
     except sust.api.generated.climate_explorer.ApiException as e:
         print("Exception when calling PortfoliosApi->portfolios_datasets_physical_summary_list: %s\n" % e)
@@ -732,7 +737,8 @@ Name | Type | Description  | Notes
  **rows** | **int**| Maximum number of items to return per page (min&#x3D;1, max&#x3D;250) | [optional]
  **page** | **int**| Numerical index of current page, beginning at 1 | [optional]
  **scenario** | **str**| Shared socioeconomic pathway filter | [optional]
- **window** | **int**| Number of years forward used to determine the Physical Risk Summary. Valid windows are currently 5, 15, and 30. Defaults to 30 if nothing is provided. | [optional]
+ **window** | **int**| Number of years forward used to determine the Physical Risk Summary. Valid windows are currently 5, 15, and 30 | [optional]
+ **hazard** | **str**| Climate hazard filter | [optional]
 
 ### Return type
 
