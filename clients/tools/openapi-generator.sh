@@ -5,7 +5,9 @@ rm -fr clients/python/sust/api/generated
 mkdir -p clients/tools/cache
 cachefile="clients/tools/cache/climate-explorer-openapi-spec.json"
 
-wget https://explorer.sustglobal-staging.io/swagger.json -O $cachefile
+ENDPOINT=${ENDPOINT:-"https://explorer.sustglobal.io"}
+
+wget $ENDPOINT/swagger.json -O $cachefile
 echo $(jq '.host="explorer.sustglobal.io"' $cachefile) > $cachefile
 
 docker run --rm \
