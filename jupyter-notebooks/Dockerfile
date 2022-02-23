@@ -1,4 +1,4 @@
-FROM jupyter/minimal-notebook
+FROM jupyter/minimal-notebook:2022-02-22
 
 ADD . /opt/dev-center
 ADD jupyter-notebooks/*.ipynb /home/jovyan/work
