@@ -12,11 +12,11 @@ import sys
 import unittest
 
 import sust.api.generated.climate_explorer
-from sust.api.generated.climate_explorer.model.message_response import MessageResponse
+from sust.api.generated.climate_explorer.model.physical_risk_summary_item import PhysicalRiskSummaryItem
 
 
-class TestMessageResponse(unittest.TestCase):
-    """MessageResponse unit test stubs"""
+class TestPhysicalRiskSummaryItem(unittest.TestCase):
+    """PhysicalRiskSummaryItem unit test stubs"""
 
     def setUp(self):
         pass
@@ -24,10 +24,10 @@ class TestMessageResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testMessageResponse(self):
-        """Test MessageResponse"""
+    def testPhysicalRiskSummaryItem(self):
+        """Test PhysicalRiskSummaryItem"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = MessageResponse()  # noqa: E501
+        # model = PhysicalRiskSummaryItem()  # noqa: E501
         pass
 
 
