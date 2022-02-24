@@ -52,12 +52,12 @@ class ClimateExplorerClient:
         #NOTE(bcwaldon): this should be paginated, but is not yet implemented in the API
         it = self._openapi_request('portfolios_list', (), {})
         return (Portfolio(self, obj) for obj in it)
-        
+
     def create(self, portfolio_name):
         req = PortfolioCreateRequest(portfolio_name)
         obj = self._openapi_request('portfolios_create', (req,), {})
         return Portfolio(self, obj)
-        
+
     def upload_assets(self, portfolio_name, assets_path):
         file = open(assets_path, "rb")
         obj = self._openapi_request('portfolios_assets_import_create', (portfolio_name, file), {})
@@ -85,19 +85,7 @@ class Portfolio:
               (labels == None or all(obj['labels'].get(k) == v for k, v in labels.items()))
         ]
 
-        return AssetList(self._client, self, objects)
-        
-        
-
-class AssetList:
-    def __init__(self, client, portfolio, objects):
-        self._client = client
-        self._portfolio = portfolio
-        self._objects = objects
-        self._index = dict((obj['entity_id'], obj) for obj in objects)
-
-    def to_dicts(self):
-        return [obj.to_dict() for obj in self._objects]
+        return AssetList(self, objects)
 
     def physical_risk_timeseries(self, scenario=None, risk_type=None, page_size=100):
         req_kwargs = {}
@@ -108,18 +96,16 @@ class AssetList:
         if page_size:
             req_kwargs["rows"] = page_size
 
-        it = self._client._paginated_openapi_request('portfolios_datasets_physical_items_list', (self._portfolio['portfolio_name'],), req_kwargs)
+        it = self._client._paginated_openapi_request('portfolios_datasets_physical_items_list', (self.name,), req_kwargs)
 
         objects = []
         for obj in it:
-            if obj['entity_id'] not in self._index:
-                continue
             obj_d = obj.to_dict()
             re = obj_d.pop('risk_exposure')
             obj_d.update(re)
             objects.append(obj_d)
 
-        return PhysicalRiskAnnualList(objects)
+        return PhysicalRiskTimeseriesList(objects)
 
     def physical_risk_summary(self, scenario=None, page_size=100):
         req_kwargs = {}
@@ -128,11 +114,9 @@ class AssetList:
         if page_size:
             req_kwargs["rows"] = page_size
 
-        it = self._client._paginated_openapi_request('portfolios_datasets_physical_summary_list', (self._portfolio['portfolio_name'],), req_kwargs)
+        it = self._client._paginated_openapi_request('portfolios_datasets_physical_summary_list', (self.name,), req_kwargs)
         objects = []
         for obj in it:
-            if obj['entity_id'] not in self._index:
-                continue
             obj_d = obj.to_dict()
             summaries = obj_d.pop('risk_summary')
             for (scenario, summary) in summaries.items():
@@ -144,7 +128,27 @@ class AssetList:
         return PhysicalRiskSummaryList(objects)
 
 
-class PhysicalRiskAnnualList:
+class AssetList:
+    def __init__(self, portfolio, objects):
+        self._portfolio = portfolio
+        self._objects = objects
+        self._index = dict((obj['portfolio_index'], obj) for obj in objects)
+
+    def to_dicts(self):
+        return [obj.to_dict() for obj in self._objects]
+
+    def physical_risk_timeseries(self, scenario=None, risk_type=None, page_size=100):
+        lst = self._portfolio.physical_risk_timeserise(scenario=scenario, risk_type=risk_type, page_size=page_size)
+        filtered = [do for do in lst.to_dicts() if do['portfolio_index'] in self._index]
+        return PhysicalRiskTimeseriesList(filtered)
+
+    def physical_risk_summary(self, scenario=None, page_size=100):
+        lst = self._portfolio.physical_risk_summary(scenario=scenario, page_size=page_size)
+        filtered = [do for do in lst.to_dicts() if do['portfolio_index'] in self._index]
+        return PhysicalRiskSummaryList(filtered)
+
+
+class PhysicalRiskTimeseriesList:
     def __init__(self, dict_objects):
         self._dict_objects = dict_objects
 
