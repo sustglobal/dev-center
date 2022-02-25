@@ -205,14 +205,16 @@ This view allows the user to see a consolidated view of risk exposure across all
 Fig 10: Multi-hazard heatmap view - hover view
 </p>
 
+<center>
 | RISK TYPE | Max value for normalization |
-| - | - |
+| - | - |  
 | Fire | 10.0 |
 | Flood | 1.0 |
 | Heatwave | 200.00 |
 | Drought (SPEI)| 3.0 |
 | Sea Level Rise (SLR) | 0.75 |
 | Cyclone | .5 |
+</center>
 
 Table 2: Normalization values for multi-hazard time series view
 
