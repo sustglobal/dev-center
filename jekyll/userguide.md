@@ -56,7 +56,7 @@ This section describes the different views in the Climate Scenario Analysis Anal
 {: style="text-align: center"}
 
 <p align="center">
-  <img width="460" height="300" src="assets/images/assetview.PNG">
+<img height="300" src="assets/images/assetview.PNG">
 </p>
 
 <p align="center">
@@ -69,7 +69,7 @@ This view shows all assets for the selected portfolio on a map. It also acts as 
 {: style="text-align: center"}
 
 <p align="center">
-  <img width="460" height="300" src="assets/images/EstLoss.PNG">
+<img height="300" src="assets/images/EstLoss.PNG">
 </p>
 
 <p align="center">
@@ -82,7 +82,7 @@ This view shows the distribution of asset value across different asset types in 
 {: style="text-align: center"}
 
 <p align="center">
-  <img width="460" height="300" src="assets/images/CrossScenario.PNG">
+<img height="300" src="assets/images/CrossScenario.PNG">
 </p>
 
 <p align="center">
@@ -95,7 +95,7 @@ This view can be accessed by selecting the radio button “Loss Across Scenarios
 {: style="text-align: center"}
 
 <p align="center">
-  <img width="460" height="300" src="assets/images/AssetTimeSeries.PNG">
+<img height="300" src="assets/images/AssetTimeSeries.PNG">
 </p>
 
 <p align="center">
@@ -108,7 +108,7 @@ This time series view shows the projected fundamental variables over different s
 {: style="text-align: center"}
 
 <p align="center">
-  <img width="460" height="300" src="assets/images/exposure.PNG">
+<img height="300" src="assets/images/exposure.PNG">
 </p>
 
 <p align="center">
@@ -121,7 +121,7 @@ This view illustrates the severity of historic exposure to fires, floods and cyc
 {: style="text-align: center"}
 
 <p align="center">
-  <img width="460" height="300" src="assets/images/HistoricExp.PNG">
+<img height="300" src="assets/images/HistoricExp.PNG">
 </p>
 
 <p align="center">
@@ -134,7 +134,7 @@ This time series view shows the projected YoY hazard exposure at the specific as
 {: style="text-align: center"}
 
 <p align="center">
-  <img width="460" height="300" src="assets/images/heatmap.PNG">
+<img height="300" src="assets/images/heatmap.PNG">
 </p>
 
 <p align="center">
@@ -166,7 +166,7 @@ Table 1: Heatmap label intervals
 {: style="text-align: center"}
 
 <p align="center">
-  <img width="460" height="300" src="assets/images/RiskSummary.PNG">
+<img height="300" src="assets/images/RiskSummary.PNG">
 </p>
 
 <p align="center">
@@ -185,7 +185,7 @@ This view provides the summary of the forward looking risk exposure across diffe
 {: style="text-align: center"}
 
 <p align="center">
-  <img width="460" height="300" src="assets/images/MultiHazard.PNG">
+<img height="300" src="assets/images/MultiHazard.PNG">
 </p>
 
 <p align="center">
@@ -198,7 +198,7 @@ This view allows the user to see a consolidated view of risk exposure across all
 {: style="text-align: center"}
 
 <p align="center">
-  <img width="460" height="300" src="assets/images/click.PNG">
+<img height="300" src="assets/images/click.PNG">
 </p>
 
 <p align="center">
@@ -220,7 +220,7 @@ Table 2: Normalization values for multi-hazard time series view
 {: style="text-align: center"}
 
 <p align="center">
-  <img width="460" height="300" src="assets/images/timeseries.PNG">
+<img height="300" src="assets/images/timeseries.PNG">
 </p>
 
 <p align="center">
@@ -233,7 +233,7 @@ This view provides a normalized view of forward looking risk exposure of a speci
 {: style="text-align: center"}
 
 <p align="center">
-  <img width="460" height="300" src="assets/images/Export.PNG">
+<img height="300" src="assets/images/Export.PNG">
 </p>
 
 <p align="center">
