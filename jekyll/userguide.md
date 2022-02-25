@@ -1,13 +1,7 @@
 ---
-title: Climate Explorer User Guide Guide
+title: Climate Explorer User Guide
 toc: true
 ---
-
-# Climate Scenario Analysis User Guide
-
-Last Updated: `r format(Sys.Date(), "%d. %B %Y")`
-
-Contact: support@sustglobal.com
 
 The Climate scenario analysis platform from Sust Global allows operational risk analysts, quantitative modelers and ESG analysts to assess historic, near-term and long-term impacts of climate change. We provide historic risk exposure scores for fires, floods and cyclones over the past 11 years (Jan 2010- Dec 2020). For forward-looking projections of extreme physical climate hazards, we provide risk exposures across standardized climate scenarios.
 
@@ -55,11 +49,11 @@ We implement a multi-step bias-correct procedure to ensure forward-looking cyclo
 
 Currently, all climate models are run only under a High Emissions scenario, so the cyclone exposure values presented for the Strong Mitigation and Middle of the Road scenarios are identical to those in the High Emissions scenario. Simulations were also only run out to 2050 due to their substantial computational cost. Therefore exposure values for 2051-2100 represent the mean over the 2030-2050 period. We plan to expand our offering to all three scenarios and beyond 2050 in a future product update.
 
-### Description of Dashboard views
+## Description of Dashboard views
 This section describes the different views in the Climate Scenario Analysis Analytical Dashboard.
 
-
-<center> <h3>Interactive Asset Map View </h3> </center>
+#### Interactive Asset Map View
+{: style="text-align: center"}
 
 <p align="center">
   <img width="460" height="300" src="assets/images/assetview.PNG">
@@ -71,7 +65,8 @@ Fig 1: Asset Map View
 
 This view shows all assets for the selected portfolio on a map. It also acts as a controller for the asset level time series projects for the fundamental variables and the physical hazards. When hovering over a specific asset, the user can see the data attributes for the specific asset. The top bar displays the legend, indicating the color encoding of specific asset types.
 
-<center> <h3>Estimated Loss View</h3> </center>
+#### Estimated Loss View
+{: style="text-align: center"}
 
 <p align="center">
   <img width="460" height="300" src="assets/images/EstLoss.PNG">
@@ -83,7 +78,8 @@ Fig 2: Estimated Loss View
 
 This view shows the distribution of asset value across different asset types in the portfolio and shows the associated loss distribution across asset types expressed as a percentage. By default, these distributions are based on forward looking scenarios. In cases where the dataset does not have an asset value associated with individual assets, all assets are by default assumed to have the same value. We provide the choice of switching from distribution by type (expressed as a percentage of the total portfolio) and estimated value at risk (in $M) through the radio button selector on the top of this view.
 
-<center> <h3>Cross Scenario Loss Summary</h3> </center>
+#### Cross Scenario Loss Summary
+{: style="text-align: center"}
 
 <p align="center">
   <img width="460" height="300" src="assets/images/CrossScenario.PNG">
@@ -95,7 +91,8 @@ Fig 3: Cross Scenario Loss Summary
 
 This view can be accessed by selecting the radio button “Loss Across Scenarios”. This allows the user to explore the estimated loss across different types across multiple climate scenarios. For hazards positively correlated with rising temperatures, the estimated loss can be expected to increase when going from SSP1 to SSP5. However, for some hazards like wildfire, floods and drought, we expect correlation between the SSPs and the estimated loss to be dependent on the geospatial distribution of the assets in the portfolio for each asset type.
 
-<center> <h3>Temperature and Precipitation Time Series View</h3> </center>
+#### Temperature and Precipitation Time Series View
+{: style="text-align: center"}
 
 <p align="center">
   <img width="460" height="300" src="assets/images/AssetTimeSeries.PNG">
@@ -107,7 +104,8 @@ Fig 4: Asset Time Series View
 
 This time series view shows the projected fundamental variables over different selected scenarios. The user has a choice of annual temperature, annual precipitation, and extreme precipitation. When hovering, the user can see the value of the fundamental variable at a specific year for the selected scenario. The time series line indicates the mean value and the gray band indicates the tolerance of the forward looking projects, typically one standard deviation in the projected outputs of the collection of climate models used. Increased uncertainty from the climate models surface as wider tolerance bands for specific variables. The range slider allows the user to see the time series over a specific range of years. By default, the range slider is set to the maximum time period of assessment, usually 2020-2100.
 
-<center> <h3>Historic Physical Hazard Severity Time Series View</h3> </center>
+#### Historic Physical Hazard Severity Time Series View
+{: style="text-align: center"}
 
 <p align="center">
   <img width="460" height="300" src="assets/images/exposure.PNG">
@@ -119,7 +117,8 @@ Fig 5: Asset historic hazard severity time series view
 
 This view illustrates the severity of historic exposure to fires, floods and cyclones at a monthly scale. By default, the range slider is set to the maximum time period of assessment, covering the 11 year window ranging from 2010 to 2020.
 
-<center> <h3>Forward Looking Physical Hazard Time Series View</h3> </center>
+#### Forward Looking Physical Hazard Time Series View
+{: style="text-align: center"}
 
 <p align="center">
   <img width="460" height="300" src="assets/images/HistoricExp.PNG">
@@ -131,7 +130,8 @@ Fig 6: Projected physical hazard time series view
 
 This time series view shows the projected YoY hazard exposure at the specific asset location. The user has a choice of wildfires, inland flooding, heatwaves and drought. When hovering, the user can see the value of the fundamental variable at a specific year for the selected scenario. The time series line indicates the mean value and the gray band indicates the tolerance of the forward looking projects, typically one standard deviation in the projected outputs of the collection of climate models used. Increased uncertainty from the climate models surface as wider tolerance bands for specific variables. The range slider allows the user to see the time series over a specific range of years. By default, the range slider is set to the maximum time period of assessment, usually set to 2021-2100.
 
-<center> <h3>Risk Heat Map View</h3> </center>
+#### Risk Heat Map View
+{: style="text-align: center"}
 
 <p align="center">
   <img width="460" height="300" src="assets/images/heatmap.PNG">
@@ -162,7 +162,8 @@ b) Maximum exposure values per hazard based on 98th percentile values are listed
 
 Table 1: Heatmap label intervals
 
-<center> <h3>Summary Risk View</h3> </center>
+#### Summary Risk View
+{: style="text-align: center"}
 
 <p align="center">
   <img width="460" height="300" src="assets/images/RiskSummary.PNG">
@@ -180,7 +181,8 @@ This view provides the summary of the forward looking risk exposure across diffe
 2. For each hazard, we would look at the mean value per year over all the different assets for a certain asset type. This would give an average value of risk exposure across all types of assets for each year in the time window.
 3. For each hazard, we would then pick the maximum risk exposure value of the mean value for each asset type over all the years in the analysis time window. We then use that value to determine the classification as LOW, MEDIUM or HIGH based on the value intervals listed below. Note that for drought (SPEI), we would use the negative of the value in the risk exposure datasets (negative drought (SPEI) values indicate risk). For flooding, we use the number of years within a decade where the risk exceeds a preset threshold (5%). This is to simulate a flood exceedance threshold from the flood exposure values.
 
-<center> <h3>Multi-hazard Heatmap View</h3> </center>
+#### Multi-hazard Heatmap View
+{: style="text-align: center"}
 
 <p align="center">
   <img width="460" height="300" src="assets/images/MultiHazard.PNG">
@@ -192,7 +194,8 @@ Fig 9: Multi-hazard heatmap view
 
 This view allows the user to see a consolidated view of risk exposure across all assets, across multiple hazards. We use fire, flood, sea level rise and cyclones to highlight risk exposures for each asset. For fire, flood, sea level rise and drought, we use the forward looking 30 year time horizon (2021-2050) by default. or cyclones, we use the historic 11 year time horizon (2010-2020). When hovering over a specific asset, you can see the dominant risk type listed (Fig 11 below). The risks are normalized based on peak risk values from the 98th percentile of the risk exposure distribution i.e. the exposure value for a specific hazard at the 98th percentile of the global exposure distribution is set to 1.0, and all values for that specific hazard are normalized to the 0.0 to 1.0 range.
 
-<center> <h3>Multi-hazard heatmap view - hover view</h3> </center>
+#### Multi-hazard heatmap view - hover view
+{: style="text-align: center"}
 
 <p align="center">
   <img width="460" height="300" src="assets/images/click.PNG">
@@ -213,7 +216,8 @@ Fig 10: Multi-hazard heatmap view - hover view
 
 Table 2: Normalization values for multi-hazard time series view
 
-<center> <h3>Multi-hazard Time Series View</h3> </center>
+#### Multi-hazard Time Series View
+{: style="text-align: center"}
 
 <p align="center">
   <img width="460" height="300" src="assets/images/timeseries.PNG">
@@ -225,7 +229,8 @@ Fig 11: Multi-hazard time series view
 
 This view provides a normalized view of forward looking risk exposure of a specific selected asset in the multi-hazard heatmap view across all hazard types: fire, flood, sea level rise, heatwaves and drought, for the SSP5-85 climate scenario. Each risk type is color coded differently. For a specific highlighted asset, the user can explore the risk over the 2021-2100 time horizon through this interactive view.
 
-<center> <h3>Exporting Views from the Dashboard</h3> </center>
+#### Exporting Views from the Dashboard
+{: style="text-align: center"}
 
 <p align="center">
   <img width="460" height="300" src="assets/images/Export.PNG">
@@ -237,7 +242,7 @@ Fig 12: Exporting Views
 
 We offer interactive plots within our dashboard. Hover over the line graphs to read the values at specific time points or over the map to see details of the assets. To facilitate reporting, we offer the ability to export the current view as a PNG image file. We also allow the user to pan and zoom on the graphs and maps to explore and export views of the data as most suitable.
 
-### Dataset Description
+## Dataset Description
 The naming convention for the historic risk exposure is as follows:
 
 sustglobal_asset_his_risk_{dataset_name}.csv
@@ -255,7 +260,7 @@ extreme_precipitation, fire, flood, heatwaves and drought(SPEI), sea level rise 
 
 In every dataset CSV, each row corresponds to an asset in the data collection. We have columns for the individual asset attributes and a column for each year from 1980 to 2100. The columns for each year contain the projected risk value for a specific asset for a specific year based on the reporting outcomes description.
 
-### Disclaimer and Liability
+## Disclaimer and Liability
 1. **Disclaimer.** While Sust Global endeavors to ensure that the information, analysis and forecasts in the Analytics Platform are correct, Sust Global will not be liable for any errors, inaccuracies or delays in content, or for any actions taken in reliance thereon.
 2. Sust Global does not guarantee the accuracy of or endorse the views or opinions given by any third party content provider.
 3. The information contained in the User Guide and Climate Scenario Analysis Platform is provided without any conditions, warranties or other terms of any kind. Accordingly, and to the maximum extent permitted by law, the the Reference Guide and Climate Scenario Analysis Platform is provided on the basis that Sust Global excludes all representations, warranties, conditions and other terms (including, without limitation, the conditions implied by law of satisfactory quality, fitness for purpose and the use of reasonable care and skill) which but for this legal notice might have effect in relation to this service.
@@ -263,7 +268,7 @@ In every dataset CSV, each row corresponds to an asset in the data collection. W
 5. This exclusion of liability will include but not be limited to loss or damage due to viruses that may infect your computer equipment, software, data or other property on account of your access to or use of the Brochure or your downloading of any material from any websites linked to the Brochure.
 6. **Governing Law and Jurisdiction:** This legal notice shall be governed by and construed in accordance with English law. Disputes arising in connection with this legal notice shall be subject to the exclusive jurisdiction of the English courts.
 
-### Additional Reading
+## Additional Reading
 1. [Sust Global Developer Center](https://developers.sustglobal.com)
 2. [Sust Global Open API specification](https://explorer.sustglobal.io/redoc/)
 3. [Sust Global: Exploring Future Climate Scenarios](https://medium.datadriveninvestor.com/is-our-house-on-fire-98919692259c)
