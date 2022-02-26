@@ -122,7 +122,7 @@ Fig 1: Asset Map View
 <h4 style="text-align: center" id="estimated-loss-view">Estimated Loss View</h4>
 
 <p align="center">
-<img height="300" src="assets/images/EstLoss.PNG">
+<img height="300" src="assets/images/Estvalue.PNG">
 </p>
 
 <p align="center">
@@ -134,7 +134,7 @@ Fig 2: Estimated Loss View
 <h4 style="text-align: center" id="cross-scenario-loss-summary">Cross Scenario Loss Summary</h4>
 
 <p align="center">
-<img height="300" src="assets/images/CrossScenario.PNG">
+<img height="300" src="assets/images/crossloss.PNG">
 </p>
 
 <p align="center">
@@ -170,7 +170,7 @@ Fig 5: Asset historic hazard severity time series view
 <h4 style="text-align: center" id="forward-looking-physical-hazard-time-series-view">Forward Looking Physical Hazard Time Series View</h4>
 
 <p align="center">
-<img height="300" src="assets/images/HistoricExp.PNG">
+<img height="300" src="assets/images/forwardlooking.PNG">
 </p>
 
 <p align="center">
@@ -202,7 +202,7 @@ a) Asset price is set as $1M in the absence of values provided
 b) Maximum exposure values per hazard based on 98th percentile values are listed in Table 2.</li>
 </ol>
 
-<table>
+<table style="margin: 0 auto">
   <thead>
     <tr>
       <th>RISK TYPE</th>
@@ -251,7 +251,11 @@ b) Maximum exposure values per hazard based on 98th percentile values are listed
   </tbody>
 </table>
 
-<p>Table 1: Heatmap label intervals</p>
+<center>
+Table 1: Heatmap label intervals
+</center>
+
+<p><br></p>
 
 <h4 style="text-align: center" id="summary-risk-view">Summary Risk View</h4>
 
@@ -295,7 +299,7 @@ Fig 9: Multi-hazard heatmap view
 Fig 10: Multi-hazard heatmap view - hover view
 </p>
 
-<table>
+<table style="margin: 0 auto">
   <thead>
     <tr>
       <th>RISK TYPE</th>
@@ -330,7 +334,11 @@ Fig 10: Multi-hazard heatmap view - hover view
   </tbody>
 </table>
 
-<p>Table 2: Normalization values for multi-hazard time series view</p>
+<center>
+Table 2: Normalization values for multi-hazard time series view
+</center>
+
+<p><br></p>
 
 <h4 style="text-align: center" id="multi-hazard-time-series-view">Multi-hazard Time Series View</h4>
 
@@ -360,12 +368,12 @@ Fig 12: Exporting Views
 <a class="anchor" href="#dataset-description" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dataset Description</h2>
 <p>The naming convention for the historic risk exposure is as follows:</p>
 
-<p>sustglobal_asset_his_risk_{dataset_name}.csv</p>
+<p><code class="language-plaintext highlighter-rouge">sustglobal_asset_his_risk_{dataset_name}.csv</code></p>
 
 <p>Here, each row corresponds to one asset location, and there are individual columns for each month from Jan 2010 to Dec 2020 for fire, flood and cyclone exposure.
 The dataset used for climate scenario analysis can also be accessed in raw form in the CSV format. The naming convention for the CSV files is as follows:</p>
 
-<p>sustglobal_asset_fwd_{reporting_data_type}<em>risk</em>{dataset_name}_{scenarioID}. csv</p>
+<p><code class="language-plaintext highlighter-rouge">sustglobal_asset_fwd_{reporting_data_type}_risk_{dataset_name}_{scenarioID}. csv</code></p>
 
 <p>Here are the descriptions of the naming parameters:</p>
 <ol>

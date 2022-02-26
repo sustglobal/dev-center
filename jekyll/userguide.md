@@ -69,7 +69,7 @@ This view shows all assets for the selected portfolio on a map. It also acts as 
 {: style="text-align: center"}
 
 <p align="center">
-<img height="300" src="assets/images/EstLoss.PNG">
+<img height="300" src="assets/images/Estvalue.PNG">
 </p>
 
 <p align="center">
@@ -82,7 +82,7 @@ This view shows the distribution of asset value across different asset types in 
 {: style="text-align: center"}
 
 <p align="center">
-<img height="300" src="assets/images/CrossScenario.PNG">
+<img height="300" src="assets/images/crossloss.PNG">
 </p>
 
 <p align="center">
@@ -121,7 +121,7 @@ This view illustrates the severity of historic exposure to fires, floods and cyc
 {: style="text-align: center"}
 
 <p align="center">
-<img height="300" src="assets/images/HistoricExp.PNG">
+<img height="300" src="assets/images/forwardlooking.PNG">
 </p>
 
 <p align="center">
@@ -159,8 +159,13 @@ b) Maximum exposure values per hazard based on 98th percentile values are listed
 | Drought (SPEI)| <=1.5 | 1.5-2.0 | >2.0 |
 | Sea Level Rise (SLR) | <=0.1 | 0.1-0.3 | >0.3 |
 | Tropical Cyclone | <=0.1 | 0.1-0.2 | >0.2 |
+{: style="margin: 0 auto"}
 
+<center>
 Table 1: Heatmap label intervals
+</center>
+
+<br/>
 
 #### Summary Risk View
 {: style="text-align: center"}
@@ -205,7 +210,6 @@ This view allows the user to see a consolidated view of risk exposure across all
 Fig 10: Multi-hazard heatmap view - hover view
 </p>
 
-<center>
 | RISK TYPE | Max value for normalization |
 | - | - |  
 | Fire | 10.0 |
@@ -214,9 +218,13 @@ Fig 10: Multi-hazard heatmap view - hover view
 | Drought (SPEI)| 3.0 |
 | Sea Level Rise (SLR) | 0.75 |
 | Cyclone | .5 |
+{: style="margin: 0 auto"}
+
+<center>
+Table 2: Normalization values for multi-hazard time series view
 </center>
 
-Table 2: Normalization values for multi-hazard time series view
+<br/>
 
 #### Multi-hazard Time Series View
 {: style="text-align: center"}
@@ -247,12 +255,12 @@ We offer interactive plots within our dashboard. Hover over the line graphs to r
 ## Dataset Description
 The naming convention for the historic risk exposure is as follows:
 
-sustglobal_asset_his_risk_{dataset_name}.csv
+```sustglobal_asset_his_risk_{dataset_name}.csv```
 
 Here, each row corresponds to one asset location, and there are individual columns for each month from Jan 2010 to Dec 2020 for fire, flood and cyclone exposure.
 The dataset used for climate scenario analysis can also be accessed in raw form in the CSV format. The naming convention for the CSV files is as follows:
 
-sustglobal_asset_fwd_{reporting_data_type}_risk_{dataset_name}_{scenarioID}. csv
+```sustglobal_asset_fwd_{reporting_data_type}_risk_{dataset_name}_{scenarioID}. csv```
 
 Here are the descriptions of the naming parameters:
 1. Reporting Data Type {reporting_data_type}: This field has one of the following risk parameters: annual_temperature, annual_precipitation,
