@@ -67,7 +67,7 @@ This view shows all assets for the selected portfolio on a map. It also acts as 
 #### Estimated Loss View
 
 <p align="center">
-<img height="300" src="assets/images/Estvalue.png">
+<img height="300" src="assets/images/estvalue.png">
 </p>
 
 <p align="center">
@@ -103,7 +103,7 @@ This time series view shows the projected fundamental variables over different s
 #### Historic Physical Hazard Severity Time Series View
 
 <p align="center">
-<img height="300" src="assets/images/exposure.png">
+<img height="300" src="assets/images/Exposure.png">
 </p>
 
 <p align="center">
@@ -127,7 +127,7 @@ This time series view shows the projected YoY hazard exposure at the specific as
 #### Risk Heat Map View
 
 <p align="center">
-<img height="300" src="assets/images/heatmap.png">
+<img height="300" src="assets/images/Heatmap.png">
 </p>
 
 <p align="center">
@@ -168,7 +168,7 @@ This view provides the summary of the forward looking risk exposure across diffe
 #### Multi-hazard Heatmap View
 
 <p align="center">
-<img height="300" src="assets/images/MultiHazard.png">
+<img height="300" src="assets/images/Multihazard.png">
 </p>
 
 <p align="center">
@@ -180,7 +180,7 @@ This view allows the user to see a consolidated view of risk exposure across all
 #### Multi-hazard heatmap view - hover view
 
 <p align="center">
-<img height="300" src="assets/images/click.png">
+<img height="300" src="assets/images/Click.png">
 </p>
 
 <p align="center">
@@ -218,7 +218,7 @@ This view provides a normalized view of forward looking risk exposure of a speci
 #### Exporting Views from the Dashboard
 
 <p align="center">
-<img height="300" src="assets/images/Export.png">
+<img height="300" src="assets/images/export.png">
 </p>
 
 <p align="center">
