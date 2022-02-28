@@ -5,11 +5,16 @@ h1 {
 
 h2 {
   font-size: 1.3rem;
+  margin-top: 1rem;
 }
 
 h3 {
   font-size: 1.1rem;
-  
+  margin-bottom: 0.3rem;  
+}
+
+h4 {
+  font-size: 1.1rem;
 }
 
 a {
@@ -102,4 +107,8 @@ thead tr {
 
 tbody tr {
   border-bottom: 1px solid #ccc;
+}
+
+p {
+  margin-bottom: 0.8rem;
 }
