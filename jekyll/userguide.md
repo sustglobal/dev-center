@@ -55,7 +55,7 @@ This section describes the different views in the Climate Scenario Analysis Anal
 #### Interactive Asset Map View
 
 <p align="center">
-<img height="300" src="assets/images/assetview.PNG">
+<img height="300" src="assets/images/assetview.png">
 </p>
 
 <p align="center">
@@ -67,7 +67,7 @@ This view shows all assets for the selected portfolio on a map. It also acts as 
 #### Estimated Loss View
 
 <p align="center">
-<img height="300" src="assets/images/Estvalue.PNG">
+<img height="300" src="assets/images/Estvalue.png">
 </p>
 
 <p align="center">
@@ -79,7 +79,7 @@ This view shows the distribution of asset value across different asset types in 
 #### Cross Scenario Loss Summary
 
 <p align="center">
-<img height="300" src="assets/images/crossloss.PNG">
+<img height="300" src="assets/images/crossloss.png">
 </p>
 
 <p align="center">
@@ -91,7 +91,7 @@ This view can be accessed by selecting the radio button “Loss Across Scenarios
 #### Temperature and Precipitation Time Series View
 
 <p align="center">
-<img height="300" src="assets/images/AssetTimeSeries.PNG">
+<img height="300" src="assets/images/AssetTimeSeries.png">
 </p>
 
 <p align="center">
@@ -103,7 +103,7 @@ This time series view shows the projected fundamental variables over different s
 #### Historic Physical Hazard Severity Time Series View
 
 <p align="center">
-<img height="300" src="assets/images/exposure.PNG">
+<img height="300" src="assets/images/exposure.png">
 </p>
 
 <p align="center">
@@ -115,7 +115,7 @@ This view illustrates the severity of historic exposure to fires, floods and cyc
 #### Forward Looking Physical Hazard Time Series View
 
 <p align="center">
-<img height="300" src="assets/images/forwardlooking.PNG">
+<img height="300" src="assets/images/forwardlooking.png">
 </p>
 
 <p align="center">
@@ -127,7 +127,7 @@ This time series view shows the projected YoY hazard exposure at the specific as
 #### Risk Heat Map View
 
 <p align="center">
-<img height="300" src="assets/images/heatmap.PNG">
+<img height="300" src="assets/images/heatmap.png">
 </p>
 
 <p align="center">
@@ -150,7 +150,7 @@ A table of heat map coding ranges can be found on our [QuickStart Guide.](https:
 #### Summary Risk View
 
 <p align="center">
-<img height="300" src="assets/images/RiskSummary.PNG">
+<img height="300" src="assets/images/RiskSummary.png">
 </p>
 
 <p align="center">
@@ -168,7 +168,7 @@ This view provides the summary of the forward looking risk exposure across diffe
 #### Multi-hazard Heatmap View
 
 <p align="center">
-<img height="300" src="assets/images/MultiHazard.PNG">
+<img height="300" src="assets/images/MultiHazard.png">
 </p>
 
 <p align="center">
@@ -180,7 +180,7 @@ This view allows the user to see a consolidated view of risk exposure across all
 #### Multi-hazard heatmap view - hover view
 
 <p align="center">
-<img height="300" src="assets/images/click.PNG">
+<img height="300" src="assets/images/click.png">
 </p>
 
 <p align="center">
@@ -206,7 +206,7 @@ Table 1: Normalization values for multi-hazard time series view
 #### Multi-hazard Time Series View
 
 <p align="center">
-<img height="300" src="assets/images/timeseries.PNG">
+<img height="300" src="assets/images/timeseries.png">
 </p>
 
 <p align="center">
@@ -218,7 +218,7 @@ This view provides a normalized view of forward looking risk exposure of a speci
 #### Exporting Views from the Dashboard
 
 <p align="center">
-<img height="300" src="assets/images/Export.PNG">
+<img height="300" src="assets/images/Export.png">
 </p>
 
 <p align="center">
