@@ -1,5 +1,6 @@
 ---
 title: Climate Explorer Quickstart Guide
+toc: true
 ---
 
 Climate Explorer is available at [https://explorer.sustglobal.io](https://explorer.sustglobal.io).
