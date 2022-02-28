@@ -74,9 +74,9 @@ For creating standard heatmaps, we assess the physical risk over the 30 year win
 | Annual Temperature | Annual mean annual temperature at the asset location | °C | -5 to 45 | 100km | N/A | N/A |
 | Annual Precipitation | Annual total precipitation at the asset location | mm | 0 to 5000 | 100km | N/A | N/A |
 | Extreme Precipitation | Annual probabilistic projections of number of days in a year where precipitation exceeds 51mm | Number of days | 0 to 365 | 100km | N/A | N/A |
-| Wildfire Risk | Annual Percentage of exposed land within 14km radius of the asset to wildfire | Percentage | 0 to 100 | 14km | LOW: 0.0-0.007; MEDIUM: 0.007-1.0; HIGH: >1.0 | 10.0 |
-| Inland Flooding | Annual exposure of asset to floods | Probability score | 0.0 to 1.0 | 4km | Based on number of years with probability of flood >5%; LOW: 0-0.5; MEDIUM: 0.3; HIGH: >0.3 | 1.0 |
+| Wildfire Risk | Annual Percentage of exposed land within 14km radius of the asset to wildfire | Percentage | 0 to 100 | 14km | LOW: 0.0-0.008; MEDIUM: 0.008-1.0; HIGH: >1.0 | 10.0 |
+| Inland Flooding | Annual exposure of asset to floods | Probability score | 0.0 to 1.0 | 4km | Based on number of years with probability of flood >5%; LOW: 0; MEDIUM: 1-2,; HIGH: >=3 | 1.0 |
 | Heatwaves | Annual heatwave days per year where temperature at asset is projected to exceed 98th percentile of historic recordings | Number of days | 0 to 365 | 100km | LOW: 0-30; MEDIUM: 30-50; HIGH: >50 | 200 |
 | Sea Level Rise | Annual projection of sea level rise relative to average sea level at the asset over 1980-2010 | Rise in meters | 0.0 to 2.0 | 100km | LOW: <0.1; MEDIUM:0.1 to 0.3; HIGH: >0.3 | 0.75 |
-| Drought (SPEI) | Annual projection of standard precipitation evapo-transipiration index | Index score | -3.0 to 3.0 | 100km | LOW: >-1.5; MEDIUM: -1.5 to -2.0; HIGH: <-2.0 | 3.0 |
-| Tropical Cyclones | Annual projection of probability of at least one hit by a category 3/4/5 cyclone | Probability score | 0.0 to 1.0 | 50km | LOW: < 0.5; MEDIUM: 0.5 to 0.7; HIGH: > 0.7 | 1.0 |
+| Drought (SPEI) | Annual projection of standard precipitation evapo-transipiration index | Index score | -3.0 to 3.0 | 100km | LOW: <=1.5; MEDIUM: 1.5-2.0; HIGH: >2.0 | 3.0 |
+| Tropical Cyclones | Annual projection of probability of at least one hit by a category 3/4/5 cyclone | Probability score | 0.0 to 1.0 | 50km | LOW: <=0.1; MEDIUM: 0.1-0.2; HIGH:  >0.2 | 1.0 |
