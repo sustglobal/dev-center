@@ -67,7 +67,7 @@ This view shows all assets for the selected portfolio on a map. It also acts as 
 #### Estimated Loss View
 
 <p align="center">
-<img height="300" src="assets/images/estvalue.png">
+<img height="300" src="assets/images/Estimatedvalue.png">
 </p>
 
 <p align="center">
@@ -142,7 +142,7 @@ This view shows the heatmap of forward looking risk for a selected physical haza
 
 3. The heatmap marker is scaled based on the extent of the estimated loss which is computed as 40% of the asset price * (max risk exposure for asset in step 2 / max exposure of the hazard) leading to assets with high estimated losses being marked with larger marker size on the maps.
 a) Asset price is set as $1M in the absence of values provided
-b) Maximum exposure values per hazard based on 98th percentile values are listed in Table 1.
+b) Maximum exposure values per hazard based on 98th percentile values are listed in the last table on the [Quickstart guide](https://developers.sustglobal.com/explorer.html).
 
 A table of heat map coding ranges can be found on our [QuickStart Guide.](https://developers.sustglobal.com/explorer.html)
 
@@ -186,22 +186,6 @@ This view allows the user to see a consolidated view of risk exposure across all
 <p align="center">
 Fig 10: Multi-hazard heatmap view - hover view
 </p>
-
-| RISK TYPE | Max value for normalization |
-| - | - |  
-| Fire | 10.0 |
-| Flood | 1.0 |
-| Heatwave | 200.00 |
-| Drought (SPEI)| 3.0 |
-| Sea Level Rise (SLR) | 0.75 |
-| Cyclone | .5 |
-{: style="margin: 0 auto"}
-
-<center>
-Table 1: Normalization values for multi-hazard time series view
-</center>
-
-<br/>
 
 #### Multi-hazard Time Series View
 
