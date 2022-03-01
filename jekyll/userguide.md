@@ -142,7 +142,7 @@ This view shows the heatmap of forward looking risk for a selected physical haza
 
 3. The heatmap marker is scaled based on the extent of the estimated loss which is computed as 40% of the asset price * (max risk exposure for asset in step 2 / max exposure of the hazard) leading to assets with high estimated losses being marked with larger marker size on the maps.
 a) Asset price is set as $1M in the absence of values provided
-b) Maximum exposure values per hazard based on 98th percentile values are listed in the last table on the [Quickstart guide](https://developers.sustglobal.com/explorer.html).
+b) Maximum exposure values per hazard based on 98th percentile values are listed in the last table on the [Quickstart guide](./explorer.html).
 
 A table of heat map coding ranges can be found on our [QuickStart Guide.](https://developers.sustglobal.com/explorer.html)
 
