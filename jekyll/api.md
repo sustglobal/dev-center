@@ -3,8 +3,8 @@ title: Climate Explorer API Guide
 toc: true
 ---
 
-Sust Global's Climate Explorer API is a RESTful API interface to to Sust Global's climate intelligence capabilities. 
-The API is currently enables users to access generated physical risk exposure datasets programmatically.
+Sust Global's Climate Explorer API is a RESTful API interface to Sust Global's climate intelligence capabilities. 
+The API currently enables users to access generated physical risk exposure datasets programmatically.
 This guide helps users learn how to work with the API directly.
 
 ## Quickstart
@@ -16,108 +16,128 @@ This value will be referenced below as `$APIKEY`.
 Open a local terminal, then run the following `curl` command:
 
 ```
-curl https://explorer.sustglobal.io/api/portfolios/?api_key=$APIKEY
+curl "https://explorer.sustglobal.io/api/portfolios/?api_key=$APIKEY&project=ec-DEMO"
 ```
 
-The output will contain a set of all portfolios you currently may access. For example, a single portfolio named "DEMO":
+A successful response from the portfolios endpoint will contain a set of all portfolios you currently may access.
+For example, a single portfolio named "MRTG_demo":
 
 ```
-[
-  {
-    "portfolio_id": "95f83d71cd9de1bb",
-    "portfolio_name": "DEMO",
-    "created_at": "2021-12-03T17:46:17Z",
-    "status": "Risk data available"
+{
+  "portfolio_id": "f150aac833c2c6c2",
+  "portfolio_name": "MRTG_demo",
+  "created_at": "2022-02-03T11:47:37Z",
+  "updated_at": "2022-02-12T23:28:59Z",
+  "status": "Risk data available"
+}
+```
+
+This response tells us that the `MRTG_demo` portfolio already contains physical risk exposure data.
+Before we fetch any risk-related data, we will first retrieve the assets from the portfolio:
+
+```
+curl "https://explorer.sustglobal.io/api/portfolios/MRTG_demo/assets?api_key=$APIKEY&project=ec-DEMO"
+```
+
+The output below is a single object from the list of assets you will observe:
+
+```
+{
+  "portfolio_name": "MRTG_demo",
+  "portfolio_index": 30,
+  "entity_id": "",
+  "entity_name": "760",
+  "lat": 38.764016,
+  "lng": -121.244538,
+  "labels": {
+    "tag": "56,628 SF",
+    "type": "Office",
   }
-]
+}
 ```
 
-This response tells us that the "DEMO" portfolio already has physical risk exposure data.
-Before we fetch any risk-related data, we will first retrieve the assets from the portfolio.
-Be sure to substitute `$PORTFOLIO` with the name of your own portfolio:
+Now, we can fetch a summary of the risk exposure data pertaining to this portfolio with the following command:
 
 ```
-curl https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/assets?api_key=$APIKEY
+curl "https://explorer.sustglobal.io/api/portfolios/MRTG_demo/datasets/physical/summary?api_key=$APIKEY&project=ec-DEMO"
 ```
 
-This portfolio happens to contain a single asset:
+A single object from the response is displayed below:
 
 ```
-[
-  {
-    "portfolio_name": "DEMO",
-    "portfolio_index": 0,
-    "entity_id": "",
-    "entity_name": "Half Dome",
-    "lat": 37.74586759398789,
-    "lng": -119.53319929681618,
-    "labels": {
-        "address": "Yosemite Valley, CA",
-        "type": "Mountain",
-        "tag": "Yosemite",
+{
+  "portfolio_name": "MRTG_demo",
+  "portfolio_index": 228,
+  "entity_name": "302",
+  "entity_id": "",
+  "window": 15,
+  "window_start_year": 2022,
+  "scenario": "ssp126",
+  "risk_summaries": [
+    {
+      "hazard": "cyclone",
+      "risk_class": "LOW",
+      "risk_score": 0
+    },
+    {
+      "hazard": "flood_potential",
+      "risk_class": "LOW",
+      "risk_score": 0
+    },
+    {
+      "hazard": "heatwave",
+      "risk_class": "LOW",
+      "risk_score": 0.11072656322738
+    },
+    {
+      "hazard": "sea_level_rise",
+      "risk_class": "LOW",
+      "risk_score": 0
+    },
+    {
+      "hazard": "water_stress",
+      "risk_class": "LOW",
+      "risk_score": 0.472303866057673
+    },
+    {
+      "hazard": "wildfire",
+      "risk_class": "LOW",
+      "risk_score": 0
     }
-  }
-]
+  ]
+}
 ```
 
-We can fetch a summary of this data with the following command.
+To fetch the more granular timeseries data, we can use the "items" endpoint.
+We can also apply some filters this time around: `hazard=wildfire`, `scenario=ssp585`, and `start_date=2022`
 
 ```
-curl https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/datasets/physical/summary?api_key=$APIKEY
+curl "https://explorer.sustglobal.io/api/portfolios/MRTG_demo/datasets/physical/items?api_key=$APIKEY&project=ec-DEMO&hazard=wildfire&scenario=ssp585&start_date=2022"
 ```
 
-The result summarizes the physical risk exposure of the asset.
-Note that the output below has been truncated.
+Below is a truncated object from the response:
 
 ```
-[
-  {
-    "portfolio_name": "DEMO",
-    "portfolio_index": 0,
-    "entity_id": "",
-    "entity_name": "Half Dome",
-    "risk_summary": {
-      "ssp126": {
-        "fire_label": "LOW",
-        "flood_label": "LOW",
-        "heatwave_label": "LOW",
-        "drought_label": "MEDIUM",
-        "sealevelrise_label": "LOW",
-        "cyclone_label": "LOW",
-        "fire_score": 0.000709628453478217,
-        "flood_score": 0,
-    ...
-```
-
-To fetch the more granular timeseries data, we can use the "items" endpoint:
-
-```
-% curl https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/datasets/physical/items?api_key=$APIKEY&risk=fire&scenario=ssp585
-[
-  {
-    "portfolio_name": "DEMO",
-    "portfolio_index": 0,
-    "entity_id": "",
-    "entity_name": "Half Dome",
-    "risk_type": "fire",
-    "scenario": "ssp585",
-    "risk_exposure": {
-      "1980": 7.366613864898682,
-      "1981": 6.839722633361816,
-      "1982": 6.405037879943848,
-      "1983": 6.664313793182373,
-      "1984": 6.624270439147949,
-      "1985": 6.821004390716553,
-      "1986": 6.622776985168457,
-      "1987": 6.634910583496094,
-      "1988": 6.496907234191895,
-      "1989": 6.295634269714356,
-      "1990": 6.6130194664001465,
-      "1991": 6.400048732757568,
-      "1992": 6.86409854888916,
-      "1993": 6.637968063354492,
-      "1994": 6.701752662658691,
-      "1995": 6.537136077880859,
+{
+  "portfolio_name": "MRTG_demo",
+  "portfolio_index": 49,
+  "entity_id": "",
+  "entity_name": "167",
+  "scenario": "ssp585",
+  "hazard": "wildfire",
+  "indicator": "burned_area_norm",
+  "measure": "mid",
+  "risk_exposure": {
+    "2022": 1.530678391456604,
+    "2023": 5.00434160232544,
+    "2024": 1.4145750999450684,
+    "2025": 1.45624041557312,
+    "2026": 2.020421028137207,
+    "2027": 2.387681722640991,
+    "2028": 2.2932016849517822,
+    "2029": 2.7874271869659424,
+    "2030": 2.900757312774658,
+    "2031": 1.892580509185791,
     ...
 ```
 
@@ -131,10 +151,38 @@ All API requests must be authenticated using an API key.
 Find your own API key at in your [Climate Explorer User Profile](https://explorer.sustglobal.io/account/profile/).
 
 To authenticate an API request, simply pass your API key as a query parameter named `api_key`.
-For example, if your API key were "FOOBAR" then you would authenticate your request like so:
+For example, if your API key were `FOOBAR` then you would authenticate your request like so:
 
 ```
-curl https://explorer.sustglobal.io/api/portfolios/?api_key=FOOBAR
+curl "https://explorer.sustglobal.io/api/portfolios/?api_key=FOOBAR"
+```
+
+### Projects
+
+Note that a project must typically be indicated via a `project` query parameter.
+You can programmatically identify which projects you may access via the `/api/projects/` endpoint:
+
+```
+% curl "https://explorer.sustglobal.io/api/projects/?api_key=$APIKEY"
+[
+  {
+    "project_id": "a19b6282de313211",
+    "project_name": "ec-DEMO"
+  }
+]
+```
+
+You may use either the `project_id` or `project_name` value in the query parameter.
+For example, using the project name:
+
+```
+curl "https://explorer.sustglobal.io/api/portfolios/?api_key=$APIKEY&project=ec-DEMO"
+```
+
+...or the project ID:
+
+```
+curl "https://explorer.sustglobal.io/api/portfolios/?api_key=$APIKEY&project=a19b6282de313211"
 ```
 
 ### Pagination
@@ -169,7 +217,7 @@ Note that many of the examples refer to environment variables that must be set m
 To create a new portfolio, simply run the following cURL command:
 
 ```
-curl -i -X POST https://explorer.sustglobal.io/api/portfolios/?api_key=$APIKEY&portfolio=$PORTFOLIO
+curl -i -X POST "https://explorer.sustglobal.io/api/portfolios/?api_key=$APIKEY&project=$PROJECT&portfolio=$PORTFOLIO"
 ```
 
 ### Upload Assets to a Portfolio
@@ -179,7 +227,7 @@ The value of `$ASSET_FILE` must be the location of a local CSV file containing a
 Please see the [Climate Explorer Guide](/explorer.html) for more information about assets and CSV file requirements.
 
 ```
-curl -i -F asset=@$ASSET_FILE https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/assets/import?api_key=$APIKEY 
+curl -i -F asset=@$ASSET_FILE "https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/assets/import?api_key=$APIKEY&project=$PROJECT"
 ```
 
 ### Export Portfolio Assets
@@ -188,27 +236,27 @@ It may be useful to download all assets in a given portfolio to a local CSV file
 This is primarily useful when you intend to re-upload a modified set of assets to a portfolio.
 
 ```
-curl -OJ https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/assets/export?api_key=$APIKEY
+curl -OJ "https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/assets/export?api_key=$APIKEY&project=$PROJECT"
 ```
 
 A CSV file will be written to the filesystem.
 
-### Fetch Physical Risk Exposure Data
+### Fetch Physical Risk Exposure Timeseries Data
 
 After physical risk exposure data has been generated, one may interact with it natively via the API:
 
 ```
-curl -i https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/datasets/physical/items?api_key=$APIKEY
+curl -i "https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/datasets/physical/items?api_key=$APIKEY&project=$PROJECT"
 ```
 
 Note that this endpoint will contain a lot of data, so you should be familiar with pagination controls. Documentation is
-available elsewhere in this guide.
+available earlier in this guide.
 
-Additional query parameters that may be useful include `scenario` and `risk_type`. An example of filtering the risk exposure
-dataset to SSP2-4.5 for wildfire-induced risk:
+Additional query parameters that may be useful include `scenario`, `hazard`, `indicator` and `measure.
+An example of filtering the risk exposure dataset to SSP2-4.5 for a specific wildfire-related indicator:
 
 ```
-curl -i https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/datasets/physical/items?api_key=$APIKEY&scenario=ssp245&risk_type=wildfire
+curl -i "https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/datasets/physical/items?api_key=$APIKEY&project=$PROJECT&scenario=ssp245&hazard=wildfire&indicator=burned_area_norm&measure=mid"
 ```
 
 Please review the API Reference for documentation of all supported query parameters.
@@ -218,15 +266,15 @@ Please review the API Reference for documentation of all supported query paramet
 A summary of physical risk exposure data with an optional `scenario` filter is available via API:
 
 ```
-curl -i https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/datasets/physical/summary?api_key=$APIKEY
+curl -i "https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/datasets/physical/summary?api_key=$APIKEY&project=PROJECT"
 ```
 
 ### Export Physical Risk Exposure
 
-Download a ZIP archive containing the pysical risk exposure data for a specific portfolio using the following command:
+Download a ZIP archive containing the physical risk exposure data for a specific portfolio using the following command:
 
 ```
-curl -OJ https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/datasets/physical/export?api_key=$APIKEY
+curl -OJ "https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/datasets/physical/export?api_key=$APIKEY&project=$PROJECT"
 ```
 
 A ZIP file will be written to the filesystem.
