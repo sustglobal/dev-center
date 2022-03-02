@@ -23,8 +23,9 @@ Click on the link that looks like `http://localhost:8888/?token=XYZ` (typically 
 Now from your browser you should choose a notebook to start.
 A good place to begin is `ClimateExplorerAPIDemo.ipynb`, which is a quick demonstration of the python API client.
 Note the commentary in the first cell requiring further input from you.
+If you simply wish to see the example output from the notebook, it is [available on Github](https://github.com/sustglobal/dev-center/blob/master/jupyter-notebooks/ClimateExplorerAPIDemo.ipynb).
 
-To stop the server, simply `ctrl+C` and confirm.
+When you are done, return to your terminal session and enter `ctrl+C` twice to stop the server.
 
 ## Local Development
 
