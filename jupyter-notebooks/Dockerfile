@@ -7,7 +7,7 @@ RUN pip install --user -r /opt/dev-center/jupyter-notebooks/requirements.txt
 
 # uncomment following two lines to install sust-api-client
 # package from local source
-#USER root
-#RUN pip install --user /opt/dev-center/clients/python
+USER root
+RUN pip install --user /opt/dev-center/clients/python
 
 WORKDIR /home/jovyan/work
