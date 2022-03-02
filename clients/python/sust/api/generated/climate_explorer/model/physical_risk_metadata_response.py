@@ -91,7 +91,7 @@ class PhysicalRiskMetadataResponse(ModelNormal):
         """
         return {
             'portfolio_name': (str,),  # noqa: E501
-            'date_validation': (datetime,),  # noqa: E501
+            'created_at': (datetime,),  # noqa: E501
             'updated_at': (datetime,),  # noqa: E501
             'sha256_digest': (str,),  # noqa: E501
         }
@@ -103,7 +103,7 @@ class PhysicalRiskMetadataResponse(ModelNormal):
 
     attribute_map = {
         'portfolio_name': 'portfolio_name',  # noqa: E501
-        'date_validation': 'date_validation',  # noqa: E501
+        'created_at': 'created_at',  # noqa: E501
         'updated_at': 'updated_at',  # noqa: E501
         'sha256_digest': 'sha256_digest',  # noqa: E501
     }
@@ -115,12 +115,12 @@ class PhysicalRiskMetadataResponse(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, portfolio_name, date_validation, updated_at, sha256_digest, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, portfolio_name, created_at, updated_at, sha256_digest, *args, **kwargs):  # noqa: E501
         """PhysicalRiskMetadataResponse - a model defined in OpenAPI
 
         Args:
             portfolio_name (str): Name of the corresponding portfolio
-            date_validation (datetime): Date and Time when Risk Dataset was created and validated
+            created_at (datetime): Date and Time when Risk Dataset was created and validated
             updated_at (datetime): Date and time portfolio was updated (UTC)
             sha256_digest (str): SHA256 hash of the risk exposure zip archive
 
@@ -183,7 +183,7 @@ class PhysicalRiskMetadataResponse(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.portfolio_name = portfolio_name
-        self.date_validation = date_validation
+        self.created_at = created_at
         self.updated_at = updated_at
         self.sha256_digest = sha256_digest
         for var_name, var_value in kwargs.items():
@@ -206,12 +206,12 @@ class PhysicalRiskMetadataResponse(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, portfolio_name, date_validation, updated_at, sha256_digest, *args, **kwargs):  # noqa: E501
+    def __init__(self, portfolio_name, created_at, updated_at, sha256_digest, *args, **kwargs):  # noqa: E501
         """PhysicalRiskMetadataResponse - a model defined in OpenAPI
 
         Args:
             portfolio_name (str): Name of the corresponding portfolio
-            date_validation (datetime): Date and Time when Risk Dataset was created and validated
+            created_at (datetime): Date and Time when Risk Dataset was created and validated
             updated_at (datetime): Date and time portfolio was updated (UTC)
             sha256_digest (str): SHA256 hash of the risk exposure zip archive
 
@@ -272,7 +272,7 @@ class PhysicalRiskMetadataResponse(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.portfolio_name = portfolio_name
-        self.date_validation = date_validation
+        self.created_at = created_at
         self.updated_at = updated_at
         self.sha256_digest = sha256_digest
         for var_name, var_value in kwargs.items():
