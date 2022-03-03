@@ -16,7 +16,10 @@ If you do not yet have a Climate Explorer account, please contact [sales@sustglo
 
 Welcome to Climate Explorer - this video will provide a walkthrough of how to upload your assets, autogenerate the risk exposure report and populate a dashboard with the results of that analysis. We will then go over how to derive climate scenario analysis outcomes from the dashboard view for your analysis, assessment and reporting needs.
 
+<center>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Q1OsUfyojMk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>
+
 
 # Climate Scenarios
 
