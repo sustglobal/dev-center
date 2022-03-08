@@ -17,7 +17,7 @@ This guide covers the following three distinct climate scenarios:
 3. **High Emissions:** This scenario covers a future where the world continues on its current trajectory (SSP5-RCP8.5). There is continued reliance on competitive markets to produce rapid technological progress.. Global markets are increasingly integrated. There is a high reliance on fossil fuels, with emissions peaking around 2090 and global mean temperatures rising approximately 5°C by 2100.
 
 ## Physical Hazard Modeling
-We report on 7 acute physical hazards at the asset level: wildfire, drought, heatwaves, flooding, sea level rise, and tropical cyclones. The modeled results are stored as time series for each specific asset within a portfolio of assets.
+We report on 7 acute physical hazards at the asset level: wildfire, drought, heatwaves, flooding, sea level rise, tropical cyclones, and water stress. The modeled results are stored as time series for each specific asset within a portfolio of assets.
 
 ### Wildfire
 
@@ -61,9 +61,9 @@ Currently, all climate models are run only under a High Emissions scenario, so t
 
 We model current and forward-looking water stress scores using the World Resource Institute’s Aqueduct model. The state-of-the-art Aqueduct model has been extensively used by researchers in academia and industry to assess portfolio water risk.
 
-The presented water stress score is the ratio of water withdrawal to renewable water availability. Water withdrawal incorporates a diverse set of global data sources, including population, livestock, agriculture, irrigation, and other socioeconomic factors. These withdrawals encompass domestic, industrial, irrigation, and livestock uses. Renewable water availability, which includes surface and groundwater pools, is calculated using a global hydrological model that incorporates meteorological and landscape characteristics.
+The presented water stress score is the ratio of water withdrawal to renewable water availability. Water withdrawal incorporates a diverse set of global data sources, including: population, livestock, agriculture, irrigation, and other socioeconomic factors. They encompass domestic, industrial, irrigation, and livestock uses. Renewable water availability, which includes surface and groundwater pools, is calculated using a global hydrological model that incorporates meteorological and landscape characteristics.
 
-In basins experiencing high water stress (>40%), withdrawals are large relative to renewable available water, indicating greater competition for water resources. This ratio can exceed 1.0 when non-renewable water sources like aquifers are accessed, and in practice we clip any outliers exceeding 4.0. We also interpolate values in missing years.
+In basins experiencing high water stress (>0.4), withdrawals are large relative to renewable available water, indicating greater competition for water resources. This ratio can exceed 1.0 when non-renewable water sources like aquifers are accessed, and in practice we clip any outliers exceeding 4.0. We also interpolate values in missing years.
 
 Currently, all climate models are run under the High Emissions or Middle of the Road scenarios with CMIP5-based meteorological inputs, so the water stress score values presented for the Strong Mitigation scenario are identical to those in the Middle of the Road scenario. Simulations were also only run out to 2050, so exposure values for 2051-2100 represent the mean over the 2030-2050 period. We plan to expand our offering to include a Strong Mitigation scenario and to extend beyond 2050 in a future product update.
 
@@ -158,7 +158,7 @@ This view shows the heatmap of forward looking risk for a selected physical haza
 1. For a selected SSP, we would look at the maximum value of risk exposure over the 2021-2050 analysis time window for all hazards with the exception of sea level rise (SLR) and 2021-2100 for SLR as the input to the risk summary view. This is to account for sea level rise being a longer term hazard, having more profound exposure over the second half of the century.
 2. For each hazard, we would then pick the maximum risk exposure value of each asset over all the years in the analysis time window and use that value as input to the classification as LOW, MEDIUM or HIGH, based on the value intervals listed below. Note that for drought (SPEI), we would use the negative of the value in the risk exposure datasets (negative drought (SPEI) values indicate risk). For flooding, we use the number of years within a decade where the risk exceeds a preset threshold (5%). This is to simulate a flood exceedance threshold from the flood exposure values.
 
-3. The heatmap marker is scaled based on the extent of the estimated loss which is computed as 40% of the asset price * (max risk exposure for asset in step 2 / max exposure of the hazard) leading to assets with high estimated losses being marked with larger marker size on the maps.
+3. The heatmap marker is scaled based on the extent of the estimated loss which is computed as 0.4 of the asset price * (max risk exposure for asset in step 2 / max exposure of the hazard) leading to assets with high estimated losses being marked with larger marker size on the maps.
 a) Asset price is set as $1M in the absence of values provided
 b) Maximum exposure values per hazard based on 98th percentile values are listed in the last table on the [Quickstart guide](./explorer.html).
 
@@ -228,6 +228,12 @@ Fig 12: Exporting Views
 </p>
 
 We offer interactive plots within our dashboard. Hover over the line graphs to read the values at specific time points or over the map to see details of the assets. To facilitate reporting, we offer the ability to export the current view as a PNG image file. We also allow the user to pan and zoom on the graphs and maps to explore and export views of the data as most suitable.
+
+#### Graph Analysis Functionality
+
+Within Climate Explorer, each graph allows for real-time configuration and analysis. On the top right of each graph, you can zoom-in and out, pan, and hover to configure your data in real-time.
+
+[View a Plotly Tutorial on our built-in Graph Analysis functionality, here.](https://plotly.com/chart-studio-help/zoom-pan-hover-controls/)
 
 ## Dataset Description
 The naming convention for the historic risk exposure is as follows:
