@@ -21,7 +21,7 @@ We report on 7 acute physical hazards at the asset level: wildfire, drought, hea
 
 ### Wildfire
 
-#### Burned Area Susceptibility
+#### Wildfire Burned Area Fraction
 We represent annual fire risk by aggregating CMIP6 model simulations of monthly wildfire burned area [% of grid cell]. Wildfire [models](https://www.sciencedirect.com/science/article/abs/pii/S0921818116303770?via%3Dihub) incorporate factors such as temperature, precipitation, land cover type, and population to simulate fire occurrence and the associated area burned. We use our proprietary methodologies for wildfire super resolution [NeurIPS2020 technical reference](https://www.climatechange.ai/papers/neurips2020/45) on top of the model ensemble to enable high resolution wildfire projections. These projections are further processed using the latest satellite derived land cover maps, filtering for the urban-wildland interface to further refine the projections.
 
 For example: fire occurrence includes both lightning and human-induced ignitions, and high temperatures and drought lead to drier fuels and increased likelihood of fire.
@@ -30,7 +30,7 @@ For example: fire occurrence includes both lightning and human-induced ignitions
 
 We also use fire weather as an indicator of fire risk.  This indicator shows the average annual probability of a fire occurring within a kilometer of the asset location.  We derive this indicator based on the historic functional relationship between fire weather and the daily probability of fire, taking into account on-the-ground characteristics like land cover types and climate zones that constrain vegetation types and structure.  We then apply this functional relationship based on historic observations to ensembled CMIP6 predictions of future weather to estimate future fire probabilities.  
 
-When estimating fire risk for a given asset, we take the average risk over all land cover types within 1 kilometer.  Thus, for an asset that has 50% urban areas 50% forested areas within 1 kilometer, the fire probability is the mean of the fire risk for these two land cover types.
+When estimating fire risk for a given asset, we take the average risk over all land cover types within 1 kilometer.  Thus, for an asset that has 50% urban areas and 50% forested areas within 1 kilometer, the fire probability is the mean of the fire risk for these two land cover types.
 
 ### Drought
 To estimate an asset’s exposure to drought, we utilized a drought index based on CMIP6 simulations of precipitation and temperature, from which we estimate potential evapotranspiration. This is the more suitable index for agricultural assets like farms and farm production sites. The drought index, also referred to as the [standardized precipitation evapotranspiration index (SPEI)](https://spei.csic.es/home.html), represents the magnitude of precipitation deficits (negative magnitude) or surplus (positive magnitude) along with accounting for evaporation over the preceding 12-month period. Values between -1.5 and -2.0 indicate moderate dryness, while values below -2.0 indicate severe dryness. High risk, exceptional droughts fall below -2.0 on the standard precipitation evapotranspiration index (SPEI). Drought index values are calculated relative to a historical 1950-2014 baseline period, and future droughts can reach index values below -3.0 if the droughts are unprecedented relative to that 1950-2014 historical period.
