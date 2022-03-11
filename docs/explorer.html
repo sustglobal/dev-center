@@ -169,7 +169,7 @@ higher cadence reporting, please contact us for custom requests.</p>
       <td>Monthly active fire severity based on satellite observations. We transform the <a href="https://firms2.modaps.eosdis.nasa.gov/">NASA Active Fire Data</a> to report on active fires. Note that because these values are based on satellite observations and we cannot discern wildfires from human generated fires.</td>
       <td>Unit interval with 1.0 indicating maximum active fires recorded in a month (30 in 2020)</td>
       <td>0.0 to 1.0</td>
-      <td>10km</td>
+      <td>300m</td>
     </tr>
     <tr>
       <td>Flooding Exposure</td>
@@ -236,13 +236,22 @@ higher cadence reporting, please contact us for custom requests.</p>
       <td>N/A</td>
     </tr>
     <tr>
-      <td>Wildfire Risk</td>
+      <td>Wildfire Burned Area Fraction</td>
       <td>Annual Percentage of exposed land within 14km radius of the asset to wildfire</td>
-      <td>Percentage</td>
-      <td>0 to 100</td>
+      <td>Probability Score</td>
+      <td>0.0 to 1.0</td>
       <td>14km</td>
-      <td>LOW: 0.0-0.008; MEDIUM: 0.008-1.0; HIGH: &gt;1.0</td>
-      <td>10.0</td>
+      <td>LOW: 0.0-0.000081; MEDIUM: 0.00008-0.01; HIGH: &gt; 0.01</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <td>Wildfire Susceptibility</td>
+      <td>Average annual probability of a wildfire occurring across all land areas within 1km of the asset</td>
+      <td>Probability Score</td>
+      <td>0.0 to 1.0</td>
+      <td>300m</td>
+      <td>LOW: 0.0-0.05; MEDIUM: 0.05-0.075; HIGH: 0.075-1.0</td>
+      <td>1.0</td>
     </tr>
     <tr>
       <td>Inland Flooding</td>
@@ -300,6 +309,8 @@ higher cadence reporting, please contact us for custom requests.</p>
     </tr>
   </tbody>
 </table>
+
+<p>*The heat map coding range for floods indicates a flood exceedance frequency (i.e. the number of floods exceeding 5% probability in a given decade).</p>
 
           </div>
         </div>

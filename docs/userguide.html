@@ -70,7 +70,7 @@
 <h3 id="wildfire">
 <a class="anchor" href="#wildfire" aria-hidden="true"><span class="octicon octicon-link"></span></a>Wildfire</h3>
 
-<h4 id="burned-area-susceptibility">Burned Area Susceptibility</h4>
+<h4 id="wildfire-burned-area-fraction">Wildfire Burned Area Fraction</h4>
 <p>We represent annual fire risk by aggregating CMIP6 model simulations of monthly wildfire burned area [% of grid cell]. Wildfire <a href="https://www.sciencedirect.com/science/article/abs/pii/S0921818116303770?via%3Dihub">models</a> incorporate factors such as temperature, precipitation, land cover type, and population to simulate fire occurrence and the associated area burned. We use our proprietary methodologies for wildfire super resolution <a href="https://www.climatechange.ai/papers/neurips2020/45">NeurIPS2020 technical reference</a> on top of the model ensemble to enable high resolution wildfire projections. These projections are further processed using the latest satellite derived land cover maps, filtering for the urban-wildland interface to further refine the projections.</p>
 
 <p>For example: fire occurrence includes both lightning and human-induced ignitions, and high temperatures and drought lead to drier fuels and increased likelihood of fire.</p>
@@ -79,7 +79,7 @@
 
 <p>We also use fire weather as an indicator of fire risk.  This indicator shows the average annual probability of a fire occurring within a kilometer of the asset location.  We derive this indicator based on the historic functional relationship between fire weather and the daily probability of fire, taking into account on-the-ground characteristics like land cover types and climate zones that constrain vegetation types and structure.  We then apply this functional relationship based on historic observations to ensembled CMIP6 predictions of future weather to estimate future fire probabilities.</p>
 
-<p>When estimating fire risk for a given asset, we take the average risk over all land cover types within 1 kilometer.  Thus, for an asset that has 50% urban areas 50% forested areas within 1 kilometer, the fire probability is the mean of the fire risk for these two land cover types.</p>
+<p>When estimating fire risk for a given asset, we take the average risk over all land cover types within 1 kilometer.  Thus, for an asset that has 50% urban areas and 50% forested areas within 1 kilometer, the fire probability is the mean of the fire risk for these two land cover types.</p>
 
 <h3 id="drought">
 <a class="anchor" href="#drought" aria-hidden="true"><span class="octicon octicon-link"></span></a>Drought</h3>
