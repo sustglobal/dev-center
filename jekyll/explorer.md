@@ -91,7 +91,7 @@ For creating standard heatmaps, we assess the physical risk over the 30 year win
 | Heatwaves | Annual heatwave days per year where temperature at asset is projected to exceed 98th percentile of historic recordings | Number of days | 0 to 365 | 100km | LOW: 0-30; MEDIUM: 30-50; HIGH: >50 | 200 |
 | Sea Level Rise | Annual projection of sea level rise relative to average sea level at the asset over 1980-2010 | Rise in meters | 0.0 to 2.0 | 100km | LOW: <0.1; MEDIUM:0.1 to 0.3; HIGH: >0.3 | 0.75 |
 <<<<<<< HEAD
-| Drought (SPEI) | Annual projection of standard precipitation evapo-transipiration index | Index score | 0.0 to 1.0 | 100km | LOW: <=0.5; MEDIUM: 0.5-0.67; HIGH: >=0.67 | 1.0 |
+| Drought (SPEI) | Annual projection of standard precipitation evapo-transipiration index | Index score | -3.0 to 3.0 | 100km | LOW: <=1.5; MEDIUM: 1.5-2.0; HIGH: >2.0 | 3.0 |
 =======
 | Drought (SPEI) | Annual projection of standardized precipitation evapo-transipiration index | Index score | 0.0 to 1.0 | 100km | LOW: <=0.5; MEDIUM: 0.5-0.67; HIGH: >=0.67 | 1.0 |
 >>>>>>> a1b2225 (Updated Probability Score for Burned Area in Quickstart)
