@@ -86,7 +86,7 @@ For creating standard heatmaps, we assess the physical risk over the 30 year win
 | Annual Precipitation | Annual total precipitation at the asset location | mm | 0 to 5000 | 100km | N/A | N/A |
 | Extreme Precipitation | Annual probabilistic projections of number of days in a year where precipitation exceeds 51mm | Number of days | 0 to 365 | 100km | N/A | N/A |
 | Wildfire Burned Area Fraction | Annual fraction of land exposed to wildfire within 14km radius of the asset | Fraction | 0.0 to 1.0 | 14km | LOW: 0.0 to 0.000081; MEDIUM: 0.00008 to 0.01; HIGH: > 0.01 | 1.0 |
-| Wildfire Susceptibility | Average annual probability of a wildfire occurring across all land areas within 1km of the asset | Probability Score | 0.0 to 1.0 | 11km | LOW: 0.0 to 0.05; MEDIUM: 0.05 to 0.075; HIGH: 0.075 to 1.0 | 1.0 |
+| Wildfire Susceptibility | Average annual probability of a wildfire occurring across all land areas within 1km of the asset | Probability Score | 0.0 to 1.0 | 300m | LOW: 0.0 to 0.05; MEDIUM: 0.05 to 0.075; HIGH: 0.075 to 1.0 | 1.0 |
 | Inland Flooding | Annual exposure of asset to floods | Probability score | 0.0 to 1.0 | 4km | Based on number of years with probability of flood >5%; LOW: 0; MEDIUM: 1 to 2; HIGH >2 | 1.0 |
 | Heatwaves | Annual heatwave days per year where temperature at asset is projected to exceed 98th percentile of historic recordings | Number of days | 0 to 365 | 100km | LOW: 0 to 30; MEDIUM: 30 to 50; HIGH: >50 | 200 |
 | Sea Level Rise | Annual projection of sea level rise relative to average sea level at the asset over 1980-2010 | Rise in meters | 0.0 to 2.0 | 100km | LOW: <0.1; MEDIUM:0.1 to 0.3; HIGH: >0.3 | 0.75 |
