@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="shortcut icon" type="image/ico" href="assets/images/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href='https://use.fontawesome.com/releases/v5.8.1/css/all.css'>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+            integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+            crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+            integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/assets/css/main.css?v=">
+
+    <title>Climate Explorer FAQs</title>
+
+  </head>
+
+  <body>
+
+    <nav id="topnav" class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container">
+
+        <a class="navbar-brand" href="/">
+          <img src="/assets/images/sust-HexLogoONLYwhite.png" />
+          <span>Developer Center</span>
+        </a>
+
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="https://explorer.sustglobal.io/">
+              Climate Explorer
+              <i class="fas fa-external-link-alt fa-sm"></i>
+            </a>
+          </li>
+        </ul>
+
+      </div>
+    </nav>
+
+    <div class="container" id="allcontent">
+      <div class="d-flex flex-direction-row flex-nowrap">
+
+        <div class="flex-grow-1 col-9">
+          <div id="innercontent">
+            <h1>Climate Explorer FAQs</h1>
+            <h2 id="faqs">
+<a class="anchor" href="#faqs" aria-hidden="true"><span class="octicon octicon-link"></span></a>FAQs</h2>
+
+<h3 id="general-questions">
+<a class="anchor" href="#general-questions" aria-hidden="true"><span class="octicon octicon-link"></span></a>General Questions</h3>
+
+<p><strong>Q:</strong> What time period does your historic observation dataset cover?</p>
+
+<p><strong>A:</strong> Our historic observation datasets cover the period from Jan 2010 to Dec 2020.</p>
+
+<p><strong>Q:</strong> What time period does your forward looking projected outcome dataset cover?</p>
+
+<p><strong>A:</strong> Our forward looking projected outcomes assess the period from 2022 to 2100.</p>
+
+<p><strong>Q:</strong> What geographies does your dataset include?</p>
+
+<p><strong>A:</strong> Our capabilities are global. We provide climate scenario analysis over the entirety of the earth’s landmass</p>
+
+<p><strong>Q:</strong> How does your dataset enable for climate change adaptation?</p>
+
+<p><strong>A:</strong> Our dataset and analytics enable scenario driven analysis for climate change adaptation. Using our API product or the Climate Explorer dashboard, our customers and partners are enabled with asset-level assessments of climate risk exposure from acute and chronic climate related hazards.</p>
+
+<hr>
+
+<h3 id="hazard-specific-questions">
+<a class="anchor" href="#hazard-specific-questions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hazard Specific Questions</h3>
+
+<h4 id="wildfire">Wildfire</h4>
+
+<p><strong>Q:</strong> What are the different data modalities of wildfire?</p>
+
+<p><strong>A:</strong> The different data modalities include:historic wildfire exposure; forward looking burned area fraction projection ; and forward looking wildfire susceptibility projection. Historic exposure is determined by derivatives from satellite imagery (observations) while forward looking projections are derived from global climate models (GCMs).</p>
+
+<p><strong>Q:</strong> Why do I see active fires within the dataset, but no projected scenario based fire hazards?</p>
+
+<p><strong>A:</strong> There are occasionally sites where we see observed active fires and no projected scenario based fire hazard. This could be due to: Human generated fires that are not controlled fires and not wildfires; Limitations of the wildfire projection models; Changing risk exposure.</p>
+
+<p>For more detail:
+[1] This could be due to erroneous historic data. The MODIS satellites use temperature to estimate fire prevalence, so other activities that generate fire/heat can appear as wildfire. This includes power plants, gas flares, or prescribed burns.
+[2] It could be flaws in CMIP6 models, especially when fires are driven by processes too small-scale for coarse models to capture. Our product should deal with that in most cases, but not all.
+[3] Your probability of future risk exposure may also appear as 0 due to shifting land use patterns in the future. Changing vegetation cover due to drying or expanding urbanization can decrease future risk in areas with high historic risk.</p>
+
+<p><strong>Q:</strong> Which values are relevant when the historic fire data and future projections disagree?</p>
+
+<p><strong>A:</strong> The historic data will be a better indicator of near-term fire risk but the climate models will be a better indicator of long-term, decadal and multi-decadal fire risk.</p>
+
+<p><strong>Q:</strong> How do you determine the severity of wildfire risk?</p>
+
+<p><strong>A:</strong> Historic fire severity is represented by the number of active fires within 10km radius of the asset, scaled to a value between 0 and 1.0</p>
+
+<p><strong>Q:</strong> How are controlled burns determined?</p>
+
+<p><strong>A:</strong> We use satellite derived observations, which means that we cannot determine which fires are human generated vs natural fire. However, controlled burns surface as observed fires in the historic exposure. The forward looking fire exposure across scenarios accounts for controlled burns on agricultural land.</p>
+
+<h4 id="flooding">Flooding</h4>
+
+<p><strong>Q:</strong> Does historic and projected flooding include both coastal and inland flooding?</p>
+
+<p><strong>A:</strong> Historic flooding covers inland and coastal flooding. Projected flooding data only covers inland flooding. You can look at the cyclone projections and sea level rise projections as indicators of forward looking coastal flooding.</p>
+
+<hr>
+
+<h3 id="dashboard-questions">
+<a class="anchor" href="#dashboard-questions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dashboard Questions</h3>
+
+<p><strong>Q:</strong> Why is my hazard HIGH-risk on the risk heat map view, but LOW-risk on the multi-hazard view?</p>
+
+<p><strong>A:</strong> We take risk values, re-normalize them according to a maximum value, and then apply new thresholds. Therefore,  the risk heat map classifications are not necessarily indicative of multi-hazard classifications. Assets on the risk heat map are labeled (colored) based on the categories of LOW/MEDIUM/HIGH as outlined in our documentation on our developer center. The multihazard heatmap is based on a combined score derived from risk exposure to the asset across all the different hazards.</p>
+
+<p><strong>Q:</strong> Is the overall severity coloring based on the highest category risk or is it based on the normalization method mentioned in the user guide?</p>
+
+<p><strong>A:</strong> Overall severity is based on the maximum risk across all hazards, determined by the normalization method described in the user guide.</p>
+
+<p><strong>Q:</strong> Is asset level loss associated with the highest risk category used for severity coloring, or does it represent overall asset loss estimates for all hazards?</p>
+
+<p><strong>A:</strong> Asset level risk is based on the estimate of the loss from a specific hazard. The heatmap color indicates the level of exposure across all the assets in the portofolio. The value of the asset is scaled by the level of exposure to determine the estimated loss in the estimated value at risk summary.</p>
+
+<p><strong>Q:</strong> Is the multi-hazard time series map view based on individual portfolio facility locations or on the multi-view heat map?</p>
+
+<p><strong>A:</strong> The multihazard time series view on the right hand side of the multi-hazard heatmap is based on the risk exposure to the specific asset selected on the multi-hazard heatmap view. The name of the selected asset is described below the multi-hazard heatmap view.</p>
+
+<p><img height="300" src="assets/images/Multi-HazardViews.png"></p>
+
+<p>E.g. in this screenshot above, the asset selected is 3613 Crawfordville, as seen below the map view. The time series graph on the right hand side shows projected risk exposure for that specific asset only.</p>
+
+<p><strong>Q:</strong> What does the “distribution by type” option for Estimated Value at Risk Summary mean?</p>
+
+<p><strong>A:</strong> Distribution by type is a grouping of all assets of the same type to create one slice (category). This is based on the aggregated value of estimated loss, determined by the type of assets.</p>
+
+<p><strong>Q:</strong> Why does the cyclone projection tend to be a flat line beyond the year 2050?</p>
+
+<p><strong>A:</strong> We provide annual cyclone projections over the years 1980-2050. Beyond the year 2050, we use the mean probability of cyclone projections over the 2030-2050 window for that specific asset location.</p>
+
+<hr>
+
+<h3 id="dataset-csv-questions">
+<a class="anchor" href="#dataset-csv-questions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dataset (CSV) Questions</h3>
+
+<p><strong>Q:</strong> What does the risk exposure file nomenclature mean (e.g., ubd vs lbd)?</p>
+
+<p><strong>A:</strong> No postfix represents the midpoint value. ‘ubd’ and ‘lbd’ represent upper and lower bound values (usually mapped to the 16th and 84th percentiles from the distribution of simulation runs for climate models for the specific hazard), and are indicative of the values for the gray bars in the time series plot.</p>
+
+<p><strong>Q:</strong> Why do the historic values of a hazard change with each scenario?</p>
+
+<p><strong>A:</strong> The historic values of a hazard beginning in 2015 are derived from simulation runs across multiple scenarios. There will be minor variability for the historic years (2015-present) across scenarios.</p>
+
+          </div>
+        </div>
+
+        
+        <div class="col-3">
+          <div id="toc-container">
+            <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h2"><a href="#faqs">FAQs</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#general-questions">General Questions</a></li>
+<li class="toc-entry toc-h3"><a href="#hazard-specific-questions">Hazard Specific Questions</a></li>
+<li class="toc-entry toc-h3"><a href="#dashboard-questions">Dashboard Questions</a></li>
+<li class="toc-entry toc-h3"><a href="#dataset-csv-questions">Dataset (CSV) Questions</a></li>
+</ul>
+</li>
+</ul>
+          </div>
+        </div>
+        
+
+      </div>
+
+    </div>
+
+  </body>
+</html>
