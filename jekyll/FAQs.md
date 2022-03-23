@@ -56,6 +56,9 @@ For more detail:
 
 **A:** We use satellite derived observations, which means that we cannot determine which fires are human generated vs natural fire. However, controlled burns surface as observed fires in the historic exposure. The forward looking fire exposure across scenarios accounts for controlled burns on agricultural land.
 
+**Q:** Why is the probability of future risk exposure 0 if my asset has historic wildfire risk?
+
+**A:** Your probability of future risk exposure may appear as 0 due to shifting land use patterns in the future.  Changing vegetation cover due to drying or expanding urbanization can decrease future risk in areas with high historic risk. Alternatively, it could be erroneous historic data.  The MODIS satellite dataset, that we use for our historic fire exposure estimates uses temperature to estimate fire prevalence, so other activities that generate fire/heat can appear as wildfire.  This includes power plants, gas flares, or prescribed burns. There could be flaws in CMIP6 models, especially when fires are driven by processes too small-scale for coarse models to capture. Our SuperResolution capability deals with this in most cases, but not always.
 
 #### Flooding
 
@@ -63,6 +66,11 @@ For more detail:
 **Q:** Does historic and projected flooding include both coastal and inland flooding?
 
 **A:** Historic flooding covers inland and coastal flooding. Projected flooding data only covers inland flooding. You can look at the cyclone projections and sea level rise projections as indicators of forward looking coastal flooding.
+
+**Q:** In the user guide, it stated that all climate models for flooding and tropical cyclones run under the High Emissions (SSP5-RCP8.5) pathway scenario, thus all values shown for the Strong Mitigation (SSP1-RCP2.6) and Middle of the Road (SSP2-RCP4.5) scenarios are identical to those of the High Emissions scenario. Can you explain why this is the case?
+
+**A:** We are yet to find reliable representations of inland flooding and cyclone projections for SSP1-RCP26 and SSP2-RCP45 and will update when we have them.
+
 
 ______________________________________________________________________________________________________________
 
