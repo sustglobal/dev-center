@@ -15,3 +15,6 @@ defaults:
 
 plugins:
 - jekyll-toc
+
+keep_files:
+- py

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sust Global Python API Client &mdash; Python  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="#" class="icon icon-home"> Python
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Sust Global Python API Client</a><ul>
+<li><a class="reference internal" href="#quickstart">Quickstart</a></li>
+<li><a class="reference internal" href="#module-sust.api.climate_explorer">Python API Reference</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">Python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
+      <li>Sust Global Python API Client</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="sust-global-python-api-client">
+<h1>Sust Global Python API Client<a class="headerlink" href="#sust-global-python-api-client" title="Permalink to this headline"></a></h1>
+<p>This document details how to use the <code class="docutils literal notranslate"><span class="pre">sust-api-client</span></code> python package to interact with Sust Global’s Climate Explorer API.</p>
+<p>Much of this client is generated using OpenAPI:</p>
+<ul class="simple">
+<li><p>Current OpenAPI spec: <a class="reference external" href="https://explorer.sustglobal.io/swagger.json">https://explorer.sustglobal.io/swagger.json</a></p></li>
+<li><p>OpenAPI spec documenation: <a class="reference external" href="https://explorer.sustglobal.io/redoc/">https://explorer.sustglobal.io/redoc/</a></p></li>
+</ul>
+<section id="quickstart">
+<h2>Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this headline"></a></h2>
+<p>Initialize a client, providing your Climate Explorer API key and project name:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">client</span> <span class="o">=</span> <span class="n">ClimateExplorerClient</span><span class="p">(</span><span class="n">API_KEY</span><span class="p">,</span> <span class="n">project</span><span class="o">=</span><span class="n">PROJECT</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Access physical risk exposure summary data with filters:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">client</span><span class="o">.</span><span class="n">physical_risk_summary</span><span class="p">(</span>
+    <span class="n">window</span><span class="o">=</span><span class="n">Windows</span><span class="o">.</span><span class="n">YEAR_30</span><span class="p">,</span>
+    <span class="n">hazard</span><span class="o">=</span><span class="n">Hazards</span><span class="o">.</span><span class="n">WILDFIRE</span><span class="p">,</span>
+    <span class="n">scenario</span><span class="o">=</span><span class="n">Scenarios</span><span class="o">.</span><span class="n">SSP585</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="module-sust.api.climate_explorer">
+<span id="python-api-reference"></span><h2>Python API Reference<a class="headerlink" href="#module-sust.api.climate_explorer" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="sust.api.climate_explorer.AssetList">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sust.api.climate_explorer.</span></span><span class="sig-name descname"><span class="pre">AssetList</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">portfolio</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">objects</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sustglobal/dev-center/tree/master/clients/python/sust/api/climate_explorer.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sust.api.climate_explorer.AssetList" title="Permalink to this definition"></a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="sust.api.climate_explorer.AssetList.physical_risk_summary">
+<span class="sig-name descname"><span class="pre">physical_risk_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sustglobal/dev-center/tree/master/clients/python/sust/api/climate_explorer.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sust.api.climate_explorer.AssetList.physical_risk_summary" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sust.api.climate_explorer.AssetList.physical_risk_timeseries">
+<span class="sig-name descname"><span class="pre">physical_risk_timeseries</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sustglobal/dev-center/tree/master/clients/python/sust/api/climate_explorer.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sust.api.climate_explorer.AssetList.physical_risk_timeseries" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sust.api.climate_explorer.AssetList.to_dicts">
+<span class="sig-name descname"><span class="pre">to_dicts</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sustglobal/dev-center/tree/master/clients/python/sust/api/climate_explorer.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sust.api.climate_explorer.AssetList.to_dicts" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sust.api.climate_explorer.ClimateExplorerClient">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sust.api.climate_explorer.</span></span><span class="sig-name descname"><span class="pre">ClimateExplorerClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">project</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">endpoint</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sustglobal/dev-center/tree/master/clients/python/sust/api/climate_explorer.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sust.api.climate_explorer.ClimateExplorerClient" title="Permalink to this definition"></a></dt>
+<dd><p>This class wraps all Climate Explorer API functionality into
+one simple to use interface.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>api_key</strong> (<em>str</em>) – Climate Explorer API key</p></li>
+<li><p><strong>project</strong> (<em>str</em>) – Climate Explorer project name or ID</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="sust.api.climate_explorer.ClimateExplorerClient.create">
+<span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">portfolio_name</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sustglobal/dev-center/tree/master/clients/python/sust/api/climate_explorer.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sust.api.climate_explorer.ClimateExplorerClient.create" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sust.api.climate_explorer.ClimateExplorerClient.portfolio">
+<span class="sig-name descname"><span class="pre">portfolio</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">portfolio_name</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sustglobal/dev-center/tree/master/clients/python/sust/api/climate_explorer.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sust.api.climate_explorer.ClimateExplorerClient.portfolio" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sust.api.climate_explorer.ClimateExplorerClient.portfolios">
+<span class="sig-name descname"><span class="pre">portfolios</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sustglobal/dev-center/tree/master/clients/python/sust/api/climate_explorer.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sust.api.climate_explorer.ClimateExplorerClient.portfolios" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sust.api.climate_explorer.ClimateExplorerClient.upload_assets">
+<span class="sig-name descname"><span class="pre">upload_assets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">portfolio_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">assets_path</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sustglobal/dev-center/tree/master/clients/python/sust/api/climate_explorer.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sust.api.climate_explorer.ClimateExplorerClient.upload_assets" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sust.api.climate_explorer.Hazards">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sust.api.climate_explorer.</span></span><span class="sig-name descname"><span class="pre">Hazards</span></span><a class="reference external" href="https://github.com/sustglobal/dev-center/tree/master/clients/python/sust/api/climate_explorer.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sust.api.climate_explorer.Hazards" title="Permalink to this definition"></a></dt>
+<dd><dl class="py attribute">
+<dt class="sig sig-object py" id="sust.api.climate_explorer.Hazards.CYCLONE">
+<span class="sig-name descname"><span class="pre">CYCLONE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'cyclone'</span></em><a class="reference external" href="https://github.com/sustglobal/dev-center/tree/master/clients/python/sust/api/climate_explorer.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sust.api.climate_explorer.Hazards.CYCLONE" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sust.api.climate_explorer.Hazards.FLOOD_POTENTIAL">
+<span class="sig-name descname"><span class="pre">FLOOD_POTENTIAL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'flood_potential'</span></em><a class="reference external" href="https://github.com/sustglobal/dev-center/tree/master/clients/python/sust/api/climate_explorer.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sust.api.climate_explorer.Hazards.FLOOD_POTENTIAL" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sust.api.climate_explorer.Hazards.HEATWAVE">
+<span class="sig-name descname"><span class="pre">HEATWAVE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'heatwave'</span></em><a class="reference external" href="https://github.com/sustglobal/dev-center/tree/master/clients/python/sust/api/climate_explorer.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sust.api.climate_explorer.Hazards.HEATWAVE" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sust.api.climate_explorer.Hazards.SEA_LEVEL_RISE">
+<span class="sig-name descname"><span class="pre">SEA_LEVEL_RISE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'sea_level_rise'</span></em><a class="reference external" href="https://github.com/sustglobal/dev-center/tree/master/clients/python/sust/api/climate_explorer.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sust.api.climate_explorer.Hazards.SEA_LEVEL_RISE" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sust.api.climate_explorer.Hazards.WATER_STRESS">
+<span class="sig-name descname"><span class="pre">WATER_STRESS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'water_stress'</span></em><a class="reference external" href="https://github.com/sustglobal/dev-center/tree/master/clients/python/sust/api/climate_explorer.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sust.api.climate_explorer.Hazards.WATER_STRESS" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sust.api.climate_explorer.Hazards.WILDFIRE">
+<span class="sig-name descname"><span class="pre">WILDFIRE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'wildfire'</span></em><a class="reference external" href="https://github.com/sustglobal/dev-center/tree/master/clients/python/sust/api/climate_explorer.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sust.api.climate_explorer.Hazards.WILDFIRE" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sust.api.climate_explorer.Indicators">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sust.api.climate_explorer.</span></span><span class="sig-name descname"><span class="pre">Indicators</span></span><a class="reference external" href="https://github.com/sustglobal/dev-center/tree/master/clients/python/sust/api/climate_explorer.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sust.api.climate_explorer.Indicators" title="Permalink to this definition"></a></dt>
+<dd><dl class="py attribute">
+<dt class="sig sig-object py" id="sust.api.climate_explorer.Indicators.BURNED_AREA">
+<span class="sig-name descname"><span class="pre">BURNED_AREA</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'burned_area_norm'</span></em><a class="reference external" href="https://github.com/sustglobal/dev-center/tree/master/clients/python/sust/api/climate_explorer.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sust.api.climate_explorer.Indicators.BURNED_AREA" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sust.api.climate_explorer.Indicators.CHANGE">
+<span class="sig-name descname"><span class="pre">CHANGE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'change'</span></em><a class="reference external" href="https://github.com/sustglobal/dev-center/tree/master/clients/python/sust/api/climate_explorer.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sust.api.climate_explorer.Indicators.CHANGE" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sust.api.climate_explorer.Indicators.EXTREME_PRECIPITATION">
+<span class="sig-name descname"><span class="pre">EXTREME_PRECIPITATION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'extreme_precip'</span></em><a class="reference external" href="https://github.com/sustglobal/dev-center/tree/master/clients/python/sust/api/climate_explorer.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sust.api.climate_explorer.Indicators.EXTREME_PRECIPITATION" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sust.api.climate_explorer.Indicators.FREQUENCY">
+<span class="sig-name descname"><span class="pre">FREQUENCY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'freq'</span></em><a class="reference external" href="https://github.com/sustglobal/dev-center/tree/master/clients/python/sust/api/climate_explorer.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sust.api.climate_explorer.Indicators.FREQUENCY" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sust.api.climate_explorer.Indicators.INLAND_FLOOD_PROBABILITY">
+<span class="sig-name descname"><span class="pre">INLAND_FLOOD_PROBABILITY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'inland_flood_prob'</span></em><a class="reference external" href="https://github.com/sustglobal/dev-center/tree/master/clients/python/sust/api/climate_explorer.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sust.api.climate_explorer.Indicators.INLAND_FLOOD_PROBABILITY" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sust.api.climate_explorer.Indicators.OBSERVED_FREQUENCY">
+<span class="sig-name descname"><span class="pre">OBSERVED_FREQUENCY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'obs_freq'</span></em><a class="reference external" href="https://github.com/sustglobal/dev-center/tree/master/clients/python/sust/api/climate_explorer.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sust.api.climate_explorer.Indicators.OBSERVED_FREQUENCY" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sust.api.climate_explorer.Indicators.OBSERVED_SCORE">
+<span class="sig-name descname"><span class="pre">OBSERVED_SCORE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'obs_score'</span></em><a class="reference external" href="https://github.com/sustglobal/dev-center/tree/master/clients/python/sust/api/climate_explorer.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sust.api.climate_explorer.Indicators.OBSERVED_SCORE" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sust.api.climate_explorer.Indicators.PRECIPITATION">
+<span class="sig-name descname"><span class="pre">PRECIPITATION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'precip'</span></em><a class="reference external" href="https://github.com/sustglobal/dev-center/tree/master/clients/python/sust/api/climate_explorer.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sust.api.climate_explorer.Indicators.PRECIPITATION" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sust.api.climate_explorer.Indicators.PROBABILITY">
+<span class="sig-name descname"><span class="pre">PROBABILITY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'prob'</span></em><a class="reference external" href="https://github.com/sustglobal/dev-center/tree/master/clients/python/sust/api/climate_explorer.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sust.api.climate_explorer.Indicators.PROBABILITY" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sust.api.climate_explorer.Indicators.SPEI">
+<span class="sig-name descname"><span class="pre">SPEI</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'spei_norm'</span></em><a class="reference external" href="https://github.com/sustglobal/dev-center/tree/master/clients/python/sust/api/climate_explorer.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sust.api.climate_explorer.Indicators.SPEI" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sust.api.climate_explorer.Indicators.TEMPERATURE">
+<span class="sig-name descname"><span class="pre">TEMPERATURE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'temp'</span></em><a class="reference external" href="https://github.com/sustglobal/dev-center/tree/master/clients/python/sust/api/climate_explorer.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sust.api.climate_explorer.Indicators.TEMPERATURE" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sust.api.climate_explorer.Measures">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sust.api.climate_explorer.</span></span><span class="sig-name descname"><span class="pre">Measures</span></span><a class="reference external" href="https://github.com/sustglobal/dev-center/tree/master/clients/python/sust/api/climate_explorer.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sust.api.climate_explorer.Measures" title="Permalink to this definition"></a></dt>
+<dd><dl class="py attribute">
+<dt class="sig sig-object py" id="sust.api.climate_explorer.Measures.LOWER_BOUND">
+<span class="sig-name descname"><span class="pre">LOWER_BOUND</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'lb'</span></em><a class="reference external" href="https://github.com/sustglobal/dev-center/tree/master/clients/python/sust/api/climate_explorer.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sust.api.climate_explorer.Measures.LOWER_BOUND" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sust.api.climate_explorer.Measures.MIDPOINT">
+<span class="sig-name descname"><span class="pre">MIDPOINT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'mid'</span></em><a class="reference external" href="https://github.com/sustglobal/dev-center/tree/master/clients/python/sust/api/climate_explorer.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sust.api.climate_explorer.Measures.MIDPOINT" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sust.api.climate_explorer.Measures.UPPER_BOUND">
+<span class="sig-name descname"><span class="pre">UPPER_BOUND</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'ub'</span></em><a class="reference external" href="https://github.com/sustglobal/dev-center/tree/master/clients/python/sust/api/climate_explorer.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sust.api.climate_explorer.Measures.UPPER_BOUND" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sust.api.climate_explorer.PageIterator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sust.api.climate_explorer.</span></span><span class="sig-name descname"><span class="pre">PageIterator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">req_func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">req_args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">req_kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sustglobal/dev-center/tree/master/clients/python/sust/api/climate_explorer.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sust.api.climate_explorer.PageIterator" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sust.api.climate_explorer.PhysicalRiskSummaryList">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sust.api.climate_explorer.</span></span><span class="sig-name descname"><span class="pre">PhysicalRiskSummaryList</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dict_objects</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sustglobal/dev-center/tree/master/clients/python/sust/api/climate_explorer.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sust.api.climate_explorer.PhysicalRiskSummaryList" title="Permalink to this definition"></a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="sust.api.climate_explorer.PhysicalRiskSummaryList.to_dicts">
+<span class="sig-name descname"><span class="pre">to_dicts</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sustglobal/dev-center/tree/master/clients/python/sust/api/climate_explorer.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sust.api.climate_explorer.PhysicalRiskSummaryList.to_dicts" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sust.api.climate_explorer.PhysicalRiskTimeseriesList">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sust.api.climate_explorer.</span></span><span class="sig-name descname"><span class="pre">PhysicalRiskTimeseriesList</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dict_objects</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sustglobal/dev-center/tree/master/clients/python/sust/api/climate_explorer.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sust.api.climate_explorer.PhysicalRiskTimeseriesList" title="Permalink to this definition"></a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="sust.api.climate_explorer.PhysicalRiskTimeseriesList.to_dicts">
+<span class="sig-name descname"><span class="pre">to_dicts</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sustglobal/dev-center/tree/master/clients/python/sust/api/climate_explorer.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sust.api.climate_explorer.PhysicalRiskTimeseriesList.to_dicts" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sust.api.climate_explorer.Portfolio">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sust.api.climate_explorer.</span></span><span class="sig-name descname"><span class="pre">Portfolio</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sustglobal/dev-center/tree/master/clients/python/sust/api/climate_explorer.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sust.api.climate_explorer.Portfolio" title="Permalink to this definition"></a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="sust.api.climate_explorer.Portfolio.assets">
+<span class="sig-name descname"><span class="pre">assets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">labels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sustglobal/dev-center/tree/master/clients/python/sust/api/climate_explorer.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sust.api.climate_explorer.Portfolio.assets" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sust.api.climate_explorer.Portfolio.physical_risk_summary">
+<span class="sig-name descname"><span class="pre">physical_risk_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scenario</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hazard</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">page_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sustglobal/dev-center/tree/master/clients/python/sust/api/climate_explorer.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sust.api.climate_explorer.Portfolio.physical_risk_summary" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sust.api.climate_explorer.Portfolio.physical_risk_timeseries">
+<span class="sig-name descname"><span class="pre">physical_risk_timeseries</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scenario</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hazard</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indicator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">measure</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">page_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sustglobal/dev-center/tree/master/clients/python/sust/api/climate_explorer.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sust.api.climate_explorer.Portfolio.physical_risk_timeseries" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sust.api.climate_explorer.Scenarios">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sust.api.climate_explorer.</span></span><span class="sig-name descname"><span class="pre">Scenarios</span></span><a class="reference external" href="https://github.com/sustglobal/dev-center/tree/master/clients/python/sust/api/climate_explorer.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sust.api.climate_explorer.Scenarios" title="Permalink to this definition"></a></dt>
+<dd><dl class="py attribute">
+<dt class="sig sig-object py" id="sust.api.climate_explorer.Scenarios.SSP126">
+<span class="sig-name descname"><span class="pre">SSP126</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'ssp126'</span></em><a class="reference external" href="https://github.com/sustglobal/dev-center/tree/master/clients/python/sust/api/climate_explorer.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sust.api.climate_explorer.Scenarios.SSP126" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sust.api.climate_explorer.Scenarios.SSP245">
+<span class="sig-name descname"><span class="pre">SSP245</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'ssp245'</span></em><a class="reference external" href="https://github.com/sustglobal/dev-center/tree/master/clients/python/sust/api/climate_explorer.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sust.api.climate_explorer.Scenarios.SSP245" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sust.api.climate_explorer.Scenarios.SSP585">
+<span class="sig-name descname"><span class="pre">SSP585</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'ssp585'</span></em><a class="reference external" href="https://github.com/sustglobal/dev-center/tree/master/clients/python/sust/api/climate_explorer.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sust.api.climate_explorer.Scenarios.SSP585" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sust.api.climate_explorer.Windows">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sust.api.climate_explorer.</span></span><span class="sig-name descname"><span class="pre">Windows</span></span><a class="reference external" href="https://github.com/sustglobal/dev-center/tree/master/clients/python/sust/api/climate_explorer.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sust.api.climate_explorer.Windows" title="Permalink to this definition"></a></dt>
+<dd><dl class="py attribute">
+<dt class="sig sig-object py" id="sust.api.climate_explorer.Windows.YEARS_15">
+<span class="sig-name descname"><span class="pre">YEARS_15</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">15</span></em><a class="reference external" href="https://github.com/sustglobal/dev-center/tree/master/clients/python/sust/api/climate_explorer.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sust.api.climate_explorer.Windows.YEARS_15" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sust.api.climate_explorer.Windows.YEARS_30">
+<span class="sig-name descname"><span class="pre">YEARS_30</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">30</span></em><a class="reference external" href="https://github.com/sustglobal/dev-center/tree/master/clients/python/sust/api/climate_explorer.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sust.api.climate_explorer.Windows.YEARS_30" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sust.api.climate_explorer.Windows.YEARS_5">
+<span class="sig-name descname"><span class="pre">YEARS_5</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="reference external" href="https://github.com/sustglobal/dev-center/tree/master/clients/python/sust/api/climate_explorer.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sust.api.climate_explorer.Windows.YEARS_5" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

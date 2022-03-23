@@ -53,6 +53,14 @@ class Measures:
 
 
 class ClimateExplorerClient:
+    """This class wraps all Climate Explorer API functionality into
+    one simple to use interface.
+
+    :param api_key: Climate Explorer API key
+    :type api_key: str
+    :param project: Climate Explorer project name or ID
+    :type project: str
+    """
     def __init__(self, api_key, project=None, endpoint=None):
         self._default_req_kwargs = {}
         if project:
