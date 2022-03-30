@@ -172,7 +172,7 @@ class Portfolio:
 
         objects = [
             obj for obj in it if
-              (labels == None or all(obj['labels'].get(lf.key) == lf.value for lf in filters))
+              (filters == None or all(obj['labels'].get(lf.key) == lf.value for lf in filters))
         ]
 
         return AssetList(self, objects)
