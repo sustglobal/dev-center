@@ -15,7 +15,7 @@ Initialize a client, providing your Climate Explorer API key and project name:
 
 .. code-block:: python
 
-    client = ClimateExplorerClient(API_KEY, project=PROJECT)
+    client = ClimateExplorerClient(API_KEY, PROJECT)
 
 
 Access physical risk exposure summary data with filters:
@@ -23,14 +23,50 @@ Access physical risk exposure summary data with filters:
 .. code-block:: python
 
     client.physical_risk_summary(
-        window=Windows.YEAR_30,
-        hazard=Hazards.WILDFIRE,
-        scenario=Scenarios.SSP585)
+        WindowFilters.YEAR_30,
+        HazardFilters.WILDFIRE,
+        ScenarioFilters.SSP585
+    )
 
 
 Python API Reference
 --------------------
 
-.. automodule:: sust.api.climate_explorer
+.. autoclass:: sust.api.climate_explorer.ClimateExplorerClient
+   :members:
+
+.. autoclass:: sust.api.climate_explorer.Portfolio
+   :members:
+
+.. autoclass:: sust.api.climate_explorer.AssetList
+   :members:
+
+.. autoclass:: sust.api.climate_explorer.PhysicalRiskTimeseriesList
+   :members:
+
+.. autoclass:: sust.api.climate_explorer.PhysicalRiskSummaryList
+   :members:
+
+.. autoclass:: sust.api.climate_explorer.LabelFilter
+   :members:
+   :undoc-members:
+
+.. autoclass:: sust.api.climate_explorer.ScenarioFilters
+   :members:
+   :undoc-members:
+
+.. autoclass:: sust.api.climate_explorer.HazardFilters
+   :members:
+   :undoc-members:
+
+.. autoclass:: sust.api.climate_explorer.IndicatorFilters
+   :members:
+   :undoc-members:
+
+.. autoclass:: sust.api.climate_explorer.WindowFilters
+   :members:
+   :undoc-members:
+
+.. autoclass:: sust.api.climate_explorer.MeasureFilters
    :members:
    :undoc-members:

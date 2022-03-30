@@ -16,3 +16,7 @@ def linkcode_resolve(domain, info):
     filename = info['module'].replace('.', '/')
     link = f"https://github.com/sustglobal/dev-center/tree/master/clients/python/{filename}.py"
     return link
+
+# force documentation of __init__ as separate entities to we can hide
+# constructors for classes that should never be instantiated by users.
+autodoc_class_signature = "separated"
