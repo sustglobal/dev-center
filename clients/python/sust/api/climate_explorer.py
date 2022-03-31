@@ -179,18 +179,18 @@ class Portfolio:
 
         return AssetList(self, objects)
 
-    def set_assets(self, asset_fileobj):
-        """Upload a CSV file containing assets. This action will
-        replace the existing assets contained within the Portfolio
-        and trigger generation of risk exposure data. Visit the `Sust
-        Global Developer Center
-        <https://developers.sustglobal.com/explorer.html>`_ for help
-        building a valid input file.
+    def import_assets_csv(self, fileobj):
+        """Import assets to the portfolio from an open file-like object
+        containing CSV-formatted data. This action will replace the
+        existing assets contained within the Portfolio and trigger
+        generation of risk exposure data. Visit the `Sust Global
+        Developer Center <https://developers.sustglobal.com/explorer.html>`_
+        for help building a valid input file.
 
-        :param asset_fileobj: file-like object open for binary reading
+        :param fileobj: file-like object open for binary reading
             (e.g. acces mode 'rb')
         """
-        self._openapi_request('portfolios_assets_import_create', (self._obj['portfolio_name'], asset_fileobj), {})
+        self._client._openapi_request('portfolios_assets_import_create', (self._obj['portfolio_name'], fileobj), {})
 
     def _build_filter_kwargs(self, filters):
         filter_kwargs = {}
