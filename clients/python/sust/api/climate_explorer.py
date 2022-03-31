@@ -61,6 +61,8 @@ class IndicatorFilters(enum.Enum):
     FREQUENCY = 'freq'
     FIRE_KBDI_SUSCEPTIBILITY = 'fire_kbdi_susceptibility'
     INLAND_FLOOD_PROBABILITY = 'inland_flood_prob'
+    OBSERVED_SCORE = 'obs_score'
+    OBSERVED_FREQUENCY = 'obs_freq'
     PRECIPITATION = 'precip'
     PROBABILITY = 'prob'
     SCORE = 'score'
