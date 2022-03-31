@@ -160,6 +160,23 @@ value(s) provided.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="sust.api.climate_explorer.Portfolio.import_assets_csv">
+<span class="sig-name descname"><span class="pre">import_assets_csv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fileobj</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sustglobal/dev-center/tree/master/clients/python/sust/api/climate_explorer.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sust.api.climate_explorer.Portfolio.import_assets_csv" title="Permalink to this definition"></a></dt>
+<dd><p>Import assets to the portfolio from an open file-like object
+containing CSV-formatted data. This action will replace the
+existing assets contained within the Portfolio and trigger
+generation of risk exposure data. Visit the <a class="reference external" href="https://developers.sustglobal.com/explorer.html">Sust Global
+Developer Center</a>
+for help building a valid input file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>fileobj</strong> – file-like object open for binary reading
+(e.g. acces mode ‘rb’)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="sust.api.climate_explorer.Portfolio.physical_risk_summary">
 <span class="sig-name descname"><span class="pre">physical_risk_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">filters</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#sust.api.climate_explorer.PhysicalRiskSummaryList" title="sust.api.climate_explorer.PhysicalRiskSummaryList"><span class="pre">sust.api.climate_explorer.PhysicalRiskSummaryList</span></a></span></span><a class="reference external" href="https://github.com/sustglobal/dev-center/tree/master/clients/python/sust/api/climate_explorer.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sust.api.climate_explorer.Portfolio.physical_risk_summary" title="Permalink to this definition"></a></dt>
 <dd><p>Fetch all physical risk exposure summary data contained
@@ -187,22 +204,6 @@ of each type of filter may be provided. Available filters
 are located in <a class="reference internal" href="#sust.api.climate_explorer.ScenarioFilters" title="sust.api.climate_explorer.ScenarioFilters"><code class="xref py py-class docutils literal notranslate"><span class="pre">ScenarioFilters</span></code></a>,
 <a class="reference internal" href="#sust.api.climate_explorer.HazardFilters" title="sust.api.climate_explorer.HazardFilters"><code class="xref py py-class docutils literal notranslate"><span class="pre">HazardFilters</span></code></a>, <a class="reference internal" href="#sust.api.climate_explorer.IndicatorFilters" title="sust.api.climate_explorer.IndicatorFilters"><code class="xref py py-class docutils literal notranslate"><span class="pre">IndicatorFilters</span></code></a>,
 and <a class="reference internal" href="#sust.api.climate_explorer.MeasureFilters" title="sust.api.climate_explorer.MeasureFilters"><code class="xref py py-class docutils literal notranslate"><span class="pre">MeasureFilters</span></code></a></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="sust.api.climate_explorer.Portfolio.set_assets">
-<span class="sig-name descname"><span class="pre">set_assets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">asset_fileobj</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sustglobal/dev-center/tree/master/clients/python/sust/api/climate_explorer.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sust.api.climate_explorer.Portfolio.set_assets" title="Permalink to this definition"></a></dt>
-<dd><p>Upload a CSV file containing assets. This action will
-replace the existing assets contained within the Portfolio
-and trigger generation of risk exposure data. Visit the <a class="reference external" href="https://developers.sustglobal.com/explorer.html">Sust
-Global Developer Center</a> for help
-building a valid input file.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>asset_fileobj</strong> – file-like object open for binary reading
-(e.g. acces mode ‘rb’)</p>
 </dd>
 </dl>
 </dd></dl>
@@ -379,6 +380,16 @@ must be used with a corresponding hazard filter.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="sust.api.climate_explorer.IndicatorFilters.INLAND_FLOOD_PROBABILITY">
 <span class="sig-name descname"><span class="pre">INLAND_FLOOD_PROBABILITY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'inland_flood_prob'</span></em><a class="reference external" href="https://github.com/sustglobal/dev-center/tree/master/clients/python/sust/api/climate_explorer.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sust.api.climate_explorer.IndicatorFilters.INLAND_FLOOD_PROBABILITY" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sust.api.climate_explorer.IndicatorFilters.OBSERVED_FREQUENCY">
+<span class="sig-name descname"><span class="pre">OBSERVED_FREQUENCY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'obs_freq'</span></em><a class="reference external" href="https://github.com/sustglobal/dev-center/tree/master/clients/python/sust/api/climate_explorer.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sust.api.climate_explorer.IndicatorFilters.OBSERVED_FREQUENCY" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sust.api.climate_explorer.IndicatorFilters.OBSERVED_SCORE">
+<span class="sig-name descname"><span class="pre">OBSERVED_SCORE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'obs_score'</span></em><a class="reference external" href="https://github.com/sustglobal/dev-center/tree/master/clients/python/sust/api/climate_explorer.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sust.api.climate_explorer.IndicatorFilters.OBSERVED_SCORE" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
