@@ -329,7 +329,7 @@ with sust.api.generated.climate_explorer.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = portfolios_api.PortfoliosApi(api_client)
     data = PortfolioCreateRequest(
-        portfolio_name="portfolio_name_example",
+        portfolio_name="z",
     ) # PortfolioCreateRequest | 
     project = "project_example" # str | Name of project. Param only required when user may access more than one. (optional)
 
@@ -510,7 +510,7 @@ with sust.api.generated.climate_explorer.ApiClient(configuration) as api_client:
     portfolio_name = "portfolio_name_example" # str | Name for portfolio
     project = "project_example" # str | Name of project. Param only required when user may access more than one. (optional)
     hazard = "wildfire" # str | Climate hazard filter (optional)
-    indicator = "precip" # str | Risk indicator filter (optional)
+    indicator = "extreme_precip" # str | Risk indicator filter (optional)
     measure = "mid" # str | Indicator measure filter (optional)
     start_date = "start_date_example" # str | Left boundary of time range filter in format YYYY-MM-DD (optional)
     end_date = "end_date_example" # str | Right boundary of time range filter in format YYYY-MM-DD (optional)

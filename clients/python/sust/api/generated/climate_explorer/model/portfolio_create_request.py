@@ -59,7 +59,11 @@ class PortfolioCreateRequest(ModelNormal):
 
     validations = {
         ('portfolio_name',): {
-            'min_length': 1,
+            'max_length': 30,
+            'min_length': 3,
+            'regex': {
+                'pattern': r'^[-a-zA-Z0-9_]+$',  # noqa: E501
+            },
         },
     }
 
