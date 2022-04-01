@@ -192,17 +192,8 @@ This view provides the summary of the forward looking risk exposure across diffe
 Fig 9: Multi-hazard heatmap view
 </p>
 
-This view allows the user to see a consolidated view of risk exposure across all assets, across multiple hazards. We use fire, flood, sea level rise and cyclones to highlight risk exposures for each asset. For fire, flood, sea level rise and drought, we use the forward looking 30 year time horizon (2021-2050) by default. or cyclones, we use the historic 11 year time horizon (2010-2020). When hovering over a specific asset, you can see the dominant risk type listed (Fig 11 below). The risks are normalized based on peak risk values from the 98th percentile of the risk exposure distribution i.e. the exposure value for a specific hazard at the 98th percentile of the global exposure distribution is set to 1.0, and all values for that specific hazard are normalized to the 0.0 to 1.0 range.
+This view allows the user to see a consolidated view of risk exposure across all assets, across multiple hazards. We use fire, flood, sea level rise and cyclones to highlight risk exposures for each asset. For fire, flood, sea level rise and drought, we use the forward looking 30 year time horizon (2021-2050) by default. or cyclones, we use the historic 11 year time horizon (2010-2020). When hovering over a specific asset, you can see the dominant risk type listed (Fig 10 below). The risks are normalized based on peak risk values from the 98th percentile of the risk exposure distribution i.e. the exposure value for a specific hazard at the 98th percentile of the global exposure distribution is set to 1.0, and all values for that specific hazard are normalized to the 0.0 to 1.0 range.
 
-#### Multi-hazard heatmap view - hover view
-
-<p align="center">
-<img height="300" src="assets/images/Click.png">
-</p>
-
-<p align="center">
-Fig 10: Multi-hazard heatmap view - hover view
-</p>
 
 #### Multi-hazard Time Series View
 
@@ -211,7 +202,7 @@ Fig 10: Multi-hazard heatmap view - hover view
 </p>
 
 <p align="center">
-Fig 11: Multi-hazard time series view
+Fig 10: Multi-hazard time series view
 </p>
 
 This view provides a normalized view of forward looking risk exposure of a specific selected asset in the multi-hazard heatmap view across all hazard types: fire, flood, sea level rise, heatwaves and drought, for the SSP5-85 climate scenario. Each risk type is color coded differently. For a specific highlighted asset, the user can explore the risk over the 2021-2100 time horizon through this interactive view.
@@ -223,7 +214,7 @@ This view provides a normalized view of forward looking risk exposure of a speci
 </p>
 
 <p align="center">
-Fig 12: Exporting Views
+Fig 11: Exporting Views
 </p>
 
 We offer interactive plots within our dashboard. Hover over the line graphs to read the values at specific time points or over the map to see details of the assets. To facilitate reporting, we offer the ability to export the current view as a PNG image file. We also allow the user to pan and zoom on the graphs and maps to explore and export views of the data as most suitable.
