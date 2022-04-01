@@ -46,6 +46,7 @@ class HazardFilters(enum.Enum):
     WATER_STRESS = 'water_stress'
     SEA_LEVEL_RISE = 'sea_level_rise'
     HEATWAVE = 'heatwave'
+    FUNDAMENTAL = 'fundamental'
 
     _filter = 'hazard'
 
