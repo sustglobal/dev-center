@@ -38,7 +38,8 @@
               <!-- Local TOC -->
               <div class="local-toc"><ul>
 <li><a class="reference internal" href="#">Sust Global Python API Client</a><ul>
-<li><a class="reference internal" href="#quickstart">Quickstart</a></li>
+<li><a class="reference internal" href="#install-the-client">Install the client</a></li>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
 <li><a class="reference internal" href="#python-api-reference">Python API Reference</a></li>
 </ul>
 </li>
@@ -76,20 +77,56 @@
 <li><p>Current OpenAPI spec: <a class="reference external" href="https://explorer.sustglobal.io/swagger.json">https://explorer.sustglobal.io/swagger.json</a></p></li>
 <li><p>OpenAPI spec documenation: <a class="reference external" href="https://explorer.sustglobal.io/redoc/">https://explorer.sustglobal.io/redoc/</a></p></li>
 </ul>
-<section id="quickstart">
-<h2>Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this headline"></a></h2>
-<p>Initialize a client, providing your Climate Explorer API key and project name:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">client</span> <span class="o">=</span> <span class="n">ClimateExplorerClient</span><span class="p">(</span><span class="n">API_KEY</span><span class="p">,</span> <span class="n">PROJECT</span><span class="p">)</span>
+<p>More on our developer documentation can be found at:</p>
+<ul class="simple">
+<li><p>Sust Global developer center: <a class="reference external" href="https://developers.sustglobal.com/">https://developers.sustglobal.com/</a></p></li>
+</ul>
+<section id="install-the-client">
+<h2>Install the client<a class="headerlink" href="#install-the-client" title="Permalink to this headline"></a></h2>
+<p>You can install the client using <code class="docutils literal notranslate"><span class="pre">pip</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">sust</span><span class="o">-</span><span class="n">api</span><span class="o">-</span><span class="n">client</span>
 </pre></div>
 </div>
-<p>Access physical risk exposure summary data with filters:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">client</span><span class="o">.</span><span class="n">physical_risk_summary</span><span class="p">(</span>
-    <span class="n">WindowFilters</span><span class="o">.</span><span class="n">YEAR_30</span><span class="p">,</span>
-    <span class="n">HazardFilters</span><span class="o">.</span><span class="n">WILDFIRE</span><span class="p">,</span>
-    <span class="n">ScenarioFilters</span><span class="o">.</span><span class="n">SSP585</span>
-<span class="p">)</span>
+</section>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline"></a></h2>
+<p>Initialize a client, providing your Climate Explorer API key and project name (<code class="docutils literal notranslate"><span class="pre">API_KEY</span></code> and <code class="docutils literal notranslate"><span class="pre">PROJECT</span></code>, respectively):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sust.api</span> <span class="kn">import</span> <span class="n">ClimateExplorerClient</span>
+<span class="n">cl</span> <span class="o">=</span> <span class="n">ClimateExplorerClient</span><span class="p">(</span><span class="n">API_KEY</span><span class="p">,</span> <span class="n">PROJECT</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>You can scan through the list of available portfolios in the specified project and associated status using the following:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">pf</span> <span class="ow">in</span> <span class="n">cl</span><span class="o">.</span><span class="n">portfolios</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">pf</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">pf</span><span class="p">[</span><span class="s1">&#39;status&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>The status could be one of <code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">data</span> <span class="pre">available</span></code>, <code class="docutils literal notranslate"><span class="pre">Waiting</span> <span class="pre">on</span> <span class="pre">risk</span> <span class="pre">data</span> <span class="pre">generation</span></code> or <code class="docutils literal notranslate"><span class="pre">Risk</span> <span class="pre">data</span> <span class="pre">available</span></code>. To submit a new portfolio for risk data generation, you need to assign it a name and provide asset locations associated with the portfolio as a CSV file. Kindly use the <a class="reference external" href="https://developers.sustglobal.com/explorer.html">intake template</a> format for this purpose, see the <a class="reference external" href="https://developers.sustglobal.com/explorer.html">Quick Start Guide</a> for a demo portfolio as well:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pf</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="n">create_portfolio</span><span class="p">(</span><span class="n">PORTFOLIO_NAME</span><span class="p">)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;path_to_intake_portfolio_asset.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">af</span><span class="p">:</span>
+    <span class="n">pf</span><span class="o">.</span><span class="n">import_assets_csv</span><span class="p">(</span><span class="n">af</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Once asset level risk data is generated for your portfolio, the portfolio’s status changes to <code class="docutils literal notranslate"><span class="pre">Risk</span> <span class="pre">data</span> <span class="pre">available</span></code>. This process can take up to 24 hours depending on the size of the portfolio.</p>
+<p>The following demonstrates how to access the physical risk exposure timeseries data filtered to a specific scenario, hazard and indicator, then load it into a pandas dataframe for further analysis. Each row in the dataframe maps to an asset from the previously-uploaded CSV:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">sust.api</span> <span class="kn">import</span> <span class="p">(</span><span class="n">ScenarioFilters</span><span class="p">,</span> <span class="n">HazardFilters</span><span class="p">,</span> <span class="n">IndicatorFilters</span><span class="p">)</span>
+
+<span class="n">ts</span> <span class="o">=</span> <span class="n">pf</span><span class="o">.</span><span class="n">physical_risk_timeseries</span><span class="p">(</span><span class="n">ScenarioFilters</span><span class="o">.</span><span class="n">SSP585</span><span class="p">,</span> <span class="n">HazardFilters</span><span class="o">.</span><span class="n">WILDFIRE</span><span class="p">,</span> <span class="n">IndicatorFilters</span><span class="o">.</span><span class="n">BURNED_AREA</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">ts</span><span class="o">.</span><span class="n">to_dicts</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>The Sust Global API supports several of the <a class="reference external" href="https://www.carbonbrief.org/cmip6-the-next-generation-of-climate-models-explained">IPCC CMIP6 climate scenarios</a>, each of which are documented in the ScenarioFilters enum (e.g. <code class="docutils literal notranslate"><span class="pre">SSP126</span></code>, <code class="docutils literal notranslate"><span class="pre">SSP245</span></code> and <code class="docutils literal notranslate"><span class="pre">SSP585</span></code>).</p>
+<p>You can also filter responses based on hazards. Hazards could be one of <code class="docutils literal notranslate"><span class="pre">CYCLONE</span></code>, <code class="docutils literal notranslate"><span class="pre">WILDFIRE</span></code>, <code class="docutils literal notranslate"><span class="pre">FLOOD_POTENTIAL</span></code>, <code class="docutils literal notranslate"><span class="pre">WATER_STRESS</span></code>, <code class="docutils literal notranslate"><span class="pre">SEA_LEVEL_RISE</span></code>, <code class="docutils literal notranslate"><span class="pre">HEATWAVE</span></code> or <code class="docutils literal notranslate"><span class="pre">FUNDAMENTAL</span></code>. See <code class="docutils literal notranslate"><span class="pre">HazardFilters</span></code> for the complete list.</p>
+<p>You could optionally also filter the risk exposure dataset based on the indicators. Indicator filters are hazard specific. You could use the <code class="docutils literal notranslate"><span class="pre">PROBABILITY</span></code> or the <code class="docutils literal notranslate"><span class="pre">OBSERVED_FREQUENCY</span></code> indicators with the <code class="docutils literal notranslate"><span class="pre">CYCLONE</span></code> hazard, <code class="docutils literal notranslate"><span class="pre">BURNED_AREA</span></code>, <code class="docutils literal notranslate"><span class="pre">FIRE_KBDI_SUSCEPTIBILITY</span></code> or <code class="docutils literal notranslate"><span class="pre">OBSERVED_SCORE</span></code> with the <code class="docutils literal notranslate"><span class="pre">WILDFIRE</span></code> hazard, <code class="docutils literal notranslate"><span class="pre">PROBABILITY</span></code> or <code class="docutils literal notranslate"><span class="pre">OBSERVED_SCORE</span></code> with the <code class="docutils literal notranslate"><span class="pre">FLOOD_POTENTIAL</span></code> hazard, <code class="docutils literal notranslate"><span class="pre">SCORE</span></code> or <code class="docutils literal notranslate"><span class="pre">SPEI</span></code> for the <code class="docutils literal notranslate"><span class="pre">WATER_STRESS</span></code> hazard, <code class="docutils literal notranslate"><span class="pre">CHANGE</span></code> for the <code class="docutils literal notranslate"><span class="pre">SEA_LEVEL_RISE</span></code> hazard, <code class="docutils literal notranslate"><span class="pre">FREQUENCY</span></code> for the <code class="docutils literal notranslate"><span class="pre">HEATWAVE</span></code> hazard and <code class="docutils literal notranslate"><span class="pre">TEMPERATURE</span></code>, <code class="docutils literal notranslate"><span class="pre">PRECIPITATION</span></code> or <code class="docutils literal notranslate"><span class="pre">EXTREME_PRECIPITATION</span></code> for the <code class="docutils literal notranslate"><span class="pre">FUNDAMENTAL</span></code> hazard for the fundamental climate indicators.</p>
+<p>Physical risk summary datasets can be accessed and optionally filtered by hazard type or by window. Sust Global provides summaries over the 5, 15 and 30 year windows. Provided by <code class="docutils literal notranslate"><span class="pre">WindowFilters</span></code> are <code class="docutils literal notranslate"><span class="pre">YEARS_5</span></code>, <code class="docutils literal notranslate"><span class="pre">YEARS_15</span></code> or <code class="docutils literal notranslate"><span class="pre">YEARS_30</span></code>. Here is an example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sust.api</span> <span class="kn">import</span> <span class="n">WindowFilters</span>
+
+<span class="n">sm</span> <span class="o">=</span> <span class="n">pf</span><span class="o">.</span><span class="n">physical_risk_summary</span><span class="p">(</span><span class="n">ScenarioFilters</span><span class="o">.</span><span class="n">SSP585</span><span class="p">,</span> <span class="n">WindowFilters</span><span class="o">.</span><span class="n">YEARS_5</span><span class="p">,</span> <span class="n">HazardFilters</span><span class="o">.</span><span class="n">WILDFIRE</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">sm</span><span class="o">.</span><span class="n">to_dicts</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>These examples showcase how you can access risk exposure datasets and load them to dataframes as an entry point for exploration data analysis.
+Additional information is available in the <a class="reference external" href="https://developers.sustglobal.com">Sust Global Dev Center</a>.</p>
 </section>
 <section id="python-api-reference">
 <h2>Python API Reference<a class="headerlink" href="#python-api-reference" title="Permalink to this headline"></a></h2>
