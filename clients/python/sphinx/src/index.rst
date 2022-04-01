@@ -12,6 +12,15 @@ More on our developer documentation can be found at:
 
 * Sust Global developer center: https://developers.sustglobal.com/
 
+Install the client
+------------------
+
+You can install the client using ``pip``:
+
+.. code-block:: python
+
+    pip install sust-api-client
+
 Introduction
 ------------
 
@@ -51,9 +60,9 @@ The following demonstrates how to access the physical risk exposure timeseries d
 
 The Sust Global API supports several of the `IPCC CMIP6 climate scenarios <https://www.carbonbrief.org/cmip6-the-next-generation-of-climate-models-explained>`_, each of which are documented in the ScenarioFilters enum (e.g. ``SSP126``, ``SSP245`` and ``SSP585``).
 
-You can also filter responses based on hazards. Hazards could be one of ``CYCLONE``, ``WILDFIRE``, ``FLOOD_POTENTIAL``, ``WATER_STRESS``, ``SEA_LEVEL_RISE`` or ``HEATWAVE``. See ``HazardFilters`` for the complete list.
+You can also filter responses based on hazards. Hazards could be one of ``CYCLONE``, ``WILDFIRE``, ``FLOOD_POTENTIAL``, ``WATER_STRESS``, ``SEA_LEVEL_RISE``, ``HEATWAVE`` or ``FUNDAMENTAL``. See ``HazardFilters`` for the complete list.
 
-You could optionally also filter the risk exposure dataset based on the indicators. Indicator filters are hazard specific. You could use the ``PROBABILITY`` or the ``OBSERVED_FREQUENCY`` indicators with the ``CYCLONE`` hazard, ``BURNED_AREA``, ``FIRE_KBDI_SUSCEPTIBILITY`` or ``OBSERVED_SCORE`` with the ``WILDFIRE`` hazard, ``PROBABILITY`` or ``OBSERVED_SCORE`` with the ``FLOOD_POTENTIAL`` hazard, ``SCORE`` or ``SPEI`` for the ``WATER_STRESS`` hazard, ``CHANGE`` for the ``SEA_LEVEL_RISE`` hazard and ``FREQUENCY`` for the ``HEATWAVE`` hazard. 
+You could optionally also filter the risk exposure dataset based on the indicators. Indicator filters are hazard specific. You could use the ``PROBABILITY`` or the ``OBSERVED_FREQUENCY`` indicators with the ``CYCLONE`` hazard, ``BURNED_AREA``, ``FIRE_KBDI_SUSCEPTIBILITY`` or ``OBSERVED_SCORE`` with the ``WILDFIRE`` hazard, ``PROBABILITY`` or ``OBSERVED_SCORE`` with the ``FLOOD_POTENTIAL`` hazard, ``SCORE`` or ``SPEI`` for the ``WATER_STRESS`` hazard, ``CHANGE`` for the ``SEA_LEVEL_RISE`` hazard, ``FREQUENCY`` for the ``HEATWAVE`` hazard and ``TEMPERATURE``, ``PRECIPITATION`` or ``EXTREME_PRECIPITATION`` for the ``FUNDAMENTAL`` hazard for the fundamental climate indicators. 
 
 Physical risk summary datasets can be accessed and optionally filtered by hazard type or by window. Sust Global provides summaries over the 5, 15 and 30 year windows. Provided by ``WindowFilters`` are ``YEARS_5``, ``YEARS_15`` or ``YEARS_30``. Here is an example:
 
