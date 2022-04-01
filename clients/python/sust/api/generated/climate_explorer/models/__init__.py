@@ -13,6 +13,7 @@ from sust.api.generated.climate_explorer.model.asset_response import AssetRespon
 from sust.api.generated.climate_explorer.model.message_response import MessageResponse
 from sust.api.generated.climate_explorer.model.physical_risk_dataset_item_response import PhysicalRiskDatasetItemResponse
 from sust.api.generated.climate_explorer.model.physical_risk_dataset_summary_response import PhysicalRiskDatasetSummaryResponse
+from sust.api.generated.climate_explorer.model.physical_risk_metadata_indicator_response import PhysicalRiskMetadataIndicatorResponse
 from sust.api.generated.climate_explorer.model.physical_risk_metadata_response import PhysicalRiskMetadataResponse
 from sust.api.generated.climate_explorer.model.physical_risk_summary_item import PhysicalRiskSummaryItem
 from sust.api.generated.climate_explorer.model.portfolio_create_request import PortfolioCreateRequest

@@ -11,6 +11,7 @@ sust/api/generated/climate_explorer/docs/AssetResponse.md
 sust/api/generated/climate_explorer/docs/MessageResponse.md
 sust/api/generated/climate_explorer/docs/PhysicalRiskDatasetItemResponse.md
 sust/api/generated/climate_explorer/docs/PhysicalRiskDatasetSummaryResponse.md
+sust/api/generated/climate_explorer/docs/PhysicalRiskMetadataIndicatorResponse.md
 sust/api/generated/climate_explorer/docs/PhysicalRiskMetadataResponse.md
 sust/api/generated/climate_explorer/docs/PhysicalRiskSummaryItem.md
 sust/api/generated/climate_explorer/docs/PortfolioCreateRequest.md
@@ -22,6 +23,7 @@ sust/api/generated/climate_explorer/model/asset_response.py
 sust/api/generated/climate_explorer/model/message_response.py
 sust/api/generated/climate_explorer/model/physical_risk_dataset_item_response.py
 sust/api/generated/climate_explorer/model/physical_risk_dataset_summary_response.py
+sust/api/generated/climate_explorer/model/physical_risk_metadata_indicator_response.py
 sust/api/generated/climate_explorer/model/physical_risk_metadata_response.py
 sust/api/generated/climate_explorer/model/physical_risk_summary_item.py
 sust/api/generated/climate_explorer/model/portfolio_create_request.py
@@ -34,6 +36,7 @@ sust/api/generated/climate_explorer/test/test_asset_response.py
 sust/api/generated/climate_explorer/test/test_message_response.py
 sust/api/generated/climate_explorer/test/test_physical_risk_dataset_item_response.py
 sust/api/generated/climate_explorer/test/test_physical_risk_dataset_summary_response.py
+sust/api/generated/climate_explorer/test/test_physical_risk_metadata_indicator_response.py
 sust/api/generated/climate_explorer/test/test_physical_risk_metadata_response.py
 sust/api/generated/climate_explorer/test/test_physical_risk_summary_item.py
 sust/api/generated/climate_explorer/test/test_portfolio_create_request.py

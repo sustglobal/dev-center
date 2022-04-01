@@ -13,12 +13,10 @@ import unittest
 
 import sust.api.generated.climate_explorer
 from sust.api.generated.climate_explorer.model.physical_risk_metadata_indicator_response import PhysicalRiskMetadataIndicatorResponse
-globals()['PhysicalRiskMetadataIndicatorResponse'] = PhysicalRiskMetadataIndicatorResponse
-from sust.api.generated.climate_explorer.model.physical_risk_metadata_response import PhysicalRiskMetadataResponse
 
 
-class TestPhysicalRiskMetadataResponse(unittest.TestCase):
-    """PhysicalRiskMetadataResponse unit test stubs"""
+class TestPhysicalRiskMetadataIndicatorResponse(unittest.TestCase):
+    """PhysicalRiskMetadataIndicatorResponse unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,10 +24,10 @@ class TestPhysicalRiskMetadataResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testPhysicalRiskMetadataResponse(self):
-        """Test PhysicalRiskMetadataResponse"""
+    def testPhysicalRiskMetadataIndicatorResponse(self):
+        """Test PhysicalRiskMetadataIndicatorResponse"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = PhysicalRiskMetadataResponse()  # noqa: E501
+        # model = PhysicalRiskMetadataIndicatorResponse()  # noqa: E501
         pass
 
 

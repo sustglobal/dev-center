@@ -96,6 +96,7 @@ Class | Method | HTTP request | Description
  - [MessageResponse](sust/api/generated/climate_explorer/docs/MessageResponse.md)
  - [PhysicalRiskDatasetItemResponse](sust/api/generated/climate_explorer/docs/PhysicalRiskDatasetItemResponse.md)
  - [PhysicalRiskDatasetSummaryResponse](sust/api/generated/climate_explorer/docs/PhysicalRiskDatasetSummaryResponse.md)
+ - [PhysicalRiskMetadataIndicatorResponse](sust/api/generated/climate_explorer/docs/PhysicalRiskMetadataIndicatorResponse.md)
  - [PhysicalRiskMetadataResponse](sust/api/generated/climate_explorer/docs/PhysicalRiskMetadataResponse.md)
  - [PhysicalRiskSummaryItem](sust/api/generated/climate_explorer/docs/PhysicalRiskSummaryItem.md)
  - [PortfolioCreateRequest](sust/api/generated/climate_explorer/docs/PortfolioCreateRequest.md)

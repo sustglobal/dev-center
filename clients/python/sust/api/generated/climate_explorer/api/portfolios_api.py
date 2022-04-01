@@ -394,19 +394,19 @@ class PortfoliosApi(object):
                     },
                     ('indicator',): {
 
+                        "FREQ": "freq",
+                        "OBS_SCORE": "obs_score",
+                        "BURNED_AREA_NORM": "burned_area_norm",
+                        "INLAND_FLOOD_PROB": "inland_flood_prob",
+                        "FIRE_KBDI_SUSCEPTIBILITY": "fire_kbdi_susceptibility",
+                        "CHANGE": "change",
+                        "PRECIP": "precip",
+                        "PROB": "prob",
+                        "TEMP": "temp",
                         "EXTREME_PRECIP": "extreme_precip",
                         "SCORE": "score",
-                        "FIRE_KBDI_SUSCEPTIBILITY": "fire_kbdi_susceptibility",
-                        "TEMP": "temp",
-                        "BURNED_AREA_NORM": "burned_area_norm",
                         "SPEI_NORM": "spei_norm",
-                        "INLAND_FLOOD_PROB": "inland_flood_prob",
-                        "OBS_FREQ": "obs_freq",
-                        "PRECIP": "precip",
-                        "CHANGE": "change",
-                        "FREQ": "freq",
-                        "PROB": "prob",
-                        "OBS_SCORE": "obs_score"
+                        "OBS_FREQ": "obs_freq"
                     },
                     ('measure',): {
 
