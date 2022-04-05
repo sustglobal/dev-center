@@ -89,32 +89,35 @@ Python API Reference
 .. autoclass:: sust.api.climate_explorer.AssetList
    :members:
 
-.. autoclass:: sust.api.climate_explorer.PhysicalRiskTimeseriesList
+.. autoclass:: sust.api.climate_explorer.PhysicalRiskExposureDataset
    :members:
 
-.. autoclass:: sust.api.climate_explorer.PhysicalRiskSummaryList
+.. autoclass:: sust.api.climate_explorer.PhysicalRiskExposureTimeseries
+   :members:
+
+.. autoclass:: sust.api.climate_explorer.PhysicalRiskExposureSummary
    :members:
 
 .. autoclass:: sust.api.climate_explorer.LabelFilter
    :members:
    :undoc-members:
 
-.. autoclass:: sust.api.climate_explorer.ScenarioFilters
+.. autoclass:: sust.api.climate_explorer.Scenario
    :members:
    :undoc-members:
 
-.. autoclass:: sust.api.climate_explorer.HazardFilters
+.. autoclass:: sust.api.climate_explorer.Hazard
    :members:
    :undoc-members:
 
-.. autoclass:: sust.api.climate_explorer.IndicatorFilters
+.. autoclass:: sust.api.climate_explorer.Indicator
    :members:
    :undoc-members:
 
-.. autoclass:: sust.api.climate_explorer.WindowFilters
+.. autoclass:: sust.api.climate_explorer.Window
    :members:
    :undoc-members:
 
-.. autoclass:: sust.api.climate_explorer.MeasureFilters
+.. autoclass:: sust.api.climate_explorer.Measure
    :members:
    :undoc-members:
