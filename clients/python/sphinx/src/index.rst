@@ -36,7 +36,7 @@ You can scan through the list of available portfolios in the specified project a
 .. code-block:: python
 
     for pf in cl.portfolios():
-        print(pf.name, pf['status'])
+        print(pf['portfolio_name'], pf['status'])
 
 The status could be one of ``No data available``, ``Waiting on risk data generation`` or ``Risk data available``. To submit a new portfolio for risk data generation, you need to assign it a name and provide asset locations associated with the portfolio as a CSV file. Kindly use the `intake template <https://developers.sustglobal.com/explorer.html>`_ format for this purpose, see the `Quick Start Guide <https://developers.sustglobal.com/explorer.html>`_ for a demo portfolio as well: 
 
@@ -53,24 +53,58 @@ The following demonstrates how to access the physical risk exposure timeseries d
 .. code-block:: python
 
     import pandas as pd
-    from sust.api import (ScenarioFilters, HazardFilters, IndicatorFilters)
 
-    ts = pf.physical_risk_timeseries(ScenarioFilters.SSP585, HazardFilters.WILDFIRE, IndicatorFilters.BURNED_AREA)
+    ds = pf.physical_risk_exposure()
+    ts = ds.timeseries(ds.scenarios.get('ssp585'), ds.indicators.get('wildfire', 'burned_area_norm'))
     df = pd.DataFrame(ts.to_dicts())
 
-The Sust Global API supports several of the `IPCC CMIP6 climate scenarios <https://www.carbonbrief.org/cmip6-the-next-generation-of-climate-models-explained>`_, each of which are documented in the ScenarioFilters enum (e.g. ``SSP126``, ``SSP245`` and ``SSP585``).
+The Sust Global API supports several of the `IPCC CMIP6 climate scenarios <https://www.carbonbrief.org/cmip6-the-next-generation-of-climate-models-explained>`_, including ``ssp126``, ``ssp245`` and ``ssp585``).
 
-You can also filter responses based on hazards. Hazards could be one of ``CYCLONE``, ``WILDFIRE``, ``FLOOD_POTENTIAL``, ``WATER_STRESS``, ``SEA_LEVEL_RISE``, ``HEATWAVE`` or ``FUNDAMENTAL``. See ``HazardFilters`` for the complete list.
+It is common practice to filter timeseries data to specific indicators. The following table documents the
+available values. When filtering to a specific indicator, it is important to provide the corresponding hazard value as
+well. An example of this is available just above.
 
-You could optionally also filter the risk exposure dataset based on the indicators. Indicator filters are hazard specific. You could use the ``PROBABILITY`` or the ``OBSERVED_FREQUENCY`` indicators with the ``CYCLONE`` hazard, ``BURNED_AREA``, ``FIRE_KBDI_SUSCEPTIBILITY`` or ``OBSERVED_SCORE`` with the ``WILDFIRE`` hazard, ``PROBABILITY`` or ``OBSERVED_SCORE`` with the ``FLOOD_POTENTIAL`` hazard, ``SCORE`` or ``SPEI`` for the ``WATER_STRESS`` hazard, ``CHANGE`` for the ``SEA_LEVEL_RISE`` hazard, ``FREQUENCY`` for the ``HEATWAVE`` hazard and ``TEMPERATURE``, ``PRECIPITATION`` or ``EXTREME_PRECIPITATION`` for the ``FUNDAMENTAL`` hazard for the fundamental climate indicators. 
++-----------------+--------------------------+
+| Hazard          | Indicator                |
++=================+==========================+
+| cyclone         | prob                     |
++-----------------+--------------------------+
+| cyclone         | obs_freq                 |
++-----------------+--------------------------+
+| wildfire        | burned_area_norm         |
++-----------------+--------------------------+
+| wildfire        | fire_kbdi_susceptibility |
++-----------------+--------------------------+
+| wildfire        | obs_score                |
++-----------------+--------------------------+
+| flood_potential | inland_flood_prob        |
++-----------------+--------------------------+
+| flood_potential | obs_score                |
++-----------------+--------------------------+
+| water_stress    | spei_norm                |
++-----------------+--------------------------+
+| water_stress    | score                    |
++-----------------+--------------------------+
+| sea_level_rise  | change                   |
++-----------------+--------------------------+
+| heatwave        | freq                     |
++-----------------+--------------------------+
+| fundamental     | precip                   |
++-----------------+--------------------------+
+| fundamental     | extreme_precip           |
++-----------------+--------------------------+
+| fundamental     | temp                     |
++-----------------+--------------------------+
 
-Physical risk summary datasets can be accessed and optionally filtered by hazard type or by window. Sust Global provides summaries over the 5, 15 and 30 year windows. Provided by ``WindowFilters`` are ``YEARS_5``, ``YEARS_15`` or ``YEARS_30``. Here is an example:
+Summary and timeseries data may be filtered to a hazard. To accomplish this, simply provide a hazard name to the
+``PhysicalRiskExposureDataset.hazards.get`` method.
+
+Summary datasets can also be filtered by summary window. Sust Global provides summaries over the 5, 15 and 30 year windows. An example follows:
 
 .. code-block:: python
 
-    from sust.api import WindowFilters
-
-    sm = pf.physical_risk_summary(ScenarioFilters.SSP585, WindowFilters.YEARS_5, HazardFilters.WILDFIRE)
+    ds = pf.physical_risk_exposure()
+    sm = ds.summary(ds.windows.get(5), ds.hazards.get('wildfire'))
     df = pd.DataFrame(sm.to_dicts())
 
 These examples showcase how you can access risk exposure datasets and load them to dataframes as an entry point for exploration data analysis.
@@ -89,32 +123,56 @@ Python API Reference
 .. autoclass:: sust.api.climate_explorer.AssetList
    :members:
 
-.. autoclass:: sust.api.climate_explorer.PhysicalRiskTimeseriesList
+.. autoclass:: sust.api.climate_explorer.PhysicalRiskExposureDataset
    :members:
 
-.. autoclass:: sust.api.climate_explorer.PhysicalRiskSummaryList
+.. autoclass:: sust.api.climate_explorer.PhysicalRiskExposureTimeseries
    :members:
 
-.. autoclass:: sust.api.climate_explorer.LabelFilter
+.. autoclass:: sust.api.climate_explorer.PhysicalRiskExposureSummary
+   :members:
+
+.. autoclass:: sust.api.climate_explorer.Scenario
    :members:
    :undoc-members:
 
-.. autoclass:: sust.api.climate_explorer.ScenarioFilters
+.. autoclass:: sust.api.climate_explorer.ScenarioList
+   :members:
+   :inherited-members:
+   :undoc-members:
+
+.. autoclass:: sust.api.climate_explorer.Hazard
    :members:
    :undoc-members:
 
-.. autoclass:: sust.api.climate_explorer.HazardFilters
+.. autoclass:: sust.api.climate_explorer.HazardList
+   :members:
+   :inherited-members:
+   :undoc-members:
+
+.. autoclass:: sust.api.climate_explorer.Indicator
    :members:
    :undoc-members:
 
-.. autoclass:: sust.api.climate_explorer.IndicatorFilters
+.. autoclass:: sust.api.climate_explorer.IndicatorList
+   :members:
+   :inherited-members:
+   :undoc-members:
+
+.. autoclass:: sust.api.climate_explorer.Window
    :members:
    :undoc-members:
 
-.. autoclass:: sust.api.climate_explorer.WindowFilters
+.. autoclass:: sust.api.climate_explorer.WindowList
+   :members:
+   :inherited-members:
+   :undoc-members:
+
+.. autoclass:: sust.api.climate_explorer.Measure
    :members:
    :undoc-members:
 
-.. autoclass:: sust.api.climate_explorer.MeasureFilters
+.. autoclass:: sust.api.climate_explorer.MeasureList
    :members:
+   :inherited-members:
    :undoc-members:
