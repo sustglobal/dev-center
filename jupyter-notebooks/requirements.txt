@@ -2,4 +2,4 @@ plotly
 numpy
 pandas
 jupyter
-sust-api-client==0.0.16
+sust-api-client==0.0.17
