@@ -44,7 +44,7 @@ class AssetList:
 
     def to_dicts(self) -> List[dict]:
         """Convert object to python dictionaries."""
-        return self._objects
+        return [o.to_dict() for o in self._objects]
 
     def export_csv(self) -> IO:
         """Export assets as a CSV file. The returned file-like

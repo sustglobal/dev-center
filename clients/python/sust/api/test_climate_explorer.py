@@ -29,6 +29,7 @@ class SmokeTestCase(unittest.TestCase):
 
         ad = al.to_dicts()
         self.assertTrue(ad)
+        self.assertTrue('lat' in ad[0])
 
         ab = al.export_csv().read()
         rows = list(csv.DictReader(io.StringIO(ab.decode())))
