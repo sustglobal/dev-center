@@ -60,7 +60,7 @@
   <li>
 <strong>Middle of the Road:</strong> This scenario covers a middle path, with challenges to climate mitigation (SSP2-RCP4.5). In this scenario, environmental systems experience degradation, and although there are some improvements. overall the intensity of resource and energy use declines. This is a likely scenario if governments and policy reflect a strong sense of urgency towards climate adaptation. This is a likely scenario if governments and policy reflect a strong sense of urgency towards climate adaptation. Global mean temperatures rise approximately 3°C by 2100.</li>
   <li>
-<strong>High Emissions:</strong> This scenario covers a future where the world continues on its current trajectory (SSP5-RCP8.5). There is continued reliance on competitive markets to produce rapid technological progress.. Global markets are increasingly integrated. There is a high reliance on fossil fuels, with emissions peaking around 2090 and global mean temperatures rising approximately 5°C by 2100.</li>
+<strong>High Emissions:</strong> This scenario covers a future where the world continues on its current trajectory (SSP5-RCP8.5). There is continued reliance on competitive markets to produce rapid technological progress. Global markets are increasingly integrated. There is a high reliance on fossil fuels, with emissions peaking around 2090 and global mean temperatures rising approximately 5°C by 2100.</li>
 </ol>
 
 <h2 id="physical-hazard-modeling">
@@ -71,7 +71,7 @@
 <a class="anchor" href="#wildfire" aria-hidden="true"><span class="octicon octicon-link"></span></a>Wildfire</h3>
 
 <h4 id="wildfire-burned-area-fraction">Wildfire Burned Area Fraction</h4>
-<p>We represent annual fire risk by aggregating CMIP6 model simulations of monthly wildfire burned area [% of grid cell]. Wildfire <a href="https://www.sciencedirect.com/science/article/abs/pii/S0921818116303770?via%3Dihub">models</a> incorporate factors such as temperature, precipitation, land cover type, and population to simulate fire occurrence and the associated area burned. For example: fire occurrence includes both lightning and human-induced ignitions, and high temperatures and drought lead to drier fuels and increased likelihood of fire. We use our proprietary methodologies for wildfire super resolution <a href="https://www.climatechange.ai/papers/neurips2020/45">NeurIPS2020 technical reference</a> on top of the model ensemble to enable high resolution wildfire projections. These projections are further processed using the latest satellite derived land cover maps, filtering for the urban-wildland interface to further refine the projections.</p>
+<p>We represent annual fire risk by aggregating CMIP6 model simulations of monthly wildfire burned area [% of grid cell]. Wildfire <a href="https://www.sciencedirect.com/science/article/abs/pii/S0921818116303770?via%3Dihub">models</a> incorporate factors such as temperature, precipitation, land cover type, and population to simulate fire occurrence and the associated area burned. For example, fire occurrence includes both lightning and human-induced ignitions, and high temperatures and drought lead to drier fuels and increased likelihood of fire. We use our proprietary methodologies for wildfire super resolution <a href="https://www.climatechange.ai/papers/neurips2020/45">NeurIPS2020 technical reference</a> on top of the model ensemble to enable high resolution wildfire projections. These projections are further processed using the latest satellite-derived land cover maps, filtering for the urban-wildland interface to further refine the projections.</p>
 
 <h4 id="wildfire-susceptibility">Wildfire Susceptibility</h4>
 
@@ -84,7 +84,7 @@
 <p>To estimate an asset’s exposure to drought, we utilize a drought index based on CMIP6 simulations of precipitation and temperature, from which we estimate potential evapotranspiration. This is the more suitable index for agricultural assets like farms and farm production sites. The drought index, also referred to as the standardized precipitation evapotranspiration index <a href="https://spei.csic.es/home.html">(SPEI)</a>, represents the magnitude of precipitation deficits (negative magnitude) or surplus (positive magnitude) along with accounting for evaporation over the preceding 12-month period. Values between -1.5 and -2.0 indicate moderate dryness, while values below -2.0 indicate severe dryness. High risk, exceptional droughts fall below -2.0 on the standard precipitation evapotranspiration index <a href="https://spei.csic.es/home.html">(SPEI)</a>. Drought index values are calculated relative to a historical 1950-2014 baseline period, and future droughts can reach index values below -3.0 if the droughts are unprecedented relative to that 1950-2014 historical period.</p>
 <h3 id="heatwaves">
 <a class="anchor" href="#heatwaves" aria-hidden="true"><span class="octicon octicon-link"></span></a>Heatwaves</h3>
-<p>For heatwaves, we calculate the number of days per year exceeding a temperature threshold. The temperature threshold at a given location is based on the 98th percentile of local, daily conditions during a baseline period between 1980 and 2010. Because this temperature threshold varies by location, the heatwave metric indicates anomalously high temperatures relative to what is typical at the local level.</p>
+<p>For heatwaves, we calculate the number of days per year exceeding a temperature threshold. The temperature threshold at a given location is based on the local, daily conditions during a baseline period between 1980 and 2010. Because this temperature threshold varies by location, the heatwave metric indicates anomalously high temperatures relative to what is typical at the local level.</p>
 
 <h3 id="inland-flooding">
 <a class="anchor" href="#inland-flooding" aria-hidden="true"><span class="octicon octicon-link"></span></a>Inland Flooding</h3>
@@ -205,17 +205,17 @@ Fig 6: Projected physical hazard time series view
 Fig 7: Risk Heatmap View
 </p>
 
-<p>This view shows the heatmap of forward looking risk for a selected physical hazard type. We project physical risk over the 30 year window between 2020 and 2050 and look at the maximum risk exposure to a specific hazard for an asset. We use the maximum risk exposure value to color code the asset to LOW (Green), MEDIUM (Yellow), or HIGH (Red) risk categories. <a href="https://developers.sustglobal.com/explorer.html">Climate Explorer QuickStart Guide</a>The markers are scaled based on the extent of the loss. We use maximum risk exposure values to normalize hazards to a common 0 to 1 scale. The color of the marker is indicative of the severity of the hazard exposure and the size of the marker is indicative of the asset level loss estimates from the hazard.</p>
+<p>This view shows the heatmap of forward looking risk for a selected physical hazard type. We project physical risk over the 30 year window between 2021 and 2050 and look at the maximum risk exposure to a specific hazard for an asset. We use the maximum risk exposure value to color code the asset to LOW (Green), MEDIUM (Yellow), or HIGH (Red) risk categories. <a href="https://developers.sustglobal.com/explorer.html">Climate Explorer QuickStart Guide</a>The markers are scaled based on the extent of the loss. We use maximum risk exposure values to normalize hazards to a common 0 to 1 scale. The color of the marker is indicative of the severity of the hazard exposure and the size of the marker is indicative of the asset level loss estimates from the hazard.</p>
 
 <h5 id="methodology-description">Methodology description</h5>
 <ol>
   <li>For a selected SSP, we would look at the maximum value of risk exposure over the 2021-2050 analysis time window for all hazards with the exception of sea level rise (SLR) and 2021-2100 for SLR as the input to the risk summary view. This is to account for sea level rise being a longer term hazard, having more profound exposure over the second half of the century.</li>
   <li>
-    <p>For each hazard, we then identify the maximum risk exposure value of each asset over all the years in the analysis time window and use that value as input to the classification as LOW, MEDIUM or HIGH, based on the value intervals listed below. Note that for drought (SPEI), we would use the negative of the value in the risk exposure datasets (negative drought (SPEI) values indicate risk). For flooding, we use the number of years within a decade where the risk exceeds a preset threshold (5%). This is to simulate a flood exceedance threshold from the flood exposure values.</p>
+    <p>For each hazard, we then identify the maximum risk exposure value of each asset over all the years in the analysis time window and use that value as input to a classification of LOW, MEDIUM or HIGH. Note that for drought (SPEI), we would use the negative of the value in the risk exposure datasets (negative drought (SPEI) values indicate risk). For flooding, we use the number of years within a 30-year period where the risk exceeds a preset threshold (5%). This is to simulate a flood exceedance threshold from the flood exposure values.</p>
   </li>
   <li>The heatmap marker is scaled based on the extent of the estimated loss which is computed as 0.4 of the asset price * (max risk exposure for asset in step 2 / max exposure of the hazard) leading to assets with high estimated losses being marked with larger marker size on the maps.
 a) Asset price is set as $1M in the absence of values provided
-b) Maximum exposure values per hazard based on 98th percentile values are listed in the last table on the <a href="./explorer.html">Quickstart guide</a>.</li>
+b) Maximum exposure values per hazard are listed in the last table on the <a href="./explorer.html">Quickstart guide</a>.</li>
 </ol>
 
 <p>A table of heat map coding ranges can be found on our <a href="https://developers.sustglobal.com/explorer.html">QuickStart Guide.</a></p>
@@ -250,7 +250,7 @@ Fig 8: Risk Summary Table
 Fig 9: Multi-hazard heatmap view
 </p>
 
-<p>This view allows the user to see a consolidated view of risk exposure across all assets, across multiple hazards. We use fire, flood, sea level rise and cyclones to highlight risk exposures for each asset. For fire, flood, sea level rise and drought, we use the forward looking 30 year time horizon (2021-2050) by default. or cyclones, we use the historic 11 year time horizon (2010-2020). When hovering over a specific asset, you can see the dominant risk type listed (Fig 10 below). The risks are normalized based on peak risk values from the 98th percentile of the risk exposure distribution i.e. the exposure value for a specific hazard at the 98th percentile of the global exposure distribution is set to 1.0, and all values for that specific hazard are normalized to the 0.0 to 1.0 range.</p>
+<p>This view allows the user to see a consolidated view of risk exposure across all assets, across multiple hazards. We use fire, flood, sea level rise and cyclones to highlight risk exposures for each asset. For fire, flood, sea level rise and drought, we use the forward looking 30-year time horizon (2021-2050) by default or cyclones, we use the historic 11 year time horizon (2010-2020). When hovering over a specific asset, you can see the dominant risk type listed (Fig 10 below). The risks are normalized based on peak risk values of the risk exposure distribution.</p>
 
 <h4 id="multi-hazard-time-series-view">Multi-hazard Time Series View</h4>
 
@@ -262,7 +262,7 @@ Fig 9: Multi-hazard heatmap view
 Fig 10: Multi-hazard time series view
 </p>
 
-<p>This view provides a normalized view of forward looking risk exposure of a specific selected asset in the multi-hazard heatmap view across all hazard types: fire, flood, sea level rise, heatwaves and drought, for the SSP5-85 climate scenario. For a specific highlighted asset, the user can explore the risk over the 2021-2100 time horizon through this interactive view.</p>
+<p>This view provides a normalized view of forward looking risk exposure of a specific selected asset in the multi-hazard heatmap view across all hazard types: fire, flood, sea level rise, heatwaves and drought, for the High Emissions climate scenario. For a specific highlighted asset, the user can explore the risk over the 2021-2100 time horizon through this interactive view.</p>
 
 <h4 id="exporting-views-from-the-dashboard">Exporting Views from the Dashboard</h4>
 
