@@ -89,4 +89,4 @@ For creating standard heatmaps, we assess the physical risk over the 30 year win
 | Tropical Cyclones | Annual projection of probability of at least one hit by a category 3/4/5 cyclone | Probability score | 0.0 to 1.0 | 50km | LOW: <=0.1; MEDIUM: 0.1 to 0.2; HIGH:  >0.2 | .5 |
 | Water Stress | Annual ratio of water demand to renewable water availability | Ratio | 0.0 to 4.0 | 0.5km to 3500km | LOW: <=0.1; MEDIUM: 0.1 to 0.4; HIGH: >= 0.4 | 4.0 |
 
-*The heat map coding range for floods indicates a flood exceedance frequency (i.e. the number of floods exceeding 5% probability in a given decade).
+*The heat map coding range for floods indicates a flood exceedance frequency (i.e. the number of floods exceeding 5% probability in the 30-year period.
