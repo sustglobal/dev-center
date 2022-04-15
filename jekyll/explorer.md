@@ -72,21 +72,22 @@ All reports and supported risk projections are at annual cadence. Some of our da
 
 For creating standard heatmaps, we assess the physical risk over the 30 year window between 2021 and 2050 and look at the maximum risk exposure to a specific hazard for an asset. We use the maximum risk exposure value to color code the asset to LOW (Green), MEDIUM (Yellow), HIGH (Red) risk categories.
 
-| Fundamental Variable / Hazard | Description | Unit | Forward-Looking Range of Possible Values | Spatial Resolution | Heat Map Coding Range | Normalization Value |
-| - | - | - | - | - | - | - | - | - |- |- |
-| Fire Exposure | Monthly active fire severity based on satellite observations. We transform the [NASA Active Fire Data](https://firms2.modaps.eosdis.nasa.gov/) to report on active fires. Note that because these values are based on satellite observations and we cannot discern wildfires from human generated fires. | Unit interval with 1.0 indicating maximum active fires recorded in a month (30 in 2020) | 0.0 to 1.0 | 300m | N/A | N/A |
-| Flooding Exposure | Monthly exposure of assets to floods. We transform data from multiple flood observatories to report on active floods at the points of interest. The severity classes are based on the recurrence interval: (class 1) Large flood events: recurrence < 20 year; (class 2) Very large events: 20 year < recurrence < 100 year; (class 3) Extreme events: recurrence > 100 years. Values are set based on severity*0.333. | Unit interval with 1.0 indicating maximum severity extreme flooding (recurrence exceeding 100 years) | 0.0 to 1.0 | 1km | N/A | N/A |
-| Cyclone Exposure | Monthly asset level exposure to cyclones/hurricanes. We source cyclone tracks from the [NOAA IBTRACs](https://www.ncdc.noaa.gov/ibtracs/). Frequency of category 3/4/5 cyclones. | Frequency count | 0 to 3 | N/A | N/A |
-| Annual Temperature | Annual mean annual temperature at the asset location | °C | -5 to 45 | 100km | N/A | N/A |
-| Annual Precipitation | Annual total precipitation at the asset location | mm | 0 to 5000 | 100km | N/A | N/A |
-| Extreme Precipitation | Annual days per year where precipitation exceeds 51mm | Number of days | 0 to 365 | 100km | N/A | N/A |
-| Wildfire Burned Area Fraction | Annual fraction of land exposed to wildfire within 300km radius of the asset | Fraction | 0.0 to 1.0 | 300km | LOW: 0.0 to 0.000081; MEDIUM: 0.00008 to 0.01; HIGH: > 0.01 | 1.0 |
-| Wildfire Susceptibility | Average annual probability of a wildfire occurring across all land areas within 1km of the asset | Probability Score | 0.0 to 1.0 | 300m | LOW: 0.0 to 0.05; MEDIUM: 0.05 to 0.075; HIGH: 0.075 to 1.0 | 1.0 |
-| Inland Flooding | Annual exposure of asset to floods | Probability score | 0.0 to 1.0 | 4km | Based on number of years with probability of flood >5%; LOW: 0; MEDIUM: 1 to 2; HIGH >2 | 1.0 |
-| Heatwaves | Annual heatwave days per year where temperature at asset is projected to exceed 98th percentile of historic recordings | Number of days | 0 to 365 | 100km | LOW: 0 to 30; MEDIUM: 30 to 50; HIGH: >50 | 200 |
-| Sea Level Rise | Annual projection of sea level rise relative to average sea level at the asset over 1980-2010 | Rise in meters | 0.0 to 2.0 | 100km | LOW: <0.1; MEDIUM:0.1 to 0.3; HIGH: >0.3 | 0.75 |
-| Drought (SPEI) | Annual projection of standard precipitation evapo-transipiration index | Index score | -3.0 to 3.0 | 100km | LOW >=-1.5; MEDIUM: -1.5 to -2.0; HIGH: <-2.0 | 3.0 |
-| Tropical Cyclones | Annual projection of probability of at least one hit by a category 3/4/5 cyclone | Probability score | 0.0 to 1.0 | 50km | LOW: <=0.1; MEDIUM: 0.1 to 0.2; HIGH:  >0.2 | .5 |
-| Water Stress | Annual ratio of water demand to renewable water availability | Ratio | 0.0 to 4.0 | 0.5km to 3500km | LOW: <=0.1; MEDIUM: 0.1 to 0.4; HIGH: >= 0.4 | 4.0 |
+| hazard    |  description  |   indicator   |  unit   |   value_min  |  value_max  |  value_norm  |  spatial_resolution |
+| - | - | - | - | - | - |- |- |
+| cyclone |  Monthly asset level exposure to cyclones/hurricanes. We source cyclone tracks from the [NOAA IBTRACs](https://www.ncdc.noaa.gov/ibtracs/). Frequency of category 3/4/5 cyclones. | obs_freq | frequency | 0.0 | 3.0 | 2.00 | 1000.0 |
+| cyclone | Annual projection of probability of at least one hit by a category 3/4/5 cyclone  | prob | probability | 0.0 | 1.0 | 0.50 | 50000.0 |
+| flood_potential | Monthly exposure of assets to floods. We transform data from multiple flood observatories to report on active floods at the points of interest. The severity classes are based on the recurrence interval: (class 1) Large flood events: recurrence < 20 year; (class 2) Very large events: 20 year < recurrence < 100 year; (class 3) Extreme events: recurrence > 100 years. Values are set based on severity*0.333. | obs_score | score | 0.0 | 1.0 | 1.00 | 1000.0 |
+| flood_potential | Annual exposure of asset to floods  | inland_flood_prob | probability | 0.0 | 1.0 |  1.00 | 4000.0 |
+| fundamental | Annual mean annual temperature at the asset location | temp | degree_celsius | -5.0 | 45.0 | 45.00 | 100000.0 |
+| fundamental | Annual total precipitation at the asset location | precip | millimeter | 0.0 | 5000.00 | 5000.0 | 100000.0 |
+| fundamental | Annual days per year where precipitation exceeds 51mm | extreme_precip | day | 0.0 | 365.0 | 365.0 | 100000.0 |
+| heatwave | Annual heatwave days per year where temperature at asset is projected to exceed 98th percentile of historic recordings | freq | day | 0.0 | 365.0 | 200.0 | 100000.0 |
+| sea_level_rise | Annual projection of sea level rise relative to average sea level at the asset over 1980-2010 | change | meter | -0.2 | 2.0 | 0.75 | 100000.0 |
+| water_stress | Annual projection of standard precipitation evapo-transipiration index | spei_norm |  score |  -3.0 |  3.0 |  3.00 |  100000.0 |
+| water_stress | Annual ratio of water demand to renewable water availability | score | score | 0.0 | 4.0 | 4.00 | 500.0 |
+| wildfire | Monthly active fire severity based on satellite observations. We transform the [NASA Active Fire Data](https://firms2.modaps.eosdis.nasa.gov/) to report on active fires. Note that because these values are based on satellite observations and we cannot discern wildfires from human generated fires. | obs_score  | score | 0.0 | 1.0 | 1.00 | 300.0 |
+| wildfire | Annual fraction of land exposed to wildfire within 300km radius of the asset   | burned_area_norm  | score | 0.0 | 1.0 | 1.00 | 300.0 |
+| wildfire | Average annual probability of a wildfire occurring across all land areas within 1km of the asset | fire_kbdi_susceptability  |  score | 0.0 | 1.0 | 1.00 | 300.0 |
+
 
 *The heat map coding range for floods indicates a flood exceedance frequency (i.e. the number of floods exceeding 5% probability in the 30-year period.

@@ -163,141 +163,156 @@ higher cadence reporting, please contact us for custom requests.</p>
 <table>
   <thead>
     <tr>
-      <th>Fundamental Variable / Hazard</th>
-      <th>Description</th>
-      <th>Unit</th>
-      <th>Forward-Looking Range of Possible Values</th>
-      <th>Spatial Resolution</th>
-      <th>Heat Map Coding Range</th>
-      <th>Normalization Value</th>
+      <th>hazard</th>
+      <th>description</th>
+      <th>indicator</th>
+      <th>unit</th>
+      <th>value_min</th>
+      <th>value_max</th>
+      <th>value_norm</th>
+      <th>spatial_resolution</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Fire Exposure</td>
-      <td>Monthly active fire severity based on satellite observations. We transform the <a href="https://firms2.modaps.eosdis.nasa.gov/">NASA Active Fire Data</a> to report on active fires. Note that because these values are based on satellite observations and we cannot discern wildfires from human generated fires.</td>
-      <td>Unit interval with 1.0 indicating maximum active fires recorded in a month (30 in 2020)</td>
-      <td>0.0 to 1.0</td>
-      <td>300m</td>
-      <td>N/A</td>
-      <td>N/A</td>
-    </tr>
-    <tr>
-      <td>Flooding Exposure</td>
-      <td>Monthly exposure of assets to floods. We transform data from multiple flood observatories to report on active floods at the points of interest. The severity classes are based on the recurrence interval: (class 1) Large flood events: recurrence &lt; 20 year; (class 2) Very large events: 20 year &lt; recurrence &lt; 100 year; (class 3) Extreme events: recurrence &gt; 100 years. Values are set based on severity*0.333.</td>
-      <td>Unit interval with 1.0 indicating maximum severity extreme flooding (recurrence exceeding 100 years)</td>
-      <td>0.0 to 1.0</td>
-      <td>1km</td>
-      <td>N/A</td>
-      <td>N/A</td>
-    </tr>
-    <tr>
-      <td>Cyclone Exposure</td>
+      <td>cyclone</td>
       <td>Monthly asset level exposure to cyclones/hurricanes. We source cyclone tracks from the <a href="https://www.ncdc.noaa.gov/ibtracs/">NOAA IBTRACs</a>. Frequency of category 3/4/5 cyclones.</td>
-      <td>Frequency count</td>
-      <td>0 to 3</td>
-      <td>N/A</td>
-      <td>N/A</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>Annual Temperature</td>
-      <td>Annual mean annual temperature at the asset location</td>
-      <td>°C</td>
-      <td>-5 to 45</td>
-      <td>100km</td>
-      <td>N/A</td>
-      <td>N/A</td>
-    </tr>
-    <tr>
-      <td>Annual Precipitation</td>
-      <td>Annual total precipitation at the asset location</td>
-      <td>mm</td>
-      <td>0 to 5000</td>
-      <td>100km</td>
-      <td>N/A</td>
-      <td>N/A</td>
-    </tr>
-    <tr>
-      <td>Extreme Precipitation</td>
-      <td>Annual days per year where precipitation exceeds 51mm</td>
-      <td>Number of days</td>
-      <td>0 to 365</td>
-      <td>100km</td>
-      <td>N/A</td>
-      <td>N/A</td>
-    </tr>
-    <tr>
-      <td>Wildfire Burned Area Fraction</td>
-      <td>Annual fraction of land exposed to wildfire within 300km radius of the asset</td>
-      <td>Fraction</td>
-      <td>0.0 to 1.0</td>
-      <td>300km</td>
-      <td>LOW: 0.0 to 0.000081; MEDIUM: 0.00008 to 0.01; HIGH: &gt; 0.01</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <td>Wildfire Susceptibility</td>
-      <td>Average annual probability of a wildfire occurring across all land areas within 1km of the asset</td>
-      <td>Probability Score</td>
-      <td>0.0 to 1.0</td>
-      <td>300m</td>
-      <td>LOW: 0.0 to 0.05; MEDIUM: 0.05 to 0.075; HIGH: 0.075 to 1.0</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <td>Inland Flooding</td>
-      <td>Annual exposure of asset to floods</td>
-      <td>Probability score</td>
-      <td>0.0 to 1.0</td>
-      <td>4km</td>
-      <td>Based on number of years with probability of flood &gt;5%; LOW: 0; MEDIUM: 1 to 2; HIGH &gt;2</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <td>Heatwaves</td>
-      <td>Annual heatwave days per year where temperature at asset is projected to exceed 98th percentile of historic recordings</td>
-      <td>Number of days</td>
-      <td>0 to 365</td>
-      <td>100km</td>
-      <td>LOW: 0 to 30; MEDIUM: 30 to 50; HIGH: &gt;50</td>
-      <td>200</td>
-    </tr>
-    <tr>
-      <td>Sea Level Rise</td>
-      <td>Annual projection of sea level rise relative to average sea level at the asset over 1980-2010</td>
-      <td>Rise in meters</td>
-      <td>0.0 to 2.0</td>
-      <td>100km</td>
-      <td>LOW: &lt;0.1; MEDIUM:0.1 to 0.3; HIGH: &gt;0.3</td>
-      <td>0.75</td>
-    </tr>
-    <tr>
-      <td>Drought (SPEI)</td>
-      <td>Annual projection of standard precipitation evapo-transipiration index</td>
-      <td>Index score</td>
-      <td>-3.0 to 3.0</td>
-      <td>100km</td>
-      <td>LOW &gt;=-1.5; MEDIUM: -1.5 to -2.0; HIGH: &lt;-2.0</td>
+      <td>obs_freq</td>
+      <td>frequency</td>
+      <td>0.0</td>
       <td>3.0</td>
+      <td>2.00</td>
+      <td>1000.0</td>
     </tr>
     <tr>
-      <td>Tropical Cyclones</td>
+      <td>cyclone</td>
       <td>Annual projection of probability of at least one hit by a category 3/4/5 cyclone</td>
-      <td>Probability score</td>
-      <td>0.0 to 1.0</td>
-      <td>50km</td>
-      <td>LOW: &lt;=0.1; MEDIUM: 0.1 to 0.2; HIGH:  &gt;0.2</td>
-      <td>.5</td>
+      <td>prob</td>
+      <td>probability</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.50</td>
+      <td>50000.0</td>
     </tr>
     <tr>
-      <td>Water Stress</td>
+      <td>flood_potential</td>
+      <td>Monthly exposure of assets to floods. We transform data from multiple flood observatories to report on active floods at the points of interest. The severity classes are based on the recurrence interval: (class 1) Large flood events: recurrence &lt; 20 year; (class 2) Very large events: 20 year &lt; recurrence &lt; 100 year; (class 3) Extreme events: recurrence &gt; 100 years. Values are set based on severity*0.333.</td>
+      <td>obs_score</td>
+      <td>score</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1.00</td>
+      <td>1000.0</td>
+    </tr>
+    <tr>
+      <td>flood_potential</td>
+      <td>Annual exposure of asset to floods</td>
+      <td>inland_flood_prob</td>
+      <td>probability</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1.00</td>
+      <td>4000.0</td>
+    </tr>
+    <tr>
+      <td>fundamental</td>
+      <td>Annual mean annual temperature at the asset location</td>
+      <td>temp</td>
+      <td>degree_celsius</td>
+      <td>-5.0</td>
+      <td>45.0</td>
+      <td>45.00</td>
+      <td>100000.0</td>
+    </tr>
+    <tr>
+      <td>fundamental</td>
+      <td>Annual total precipitation at the asset location</td>
+      <td>precip</td>
+      <td>millimeter</td>
+      <td>0.0</td>
+      <td>5000.00</td>
+      <td>5000.0</td>
+      <td>100000.0</td>
+    </tr>
+    <tr>
+      <td>fundamental</td>
+      <td>Annual days per year where precipitation exceeds 51mm</td>
+      <td>extreme_precip</td>
+      <td>day</td>
+      <td>0.0</td>
+      <td>365.0</td>
+      <td>365.0</td>
+      <td>100000.0</td>
+    </tr>
+    <tr>
+      <td>heatwave</td>
+      <td>Annual heatwave days per year where temperature at asset is projected to exceed 98th percentile of historic recordings</td>
+      <td>freq</td>
+      <td>day</td>
+      <td>0.0</td>
+      <td>365.0</td>
+      <td>200.0</td>
+      <td>100000.0</td>
+    </tr>
+    <tr>
+      <td>sea_level_rise</td>
+      <td>Annual projection of sea level rise relative to average sea level at the asset over 1980-2010</td>
+      <td>change</td>
+      <td>meter</td>
+      <td>-0.2</td>
+      <td>2.0</td>
+      <td>0.75</td>
+      <td>100000.0</td>
+    </tr>
+    <tr>
+      <td>water_stress</td>
+      <td>Annual projection of standard precipitation evapo-transipiration index</td>
+      <td>spei_norm</td>
+      <td>score</td>
+      <td>-3.0</td>
+      <td>3.0</td>
+      <td>3.00</td>
+      <td>100000.0</td>
+    </tr>
+    <tr>
+      <td>water_stress</td>
       <td>Annual ratio of water demand to renewable water availability</td>
-      <td>Ratio</td>
-      <td>0.0 to 4.0</td>
-      <td>0.5km to 3500km</td>
-      <td>LOW: &lt;=0.1; MEDIUM: 0.1 to 0.4; HIGH: &gt;= 0.4</td>
+      <td>score</td>
+      <td>score</td>
+      <td>0.0</td>
       <td>4.0</td>
+      <td>4.00</td>
+      <td>500.0</td>
+    </tr>
+    <tr>
+      <td>wildfire</td>
+      <td>Monthly active fire severity based on satellite observations. We transform the <a href="https://firms2.modaps.eosdis.nasa.gov/">NASA Active Fire Data</a> to report on active fires. Note that because these values are based on satellite observations and we cannot discern wildfires from human generated fires.</td>
+      <td>obs_score</td>
+      <td>score</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1.00</td>
+      <td>300.0</td>
+    </tr>
+    <tr>
+      <td>wildfire</td>
+      <td>Annual fraction of land exposed to wildfire within 300km radius of the asset</td>
+      <td>burned_area_norm</td>
+      <td>score</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1.00</td>
+      <td>300.0</td>
+    </tr>
+    <tr>
+      <td>wildfire</td>
+      <td>Average annual probability of a wildfire occurring across all land areas within 1km of the asset</td>
+      <td>fire_kbdi_susceptability</td>
+      <td>score</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1.00</td>
+      <td>300.0</td>
     </tr>
   </tbody>
 </table>
