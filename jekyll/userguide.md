@@ -150,14 +150,13 @@ This time series view shows the projected YoY hazard exposure at the specific as
 Fig 7: Risk Heatmap View
 </p>
 
-This view shows the heatmap of forward looking risk for a selected physical hazard type. We project physical risk over the 30 year window between 2021 and 2050 and look at the maximum risk exposure to a specific hazard for an asset. We use the maximum risk exposure value to color code the asset to LOW (Green), MEDIUM (Yellow), or HIGH (Red) risk categories. [Climate Explorer QuickStart Guide](https://developers.sustglobal.com/explorer.html)The markers are scaled based on the extent of the loss. We use maximum risk exposure values to normalize hazards to a common 0 to 1 scale. The color of the marker is indicative of the severity of the hazard exposure and the size of the marker is indicative of the asset level loss estimates from the hazard.
+This view shows the heatmap of forward looking risk for a selected physical hazard type. We project physical risk over the 30 year window between 2021 and 2050 and look at the maximum risk exposure to a specific hazard for an asset. We use the maximum risk exposure value to color code the asset to LOW (Green), MEDIUM (Yellow), or HIGH (Red) risk categories. [Climate Explorer QuickStart Guide](https://developers.sustglobal.com/explorer.html)
 
 ##### Methodology description
 1. For a selected SSP, we would look at the maximum value of risk exposure over the 2021-2050 analysis time window for all hazards with the exception of sea level rise (SLR) and 2021-2100 for SLR as the input to the risk summary view. This is to account for sea level rise being a longer term hazard, having more profound exposure over the second half of the century.
 2. For each hazard, we then identify the maximum risk exposure value of each asset over all the years in the analysis time window and use that value as input to a classification of LOW, MEDIUM or HIGH. Note that for drought (SPEI), we would use the negative of the value in the risk exposure datasets (negative drought (SPEI) values indicate risk). For flooding, we use the number of years within a 30-year period where the risk exceeds a preset threshold (5%). This is to simulate a flood exceedance threshold from the flood exposure values.
 
-3. The heatmap marker is scaled based on the extent of the estimated loss which is computed as 0.4 of the asset price * (max risk exposure for asset in step 2 / max exposure of the hazard) leading to assets with high estimated losses being marked with larger marker size on the maps.
-a) Asset price is set as $1M in the absence of values provided
+3. a) Asset price is set as $1M in the absence of values provided
 b) Maximum exposure values per hazard are listed in the last table on the [Quickstart guide](./explorer.html).
 
 A table of heat map coding ranges can be found on our [QuickStart Guide.](https://developers.sustglobal.com/explorer.html)

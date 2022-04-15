@@ -153,41 +153,6 @@ Please note that portfolios are currently limited to 5000 assets in size. Additi
 <p>All reports are generated at a monthly cadence based on observations and historic catalogs covering the months from Jan 2010 to Dec 2020. Some of our datasets allow for
 higher cadence reporting, please contact us for custom requests.</p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Hazard</th>
-      <th>Description</th>
-      <th>Unit</th>
-      <th>Range of Possible Values</th>
-      <th>Spatial Resolution</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Fire Exposure</td>
-      <td>Monthly active fire severity based on satellite observations. We transform the <a href="https://firms2.modaps.eosdis.nasa.gov/">NASA Active Fire Data</a> to report on active fires. Note that because these values are based on satellite observations and we cannot discern wildfires from human generated fires.</td>
-      <td>Unit interval with 1.0 indicating maximum active fires recorded in a month (30 in 2020)</td>
-      <td>0.0 to 1.0</td>
-      <td>300m</td>
-    </tr>
-    <tr>
-      <td>Flooding Exposure</td>
-      <td>Monthly exposure of assets to floods. We transform data from multiple flood observatories to report on active floods at the points of interest. The severity classes are based on the recurrence interval: (class 1) Large flood events: recurrence &lt; 20 year; (class 2) Very large events: 20 year &lt; recurrence &lt; 100 year; (class 3) Extreme events: recurrence &gt; 100 years. Values are set based on severity*0.333.</td>
-      <td>Unit interval with 1.0 indicating maximum severity extreme flooding (recurrence exceeding 100 years)</td>
-      <td>0.0 to 1.0</td>
-      <td>1km</td>
-    </tr>
-    <tr>
-      <td>Cyclone Exposure</td>
-      <td>Monthly asset level exposure to cyclones/hurricanes. We source cyclone tracks from the <a href="https://www.ncdc.noaa.gov/ibtracs/">NOAA IBTRACs</a>. Frequency of category 3/4/5 cyclones.</td>
-      <td>Frequency count</td>
-      <td>0 to 2</td>
-      <td>1km</td>
-    </tr>
-  </tbody>
-</table>
-
 <h2 id="forward-looking-reporting-outcomes">
 <a class="anchor" href="#forward-looking-reporting-outcomes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Forward Looking Reporting Outcomes</h2>
 
@@ -201,13 +166,40 @@ higher cadence reporting, please contact us for custom requests.</p>
       <th>Fundamental Variable / Hazard</th>
       <th>Description</th>
       <th>Unit</th>
-      <th>Range of Possible Values</th>
+      <th>Forward-Looking Range of Possible Values</th>
       <th>Spatial Resolution</th>
       <th>Heat Map Coding Range</th>
-      <th>Max Risk Value</th>
+      <th>Normalization Value</th>
     </tr>
   </thead>
   <tbody>
+    <tr>
+      <td>Fire Exposure</td>
+      <td>Monthly active fire severity based on satellite observations. We transform the <a href="https://firms2.modaps.eosdis.nasa.gov/">NASA Active Fire Data</a> to report on active fires. Note that because these values are based on satellite observations and we cannot discern wildfires from human generated fires.</td>
+      <td>Unit interval with 1.0 indicating maximum active fires recorded in a month (30 in 2020)</td>
+      <td>0.0 to 1.0</td>
+      <td>300m</td>
+      <td>N/A</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <td>Flooding Exposure</td>
+      <td>Monthly exposure of assets to floods. We transform data from multiple flood observatories to report on active floods at the points of interest. The severity classes are based on the recurrence interval: (class 1) Large flood events: recurrence &lt; 20 year; (class 2) Very large events: 20 year &lt; recurrence &lt; 100 year; (class 3) Extreme events: recurrence &gt; 100 years. Values are set based on severity*0.333.</td>
+      <td>Unit interval with 1.0 indicating maximum severity extreme flooding (recurrence exceeding 100 years)</td>
+      <td>0.0 to 1.0</td>
+      <td>1km</td>
+      <td>N/A</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <td>Cyclone Exposure</td>
+      <td>Monthly asset level exposure to cyclones/hurricanes. We source cyclone tracks from the <a href="https://www.ncdc.noaa.gov/ibtracs/">NOAA IBTRACs</a>. Frequency of category 3/4/5 cyclones.</td>
+      <td>Frequency count</td>
+      <td>0 to 3</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td> </td>
+    </tr>
     <tr>
       <td>Annual Temperature</td>
       <td>Annual mean annual temperature at the asset location</td>
@@ -237,10 +229,10 @@ higher cadence reporting, please contact us for custom requests.</p>
     </tr>
     <tr>
       <td>Wildfire Burned Area Fraction</td>
-      <td>Annual fraction of land exposed to wildfire within 6.9km radius of the asset</td>
+      <td>Annual fraction of land exposed to wildfire within 300km radius of the asset</td>
       <td>Fraction</td>
       <td>0.0 to 1.0</td>
-      <td>6.9km</td>
+      <td>300km</td>
       <td>LOW: 0.0 to 0.000081; MEDIUM: 0.00008 to 0.01; HIGH: &gt; 0.01</td>
       <td>1.0</td>
     </tr>
