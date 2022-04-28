@@ -178,6 +178,7 @@ class PortfoliosApi(object):
                     'project',
                     'rows',
                     'page',
+                    'entity_id',
                 ],
                 'required': [
                     'portfolio_name',
@@ -203,18 +204,22 @@ class PortfoliosApi(object):
                         (int,),
                     'page':
                         (int,),
+                    'entity_id':
+                        (str,),
                 },
                 'attribute_map': {
                     'portfolio_name': 'portfolio_name',
                     'project': 'project',
                     'rows': 'rows',
                     'page': 'page',
+                    'entity_id': 'entity_id',
                 },
                 'location_map': {
                     'portfolio_name': 'path',
                     'project': 'query',
                     'rows': 'query',
                     'page': 'query',
+                    'entity_id': 'query',
                 },
                 'collection_format_map': {
                 }
@@ -363,6 +368,7 @@ class PortfoliosApi(object):
                     'rows',
                     'page',
                     'scenario',
+                    'entity_id',
                 ],
                 'required': [
                     'portfolio_name',
@@ -395,18 +401,18 @@ class PortfoliosApi(object):
                     ('indicator',): {
 
                         "FREQ": "freq",
-                        "OBS_SCORE": "obs_score",
                         "BURNED_AREA_NORM": "burned_area_norm",
-                        "INLAND_FLOOD_PROB": "inland_flood_prob",
-                        "FIRE_KBDI_SUSCEPTIBILITY": "fire_kbdi_susceptibility",
-                        "CHANGE": "change",
-                        "PRECIP": "precip",
-                        "PROB": "prob",
-                        "TEMP": "temp",
                         "EXTREME_PRECIP": "extreme_precip",
-                        "SCORE": "score",
                         "SPEI_NORM": "spei_norm",
-                        "OBS_FREQ": "obs_freq"
+                        "INLAND_FLOOD_PROB": "inland_flood_prob",
+                        "PRECIP": "precip",
+                        "CHANGE": "change",
+                        "OBS_SCORE": "obs_score",
+                        "FIRE_KBDI_SUSCEPTIBILITY": "fire_kbdi_susceptibility",
+                        "SCORE": "score",
+                        "PROB": "prob",
+                        "OBS_FREQ": "obs_freq",
+                        "TEMP": "temp"
                     },
                     ('measure',): {
 
@@ -442,6 +448,8 @@ class PortfoliosApi(object):
                         (int,),
                     'scenario':
                         (str,),
+                    'entity_id':
+                        (str,),
                 },
                 'attribute_map': {
                     'portfolio_name': 'portfolio_name',
@@ -454,6 +462,7 @@ class PortfoliosApi(object):
                     'rows': 'rows',
                     'page': 'page',
                     'scenario': 'scenario',
+                    'entity_id': 'entity_id',
                 },
                 'location_map': {
                     'portfolio_name': 'path',
@@ -466,6 +475,7 @@ class PortfoliosApi(object):
                     'rows': 'query',
                     'page': 'query',
                     'scenario': 'query',
+                    'entity_id': 'query',
                 },
                 'collection_format_map': {
                 }
@@ -554,6 +564,7 @@ class PortfoliosApi(object):
                     'scenario',
                     'window',
                     'hazard',
+                    'entity_id',
                 ],
                 'required': [
                     'portfolio_name',
@@ -603,6 +614,8 @@ class PortfoliosApi(object):
                         (int,),
                     'hazard':
                         (str,),
+                    'entity_id':
+                        (str,),
                 },
                 'attribute_map': {
                     'portfolio_name': 'portfolio_name',
@@ -612,6 +625,7 @@ class PortfoliosApi(object):
                     'scenario': 'scenario',
                     'window': 'window',
                     'hazard': 'hazard',
+                    'entity_id': 'entity_id',
                 },
                 'location_map': {
                     'portfolio_name': 'path',
@@ -621,6 +635,7 @@ class PortfoliosApi(object):
                     'scenario': 'query',
                     'window': 'query',
                     'hazard': 'query',
+                    'entity_id': 'query',
                 },
                 'collection_format_map': {
                 }
@@ -978,6 +993,7 @@ class PortfoliosApi(object):
             project (str): Name of project. Param only required when user may access more than one.. [optional]
             rows (int): Maximum number of items to return per page (min=1, max=250). [optional]
             page (int): Numerical index of current page, beginning at 1. [optional]
+            entity_id (str): Limit results to those pertaining to assets with the provided entity_id.. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1223,6 +1239,7 @@ class PortfoliosApi(object):
             rows (int): Maximum number of items to return per page (min=1, max=250). [optional]
             page (int): Numerical index of current page, beginning at 1. [optional]
             scenario (str): Shared socioeconomic pathway filter. [optional]
+            entity_id (str): Limit results to those pertaining to assets with the provided entity_id.. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1386,6 +1403,7 @@ class PortfoliosApi(object):
             scenario (str): Shared socioeconomic pathway filter. [optional]
             window (int): Number of years forward used to determine the Physical Risk Summary. Valid windows are currently 5, 15, and 30. [optional]
             hazard (str): Climate hazard filter. [optional]
+            entity_id (str): Limit results to those pertaining to assets with the provided entity_id.. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object

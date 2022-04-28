@@ -238,6 +238,7 @@ with sust.api.generated.climate_explorer.ApiClient(configuration) as api_client:
     project = "project_example" # str | Name of project. Param only required when user may access more than one. (optional)
     rows = 1 # int | Maximum number of items to return per page (min=1, max=250) (optional)
     page = 1 # int | Numerical index of current page, beginning at 1 (optional)
+    entity_id = "entity_id_example" # str | Limit results to those pertaining to assets with the provided entity_id. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -251,7 +252,7 @@ with sust.api.generated.climate_explorer.ApiClient(configuration) as api_client:
     # and optional values
     try:
         # List Portfolio Assets
-        api_response = api_instance.portfolios_assets_list(portfolio_name, project=project, rows=rows, page=page)
+        api_response = api_instance.portfolios_assets_list(portfolio_name, project=project, rows=rows, page=page, entity_id=entity_id)
         pprint(api_response)
     except sust.api.generated.climate_explorer.ApiException as e:
         print("Exception when calling PortfoliosApi->portfolios_assets_list: %s\n" % e)
@@ -266,6 +267,7 @@ Name | Type | Description  | Notes
  **project** | **str**| Name of project. Param only required when user may access more than one. | [optional]
  **rows** | **int**| Maximum number of items to return per page (min&#x3D;1, max&#x3D;250) | [optional]
  **page** | **int**| Numerical index of current page, beginning at 1 | [optional]
+ **entity_id** | **str**| Limit results to those pertaining to assets with the provided entity_id. | [optional]
 
 ### Return type
 
@@ -517,6 +519,7 @@ with sust.api.generated.climate_explorer.ApiClient(configuration) as api_client:
     rows = 1 # int | Maximum number of items to return per page (min=1, max=250) (optional)
     page = 1 # int | Numerical index of current page, beginning at 1 (optional)
     scenario = "ssp126" # str | Shared socioeconomic pathway filter (optional)
+    entity_id = "entity_id_example" # str | Limit results to those pertaining to assets with the provided entity_id. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -530,7 +533,7 @@ with sust.api.generated.climate_explorer.ApiClient(configuration) as api_client:
     # and optional values
     try:
         # Get Physical Risk Exposure Data
-        api_response = api_instance.portfolios_datasets_physical_items_list(portfolio_name, project=project, hazard=hazard, indicator=indicator, measure=measure, start_date=start_date, end_date=end_date, rows=rows, page=page, scenario=scenario)
+        api_response = api_instance.portfolios_datasets_physical_items_list(portfolio_name, project=project, hazard=hazard, indicator=indicator, measure=measure, start_date=start_date, end_date=end_date, rows=rows, page=page, scenario=scenario, entity_id=entity_id)
         pprint(api_response)
     except sust.api.generated.climate_explorer.ApiException as e:
         print("Exception when calling PortfoliosApi->portfolios_datasets_physical_items_list: %s\n" % e)
@@ -551,6 +554,7 @@ Name | Type | Description  | Notes
  **rows** | **int**| Maximum number of items to return per page (min&#x3D;1, max&#x3D;250) | [optional]
  **page** | **int**| Numerical index of current page, beginning at 1 | [optional]
  **scenario** | **str**| Shared socioeconomic pathway filter | [optional]
+ **entity_id** | **str**| Limit results to those pertaining to assets with the provided entity_id. | [optional]
 
 ### Return type
 
@@ -708,6 +712,7 @@ with sust.api.generated.climate_explorer.ApiClient(configuration) as api_client:
     scenario = "ssp126" # str | Shared socioeconomic pathway filter (optional)
     window = 1 # int | Number of years forward used to determine the Physical Risk Summary. Valid windows are currently 5, 15, and 30 (optional)
     hazard = "wildfire" # str | Climate hazard filter (optional)
+    entity_id = "entity_id_example" # str | Limit results to those pertaining to assets with the provided entity_id. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -721,7 +726,7 @@ with sust.api.generated.climate_explorer.ApiClient(configuration) as api_client:
     # and optional values
     try:
         # Get Physical Risk Exposure Summary
-        api_response = api_instance.portfolios_datasets_physical_summary_list(portfolio_name, project=project, rows=rows, page=page, scenario=scenario, window=window, hazard=hazard)
+        api_response = api_instance.portfolios_datasets_physical_summary_list(portfolio_name, project=project, rows=rows, page=page, scenario=scenario, window=window, hazard=hazard, entity_id=entity_id)
         pprint(api_response)
     except sust.api.generated.climate_explorer.ApiException as e:
         print("Exception when calling PortfoliosApi->portfolios_datasets_physical_summary_list: %s\n" % e)
@@ -739,6 +744,7 @@ Name | Type | Description  | Notes
  **scenario** | **str**| Shared socioeconomic pathway filter | [optional]
  **window** | **int**| Number of years forward used to determine the Physical Risk Summary. Valid windows are currently 5, 15, and 30 | [optional]
  **hazard** | **str**| Climate hazard filter | [optional]
+ **entity_id** | **str**| Limit results to those pertaining to assets with the provided entity_id. | [optional]
 
 ### Return type
 
