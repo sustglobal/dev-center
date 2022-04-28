@@ -86,7 +86,7 @@ For creating standard heatmaps, we assess the physical risk over the 30 year win
 | water_stress | Annual projection of standard precipitation evapo-transipiration index | spei_norm |  score |  -3.0 |  3.0 |  3.00 |  100000.0 |
 | water_stress | Annual ratio of water demand to renewable water availability | score | score | 0.0 | 4.0 | 4.00 | 500.0 |
 | wildfire | Monthly active fire severity based on satellite observations. We transform the [NASA Active Fire Data](https://firms2.modaps.eosdis.nasa.gov/) to report on active fires. Note that because these values are based on satellite observations and we cannot discern wildfires from human generated fires. | obs_score  | score | 0.0 | 1.0 | 1.00 | 300.0 |
-| wildfire | Annual fraction of land exposed to wildfire within 300km radius of the asset   | burned_area_norm  | score | 0.0 | 1.0 | 1.00 | 300.0 |
+| wildfire | Annual fraction of land exposed to wildfire within 300km radius of the asset   | burned_area_norm  | score | 0.0 | 1.0 | 0.1 | 300.0 |
 | wildfire | Average annual probability of a wildfire occurring across all land areas within 1km of the asset | fire_kbdi_susceptability  |  score | 0.0 | 1.0 | 1.00 | 300.0 |
 
 
