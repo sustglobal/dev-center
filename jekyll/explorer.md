@@ -89,5 +89,5 @@ For creating standard heatmaps, we assess the physical risk over the 30 year win
 | wildfire | Annual fraction of land exposed to wildfire within 300km radius of the asset   | burned_area_norm  | score | 0.0 | 1.0 | 0.1 | 300.0 |
 | wildfire | Average annual probability of a wildfire occurring across all land areas within 1km of the asset | fire_kbdi_susceptability  |  score | 0.0 | 1.0 | 1.00 | 300.0 |
 
-
+*To create the normalized multi-hazard projected risk exposure view in Climate Explorer, we divide each indicator by its corresponding normalization factor [or other name choice] in the table below and threshold values between 0 and 1.
 *The heat map coding range for floods indicates a flood exceedance frequency (i.e. the number of floods exceeding 5% probability in the 30-year period.
