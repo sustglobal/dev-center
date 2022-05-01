@@ -164,8 +164,8 @@ higher cadence reporting, please contact us for custom requests.</p>
   <thead>
     <tr>
       <th>hazard</th>
-      <th>description</th>
       <th>indicator</th>
+      <th>description</th>
       <th>unit</th>
       <th>value_min</th>
       <th>value_max</th>
@@ -176,8 +176,8 @@ higher cadence reporting, please contact us for custom requests.</p>
   <tbody>
     <tr>
       <td>cyclone</td>
-      <td>Monthly asset level exposure to cyclones/hurricanes. We source cyclone tracks from the <a href="https://www.ncdc.noaa.gov/ibtracs/">NOAA IBTRACs</a>. Frequency of category 3/4/5 cyclones.</td>
       <td>obs_freq</td>
+      <td>Monthly asset level exposure to cyclones/hurricanes. We source cyclone tracks from the <a href="https://www.ncdc.noaa.gov/ibtracs/">NOAA IBTRACs</a>. Frequency of category 3/4/5 cyclones.</td>
       <td>frequency</td>
       <td>0.0</td>
       <td>3.0</td>
@@ -186,8 +186,8 @@ higher cadence reporting, please contact us for custom requests.</p>
     </tr>
     <tr>
       <td>cyclone</td>
-      <td>Annual projection of probability of at least one hit by a category 3/4/5 cyclone</td>
       <td>prob</td>
+      <td>Annual projection of probability of at least one hit by a category 3/4/5 cyclone</td>
       <td>probability</td>
       <td>0.0</td>
       <td>1.0</td>
@@ -196,8 +196,8 @@ higher cadence reporting, please contact us for custom requests.</p>
     </tr>
     <tr>
       <td>flood_potential</td>
-      <td>Monthly exposure of assets to floods. We transform data from multiple flood observatories to report on active floods at the points of interest. The severity classes are based on the recurrence interval: (class 1) Large flood events: recurrence &lt; 20 year; (class 2) Very large events: 20 year &lt; recurrence &lt; 100 year; (class 3) Extreme events: recurrence &gt; 100 years. Values are set based on severity*0.333.</td>
       <td>obs_score</td>
+      <td>Monthly exposure of assets to floods. We transform data from multiple flood observatories to report on active floods at the points of interest. The severity classes are based on the recurrence interval: (class 1) Large flood events: recurrence &lt; 20 year; (class 2) Very large events: 20 year &lt; recurrence &lt; 100 year; (class 3) Extreme events: recurrence &gt; 100 years. Values are set based on severity*0.333.</td>
       <td>score</td>
       <td>0.0</td>
       <td>1.0</td>
@@ -206,8 +206,8 @@ higher cadence reporting, please contact us for custom requests.</p>
     </tr>
     <tr>
       <td>flood_potential</td>
-      <td>Annual exposure of asset to floods</td>
       <td>inland_flood_prob</td>
+      <td>Annual exposure of asset to floods</td>
       <td>probability</td>
       <td>0.0</td>
       <td>1.0</td>
@@ -216,8 +216,8 @@ higher cadence reporting, please contact us for custom requests.</p>
     </tr>
     <tr>
       <td>fundamental</td>
-      <td>Annual mean annual temperature at the asset location</td>
       <td>temp</td>
+      <td>Annual mean annual temperature at the asset location</td>
       <td>degree_celsius</td>
       <td>-5.0</td>
       <td>45.0</td>
@@ -226,8 +226,8 @@ higher cadence reporting, please contact us for custom requests.</p>
     </tr>
     <tr>
       <td>fundamental</td>
-      <td>Annual total precipitation at the asset location</td>
       <td>precip</td>
+      <td>Annual total precipitation at the asset location</td>
       <td>millimeter</td>
       <td>0.0</td>
       <td>5000.00</td>
@@ -236,8 +236,8 @@ higher cadence reporting, please contact us for custom requests.</p>
     </tr>
     <tr>
       <td>fundamental</td>
-      <td>Annual days per year where precipitation exceeds 51mm</td>
       <td>extreme_precip</td>
+      <td>Annual days per year where precipitation exceeds 51mm</td>
       <td>day</td>
       <td>0.0</td>
       <td>365.0</td>
@@ -246,8 +246,8 @@ higher cadence reporting, please contact us for custom requests.</p>
     </tr>
     <tr>
       <td>heatwave</td>
-      <td>Annual heatwave days per year where temperature at asset is projected to exceed 98th percentile of historic recordings</td>
       <td>freq</td>
+      <td>Annual heatwave days per year where temperature at asset is projected to exceed 98th percentile of historic recordings</td>
       <td>day</td>
       <td>0.0</td>
       <td>365.0</td>
@@ -256,8 +256,8 @@ higher cadence reporting, please contact us for custom requests.</p>
     </tr>
     <tr>
       <td>sea_level_rise</td>
-      <td>Annual projection of sea level rise relative to average sea level at the asset over 1980-2010</td>
       <td>change</td>
+      <td>Annual projection of sea level rise relative to average sea level at the asset over 1980-2010</td>
       <td>meter</td>
       <td>-0.2</td>
       <td>2.0</td>
@@ -266,18 +266,18 @@ higher cadence reporting, please contact us for custom requests.</p>
     </tr>
     <tr>
       <td>water_stress</td>
-      <td>Annual projection of standard precipitation evapo-transipiration index</td>
       <td>spei_norm</td>
+      <td>Annual projection of standard precipitation evapo-transipiration index</td>
       <td>score</td>
-      <td>-3.0</td>
-      <td>3.0</td>
-      <td>3.00</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1.00</td>
       <td>100000.0</td>
     </tr>
     <tr>
       <td>water_stress</td>
-      <td>Annual ratio of water demand to renewable water availability</td>
       <td>score</td>
+      <td>Annual ratio of water demand to renewable water availability</td>
       <td>score</td>
       <td>0.0</td>
       <td>4.0</td>
@@ -286,8 +286,8 @@ higher cadence reporting, please contact us for custom requests.</p>
     </tr>
     <tr>
       <td>wildfire</td>
-      <td>Monthly active fire severity based on satellite observations. We transform the <a href="https://firms2.modaps.eosdis.nasa.gov/">NASA Active Fire Data</a> to report on active fires. Note that because these values are based on satellite observations and we cannot discern wildfires from human generated fires.</td>
       <td>obs_score</td>
+      <td>Monthly active fire severity based on satellite observations. We transform the <a href="https://firms2.modaps.eosdis.nasa.gov/">NASA Active Fire Data</a> to report on active fires. Note that because these values are based on satellite observations and we cannot discern wildfires from human generated fires.</td>
       <td>score</td>
       <td>0.0</td>
       <td>1.0</td>
@@ -296,18 +296,18 @@ higher cadence reporting, please contact us for custom requests.</p>
     </tr>
     <tr>
       <td>wildfire</td>
-      <td>Annual fraction of land exposed to wildfire within 300km radius of the asset</td>
       <td>burned_area_norm</td>
+      <td>Annual fraction of land exposed to wildfire within 300km radius of the asset</td>
       <td>score</td>
       <td>0.0</td>
       <td>1.0</td>
-      <td>1.00</td>
+      <td>0.1</td>
       <td>300.0</td>
     </tr>
     <tr>
       <td>wildfire</td>
-      <td>Average annual probability of a wildfire occurring across all land areas within 1km of the asset</td>
       <td>fire_kbdi_susceptability</td>
+      <td>Average annual probability of a wildfire occurring across all land areas within 1km of the asset</td>
       <td>score</td>
       <td>0.0</td>
       <td>1.0</td>
@@ -317,7 +317,8 @@ higher cadence reporting, please contact us for custom requests.</p>
   </tbody>
 </table>
 
-<p>*The heat map coding range for floods indicates a flood exceedance frequency (i.e. the number of floods exceeding 5% probability in the 30-year period.</p>
+<p>*To create the normalized multi-hazard projected risk exposure view in Climate Explorer, we divide each indicator by its corresponding normalization factor [or other name choice] in the table below and threshold values between 0 and 1.
+*The heat map coding range for floods indicates a flood exceedance frequency (i.e. the number of floods exceeding 5% probability in the 30-year period.</p>
 
           </div>
         </div>

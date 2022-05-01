@@ -5,15 +5,11 @@ toc: true
 
 The following is a list of running product updates to the Climate Explorer ecosystem.
 
-## 4/15/22 **UI Change – Project Switch Feature**
+## 4/15/22: UI Change – Project Switch Feature
 
 As of April, 2022, our UI has changed to include a simpler way to switch between projects in the top right bar of Climate Explorer.
 
-<p align="center">
-<img height="300" src="assets/images/switch.png">
-</p>
-
-## 4/15/22 **Drought Indicator Data Rescale**
+## 4/15/22: Drought Indicator Data Rescale
 
 *Please note the upcoming change to the Drought (SPEI) Indicator.*
 
@@ -21,7 +17,7 @@ Beginning May 2, 2022, we will release updated Drought indicator data, rescaling
 
 With the new Drought rescaling, drought index (SPEI) values fall between an easy to interpret 0 to 1 range, reaching index values of 1.0 if the droughts are unprecedented relative to the 1950 to 2014 historical period. With the substantial increase in contributing CMIP6 models, we have greater confidence in the forward-looking drought projections and estimates of uncertainty.
 
-## 4/15/22 **API Indicator Metadata Change**
+## 4/15/22: API Indicator Metadata Change
 
 As of April, 2022, Sust Global’s Indicator level metadata has changed. Below is an example of how to secure indicator level metadata from our API:
 
@@ -298,7 +294,7 @@ Giving you a representative response as follows:
 }
 
 
-## 4/15/22 **Entity_ID-based filtering added to API**
+## 4/15/22: Entity_ID-based filtering added to API
 
 As of April, 2022, we have added Entity ID as a request parameter in our API. This update was made to three different endpoints: assets, physical risk summary and physical risk time series.
 
@@ -373,23 +369,17 @@ Giving you a representative response as follows:
 **]**
 
 **}**
-## 3/28/22 **FAQ Documentation on Developer Center**
+
+## 3/28/22: FAQ Documentation on Developer Center
 
 As of March, 2022, the Sust Global Developer Center has been updated with a new [FAQs section](https://developers.sustglobal.com/) for Climate Explorer.
 
-###  3/28/22 **Service Accounts Feature**
+##  3/28/22: Service Accounts Feature
 
 Starting April 1, 2022, customers will have access to a Service Accounts feature under a new “Project Settings'' tab within Climate Explorer. Service accounts are non-user specific privileged accounts, and can be used by customers  executing applications and running automated services with our API. Service accounts offer a high level of security for customers accessing the Climate Explorer under a shared team login, and can easily be referenced in applications or processes.
 
-<p align="center">
-<img height="300" src="assets/images/service.png">
-</p>
 
-<p align="center">
-<img height="300" src="assets/images/service2.png">
-</p>
-
-#### 3/21/22 **UI Changes**
+## 3/21/22: UI Changes
 
 As of March 2022, there has been a UI update to the Climate Explorer Risk Exposure dashboard. The first four plots (the Scenario based Exposure Summaries and Historic and Projected Risk Exposure) can now all be configured via a single set of drop downs.
 
@@ -401,11 +391,8 @@ Additionally, the drop down label for “Asset Grouping” has been renamed to �
 
 The number following the asset display name is the “portfolio index” (see below example of WORLDCITIES_500) represents the row index of the asset in the originally-uploaded CSV file.
 
-<p align="center">
-<img height="300" src="assets/images/dashboard.png">
-</p>
 
-#### 3/11/22 **New Hazard – Water Stress Score**
+## 3/11/22: New Hazard – Water Stress Score
 
 As of Monday, March 7th, 2022, Sust Global has added a new hazard type: Water Stress. This hazard covers a water stress score and drought (normalized [SPEI](https://spei.csic.es/)) as indicators. Additionally, there are plans to roll out a historic water stress score in the near future
 
@@ -419,7 +406,7 @@ In basins experiencing high water stress (>0.4), withdrawals are large relative 
 
 Currently, all climate models are run under the High Emissions or Middle of the Road scenarios with CMIP5-based meteorological inputs, so the water stress score values presented for the Strong Mitigation scenario are identical to those in the Middle of the Road scenario. Simulations were also only run out to 2050, so exposure values for 2051-2100 represent the mean over the 2030-2050 period. We plan to expand our offering to include a Strong Mitigation scenario and to extend beyond 2050 in a future product update.
 
-### 3/11/22 **New Hazard Views: Wildfire Susceptibility & WIldfire Burned Area Fraction**
+## 3/11/22: New Hazard Views: Wildfire Susceptibility & WIldfire Burned Area Fraction
 
 On Monday, March 7th, 2022, new hazard labels were added for wildfires in Climate Explorer: Wildfire Susceptibility & Wildfire Burned Area Fraction. In Q2 2022, we will have additional updates to historic data.
 
