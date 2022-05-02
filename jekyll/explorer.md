@@ -74,7 +74,7 @@ For creating standard heatmaps, we assess the physical risk over the 30 year win
 
 | hazard    |  indicator  |   description   |  unit   |   value_min  |  value_max  |  value_norm  |  spatial_resolution |
 | - | - | - | - | - | - |- |- |
-| cyclone | obs_freq | Monthly asset level exposure to cyclones/hurricanes. We source cyclone tracks from the [NOAA IBTRACs](https://www.ncdc.noaa.gov/ibtracs/). Frequency of category 3/4/5 cyclones.| frequency | 0.0 | 3.0 | 2.00 | 1000.0 |
+| cyclone | obs_freq | Monthly asset level exposure to cyclones/hurricanes. We source cyclone tracks from the [NOAA IBTRACs](https://www.ncdc.noaa.gov/ibtracs/). Frequency of category 3/4/5 cyclones.| frequency | 0.0 | 7.0 | 2.00 | 1000.0 |
 | cyclone | prob  | Annual projection of probability of at least one hit by a category 3/4/5 cyclone | probability | 0.0 | 1.0 | 0.50 | 50000.0 |
 | flood_potential | obs_score | Monthly exposure of assets to floods. We transform data from multiple flood observatories to report on active floods at the points of interest. The severity classes are based on the recurrence interval: (class 1) Large flood events: recurrence < 20 year; (class 2) Very large events: 20 year < recurrence < 100 year; (class 3) Extreme events: recurrence > 100 years. Values are set based on severity*0.333. | score | 0.0 | 1.0 | 1.00 | 1000.0 |
 | flood_potential | inland_flood_prob | Annual exposure of asset to floods | probability | 0.0 | 1.0 |  1.00 | 4000.0 |
