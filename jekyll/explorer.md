@@ -72,6 +72,8 @@ All reports and supported risk projections are at annual cadence. Some of our da
 
 For creating standard heatmaps, we assess the physical risk over the 30 year window between 2021 and 2050 and look at the maximum risk exposure to a specific hazard for an asset. We use the maximum risk exposure value to color code the asset to LOW (Green), MEDIUM (Yellow), HIGH (Red) risk categories.
 
+In the table below, the spatial resolution is measured in meters. To create the normalized multi-hazard projected risk exposure view in Climate Explorer, we divide each indicator by its corresponding normalization factor in the table below and threshold values between 0 and 1. The heat map coding range for floods below indicates a flood exceedance frequency (i.e. the number of floods exceeding 5% probability in the 30-year period.
+
 | hazard    |  indicator  |   description   |  unit   |   value_min  |  value_max  |  value_norm  |  spatial_resolution |
 | - | - | - | - | - | - |- |- |
 | cyclone | obs_freq | Monthly asset level exposure to cyclones/hurricanes. We source cyclone tracks from the [NOAA IBTRACs](https://www.ncdc.noaa.gov/ibtracs/). Frequency of category 3/4/5 cyclones.| frequency | 0.0 | 7.0 | 2.00 | 1000.0 |
@@ -88,6 +90,3 @@ For creating standard heatmaps, we assess the physical risk over the 30 year win
 | wildfire | obs_score | Monthly active fire severity based on satellite observations. We transform the [NASA Active Fire Data](https://firms2.modaps.eosdis.nasa.gov/) to report on active fires. Note that because these values are based on satellite observations and we cannot discern wildfires from human generated fires. | score | 0.0 | 1.0 | 1.00 | 300.0 |
 | wildfire | burned_area_norm   | Annual fraction of land exposed to wildfire within 300km radius of the asset | score | 0.0 | 1.0 | 0.1 | 300.0 |
 | wildfire | fire_kbdi_susceptability | Average annual probability of a wildfire occurring across all land areas within 1km of the asset  |  score | 0.0 | 1.0 | 1.00 | 300.0 |
-
-*To create the normalized multi-hazard projected risk exposure view in Climate Explorer, we divide each indicator by its corresponding normalization factor in the table below and threshold values between 0 and 1.
-*The heat map coding range for floods indicates a flood exceedance frequency (i.e. the number of floods exceeding 5% probability in the 30-year period.
