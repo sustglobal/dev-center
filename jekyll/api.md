@@ -204,6 +204,29 @@ An example of pagination over a set of 120 items might work like so:
 Note that once a set of items smaller in number than the value of `rows` is received from a paginated request, the client should
 halt any further requests.
 
+## Error Responses
+
+When an API request fails, clients should always consider the HTTP status code.
+Status codes are used as accurately as possible. For example, when an invalid
+request is made, a `400 Bad Request` code will be returned.
+
+In addition to the status code, clients should also attempt to parse a
+JSON-encoded error response available in the HTTP response body.
+The JSON object contains one of more human-readable errors, represented
+as an array of strings. For example:
+
+```
+{
+    "errors": [
+        "lat: coordinate out of bounds"
+    ]
+}
+```
+
+It is inadvisable to attempt to parse meaningful data from error strings, as they
+will evolve over time as Sust Global capabilities expand. In other words, there
+is no contract established in the content of error strings.
+
 ## API Examples
 
 This section contains a set of example commands you can run on your machine to interact with the API.
