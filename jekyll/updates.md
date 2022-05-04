@@ -7,7 +7,7 @@ The following is a list of running product updates to the Climate Explorer ecosy
 
 ## <ins>5/2/22: Customer Update: Data Change to Error Bar Calculations</ins>
 
-As of May 1, 2022, we have made an update to how we estimate risk in order to more accurately represent uncertainty and the spread of modeled outcomes. Our error bars will now show the 16th and 84th percentile of represented models, rather than +/- one standard deviation.  Additionally, projections will show median instead of mean values, reducing the influence of outlier projections from our models.  Correspondingly, our Low/Medium/High calculations are now based on median values instead of mean values. *This feature has not yet been rolled out for floods and cyclones.*
+As of May 1, 2022, we have made an update to how we estimate risk in order to more accurately represent uncertainty and the spread of modeled outcomes. Our error bars will now show the 16th and 84th percentile of represented models, rather than +/- one standard deviation.  Additionally, projections will show median instead of mean values, reducing the influence of outlier projections from our models.  Correspondingly, our Low/Medium/High calculations are now based on median values instead of mean values. *This feature has not yet been rolled out for cyclones.*
 
 ## <ins>5/2/22: Customer Update: Drought Indicator Data Rescale</ins>
 
