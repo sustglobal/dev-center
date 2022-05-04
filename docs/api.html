@@ -240,6 +240,29 @@ that the API should return for a given <code class="language-plaintext highlight
 <p>Note that once a set of items smaller in number than the value of <code class="language-plaintext highlighter-rouge">rows</code> is received from a paginated request, the client should
 halt any further requests.</p>
 
+<h2 id="error-responses">
+<a class="anchor" href="#error-responses" aria-hidden="true"><span class="octicon octicon-link"></span></a>Error Responses</h2>
+
+<p>When an API request fails, clients should always consider the HTTP status code.
+Status codes are used as accurately as possible. For example, when an invalid
+request is made, a <code class="language-plaintext highlighter-rouge">400 Bad Request</code> code will be returned.</p>
+
+<p>In addition to the status code, clients should also attempt to parse a
+JSON-encoded error response available in the HTTP response body.
+The JSON object contains one of more human-readable errors, represented
+as an array of strings. For example:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+    "errors": [
+        "lat: coordinate out of bounds"
+    ]
+}
+</code></pre></div></div>
+
+<p>It is inadvisable to attempt to parse meaningful data from error strings, as they
+will evolve over time as Sust Global capabilities expand. In other words, there
+is no contract established in the content of error strings.</p>
+
 <h2 id="api-examples">
 <a class="anchor" href="#api-examples" aria-hidden="true"><span class="octicon octicon-link"></span></a>API Examples</h2>
 
@@ -365,6 +388,7 @@ You may access the document at the following URI:</p>
 <li class="toc-entry toc-h3"><a href="#pagination">Pagination</a></li>
 </ul>
 </li>
+<li class="toc-entry toc-h2"><a href="#error-responses">Error Responses</a></li>
 <li class="toc-entry toc-h2"><a href="#api-examples">API Examples</a>
 <ul>
 <li class="toc-entry toc-h3"><a href="#create-a-portfolio">Create a Portfolio</a></li>
