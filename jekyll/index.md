@@ -10,5 +10,6 @@ Welcome! This is the home of [Sust Global's](https://www.sustglobal.com/) develo
 * Find answers to frequently asked questions on our [FAQ Page](./FAQs.html)
 * The [Climate Explorer API Guide](./api.html) is here to help developers learn how to work with the Climate Explorer API.
 * Several [Jupyter Notebooks](./jupyter-notebooks.html) are provided to help you explore Sust Global datasets on your local machine.
+* Learn about the latest [Product Updates](./updates.html) to Climate Explorer.
 
 The Developer Center documentation and all the referenced tools are hosted on GitHub at [https://github.com/sustglobal/dev-center](https://github.com/sustglobal/dev-center).
