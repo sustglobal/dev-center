@@ -76,17 +76,17 @@ In the table below, the spatial resolution is measured in meters. To create the 
 
 | hazard    |  indicator  |   description   |  unit   |   value_min  |  value_max  |  value_norm  |  spatial_resolution |
 | - | - | - | - | - | - |- |- |
-| cyclone | obs_freq | Monthly asset level exposure to cyclones/hurricanes. We source cyclone tracks from the [NOAA IBTRACs](https://www.ncdc.noaa.gov/ibtracs/). Frequency of category 3/4/5 cyclones.| frequency | 0.0 | 7.0 | 2.00 | 1000.0 |
-| cyclone | prob  | Annual projection of probability of at least one hit by a category 3/4/5 cyclone | probability | 0.0 | 1.0 | 0.50 | 50000.0 |
-| flood_potential | obs_score | Monthly exposure of assets to floods. We transform data from multiple flood observatories to report on active floods at the points of interest. The severity classes are based on the recurrence interval: (class 1) Large flood events: recurrence < 20 year; (class 2) Very large events: 20 year < recurrence < 100 year; (class 3) Extreme events: recurrence > 100 years. Values are set based on severity*0.333. | score | 0.0 | 1.0 | 1.00 | 1000.0 |
-| flood_potential | inland_flood_prob | Annual exposure of asset to floods | probability | 0.0 | 1.0 |  1.00 | 4000.0 |
-| fundamental | temp | Annual mean annual temperature at the asset location | degree_celsius | -5.0 | 45.0 | 45.00 | 100000.0 |
-| fundamental | precip | Annual total precipitation at the asset location | millimeter | 0.0 | 5000.00 | 5000.0 | 100000.0 |
-| fundamental | extreme_precip | Annual days per year where precipitation exceeds 51mm | day | 0.0 | 365.0 | 365.0 | 100000.0 |
-| heatwave | freq | Annual heatwave days per year where temperature at asset is projected to exceed 98th percentile of historic recordings | day | 0.0 | 365.0 | 200.0 | 100000.0 |
-| sea_level_rise | change | Annual projection of sea level rise relative to average sea level at the asset over 1980-2010 | meter | -0.2 | 2.0 | 0.75 | 100000.0 |
-| water_stress | spei_norm | Annual projection of standard precipitation evapo-transipiration index |  score |  0.0 |  1.0 |  1.00 |  100000.0 |
-| water_stress | score | Annual ratio of water demand to renewable water availability | score | 0.0 | 4.0 | 4.00 | 500.0 |
-| wildfire | obs_score | Monthly active fire severity based on satellite observations. We transform the [NASA Active Fire Data](https://firms2.modaps.eosdis.nasa.gov/) to report on active fires. Note that because these values are based on satellite observations and we cannot discern wildfires from human generated fires. | score | 0.0 | 1.0 | 1.00 | 300.0 |
+| cyclone | obs_freq | Monthly asset level exposure to cyclones/hurricanes. We source cyclone tracks from the [NOAA IBTRACs](https://www.ncdc.noaa.gov/ibtracs/). Frequency of category 3/4/5 cyclones.| frequency | 0.0 | 7.0 | 2.0 | 1000.0 |
+| cyclone | prob  | Annual projection of probability of at least one hit by a category 3/4/5 cyclone | probability | 0.0 | 1.0 | 0.5 | 50000.0 |
+| flood_potential | obs_score | Monthly exposure of assets to floods. We transform data from multiple flood observatories to report on active floods at the points of interest. The severity classes are based on the recurrence interval: (class 1) Large flood events: recurrence < 20 year; (class 2) Very large events: 20 year < recurrence < 100 year; (class 3) Extreme events: recurrence > 100 years. Values are set based on severity*0.333. | score | 0.0 | 1.0 | 1.0 | 1000.0 |
+| flood_potential | inland_flood_prob | Annual exposure of asset to floods | probability | 0.0 | 1.0 |  1.0 | 4000.0 |
+| fundamental | temp | Annual mean annual temperature at the asset location | degree_celsius | -60.0 | 50.0 | 50.0 | 100000.0 |
+| fundamental | precip | Annual total precipitation at the asset location | millimeter | 0.0 | 10000.0 | 5000.0 | 100000.0 |
+| fundamental | extreme_precip | Annual days per year where precipitation exceeds 51mm | day | 0.0 | 366.0 | 366.0 | 100000.0 |
+| heatwave | freq | Annual heatwave days per year where temperature at asset is projected to exceed 98th percentile of historic recordings | day | 0.0 | 366.0 | 200.0 | 100000.0 |
+| sea_level_rise | change | Annual projection of sea level rise relative to average sea level at the asset over 1980-2010 | meter | 0.0 | 100.0 | 0.75 | 100000.0 |
+| water_stress | spei_norm | Annual projection of standard precipitation evapo-transipiration index |  score |  0.0 |  1.0 |  1.0 |  100000.0 |
+| water_stress | score | Annual ratio of water demand to renewable water availability | score | 0.0 | 4.0 | 4.0 | 500.0 |
+| wildfire | obs_score | Monthly active fire severity based on satellite observations. We transform the [NASA Active Fire Data](https://firms2.modaps.eosdis.nasa.gov/) to report on active fires. Note that because these values are based on satellite observations and we cannot discern wildfires from human generated fires. | score | 0.0 | 1.0 | 1.0 | 300.0 |
 | wildfire | burned_area_norm   | Annual fraction of land exposed to wildfire within 300km radius of the asset | score | 0.0 | 1.0 | 0.1 | 300.0 |
-| wildfire | fire_kbdi_susceptability | Average annual probability of a wildfire occurring across all land areas within 1km of the asset  |  score | 0.0 | 1.0 | 1.00 | 300.0 |
+| wildfire | fire_kbdi_susceptability | Average annual probability of a wildfire occurring across all land areas within 1km of the asset  |  score | 0.0 | 1.0 | 0.1 | 300.0 |
