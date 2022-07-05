@@ -13,6 +13,7 @@ This User Guide will provide you with an overview of the Climate Explorer dashbo
 - Take a look at the [Dashboard Guide](./dashboardguide.html) for a description and methodology behind each of the dashboard views and a guide to interpreting the numbers.
 - Take a look at the [CSV Dataset Guide](./csvdatasetguide.html) for a description and methodology behind each of the CSV datasets and a guide to interpreting the numbers.
 - Take a look at the [Data Guide](./dataguide.html) if you want to develop a deeper understanding of the underlying climate data behind the dashboard and the datasets.
+- Take a look at the [API Guide](./api.html) if you want to develop a deeper understanding of the Sust Global API.
 
 ## What can you do with Climate Explorer?
 

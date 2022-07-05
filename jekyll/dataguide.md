@@ -21,33 +21,51 @@ Sust Global’s data product provides asset level exposure to specific climate r
 
 ## Wildfire
 
+<p align="center">
+<img height="300" src="assets/images/dataguide/usa_wildfire_585.png">
+</p>
 
-| State | County Name | Peak Annual Probability |
-| - | - | - |
-| Utah | Summit | 0.37 |
-| Washington | Whatcom | 0.22 |
-| Idaho | Custer | 0.17 |
-| Washington | Snohomish | 0.15 |
-| Colorado | San Juan | 0.13 |
-| California | Sutter | 0.13 |
-| California | Colusa | 0.13 |
+<p align="center">
+Fig D1: United States Counties, Projected Mean Annual Wildfire Risk Exposure over 2022-2052.
+</p>
+
+
+| State | County Name | 
+| - | - |
+| Utah | Summit | 
+| Washington | Whatcom | 
+| Idaho | Custer | 
+| Washington | Snohomish | 
+| Colorado | San Juan | 
+| California | Sutter | 
+| California | Colusa | 
 
 <p>
 Table 1A: US Counties with top wildfire exposure
 </p>
 
-| District | City/Village | Peak Annual Probability |
-| - | - | - |
-| Moradabad | Thakurdwara | 0.12 |
-| Saharanpur | Deoband | 0.12 |
-| Muzaffarnagar | Jansath | 0.12 |
-| Saharanpur | Nakur | 0.11  |
-| Muzaffarnagar| Budhana |0.11|
-| Muzaffarnagar | Muzaffarnagar |0.11 |
-| Patiala |Patiala |0.11 |
+<p align="center">
+<img height="300" src="assets/images/dataguide/india_wildfire_585.png">
+</p>
+
+<p align="center">
+Fig D2: Indian towns, Projected Mean Annual Wildfire Risk Exposure over 2022-2052.
+</p>
+
+
+
+| District | City/Village | 
+| - | - | 
+| Moradabad | Thakurdwara | 
+| Saharanpur | Deoband | 
+| Muzaffarnagar | Jansath | 
+| Saharanpur | Nakur |
+| Muzaffarnagar| Budhana |
+| Muzaffarnagar | Muzaffarnagar |
+| Patiala |Patiala |
 
 <p>
-Table 1B: Indian Villages with top wildfire exposure
+Table 1B: Indian towns with top wildfire exposure
 </p>
 
 ### Description
@@ -89,6 +107,14 @@ Use Class A fire-proof roofing. This is a roofing material capable of withstandi
 
 ## Inland Flood
 
+<p align="center">
+<img height="300" src="assets/images/dataguide/usa_flood_585.png">
+</p>
+
+<p align="center">
+Fig D3: United States Counties, Projected Mean Annual Flood Risk Exposure over 2022-2052.
+</p>
+
 
 | State | County Name | 
 | - | - | 
@@ -104,7 +130,15 @@ Use Class A fire-proof roofing. This is a roofing material capable of withstandi
 Table 2A: US Counties with top flood exposure
 </p>
 
-| District | City/Village | Peak Annual Probability |
+<p align="center">
+<img height="300" src="assets/images/dataguide/india_flood_585.png">
+</p>
+
+<p align="center">
+Fig D4: Indian towns, Projected Mean Annual Flood Risk Exposure over 2022-2052.
+</p>
+
+| District | City/Village | 
 | - | - | - |
 | Azamgarh | Azamgarh | 
 | Murshidabad | Jangipur |
@@ -156,6 +190,15 @@ Then there are are nonstructural measures, which alter the impact of flooding, w
 
 ## Tropical Cyclone
 
+<p align="center">
+<img height="300" src="assets/images/dataguide/usa_cyclone_585.png">
+</p>
+
+<p align="center">
+Fig D5: United States Counties, Projected Mean Annual Cyclone Risk Exposure over 2022-2052.
+</p>
+
+
 | State | County Name | 
 | - | - | 
 | North Carolina | Dare | 
@@ -169,6 +212,15 @@ Then there are are nonstructural measures, which alter the impact of flooding, w
 <p>
 Table 3A: US Counties with top cyclone exposure
 </p>
+
+<p align="center">
+<img height="300" src="assets/images/dataguide/se_asia_cyclone_585.png">
+</p>
+
+<p align="center">
+Fig D6: South East Asia Towns, Projected Mean Annual Cyclone Risk Exposure over 2022-2052.
+</p>
+
 
 | Township | Locale | 
 | - | - | 
@@ -235,6 +287,13 @@ Here are measures that reduce damage once a cyclone hits:
 
 ## Sea Level Rise
 
+<p align="center">
+<img height="300" src="assets/images/dataguide/usa_SLR_585.png">
+</p>
+
+<p align="center">
+Fig D7: United States Counties, Projected Mean Annual Sea Level Rise Risk Exposure over 2022-2052.
+</p>
 
 | State | County Name | 
 | - | - | 
@@ -250,6 +309,14 @@ Here are measures that reduce damage once a cyclone hits:
 Table 4A: US Counties with top sea level rise exposure
 </p>
 
+<p align="center">
+<img height="300" src="assets/images/dataguide/india_SLR_585.png">
+</p>
+
+<p align="center">
+Fig D8: Indian towns, Projected Mean Annual Sea Level Rise Risk Exposure over 2022-2052.
+</p>
+
 | District | City | 
 | - | - | 
 | 24 Parganas | North 24 Parganas| 
@@ -261,7 +328,7 @@ Table 4A: US Counties with top sea level rise exposure
 | Puri | Puri |
 
 <p>
-Table 4B: Indian cities with top sea level rise exposure
+Table 4B: Indian towns with top sea level rise exposure
 </p>
 
 ### Description
@@ -292,6 +359,13 @@ There are also soft defenses:
 
 ## Water Stress
 
+<p align="center">
+<img height="300" src="assets/images/dataguide/usa_waterstress_585.png">
+</p>
+
+<p align="center">
+Fig D9: United States Counties, Projected Mean Annual Water Stress Risk Exposure over 2022-2052.
+</p>
 
 | State | County Name | 
 | - | - | 
@@ -305,6 +379,14 @@ There are also soft defenses:
 
 <p>
 Table 5A: US Counties with top water stress exposure
+</p>
+
+<p align="center">
+<img height="300" src="assets/images/dataguide/aus_waterstress_585.png">
+</p>
+
+<p align="center">
+Fig D10: Australian towns, Projected Mean Annual Water Stress Risk Exposure over 2022-2052.
 </p>
 
 | Township | Locale | 
@@ -356,6 +438,14 @@ A key avenue for mitigating water stress not considered in the modeling framewor
 
 ## Heatwave
 
+<p align="center">
+<img height="300" src="assets/images/dataguide/usa_heatwave_585.png">
+</p>
+
+<p align="center">
+Fig D11: United States Counties, Projected Mean Annual Heatwave Risk Exposure over 2022-2052.
+</p>
+
 
 | State | County Name | 
 | - | - | 
@@ -369,6 +459,14 @@ A key avenue for mitigating water stress not considered in the modeling framewor
 
 <p>
 Table 6A: US Counties with top water stress exposure
+</p>
+
+<p align="center">
+<img height="300" src="assets/images/dataguide/india_heatwave_585.png">
+</p>
+
+<p align="center">
+Fig D12: Indian towns, Projected Mean Annual Heatwave Risk Exposure over 2022-2052.
 </p>
 
 | Township | Locale | 
