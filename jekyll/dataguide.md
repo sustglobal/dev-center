@@ -32,13 +32,15 @@ Fig D1: United States Counties, Projected mean annual wildfire risk exposure ove
 
 | State | County Name | 
 | - | - |
-| Utah | Summit | 
-| Washington | Whatcom | 
-| Idaho | Custer | 
-| Washington | Snohomish | 
-| Colorado | San Juan | 
-| California | Sutter | 
+| Idaho | Custer |
 | California | Colusa | 
+| California | Glenn | 
+| Kansas | Osage | 
+| Kansas | Ottawa | 
+| Kansas | Morris | 
+| Louisiana | West Carroll | 
+| Arkansas| Lee | 
+
 
 <p>
 Table 1A: US Counties with top wildfire exposure
@@ -56,13 +58,14 @@ Fig D2: Indian towns, projected mean annual wildfire risk exposure over 2022-205
 
 | District | City/Village | 
 | - | - | 
-| Moradabad | Thakurdwara | 
-| Saharanpur | Deoband | 
-| Muzaffarnagar | Jansath | 
-| Saharanpur | Nakur |
-| Muzaffarnagar| Budhana |
-| Muzaffarnagar | Muzaffarnagar |
-| Patiala |Patiala |
+| Saiha | Saiha | 
+| Lawangtlai | Lawangtlai | 
+| Shahid Bhagat Singh Nagar | Balachaur | 
+| Narayanpur | Narayanpur |
+| Bastar| Bastar |
+| Junagadh | Central Junagadh |
+| Uttar Bastar Kanker |Uttar Bastar Kanker |
+| Hoshiarpur | Garhshankar |
 
 <p>
 Table 1B: Indian towns with top wildfire exposure
