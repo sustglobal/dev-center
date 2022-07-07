@@ -26,7 +26,7 @@ Sust Global’s data product provides asset level exposure to specific climate r
 </p>
 
 <p align="center">
-Fig D1: United States Counties, Projected Mean Annual Wildfire Risk Exposure over 2022-2052.
+Fig D1: United States Counties, Projected mean annual wildfire risk exposure over 2022-2052 with SSP5-RCP8.5 scenario.
 </p>
 
 
@@ -49,7 +49,7 @@ Table 1A: US Counties with top wildfire exposure
 </p>
 
 <p align="center">
-Fig D2: Indian towns, Projected Mean Annual Wildfire Risk Exposure over 2022-2052.
+Fig D2: Indian towns, projected mean annual wildfire risk exposure over 2022-2052 with SSP5-RCP8.5 scenario.
 </p>
 
 
@@ -112,7 +112,7 @@ Use Class A fire-proof roofing. This is a roofing material capable of withstandi
 </p>
 
 <p align="center">
-Fig D3: United States Counties, Projected Mean Annual Flood Risk Exposure over 2022-2052.
+Fig D3: United States Counties, Projected mean annual flood risk exposure over 2022-2052 with SSP5-RCP8.5 scenario.
 </p>
 
 
@@ -135,7 +135,7 @@ Table 2A: US Counties with top flood exposure
 </p>
 
 <p align="center">
-Fig D4: Indian towns, Projected Mean Annual Flood Risk Exposure over 2022-2052.
+Fig D4: Indian towns, Projected mean annual flood risk exposure over 2022-2052 with SSP5-RCP8.5 scenario.
 </p>
 
 | District | City/Village | 
@@ -195,7 +195,7 @@ Then there are are nonstructural measures, which alter the impact of flooding, w
 </p>
 
 <p align="center">
-Fig D5: United States Counties, Projected Mean Annual Cyclone Risk Exposure over 2022-2052.
+Fig D5: United States Counties, Projected mean annual cyclone risk exposure over 2022-2052 with SSP5-RCP8.5 scenario.
 </p>
 
 
@@ -218,7 +218,7 @@ Table 3A: US Counties with top cyclone exposure
 </p>
 
 <p align="center">
-Fig D6: South East Asia Towns, Projected Mean Annual Cyclone Risk Exposure over 2022-2052.
+Fig D6: South East Asia Towns, Projected mean annual cyclonerisk exposure over 2022-2052 with SSP5-RCP8.5 scenario.
 </p>
 
 
@@ -292,7 +292,7 @@ Here are measures that reduce damage once a cyclone hits:
 </p>
 
 <p align="center">
-Fig D7: United States Counties, Projected Mean Annual Sea Level Rise Risk Exposure over 2022-2052.
+Fig D7: United States Counties, Projected mean annual sea level rise risk exposure over 2022-2052 with SSP5-RCP8.5 scenario.
 </p>
 
 | State | County Name | 
@@ -314,7 +314,7 @@ Table 4A: US Counties with top sea level rise exposure
 </p>
 
 <p align="center">
-Fig D8: Indian towns, Projected Mean Annual Sea Level Rise Risk Exposure over 2022-2052.
+Fig D8: Indian towns, Projected mean annual sea level rise risk exposure over 2022-2052 with SSP5-RCP8.5 scenario.
 </p>
 
 | District | City | 
@@ -364,7 +364,7 @@ There are also soft defenses:
 </p>
 
 <p align="center">
-Fig D9: United States Counties, Projected Mean Annual Water Stress Risk Exposure over 2022-2052.
+Fig D9: United States Counties, Projected mean annual water stress exposure over 2022-2052 with SSP5-RCP8.5 scenario.
 </p>
 
 | State | County Name | 
@@ -386,7 +386,7 @@ Table 5A: US Counties with top water stress exposure
 </p>
 
 <p align="center">
-Fig D10: Australian towns, Projected Mean Annual Water Stress Risk Exposure over 2022-2052.
+Fig D10: Australian towns, Projected mean annual water stress exposure over 2022-2052 with SSP5-RCP8.5 scenario.
 </p>
 
 | Township | Locale | 
@@ -414,7 +414,7 @@ We provide 4 indicators: historic water stress, projected droughts, projected wa
 
 1. **Water stress score indicator**: We model current and forward-looking water stress scores using the World Resource Institute’s Aqueduct model. The state-of-the-art Aqueduct model has been extensively used by researchers in academia and industry to assess portfolio water risk. The water stress score is indicative of competition for local water resources. It is calculated as the ratio of water withdrawal to renewable water availability.
 2. **Drought indicator**: This indicator is based on a drought index derived from CMIP6 monthly simulations of precipitation and temperature. The drought index, also referred to as the standardized precipitation evapotranspiration index, represents the magnitude of precipitation deficits (negative magnitude) or surplus (positive magnitude) over the preceding 12-month period, after accounting for temperature-driven effects on evapotranspiration. Our selection of a 12-month period reflects long-term precipitation patterns and better relates to reservoirs, groundwater, and streamflow.  
-3. **Unified water stress indicator**: combines the water stress score and the drought indicator to one single indicator for water stress, using a weighting methodology designed by the World Resources Institute.  This provides a comparable 0-1 indicator of water stress risk.
+3. **Unified water stress indicator**: This indicator combines the water stress score and the drought indicator to one single indicator for water stress, using a weighting methodology designed by the World Resources Institute in their [Global Aqueduct Methodology](https://www.wri.org/data/aqueduct-global-maps-30-data). This provides a comparable 0.0 to 1.0 range to indicate exposure to water stress.
 4. **Historic water stress indicator**: We use the same methodology as the unified water stress indicator, except with observed rather than modeled datasets of water stress and drought.
 
 Water stress scores account for the availability and consumption of water at the specific location. The drought indicator accounts for environmental variables that create acute water shortage over a period of time. Both are chronic physical climate hazard indicators.
@@ -443,7 +443,7 @@ A key avenue for mitigating water stress not considered in the modeling framewor
 </p>
 
 <p align="center">
-Fig D11: United States Counties, Projected Mean Annual Heatwave Risk Exposure over 2022-2052.
+Fig D11: United States Counties, Projected mean annual heatwave exposure over 2022-2052 with SSP5-RCP8.5 scenario.
 </p>
 
 
@@ -458,7 +458,7 @@ Fig D11: United States Counties, Projected Mean Annual Heatwave Risk Exposure ov
 | Louisiana | Terrebonne |
 
 <p>
-Table 6A: US Counties with top water stress exposure
+Table 6A: US Counties with top heatwave exposure
 </p>
 
 <p align="center">
@@ -466,7 +466,7 @@ Table 6A: US Counties with top water stress exposure
 </p>
 
 <p align="center">
-Fig D12: Indian towns, Projected Mean Annual Heatwave Risk Exposure over 2022-2052.
+Fig D12: Indian towns, Projected mean annual heatwave exposure over 2022-2052 with SSP5-RCP8.5 scenario.
 </p>
 
 | Township | Locale | 
@@ -480,7 +480,7 @@ Fig D12: Indian towns, Projected Mean Annual Heatwave Risk Exposure over 2022-20
 | Thiruvananthapuram | Nedumangad |
 
 <p>
-Table 6B: Indian cities/towns with top water stress exposure
+Table 6B: Indian cities/towns with top heatwave exposure
 </p>
 
 ### Description
@@ -507,7 +507,7 @@ You can take some cooling measures which reduce electricity demand, in part by u
 | Hazard | Unit | LOW Range (low) | LOW Range (high) | MEDIUM Range (low) | MEDIM Range (high) | HIGH Range (low) | HIGH Range (high) |  
 | - | - | - | - | - | - |  - | - | 
 | Wildfire | probability | 0.0 | 0.01 | 0.01 | 0.05 | 0.05 | 1.0 |
-| Inland Flood | Number of years with probability exceeding threshold @ | 0 | 0 | 1 | 3 | 3 | 30 |
+| Inland Flood | Number of years with probability exceeding threshold @@ | 0 | 0 | 1 | 3 | 3 | 30 |
 | Cyclone | probability | 0.0 | 0.1 | 0.1 | 0.2 | 0.2 | 1.0 |
 | Water Stress | probability | 0.0 | 0.3 | 0.3 | 0.6 | 0.6 | 1.0 |
 | Heatwave | Number of days in year | 0 | 30 | 30 | 50 | 50 | 366 |
@@ -517,28 +517,28 @@ You can take some cooling measures which reduce electricity demand, in part by u
 Table 7: Hazard summarization labeling ranges 
 </p>
 
-@ For floods, we count the number of years where floods exceed a probability threshold (5% in this case) over the forward looking window (5 yr/15 yr/30 yr) and use that count to categorize the asset to LOW/MED/HIGH. LOW would be values between 0 and 1, MED would be values 2 and 3 and for assets with >3 years of flooding potential exceeding 5% probability, we would set to HIGH
+@@ For floods, we count the number of years where floods exceed a probability threshold (5% in this case) over the forward looking window (5 yr/15 yr/30 yr) and use that count to categorize the asset to LOW/MED/HIGH. LOW would be values between 0 and 1, MED would be values 2 and 3 and for assets with >3 years of flooding potential exceeding 5% probability, we would set to HIGH
 
 ## Indicator Metadata
 
 | hazard    |  indicator    |  unit   |   value_min  |  value_max  |  value_norm  |  spatial_resolution (in meters) |
 | - | - | - | - | - |- |- |
-| wildfire | obs_score | score | 0.0 | 1.0 | 1.0 | 300.0 |
+| wildfire | obs_score | score | 0.0 | 1.0 | 1.0 | 500.0 |
 | wildfire | burned_area_norm   | score | 0.0 | 1.0 | 0.1 | 300.0 |
 | wildfire | fire_kbdi_susceptability | score | 0.0 | 1.0 | 0.1 | 300.0 |
-| wildfire | unified_prob | score | 0.0 | 1.0 | 0.1 | 300.0 |
-| flood_potential | obs_score | score | 0.0 | 1.0 | 1.0 | 1000.0 |
-| flood_potential | inland_flood_prob | score | 0.0 | 1.0 |  1.0 | 4000.0 |
+| wildfire | unified_prob | probability | 0.0 | 1.0 | 0.5 | 300.0 |
+| flood_potential | obs_score | score | 0.0 | 1.0 | 1.0 | 250.0 |
+| flood_potential | inland_flood_prob | probability | 0.0 | 1.0 |  1.0 | 4000.0 |
 | cyclone | obs_freq | frequency | 0.0 | 7.0 | 2.0 | 1000.0 |
-| cyclone | prob  | score | 0.0 | 1.0 | 0.5 | 50000.0 |
+| cyclone | prob  | probability | 0.0 | 1.0 | 0.5 | 50000.0 |
 | heatwave | freq | day | 0.0 | 366.0 | 200.0 | 25000.0 |
 | sea_level_rise | change | meter | 0.0 | 100.0 | 0.75 | 100000.0 |
+| water_stress | obs_score | score | 0.0 | 1.0 | 1.0 | 500.0 |
 | water_stress | spei_norm | score |  0.0 |  1.0 |  1.0 |  25000.0 |
 | water_stress | score | score | 0.0 | 1.0 | 1.0 | 500.0 |
-| water_stress | obs_score | score | 0.0 | 1.0 | 1.0 | 500.0 |
 | water_stress | unified_score | score | 0.0 | 1.0 | 1.0 | 500.0 |
 | fundamental | temp | degree_celsius | -60.0 | 50.0 | 50.0 | 100000.0 |
-| fundamental | precip | millimeter | 0.0 | 10000.0 | 5000.0 | 100000.0 |
+| fundamental | precip | millimeter | 0.0 | 10000.0 | 10000.0 | 100000.0 |
 | fundamental | extreme_precip | day | 0.0 | 366.0 | 366.0 | 100000.0 |
 
 <p>
