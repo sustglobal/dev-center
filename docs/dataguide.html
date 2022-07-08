@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="shortcut icon" type="image/ico" href="assets/images/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href='https://use.fontawesome.com/releases/v5.8.1/css/all.css'>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+            integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+            crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+            integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/assets/css/main.css?v=">
+
+    <title>Climate Data Guide</title>
+
+  </head>
+
+  <body>
+
+    <nav id="topnav" class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container">
+
+        <a class="navbar-brand" href="/">
+          <img src="/assets/images/sust-HexLogoONLYwhite.png" />
+          <span>Developer Center</span>
+        </a>
+
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="https://explorer.sustglobal.io/">
+              Climate Explorer
+              <i class="fas fa-external-link-alt fa-sm"></i>
+            </a>
+          </li>
+        </ul>
+
+      </div>
+    </nav>
+
+    <div class="container" id="allcontent">
+      <div class="d-flex flex-direction-row flex-nowrap">
+
+        <div class="flex-grow-1 col-9">
+          <div id="innercontent">
+            <h1>Climate Data Guide</h1>
+            <h2 id="introduction">
+<a class="anchor" href="#introduction" aria-hidden="true"><span class="octicon octicon-link"></span></a>Introduction</h2>
+<p>This Quickstart Data Guide will provide you with an introduction to Sust Global’s data capabilities. We will provide an overview of climate scenarios and our data specification and capabilities. We will introduce you to climate analytics on each of the hazards and show how they can be used to generate business intelligence insights, and also list some measures you can take to adapt and mitigate climate risk.</p>
+
+<h2 id="climate-scenarios">
+<a class="anchor" href="#climate-scenarios" aria-hidden="true"><span class="octicon octicon-link"></span></a>Climate Scenarios</h2>
+<p>Sust Global covers climate scenario analysis following climate scenario definitions set forth from the Intergovernmental Panel for Climate Change - Coupled Model Intercomparison Project-Phase 6 <a href="https://www.carbonbrief.org/explainer-how-shared-socioeconomic-pathways-explore-future-climate-change/">IPCC CMIP6</a>. The IPCC AR6/CMIP6 combines frontier climate science from world leading scientific institutions with realistic climate scenario modeling. The IPCC has finalized the third part of the Sixth Assessment Report, Climate Change 2022: Mitigation of Climate Change on 4 April 2022. Climate scenarios can be thought of as a bundling of working hypotheses on the evolution of human development over the coming years.</p>
+
+<p>This guide covers the exposure of climate related hazards relating to three distinct climate scenarios:</p>
+<ol>
+  <li>
+<strong>Strong Mitigation</strong>: This scenario covers the optimal sustainable path, also referred to as the Green Road (SSP1-RCP2.6). It encompasses socioeconomic and representative emissions pathways consistent with a gradual and pervasive global shift towards a more sustainable future. Carbon emissions begin to decline around 2020 and global mean temperatures rise approximately 1.8°C by 2100, a key goal of the Paris Climate Agreement.</li>
+  <li>
+<strong>Middle of the Road</strong>: This scenario covers a middle path, with challenges to climate mitigation (SSP2-RCP4.5). In this scenario, environmental systems experience degradation, and climate change worsens through the end of the century. In this scenario, overall emissions continue to rise through mid-century before beginning to decline.This is a likely scenario if governments and policy reflect a strong sense of urgency towards climate adaptation. Global mean temperatures rise approximately 2.4°C by 2100, but greater emissions raise the risk of tipping points.</li>
+  <li>
+<strong>High Emissions</strong>: This scenario covers a future where the world continues on its current trajectory, also referred to as Fossil-Fueled Growth (SSP5-RCP8.5). Global markets are increasingly integrated and both total population and per-capita consumption increase. Emissions peak around 2090 and global mean temperatures rising approximately 4.3°C by 2100.
+Hazards we cover</li>
+</ol>
+
+<p>Sust Global’s data product provides asset level exposure to specific climate related hazards. In this section, we will cover descriptions of each of the hazards covered. Climate Explorer, Sust Global’s dashboard product provides asset level exposure insights to specific hazards. These insights are presented as time series, summary heatmaps across a portfolio of assets and sorting of assets based on their exposure to a specific hazard.</p>
+
+<p><strong>Data Validation</strong>: For every hazard, we derive asset level exposure data from forward looking indicators based on models from frontier climate science. We benchmark and validate data from these indicators on their hindcast (projections over historic time periods) against observations to quality the most performant functional models used in our model ensembles.</p>
+
+<h2 id="wildfire">
+<a class="anchor" href="#wildfire" aria-hidden="true"><span class="octicon octicon-link"></span></a>Wildfire</h2>
+
+<p align="center">
+<img height="300" src="assets/images/dataguide/usa_wildfire_585.png">
+</p>
+
+<p align="center">
+Fig D1: United States Counties, Projected mean annual wildfire risk exposure over 2022-2052 with SSP5-RCP8.5 scenario.
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>State</th>
+      <th>County Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Idaho</td>
+      <td>Custer</td>
+    </tr>
+    <tr>
+      <td>California</td>
+      <td>Colusa</td>
+    </tr>
+    <tr>
+      <td>California</td>
+      <td>Glenn</td>
+    </tr>
+    <tr>
+      <td>Kansas</td>
+      <td>Osage</td>
+    </tr>
+    <tr>
+      <td>Kansas</td>
+      <td>Ottawa</td>
+    </tr>
+    <tr>
+      <td>Kansas</td>
+      <td>Morris</td>
+    </tr>
+    <tr>
+      <td>Louisiana</td>
+      <td>West Carroll</td>
+    </tr>
+    <tr>
+      <td>Arkansas</td>
+      <td>Lee</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+Table 1A: US Counties with top wildfire exposure
+</p>
+
+<p align="center">
+<img height="300" src="assets/images/dataguide/india_wildfire_585.png">
+</p>
+
+<p align="center">
+Fig D2: Indian towns, projected mean annual wildfire risk exposure over 2022-2052 with SSP5-RCP8.5 scenario.
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>District</th>
+      <th>City/Village</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Saiha</td>
+      <td>Saiha</td>
+    </tr>
+    <tr>
+      <td>Lawangtlai</td>
+      <td>Lawangtlai</td>
+    </tr>
+    <tr>
+      <td>Shahid Bhagat Singh Nagar</td>
+      <td>Balachaur</td>
+    </tr>
+    <tr>
+      <td>Narayanpur</td>
+      <td>Narayanpur</td>
+    </tr>
+    <tr>
+      <td>Bastar</td>
+      <td>Bastar</td>
+    </tr>
+    <tr>
+      <td>Junagadh</td>
+      <td>Central Junagadh</td>
+    </tr>
+    <tr>
+      <td>Uttar Bastar Kanker</td>
+      <td>Uttar Bastar Kanker</td>
+    </tr>
+    <tr>
+      <td>Hoshiarpur</td>
+      <td>Garhshankar</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+Table 1B: Indian towns with top wildfire exposure
+</p>
+
+<h3 id="description">
+<a class="anchor" href="#description" aria-hidden="true"><span class="octicon octicon-link"></span></a>Description</h3>
+
+<p>Wildfire is an uncontrolled fire, caused by a combination of combustible fuels (such as dead, dry wood) and ignition sources (such as human activity or lightning).  It is strongly influenced by prevailing weather conditions, and typically occurs where human activity meets an accumulation of wild fuel.</p>
+
+<h3 id="indicators">
+<a class="anchor" href="#indicators" aria-hidden="true"><span class="octicon octicon-link"></span></a>Indicators</h3>
+
+<p>We present 4 indicators for wildfire: observed wildfire, burned area fraction, wildfire susceptibility and unified wildfire exposure.</p>
+<ol>
+  <li>
+<strong>Observed Wildfire</strong>: We use satellite derived observations to provide asset level exposure to active wildfires. The observations are made using NASA MODIS satellites and processed using an active fire algorithm to produce the <a href="https://lpdaac.usgs.gov/documents/115/MCD64_ATBD_V6.pdf">MCD64A</a>. This covers the historical period of 2001 to present. This indicator shows the years in which a wildfire occurred within 1 kilometer of an asset.</li>
+  <li>
+<strong>Burned Area Fraction</strong>: We represent annual fire risk by ensembling CMIP6 model simulations of monthly wildfire burned area [% of grid cell]. <a href="https://lpdaac.usgs.gov/documents/115/MCD64_ATBD_V6.pdf">CMIP6 Wildfire models</a> incorporate factors such as temperature, precipitation, land cover type, and population to simulate fire occurrence and the associated area burned. For example, wildfire occurrence includes both lightning and human-induced ignitions, and high temperatures and drought lead to drier fuels and increased likelihood of fire. We use Sust Global’s proprietary methodologies for wildfire super resolution (<a href="https://www.climatechange.ai/papers/neurips2020/45">NeurIPS2020 technical reference</a>) on top of the model ensemble to enable high resolution wildfire projections. These projections are further processed using the latest satellite-derived land cover maps, filtering for the urban-wildland interface to further refine the projections.</li>
+  <li>
+<strong>Wildfire Susceptibility</strong>: This indicator relates to wildfire weather and the probability of wildfire under various weather conditions using the <a href="https://twc.tamu.edu/kbdi">Keetch-Byram Drought Index (KBDI)</a>.  This approach has several advantages for modeling fire dynamics as previously demonstrated.  Weather has been <a href="https://iopscience.iop.org/article/10.1088/2515-7620/abd836">previously shown</a> to be a major determinant of fire probability, and changing weather patterns are the primary reason wildfires will be a major hazard of climate change. Thus, in contrast to the Burned Area Fraction Indicator, this indicator does not use direct CMIP6 simulations of wildfire occurrence.  Instead, the Wildfire susceptibility estimates future fire risk using simulations of fire weather, combined with millions of historic observations of how weather affects fire risk.</li>
+  <li>
+<strong>Unified wildfire exposure</strong>: This indicator combines the projections from the burned area fraction and the susceptibility score, benchmarked against the observed wildfire indicator to create a unified measure of wildfire probability at a specific location.  It can be interpreted as the probability of wildfire occurring within one kilometer of an asset location within a given year. The unified wildfire indicator when aggregated over a period of time (10 yrs) provides for a measure of probability of wildfire occurrence within 1 kilometer of the asset over the next 10 years.</li>
+</ol>
+
+<p>Each of the indicators: observed active fires, burned area fraction and the wildfire susceptibility provide a unique view into wildfire exposure. The observed fires demonstrate historic exposure of the asset to past occurrences of wildfire. Burned area fraction provides an indication of potential area around the asset exposure to wildfire and wildfire susceptibility provides an indicator of wildfire probability based on environmental and weather conditions. The unified wildfire exposure indicator brings these indicators together towards a single annualized wildfire probability score.</p>
+
+<p>The wildfire projections from Sust Global draw on the latest, cutting edge simulations from the climate community of both fire occurrence and fire weather.  We then perform several value-adding steps, including using neural networks for super-resolving our estimates, as well as calibrating our models using millions of observations of historic fire.  We use native-resolution satellite imagery to fit and validate our models, and our unified indicator provides a more accurate multi-model ensemble view of fire risk.  Finally, our models are designed to be accurate globally, as opposed to many products that are restricted to only specific regions.</p>
+
+<h3 id="data-usage">
+<a class="anchor" href="#data-usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Data Usage</h3>
+
+<p>The burned area fraction is most suitable for area based projections. These are often used in forest regeneration and sustainable land use assessments. Wildfire susceptibility is suitable for environmental risk assessment. The unified indicator is more suited for comprehensive environmental assessments that account for area based and time based projections.</p>
+
+<p>We have benchmarked wildfire exposure in the Pacific Northwest of the United States to characterize areas of high wildfire risk potential and used the extent of exposure in these wildfire prone land parcels in this region as a reference to benchmark other regions when characterizing them as LOW/MEDIUM/HIGH.</p>
+
+<p>Climate Explorer, Sust Global’s dashboard product provides asset level exposure insights to specific hazards. These insights are presented as time series, summary heatmaps across a portfolio of assets and sorting of assets based on their exposure to a specific hazard.</p>
+
+<h3 id="adaptation-and-mitigation-measures">
+<a class="anchor" href="#adaptation-and-mitigation-measures" aria-hidden="true"><span class="octicon octicon-link"></span></a>Adaptation and Mitigation Measures</h3>
+
+<p>There are several measures you can take to protect your assets from wildfire risk. The first are simple measures:</p>
+<ul>
+  <li>Add metal vents to the property. This is because unscreened vents can allow entry of airborne embers into the home, so this will prevent embers getting in.</li>
+  <li>Replace any combustible fences (i.e. those made of wood) with metal and do not attach any combustible fences to the property.</li>
+  <li>Install dual-pane or tempered glass windows, as these are less likely to break &amp; allow fire to enter.
+Use Class A fire-proof roofing. This is a roofing material capable of withstanding a severe fire exposure. <a href="https://www.fema.gov/pdf/hazard/wildfire/wdfrdam.pdf">More on this approach here</a>.</li>
+  <li>Clean any gutters and drains of debris which can ignite. This may include leaf litter or any dry combustible materials.</li>
+  <li>Fuel reduction: This is more of an advanced measure. It is a way to remove the vegetation around a property to reduce the risk of them catching fire. This can be achieved through manual treatment, mechanized treatments, prescribed burning, chemical treatment &amp; grazing treatment. See pg. 223 of this <a href="https://www.austintexas.gov/sites/default/files/files/hsem/Section_5_-_Mitigation_Strategies.pdf">Texas government information</a> pack for more information.</li>
+  <li>Use <a href="https://assets.new.siemens.com/siemens/assets/api/uuid:7bd3bdd9-bdb3-4263-93a4-1b0f48b01625/FINAL-SiemensEGuide-wildfire-mitigation.pdf">newer tools for utility repair</a>. This will allow repairmen to remotely open and close live circuits, removing the need of a hookstick which reduces the risk of human error causing a fire.</li>
+  <li>Monitor the status of utilities and field equipment before human inspection in order to reduce risk of fire over-pressurized oil or gas buildup.</li>
+  <li>Use REFCL (Rapid Earth Fault Current Limiter) devices which can reduce the risk of electrical fires in a more cost-effective manner than replacing all wires with covered conductors.</li>
+</ul>
+
+<h2 id="inland-flood">
+<a class="anchor" href="#inland-flood" aria-hidden="true"><span class="octicon octicon-link"></span></a>Inland Flood</h2>
+
+<p align="center">
+<img height="300" src="assets/images/dataguide/usa_flood_585.png">
+</p>
+
+<p align="center">
+Fig D3: United States Counties, Projected mean annual flood risk exposure over 2022-2052 with SSP5-RCP8.5 scenario.
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>State</th>
+      <th>County Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Virginia</td>
+      <td>Chesapeake</td>
+    </tr>
+    <tr>
+      <td>Illinios</td>
+      <td>Clay</td>
+    </tr>
+    <tr>
+      <td>Mississippi</td>
+      <td>Sunflower</td>
+    </tr>
+    <tr>
+      <td>Wisconsin</td>
+      <td>Outagamie</td>
+    </tr>
+    <tr>
+      <td>Missouri</td>
+      <td>Franklin</td>
+    </tr>
+    <tr>
+      <td>Tennessee</td>
+      <td>Obion</td>
+    </tr>
+    <tr>
+      <td>Arkansas</td>
+      <td>Cross</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+Table 2A: US Counties with top flood exposure
+</p>
+
+<p align="center">
+<img height="300" src="assets/images/dataguide/india_flood_585.png">
+</p>
+
+<p align="center">
+Fig D4: Indian towns, Projected mean annual flood risk exposure over 2022-2052 with SSP5-RCP8.5 scenario.
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>District</th>
+      <th>City/Village</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Azamgarh</td>
+      <td>Azamgarh</td>
+    </tr>
+    <tr>
+      <td>Murshidabad</td>
+      <td>Jangipur</td>
+    </tr>
+    <tr>
+      <td>Krishna</td>
+      <td>Avanigadda</td>
+    </tr>
+    <tr>
+      <td>Murshidabad</td>
+      <td>Baharampur</td>
+    </tr>
+    <tr>
+      <td>Darbhanga</td>
+      <td>Benipur</td>
+    </tr>
+    <tr>
+      <td>Muzaffarpur</td>
+      <td>Muzaffarpur</td>
+    </tr>
+    <tr>
+      <td>Murshidabad</td>
+      <td>Murshidabad</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+Table 2B: Indian Villages with top flood exposure
+</p>
+
+<h3 id="description-1">
+<a class="anchor" href="#description-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Description</h3>
+
+<p>Inland flooding captures the likelihood of the asset being exposed to flooding from inland storms.</p>
+
+<h3 id="indicators-1">
+<a class="anchor" href="#indicators-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Indicators</h3>
+
+<p>We present two indicators: observed flooding and flood potential</p>
+<ol>
+  <li>
+<strong>Observed floods</strong>: Indicates whether anomalous standing water (i.e., a flood) was observed in a given year by satellites at the location of an asset. It is derived from NASA MODIS data, for the period 2012 to present.</li>
+  <li>
+<strong>Flood potential</strong>: Indicates the potential of the asset to get exposed to flooding over the coming years expressed as a probability. A value of 0.1 indicates that we could expect a flooding event in one of the next 10 years at this asset location.</li>
+</ol>
+
+<p>The output metric we use for inland flooding exposure ranges from 0 (low risk) to 1 (high risk). We derive this index from the collection of many simulations of flood inundated areas. We take into account multiple meteorological variables like precipitation, land surface pressure, humidity and elevation.</p>
+
+<p>We only cover SSP5-RCP8.5 at the moment in the flood potential indicator</p>
+
+<h3 id="data-usage-1">
+<a class="anchor" href="#data-usage-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Data Usage</h3>
+
+<p>We count the number of years where floods exceed a probability threshold (5% in this case) over the forward looking window (5 yr/15 yr/30 yr) and use that count to categorize the asset to LOW/MED/HIGH. LOW would be values between 0 and 1, MED would be values 2 and 3 and for assets with &gt;3 years of flooding potential exceeding 5% probability, we would set to HIGH.</p>
+
+<p>On Climate Explorer, we count the number of years where floods exceed a probability threshold (5% in this case) over a decade to create a count across each decade for the forward looking time series</p>
+
+<p>The flood projections are hindcast over the range of 1980-2020 and benchmarked against observations of flooding at a global scale to validate and filter the climate models used in the inland flood projections</p>
+
+<h3 id="adaptation-and-mitigation-measures-1">
+<a class="anchor" href="#adaptation-and-mitigation-measures-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Adaptation and Mitigation Measures</h3>
+
+<p>There are several measures you can take to protect your assets from flood risk. The first are structural measures, which are physical structures that reduce the probability of flooding:</p>
+<ul>
+  <li>Levees</li>
+  <li>Floodwalls</li>
+  <li>Green technologies: green roofs, rain gardens, permeable paving.</li>
+</ul>
+
+<p>More info is available in <a href="https://www.floodtoolkit.com/wp-content/uploads/2015/01/Flood-Mitigation-Measures.pdf">this guide</a> by the UK Northamptonshire County Council for more information.</p>
+
+<p>Then there are are nonstructural measures, which alter the impact of flooding, with little to no consequence on the characteristics of the flood itself:</p>
+<ul>
+  <li>Structure elevation</li>
+  <li>Dry floodproofing: This approach seals structures to prevent floodwaters from entering. This can be achieved by: applying a waterproof coating or membrane to the exterior walls of the building; installing watertight shields over doors, windows and other openings; or raising utility system components, machinery and other pieces of equipment above the flood level.</li>
+  <li>Wet floodproofing: This approach which makes empty portions of a property resistant to floods, as it allows water to enter and flow through the property during a flood. This can be achieved  by: constructing veneers to seal potential water entry; or installing vents to allow water to move through crawl spaces under home.</li>
+</ul>
+
+<h2 id="tropical-cyclone">
+<a class="anchor" href="#tropical-cyclone" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tropical Cyclone</h2>
+
+<p align="center">
+<img height="300" src="assets/images/dataguide/usa_cyclone_585.png">
+</p>
+
+<p align="center">
+Fig D5: United States Counties, Projected mean annual cyclone risk exposure over 2022-2052 with SSP5-RCP8.5 scenario.
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>State</th>
+      <th>County Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>North Carolina</td>
+      <td>Dare</td>
+    </tr>
+    <tr>
+      <td>North Carolina</td>
+      <td>Hyde</td>
+    </tr>
+    <tr>
+      <td>North Carolina</td>
+      <td>Carteret</td>
+    </tr>
+    <tr>
+      <td>North Carolina</td>
+      <td>Tyrrell</td>
+    </tr>
+    <tr>
+      <td>North Carolina</td>
+      <td>Pamlico</td>
+    </tr>
+    <tr>
+      <td>North Carolina</td>
+      <td>Craven</td>
+    </tr>
+    <tr>
+      <td>North Carolina</td>
+      <td>Craven</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+Table 3A: US Counties with top cyclone exposure
+</p>
+
+<p align="center">
+<img height="300" src="assets/images/dataguide/se_asia_cyclone_585.png">
+</p>
+
+<p align="center">
+Fig D6: South East Asia Towns, Projected mean annual cyclonerisk exposure over 2022-2052 with SSP5-RCP8.5 scenario.
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Township</th>
+      <th>Locale</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Núi Thành</td>
+      <td>Tam Anh Bắc</td>
+    </tr>
+    <tr>
+      <td>Phú Ninh</td>
+      <td>Tam Đại</td>
+    </tr>
+    <tr>
+      <td>Núi Thành</td>
+      <td>Tam Anh Nam</td>
+    </tr>
+    <tr>
+      <td>Núi Thành</td>
+      <td>Tam Hải</td>
+    </tr>
+    <tr>
+      <td>Núi Thành</td>
+      <td>Tam Hòa</td>
+    </tr>
+    <tr>
+      <td>Núi Thành</td>
+      <td>Tam Xuân II</td>
+    </tr>
+    <tr>
+      <td>Lý Sơn</td>
+      <td>An Hả</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+Table 3B: South East Asian Townships with top cyclone exposure
+</p>
+
+<h3 id="description-2">
+<a class="anchor" href="#description-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Description</h3>
+
+<p>Tropical cyclones, also referred to as hurricanes and typhoons, are one of the costliest natural disasters fueled by climate change. Since 1980, tropical cyclones in the U.S. have caused $997 billion in damages (NOAA), exceeding damages from all other weather disasters. Cyclone impacts can be widespread, including coastal and inland flooding and wind damage. These damages can directly affect assets as well as critical local infrastructure.</p>
+
+<h3 id="indicators-2">
+<a class="anchor" href="#indicators-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Indicators</h3>
+
+<p>We provide two indicators, one for observed cyclone exposure and another for projected cyclone frequency.</p>
+<ol>
+  <li>
+<strong>Observed tropical cyclones</strong>: we use cyclone tracks from the International Best Track Archive for Climate Stewardship (IBTrACS). The IBTrACS archive combines tropical cyclone datasets from global agencies and harmonizes them into a single dataset. It is endorsed by the World Meteorological Organization as the official data source for cyclone track data. For observed tropical cyclones, we filter points to only include Category 3, 4, and 5 storm points. We then assume a constant ‘impact radius’ of 150 miles/ 241km.</li>
+  <li>
+<strong>Forward looking Cyclone Pojections</strong>: We quantify current and forward-looking cyclone exposure by focusing on the frequency of extreme tropical cyclones. Extreme tropical cyclones, referred to as Category 3, 4, and 5 storms on the Saffir-Simpson hurricane scale, are defined as having maximum sustained winds above 110mph/178km/h. We focus on these extreme storms because of their heightened destructive potential relative to weaker storms. Since the number represents a frequency, it indicates the expected number of CAT3/4/5 cyclones over a year. By aggregating the values over a time range of 15 years, the user can arrive at a projected number of cyclones exposed to the asset over the 15 year window.</li>
+</ol>
+
+<p>For forward-looking cyclone exposure, Sust Global combines the latest CMIP6-based cyclone track simulations with our proprietary bias-correction methodology to enable more accurate assessment of local exposure. The CMIP6 cyclone tracks are unique because they are based on high-resolution simulations specifically designed to enable more reliable assessment of climate risk from weather phenomena like tropical cyclones. These simulations are only achievable due to recent advancements in supercomputing power.</p>
+
+<p>The CMIP6-based cyclone track simulations are drawn from research led by Dr. Malcolm Roberts of the UK Met Office (<a href="https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2020GL088662">technical reference</a>). The simulations are based on CMIP6 HighResMIP simulations with resolutions as high as 25km. The CMIP6 HighResMIP project is co-chaired by Roberts. The authors applied two different cyclone track algorithms to determine when an input set of CMIP6 oceanic and atmospheric conditions over time and space constitutes a high likelihood of a tropical cyclone track.</p>
+
+<h3 id="limitations">
+<a class="anchor" href="#limitations" aria-hidden="true"><span class="octicon octicon-link"></span></a>Limitations</h3>
+
+<ul>
+  <li>For forward looking cyclone exposure, our data is point based. Our methodology translates these storm track points into geospatial polygons indicative of cyclone exposure. When determining asset exposure, we assume an ‘impact radius’ of 150 miles (241km) from the cyclone center to better capture coastal and inland flooding exposure.</li>
+  <li>The simulations are only available for SSP5-8.5 to 2050.</li>
+  <li>The raw wind speed estimates are biased, so we cannot reliably filter for specific category storms with the raw wind values provided. This bias in wind speed is in part due to physical constraints of the CMIP6 models. Prior research has shown that they are mathematically incapable of producing wind speeds seen in extreme cyclones.</li>
+</ul>
+
+<h3 id="data-usage-2">
+<a class="anchor" href="#data-usage-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Data Usage</h3>
+
+<p>We have identified three regions for model evaluation known to have high historical exposure to extreme cyclones: the Gulf of Mexico, South Asia, and China. We have used these regions to benchmark and calibrate risk exposure to the different categories of HIGH, MEDIUM and LOW</p>
+
+<p>To benchmark model performance and enable bias-correction, we leveraged a global cyclone tracks database endorsed by the World Meteorological Organization as the best resource for historical cyclone tracks (the same database used for observed tracks). We choose the years 1979-2020 to develop and evaluate the bias-correction procedure.</p>
+<ol>
+  <li>First, we identified three regions for model evaluation known to have high historical exposure to extreme cyclones: the Gulf of Mexico, South Asia, and China. Since 1979 these regions have experienced between 23, 16, and 26 Category 3 and above land-falling cyclones, respectively. The raw ensemble of climate models’ root mean squared error is a whopping 121 cyclones during the historical period.</li>
+  <li>Next, we identified wind speed thresholds to bias-correct the simulations, filtering the tracks by wind speed. Rather than a raw speed value, we instead remove track points that fall below the 90th percentile wind speed for that model, effectively subsetting for the top 10% track points in each model. I also experimented with a threshold of 60th percentile, and with a thresholding approach based on modeled sea-level pressure instead of modeled wind speed. Future iterations could estimate an optimal threshold individually for each model. 4 model runs were also removed based on quantitative and visual inspection.</li>
+  <li>Overall, we see that while some of the models still overestimate or underestimate the number of land-falling storms, the ensemble mean reasonably simulates the correct number of storms in each region. Sust’s bias-corrected ensemble of models have a root mean squared error of 9 cyclones, a 92% reduction in error relative to the raw simulations.</li>
+</ol>
+
+<h3 id="adaptation-and-mitigation-measures-2">
+<a class="anchor" href="#adaptation-and-mitigation-measures-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Adaptation and Mitigation Measures</h3>
+
+<p>There are several measures you can take to protect your assets from cyclone risk.</p>
+
+<p>Please note that the major impacts of cyclones are storm surges, strong wind and flood. Therefore, mitigation measures will also include those in the relevant corresponding hazard sections.</p>
+
+<p>Here are some preventative measures against cyclones:</p>
+<ul>
+  <li>Living shorelines: Salt marshes and mangroves act as natural barriers which trap sediment and organic matter, so they grow in elevation which protects against rising sea levels and therefore storm surges.</li>
+  <li>Green technologies: green roofs, rain gardens, permeable paving - read <a href="https://www.floodtoolkit.com/wp-content/uploads/2015/01/Flood-Mitigation-Measures.pdf">this guide</a> by the UK Northamptonshire County Council for more information.</li>
+  <li>Vegetation cover improvement. This improves water infiltration capacity of land.</li>
+  <li>Flood management (as seen in the Inland Flooding section)</li>
+</ul>
+
+<p>Here are measures that reduce damage once a cyclone hits:</p>
+<ul>
+  <li>Raised embankments or levees can protect against a flood or storm surge.</li>
+  <li>Retrofitting non-engineered structures, which is particularly relevant in areas such as India which are prone to cyclones but residents tend to design their own non-engineered homes.
+-The roof can be retrofitted to be more resilient to cyclones by: using reinforcing gabled roofs; applying adhesive to roof shingles; and hurricane straps and clips to keep the roof in place.</li>
+  <li>Openings can be retrofitted to be more resilient to cyclones by: reinforcing entry doors and protecting them with fabric screens.</li>
+  <li>Cyclone shelters can protect people, particularly if it is close to a property.</li>
+  <li>Artificial hills for people to stand on during a cyclone.</li>
+</ul>
+
+<h2 id="sea-level-rise">
+<a class="anchor" href="#sea-level-rise" aria-hidden="true"><span class="octicon octicon-link"></span></a>Sea Level Rise</h2>
+
+<p align="center">
+<img height="300" src="assets/images/dataguide/usa_SLR_585.png">
+</p>
+
+<p align="center">
+Fig D7: United States Counties, Projected mean annual sea level rise risk exposure over 2022-2052 with SSP5-RCP8.5 scenario.
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>State</th>
+      <th>County Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>New Jersey</td>
+      <td>Ocean</td>
+    </tr>
+    <tr>
+      <td>New Jersey</td>
+      <td>Cumberland</td>
+    </tr>
+    <tr>
+      <td>New Jersey</td>
+      <td>Burlington</td>
+    </tr>
+    <tr>
+      <td>New Jersey</td>
+      <td>Atlantic</td>
+    </tr>
+    <tr>
+      <td>Maryland</td>
+      <td>Wicomico</td>
+    </tr>
+    <tr>
+      <td>Virginia</td>
+      <td>Northampton</td>
+    </tr>
+    <tr>
+      <td>Maryland</td>
+      <td>Caroline</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+Table 4A: US Counties with top sea level rise exposure
+</p>
+
+<p align="center">
+<img height="300" src="assets/images/dataguide/india_SLR_585.png">
+</p>
+
+<p align="center">
+Fig D8: Indian towns, Projected mean annual sea level rise risk exposure over 2022-2052 with SSP5-RCP8.5 scenario.
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>District</th>
+      <th>City</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>24 Parganas</td>
+      <td>North 24 Parganas</td>
+    </tr>
+    <tr>
+      <td>24 Parganas</td>
+      <td>South 24 Parganas</td>
+    </tr>
+    <tr>
+      <td>Purba Medinipur</td>
+      <td>Tamluk</td>
+    </tr>
+    <tr>
+      <td>Bhadrak</td>
+      <td>Bhadrak</td>
+    </tr>
+    <tr>
+      <td>Baleshwar</td>
+      <td>Baleshwar</td>
+    </tr>
+    <tr>
+      <td>Kendrapara</td>
+      <td>Kendrapara</td>
+    </tr>
+    <tr>
+      <td>Puri</td>
+      <td>Puri</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+Table 4B: Indian towns with top sea level rise exposure
+</p>
+
+<h3 id="description-3">
+<a class="anchor" href="#description-3" aria-hidden="true"><span class="octicon octicon-link"></span></a>Description</h3>
+
+<p>This hazard refers to rising sea levels. The major physical impacts of a rise in sea level include erosion of beaches, inundation of deltas as well as flooding and loss of many marshes and wetlands.</p>
+
+<h3 id="indicator">
+<a class="anchor" href="#indicator" aria-hidden="true"><span class="octicon octicon-link"></span></a>Indicator</h3>
+
+<p>The sea level rise indicator refers to the change in sea level from the changing climate across different climate scenarios. We base our modeling of projected sea level rise on both climate model simulations and an asset’s distance to the coast. Projected sea level rise from CMIP6 climate models incorporates the effects of thermal expansion from warming of the ocean, since water expands as it warms, which is expected to be the primary component of future sea level rise. The models do not incorporate the secondary contributions of melting glaciers and ice caps since they cannot reliably simulate them, so the sea level simulations are conservative estimates of total sea level rise. The sea level rise is calculated by combining the monthly CMIP6 local sea level fluctuations due to ocean dynamics and global sea level rise from thermal expansion. We center the sea level rise over the baseline period 1980-2010.</p>
+
+<p>We enable asset level assessments of exposure to physical hazard from sea level rise. We express sea level rise relative to a 1980-2010 baseline period for assets within 5km from the coast. An asset’s distance to the nearest coastline is derived using 0.01 degree resolution, satellite-derived estimates of coastline locations from NASA’s Ocean Color Group. Assets beyond 5km from the nearest coastline are assumed to have no sea level risk in our assessments, though we can change this 5km threshold if needed. Technically the coastline product is at 0.04 degree resolution, but the providers converted it to 0.01 degree using bilinear interpolation and say the uncertainty is up to 1km</p>
+
+<p>The models do not incorporate the secondary contributions of melting glaciers and ice caps since they cannot reliably simulate them, so the sea level simulations are conservative estimates of total sea level rise.</p>
+
+<h3 id="adaptation-and-mitigation-measures-3">
+<a class="anchor" href="#adaptation-and-mitigation-measures-3" aria-hidden="true"><span class="octicon octicon-link"></span></a>Adaptation and Mitigation Measures</h3>
+
+<p>There are several measures you can take to protect your assets from sea level rise risk.</p>
+
+<p>The first are hard defenses:</p>
+<ul>
+  <li>Coastal armouring. This includes sea walls or levees.</li>
+  <li>Bulkheads are vertical walls that retain soil but provide little protection from waves/</li>
+  <li>Revetments are sloping structures on banks and cliffs.</li>
+</ul>
+
+<p>There are also soft defenses:</p>
+<ul>
+  <li>Living shorelines: Salt marshes and mangroves act as natural barriers which trap sediment and organic matter, so they grow in elevation which protects against rising sea levels. They also absorb incoming wave energy and are more effective than bulkheads (read this article for more information).</li>
+  <li>Green technologies: green roofs, rain gardens, permeable paving - read <a href="https://www.floodtoolkit.com/wp-content/uploads/2015/01/Flood-Mitigation-Measures.pdf">this guide</a> by the UK Northamptonshire County Council for more information.</li>
+</ul>
+
+<h2 id="water-stress">
+<a class="anchor" href="#water-stress" aria-hidden="true"><span class="octicon octicon-link"></span></a>Water Stress</h2>
+
+<p align="center">
+<img height="300" src="assets/images/dataguide/usa_waterstress_585.png">
+</p>
+
+<p align="center">
+Fig D9: United States Counties, Projected mean annual water stress exposure over 2022-2052 with SSP5-RCP8.5 scenario.
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>State</th>
+      <th>County Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Nebraska</td>
+      <td>Holt</td>
+    </tr>
+    <tr>
+      <td>Nebraska</td>
+      <td>Cherry</td>
+    </tr>
+    <tr>
+      <td>Montana</td>
+      <td>Park</td>
+    </tr>
+    <tr>
+      <td>Montana</td>
+      <td>Pondera</td>
+    </tr>
+    <tr>
+      <td>Montana</td>
+      <td>Powder River</td>
+    </tr>
+    <tr>
+      <td>Montana</td>
+      <td>Rosebud</td>
+    </tr>
+    <tr>
+      <td>Montana</td>
+      <td>Silver Bow</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+Table 5A: US Counties with top water stress exposure
+</p>
+
+<p align="center">
+<img height="300" src="assets/images/dataguide/aus_waterstress_585.png">
+</p>
+
+<p align="center">
+Fig D10: Australian towns, Projected mean annual water stress exposure over 2022-2052 with SSP5-RCP8.5 scenario.
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Township</th>
+      <th>Locale</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>South Australia</td>
+      <td>Playford</td>
+    </tr>
+    <tr>
+      <td>South Australia</td>
+      <td>Prospect</td>
+    </tr>
+    <tr>
+      <td>Victoria</td>
+      <td>Gannawarra</td>
+    </tr>
+    <tr>
+      <td>New South Wales</td>
+      <td>Jerilderie</td>
+    </tr>
+    <tr>
+      <td>South Australia</td>
+      <td>Marion</td>
+    </tr>
+    <tr>
+      <td>South Australia</td>
+      <td>Mitcham</td>
+    </tr>
+    <tr>
+      <td>South Australia</td>
+      <td>Onkaparinga</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+Table 5B: Australian cities with top water stress exposure
+</p>
+
+<h3 id="description-4">
+<a class="anchor" href="#description-4" aria-hidden="true"><span class="octicon octicon-link"></span></a>Description</h3>
+
+<p>Water is a requirement for societal development and progress. Water availability, or in its absence water scarcity, plays a critical role across sectors, including manufacturing, mining, agriculture, and electricity generation. Climate change coupled with increasing demand will have substantial impacts on water availability across the globe. Rigorous, high resolution water supply and demand data is therefore needed to enable reliable assessment of companies’ water scarcity exposure directly and throughout their supply chains. Projections of future water availability can help companies and investors prepare for the complex economic and social challenges related to water stress.</p>
+
+<h3 id="indicator-1">
+<a class="anchor" href="#indicator-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Indicator</h3>
+
+<p>We provide 4 indicators: historic water stress, projected droughts, projected water stress score, projected unified water stress.</p>
+
+<ol>
+  <li>
+<strong>Water stress score indicator</strong>: We model current and forward-looking water stress scores using the World Resource Institute’s Aqueduct model. The state-of-the-art Aqueduct model has been extensively used by researchers in academia and industry to assess portfolio water risk. The water stress score is indicative of competition for local water resources. It is calculated as the ratio of water withdrawal to renewable water availability.</li>
+  <li>
+<strong>Drought indicator</strong>: This indicator is based on a drought index derived from CMIP6 monthly simulations of precipitation and temperature. The drought index, also referred to as the standardized precipitation evapotranspiration index, represents the magnitude of precipitation deficits (negative magnitude) or surplus (positive magnitude) over the preceding 12-month period, after accounting for temperature-driven effects on evapotranspiration. Our selection of a 12-month period reflects long-term precipitation patterns and better relates to reservoirs, groundwater, and streamflow.</li>
+  <li>
+<strong>Unified water stress indicator</strong>: This indicator combines the water stress score and the drought indicator to one single indicator for water stress, using a weighting methodology designed by the World Resources Institute in their <a href="https://www.wri.org/data/aqueduct-global-maps-30-data">Global Aqueduct Methodology</a>. This provides a comparable 0.0 to 1.0 range to indicate exposure to water stress.</li>
+  <li>
+<strong>Historic water stress indicator</strong>: We use the same methodology as the unified water stress indicator, except with observed rather than modeled datasets of water stress and drought.</li>
+</ol>
+
+<p>Water stress scores account for the availability and consumption of water at the specific location. The drought indicator accounts for environmental variables that create acute water shortage over a period of time. Both are chronic physical climate hazard indicators.</p>
+
+<p>Our water stress indicator is based on the world leading WRI water stress methodology (<a href="https://www.wri.org/data/aqueduct-global-maps-30-data">link</a>) and our drought indicator is based on the latest frontier climate research from the CMIP6(<a href="https://link.springer.com/article/10.1007/s00382-017-3740-8">link</a>).</p>
+
+<h3 id="data-usage-3">
+<a class="anchor" href="#data-usage-3" aria-hidden="true"><span class="octicon octicon-link"></span></a>Data Usage</h3>
+
+<p>A key avenue for mitigating water stress not considered in the modeling framework is the transport of water between watersheds. Such transport can help meet water demand, but it comes at a cost. Transporting water requires large amounts of energy, increasing greenhouse gas emissions, along with the development of transportation infrastructure. Water transport also carries with it a host of geopolitical and equity considerations.</p>
+
+<ul>
+  <li>Water stress scores are more suitable for use for assessments of impact from the changing climate to human water needs</li>
+  <li>Drought indicator is most useful for water stress impacts to agriculture and commodities</li>
+  <li>The unified water stress indicator is most useful across generic use cases</li>
+</ul>
+
+<h3 id="adaptation-and-mitigation-measures-4">
+<a class="anchor" href="#adaptation-and-mitigation-measures-4" aria-hidden="true"><span class="octicon octicon-link"></span></a>Adaptation and Mitigation Measures</h3>
+
+<ul>
+  <li>Water harvesting. This involves water treatment and reuse of wastewater, or recycling water.</li>
+  <li>Enhance the supply of water. This may involve: developing new water sources such as micro dams, ponds and wells; locating new potential resources; or artificial precipitation.</li>
+  <li>Improve demand management by reducing use &amp; loss of water, or reviewing water allocation, particularly to water intensive processes such as certain manufacturing methods.</li>
+</ul>
+
+<h2 id="heatwave">
+<a class="anchor" href="#heatwave" aria-hidden="true"><span class="octicon octicon-link"></span></a>Heatwave</h2>
+
+<p align="center">
+<img height="300" src="assets/images/dataguide/usa_heatwave_585.png">
+</p>
+
+<p align="center">
+Fig D11: United States Counties, Projected mean annual heatwave exposure over 2022-2052 with SSP5-RCP8.5 scenario.
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>State</th>
+      <th>County Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Florida</td>
+      <td>Monroe</td>
+    </tr>
+    <tr>
+      <td>Florida</td>
+      <td>Miami-Dade</td>
+    </tr>
+    <tr>
+      <td>Florida</td>
+      <td>Collier</td>
+    </tr>
+    <tr>
+      <td>Florida</td>
+      <td>Palm Beach</td>
+    </tr>
+    <tr>
+      <td>Texas</td>
+      <td>Nueces</td>
+    </tr>
+    <tr>
+      <td>Texas</td>
+      <td>Brazoria</td>
+    </tr>
+    <tr>
+      <td>Louisiana</td>
+      <td>Terrebonne</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+Table 6A: US Counties with top heatwave exposure
+</p>
+
+<p align="center">
+<img height="300" src="assets/images/dataguide/india_heatwave_585.png">
+</p>
+
+<p align="center">
+Fig D12: Indian towns, Projected mean annual heatwave exposure over 2022-2052 with SSP5-RCP8.5 scenario.
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Township</th>
+      <th>Locale</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Lakshadweep</td>
+      <td>Kavaratti</td>
+    </tr>
+    <tr>
+      <td>Lakshadweep</td>
+      <td>Amini Island</td>
+    </tr>
+    <tr>
+      <td>Lakshadweep</td>
+      <td>Lakshadweep</td>
+    </tr>
+    <tr>
+      <td>Nicobar Island</td>
+      <td>Nicobar Island</td>
+    </tr>
+    <tr>
+      <td>South Andaman</td>
+      <td>South Andaman</td>
+    </tr>
+    <tr>
+      <td>Thiruvananthapuram</td>
+      <td>Chirayinkil</td>
+    </tr>
+    <tr>
+      <td>Thiruvananthapuram</td>
+      <td>Nedumangad</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+Table 6B: Indian cities/towns with top heatwave exposure
+</p>
+
+<h3 id="description-5">
+<a class="anchor" href="#description-5" aria-hidden="true"><span class="octicon octicon-link"></span></a>Description</h3>
+
+<p>Heatwaves represent an extended period of perilously warm weather at a specific location or region.</p>
+
+<h3 id="indicator-2">
+<a class="anchor" href="#indicator-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Indicator</h3>
+
+<p>We calculate the number of days per year exceeding a temperature threshold. The temperature threshold at a given location is based on the 98th percentile of daily conditions during a baseline period between 1980 and 2100. Because this temperature threshold varies spatially, the heatwave metric indicates anomalously high temperatures relative to what is typical at the local level.</p>
+
+<h3 id="data-usage-4">
+<a class="anchor" href="#data-usage-4" aria-hidden="true"><span class="octicon octicon-link"></span></a>Data Usage</h3>
+
+<p>The heatwave indicator is derived from the world’s frontier climate research as part of the CMIP6. The user can interpret this metric at a specific asset location or region as the number of days in a calendar year of unusually warm weather</p>
+
+<h3 id="adaptation-and-mitigation-measures-5">
+<a class="anchor" href="#adaptation-and-mitigation-measures-5" aria-hidden="true"><span class="octicon octicon-link"></span></a>Adaptation and Mitigation Measures</h3>
+
+<p>You can take some cooling measures which reduce electricity demand, in part by using cooling measures which improves the reliability of electricity.</p>
+<ul>
+  <li>Install cool or green roofs, which may involve switching from dark to light roofs.</li>
+  <li>Plant trees and vegetation near buildings, as these can provide shade.</li>
+  <li>Set up cool routes (shaded walkways) and emergency cooling centers for people during a heatwave.</li>
+</ul>
+
+<h2 id="summarization-labeling">
+<a class="anchor" href="#summarization-labeling" aria-hidden="true"><span class="octicon octicon-link"></span></a>Summarization Labeling</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Hazard</th>
+      <th>Unit</th>
+      <th>LOW Range (low)</th>
+      <th>LOW Range (high)</th>
+      <th>MEDIUM Range (low)</th>
+      <th>MEDIM Range (high)</th>
+      <th>HIGH Range (low)</th>
+      <th>HIGH Range (high)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Wildfire</td>
+      <td>probability</td>
+      <td>0.0</td>
+      <td>0.01</td>
+      <td>0.01</td>
+      <td>0.05</td>
+      <td>0.05</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <td>Inland Flood</td>
+      <td>Number of years with probability exceeding threshold @@</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>3</td>
+      <td>3</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <td>Cyclone</td>
+      <td>probability</td>
+      <td>0.0</td>
+      <td>0.1</td>
+      <td>0.1</td>
+      <td>0.2</td>
+      <td>0.2</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <td>Water Stress</td>
+      <td>probability</td>
+      <td>0.0</td>
+      <td>0.3</td>
+      <td>0.3</td>
+      <td>0.6</td>
+      <td>0.6</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <td>Heatwave</td>
+      <td>Number of days in year</td>
+      <td>0</td>
+      <td>30</td>
+      <td>30</td>
+      <td>50</td>
+      <td>50</td>
+      <td>366</td>
+    </tr>
+    <tr>
+      <td>Sea Level Rise</td>
+      <td>Relative change in meters</td>
+      <td>0.0</td>
+      <td>0.1</td>
+      <td>0.1</td>
+      <td>0.3</td>
+      <td>0.3</td>
+      <td>3.0</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+Table 7: Hazard summarization labeling ranges 
+</p>
+
+<p>@@ For floods, we count the number of years where floods exceed a probability threshold (5% in this case) over the forward looking window (5 yr/15 yr/30 yr) and use that count to categorize the asset to LOW/MED/HIGH. LOW would be values between 0 and 1, MED would be values 2 and 3 and for assets with &gt;3 years of flooding potential exceeding 5% probability, we would set to HIGH</p>
+
+<h2 id="indicator-metadata">
+<a class="anchor" href="#indicator-metadata" aria-hidden="true"><span class="octicon octicon-link"></span></a>Indicator Metadata</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>hazard</th>
+      <th>indicator</th>
+      <th>unit</th>
+      <th>value_min</th>
+      <th>value_max</th>
+      <th>value_norm</th>
+      <th>spatial_resolution (in meters)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>wildfire</td>
+      <td>obs_score</td>
+      <td>score</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>500.0</td>
+    </tr>
+    <tr>
+      <td>wildfire</td>
+      <td>burned_area_norm</td>
+      <td>score</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.1</td>
+      <td>300.0</td>
+    </tr>
+    <tr>
+      <td>wildfire</td>
+      <td>fire_kbdi_susceptability</td>
+      <td>score</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.1</td>
+      <td>300.0</td>
+    </tr>
+    <tr>
+      <td>wildfire</td>
+      <td>unified_prob</td>
+      <td>probability</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.5</td>
+      <td>300.0</td>
+    </tr>
+    <tr>
+      <td>flood_potential</td>
+      <td>obs_score</td>
+      <td>score</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>250.0</td>
+    </tr>
+    <tr>
+      <td>flood_potential</td>
+      <td>inland_flood_prob</td>
+      <td>probability</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>4000.0</td>
+    </tr>
+    <tr>
+      <td>cyclone</td>
+      <td>obs_freq</td>
+      <td>frequency</td>
+      <td>0.0</td>
+      <td>7.0</td>
+      <td>2.0</td>
+      <td>1000.0</td>
+    </tr>
+    <tr>
+      <td>cyclone</td>
+      <td>prob</td>
+      <td>probability</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.5</td>
+      <td>50000.0</td>
+    </tr>
+    <tr>
+      <td>heatwave</td>
+      <td>freq</td>
+      <td>day</td>
+      <td>0.0</td>
+      <td>366.0</td>
+      <td>200.0</td>
+      <td>25000.0</td>
+    </tr>
+    <tr>
+      <td>sea_level_rise</td>
+      <td>change</td>
+      <td>meter</td>
+      <td>0.0</td>
+      <td>100.0</td>
+      <td>0.75</td>
+      <td>100000.0</td>
+    </tr>
+    <tr>
+      <td>water_stress</td>
+      <td>obs_score</td>
+      <td>score</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>500.0</td>
+    </tr>
+    <tr>
+      <td>water_stress</td>
+      <td>spei_norm</td>
+      <td>score</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>25000.0</td>
+    </tr>
+    <tr>
+      <td>water_stress</td>
+      <td>score</td>
+      <td>score</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>500.0</td>
+    </tr>
+    <tr>
+      <td>water_stress</td>
+      <td>unified_score</td>
+      <td>score</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>500.0</td>
+    </tr>
+    <tr>
+      <td>fundamental</td>
+      <td>temp</td>
+      <td>degree_celsius</td>
+      <td>-60.0</td>
+      <td>50.0</td>
+      <td>50.0</td>
+      <td>100000.0</td>
+    </tr>
+    <tr>
+      <td>fundamental</td>
+      <td>precip</td>
+      <td>millimeter</td>
+      <td>0.0</td>
+      <td>10000.0</td>
+      <td>10000.0</td>
+      <td>100000.0</td>
+    </tr>
+    <tr>
+      <td>fundamental</td>
+      <td>extreme_precip</td>
+      <td>day</td>
+      <td>0.0</td>
+      <td>366.0</td>
+      <td>366.0</td>
+      <td>100000.0</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+Table 8: Hazard and indicator metadata 
+</p>
+
+
+          </div>
+        </div>
+
+        
+        <div class="col-3">
+          <div id="toc-container">
+            <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h2"><a href="#introduction">Introduction</a></li>
+<li class="toc-entry toc-h2"><a href="#climate-scenarios">Climate Scenarios</a></li>
+<li class="toc-entry toc-h2"><a href="#wildfire">Wildfire</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#description">Description</a></li>
+<li class="toc-entry toc-h3"><a href="#indicators">Indicators</a></li>
+<li class="toc-entry toc-h3"><a href="#data-usage">Data Usage</a></li>
+<li class="toc-entry toc-h3"><a href="#adaptation-and-mitigation-measures">Adaptation and Mitigation Measures</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#inland-flood">Inland Flood</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#description-1">Description</a></li>
+<li class="toc-entry toc-h3"><a href="#indicators-1">Indicators</a></li>
+<li class="toc-entry toc-h3"><a href="#data-usage-1">Data Usage</a></li>
+<li class="toc-entry toc-h3"><a href="#adaptation-and-mitigation-measures-1">Adaptation and Mitigation Measures</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#tropical-cyclone">Tropical Cyclone</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#description-2">Description</a></li>
+<li class="toc-entry toc-h3"><a href="#indicators-2">Indicators</a></li>
+<li class="toc-entry toc-h3"><a href="#limitations">Limitations</a></li>
+<li class="toc-entry toc-h3"><a href="#data-usage-2">Data Usage</a></li>
+<li class="toc-entry toc-h3"><a href="#adaptation-and-mitigation-measures-2">Adaptation and Mitigation Measures</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#sea-level-rise">Sea Level Rise</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#description-3">Description</a></li>
+<li class="toc-entry toc-h3"><a href="#indicator">Indicator</a></li>
+<li class="toc-entry toc-h3"><a href="#adaptation-and-mitigation-measures-3">Adaptation and Mitigation Measures</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#water-stress">Water Stress</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#description-4">Description</a></li>
+<li class="toc-entry toc-h3"><a href="#indicator-1">Indicator</a></li>
+<li class="toc-entry toc-h3"><a href="#data-usage-3">Data Usage</a></li>
+<li class="toc-entry toc-h3"><a href="#adaptation-and-mitigation-measures-4">Adaptation and Mitigation Measures</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#heatwave">Heatwave</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#description-5">Description</a></li>
+<li class="toc-entry toc-h3"><a href="#indicator-2">Indicator</a></li>
+<li class="toc-entry toc-h3"><a href="#data-usage-4">Data Usage</a></li>
+<li class="toc-entry toc-h3"><a href="#adaptation-and-mitigation-measures-5">Adaptation and Mitigation Measures</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#summarization-labeling">Summarization Labeling</a></li>
+<li class="toc-entry toc-h2"><a href="#indicator-metadata">Indicator Metadata</a></li>
+</ul>
+          </div>
+        </div>
+        
+
+      </div>
+
+    </div>
+
+  </body>
+</html>
