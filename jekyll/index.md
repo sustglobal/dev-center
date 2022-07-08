@@ -10,10 +10,10 @@ Welcome! This is the home of [Sust Global](https://www.sustglobal.com/)'s develo
 * The [Climate Explorer API Guide](./api.html) is here to help developers learn how to work with the Climate Explorer API.
 * You may access the [Sust Global OpenAPI Specification](https://explorer.sustglobal.io/redoc/), which describes every REST endpoint, parameter, request and response.
 
-## Other Resources
+## Resources
 
+* Learn about the latest [Product Updates](./updates.html) to Climate Explorer and our datasets.
 * Several [Jupyter Notebooks](./jupyter-notebooks.html) are provided to help you explore Sust Global datasets on your local machine.
 * Find answers to frequently asked questions on our [FAQ Page](./FAQs.html)
-* Learn about the latest [Product Updates](./updates.html) to Climate Explorer and our datasets.
 
 The Developer Center documentation and all the referenced tools are hosted on GitHub at [https://github.com/sustglobal/dev-center](https://github.com/sustglobal/dev-center).
