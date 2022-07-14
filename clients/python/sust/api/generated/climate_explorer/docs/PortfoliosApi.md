@@ -5,7 +5,7 @@ All URIs are relative to *https://explorer.sustglobal.io/api*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**portfolios_assets_export_list**](PortfoliosApi.md#portfolios_assets_export_list) | **GET** /portfolios/{portfolio_name}/assets/export | Export Portfolio Assets
-[**portfolios_assets_import_create**](PortfoliosApi.md#portfolios_assets_import_create) | **POST** /portfolios/{portfolio_name}/assets/import | Import Portfolio Assets
+[**portfolios_assets_import_create**](PortfoliosApi.md#portfolios_assets_import_create) | **POST** /portfolios/{portfolio_name}/assets/import/ | Import Portfolio Assets
 [**portfolios_assets_list**](PortfoliosApi.md#portfolios_assets_list) | **GET** /portfolios/{portfolio_name}/assets | List Portfolio Assets
 [**portfolios_create**](PortfoliosApi.md#portfolios_create) | **POST** /portfolios/ | Create Portfolio
 [**portfolios_datasets_physical_export_list**](PortfoliosApi.md#portfolios_datasets_physical_export_list) | **GET** /portfolios/{portfolio_name}/datasets/physical/export | Export Physical Risk Exposure Dataset
@@ -32,6 +32,7 @@ Trigger an export operation of portfolio assets.
 import time
 import sust.api.generated.climate_explorer
 from sust.api.generated.climate_explorer.api import portfolios_api
+from sust.api.generated.climate_explorer.model.errors_response import ErrorsResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://explorer.sustglobal.io/api
 # See configuration.py for a list of all supported configuration parameters.
@@ -101,7 +102,13 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  * Content-Disposition - Indicates the response contains an &#39;attachment&#39; with a human-friendly name <br>  * Content-Type - Media type describing the attached file <br>  |
+**200** |  |  * Content-Disposition - Indicates the response contains an &#39;attachment&#39; with a human-friendly name <br>  * Content-Type - Media type describing the attached file <br>  |
+**400** |  |  -  |
+**401** |  |  -  |
+**403** |  |  -  |
+**404** |  |  -  |
+**405** |  |  -  |
+**409** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -120,6 +127,7 @@ Trigger an import operation of assets into existing portfolio. Format of the req
 import time
 import sust.api.generated.climate_explorer
 from sust.api.generated.climate_explorer.api import portfolios_api
+from sust.api.generated.climate_explorer.model.errors_response import ErrorsResponse
 from sust.api.generated.climate_explorer.model.message_response import MessageResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://explorer.sustglobal.io/api
@@ -192,7 +200,13 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**202** | Success |  -  |
+**202** |  |  -  |
+**400** |  |  -  |
+**401** |  |  -  |
+**403** |  |  -  |
+**404** |  |  -  |
+**405** |  |  -  |
+**409** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -211,6 +225,7 @@ Retrieve a set of assets belonging to a specific portfolio.
 import time
 import sust.api.generated.climate_explorer
 from sust.api.generated.climate_explorer.api import portfolios_api
+from sust.api.generated.climate_explorer.model.errors_response import ErrorsResponse
 from sust.api.generated.climate_explorer.model.asset_response import AssetResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://explorer.sustglobal.io/api
@@ -287,7 +302,13 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
+**200** |  |  -  |
+**400** |  |  -  |
+**401** |  |  -  |
+**403** |  |  -  |
+**404** |  |  -  |
+**405** |  |  -  |
+**409** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -306,6 +327,7 @@ Create an empty portfolio.
 import time
 import sust.api.generated.climate_explorer
 from sust.api.generated.climate_explorer.api import portfolios_api
+from sust.api.generated.climate_explorer.model.errors_response import ErrorsResponse
 from sust.api.generated.climate_explorer.model.portfolio_create_request import PortfolioCreateRequest
 from sust.api.generated.climate_explorer.model.portfolio_response import PortfolioResponse
 from pprint import pprint
@@ -379,7 +401,13 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**201** | Success |  -  |
+**201** |  |  -  |
+**400** |  |  -  |
+**401** |  |  -  |
+**403** |  |  -  |
+**404** |  |  -  |
+**405** |  |  -  |
+**409** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -398,6 +426,7 @@ Trigger an export operation of physical risk exposure data.
 import time
 import sust.api.generated.climate_explorer
 from sust.api.generated.climate_explorer.api import portfolios_api
+from sust.api.generated.climate_explorer.model.errors_response import ErrorsResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://explorer.sustglobal.io/api
 # See configuration.py for a list of all supported configuration parameters.
@@ -467,7 +496,13 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  * Content-Disposition - Indicates the response contains an &#39;attachment&#39; with a human-friendly name <br>  * Content-Type - Media type describing the attached file <br>  |
+**200** |  |  * Content-Disposition - Indicates the response contains an &#39;attachment&#39; with a human-friendly name <br>  * Content-Type - Media type describing the attached file <br>  |
+**400** |  |  -  |
+**401** |  |  -  |
+**403** |  |  -  |
+**404** |  |  -  |
+**405** |  |  -  |
+**409** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -486,6 +521,7 @@ Retrieve items from the physical risk exposure dataset generated for a portfolio
 import time
 import sust.api.generated.climate_explorer
 from sust.api.generated.climate_explorer.api import portfolios_api
+from sust.api.generated.climate_explorer.model.errors_response import ErrorsResponse
 from sust.api.generated.climate_explorer.model.physical_risk_dataset_item_response import PhysicalRiskDatasetItemResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://explorer.sustglobal.io/api
@@ -511,8 +547,8 @@ with sust.api.generated.climate_explorer.ApiClient(configuration) as api_client:
     api_instance = portfolios_api.PortfoliosApi(api_client)
     portfolio_name = "portfolio_name_example" # str | Name for portfolio
     project = "project_example" # str | Name of project. Param only required when user may access more than one. (optional)
-    hazard = "wildfire" # str | Climate hazard filter (optional)
-    indicator = "freq" # str | Risk indicator filter (optional)
+    hazard = "hazard_example" # str | Climate hazard filter (optional)
+    indicator = "indicator_example" # str | Risk indicator filter (optional)
     measure = "mid" # str | Indicator measure filter (optional)
     start_date = "start_date_example" # str | Left boundary of time range filter in format YYYY-MM-DD (optional)
     end_date = "end_date_example" # str | Right boundary of time range filter in format YYYY-MM-DD (optional)
@@ -574,7 +610,13 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
+**200** |  |  -  |
+**400** |  |  -  |
+**401** |  |  -  |
+**403** |  |  -  |
+**404** |  |  -  |
+**405** |  |  -  |
+**409** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -593,6 +635,7 @@ Retrieve metadata from the physical risk exposure dataset generated for a portfo
 import time
 import sust.api.generated.climate_explorer
 from sust.api.generated.climate_explorer.api import portfolios_api
+from sust.api.generated.climate_explorer.model.errors_response import ErrorsResponse
 from sust.api.generated.climate_explorer.model.physical_risk_metadata_response import PhysicalRiskMetadataResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://explorer.sustglobal.io/api
@@ -664,6 +707,12 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
+**400** |  |  -  |
+**401** |  |  -  |
+**403** |  |  -  |
+**404** |  |  -  |
+**405** |  |  -  |
+**409** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -682,6 +731,7 @@ Retrieve a summary of the physical risk exposure dataset generated for a portfol
 import time
 import sust.api.generated.climate_explorer
 from sust.api.generated.climate_explorer.api import portfolios_api
+from sust.api.generated.climate_explorer.model.errors_response import ErrorsResponse
 from sust.api.generated.climate_explorer.model.physical_risk_dataset_summary_response import PhysicalRiskDatasetSummaryResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://explorer.sustglobal.io/api
@@ -711,7 +761,7 @@ with sust.api.generated.climate_explorer.ApiClient(configuration) as api_client:
     page = 1 # int | Numerical index of current page, beginning at 1 (optional)
     scenario = "ssp126" # str | Shared socioeconomic pathway filter (optional)
     window = 1 # int | Number of years forward used to determine the Physical Risk Summary. Valid windows are currently 5, 15, and 30 (optional)
-    hazard = "wildfire" # str | Climate hazard filter (optional)
+    hazard = "hazard_example" # str | Climate hazard filter (optional)
     entity_id = "entity_id_example" # str | Limit results to those pertaining to assets with the provided entity_id. (optional)
 
     # example passing only required values which don't have defaults set
@@ -764,7 +814,13 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
+**200** |  |  -  |
+**400** |  |  -  |
+**401** |  |  -  |
+**403** |  |  -  |
+**404** |  |  -  |
+**405** |  |  -  |
+**409** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -783,6 +839,7 @@ Deletes a portfolio and all associated Risk Exposure Data.
 import time
 import sust.api.generated.climate_explorer
 from sust.api.generated.climate_explorer.api import portfolios_api
+from sust.api.generated.climate_explorer.model.errors_response import ErrorsResponse
 from sust.api.generated.climate_explorer.model.message_response import MessageResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://explorer.sustglobal.io/api
@@ -853,7 +910,13 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
+**200** |  |  -  |
+**400** |  |  -  |
+**401** |  |  -  |
+**403** |  |  -  |
+**404** |  |  -  |
+**405** |  |  -  |
+**409** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -872,6 +935,7 @@ Retrieve a list of portfolios.
 import time
 import sust.api.generated.climate_explorer
 from sust.api.generated.climate_explorer.api import portfolios_api
+from sust.api.generated.climate_explorer.model.errors_response import ErrorsResponse
 from sust.api.generated.climate_explorer.model.portfolio_response import PortfolioResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://explorer.sustglobal.io/api
@@ -932,7 +996,13 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
+**200** |  |  -  |
+**400** |  |  -  |
+**401** |  |  -  |
+**403** |  |  -  |
+**404** |  |  -  |
+**405** |  |  -  |
+**409** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -951,6 +1021,7 @@ Retrieve a single portfolio.
 import time
 import sust.api.generated.climate_explorer
 from sust.api.generated.climate_explorer.api import portfolios_api
+from sust.api.generated.climate_explorer.model.errors_response import ErrorsResponse
 from sust.api.generated.climate_explorer.model.portfolio_response import PortfolioResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://explorer.sustglobal.io/api
@@ -1021,7 +1092,13 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
+**200** |  |  -  |
+**400** |  |  -  |
+**401** |  |  -  |
+**403** |  |  -  |
+**404** |  |  -  |
+**405** |  |  -  |
+**409** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

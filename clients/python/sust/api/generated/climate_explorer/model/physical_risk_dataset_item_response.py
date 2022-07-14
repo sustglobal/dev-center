@@ -55,30 +55,6 @@ class PhysicalRiskDatasetItemResponse(ModelNormal):
     """
 
     allowed_values = {
-        ('hazard',): {
-            'WILDFIRE': "wildfire",
-            'FLOOD_POTENTIAL': "flood_potential",
-            'CYCLONE': "cyclone",
-            'WATER_STRESS': "water_stress",
-            'SEA_LEVEL_RISE': "sea_level_rise",
-            'HEATWAVE': "heatwave",
-            'FUNDAMENTAL': "fundamental",
-        },
-        ('indicator',): {
-            'FREQ': "freq",
-            'BURNED_AREA_NORM': "burned_area_norm",
-            'EXTREME_PRECIP': "extreme_precip",
-            'SPEI_NORM': "spei_norm",
-            'INLAND_FLOOD_PROB': "inland_flood_prob",
-            'PRECIP': "precip",
-            'CHANGE': "change",
-            'OBS_SCORE': "obs_score",
-            'FIRE_KBDI_SUSCEPTIBILITY': "fire_kbdi_susceptibility",
-            'SCORE': "score",
-            'PROB': "prob",
-            'OBS_FREQ': "obs_freq",
-            'TEMP': "temp",
-        },
         ('measure',): {
             'MID': "mid",
             'LB': "lb",
@@ -88,6 +64,12 @@ class PhysicalRiskDatasetItemResponse(ModelNormal):
 
     validations = {
         ('portfolio_name',): {
+            'min_length': 1,
+        },
+        ('hazard',): {
+            'min_length': 1,
+        },
+        ('indicator',): {
             'min_length': 1,
         },
         ('scenario',): {

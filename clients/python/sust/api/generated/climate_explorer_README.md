@@ -32,6 +32,7 @@ import sust.api.generated.climate_explorer
 from pprint import pprint
 from sust.api.generated.climate_explorer.api import portfolios_api
 from sust.api.generated.climate_explorer.model.asset_response import AssetResponse
+from sust.api.generated.climate_explorer.model.errors_response import ErrorsResponse
 from sust.api.generated.climate_explorer.model.message_response import MessageResponse
 from sust.api.generated.climate_explorer.model.physical_risk_dataset_item_response import PhysicalRiskDatasetItemResponse
 from sust.api.generated.climate_explorer.model.physical_risk_dataset_summary_response import PhysicalRiskDatasetSummaryResponse
@@ -78,7 +79,7 @@ All URIs are relative to *https://explorer.sustglobal.io/api*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *PortfoliosApi* | [**portfolios_assets_export_list**](sust/api/generated/climate_explorer/docs/PortfoliosApi.md#portfolios_assets_export_list) | **GET** /portfolios/{portfolio_name}/assets/export | Export Portfolio Assets
-*PortfoliosApi* | [**portfolios_assets_import_create**](sust/api/generated/climate_explorer/docs/PortfoliosApi.md#portfolios_assets_import_create) | **POST** /portfolios/{portfolio_name}/assets/import | Import Portfolio Assets
+*PortfoliosApi* | [**portfolios_assets_import_create**](sust/api/generated/climate_explorer/docs/PortfoliosApi.md#portfolios_assets_import_create) | **POST** /portfolios/{portfolio_name}/assets/import/ | Import Portfolio Assets
 *PortfoliosApi* | [**portfolios_assets_list**](sust/api/generated/climate_explorer/docs/PortfoliosApi.md#portfolios_assets_list) | **GET** /portfolios/{portfolio_name}/assets | List Portfolio Assets
 *PortfoliosApi* | [**portfolios_create**](sust/api/generated/climate_explorer/docs/PortfoliosApi.md#portfolios_create) | **POST** /portfolios/ | Create Portfolio
 *PortfoliosApi* | [**portfolios_datasets_physical_export_list**](sust/api/generated/climate_explorer/docs/PortfoliosApi.md#portfolios_datasets_physical_export_list) | **GET** /portfolios/{portfolio_name}/datasets/physical/export | Export Physical Risk Exposure Dataset
@@ -93,6 +94,7 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [AssetResponse](sust/api/generated/climate_explorer/docs/AssetResponse.md)
+ - [ErrorsResponse](sust/api/generated/climate_explorer/docs/ErrorsResponse.md)
  - [MessageResponse](sust/api/generated/climate_explorer/docs/MessageResponse.md)
  - [PhysicalRiskDatasetItemResponse](sust/api/generated/climate_explorer/docs/PhysicalRiskDatasetItemResponse.md)
  - [PhysicalRiskDatasetSummaryResponse](sust/api/generated/climate_explorer/docs/PhysicalRiskDatasetSummaryResponse.md)

@@ -22,6 +22,7 @@ from sust.api.generated.climate_explorer.model_utils import (  # noqa: F401
     validate_and_convert_types
 )
 from sust.api.generated.climate_explorer.model.asset_response import AssetResponse
+from sust.api.generated.climate_explorer.model.errors_response import ErrorsResponse
 from sust.api.generated.climate_explorer.model.message_response import MessageResponse
 from sust.api.generated.climate_explorer.model.physical_risk_dataset_item_response import PhysicalRiskDatasetItemResponse
 from sust.api.generated.climate_explorer.model.physical_risk_dataset_summary_response import PhysicalRiskDatasetSummaryResponse
@@ -103,7 +104,7 @@ class PortfoliosApi(object):
                 'auth': [
                     'api_key'
                 ],
-                'endpoint_path': '/portfolios/{portfolio_name}/assets/import',
+                'endpoint_path': '/portfolios/{portfolio_name}/assets/import/',
                 'operation_id': 'portfolios_assets_import_create',
                 'http_method': 'POST',
                 'servers': None,
@@ -376,8 +377,6 @@ class PortfoliosApi(object):
                 'nullable': [
                 ],
                 'enum': [
-                    'hazard',
-                    'indicator',
                     'measure',
                     'scenario',
                 ],
@@ -388,32 +387,6 @@ class PortfoliosApi(object):
                 'validations': {
                 },
                 'allowed_values': {
-                    ('hazard',): {
-
-                        "WILDFIRE": "wildfire",
-                        "FLOOD_POTENTIAL": "flood_potential",
-                        "CYCLONE": "cyclone",
-                        "WATER_STRESS": "water_stress",
-                        "SEA_LEVEL_RISE": "sea_level_rise",
-                        "HEATWAVE": "heatwave",
-                        "FUNDAMENTAL": "fundamental"
-                    },
-                    ('indicator',): {
-
-                        "FREQ": "freq",
-                        "BURNED_AREA_NORM": "burned_area_norm",
-                        "EXTREME_PRECIP": "extreme_precip",
-                        "SPEI_NORM": "spei_norm",
-                        "INLAND_FLOOD_PROB": "inland_flood_prob",
-                        "PRECIP": "precip",
-                        "CHANGE": "change",
-                        "OBS_SCORE": "obs_score",
-                        "FIRE_KBDI_SUSCEPTIBILITY": "fire_kbdi_susceptibility",
-                        "SCORE": "score",
-                        "PROB": "prob",
-                        "OBS_FREQ": "obs_freq",
-                        "TEMP": "temp"
-                    },
                     ('measure',): {
 
                         "MID": "mid",
@@ -573,7 +546,6 @@ class PortfoliosApi(object):
                 ],
                 'enum': [
                     'scenario',
-                    'hazard',
                 ],
                 'validation': [
                 ]
@@ -587,16 +559,6 @@ class PortfoliosApi(object):
                         "SSP126": "ssp126",
                         "SSP245": "ssp245",
                         "SSP585": "ssp585"
-                    },
-                    ('hazard',): {
-
-                        "WILDFIRE": "wildfire",
-                        "FLOOD_POTENTIAL": "flood_potential",
-                        "CYCLONE": "cyclone",
-                        "WATER_STRESS": "water_stress",
-                        "SEA_LEVEL_RISE": "sea_level_rise",
-                        "HEATWAVE": "heatwave",
-                        "FUNDAMENTAL": "fundamental"
                     },
                 },
                 'openapi_types': {

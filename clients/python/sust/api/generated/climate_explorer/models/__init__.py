@@ -10,6 +10,7 @@
 # sys.setrecursionlimit(n)
 
 from sust.api.generated.climate_explorer.model.asset_response import AssetResponse
+from sust.api.generated.climate_explorer.model.errors_response import ErrorsResponse
 from sust.api.generated.climate_explorer.model.message_response import MessageResponse
 from sust.api.generated.climate_explorer.model.physical_risk_dataset_item_response import PhysicalRiskDatasetItemResponse
 from sust.api.generated.climate_explorer.model.physical_risk_dataset_summary_response import PhysicalRiskDatasetSummaryResponse

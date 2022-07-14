@@ -88,9 +88,10 @@ class AssetResponse(ModelNormal):
             'portfolio_index': (int,),  # noqa: E501
             'entity_id': (str,),  # noqa: E501
             'entity_name': (str,),  # noqa: E501
+            'labels': ({str: (str, none_type)},),  # noqa: E501
             'lat': (float,),  # noqa: E501
             'lng': (float,),  # noqa: E501
-            'labels': ({str: (str, none_type)},),  # noqa: E501
+            'geometry': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -103,9 +104,10 @@ class AssetResponse(ModelNormal):
         'portfolio_index': 'portfolio_index',  # noqa: E501
         'entity_id': 'entity_id',  # noqa: E501
         'entity_name': 'entity_name',  # noqa: E501
+        'labels': 'labels',  # noqa: E501
         'lat': 'lat',  # noqa: E501
         'lng': 'lng',  # noqa: E501
-        'labels': 'labels',  # noqa: E501
+        'geometry': 'geometry',  # noqa: E501
     }
 
     read_only_vars = {
@@ -115,7 +117,7 @@ class AssetResponse(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, portfolio_name, portfolio_index, entity_id, entity_name, lat, lng, labels, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, portfolio_name, portfolio_index, entity_id, entity_name, labels, *args, **kwargs):  # noqa: E501
         """AssetResponse - a model defined in OpenAPI
 
         Args:
@@ -123,8 +125,6 @@ class AssetResponse(ModelNormal):
             portfolio_index (int): Portfolio-scoped index of the asset
             entity_id (str): ID of the asset
             entity_name (str): Name of the asset
-            lat (float): Latitude of the asset
-            lng (float): Longitude of the asset
             labels ({str: (str, none_type)}): Metadata describing the asset
 
         Keyword Args:
@@ -158,6 +158,9 @@ class AssetResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            lat (float): Latitude of the asset. [optional]  # noqa: E501
+            lng (float): Longitude of the asset. [optional]  # noqa: E501
+            geometry (bool, date, datetime, dict, float, int, list, str, none_type): Geometry of a Polygon. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -189,8 +192,6 @@ class AssetResponse(ModelNormal):
         self.portfolio_index = portfolio_index
         self.entity_id = entity_id
         self.entity_name = entity_name
-        self.lat = lat
-        self.lng = lng
         self.labels = labels
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
@@ -212,7 +213,7 @@ class AssetResponse(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, portfolio_name, portfolio_index, entity_id, entity_name, lat, lng, labels, *args, **kwargs):  # noqa: E501
+    def __init__(self, portfolio_name, portfolio_index, entity_id, entity_name, labels, *args, **kwargs):  # noqa: E501
         """AssetResponse - a model defined in OpenAPI
 
         Args:
@@ -220,8 +221,6 @@ class AssetResponse(ModelNormal):
             portfolio_index (int): Portfolio-scoped index of the asset
             entity_id (str): ID of the asset
             entity_name (str): Name of the asset
-            lat (float): Latitude of the asset
-            lng (float): Longitude of the asset
             labels ({str: (str, none_type)}): Metadata describing the asset
 
         Keyword Args:
@@ -255,6 +254,9 @@ class AssetResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            lat (float): Latitude of the asset. [optional]  # noqa: E501
+            lng (float): Longitude of the asset. [optional]  # noqa: E501
+            geometry (bool, date, datetime, dict, float, int, list, str, none_type): Geometry of a Polygon. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -284,8 +286,6 @@ class AssetResponse(ModelNormal):
         self.portfolio_index = portfolio_index
         self.entity_id = entity_id
         self.entity_name = entity_name
-        self.lat = lat
-        self.lng = lng
         self.labels = labels
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
