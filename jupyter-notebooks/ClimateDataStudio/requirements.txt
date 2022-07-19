@@ -1,0 +1,5 @@
+plotly
+numpy
+pandas
+jupyter
+sust-api-client==0.0.19
