@@ -1,13 +1,13 @@
-FROM jupyter/minimal-notebook:2022-02-22
+FROM ubuntu:20.04
 
-ADD . /opt/dev-center
-ADD jupyter-notebooks/*.ipynb /home/jovyan/work
-
-RUN pip install --user -r /opt/dev-center/jupyter-notebooks/requirements.txt
-
-# uncomment following two lines to install sust-api-client
-# package from local source
-#USER root
-#RUN pip install --user /opt/dev-center/clients/python
-
-WORKDIR /home/jovyan/work
+RUN apt-get update
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y \
+    python3-pip \
+    jq \
+    libgdal-dev \
+    gdal-bin
+WORKDIR /app
+COPY . .
+RUN pip install rasterio==1.2.10
+RUN pip3 install -r requirements.txt
+# jupyter notebook --ip 0.0.0.0 --no-browser --allow-root

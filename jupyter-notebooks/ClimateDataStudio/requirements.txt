@@ -1,5 +1,11 @@
-plotly
-numpy
+numpy>=1.20
 pandas
+geopandas
+contextily
+folium
+matplotlib
+notebook
+mapclassify
+plotly
 jupyter
 sust-api-client==0.0.19
