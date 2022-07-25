@@ -10,4 +10,4 @@ WORKDIR /app
 COPY . .
 RUN pip install rasterio==1.2.10
 RUN pip3 install -r requirements.txt
-# jupyter notebook --ip 0.0.0.0 --no-browser --allow-root
+# docker run -v $PWD:/app -p 8888:8888 -it dev-center jupyter notebook --ip 0.0.0.0 --no-browser --allow-root

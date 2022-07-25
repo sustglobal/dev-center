@@ -1,0 +1,6 @@
+googlemaps
+jupyter
+numpy
+pandas
+plotly
+sust-api-client==0.0.19
