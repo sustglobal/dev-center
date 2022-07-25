@@ -1,7 +1,7 @@
 FROM jupyter/minimal-notebook:2022-02-22
 
 ADD . /opt/dev-center
-ADD jupyter-notebooks/*.ipynb /home/jovyan/work
+ADD jupyter-notebooks/*.ipynb /home/jovyan/work/
 
 RUN pip install --user -r /opt/dev-center/jupyter-notebooks/requirements.txt
 
