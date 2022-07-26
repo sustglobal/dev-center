@@ -139,7 +139,7 @@ This view shows the projected annual risk exposure for a particular asset up unt
 Fig 5: Forward looking time series
 </p>
 
-Use the `Projected Hazard` dropdown to toggle between the different hazards and this will change the graph. You can learn more about the units for the y-axis by looking at the table in the Quickstart Data Guide. You can check which asset is selected by looking below the first map on the dashboard, the Asset Type/Risk Heatmap, and see which address is written. You can select a different asset by clicking on that map, and that will change the forward looking time series graph.
+Use the `Projected Hazard` dropdown to toggle between the different hazards and this will change the graph. You can learn more about the units for the y-axis by looking at the table in the [Data Guide](./dataguide.html). You can check which asset is selected by looking below the first map on the dashboard, the Asset Type/Risk Heatmap, and see which address is written. You can select a different asset by clicking on that map, and that will change the forward looking time series graph.
 
 The data presented is the median of outputs from the climate models. The gray bounds represent the uncertainty of the climate model outputs, which show the lower bound (16th percentile) and upper bound (84th percentile). The exception is cyclones, where we use the mean, rather than the median, and we use a different lower and upper bound (± 1 standard deviation).
 By hovering over the time series line, you can see the specific value for risk exposure for that particular asset and the specific date (year).
@@ -244,11 +244,11 @@ The risk summaries are based on the average values of exposure across all assets
 For a selected scenario (SSP), we look at the maximum value of risk exposure over the 30 year time window for all hazards, aggregated by asset type. 
 We look at the maximum risk exposure value across the 30 year time horizon for all hazards, with the exception of sea level rise (SLR) and 2021-2100 for SLR as the input to the risk summary view.
 For a specific asset type, we look at the mean risk value per year for each hazard for all assets within that type. We repeat this across all the different asset types. This gives an average value of risk exposure across all types of assets for each year in the time window.
-For each hazard, we then pick the year with the maximum mean risk exposure value for each asset type. The mean risk value for that year is then used to determine the classification for that asset type as LOW, MEDIUM or HIGH risk based on the intervals listed in the Quickstart Data Guide. 
+For each hazard, we then pick the year with the maximum mean risk exposure value for each asset type. The mean risk value for that year is then used to determine the classification for that asset type as LOW, MEDIUM or HIGH risk based on the intervals listed in the [Data Guide](./dataguide.html). 
 
 #### Interpretation
 
-Note that the HIGH/MEDIUM/LOW classification is based on the intervals in the Quickstart Data Guide. Interpretation of the summary risk table varies with asset type (row), hazard and climate scenario as follows:
+Note that the HIGH/MEDIUM/LOW classification is based on the intervals in the [Data Guide](./dataguide.html). Interpretation of the summary risk table varies with asset type (row), hazard and climate scenario as follows:
 
 *Projected Hazard: Wildfire*: This means that over the next 30 years, there is at least one year where the maximum mean exposure of all the type X assets to Wildfire risk is [Medium] risk under the [High Emissions] scenario. 
 
