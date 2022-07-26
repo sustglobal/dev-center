@@ -8,4 +8,5 @@ notebook
 mapclassify
 plotly
 jupyter
+googlemaps
 sust-api-client==0.0.19
