@@ -46,7 +46,7 @@ An example of a portfolio CSV file can be found here: [demo portfolio](https://r
 | `entity_name`   | **Optional.** Name of the asset in the portfolio, could also be text string on the name of a city or location
 | `label:type`    | **Optional.** Type indicator for the asset. This could be a city or a company name or type of mine
 | `label:address` | **Optional.** Address of the asset.
-| `label:price`   | **Optional.** Value of asset. Expected to in the same denomination across the portfolio
+| `label:price`   | **Optional.** Value in USD of asset used to drive the "Value-at-Risk" portion of the Climate Explorer dashboard. Either a native float or USD currency format is accepted (e.g. 12345.00 or $12,345.00). Commas are optional in both cases.
 | `label:<KEY>`   | **Optional.** Additional labels (any column header prefixed with `label:`) are preserved in the results, and are not meaningful to Climate Explorer.
 
 

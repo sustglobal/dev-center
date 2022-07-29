@@ -51,7 +51,7 @@ Each of the supported fields in the portfolio CSV file are documented below:
 | `entity_name`   | **Optional.** Name of the asset in the portfolio, could also be text string on the name of a city or location
 | `label:type`    | **Optional.** Type indicator for the asset. This could be a city or a company name or type of mine
 | `label:address` | **Optional.** Address of the asset.
-| `label:price`   | **Optional.** Value in USD of asset.
+| `label:price`   | **Optional.** Value in USD of asset used to drive the "Value-at-Risk" portion of the Climate Explorer dashboard. Either a native float or USD currency format is accepted (e.g. 12345.00 or $12,345.00). Commas are optional in both cases.
 | `label:<KEY>`   | **Optional.** Additional labels (any column header prefixed with `label:`) are preserved in the results, and are not meaningful to Climate Explorer.
 
 Note that the geocodes (lat/lng coordinates) of all the physical assets in your portfolio are required. If you only have addresses and not the geocodes, you can use the [Mapbox Geocoding Playground](https://docs.mapbox.com/playground/geocoding/) to secure geocodes for a specific address. Alternately, you can also secure the geocodes from [Google Maps](https://support.google.com/maps/answer/18539?hl=en&co=GENIE.Platform%3DDesktop).
