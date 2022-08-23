@@ -5,7 +5,7 @@ toc: true
 
 ## Introduction
 
-This document goes through each graphic on the dashboard and explain the methodology behind it. This includes how to use and interpret the numbers, plus a written interpretation of the datasets. 
+This document goes through each graphic on the dashboard and explain the datasets behind it. This includes how to use and interpret the numbers, plus a written interpretation of the datasets. It should be read in conjunction with the [Data Guide](./dataguide.html).
 
 ## Scenario-based physical climate risk analysis
 
@@ -41,13 +41,13 @@ Fig 2: Risk heatmap
 
 This view shows the heatmap of forward-looking risk for a selected physical hazard type. We project physical risk over the 30 year window between 2022 and 2051 and look at the maximum risk exposure to a specific hazard for an asset. We use the maximum risk exposure value to color code the asset to LOW (Green), MEDIUM (Yellow), or HIGH (Red) risk categories. The top bar displays the legend, where each color indicates a specific risk class.
 
-The risk heatmap values change if you toggle between the different scenarios by using the `Climate Scenario` dropdown, and they vary by hazard, which you can change by using the `Projected Hazard` dropdown.
+The risk heatmap values change if you toggle between the different scenarios by using the `Climate Scenario` dropdown, and they vary by hazard, which you can change by using the `Projected Hazard` dropdown. The climate risk exposures change depending on the climate scenario. The risk heatmap is simply a visualization of the risk exposures. Maximum exposure values per hazard, as well as the heatmap coding ranges, are listed in the [Data Guide](./dataguide.html) in the Indicator Metadata and Summarization Labeling tables respectively.
 
 This view also acts as a ‘controller’ for the other views in this section on the dashboard - if you click on a specific asset on the map, the time series graphs in this section on the dashboard will change to show the data for that specific asset location. You can check which asset is selected by looking below the map at the address written. In this case, the selected asset is Wadsen Rd, Montgomery, AL, 36105, and it is the 0th asset in the input portfolio CSV.
 
 When hovering over a specific asset, you can see the data attributes for the specific asset, including the risk class, coordinates and index value.
 
-#### Methodology
+#### Data Description
 
 For a selected scenario (SSP), we identify the maximum value of risk exposure over the 30 year analysis time window for each asset, across each hazard.
 1. We look at the 30 year window (2022-2051) for each hazard. This is with the exception of sea level rise (SLR), with 2022-2100 being the SLR input to the risk summary view. This is to account for sea level rise being a longer term hazard, having more profound exposure over the second half of the century.
@@ -68,10 +68,10 @@ Fig 3: Bar chart showing the top 20 assets with the greatest risk exposure withi
 
 This allows you to quickly view all the addresses of assets that are most at risk. Toggle the ‘Projected Hazard’ dropdown to change the hazard, and this will change the bar chart accordingly.
 
-Check the units for the x-axis by looking at the table in the [Data Guide](./dataguide.html). You can hover over the bar chart to see the specific numeric projected risk value as well as the time horizon of assessment. The values in parentheses indicate the row index of the asset in the uploaded CSV file.
+Check the units for the x-axis by looking at the Indicator metadata table in the [Data Guide](./dataguide.html). You can hover over the bar chart to see the specific numeric projected risk value as well as the time horizon of assessment. The values in parentheses indicate the row index of the asset in the uploaded CSV file.
 
-#### Methodology
-This is identical to the methodology in the Risk Heatmap section above.
+#### Data Description
+This is identical to the dataset in the Risk Heatmap section above.
  
 For a selected scenario (SSP), we identify the maximum value of risk exposure over the 30 year analysis time window for each asset, across each hazard.
 1. We look at the 30 year window (2022-2051) for each hazard. This is with the exception of sea level rise (SLR), with 2021-2100 being the SLR input. This is to account for sea level rise being a longer term hazard, having more profound exposure over the second half of the century.
@@ -115,7 +115,7 @@ Check the units for the y-axis by looking at the table in the [Data Guide](./dat
 
 By hovering over the time series line, you can see the specific numeric value on hazard severity for that particular asset, as well as the month and year of the observed event.
 
-#### Interpretation
+#### Data Description
 The graphs vary depending on the hazard, as follows.
 
 Historic Hazard: Wildfire
@@ -143,6 +143,11 @@ Use the `Projected Hazard` dropdown to toggle between the different hazards and 
 
 The data presented is the median of outputs from the climate models. The gray bounds represent the uncertainty of the climate model outputs, which show the lower bound (16th percentile) and upper bound (84th percentile). The exception is cyclones, where we use the mean, rather than the median, and we use a different lower and upper bound (± 1 standard deviation).
 By hovering over the time series line, you can see the specific value for risk exposure for that particular asset and the specific date (year).
+Two alternate views for the time series are provided: one for decadal summaries and for for relative change summaries.
+
+#### Data Description
+
+The time series view allows for annual time series projections from the current year to the close of the century. An alternate view is the decadal summary that provides a smoother projection over decadal windows with 5 year offsets covering the next 30 years. Another alternate view supported is the relative change that summarizes the risk exposure over the 1980-2010 window and the 2020-2050 windows and highlights the percentage increase/decrease in the forward looking time window relative to the historic window. 
 
 #### Interpretation
 The graph varies depending on the hazard and the scenario, as follows.
@@ -180,9 +185,9 @@ This view also acts as a ‘controller’ for the normalized multi-hazard time s
 
 When hovering over a specific asset, you can see the data attributes for the specific asset, including the risk class, coordinates and index value.
 
-#### Methodology
+#### Data Description
 
-For wildfire, flood, sea level rise and drought, we project physical risk over the 30 year window between 2022 and 2051 and look at the maximum risk exposure to a specific hazard for an asset. The risks are normalized based on peak risk values of the risk exposure distribution. We use the maximum risk exposure value to color code the asset to LOW (Green), MEDIUM (Yellow), or HIGH (Red) risk categories. 
+For wildfire, flood, sea level rise and drought, we project physical risk over the 30 year window between 2022 and 2051 and look at the maximum risk exposure to a specific hazard for an asset. The risks are normalized based on peak risk values of the risk exposure distribution. We use the maximum risk exposure value to color code the asset to LOW (Green), MEDIUM (Yellow), or HIGH (Red) risk categories. See the [Data Guide](./dataguide.html) for the normalization values (the column val_norm) which is in the Indicator Metadata table.
 
 ### View projected risk exposure to your assets across all hazards
 
@@ -200,8 +205,9 @@ By selecting a specific asset, you can explore the risk over the 2021-2100 time 
 
 By hovering over each of the lines, you can see the specific value of risk exposure for a specific hazard at a certain point in time. You can check which asset is selected by looking at the multi-hazard heatmap (to the left on the dashboard), and see which address is written. You can select a different asset by clicking on the Multi-hazard Heatmap, and this changes the normalized multi-hazard time series.
 
-Methodology
-For each hazard, we divide the time series values by the normalization value to get the normalized time series. All values for that specific hazard are normalized to the 0.0 to 1.0 range. In select years and locations where the values exceed the normalization value, those extreme values are set to 1.0 for the time series. 
+#### Data Description
+
+For each hazard, we divide the time series values by the normalization value to get the normalized time series. All values for that specific hazard are normalized to the 0.0 to 1.0 range. In select years and locations where the values exceed the normalization value, those extreme values are set to 1.0 for the time series. See the [Data Guide](./dataguide.html) for the normalization values (the column val_norm) which is in the Indicator Metadata table.
 
 See the [Data Guide](./dataguide.html) for the normalization values (the column `val_norm`).
 
@@ -239,7 +245,7 @@ The summary risk values change if you toggle between the different scenarios by 
 
 The risk summaries are based on the average values of exposure across all assets of a specific type. Asset types can be manually changed to suit your needs. In this example, they show the different types of real estate, such as industrial, office or multifamily buildings. However, you could change this to be countries or cities, and this is done by creating a column called label:type in the input portfolio CSV, and inputting values for each asset. As a result, the summary risk table shows the summary risk aggregated by your chosen types, such as country or city. Refer to the User Guide section `Uploading a portfolio` for more information on this.
 
-#### Methodology
+#### Data Description
 
 For a selected scenario (SSP), we look at the maximum value of risk exposure over the 30 year time window for all hazards, aggregated by asset type. 
 We look at the maximum risk exposure value across the 30 year time horizon for all hazards, with the exception of sea level rise (SLR) and 2021-2100 for SLR as the input to the risk summary view.
@@ -282,7 +288,7 @@ The values below the donut charts tell you the total portfolio value and the est
 
 In cases where the dataset does not have an asset value associated with individual assets, all assets are by default assumed to have the same value of $1m. You can add asset value in the intake portfolio CSV. Refer to the User Guide section ‘Uploading a portfolio’ for more information. Asset types can also be manually changed to suit your needs.
 
-#### Methodology
+#### Data Description
 
 For each asset, we assume that 40% of the value (`price`) of the asset is the maximum value that can be at risk of a specific hazard. We then multiply 40% by the maximum probability of risk exposure to that hazard over the 30 year time horizon. The result gives us the percentage of the asset value that is at risk. For example, if an asset has a projected 50% maximum probability of exposure to a certain hazard over the 30 year window, we calculate that 40% of 50% is 20%, so therefore 20% of the asset’s value is at risk.
 To compute each slice of the donut chart, we add up the Value at Risk for each asset of the same type. Therefore, each slice of the donut indicates the aggregate Value at Risk from a specific hazard for a specific asset type.
@@ -303,7 +309,7 @@ This view can be accessed by selecting ‘Loss Across Scenarios’ under the ‘
 
 We expect correlation between the scenarios (SSPs) and the estimated loss to be dependent on the geospatial distribution of the assets in the portfolio for each asset type. In this view, estimated loss is expressed in terms of a percentage of the total portfolio, but you can click on the ‘Donut Graph View’ dropdown to change the units to millions of dollars.
 
-#### Interpretation
+#### Data Description
 This view varies depending on the scenario and projected hazard as follows.
 
 *Projected Hazard: Wildfire*: All assets of type X in this portfolio are projected to have an aggregated Value at Risk of [Wildfire] that is $[8m] across the next 30 years under the [High Emissions] scenario, $[6m] under the [Middle of the Road] scenario and $[4m] under the [Strong Mitigation] scenario.
