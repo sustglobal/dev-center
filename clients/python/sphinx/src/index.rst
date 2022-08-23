@@ -114,6 +114,7 @@ Summary datasets can also be filtered by summary window. Sust Global provides su
     df = pd.DataFrame(sm.to_dicts())
 
 These examples showcase how you can access risk exposure datasets and load them to dataframes as an entry point for exploration data analysis.
+
 Additional information is available in the `Sust Global Dev Center <https://developers.sustglobal.com>`_.
 
 
