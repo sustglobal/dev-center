@@ -75,6 +75,8 @@ well. An example of this is available just above.
 +-----------------+--------------------------+
 | wildfire        | fire_kbdi_susceptibility |
 +-----------------+--------------------------+
+| wildfire        | unified_prob             |
++-----------------+--------------------------+
 | wildfire        | obs_score                |
 +-----------------+--------------------------+
 | flood_potential | inland_flood_prob        |
@@ -84,6 +86,10 @@ well. An example of this is available just above.
 | water_stress    | spei_norm                |
 +-----------------+--------------------------+
 | water_stress    | score                    |
++-----------------+--------------------------+
+| water_stress    | unified_score            |
++-----------------+--------------------------+
+| water_stress    | obs_score                |
 +-----------------+--------------------------+
 | sea_level_rise  | change                   |
 +-----------------+--------------------------+
