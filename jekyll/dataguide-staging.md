@@ -26,14 +26,14 @@ Sust Global’s data product provides asset level exposure to specific climate r
 
 ## Wildfire
 
-### Description
+**Description**
 
 Wildfire is an uncontrolled fire, caused by a combination of combustible fuels (such as dead, dry wood) and ignition sources (such as human activity or lightning).  It is strongly influenced by prevailing weather conditions, and typically occurs where human activity meets an accumulation of wild fuel.
 
-### Sample Assessment
+**Sample Assessment**
 
 <p align="center">
-<img height="300" src="assets/images/dataguide/wildfire_unified_prob_usa_1980_2020_v_2020-2050.png">
+<img height="300" src="assets/images/dataguide/wildfire_unified_prob_usa_1980_2020_v_2022-2052.png">
 </p>
 
 <p align="center">
@@ -42,18 +42,18 @@ Fig D1: United States Counties, Projected mean annual wildfire risk exposure ove
 
 | State | County Name | Score (1980-2020) | Score (2022-2052) | Percent Change | 
 | - | - | - | - | - |
-| Idaho | Custer |0.0336 | 0.0819 |143.7490 |
-| California | Colusa | 0.073 |	0.0811	|11.1143 |
-| California | Glenn | 0.0618	|0.0716| 15.8886 |
-| Deer Lodge | Montana | 0.0218 | 0.0590 | 	170.1383 |
-| Valley | Idaho | 0.0296 | 0.0542 | 83.2560 |
+| Idaho | Custer |0.033 | 0.082 |143.75 |
+| California | Colusa | 0.073 |	0.081	|11.12 |
+| California | Glenn | 0.062	|0.072| 15.89 |
+| Deer Lodge | Montana | 0.022 | 0.059 | 	170.14 |
+| Valley | Idaho | 0.0296 | 0.054 | 83.2560 |
 
 <p>
 Table 1A: US Counties with top wildfire exposure projected over upcoming 30 years
 </p>
 
 <p align="center">
-<img height="500" src="assets/images/dataguide/wildfire_unified_prob_india_1980_2020_v_2020-2050.png">
+<img height="300" src="assets/images/dataguide/wildfire_unified_prob_india_1980_2020_v_2022-2052.png">
 </p>
 
 <p align="center">
@@ -62,18 +62,18 @@ Fig D2: Indian towns, projected mean annual wildfire risk exposure over 1980-201
 
 | Region Name | Score (1980-2020) | Score (2022-2052) | Percent Change | 
 | - | - | - | - | 
-| Bastar | 0.1514 | 0.0827 | -45.385 |
-| Bijapur | 0.1259| 0.0707| -43.805 |
-| Dantewada | 0.1004 | 0.0750 | -25.25 |
-| Garhchiroli | 0.1493 | 0.0775 | -48.047 |
-| Kondagaon | 0.1005| 0.0693 | -31.055 |
+| Bastar | 0.151 | 0.083 | -45.39 |
+| Bijapur | 0.126| 0.071| -43.81 |
+| Dantewada | 0.1 | 0.075 | -25.25 |
+| Garhchiroli | 0.15 | 0.078 | -48.05 |
+| Kondagaon | 0.101| 0.07 | -31.06 |
 
 <p>
 Table 1B: Indian towns with top wildfire exposure projected over upcoming 30 years
 </p>
 
 
-### Indicators
+**Indicators**
 
 We present 4 indicators for wildfire: observed wildfire, burned area fraction, wildfire susceptibility and unified wildfire exposure. 
 
@@ -86,7 +86,7 @@ Each of the indicators: observed active fires, burned area fraction and the wild
 
 The wildfire projections from Sust Global draw on the latest, cutting edge simulations from the climate community of both fire occurrence and fire weather.  We then perform several value-adding steps, including using neural networks for super-resolving our estimates, as well as calibrating our models using millions of observations of historic fire.  We use native-resolution satellite imagery to fit and validate our models, and our unified indicator provides a more accurate multi-model ensemble view of fire risk.  Finally, our models are designed to be accurate globally, as opposed to many products that are restricted to only specific regions.
 
-### Data Usage
+**Data Usage**
 
 The burned area fraction is most suitable for when assessing wildfire exposure to the asset as well as burnable area in the region around the asset. Wildfire susceptibility is suitable when accounting for near term and long term risk exposure potential. The unified indicator is more suited as a single indicator of wildfire exposure probability.
 
@@ -96,14 +96,14 @@ On the Climate Explorer dashboard, we present the unified wildfire exposure indi
 
 ## Inland Flood
 
-### Description
+**Description**
 
 Inland flooding captures the likelihood of the asset being exposed to flooding from inland storms.
 
-### Sample Assessment
+**Sample Assessment**
 
 <p align="center">
-<img height="300" src="assets/images/dataguide/flood_usa_1980_2020_v_2020-2050.png">
+<img height="300" src="assets/images/dataguide/flood_usa_1980_2020_v_2022-2052.png">
 </p>
 
 <p align="center">
@@ -112,10 +112,10 @@ Fig D3: United States Counties, Projected mean annual flood risk exposure over 2
 
 | State | County Name | Score (1980-2020) | Score (2022-2052) | Percent Change | 
 | - | - | - | - | - |
-| Panola | Mississippi | 0.0 | 0.081 | inf |
+| Panola | Mississippi | 0.0 | 0.081 | N/A |
 | Garza | Texas | 0.029 | 0.072 | 141.3|
-| Sutter | California | 0.0 | 0.07 | inf |
-| Outagamie | Wisconsin | 0.07 | 0.069 | -1.020|
+| Sutter | California | 0.0 | 0.07 | N/A |
+| Outagamie | Wisconsin | 0.07 | 0.069 | -1.02|
 | Clay | Illinois | 0.043 | 0.064 | 47.619|
 
 <p>
@@ -123,7 +123,7 @@ Table 2A: US Counties with top flood exposure projected over upcoming 30 years
 </p>
 
 <p align="center">
-<img height="500" src="assets/images/dataguide/flood_england_1980_2020_v_2020-2050.png">
+<img height="500" src="assets/images/dataguide/england_floods_585_2022_2052.png">
 </p>
 
 <p align="center">
@@ -134,15 +134,15 @@ Fig D4: English Counties, Projected mean annual flood risk exposure over 2022-20
 | - | - | - | - | 
 | Aberdeen City | 	0.12 | 0.06 | -50.0| 
 | Bolton | 0.004 | 0.036 | 800.0| 
-| Manchester | 0.003 | 0.032 | 800.00| 
-| Essex | 0.0 | 0.029 | inf| 
-| Manchester | 0.0 | 0.022 | inf| 
+| Manchester | 0.003 | 0.032 | 800.0| 
+| Essex | 0.0 | 0.029 | N/A| 
+| Manchester | 0.0 | 0.022 | N/A| 
 
 <p>
 Table 2B: England counties with top flood exposure projected over upcoming 30 years
 </p>
 
-### Indicators
+**Indicators**
 
 We present two indicators: observed flooding and flood potential
 1. **Observed floods**: Indicates whether flood was observed in a given year by satellites at the location of an asset. It is derived from NASA MODIS data, for the period 2012 to present.  
@@ -152,7 +152,7 @@ The output metric we use for inland flooding exposure ranges from 0 (low risk) t
 
 We only cover only SSP5-RCP8.5 at the moment in the flood potential indicator.
 
-### Data Usage
+**Data Usage**
 
 We count the number of years where floods exceed a probability threshold (5% in this case) over the forward looking window (5 yr/15 yr/30 yr) and use that count to categorize the asset to LOW/MED/HIGH. LOW would be values between 0 and 1, MED would be values 2 and 3 and for assets with >3 years of flooding potential exceeding 5% probability, we would set to HIGH.
 
@@ -162,59 +162,54 @@ The flood projections are hindcast over the range of 1980-2020 and benchmarked a
 
 ## Tropical Cyclone
 
-### Description
+**Description**
 
 Tropical cyclones, also referred to as hurricanes and typhoons, are one of the costliest natural disasters fueled by climate change. Since 1980, tropical cyclones in the U.S. have caused $997 billion in damages (NOAA), exceeding damages from all other weather disasters. Cyclone impacts can be widespread, including coastal and inland flooding and wind damage. These damages can directly affect assets as well as critical local infrastructure.
 
-### Sample Assessment
+**Sample Assessment**
 
 <p align="center">
-<img height="300" src="assets/images/dataguide/usa_cyclone_585.png">
+<img height="300" src="assets/images/dataguide/cyclones_usa_1980_2020_v_2022-2052.png">
 </p>
 
 <p align="center">
-Fig D5: United States Counties, Projected mean annual cyclone risk exposure over 2022-2052 with SSP5-RCP8.5 scenario.
+Fig D5: United States Counties, Projected mean annual cyclone risk exposure over 1980-2010 and 2022-2052 with SSP5-RCP8.5 scenario.
 </p>
 
 
-| State | County Name | 
-| - | - | 
-| North Carolina | Dare | 
-| North Carolina | Hyde |
-| North Carolina | Carteret | 
-| North Carolina | Tyrrell |
-| North Carolina | Pamlico |
-| North Carolina | Craven | 
-| North Carolina | Craven |
+| State | County Name | Score (1980-2020) | Score (2022-2052) | Percent Change | 
+| - | - | - | - | - |
+| North Carolina | Dare | 0.317 | 0.302 | -4.36 |
+| North Carolina | Hyde | 0.296 | 0.28 | -5.55 |
+| North Carolina | Carteret | 0.286 | 0.361 | -8.92 |
+| North Carolina | Tyrell | 0.243 | 0.25 | 2.98 |
+| North Carolina | Pamilco | 0.27 | 0.247 | -8.35 |
 
 <p>
-Table 3A: US Counties with top cyclone exposure
+Table 3A: US Counties with top cyclone exposure over the upcoming 30 years
 </p>
 
 <p align="center">
-<img height="300" src="assets/images/dataguide/se_asia_cyclone_585.png">
+<img height="300" src="assets/images/dataguide/cyclones_india_1980_2020_v_2022-2052.png">
 </p>
 
 <p align="center">
-Fig D6: South East Asia Towns, Projected mean annual cyclonerisk exposure over 2022-2052 with SSP5-RCP8.5 scenario.
+Fig D6: Indian Towns, Projected mean annual cyclone risk exposure over 1980-2010 and 2022-2052 with SSP5-RCP8.5 scenario.
 </p>
 
 
-| Township | Locale | 
-| - | - | 
-| Núi Thành | Tam Anh Bắc | 
-| Phú Ninh | Tam Đại |
-| Núi Thành | Tam Anh Nam | 
-| Núi Thành | Tam Hải |
-| Núi Thành | Tam Hòa |
-| Núi Thành | Tam Xuân II | 
-| Lý Sơn | An Hả |
+| Region Name | Score (1980-2020) | Score (2022-2052) | Percent Change | 
+| - | - | - | - |
+| Puri | 0.25 | 0.233 | -6.56 |
+| Srikakulam | 0.265 | 0.245 | -7.39 |
+| Visakhapatnam | 0.276| 0.257 | -6.92 |
+| Vizianagaram | 0.26 | 0.236 | -9.06 |
 
 <p>
-Table 3B: South East Asian Townships with top cyclone exposure
+Table 3B: Indian Towns with top cyclone exposure over the upcoming 30 years
 </p>
 
-### Indicators
+**Indicators**
 
 We provide two indicators, one for observed cyclone exposure and another for projected cyclone frequency. 
 1. **Observed tropical cyclones**: we use cyclone tracks from the International Best Track Archive for Climate Stewardship (IBTrACS). The IBTrACS archive combines tropical cyclone datasets from global agencies and harmonizes them into a single dataset. It is endorsed by the World Meteorological Organization as the official data source for cyclone track data. For observed tropical cyclones, we filter points to only include Category 3, 4, and 5 storm points. We then assume a constant ‘impact radius’ of 150 miles/ 241km.
@@ -224,7 +219,7 @@ For forward-looking cyclone exposure, Sust Global combines the latest CMIP6-base
 
 The CMIP6-based cyclone track simulations are drawn from research led by Dr. Malcolm Roberts of the UK Met Office ([technical reference](https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2020GL088662)). The simulations are based on CMIP6 HighResMIP simulations with resolutions as high as 25km. The CMIP6 HighResMIP project is co-chaired by Roberts. The authors applied two different cyclone track algorithms to determine when an input set of CMIP6 oceanic and atmospheric conditions over time and space constitutes a high likelihood of a tropical cyclone track.
 
-### Data Usage
+**Data Usage**
 
 We have identified three regions for model evaluation known to have high historical exposure to extreme cyclones: the Gulf of Mexico, South Asia, and China. We have used these regions to benchmark and calibrate risk exposure to the different categories of HIGH, MEDIUM and LOW
 
@@ -232,57 +227,54 @@ For forward looking cyclone exposure, our methodology translates these storm tra
 
 ## Sea Level Rise
 
-### Description
+**Description**
 
 This hazard refers to rising sea levels. The major physical impacts of a rise in sea level include erosion of beaches, inundation of deltas as well as flooding and loss of many marshes and wetlands.
 
-### Sample Assessment
+**Sample Assessment**
 
 <p align="center">
-<img height="300" src="assets/images/dataguide/usa_SLR_585.png">
+<img height="300" src="assets/images/dataguide/SLR_usa_1980_2020_v_2022-2052.png">
 </p>
 
 <p align="center">
-Fig D7: United States Counties, Projected mean annual sea level rise risk exposure over 2022-2052 with SSP5-RCP8.5 scenario.
+Fig D7: United States Counties, Projected mean annual sea level rise risk exposure over 1980-2010 and 2022-2052 with SSP5-RCP8.5 scenario.
 </p>
 
-| State | County Name | 
-| - | - | 
-| New Jersey | Ocean | 
-| New Jersey | Cumberland |
-| New Jersey | Burlington | 
-| New Jersey | Atlantic |
-| Maryland | Wicomico |
-| Virginia | Northampton | 
-| Maryland | Caroline |
+| State | Score (1980-2020) | Score (2022-2052) | Percent Change | 
+| - | - | - | - |
+| New Jersey| 0.158 | 0.284 | 78.77 |
+| Pennsylvania| 0.131 | 0.283 | 116.83 |
+| Delaware| 0.158 | 0.283 | 79.11 |
+| Virginia| 0.159 | 0.283 | 77.88 |
+| Maryland| 0.159 | 0.283 | 78.11 |
+
 
 <p>
-Table 4A: US Counties with top sea level rise exposure
+Table 4A: US States with top sea level rise exposure over the upcoming 30 years
 </p>
 
 <p align="center">
-<img height="300" src="assets/images/dataguide/india_SLR_585.png">
+<img height="300" src="assets/images/dataguide/SLR_india_1980_2020_v_2022-2052.png">
 </p>
 
 <p align="center">
-Fig D8: Indian towns, Projected mean annual sea level rise risk exposure over 2022-2052 with SSP5-RCP8.5 scenario.
+Fig D8: Indian towns, Projected mean annual wildfire risk exposure over 1980-2010 and 2022-2052 with SSP5-RCP8.5 scenario.
 </p>
 
-| District | City | 
-| - | - | 
-| 24 Parganas | North 24 Parganas| 
-| 24 Parganas | South 24 Parganas |
-| Purba Medinipur | Tamluk | 
-| Bhadrak | Bhadrak |
-| Baleshwar | Baleshwar |
-| Kendrapara | Kendrapara | 
-| Puri | Puri |
+| State | Score (1980-2020) | Score (2022-2052) | Percent Change | 
+| - | - | - | - |
+| Baleshwar| 0.186 | 0.216 | 15.92 |
+| Bhadrak| 0.186 | 0.216 | 15.92 |
+| Jagatsinghapur| 0.183 | 0.212 | 15.93 |
+| Kendrapara| 0.186 | 0.216 | 15.92 |
+| North 24 Parganas| 0.189 | 0.22 | 16.84 |
 
 <p>
-Table 4B: Indian towns with top sea level rise exposure
+Table 4B: Indian towns with top sea level rise exposure over the upcoming 30 years
 </p>
 
-### Indicator
+**Indicator**
 
 The sea level rise indicator refers to the change in sea level from the changing climate across different climate scenarios. We base our modeling of projected sea level rise on both climate model simulations and an asset’s distance to the coast. Projected sea level rise from CMIP6 climate models incorporates the effects of thermal expansion from warming of the ocean, since water expands as it warms, which is expected to be the primary component of future sea level rise. The models do not incorporate the secondary contributions of melting glaciers and ice caps since they cannot reliably simulate them, so the sea level simulations are conservative estimates of total sea level rise. The sea level rise is calculated by combining the monthly CMIP6 local sea level fluctuations due to ocean dynamics and global sea level rise from thermal expansion. We center the sea level rise over the baseline period 1980-2010. 
 
@@ -292,57 +284,54 @@ The models do not incorporate the secondary contributions of melting glaciers an
 
 ## Water Stress
 
-### Description
+**Description**
 
 Water is a requirement for societal development and progress. Water availability, or in its absence water scarcity, plays a critical role across sectors, including manufacturing, mining, agriculture, and electricity generation. Climate change coupled with increasing demand will have substantial impacts on water availability across the globe. Rigorous, high resolution water supply and demand data is therefore needed to enable reliable assessment of companies’ water scarcity exposure directly and throughout their supply chains. Projections of future water availability can help companies and investors prepare for the complex economic and social challenges related to water stress.
 
-### Sample Assessment 
+**Sample Assessment**
 
 <p align="center">
-<img height="300" src="assets/images/dataguide/usa_waterstress_585.png">
+<img height="300" src="assets/images/dataguide/water_stress_unified_score_usa_1980_2020_v_2022-2052.png">
 </p>
 
 <p align="center">
-Fig D9: United States Counties, Projected mean annual water stress exposure over 2022-2052 with SSP5-RCP8.5 scenario.
+Fig D9: United States Counties, Projected mean annual water stress risk exposure over 1980-2010 and 2022-2052 with SSP5-RCP8.5 scenario.
 </p>
 
-| State | County Name | 
-| - | - | 
-| Nebraska | Holt | 
-| Nebraska | Cherry |
-| Montana | Park | 
-| Montana | Pondera |
-| Montana | Powder River |
-| Montana | Rosebud| 
-| Montana | Silver Bow |
+| State | County Name | Score (1980-2020) | Score (2022-2052) | Percent Change | 
+| - | - | - | - | - |
+| California | Imperial | 0.527 | 0.577 | 9.6 |
+| Arizona | Yuma | 0.496 | 0.556 | 11.53 |
+| California | San Diego | 0.531 | 0.549 | 3.51 |
+| California | Riverside | 0.532 | 0.548 | 2.97 |
+| California | Orange | 0.527 | 0.538 | 2.12 |
 
 <p>
 Table 5A: US Counties with top water stress exposure
 </p>
 
 <p align="center">
-<img height="300" src="assets/images/dataguide/aus_waterstress_585.png">
+<img height="300" src="assets/images/dataguide/water_stress_unified_score_australia_1980_2020_v_2022-2052.png">
 </p>
 
 <p align="center">
-Fig D10: Australian towns, Projected mean annual water stress exposure over 2022-2052 with SSP5-RCP8.5 scenario.
+Fig D10: Australian Towns, Projected mean annual water stress risk exposure over 1980-2010 and 2022-2052 with SSP5-RCP8.5 scenario.
 </p>
 
-| Township | Locale | 
-| - | - | 
-| South Australia | Playford| 
-| South Australia | Prospect |
-| Victoria | Gannawarra | 
-| New South Wales | Jerilderie |
-| South Australia | Marion |
-| South Australia | Mitcham | 
-| South Australia | Onkaparinga |
+| Township | Locale | Score (1980-2020) | Score (2022-2052) | Percent Change | 
+| - | - | - | - | - |
+| South Australia | Playford| 0.344 | 0.642 | 86.43 |
+| South Australia | Prospect | 0.275 | 0.641 | 132.71 |
+| Victoria | Gannawarra | 0.302 | 0.641 | 112.23 |
+| New South Wales | Jerilderie | 0.302 | 0.638 | 86.14 |
+| South Australia | Marion | 0.539 | 0.638 | 18.27 |
+
 
 <p>
-Table 5B: Australian cities with top water stress exposure
+Table 5B: Australian towns with top water stress exposure over the upcoming 30 years
 </p>
 
-### Indicators
+**Indicators**
 
 We provide 4 indicators: historic water stress, projected droughts, projected water stress score, projected unified water stress.
 
@@ -355,7 +344,7 @@ Water stress scores account for the availability and consumption of water at the
 
 Our water stress indicator is based on the world leading WRI water stress methodology ([link](https://www.wri.org/data/aqueduct-global-maps-30-data)) and our drought indicator is based on the latest frontier climate research from the CMIP6([link](https://link.springer.com/article/10.1007/s00382-017-3740-8)). 
 
-### Data Usage
+**Data Usage**
 
 A key avenue for mitigating water stress not considered in the modeling framework is the transport of water between watersheds. Such transport can help meet water demand, but it comes at a cost. Transporting water requires large amounts of energy, increasing greenhouse gas emissions, along with the development of transportation infrastructure. Water transport also carries with it a host of geopolitical and equity considerations. 
 
@@ -365,72 +354,68 @@ A key avenue for mitigating water stress not considered in the modeling framewor
 
 ## Heatwave
 
-### Description
+**Description**
 
 Heatwaves represent an extended period of perilously warm weather at a specific location or region.
 
-### Sample Assessment
+**Sample Assessment**
 
 <p align="center">
-<img height="300" src="assets/images/dataguide/usa_heatwave_585.png">
+<img height="300" src="assets/images/dataguide/heatwaves_usa_1980_2020_v_2022-2052.png">
 </p>
 
 <p align="center">
-Fig D11: United States Counties, Projected mean annual heatwave exposure over 2022-2052 with SSP5-RCP8.5 scenario.
+Fig D11: United States Counties, Projected mean annual heatwaves risk exposure over 2022-2052 with the SSP5-RCP8.5 scenario.
 </p>
 
 
-| State | County Name | 
-| - | - | 
-| Florida | Monroe | 
-| Florida | Miami-Dade |
-| Florida | Collier | 
-| Florida | Palm Beach |
-| Texas | Nueces |
-| Texas | Brazoria| 
-| Louisiana | Terrebonne |
+| State | County Name | Score (1980-2020) | Score (2022-2052) | Percent Change | 
+| - | - | - | - | - |
+| Florida | Miami-Dade | 0.69 | 38.12 | 449.83 |
+| Idaho | Cassia | 7.88 | 34.18 | 333.29 |
+| Utah | Summit | 8.107 | 34.13 | 325.86 |
+| Utah | Morgan | 8.1 | 34.083 | 320.78 |
+| Utah | Box Elder | 8.04 | 33.72 | 318.96 |
 
 <p>
 Table 6A: US Counties with top heatwave exposure
 </p>
 
 <p align="center">
-<img height="300" src="assets/images/dataguide/india_heatwave_585.png">
+<img height="300" src="assets/images/dataguide/heatwaves_india_1980_2020_v_2022-2052.png">
 </p>
 
 <p align="center">
-Fig D12: Indian towns, Projected mean annual heatwave exposure over 2022-2052 with SSP5-RCP8.5 scenario.
+Fig D12: Indian towns, Projected mean annual heatwaves risk exposure over 2022-2052 with the SSP5-RCP8.5 scenario.
 </p>
 
-| Township | Locale | 
-| - | - | 
-| Lakshadweep | Kavaratti| 
-| Lakshadweep | Amini Island |
-| Lakshadweep | Lakshadweep | 
-| Nicobar Island | Nicobar Island |
-| South Andaman | South Andaman |
-| Thiruvananthapuram | Chirayinkil | 
-| Thiruvananthapuram | Nedumangad |
+| Region Name | Score (1980-2020) | Score (2022-2052) | Percent Change | 
+| - | - | - | - |
+| Jaipur | 7.85 | 21.3 | 171.59 |
+| Lakshwadeep | 8.2 | 90.8 | 997.28 |
+| Nagpur | 7.85 | 21.51 | 174.1 |
+| Sikar | 7.8 | 21.2 | 173.07 |
+| Tonk | 7.8 | 21.65 | 178.3 |
 
 <p>
 Table 6B: Indian cities/towns with top heatwave exposure
 </p>
 
-### Indicator
+**Indicator**
 
 We calculate the number of days per year exceeding a temperature threshold. The temperature threshold at a given location is based on the 98th percentile of daily conditions during a baseline period between 1980 and 2100. Because this temperature threshold varies spatially, the heatwave metric indicates anomalously high temperatures relative to what is typical at the local level. 
 
-### Data Usage
+**Data Usage**
 
 The heatwave indicator is derived from the world’s frontier climate research as part of the CMIP6. The user can interpret this metric at a specific asset location or region as the number of days in a calendar year of unusually warm weather
 
 ## Fundamental Variables
 
-### Description
+**Description**
 
 These fundamental indicators represent fundamental climate variables aggregated annually at a specific location or region across different scenarios from 1980 to 2100.
 
-### Indicators
+**Indicators**
 
 We present 3 fundamental indicators:
 
@@ -438,7 +423,7 @@ We present 3 fundamental indicators:
 2. **Annual Precipitation**: This fundamental indicator represents total precipitation, including rain and rain-equivalent snowfall, for a given year. 
 3. **Extreme Precipitation**: This fundamental indicator represents the number of days in a given year where precipitation exceeds 2 inches (50.8mm). 
 
-### Data Usage
+**Data Usage**
 The fundamental indicators are derived from the world’s frontier climate research as part of the CMIP6. The user can interpret this metric as a measure of fundamental climate. 
 
 ## Summarization Labeling
