@@ -42,11 +42,11 @@ Fig D1: United States Counties, Projected mean annual wildfire risk exposure ove
 
 | State | County Name | Score (1980-2020) | Score (2022-2052) | Percent Change | 
 | - | - | - | - | - |
-| Idaho | Custer |0.033 | 0.082 |143.75 |
-| California | Colusa | 0.073 |	0.081	|11.12 |
-| California | Glenn | 0.062	|0.072| 15.89 |
-| Deer Lodge | Montana | 0.022 | 0.059 | 	170.14 |
-| Valley | Idaho | 0.0296 | 0.054 | 83.2560 |
+| Idaho | Custer |0.03 | 0.08 |143 |
+| California | Colusa | 0.07 |	0.08	|11 |
+| California | Glenn | 0.06	|0.07| 15 |
+| Deer Lodge | Montana | 0.02 | 0.06 | 	170 |
+| Valley | Idaho | 0.03 | 0.05 | 83 |
 
 <p>
 Table 1A: US Counties with top wildfire exposure projected over upcoming 30 years
@@ -62,11 +62,11 @@ Fig D2: Indian towns, projected mean annual wildfire risk exposure over 1980-201
 
 | Region Name | Score (1980-2020) | Score (2022-2052) | Percent Change | 
 | - | - | - | - | 
-| Bastar | 0.151 | 0.083 | -45.39 |
-| Bijapur | 0.126| 0.071| -43.81 |
-| Dantewada | 0.1 | 0.075 | -25.25 |
-| Garhchiroli | 0.15 | 0.078 | -48.05 |
-| Kondagaon | 0.101| 0.07 | -31.06 |
+| Bastar | 0.15 | 0.08 | -45 |
+| Bijapur | 0.12| 0.07| -43 |
+| Dantewada | 0.1 | 0.08 | -25 |
+| Garhchiroli | 0.15 | 0.08 | -48 |
+| Kondagaon | 0.1| 0.07 | -31 |
 
 <p>
 Table 1B: Indian towns with top wildfire exposure projected over upcoming 30 years
@@ -112,11 +112,11 @@ Fig D3: United States Counties, Projected mean annual flood risk exposure over 2
 
 | State | County Name | Score (1980-2020) | Score (2022-2052) | Percent Change | 
 | - | - | - | - | - |
-| Panola | Mississippi | 0.0 | 0.081 | N/A |
-| Garza | Texas | 0.029 | 0.072 | 141.3|
+| Panola | Mississippi | 0.0 | 0.08 | N/A |
+| Garza | Texas | 0.03 | 0.07 | 141|
 | Sutter | California | 0.0 | 0.07 | N/A |
-| Outagamie | Wisconsin | 0.07 | 0.069 | -1.02|
-| Clay | Illinois | 0.043 | 0.064 | 47.619|
+| Outagamie | Wisconsin | 0.07 | 0.07 | -1|
+| Clay | Illinois | 0.04 | 0.06 | 47|
 
 <p>
 Table 2A: US Counties with top flood exposure projected over upcoming 30 years
@@ -132,11 +132,11 @@ Fig D4: English Counties, Projected mean annual flood risk exposure over 2022-20
 
 | Region Name | Score (1980-2020) | Score (2022-2052) | Percent Change | 
 | - | - | - | - | 
-| Aberdeen City | 	0.12 | 0.06 | -50.0| 
-| Bolton | 0.004 | 0.036 | 800.0| 
-| Manchester | 0.003 | 0.032 | 800.0| 
-| Essex | 0.0 | 0.029 | N/A| 
-| Manchester | 0.0 | 0.022 | N/A| 
+| Aberdeen City | 	0.12 | 0.06 | -50| 
+| Bolton | 0.0 | 0.04 | 800| 
+| Manchester | 0.0 | 0.03 | 800| 
+| Essex | 0.0 | 0.03 | N/A| 
+| Manchester | 0.0 | 0.02 | N/A| 
 
 <p>
 Table 2B: England counties with top flood exposure projected over upcoming 30 years
@@ -179,11 +179,11 @@ Fig D5: United States Counties, Projected mean annual cyclone risk exposure over
 
 | State | County Name | Score (1980-2020) | Score (2022-2052) | Percent Change | 
 | - | - | - | - | - |
-| North Carolina | Dare | 0.317 | 0.302 | -4.36 |
-| North Carolina | Hyde | 0.296 | 0.28 | -5.55 |
-| North Carolina | Carteret | 0.286 | 0.361 | -8.92 |
-| North Carolina | Tyrell | 0.243 | 0.25 | 2.98 |
-| North Carolina | Pamilco | 0.27 | 0.247 | -8.35 |
+| North Carolina | Dare | 0.31 | 0.3 | -4 |
+| North Carolina | Hyde | 0.29 | 0.28 | -6 |
+| North Carolina | Carteret | 0.28 | 0.36 | -9 |
+| North Carolina | Tyrell | 0.24 | 0.25 | 3 |
+| North Carolina | Pamilco | 0.27 | 0.25 | -8 |
 
 <p>
 Table 3A: US Counties with top cyclone exposure over the upcoming 30 years
@@ -200,10 +200,10 @@ Fig D6: Indian Towns, Projected mean annual cyclone risk exposure over 1980-2010
 
 | Region Name | Score (1980-2020) | Score (2022-2052) | Percent Change | 
 | - | - | - | - |
-| Puri | 0.25 | 0.233 | -6.56 |
-| Srikakulam | 0.265 | 0.245 | -7.39 |
-| Visakhapatnam | 0.276| 0.257 | -6.92 |
-| Vizianagaram | 0.26 | 0.236 | -9.06 |
+| Puri | 0.25 | 0.23 | -7 |
+| Srikakulam | 0.27 | 0.25 | -7 |
+| Visakhapatnam | 0.28| 0.26 | -7 |
+| Vizianagaram | 0.26 | 0.24 | -9 |
 
 <p>
 Table 3B: Indian Towns with top cyclone exposure over the upcoming 30 years
@@ -243,12 +243,11 @@ Fig D7: United States Counties, Projected mean annual sea level rise risk exposu
 
 | State | Score (1980-2020) | Score (2022-2052) | Percent Change | 
 | - | - | - | - |
-| New Jersey| 0.158 | 0.284 | 78.77 |
-| Pennsylvania| 0.131 | 0.283 | 116.83 |
-| Delaware| 0.158 | 0.283 | 79.11 |
-| Virginia| 0.159 | 0.283 | 77.88 |
-| Maryland| 0.159 | 0.283 | 78.11 |
-
+| New Jersey| 0.16 | 0.28 | 79 |
+| Pennsylvania| 0.13 | 0.28 | 117 |
+| Delaware| 0.16 | 0.28 | 79 |
+| Virginia| 0.16 | 0.28 | 78 |
+| Maryland| 0.16 | 0.28 | 78 |
 
 <p>
 Table 4A: US States with top sea level rise exposure over the upcoming 30 years
@@ -259,16 +258,16 @@ Table 4A: US States with top sea level rise exposure over the upcoming 30 years
 </p>
 
 <p align="center">
-Fig D8: Indian towns, Projected mean annual wildfire risk exposure over 1980-2010 and 2022-2052 with SSP5-RCP8.5 scenario.
+Fig D8: Indian towns, Projected mean annual sea level rise risk exposure over 1980-2010 and 2022-2052 with SSP5-RCP8.5 scenario.
 </p>
 
 | State | Score (1980-2020) | Score (2022-2052) | Percent Change | 
 | - | - | - | - |
-| Baleshwar| 0.186 | 0.216 | 15.92 |
-| Bhadrak| 0.186 | 0.216 | 15.92 |
-| Jagatsinghapur| 0.183 | 0.212 | 15.93 |
-| Kendrapara| 0.186 | 0.216 | 15.92 |
-| North 24 Parganas| 0.189 | 0.22 | 16.84 |
+| Baleshwar| 0.19 | 0.23 | 16 |
+| Bhadrak| 0.19 | 0.23 | 16 |
+| Jagatsinghapur| 0.18 | 0.22 | 16 |
+| Kendrapara| 0.19 | 0.22 | 16 |
+| North 24 Parganas| 0.19 | 0.22 | 17 |
 
 <p>
 Table 4B: Indian towns with top sea level rise exposure over the upcoming 30 years
@@ -300,11 +299,11 @@ Fig D9: United States Counties, Projected mean annual water stress risk exposure
 
 | State | County Name | Score (1980-2020) | Score (2022-2052) | Percent Change | 
 | - | - | - | - | - |
-| California | Imperial | 0.527 | 0.577 | 9.6 |
-| Arizona | Yuma | 0.496 | 0.556 | 11.53 |
-| California | San Diego | 0.531 | 0.549 | 3.51 |
-| California | Riverside | 0.532 | 0.548 | 2.97 |
-| California | Orange | 0.527 | 0.538 | 2.12 |
+| California | Imperial | 0.53 | 0.58 | 10 |
+| Arizona | Yuma | 0.49 | 0.55 | 12 |
+| California | San Diego | 0.53 | 0.55 | 34 |
+| California | Riverside | 0.53 | 0.55 | 3 |
+| California | Orange | 0.53 | 0.54 | 2 |
 
 <p>
 Table 5A: US Counties with top water stress exposure
@@ -320,11 +319,11 @@ Fig D10: Australian Towns, Projected mean annual water stress risk exposure over
 
 | Township | Locale | Score (1980-2020) | Score (2022-2052) | Percent Change | 
 | - | - | - | - | - |
-| South Australia | Playford| 0.344 | 0.642 | 86.43 |
-| South Australia | Prospect | 0.275 | 0.641 | 132.71 |
-| Victoria | Gannawarra | 0.302 | 0.641 | 112.23 |
-| New South Wales | Jerilderie | 0.302 | 0.638 | 86.14 |
-| South Australia | Marion | 0.539 | 0.638 | 18.27 |
+| South Australia | Playford| 0.34 | 0.64 | 86 |
+| South Australia | Prospect | 0.28 | 0.64 | 132 |
+| Victoria | Gannawarra | 0.3 | 0.64 | 112 |
+| New South Wales | Jerilderie | 0.3 | 0.64 | 86 |
+| South Australia | Marion | 0.54 | 0.64 | 18 |
 
 
 <p>
@@ -361,7 +360,7 @@ Heatwaves represent an extended period of perilously warm weather at a specific 
 **Sample Assessment**
 
 <p align="center">
-<img height="300" src="assets/images/dataguide/heatwaves_usa_1980_2020_v_2022-2052.png">
+<img height="500" src="assets/images/dataguide/heatwaves_usa_1980_2020_v_2022-2052.png">
 </p>
 
 <p align="center">
@@ -371,18 +370,18 @@ Fig D11: United States Counties, Projected mean annual heatwaves risk exposure o
 
 | State | County Name | Score (1980-2020) | Score (2022-2052) | Percent Change | 
 | - | - | - | - | - |
-| Florida | Miami-Dade | 0.69 | 38.12 | 449.83 |
-| Idaho | Cassia | 7.88 | 34.18 | 333.29 |
-| Utah | Summit | 8.107 | 34.13 | 325.86 |
-| Utah | Morgan | 8.1 | 34.083 | 320.78 |
-| Utah | Box Elder | 8.04 | 33.72 | 318.96 |
+| Florida | Miami-Dade | 0.69 | 38.12 | 450 |
+| Idaho | Cassia | 7.88 | 34.18 | 333 |
+| Utah | Summit | 8.11 | 34.13 | 326 |
+| Utah | Morgan | 8.1 | 34.08 | 321 |
+| Utah | Box Elder | 8.04 | 33.72 | 319 |
 
 <p>
 Table 6A: US Counties with top heatwave exposure
 </p>
 
 <p align="center">
-<img height="300" src="assets/images/dataguide/heatwaves_india_1980_2020_v_2022-2052.png">
+<img height="500" src="assets/images/dataguide/heatwaves_india_1980_2020_v_2022-2052.png">
 </p>
 
 <p align="center">
@@ -391,11 +390,11 @@ Fig D12: Indian towns, Projected mean annual heatwaves risk exposure over 2022-2
 
 | Region Name | Score (1980-2020) | Score (2022-2052) | Percent Change | 
 | - | - | - | - |
-| Jaipur | 7.85 | 21.3 | 171.59 |
-| Lakshwadeep | 8.2 | 90.8 | 997.28 |
-| Nagpur | 7.85 | 21.51 | 174.1 |
-| Sikar | 7.8 | 21.2 | 173.07 |
-| Tonk | 7.8 | 21.65 | 178.3 |
+| Jaipur | 7.85 | 21.3 | 172 |
+| Lakshwadeep | 8.2 | 90.8 | 997 |
+| Nagpur | 7.85 | 21.51 | 174|
+| Sikar | 7.8 | 21.2 | 173 |
+| Tonk | 7.8 | 21.65 | 178 |
 
 <p>
 Table 6B: Indian cities/towns with top heatwave exposure
