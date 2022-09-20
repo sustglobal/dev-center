@@ -380,15 +380,15 @@ Fig D11: United States Counties, Projected mean annual heatwave exposure over 20
 </p>
 
 
-| State | County Name | 
-| - | - | 
-| Florida | Monroe | 
-| Florida | Miami-Dade |
-| Florida | Collier | 
-| Florida | Palm Beach |
-| Texas | Nueces |
-| Texas | Brazoria| 
-| Louisiana | Terrebonne |
+| State     | County Name |
+| -         | -           |
+| Florida   | Monroe      |
+| Florida   | Miami-Dade  |
+| Florida   | Collier     |
+| Florida   | Palm Beach  |
+| Texas     | Nueces      |
+| Texas     | Brazoria    |
+| Louisiana | Terrebonne  |
 
 <p>
 Table 6A: US Counties with top heatwave exposure
@@ -402,15 +402,15 @@ Table 6A: US Counties with top heatwave exposure
 Fig D12: Indian towns, Projected mean annual heatwave exposure over 2022-2052 with SSP5-RCP8.5 scenario.
 </p>
 
-| Township | Locale | 
-| - | - | 
-| Lakshadweep | Kavaratti| 
-| Lakshadweep | Amini Island |
-| Lakshadweep | Lakshadweep | 
-| Nicobar Island | Nicobar Island |
-| South Andaman | South Andaman |
-| Thiruvananthapuram | Chirayinkil | 
-| Thiruvananthapuram | Nedumangad |
+| Township           | Locale         |
+| -                  | -              |
+| Lakshadweep        | Kavaratti      |
+| Lakshadweep        | Amini Island   |
+| Lakshadweep        | Lakshadweep    |
+| Nicobar Island     | Nicobar Island |
+| South Andaman      | South Andaman  |
+| Thiruvananthapuram | Chirayinkil    |
+| Thiruvananthapuram | Nedumangad     |
 
 <p>
 Table 6B: Indian cities/towns with top heatwave exposure
@@ -443,14 +443,14 @@ The fundamental indicators are derived from the world’s frontier climate resea
 
 ## Summarization Labeling
 
-| Hazard | Unit | LOW Range (low) | LOW Range (high) | MEDIUM Range (low) | MEDIM Range (high) | HIGH Range (low) | HIGH Range (high) |  
-| - | - | - | - | - | - |  - | - | 
-| Wildfire | Probability | 0.0 | 0.01 | 0.01 | 0.05 | 0.05 | 1.0 |
-| Inland Flood | Number of years with probability exceeding threshold @@ | 0 | 0 | 1 | 3 | 3 | 30 |
-| Cyclone | Probability | 0.0 | 0.1 | 0.1 | 0.2 | 0.2 | 1.0 |
-| Water Stress | Score | 0.0 | 0.3 | 0.3 | 0.6 | 0.6 | 1.0 |
-| Heatwave | Number of days in year | 0 | 30 | 30 | 50 | 50 | 366 |
-| Sea Level Rise | Relative change in meters | 0.0 | 0.1 | 0.1 | 0.3 | 0.3 | 3.0 |
+| Hazard         | Unit                      | LOW Range (low) | LOW Range (high) | MEDIUM Range (low) | MEDIM Range (high) | HIGH Range (low) | HIGH Range (high) |
+| -              | -                         | -               | -                | -                  | -                  | -                | -                 |
+| Wildfire       | Probability               | 0.0             | 0.01             | 0.01               | 0.05               | 0.05             | 1.0               |
+| Inland Flood   | Probability               | 0               | 0.01             | 0.01               | 0.05               | 0.05             | 1.0               |
+| Cyclone        | Probability               | 0.0             | 0.025            | 0.0.025            | 0.075              | 0.075            | 1.0               |
+| Water Stress   | Score                     | 0.0             | 0.3              | 0.3                | 0.6                | 0.6              | 1.0               |
+| Heatwave       | Number of days in year    | 0               | 30               | 30                 | 50                 | 50               | 366               |
+| Sea Level Rise | Relative change in meters | 0.0             | 0.375            | 0.375              | 0.7                | 0.7              | 3.0               |
 
 <p>
 Table 7: Hazard summarization labeling ranges 
@@ -460,25 +460,25 @@ Table 7: Hazard summarization labeling ranges
 
 ## Indicator Metadata
 
-| hazard    |  indicator    |  unit   |   value_min  |  value_max  |  value_norm  |  spatial_resolution (in meters) |
-| - | - | - | - | - |- |- |
-| wildfire | obs_score | score | 0.0 | 1.0 | 1.0 | 500.0 |
-| wildfire | burned_area_norm   | score | 0.0 | 1.0 | 0.1 | 300.0 |
-| wildfire | fire_kbdi_susceptability | score | 0.0 | 1.0 | 0.1 | 300.0 |
-| wildfire | unified_prob | probability | 0.0 | 1.0 | 0.5 | 300.0 |
-| flood_potential | obs_score | score | 0.0 | 1.0 | 1.0 | 250.0 |
-| flood_potential | inland_flood_prob | probability | 0.0 | 1.0 |  1.0 | 4000.0 |
-| cyclone | obs_freq | frequency | 0.0 | 7.0 | 2.0 | 1000.0 |
-| cyclone | prob  | probability | 0.0 | 1.0 | 0.5 | 50000.0 |
-| heatwave | freq | day | 0.0 | 366.0 | 200.0 | 25000.0 |
-| sea_level_rise | change | meter | 0.0 | 100.0 | 0.75 | 100000.0 |
-| water_stress | obs_score | score | 0.0 | 1.0 | 1.0 | 500.0 |
-| water_stress | spei_norm | score |  0.0 |  1.0 |  1.0 |  25000.0 |
-| water_stress | score | score | 0.0 | 1.0 | 1.0 | 500.0 |
-| water_stress | unified_score | score | 0.0 | 1.0 | 1.0 | 500.0 |
-| fundamental | temp | degree_celsius | -60.0 | 50.0 | 50.0 | 100000.0 |
-| fundamental | precip | millimeter | 0.0 | 10000.0 | 10000.0 | 100000.0 |
-| fundamental | extreme_precip | day | 0.0 | 366.0 | 366.0 | 100000.0 |
+| hazard          | indicator                | unit           | value_min | value_max | value_norm | spatial_resolution (in meters) |
+| -               | -                        | -              | -         | -         | -          | -                              |
+| wildfire        | obs_score                | score          | 0.0       | 1.0       | 1.0        | 500.0                          |
+| wildfire        | burned_area_norm         | score          | 0.0       | 1.0       | 0.1        | 300.0                          |
+| wildfire        | fire_kbdi_susceptability | score          | 0.0       | 1.0       | 0.1        | 300.0                          |
+| wildfire        | unified_prob             | probability    | 0.0       | 1.0       | 0.5        | 300.0                          |
+| flood_potential | obs_score                | score          | 0.0       | 1.0       | 1.0        | 250.0                          |
+| flood_potential | inland_flood_prob        | probability    | 0.0       | 1.0       | 0.5        | 4000.0                         |
+| cyclone         | obs_freq                 | frequency      | 0.0       | 7.0       | 2.0        | 1000.0                         |
+| cyclone         | prob                     | probability    | 0.0       | 1.0       | 0.5        | 50000.0                        |
+| heatwave        | freq                     | day            | 0.0       | 366.0     | 200.0      | 25000.0                        |
+| sea_level_rise  | change                   | meter          | 0.0       | 100.0     | 1.0        | 100000.0                       |
+| water_stress    | obs_score                | score          | 0.0       | 1.0       | 1.0        | 500.0                          |
+| water_stress    | spei_norm                | score          | 0.0       | 1.0       | 1.0        | 25000.0                        |
+| water_stress    | score                    | score          | 0.0       | 1.0       | 1.0        | 500.0                          |
+| water_stress    | unified_score            | score          | 0.0       | 1.0       | 1.0        | 500.0                          |
+| fundamental     | temp                     | degree_celsius | -60.0     | 50.0      | 50.0       | 100000.0                       |
+| fundamental     | precip                   | millimeter     | 0.0       | 10000.0   | 10000.0    | 100000.0                       |
+| fundamental     | extreme_precip           | day            | 0.0       | 366.0     | 366.0      | 100000.0                       |
 
 <p>
 Table 8: Hazard and indicator metadata 
@@ -490,14 +490,14 @@ Processing of large area geographies into climate risk scores requires statistic
 
 By default, geospatial polygons are reduced by a mean statistic.  The following exceptions are noted below:
 
-| hazard    |  spatial statistic |
-| - | - |
-| Wildfire | mean |
-| Inland Flood | weighted mean^^ |
-| Cyclone | max^ |
-| Water Stress | mean |
-| Heatwave | mean |
-| Sea Level Rise | max |
+| hazard         | spatial statistic |
+| -              | -                 |
+| Wildfire       | mean              |
+| Inland Flood   | weighted mean^^   |
+| Cyclone        | max^              |
+| Water Stress   | mean              |
+| Heatwave       | mean              |
+| Sea Level Rise | max               |
 
 <p>
 Table 9: spatial statistics for polygon aggregation 

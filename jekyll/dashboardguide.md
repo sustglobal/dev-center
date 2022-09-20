@@ -122,10 +122,13 @@ Historic Hazard: Wildfire
 Asset X has a Wildfire historic risk event severity value of either 1 or 0 in [2018]. This means that in [2018], there was or wasn't a satellite-observed wildfire within a 1km radius of asset X.
 
 Historic Hazard: Inland Flooding
-Asset X has a flood historic risk event severity value of either 1 or 0 in [2018]. This means that in [2018], there was or wasn't a satellite-observed flood within a 1km radius of asset X.
+Asset X has a flood historic risk event severity value of either 1 or 0 in [2018]. This means that in [2018], there was or wasn't a satellite-observed flood at the location of asset X.
 
 Historic Hazard: Cyclone
 Asset X has a Cyclone historic risk event severity value of [1] in [Sep 2017]. This means that there was [one] Category 3, 4 or 5 cyclone observed in [September 2017] within a 241km radius of Asset X. The upper limit on historic cyclone values is set to 7. This is because research has shown that there are very few locations exceeding 6 cyclones per month.
+
+Historic Hazard: Water Stress
+Asset X has a Water Stress historic risk event severity value of [0.4]. This means that in [2018], there is was a period where the annual ratio of water demand to renewable water availability was [0.4] under the [High Emissions] scenario. 
 
 ### View projected risk exposure to your assets
 
