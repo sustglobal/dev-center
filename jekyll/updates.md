@@ -5,6 +5,14 @@ toc: true
 
 The following is a list of running product updates to the Sust Global datasets and Climate Explorer.
 
+## **20SEP2022 Release**
+
+**Data Product Updates**
+1. We are updating the historic flood exposure dataset to best reflect historic riverine and coastal floods through satellite derived observations. We start with satellite-derived measurements of impermanent standing water.  We then post-process the satellite data using hydrological data and topographic datasets.
+1. We are incorporating a more precise sea level rise projection capability that accounts for global glacier melts and land subsidence and rebound across different forward looking climate scenarios.
+3. To optimize the representation of inland flood potential and cyclone projections, we are providing a filtered version of annualized flood and cyclone data using a kernel weighted multi-decadal window. This will show a smoother annualized forward looking time series exposure projection on the Climate Explorer forward looking time series view.
+4. We have updated the unified wildfire indicator to account for specific fire climate conditions and burnable land to optimize wildfire projections in fire prone regions with limited to no historic wildfire exposure.
+
 ## **08JUL2022 Release**
 
 **Data Product Updates**
