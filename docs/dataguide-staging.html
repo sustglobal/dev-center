@@ -209,7 +209,7 @@ Table 1B: Indian towns with top wildfire exposure projected over upcoming 30 yea
   <li>
 <strong>Wildfire Susceptibility</strong>: This indicator relates to wildfire weather and the probability of wildfire under various weather conditions using the <a href="https://twc.tamu.edu/kbdi">Keetch-Byram Drought Index (KBDI)</a>.  This approach has several advantages for modeling fire dynamics as previously demonstrated.  Weather has been <a href="https://iopscience.iop.org/article/10.1088/2515-7620/abd836">previously shown</a> to be a major determinant of fire probability, and changing weather patterns are the primary reason wildfires will be a major hazard of climate change. Thus, in contrast to the Burned Area Fraction Indicator, this indicator does not use direct CMIP6 simulations of wildfire occurrence.  Instead, the Wildfire susceptibility estimates future fire risk using simulations of fire weather, combined with millions of historic observations of how weather affects fire risk.</li>
   <li>
-<strong>Unified wildfire exposure</strong>: This indicator combines the projections from the burned area fraction and the susceptibility score, benchmarked against the observed wildfire indicator to create a unified measure of wildfire probability at a specific location.  It can be interpreted as the probability of wildfire occurring within one kilometer of an asset location within a given year. The unified wildfire indicator when aggregated over a period of time (10 yrs) provides for a measure of probability of wildfire occurrence within 1 kilometer of the asset over the next 10 years.</li>
+<strong>Unified wildfire exposure</strong>: This indicator combines the projections from the burned area fraction and the susceptibility score, benchmarked against the observed wildfire indicator to create a unified measure of wildfire probability at a specific location.  It can be interpreted as the probability of wildfire occurring within one kilometer of an asset location within a given year. The unified wildfire indicator when aggregated over a period of time (10 yrs) provides for a measure of average annual probability of wildfire occurrence within 1 kilometer of the asset over the next 10 years.</li>
 </ol>
 
 <p>Each of the indicators: observed active fires, burned area fraction and the wildfire susceptibility provide a unique view into wildfire exposure. The observed fires demonstrate historic exposure of the asset to past occurrences of wildfire. Burned area fraction provides an indication of potential for exposure of the area around the asset to wildfire and wildfire susceptibility provides an indicator of wildfire probability based on environmental and weather conditions. The unified wildfire exposure indicator brings these indicators together towards a single annualized wildfire probability score.</p>
@@ -354,9 +354,9 @@ Table 2B: England counties with top flood exposure projected over upcoming 30 ye
 <p>We present two indicators: observed flooding and flood potential</p>
 <ol>
   <li>
-<strong>Observed floods</strong>: Indicates whether flood was observed in a given year by satellites at the location of an asset. It is derived from NASA MODIS data, for the period 2012 to present.</li>
+<strong>Observed floods</strong>: Indicates whether flood was observed in a given year by satellites at the location of an asset. It is derived from NASA MODIS data, for the period 2012 to present.  Because the satellite record has a high rate of false positives from shadows and other sources of interference in mountainous and high-latitude areas, we additionally mask out satellite-reported flooding in areas sufficiently far from water bodies, where floods are unlikely.</li>
   <li>
-<strong>Flood potential</strong>: Indicates the potential flood exposure from 2022 - 2100 expressed as a probability at the asset level. A value of 0.1 indicates that we could expect a flooding event in one of the next 10 years at this asset location.</li>
+<strong>Flood potential</strong>: Indicates the potential flood exposure from 2022 - 2100 expressed as a probability at the asset level. A value of 0.1 indicates that there is a 10% chance of flooding at any depth at that location.</li>
 </ol>
 
 <p>The output metric we use for inland flooding exposure ranges from 0 (low risk) to 1 (high risk). We derive this index from the collection of many simulations of flood inundated areas. We take into account multiple meteorological variables like precipitation, land surface pressure, humidity and elevation.</p>
@@ -365,11 +365,13 @@ Table 2B: England counties with top flood exposure projected over upcoming 30 ye
 
 <p><strong>Data Usage</strong></p>
 
-<p>We count the number of years where floods exceed a probability threshold (5% in this case) over the forward looking window (5 yr/15 yr/30 yr) and use that count to categorize the asset to LOW/MED/HIGH. LOW would be values between 0 and 1, MED would be values 2 and 3 and for assets with &gt;3 years of flooding potential exceeding 5% probability, we would set to HIGH.</p>
+<p>Our flooding indicator shows where model simulations show a possibility of future flooding.  We do not account for flood depth, thus, this particular dataset is not suitable for applications requiring depth-damage functions.  However, this dataset does give an indication of where there is nonzero flood risk.</p>
 
-<p>On Climate Explorer, we count the number of years where floods exceed a probability threshold (5% in this case) over a decade to create a count across each decade for the forward looking time series.</p>
+<p>Flooding is also one of our indicators with substantial disagreement among models, sometimes leading to uneven uncertainty.  We account for this by reporting the upper, median and lower quantiles of model estimates of flood probability.  In some cases, for example, both the median and lower bound will report a 0 probability of future flooding, while the upper bound will potentially by high. This means that the <em>majority</em> of models predict no flooding risk, but a <em>minority</em> of models predict nonzero risk.  The error bands around our predictions thus showcase the skew in the distribution of model predictions of flood risk.</p>
 
-<p>The flood projections are hindcast over the range of 1980-2020 and benchmarked against observations of flooding at a global scale to validate and filter the climate models used in the inland flood projections.</p>
+<p align="center">
+<img height="500" src="assets/images/dataguide/flood_uneven_uncertainty.png">
+</p>
 
 <h2 id="tropical-cyclone">
 <a class="anchor" href="#tropical-cyclone" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tropical Cyclone</h2>
@@ -515,7 +517,7 @@ Table 3B: Indian Towns with top cyclone exposure over the upcoming 30 years
 
 <p><strong>Description</strong></p>
 
-<p>This hazard refers to rising sea levels. The major physical impacts of a rise in sea level include erosion of beaches, inundation of deltas as well as flooding and loss of many marshes and wetlands.</p>
+<p>Global mean sea level increased by approximately 20cm in the past century, with up to 1 meter of rise expected by 2100. The major physical impacts of a rise in sea level include coastal flooding, erosion of beaches, inundation of deltas, and flooding and loss of marshes and wetlands.</p>
 
 <p><strong>Sample Assessment</strong></p>
 
@@ -631,11 +633,9 @@ Table 4B: Indian towns with top sea level rise exposure over the upcoming 30 yea
 
 <p><strong>Indicator</strong></p>
 
-<p>The sea level rise indicator refers to the change in sea level from the changing climate across different climate scenarios. We base our modeling of projected sea level rise on both climate model simulations and an asset’s distance to the coast. Projected sea level rise from CMIP6 climate models incorporates the effects of thermal expansion from warming of the ocean, since water expands as it warms, which is expected to be the primary component of future sea level rise. The models do not incorporate the secondary contributions of melting glaciers and ice caps since they cannot reliably simulate them, so the sea level simulations are conservative estimates of total sea level rise. The sea level rise is calculated by combining the monthly CMIP6 local sea level fluctuations due to ocean dynamics and global sea level rise from thermal expansion. We center the sea level rise over the baseline period 1980-2010.</p>
+<p>The sea level rise indicator refers to the change in sea level across different climate scenarios and is consistent with projections from the IPCC Sixth Assessment Report. We base our modeling of projected sea level rise on both climate model simulations and an asset’s distance to the coast. Projected sea level rise from CMIP6 climate models incorporates the effects of thermal expansion from warming of the ocean, melting of Greenland and Antarctic ice sheets, melting of glaciers and ice caps, and local land subsidence and rebound. Land elevation rebound, whereby land elevation increases in response to ice melt, is more common in high latitude, polar regions.</p>
 
-<p>We enable asset level assessments of exposure to physical hazard from sea level rise. We express sea level rise relative to a 1980-2010 baseline period for assets within 5km from the coast. An asset’s distance to the nearest coastline is derived using 0.01 degree resolution, satellite-derived estimates of coastline locations from NASA’s Ocean Color Group. Assets beyond 5km from the nearest coastline are assumed to have no sea level risk in our assessments, though we can change this 5km threshold if needed. Technically the coastline product is at 0.04 degree resolution, but the providers converted it to 0.01 degree using bilinear interpolation and say the uncertainty is up to 1km</p>
-
-<p>The models do not incorporate the secondary contributions of melting glaciers and ice caps since they cannot reliably simulate them, so the sea level simulations are conservative estimates of total sea level rise.</p>
+<p>We enable asset level assessments of exposure to physical hazard from sea level rise. We express sea level rise relative to a 1995-2014 baseline period for assets within 5km from the coast. An asset’s distance to the nearest coastline is derived using 0.01 degree resolution, satellite-derived estimates of coastline locations from NASA’s Ocean Color Group. Assets beyond 5km from the nearest coastline are assumed to have no sea level risk in our assessments, though we can change this 5km threshold if needed.</p>
 
 <h2 id="water-stress">
 <a class="anchor" href="#water-stress" aria-hidden="true"><span class="octicon octicon-link"></span></a>Water Stress</h2>
@@ -982,22 +982,22 @@ The fundamental indicators are derived from the world’s frontier climate resea
     </tr>
     <tr>
       <td>Inland Flood</td>
-      <td>Number of years with probability exceeding threshold @@</td>
+      <td>Probability</td>
       <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>3</td>
-      <td>3</td>
-      <td>30</td>
+      <td>0.01</td>
+      <td>0.01</td>
+      <td>0.05</td>
+      <td>0.05</td>
+      <td>1.0</td>
     </tr>
     <tr>
       <td>Cyclone</td>
       <td>Probability</td>
       <td>0.0</td>
-      <td>0.1</td>
-      <td>0.1</td>
-      <td>0.2</td>
-      <td>0.2</td>
+      <td>0.025</td>
+      <td>0.0.025</td>
+      <td>0.075</td>
+      <td>0.075</td>
       <td>1.0</td>
     </tr>
     <tr>
@@ -1024,10 +1024,10 @@ The fundamental indicators are derived from the world’s frontier climate resea
       <td>Sea Level Rise</td>
       <td>Relative change in meters</td>
       <td>0.0</td>
-      <td>0.1</td>
-      <td>0.1</td>
-      <td>0.3</td>
-      <td>0.3</td>
+      <td>0.375</td>
+      <td>0.375</td>
+      <td>0.7</td>
+      <td>0.7</td>
       <td>3.0</td>
     </tr>
   </tbody>
@@ -1106,7 +1106,7 @@ Table 7: Hazard summarization labeling ranges
       <td>probability</td>
       <td>0.0</td>
       <td>1.0</td>
-      <td>1.0</td>
+      <td>0.5</td>
       <td>4000.0</td>
     </tr>
     <tr>
@@ -1142,7 +1142,7 @@ Table 7: Hazard summarization labeling ranges
       <td>meter</td>
       <td>0.0</td>
       <td>100.0</td>
-      <td>0.75</td>
+      <td>1.0</td>
       <td>100000.0</td>
     </tr>
     <tr>

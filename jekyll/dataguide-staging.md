@@ -80,7 +80,7 @@ We present 4 indicators for wildfire: observed wildfire, burned area fraction, w
 1. **Observed Wildfire**: We use satellite derived observations to provide asset level exposure to active wildfires. The observations are made using NASA MODIS satellites and processed using an active fire algorithm to produce the [MCD64A](https://lpdaac.usgs.gov/documents/115/MCD64_ATBD_V6.pdf). This covers the historical period of 2001 to present. This indicator shows the years in which a wildfire occurred within 1 kilometer of an asset.
 2. **Burned Area Fraction**: We represent annual fire risk by ensembling CMIP6 model simulations of monthly wildfire burned area [% of grid cell]. [CMIP6 Wildfire models](https://lpdaac.usgs.gov/documents/115/MCD64_ATBD_V6.pdf) incorporate factors such as temperature, precipitation, land cover type, and population to simulate fire occurrence and the associated area burned. For example, wildfire occurrence includes both lightning and human-induced ignitions, and high temperatures and drought lead to drier fuels and increased likelihood of fire. We use Sust Global's proprietary methodologies for wildfire super resolution ([NeurIPS2020 technical reference](https://www.climatechange.ai/papers/neurips2020/45)) on top of the model ensemble to enable high resolution wildfire projections. These projections are further processed using the latest satellite-derived land cover maps, filtering for the urban-wildland interface to further refine the projections.
 3. **Wildfire Susceptibility**: This indicator relates to wildfire weather and the probability of wildfire under various weather conditions using the [Keetch-Byram Drought Index (KBDI)](https://twc.tamu.edu/kbdi).  This approach has several advantages for modeling fire dynamics as previously demonstrated.  Weather has been [previously shown](https://iopscience.iop.org/article/10.1088/2515-7620/abd836) to be a major determinant of fire probability, and changing weather patterns are the primary reason wildfires will be a major hazard of climate change. Thus, in contrast to the Burned Area Fraction Indicator, this indicator does not use direct CMIP6 simulations of wildfire occurrence.  Instead, the Wildfire susceptibility estimates future fire risk using simulations of fire weather, combined with millions of historic observations of how weather affects fire risk. 
-4. **Unified wildfire exposure**: This indicator combines the projections from the burned area fraction and the susceptibility score, benchmarked against the observed wildfire indicator to create a unified measure of wildfire probability at a specific location.  It can be interpreted as the probability of wildfire occurring within one kilometer of an asset location within a given year. The unified wildfire indicator when aggregated over a period of time (10 yrs) provides for a measure of probability of wildfire occurrence within 1 kilometer of the asset over the next 10 years. 
+4. **Unified wildfire exposure**: This indicator combines the projections from the burned area fraction and the susceptibility score, benchmarked against the observed wildfire indicator to create a unified measure of wildfire probability at a specific location.  It can be interpreted as the probability of wildfire occurring within one kilometer of an asset location within a given year. The unified wildfire indicator when aggregated over a period of time (10 yrs) provides for a measure of average annual probability of wildfire occurrence within 1 kilometer of the asset over the next 10 years. 
 
 Each of the indicators: observed active fires, burned area fraction and the wildfire susceptibility provide a unique view into wildfire exposure. The observed fires demonstrate historic exposure of the asset to past occurrences of wildfire. Burned area fraction provides an indication of potential for exposure of the area around the asset to wildfire and wildfire susceptibility provides an indicator of wildfire probability based on environmental and weather conditions. The unified wildfire exposure indicator brings these indicators together towards a single annualized wildfire probability score. 
 
@@ -145,8 +145,8 @@ Table 2B: England counties with top flood exposure projected over upcoming 30 ye
 **Indicators**
 
 We present two indicators: observed flooding and flood potential
-1. **Observed floods**: Indicates whether flood was observed in a given year by satellites at the location of an asset. It is derived from NASA MODIS data, for the period 2012 to present.  
-2. **Flood potential**: Indicates the potential flood exposure from 2022 - 2100 expressed as a probability at the asset level. A value of 0.1 indicates that we could expect a flooding event in one of the next 10 years at this asset location.
+1. **Observed floods**: Indicates whether flood was observed in a given year by satellites at the location of an asset. It is derived from NASA MODIS data, for the period 2012 to present.  Because the satellite record has a high rate of false positives from shadows and other sources of interference in mountainous and high-latitude areas, we additionally mask out satellite-reported flooding in areas sufficiently far from water bodies, where floods are unlikely.
+2. **Flood potential**: Indicates the potential flood exposure from 2022 - 2100 expressed as a probability at the asset level. A value of 0.1 indicates that there is a 10% chance of flooding at any depth at that location.
 
 The output metric we use for inland flooding exposure ranges from 0 (low risk) to 1 (high risk). We derive this index from the collection of many simulations of flood inundated areas. We take into account multiple meteorological variables like precipitation, land surface pressure, humidity and elevation.
 
@@ -154,11 +154,13 @@ We only cover only SSP5-RCP8.5 at the moment in the flood potential indicator.
 
 **Data Usage**
 
-We count the number of years where floods exceed a probability threshold (5% in this case) over the forward looking window (5 yr/15 yr/30 yr) and use that count to categorize the asset to LOW/MED/HIGH. LOW would be values between 0 and 1, MED would be values 2 and 3 and for assets with >3 years of flooding potential exceeding 5% probability, we would set to HIGH.
+Our flooding indicator shows where model simulations show a possibility of future flooding.  We do not account for flood depth, thus, this particular dataset is not suitable for applications requiring depth-damage functions.  However, this dataset does give an indication of where there is nonzero flood risk.
 
-On Climate Explorer, we count the number of years where floods exceed a probability threshold (5% in this case) over a decade to create a count across each decade for the forward looking time series.
+Flooding is also one of our indicators with substantial disagreement among models, sometimes leading to uneven uncertainty.  We account for this by reporting the upper, median and lower quantiles of model estimates of flood probability.  In some cases, for example, both the median and lower bound will report a 0 probability of future flooding, while the upper bound will potentially by high. This means that the _majority_ of models predict no flooding risk, but a _minority_ of models predict nonzero risk.  The error bands around our predictions thus showcase the skew in the distribution of model predictions of flood risk.
 
-The flood projections are hindcast over the range of 1980-2020 and benchmarked against observations of flooding at a global scale to validate and filter the climate models used in the inland flood projections.
+<p align="center">
+<img height="500" src="assets/images/dataguide/flood_uneven_uncertainty.png">
+</p>
 
 ## Tropical Cyclone
 
@@ -229,7 +231,7 @@ For forward looking cyclone exposure, our methodology translates these storm tra
 
 **Description**
 
-This hazard refers to rising sea levels. The major physical impacts of a rise in sea level include erosion of beaches, inundation of deltas as well as flooding and loss of many marshes and wetlands.
+Global mean sea level increased by approximately 20cm in the past century, with up to 1 meter of rise expected by 2100. The major physical impacts of a rise in sea level include coastal flooding, erosion of beaches, inundation of deltas, and flooding and loss of marshes and wetlands.
 
 **Sample Assessment**
 
@@ -275,11 +277,9 @@ Table 4B: Indian towns with top sea level rise exposure over the upcoming 30 yea
 
 **Indicator**
 
-The sea level rise indicator refers to the change in sea level from the changing climate across different climate scenarios. We base our modeling of projected sea level rise on both climate model simulations and an asset’s distance to the coast. Projected sea level rise from CMIP6 climate models incorporates the effects of thermal expansion from warming of the ocean, since water expands as it warms, which is expected to be the primary component of future sea level rise. The models do not incorporate the secondary contributions of melting glaciers and ice caps since they cannot reliably simulate them, so the sea level simulations are conservative estimates of total sea level rise. The sea level rise is calculated by combining the monthly CMIP6 local sea level fluctuations due to ocean dynamics and global sea level rise from thermal expansion. We center the sea level rise over the baseline period 1980-2010. 
+The sea level rise indicator refers to the change in sea level across different climate scenarios and is consistent with projections from the IPCC Sixth Assessment Report. We base our modeling of projected sea level rise on both climate model simulations and an asset’s distance to the coast. Projected sea level rise from CMIP6 climate models incorporates the effects of thermal expansion from warming of the ocean, melting of Greenland and Antarctic ice sheets, melting of glaciers and ice caps, and local land subsidence and rebound. Land elevation rebound, whereby land elevation increases in response to ice melt, is more common in high latitude, polar regions.
 
-We enable asset level assessments of exposure to physical hazard from sea level rise. We express sea level rise relative to a 1980-2010 baseline period for assets within 5km from the coast. An asset’s distance to the nearest coastline is derived using 0.01 degree resolution, satellite-derived estimates of coastline locations from NASA’s Ocean Color Group. Assets beyond 5km from the nearest coastline are assumed to have no sea level risk in our assessments, though we can change this 5km threshold if needed. Technically the coastline product is at 0.04 degree resolution, but the providers converted it to 0.01 degree using bilinear interpolation and say the uncertainty is up to 1km
-
-The models do not incorporate the secondary contributions of melting glaciers and ice caps since they cannot reliably simulate them, so the sea level simulations are conservative estimates of total sea level rise.
+We enable asset level assessments of exposure to physical hazard from sea level rise. We express sea level rise relative to a 1995-2014 baseline period for assets within 5km from the coast. An asset’s distance to the nearest coastline is derived using 0.01 degree resolution, satellite-derived estimates of coastline locations from NASA’s Ocean Color Group. Assets beyond 5km from the nearest coastline are assumed to have no sea level risk in our assessments, though we can change this 5km threshold if needed.
 
 ## Water Stress
 
@@ -427,14 +427,14 @@ The fundamental indicators are derived from the world’s frontier climate resea
 
 ## Summarization Labeling
 
-| Hazard | Unit | LOW Range (low) | LOW Range (high) | MEDIUM Range (low) | MEDIM Range (high) | HIGH Range (low) | HIGH Range (high) |  
-| - | - | - | - | - | - |  - | - | 
-| Wildfire | Probability | 0.0 | 0.01 | 0.01 | 0.05 | 0.05 | 1.0 |
-| Inland Flood | Number of years with probability exceeding threshold @@ | 0 | 0 | 1 | 3 | 3 | 30 |
-| Cyclone | Probability | 0.0 | 0.1 | 0.1 | 0.2 | 0.2 | 1.0 |
-| Water Stress | Score | 0.0 | 0.3 | 0.3 | 0.6 | 0.6 | 1.0 |
-| Heatwave | Number of days in year | 0 | 30 | 30 | 50 | 50 | 366 |
-| Sea Level Rise | Relative change in meters | 0.0 | 0.1 | 0.1 | 0.3 | 0.3 | 3.0 |
+| Hazard         | Unit                      | LOW Range (low) | LOW Range (high) | MEDIUM Range (low) | MEDIM Range (high) | HIGH Range (low) | HIGH Range (high) |
+| -              | -                         | -               | -                | -                  | -                  | -                | -                 |
+| Wildfire       | Probability               | 0.0             | 0.01             | 0.01               | 0.05               | 0.05             | 1.0               |
+| Inland Flood   | Probability               | 0               | 0.01             | 0.01               | 0.05               | 0.05             | 1.0               |
+| Cyclone        | Probability               | 0.0             | 0.025            | 0.0.025            | 0.075              | 0.075            | 1.0               |
+| Water Stress   | Score                     | 0.0             | 0.3              | 0.3                | 0.6                | 0.6              | 1.0               |
+| Heatwave       | Number of days in year    | 0               | 30               | 30                 | 50                 | 50               | 366               |
+| Sea Level Rise | Relative change in meters | 0.0             | 0.375            | 0.375              | 0.7                | 0.7              | 3.0               |
 
 <p>
 Table 7: Hazard summarization labeling ranges 
@@ -444,25 +444,25 @@ Table 7: Hazard summarization labeling ranges
 
 ## Indicator Metadata
 
-| hazard    |  indicator    |  unit   |   value_min  |  value_max  |  value_norm  |  spatial_resolution (in meters) |
-| - | - | - | - | - |- |- |
-| wildfire | obs_score | score | 0.0 | 1.0 | 1.0 | 500.0 |
-| wildfire | burned_area_norm   | score | 0.0 | 1.0 | 0.1 | 300.0 |
-| wildfire | fire_kbdi_susceptability | score | 0.0 | 1.0 | 0.1 | 300.0 |
-| wildfire | unified_prob | probability | 0.0 | 1.0 | 0.5 | 300.0 |
-| flood_potential | obs_score | score | 0.0 | 1.0 | 1.0 | 250.0 |
-| flood_potential | inland_flood_prob | probability | 0.0 | 1.0 |  1.0 | 4000.0 |
-| cyclone | obs_freq | frequency | 0.0 | 7.0 | 2.0 | 1000.0 |
-| cyclone | prob  | probability | 0.0 | 1.0 | 0.5 | 50000.0 |
-| heatwave | freq | day | 0.0 | 366.0 | 200.0 | 25000.0 |
-| sea_level_rise | change | meter | 0.0 | 100.0 | 0.75 | 100000.0 |
-| water_stress | obs_score | score | 0.0 | 1.0 | 1.0 | 500.0 |
-| water_stress | spei_norm | score |  0.0 |  1.0 |  1.0 |  25000.0 |
-| water_stress | score | score | 0.0 | 1.0 | 1.0 | 500.0 |
-| water_stress | unified_score | score | 0.0 | 1.0 | 1.0 | 500.0 |
-| fundamental | temp | degree_celsius | -60.0 | 50.0 | 50.0 | 100000.0 |
-| fundamental | precip | millimeter | 0.0 | 10000.0 | 10000.0 | 100000.0 |
-| fundamental | extreme_precip | day | 0.0 | 366.0 | 366.0 | 100000.0 |
+| hazard          | indicator                | unit           | value_min | value_max | value_norm | spatial_resolution (in meters) |
+| -               | -                        | -              | -         | -         | -          | -                              |
+| wildfire        | obs_score                | score          | 0.0       | 1.0       | 1.0        | 500.0                          |
+| wildfire        | burned_area_norm         | score          | 0.0       | 1.0       | 0.1        | 300.0                          |
+| wildfire        | fire_kbdi_susceptability | score          | 0.0       | 1.0       | 0.1        | 300.0                          |
+| wildfire        | unified_prob             | probability    | 0.0       | 1.0       | 0.5        | 300.0                          |
+| flood_potential | obs_score                | score          | 0.0       | 1.0       | 1.0        | 250.0                          |
+| flood_potential | inland_flood_prob        | probability    | 0.0       | 1.0       | 0.5        | 4000.0                         |
+| cyclone         | obs_freq                 | frequency      | 0.0       | 7.0       | 2.0        | 1000.0                         |
+| cyclone         | prob                     | probability    | 0.0       | 1.0       | 0.5        | 50000.0                        |
+| heatwave        | freq                     | day            | 0.0       | 366.0     | 200.0      | 25000.0                        |
+| sea_level_rise  | change                   | meter          | 0.0       | 100.0     | 1.0        | 100000.0                       |
+| water_stress    | obs_score                | score          | 0.0       | 1.0       | 1.0        | 500.0                          |
+| water_stress    | spei_norm                | score          | 0.0       | 1.0       | 1.0        | 25000.0                        |
+| water_stress    | score                    | score          | 0.0       | 1.0       | 1.0        | 500.0                          |
+| water_stress    | unified_score            | score          | 0.0       | 1.0       | 1.0        | 500.0                          |
+| fundamental     | temp                     | degree_celsius | -60.0     | 50.0      | 50.0       | 100000.0                       |
+| fundamental     | precip                   | millimeter     | 0.0       | 10000.0   | 10000.0    | 100000.0                       |
+| fundamental     | extreme_precip           | day            | 0.0       | 366.0     | 366.0      | 100000.0                       |
 
 <p>
 Table 8: Hazard and indicator metadata 
@@ -474,14 +474,14 @@ Processing of large area geographies into climate risk scores requires statistic
 
 By default, geospatial polygons are reduced by a mean statistic.  The following exceptions are noted below:
 
-| hazard    |  spatial statistic |
-| - | - |
-| Wildfire | mean |
-| Inland Flood | weighted mean^^ |
-| Cyclone | max^ |
-| Water Stress | mean |
-| Heatwave | mean |
-| Sea Level Rise | max |
+| hazard         | spatial statistic |
+| -              | -                 |
+| Wildfire       | mean              |
+| Inland Flood   | weighted mean^^   |
+| Cyclone        | max^              |
+| Water Stress   | mean              |
+| Heatwave       | mean              |
+| Sea Level Rise | max               |
 
 <p>
 Table 9: spatial statistics for polygon aggregation 
