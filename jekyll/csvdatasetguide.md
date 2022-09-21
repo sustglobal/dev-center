@@ -25,7 +25,7 @@ Here are the descriptions of the naming parameters:
 The naming convention for the historic risk exposure datasets is as follows:
 sustglobal_asset_his_risk_{dataset_name}.csv
 
-In these files, each row corresponds to one asset location, and there are individual columns for each month from Jan 2010 to Dec 2020 for Wildfire (Burned Area Fraction), Inland Flooding and Cyclone exposure.
+In these files, each row corresponds to one asset location, and there are individual columns for each month from Jan 2010 to Dec 2020 for Cyclone exposure; each year from 2001 to 2021 for Wildfire; and each year from 2012 to 2021 for Flooding.
 
 #### Interpretation
 The example we are looking at here is called `sustglobal_asset_his_risk_MRTG_demo.csv`
@@ -38,11 +38,11 @@ The example we are looking at here is called `sustglobal_asset_his_risk_MRTG_dem
 Fig 14: Historical Risk CSV
 </p>
 
-`M_FIRE_YYYY-MM-DD`: This shows the monthly severity values for observed historical wildfires according to their Burned Area Fraction. 
+`M_FIRE_YYYY-MM-DD`: This shows the yearly severity values for observed historical wildfires within 1km of an asset. 
 For example, Asset X has a Wildfire historic risk event severity value of [1/0] in [2018]. This means that in [2018], there [was/wasnt] a satellite-observed wildfire within within a 1km radius of asset X.
 
-`FLOOD_YYYY-MM-DD`: This shows the monthly severity values for observed historical inland floods for a specific asset. 
-For example, Asset X has a Wildfire historic risk event severity value of [1/0] in [2018]. This means that in [2018], there [was/wasnt] a satellite-observed wildfire within within a 1km radius of asset X.
+`FLOOD_YYYY-MM-DD`: This shows the yearly severity values for observed historical inland floods for a specific asset. 
+For example, Asset X has a Flood historic risk event severity value of [1/0] in [2018]. This means that in [2018], there [was/wasnt] a satellite-observed flood at the location of of asset X.
 
 `CYCLONE_YYYY-MM-DD`: This shows the monthly severity values for observed historical cyclones for a specific asset. 
 For example, Asset X has a Cyclone historic risk event severity value of [1] in [Sep 2017]. This means that there was [one] Category 3, 4 or 5 cyclone observed in September 2017 within a 241km radius of Asset X.
