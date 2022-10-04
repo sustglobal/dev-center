@@ -295,11 +295,12 @@ Fig D9: United States Counties, Projected mean annual water stress risk exposure
 
 | State | County Name | Score (1980-2020) | Score (2022-2052) | Percent Change | 
 | - | - | - | - | - |
-| California | Imperial | 0.53 | 0.58 | 10 |
-| Arizona | Yuma | 0.49 | 0.55 | 12 |
-| California | San Diego | 0.53 | 0.55 | 34 |
-| California | Riverside | 0.53 | 0.55 | 3 |
-| California | Orange | 0.53 | 0.54 | 2 |
+| Arizona | Yuma | 0.56 | 0.91 | 63 |
+| California | Imperial | 0.57 | 0.89 | 55 |
+| Arizona | La Paz | 0.37 | 0.84 | 126 |
+| Washington | Grant | 0.43 | 0.81 | 86 |
+| Arizona | Maricopa | 0.55 | 0.79 | 42 |
+
 
 <p>
 Table 5A: US Counties with top water stress exposure
@@ -315,11 +316,11 @@ Fig D10: Australian Towns, Projected mean annual water stress risk exposure over
 
 | State | Region Name | Score (1980-2020) | Score (2022-2052) | Percent Change | 
 | - | - | - | - | - |
-| South Australia | Playford| 0.34 | 0.64 | 86 |
-| South Australia | Prospect | 0.28 | 0.64 | 132 |
-| Victoria | Gannawarra | 0.3 | 0.64 | 112 |
-| New South Wales | Jerilderie | 0.3 | 0.64 | 86 |
-| South Australia | Marion | 0.54 | 0.64 | 18 |
+| Western Australia | Wanneroo | 0.54 | 0.74 | 39 |
+| Western Australia | Joondalup | 0.55 | 0.74 | 36 |
+| Western Australia | Cockburn | 0.35 | 0.73 | 110 |
+| Western Australia | Bayswater | 0.34 | 0.73 | 114 |
+| Western Australia | Cambridge | 0.48 | 0.73 | 54 |
 
 
 <p>
