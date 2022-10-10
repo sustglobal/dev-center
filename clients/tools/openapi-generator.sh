@@ -11,7 +11,7 @@ wget $ENDPOINT/swagger.json -O $cachefile
 echo $(jq '.host="explorer.sustglobal.io"' $cachefile) > $cachefile
 
 docker run --rm \
-    -v $PWD:/dev-center openapitools/openapi-generator-cli generate \
+    -v $PWD:/dev-center openapitools/openapi-generator-cli:v5.4.0 generate \
     -i /dev-center/clients/tools/cache/climate-explorer-openapi-spec.json \
     -g python \
     -o /dev-center/clients/python \
