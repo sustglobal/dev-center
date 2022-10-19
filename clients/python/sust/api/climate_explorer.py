@@ -332,7 +332,7 @@ class ClimateExplorerClient:
         :param api_key: Climate Explorer API key
         :param project: Climate Explorer project name or ID
         """
-        self._api_key = api_key
+        self._api_key_header = api_key
         self._page_size = 100
         self._default_req_kwargs = {
             'project': project,
@@ -342,7 +342,7 @@ class ClimateExplorerClient:
 
     def _init_openapi(self, endpoint):
         self._openapi_config = Configuration(host=endpoint)
-        self._openapi_config.api_key['api_key'] = self._api_key
+        self._openapi_config.api_key['X-SustGlobal-APIKey'] = self._api_key_header
 
         openapi_client = ApiClient(self._openapi_config)
         self._openapi_instance = portfolios_api.PortfoliosApi(openapi_client)
