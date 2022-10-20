@@ -163,7 +163,7 @@ Note that a project must typically be indicated via a `project` HTTP header.
 You can programmatically identify which projects you may access via the `/api/projects/` endpoint:
 
 ```
-% curl "https://explorer.sustglobal.io/api/projects/?api_key=$APIKEY"
+curl "https://explorer.sustglobal.io/api/projects/" --header "X-SustGlobal-APIKey: $APIKEY"
 [
   {
     "project_id": "a19b6282de313211",
@@ -172,17 +172,17 @@ You can programmatically identify which projects you may access via the `/api/pr
 ]
 ```
 
-You may use either the `project_id` or `project_name` value in the query parameter.
+You may use either the `project_id` or `project_name` value in the HTTP headers.
 For example, using the project name:
 
 ```
-curl "https://explorer.sustglobal.io/api/portfolios/?api_key=$APIKEY&project=ec-DEMO"
+curl "https://explorer.sustglobal.io/api/portfolios/" --header "X-SustGlobal-APIKey: $APIKEY" --header "X-SustGlobal-Project: ec-DEMO"
 ```
 
 ...or the project ID:
 
 ```
-curl "https://explorer.sustglobal.io/api/portfolios/?api_key=$APIKEY&project=a19b6282de313211"
+curl "https://explorer.sustglobal.io/api/portfolios/" --header "X-SustGlobal-APIKey: $APIKEY" --header "X-SustGlobal-Project: a19b6282de313211"
 ```
 
 ### Pagination
