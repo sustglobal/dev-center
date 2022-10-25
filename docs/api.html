@@ -57,122 +57,122 @@ This value will be referenced below as <code class="language-plaintext highlight
 
 <p>Open a local terminal, then run the following <code class="language-plaintext highlighter-rouge">curl</code> command:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl "https://explorer.sustglobal.io/api/portfolios/?api_key=$APIKEY&amp;project=ec-DEMO"
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl "https://explorer.sustglobal.io/api/portfolios" --header "X-SustGlobal-APIKey: $APIKEY" --header "X-SustGlobal-Project: ec-DEMO"
 </code></pre></div></div>
 
 <p>A successful response from the portfolios endpoint will contain a set of all portfolios you currently may access.
 For example, a single portfolio named “MRTG_demo”:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
-  "portfolio_id": "f150aac833c2c6c2",
-  "portfolio_name": "MRTG_demo",
-  "created_at": "2022-02-03T11:47:37Z",
-  "updated_at": "2022-02-12T23:28:59Z",
-  "status": "Risk data available"
+"portfolio_id": "632b0c0aae178b6e",
+"portfolio_name": "MRTG_demo_portfolio",
+"created_at": "2022-06-08T09:24:50Z",
+"updated_at": "2022-10-03T15:02:02Z",
+"status": "Risk data available"
 }
 </code></pre></div></div>
 
-<p>This response tells us that the <code class="language-plaintext highlighter-rouge">MRTG_demo</code> portfolio already contains physical risk exposure data.
+<p>This response status (“Risk data available”) tells us that the <code class="language-plaintext highlighter-rouge">MRTG_demo_portfolio</code> portfolio already contains physical risk exposure data.
 Before we fetch any risk-related data, we will first retrieve the assets from the portfolio:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl "https://explorer.sustglobal.io/api/portfolios/MRTG_demo/assets?api_key=$APIKEY&amp;project=ec-DEMO"
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl "https://explorer.sustglobal.io/api/portfolios/MRTG_demo_portfolio/assets" --header "X-SustGlobal-APIKey: $APIKEY" --header "X-SustGlobal-Project: ec-DEMO"
 </code></pre></div></div>
 
 <p>The output below is a single object from the list of assets you will observe:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
-  "portfolio_name": "MRTG_demo",
-  "portfolio_index": 30,
-  "entity_id": "",
-  "entity_name": "760",
-  "lat": 38.764016,
-  "lng": -121.244538,
-  "labels": {
-    "tag": "56,628 SF",
-    "type": "Office",
-  }
+"portfolio_name": "MRTG_demo_portfolio",
+"portfolio_index": 1,
+"entity_id": "",
+"entity_name": "282",
+"labels": {
+  "type": "Land",
+  "price": "$3,950,000.00",
+  "address": "Lower Buckeye Road, Buckeye, AZ, 85326"
+},
+"lat": 33.4210302,
+"lng": -112.6298175
 }
 </code></pre></div></div>
 
 <p>Now, we can fetch a summary of the risk exposure data pertaining to this portfolio with the following command:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl "https://explorer.sustglobal.io/api/portfolios/MRTG_demo/datasets/physical/summary?api_key=$APIKEY&amp;project=ec-DEMO"
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl "https://explorer.sustglobal.io/api/portfolios/MRTG_demo_portfolio/datasets/physical/summary" --header "X-SustGlobal-APIKey: $APIKEY" --header "X-SustGlobal-Project: ec-DEMO"
 </code></pre></div></div>
 
 <p>A single object from the response is displayed below:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
-  "portfolio_name": "MRTG_demo",
-  "portfolio_index": 228,
-  "entity_name": "302",
-  "entity_id": "",
-  "window": 15,
-  "window_start_year": 2022,
-  "scenario": "ssp126",
-  "risk_summaries": [
-    {
-      "hazard": "cyclone",
-      "risk_class": "LOW",
-      "risk_score": 0
-    },
-    {
-      "hazard": "flood_potential",
-      "risk_class": "LOW",
-      "risk_score": 0
-    },
-    {
-      "hazard": "heatwave",
-      "risk_class": "LOW",
-      "risk_score": 0.11072656322738
-    },
-    {
-      "hazard": "sea_level_rise",
-      "risk_class": "LOW",
-      "risk_score": 0
-    },
-    {
-      "hazard": "water_stress",
-      "risk_class": "LOW",
-      "risk_score": 0.472303866057673
-    },
-    {
-      "hazard": "wildfire",
-      "risk_class": "LOW",
-      "risk_score": 0
-    }
-  ]
+"portfolio_name": "MRTG_demo_portfolio",
+"portfolio_index": 0,
+"entity_name": "26",
+"entity_id": "",
+"window": 5,
+"window_start_year": 2022,
+"scenario": "ssp126",
+"risk_summaries": [
+  {
+    "hazard": "cyclone",
+    "risk_class": "LOW",
+    "risk_score": 0.0344486861607962
+  },
+  {
+    "hazard": "flood_potential",
+    "risk_class": "LOW",
+    "risk_score": 0
+  },
+  {
+    "hazard": "heatwave",
+    "risk_class": "LOW",
+    "risk_score": 0.055
+  },
+  {
+    "hazard": "sea_level_rise",
+    "risk_class": "LOW",
+    "risk_score": 0
+  },
+  {
+    "hazard": "water_stress",
+    "risk_class": "LOW",
+    "risk_score": 0.0756378421175013
+  },
+  {
+    "hazard": "wildfire",
+    "risk_class": "LOW",
+    "risk_score": 0.0080123366443584
+  }
+ ]
 }
 </code></pre></div></div>
 
 <p>To fetch the more granular timeseries data, we can use the “items” endpoint.
 We can also apply some filters this time around: <code class="language-plaintext highlighter-rouge">hazard=wildfire</code>, <code class="language-plaintext highlighter-rouge">scenario=ssp585</code>, and <code class="language-plaintext highlighter-rouge">start_date=2022</code></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl "https://explorer.sustglobal.io/api/portfolios/MRTG_demo/datasets/physical/items?api_key=$APIKEY&amp;project=ec-DEMO&amp;hazard=wildfire&amp;scenario=ssp585&amp;start_date=2022"
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl "https://explorer.sustglobal.io/api/portfolios/MRTG_demo_portfolio/datasets/physical/items?hazard=wildfire&amp;scenario=ssp585&amp;start_date=2022" --header "X-SustGlobal-APIKey: $APIKEY" --header "X-SustGlobal-Project: ec-DEMO"
 </code></pre></div></div>
 
 <p>Below is a truncated object from the response:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
-  "portfolio_name": "MRTG_demo",
-  "portfolio_index": 49,
-  "entity_id": "",
-  "entity_name": "167",
-  "scenario": "ssp585",
-  "hazard": "wildfire",
-  "indicator": "burned_area_norm",
-  "measure": "mid",
-  "risk_exposure": {
-    "2022": 1.530678391456604,
-    "2023": 5.00434160232544,
-    "2024": 1.4145750999450684,
-    "2025": 1.45624041557312,
-    "2026": 2.020421028137207,
-    "2027": 2.387681722640991,
-    "2028": 2.2932016849517822,
-    "2029": 2.7874271869659424,
-    "2030": 2.900757312774658,
-    "2031": 1.892580509185791,
-    ...
+"portfolio_name": "MRTG_demo_portfolio",
+"portfolio_index": 5,
+"entity_id": "",
+"entity_name": "171",
+"hazard": "wildfire",
+"indicator": "burned_area_norm",
+"scenario": "ssp585",
+"measure": "mid",
+"risk_exposure": {
+  "2022": 0.0024577002041041,
+  "2023": 0.0397371985018253,
+  "2024": 0.0130443815141916,
+  "2025": 0.0121267260983586,
+  "2026": 0.0074249189347028,
+  "2027": 0.0198366455733776,
+  "2028": 0.0168143846094608,
+  "2029": 0.0275528505444526,
+  "2030": 0.0196106024086475,
+   ...
 </code></pre></div></div>
 
 <p>Read through the remainder of this document from here to learn about other aspects of the API.</p>
@@ -186,19 +186,19 @@ We can also apply some filters this time around: <code class="language-plaintext
 <p>All API requests must be authenticated using an API key.
 Find your own API key at in your <a href="https://explorer.sustglobal.io/account/profile/">Climate Explorer User Profile</a>.</p>
 
-<p>To authenticate an API request, simply pass your API key as a query parameter named <code class="language-plaintext highlighter-rouge">api_key</code>.
+<p>To authenticate an API request, simply pass your API key as an HTTP header named <code class="language-plaintext highlighter-rouge">X-SustGlobal-APIKey</code>.
 For example, if your API key were <code class="language-plaintext highlighter-rouge">FOOBAR</code> then you would authenticate your request like so:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl "https://explorer.sustglobal.io/api/portfolios/?api_key=FOOBAR"
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl "https://explorer.sustglobal.io/api/portfolios/" --header "X-SustGlobal-APIKey: FOOBAR"
 </code></pre></div></div>
 
 <h3 id="projects">
 <a class="anchor" href="#projects" aria-hidden="true"><span class="octicon octicon-link"></span></a>Projects</h3>
 
-<p>Note that a project must typically be indicated via a <code class="language-plaintext highlighter-rouge">project</code> query parameter.
+<p>Note that a project must typically be indicated via a <code class="language-plaintext highlighter-rouge">project</code> HTTP header.
 You can programmatically identify which projects you may access via the <code class="language-plaintext highlighter-rouge">/api/projects/</code> endpoint:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% curl "https://explorer.sustglobal.io/api/projects/?api_key=$APIKEY"
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl "https://explorer.sustglobal.io/api/projects/" --header "X-SustGlobal-APIKey: $APIKEY"
 [
   {
     "project_id": "a19b6282de313211",
@@ -207,15 +207,15 @@ You can programmatically identify which projects you may access via the <code cl
 ]
 </code></pre></div></div>
 
-<p>You may use either the <code class="language-plaintext highlighter-rouge">project_id</code> or <code class="language-plaintext highlighter-rouge">project_name</code> value in the query parameter.
+<p>You may use either the <code class="language-plaintext highlighter-rouge">project_id</code> or <code class="language-plaintext highlighter-rouge">project_name</code> value in the HTTP headers.
 For example, using the project name:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl "https://explorer.sustglobal.io/api/portfolios/?api_key=$APIKEY&amp;project=ec-DEMO"
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl "https://explorer.sustglobal.io/api/portfolios/" --header "X-SustGlobal-APIKey: $APIKEY" --header "X-SustGlobal-Project: ec-DEMO"
 </code></pre></div></div>
 
 <p>…or the project ID:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl "https://explorer.sustglobal.io/api/portfolios/?api_key=$APIKEY&amp;project=a19b6282de313211"
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl "https://explorer.sustglobal.io/api/portfolios/" --header "X-SustGlobal-APIKey: $APIKEY" --header "X-SustGlobal-Project: a19b6282de313211"
 </code></pre></div></div>
 
 <h3 id="pagination">
@@ -227,7 +227,7 @@ time reading a subset of the total result set.</p>
 <p>Users control pagination with the <code class="language-plaintext highlighter-rouge">page</code> and <code class="language-plaintext highlighter-rouge">rows</code> query parameters. The value of <code class="language-plaintext highlighter-rouge">rows</code> sets the maximum number of results
 that the API should return for a given <code class="language-plaintext highlighter-rouge">page</code>.</p>
 
-<p>The default <code class="language-plaintext highlighter-rouge">rows</code> value is 50, meaning that a client is forced to paginate their requests if more than 50 items exist in a given list.</p>
+<p>The default <code class="language-plaintext highlighter-rouge">rows</code> value is 50, meaning that a client is forced to paginate their requests if more than 50 items exist in a given list.  The max value of <code class="language-plaintext highlighter-rouge">rows</code> is 250, and datasets over this limit will require multiple API calls to load.  This can be accelerated by using filters such as <code class="language-plaintext highlighter-rouge">hazard=wildfire</code>, as described above.  An example of fetching with pagination in Python can be found <a href="https://github.com/sustglobal/dev-center/blob/master/jupyter-notebooks/ClimateDataStudio/ClimateDataStudioExample.ipynb">here</a>.</p>
 
 <p>An example of pagination over a set of 120 items might work like so:</p>
 
@@ -237,8 +237,7 @@ that the API should return for a given <code class="language-plaintext highlight
   <li>Request two sets <code class="language-plaintext highlighter-rouge">page=3</code> and <code class="language-plaintext highlighter-rouge">rows=50</code>, receiving 20 items</li>
 </ol>
 
-<p>Note that once a set of items smaller in number than the value of <code class="language-plaintext highlighter-rouge">rows</code> is received from a paginated request, the client should
-halt any further requests.</p>
+<p>Note that once a set of items smaller in number than the value of <code class="language-plaintext highlighter-rouge">rows</code> is received from a paginated request, the client should halt any further requests.</p>
 
 <h2 id="error-responses">
 <a class="anchor" href="#error-responses" aria-hidden="true"><span class="octicon octicon-link"></span></a>Error Responses</h2>
@@ -279,7 +278,7 @@ is no contract established in the content of error strings.</p>
 
 <p>To create a new portfolio, simply run the following cURL command:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -i -X POST "https://explorer.sustglobal.io/api/portfolios/?api_key=$APIKEY&amp;project=$PROJECT&amp;portfolio=$PORTFOLIO"
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -i -X POST "https://explorer.sustglobal.io/api/portfolios/" --header "X-SustGlobal-APIKey: $APIKEY" --header "X-SustGlobal-Project: $PROJECT" --data-raw "{\"portfolio_name\": \"$PORTFOLIO\"}"
 </code></pre></div></div>
 
 <h3 id="upload-assets-to-a-portfolio">
@@ -289,7 +288,7 @@ is no contract established in the content of error strings.</p>
 The value of <code class="language-plaintext highlighter-rouge">$ASSET_FILE</code> must be the location of a local CSV file containing assets.
 Please see the <a href="/explorer.html">Climate Explorer Guide</a> for more information about assets and CSV file requirements.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -i -F asset=@$ASSET_FILE "https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/assets/import?api_key=$APIKEY&amp;project=$PROJECT"
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -i -F asset=@$ASSET_FILE "https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/assets/import/" --header "X-SustGlobal-APIKey: $APIKEY" --header "X-SustGlobal-Project: $PROJECT"
 </code></pre></div></div>
 
 <h3 id="export-portfolio-assets">
@@ -298,7 +297,7 @@ Please see the <a href="/explorer.html">Climate Explorer Guide</a> for more info
 <p>It may be useful to download all assets in a given portfolio to a local CSV file.
 This is primarily useful when you intend to re-upload a modified set of assets to a portfolio.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -OJ "https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/assets/export?api_key=$APIKEY&amp;project=$PROJECT"
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -OJ "https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/assets/export" --header "X-SustGlobal-APIKey: $APIKEY" --header "X-SustGlobal-Project: $PROJECT"
 </code></pre></div></div>
 
 <p>A CSV file will be written to the filesystem.</p>
@@ -308,7 +307,7 @@ This is primarily useful when you intend to re-upload a modified set of assets t
 
 <p>After physical risk exposure data has been generated, one may interact with it natively via the API:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -i "https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/datasets/physical/items?api_key=$APIKEY&amp;project=$PROJECT"
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -i "https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/datasets/physical/items" --header "X-SustGlobal-APIKey: $APIKEY" --header "X-SustGlobal-Project: $PROJECT"
 </code></pre></div></div>
 
 <p>Note that this endpoint will contain a lot of data, so you should be familiar with pagination controls. Documentation is
@@ -317,7 +316,7 @@ available earlier in this guide.</p>
 <p>Additional query parameters that may be useful include <code class="language-plaintext highlighter-rouge">scenario</code>, <code class="language-plaintext highlighter-rouge">hazard</code>, <code class="language-plaintext highlighter-rouge">indicator</code> and `measure.
 An example of filtering the risk exposure dataset to SSP2-4.5 for a specific wildfire-related indicator:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -i "https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/datasets/physical/items?api_key=$APIKEY&amp;project=$PROJECT&amp;scenario=ssp245&amp;hazard=wildfire&amp;indicator=burned_area_norm&amp;measure=mid"
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -i "https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/datasets/physical/items?scenario=ssp245&amp;hazard=wildfire&amp;indicator=burned_area_norm&amp;measure=mid" --header "X-SustGlobal-APIKey: $APIKEY" --header "X-SustGlobal-Project: $PROJECT"
 </code></pre></div></div>
 
 <p>Please review the API Reference for documentation of all supported query parameters.</p>
@@ -327,7 +326,7 @@ An example of filtering the risk exposure dataset to SSP2-4.5 for a specific wil
 
 <p>A summary of physical risk exposure data with an optional <code class="language-plaintext highlighter-rouge">scenario</code> filter is available via API:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -i "https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/datasets/physical/summary?api_key=$APIKEY&amp;project=PROJECT"
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -i "https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/datasets/physical/summary" --header "X-SustGlobal-APIKey: $APIKEY" --header "X-SustGlobal-Project: $PROJECT"
 </code></pre></div></div>
 
 <h3 id="export-physical-risk-exposure">
@@ -335,7 +334,7 @@ An example of filtering the risk exposure dataset to SSP2-4.5 for a specific wil
 
 <p>Download a ZIP archive containing the physical risk exposure data for a specific portfolio using the following command:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -OJ "https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/datasets/physical/export?api_key=$APIKEY&amp;project=$PROJECT"
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -OJ "https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/datasets/physical/export" --header "X-SustGlobal-APIKey: $APIKEY" --header "X-SustGlobal-Project: $PROJECT"
 </code></pre></div></div>
 
 <p>A ZIP file will be written to the filesystem.</p>
