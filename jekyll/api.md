@@ -240,7 +240,7 @@ Note that many of the examples refer to environment variables that must be set m
 To create a new portfolio, simply run the following cURL command:
 
 ```
-curl -i -X POST "https://explorer.sustglobal.io/api/portfolios/?api_key=$APIKEY&project=$PROJECT&portfolio=$PORTFOLIO"
+curl -i -X POST "https://explorer.sustglobal.io/api/portfolios/" --header "X-SustGlobal-APIKey: $APIKEY" --header "X-SustGlobal-Project: $PROJECT" --data-raw "{\"portfolio_name\": \"$PORTFOLIO\"}"
 ```
 
 ### Upload Assets to a Portfolio
@@ -250,7 +250,7 @@ The value of `$ASSET_FILE` must be the location of a local CSV file containing a
 Please see the [Climate Explorer Guide](/explorer.html) for more information about assets and CSV file requirements.
 
 ```
-curl -i -F asset=@$ASSET_FILE "https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/assets/import?api_key=$APIKEY&project=$PROJECT"
+curl -i -F asset=@$ASSET_FILE "https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/assets/import/" --header "X-SustGlobal-APIKey: $APIKEY" --header "X-SustGlobal-Project: $PROJECT"
 ```
 
 ### Export Portfolio Assets
@@ -259,7 +259,7 @@ It may be useful to download all assets in a given portfolio to a local CSV file
 This is primarily useful when you intend to re-upload a modified set of assets to a portfolio.
 
 ```
-curl -OJ "https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/assets/export?api_key=$APIKEY&project=$PROJECT"
+curl -OJ "https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/assets/export" --header "X-SustGlobal-APIKey: $APIKEY" --header "X-SustGlobal-Project: $PROJECT"
 ```
 
 A CSV file will be written to the filesystem.
@@ -269,7 +269,7 @@ A CSV file will be written to the filesystem.
 After physical risk exposure data has been generated, one may interact with it natively via the API:
 
 ```
-curl -i "https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/datasets/physical/items?api_key=$APIKEY&project=$PROJECT"
+curl -i "https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/datasets/physical/items" --header "X-SustGlobal-APIKey: $APIKEY" --header "X-SustGlobal-Project: $PROJECT"
 ```
 
 Note that this endpoint will contain a lot of data, so you should be familiar with pagination controls. Documentation is
@@ -279,7 +279,7 @@ Additional query parameters that may be useful include `scenario`, `hazard`, `in
 An example of filtering the risk exposure dataset to SSP2-4.5 for a specific wildfire-related indicator:
 
 ```
-curl -i "https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/datasets/physical/items?api_key=$APIKEY&project=$PROJECT&scenario=ssp245&hazard=wildfire&indicator=burned_area_norm&measure=mid"
+curl -i "https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/datasets/physical/items?scenario=ssp245&hazard=wildfire&indicator=burned_area_norm&measure=mid" --header "X-SustGlobal-APIKey: $APIKEY" --header "X-SustGlobal-Project: $PROJECT"
 ```
 
 Please review the API Reference for documentation of all supported query parameters.
@@ -289,7 +289,7 @@ Please review the API Reference for documentation of all supported query paramet
 A summary of physical risk exposure data with an optional `scenario` filter is available via API:
 
 ```
-curl -i "https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/datasets/physical/summary?api_key=$APIKEY&project=PROJECT"
+curl -i "https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/datasets/physical/summary" --header "X-SustGlobal-APIKey: $APIKEY" --header "X-SustGlobal-Project: $PROJECT"
 ```
 
 ### Export Physical Risk Exposure
@@ -297,7 +297,7 @@ curl -i "https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/datasets/physi
 Download a ZIP archive containing the physical risk exposure data for a specific portfolio using the following command:
 
 ```
-curl -OJ "https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/datasets/physical/export?api_key=$APIKEY&project=$PROJECT"
+curl -OJ "https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/datasets/physical/export" --header "X-SustGlobal-APIKey: $APIKEY" --header "X-SustGlobal-Project: $PROJECT"
 ```
 
 A ZIP file will be written to the filesystem.

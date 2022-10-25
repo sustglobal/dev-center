@@ -16,6 +16,7 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" /> 
@@ -41,7 +42,93 @@
 <li><a class="reference internal" href="#">Sust Global Python API Client</a><ul>
 <li><a class="reference internal" href="#install-the-client">Install the client</a></li>
 <li><a class="reference internal" href="#introduction">Introduction</a></li>
-<li><a class="reference internal" href="#python-api-reference">Python API Reference</a></li>
+<li><a class="reference internal" href="#python-api-reference">Python API Reference</a><ul>
+<li><a class="reference internal" href="#sust.api.climate_explorer.ClimateExplorerClient"><code class="docutils literal notranslate"><span class="pre">ClimateExplorerClient</span></code></a><ul>
+<li><a class="reference internal" href="#sust.api.climate_explorer.ClimateExplorerClient.__init__"><code class="docutils literal notranslate"><span class="pre">ClimateExplorerClient.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#sust.api.climate_explorer.ClimateExplorerClient.create_portfolio"><code class="docutils literal notranslate"><span class="pre">ClimateExplorerClient.create_portfolio()</span></code></a></li>
+<li><a class="reference internal" href="#sust.api.climate_explorer.ClimateExplorerClient.portfolio"><code class="docutils literal notranslate"><span class="pre">ClimateExplorerClient.portfolio()</span></code></a></li>
+<li><a class="reference internal" href="#sust.api.climate_explorer.ClimateExplorerClient.portfolios"><code class="docutils literal notranslate"><span class="pre">ClimateExplorerClient.portfolios()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sust.api.climate_explorer.Portfolio"><code class="docutils literal notranslate"><span class="pre">Portfolio</span></code></a><ul>
+<li><a class="reference internal" href="#sust.api.climate_explorer.Portfolio.assets"><code class="docutils literal notranslate"><span class="pre">Portfolio.assets()</span></code></a></li>
+<li><a class="reference internal" href="#sust.api.climate_explorer.Portfolio.import_assets_csv"><code class="docutils literal notranslate"><span class="pre">Portfolio.import_assets_csv()</span></code></a></li>
+<li><a class="reference internal" href="#sust.api.climate_explorer.Portfolio.physical_risk_exposure"><code class="docutils literal notranslate"><span class="pre">Portfolio.physical_risk_exposure()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sust.api.climate_explorer.AssetList"><code class="docutils literal notranslate"><span class="pre">AssetList</span></code></a><ul>
+<li><a class="reference internal" href="#sust.api.climate_explorer.AssetList.export_csv"><code class="docutils literal notranslate"><span class="pre">AssetList.export_csv()</span></code></a></li>
+<li><a class="reference internal" href="#sust.api.climate_explorer.AssetList.to_dicts"><code class="docutils literal notranslate"><span class="pre">AssetList.to_dicts()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sust.api.climate_explorer.PhysicalRiskExposureDataset"><code class="docutils literal notranslate"><span class="pre">PhysicalRiskExposureDataset</span></code></a><ul>
+<li><a class="reference internal" href="#sust.api.climate_explorer.PhysicalRiskExposureDataset.export_zip"><code class="docutils literal notranslate"><span class="pre">PhysicalRiskExposureDataset.export_zip()</span></code></a></li>
+<li><a class="reference internal" href="#sust.api.climate_explorer.PhysicalRiskExposureDataset.hazards"><code class="docutils literal notranslate"><span class="pre">PhysicalRiskExposureDataset.hazards</span></code></a></li>
+<li><a class="reference internal" href="#sust.api.climate_explorer.PhysicalRiskExposureDataset.indicators"><code class="docutils literal notranslate"><span class="pre">PhysicalRiskExposureDataset.indicators</span></code></a></li>
+<li><a class="reference internal" href="#sust.api.climate_explorer.PhysicalRiskExposureDataset.measures"><code class="docutils literal notranslate"><span class="pre">PhysicalRiskExposureDataset.measures</span></code></a></li>
+<li><a class="reference internal" href="#sust.api.climate_explorer.PhysicalRiskExposureDataset.scenarios"><code class="docutils literal notranslate"><span class="pre">PhysicalRiskExposureDataset.scenarios</span></code></a></li>
+<li><a class="reference internal" href="#sust.api.climate_explorer.PhysicalRiskExposureDataset.summary"><code class="docutils literal notranslate"><span class="pre">PhysicalRiskExposureDataset.summary()</span></code></a></li>
+<li><a class="reference internal" href="#sust.api.climate_explorer.PhysicalRiskExposureDataset.timeseries"><code class="docutils literal notranslate"><span class="pre">PhysicalRiskExposureDataset.timeseries()</span></code></a></li>
+<li><a class="reference internal" href="#sust.api.climate_explorer.PhysicalRiskExposureDataset.windows"><code class="docutils literal notranslate"><span class="pre">PhysicalRiskExposureDataset.windows</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sust.api.climate_explorer.PhysicalRiskExposureTimeseries"><code class="docutils literal notranslate"><span class="pre">PhysicalRiskExposureTimeseries</span></code></a><ul>
+<li><a class="reference internal" href="#sust.api.climate_explorer.PhysicalRiskExposureTimeseries.to_dicts"><code class="docutils literal notranslate"><span class="pre">PhysicalRiskExposureTimeseries.to_dicts()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sust.api.climate_explorer.PhysicalRiskExposureSummary"><code class="docutils literal notranslate"><span class="pre">PhysicalRiskExposureSummary</span></code></a><ul>
+<li><a class="reference internal" href="#sust.api.climate_explorer.PhysicalRiskExposureSummary.to_dicts"><code class="docutils literal notranslate"><span class="pre">PhysicalRiskExposureSummary.to_dicts()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sust.api.climate_explorer.Scenario"><code class="docutils literal notranslate"><span class="pre">Scenario</span></code></a><ul>
+<li><a class="reference internal" href="#sust.api.climate_explorer.Scenario.__init__"><code class="docutils literal notranslate"><span class="pre">Scenario.__init__()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sust.api.climate_explorer.ScenarioList"><code class="docutils literal notranslate"><span class="pre">ScenarioList</span></code></a><ul>
+<li><a class="reference internal" href="#sust.api.climate_explorer.ScenarioList.__init__"><code class="docutils literal notranslate"><span class="pre">ScenarioList.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#sust.api.climate_explorer.ScenarioList.get"><code class="docutils literal notranslate"><span class="pre">ScenarioList.get()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sust.api.climate_explorer.Hazard"><code class="docutils literal notranslate"><span class="pre">Hazard</span></code></a><ul>
+<li><a class="reference internal" href="#sust.api.climate_explorer.Hazard.__init__"><code class="docutils literal notranslate"><span class="pre">Hazard.__init__()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sust.api.climate_explorer.HazardList"><code class="docutils literal notranslate"><span class="pre">HazardList</span></code></a><ul>
+<li><a class="reference internal" href="#sust.api.climate_explorer.HazardList.__init__"><code class="docutils literal notranslate"><span class="pre">HazardList.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#sust.api.climate_explorer.HazardList.get"><code class="docutils literal notranslate"><span class="pre">HazardList.get()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sust.api.climate_explorer.Indicator"><code class="docutils literal notranslate"><span class="pre">Indicator</span></code></a><ul>
+<li><a class="reference internal" href="#sust.api.climate_explorer.Indicator.__init__"><code class="docutils literal notranslate"><span class="pre">Indicator.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#sust.api.climate_explorer.Indicator.to_dict"><code class="docutils literal notranslate"><span class="pre">Indicator.to_dict()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sust.api.climate_explorer.IndicatorList"><code class="docutils literal notranslate"><span class="pre">IndicatorList</span></code></a><ul>
+<li><a class="reference internal" href="#sust.api.climate_explorer.IndicatorList.__init__"><code class="docutils literal notranslate"><span class="pre">IndicatorList.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#sust.api.climate_explorer.IndicatorList.get"><code class="docutils literal notranslate"><span class="pre">IndicatorList.get()</span></code></a></li>
+<li><a class="reference internal" href="#sust.api.climate_explorer.IndicatorList.to_dicts"><code class="docutils literal notranslate"><span class="pre">IndicatorList.to_dicts()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sust.api.climate_explorer.Window"><code class="docutils literal notranslate"><span class="pre">Window</span></code></a><ul>
+<li><a class="reference internal" href="#sust.api.climate_explorer.Window.__init__"><code class="docutils literal notranslate"><span class="pre">Window.__init__()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sust.api.climate_explorer.WindowList"><code class="docutils literal notranslate"><span class="pre">WindowList</span></code></a><ul>
+<li><a class="reference internal" href="#sust.api.climate_explorer.WindowList.__init__"><code class="docutils literal notranslate"><span class="pre">WindowList.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#sust.api.climate_explorer.WindowList.get"><code class="docutils literal notranslate"><span class="pre">WindowList.get()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sust.api.climate_explorer.Measure"><code class="docutils literal notranslate"><span class="pre">Measure</span></code></a><ul>
+<li><a class="reference internal" href="#sust.api.climate_explorer.Measure.__init__"><code class="docutils literal notranslate"><span class="pre">Measure.__init__()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sust.api.climate_explorer.MeasureList"><code class="docutils literal notranslate"><span class="pre">MeasureList</span></code></a><ul>
+<li><a class="reference internal" href="#sust.api.climate_explorer.MeasureList.__init__"><code class="docutils literal notranslate"><span class="pre">MeasureList.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#sust.api.climate_explorer.MeasureList.get"><code class="docutils literal notranslate"><span class="pre">MeasureList.get()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
