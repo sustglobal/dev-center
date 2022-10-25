@@ -26,6 +26,7 @@ Trigger an export operation of portfolio assets.
 
 ### Example
 
+* Api Key Authentication (X-SustGlobal-APIKey):
 * Api Key Authentication (api_key):
 
 ```python
@@ -44,6 +45,12 @@ configuration = sust.api.generated.climate_explorer.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure API key authorization: X-SustGlobal-APIKey
+configuration.api_key['X-SustGlobal-APIKey'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-SustGlobal-APIKey'] = 'Bearer'
 
 # Configure API key authorization: api_key
 configuration.api_key['api_key'] = 'YOUR_API_KEY'
@@ -90,7 +97,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[api_key](../README.md#api_key)
+[X-SustGlobal-APIKey](../README.md#X-SustGlobal-APIKey), [api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -121,6 +128,7 @@ Trigger an import operation of assets into existing portfolio. Format of the req
 
 ### Example
 
+* Api Key Authentication (X-SustGlobal-APIKey):
 * Api Key Authentication (api_key):
 
 ```python
@@ -140,6 +148,12 @@ configuration = sust.api.generated.climate_explorer.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure API key authorization: X-SustGlobal-APIKey
+configuration.api_key['X-SustGlobal-APIKey'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-SustGlobal-APIKey'] = 'Bearer'
 
 # Configure API key authorization: api_key
 configuration.api_key['api_key'] = 'YOUR_API_KEY'
@@ -188,7 +202,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[api_key](../README.md#api_key)
+[X-SustGlobal-APIKey](../README.md#X-SustGlobal-APIKey), [api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -219,6 +233,7 @@ Retrieve a set of assets belonging to a specific portfolio.
 
 ### Example
 
+* Api Key Authentication (X-SustGlobal-APIKey):
 * Api Key Authentication (api_key):
 
 ```python
@@ -238,6 +253,12 @@ configuration = sust.api.generated.climate_explorer.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure API key authorization: X-SustGlobal-APIKey
+configuration.api_key['X-SustGlobal-APIKey'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-SustGlobal-APIKey'] = 'Bearer'
 
 # Configure API key authorization: api_key
 configuration.api_key['api_key'] = 'YOUR_API_KEY'
@@ -290,7 +311,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[api_key](../README.md#api_key)
+[X-SustGlobal-APIKey](../README.md#X-SustGlobal-APIKey), [api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -321,6 +342,7 @@ Create an empty portfolio.
 
 ### Example
 
+* Api Key Authentication (X-SustGlobal-APIKey):
 * Api Key Authentication (api_key):
 
 ```python
@@ -341,6 +363,12 @@ configuration = sust.api.generated.climate_explorer.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure API key authorization: X-SustGlobal-APIKey
+configuration.api_key['X-SustGlobal-APIKey'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-SustGlobal-APIKey'] = 'Bearer'
 
 # Configure API key authorization: api_key
 configuration.api_key['api_key'] = 'YOUR_API_KEY'
@@ -389,7 +417,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[api_key](../README.md#api_key)
+[X-SustGlobal-APIKey](../README.md#X-SustGlobal-APIKey), [api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -420,6 +448,7 @@ Trigger an export operation of physical risk exposure data.
 
 ### Example
 
+* Api Key Authentication (X-SustGlobal-APIKey):
 * Api Key Authentication (api_key):
 
 ```python
@@ -438,6 +467,12 @@ configuration = sust.api.generated.climate_explorer.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure API key authorization: X-SustGlobal-APIKey
+configuration.api_key['X-SustGlobal-APIKey'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-SustGlobal-APIKey'] = 'Bearer'
 
 # Configure API key authorization: api_key
 configuration.api_key['api_key'] = 'YOUR_API_KEY'
@@ -484,7 +519,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[api_key](../README.md#api_key)
+[X-SustGlobal-APIKey](../README.md#X-SustGlobal-APIKey), [api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -515,6 +550,7 @@ Retrieve items from the physical risk exposure dataset generated for a portfolio
 
 ### Example
 
+* Api Key Authentication (X-SustGlobal-APIKey):
 * Api Key Authentication (api_key):
 
 ```python
@@ -534,6 +570,12 @@ configuration = sust.api.generated.climate_explorer.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure API key authorization: X-SustGlobal-APIKey
+configuration.api_key['X-SustGlobal-APIKey'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-SustGlobal-APIKey'] = 'Bearer'
 
 # Configure API key authorization: api_key
 configuration.api_key['api_key'] = 'YOUR_API_KEY'
@@ -598,7 +640,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[api_key](../README.md#api_key)
+[X-SustGlobal-APIKey](../README.md#X-SustGlobal-APIKey), [api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -629,6 +671,7 @@ Retrieve metadata from the physical risk exposure dataset generated for a portfo
 
 ### Example
 
+* Api Key Authentication (X-SustGlobal-APIKey):
 * Api Key Authentication (api_key):
 
 ```python
@@ -648,6 +691,12 @@ configuration = sust.api.generated.climate_explorer.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure API key authorization: X-SustGlobal-APIKey
+configuration.api_key['X-SustGlobal-APIKey'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-SustGlobal-APIKey'] = 'Bearer'
 
 # Configure API key authorization: api_key
 configuration.api_key['api_key'] = 'YOUR_API_KEY'
@@ -694,7 +743,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[api_key](../README.md#api_key)
+[X-SustGlobal-APIKey](../README.md#X-SustGlobal-APIKey), [api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -725,6 +774,7 @@ Retrieve a summary of the physical risk exposure dataset generated for a portfol
 
 ### Example
 
+* Api Key Authentication (X-SustGlobal-APIKey):
 * Api Key Authentication (api_key):
 
 ```python
@@ -744,6 +794,12 @@ configuration = sust.api.generated.climate_explorer.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure API key authorization: X-SustGlobal-APIKey
+configuration.api_key['X-SustGlobal-APIKey'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-SustGlobal-APIKey'] = 'Bearer'
 
 # Configure API key authorization: api_key
 configuration.api_key['api_key'] = 'YOUR_API_KEY'
@@ -802,7 +858,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[api_key](../README.md#api_key)
+[X-SustGlobal-APIKey](../README.md#X-SustGlobal-APIKey), [api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -833,6 +889,7 @@ Deletes a portfolio and all associated Risk Exposure Data.
 
 ### Example
 
+* Api Key Authentication (X-SustGlobal-APIKey):
 * Api Key Authentication (api_key):
 
 ```python
@@ -852,6 +909,12 @@ configuration = sust.api.generated.climate_explorer.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure API key authorization: X-SustGlobal-APIKey
+configuration.api_key['X-SustGlobal-APIKey'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-SustGlobal-APIKey'] = 'Bearer'
 
 # Configure API key authorization: api_key
 configuration.api_key['api_key'] = 'YOUR_API_KEY'
@@ -898,7 +961,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[api_key](../README.md#api_key)
+[X-SustGlobal-APIKey](../README.md#X-SustGlobal-APIKey), [api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -929,6 +992,7 @@ Retrieve a list of portfolios.
 
 ### Example
 
+* Api Key Authentication (X-SustGlobal-APIKey):
 * Api Key Authentication (api_key):
 
 ```python
@@ -948,6 +1012,12 @@ configuration = sust.api.generated.climate_explorer.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure API key authorization: X-SustGlobal-APIKey
+configuration.api_key['X-SustGlobal-APIKey'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-SustGlobal-APIKey'] = 'Bearer'
 
 # Configure API key authorization: api_key
 configuration.api_key['api_key'] = 'YOUR_API_KEY'
@@ -984,7 +1054,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[api_key](../README.md#api_key)
+[X-SustGlobal-APIKey](../README.md#X-SustGlobal-APIKey), [api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -1015,6 +1085,7 @@ Retrieve a single portfolio.
 
 ### Example
 
+* Api Key Authentication (X-SustGlobal-APIKey):
 * Api Key Authentication (api_key):
 
 ```python
@@ -1034,6 +1105,12 @@ configuration = sust.api.generated.climate_explorer.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure API key authorization: X-SustGlobal-APIKey
+configuration.api_key['X-SustGlobal-APIKey'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-SustGlobal-APIKey'] = 'Bearer'
 
 # Configure API key authorization: api_key
 configuration.api_key['api_key'] = 'YOUR_API_KEY'
@@ -1080,7 +1157,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[api_key](../README.md#api_key)
+[X-SustGlobal-APIKey](../README.md#X-SustGlobal-APIKey), [api_key](../README.md#api_key)
 
 ### HTTP request headers
 
