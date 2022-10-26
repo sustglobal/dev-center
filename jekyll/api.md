@@ -32,7 +32,7 @@ For example, a single portfolio named "MRTG_demo":
 }
 ```
 
-This response tells us that the `MRTG_demo_portfolio` portfolio already contains physical risk exposure data.
+This response status ("Risk data available") tells us that the `MRTG_demo_portfolio` portfolio already contains physical risk exposure data.
 Before we fetch any risk-related data, we will first retrieve the assets from the portfolio:
 
 ```
@@ -193,7 +193,7 @@ time reading a subset of the total result set.
 Users control pagination with the `page` and `rows` query parameters. The value of `rows` sets the maximum number of results
 that the API should return for a given `page`.
 
-The default `rows` value is 50, meaning that a client is forced to paginate their requests if more than 50 items exist in a given list.
+The default `rows` value is 50, meaning that a client is forced to paginate their requests if more than 50 items exist in a given list.  The max value of `rows` is 250, and datasets over this limit will require multiple API calls to load.  This can be accelerated by using filters such as `hazard=wildfire`, as described above.  An example of fetching with pagination in Python can be found [here](https://github.com/sustglobal/dev-center/blob/master/jupyter-notebooks/ClimateDataStudio/ClimateDataStudioExample.ipynb).
 
 An example of pagination over a set of 120 items might work like so:
 
@@ -201,8 +201,7 @@ An example of pagination over a set of 120 items might work like so:
 2. Request two sets `page=2` and `rows=50`, receiving 50 items
 3. Request two sets `page=3` and `rows=50`, receiving 20 items
 
-Note that once a set of items smaller in number than the value of `rows` is received from a paginated request, the client should
-halt any further requests.
+Note that once a set of items smaller in number than the value of `rows` is received from a paginated request, the client should halt any further requests.
 
 ## Error Responses
 
