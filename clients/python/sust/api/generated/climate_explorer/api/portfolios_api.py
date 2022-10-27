@@ -46,6 +46,7 @@ class PortfoliosApi(object):
             settings={
                 'response_type': (file_type,),
                 'auth': [
+                    'X-SustGlobal-APIKey',
                     'api_key'
                 ],
                 'endpoint_path': '/portfolios/{portfolio_name}/assets/export',
@@ -102,6 +103,7 @@ class PortfoliosApi(object):
             settings={
                 'response_type': (MessageResponse,),
                 'auth': [
+                    'X-SustGlobal-APIKey',
                     'api_key'
                 ],
                 'endpoint_path': '/portfolios/{portfolio_name}/assets/import/',
@@ -166,6 +168,7 @@ class PortfoliosApi(object):
             settings={
                 'response_type': ([AssetResponse],),
                 'auth': [
+                    'X-SustGlobal-APIKey',
                     'api_key'
                 ],
                 'endpoint_path': '/portfolios/{portfolio_name}/assets',
@@ -237,6 +240,7 @@ class PortfoliosApi(object):
             settings={
                 'response_type': (PortfolioResponse,),
                 'auth': [
+                    'X-SustGlobal-APIKey',
                     'api_key'
                 ],
                 'endpoint_path': '/portfolios/',
@@ -294,6 +298,7 @@ class PortfoliosApi(object):
             settings={
                 'response_type': (file_type,),
                 'auth': [
+                    'X-SustGlobal-APIKey',
                     'api_key'
                 ],
                 'endpoint_path': '/portfolios/{portfolio_name}/datasets/physical/export',
@@ -350,6 +355,7 @@ class PortfoliosApi(object):
             settings={
                 'response_type': ([PhysicalRiskDatasetItemResponse],),
                 'auth': [
+                    'X-SustGlobal-APIKey',
                     'api_key'
                 ],
                 'endpoint_path': '/portfolios/{portfolio_name}/datasets/physical/items',
@@ -465,6 +471,7 @@ class PortfoliosApi(object):
             settings={
                 'response_type': (PhysicalRiskMetadataResponse,),
                 'auth': [
+                    'X-SustGlobal-APIKey',
                     'api_key'
                 ],
                 'endpoint_path': '/portfolios/{portfolio_name}/datasets/physical',
@@ -521,6 +528,7 @@ class PortfoliosApi(object):
             settings={
                 'response_type': ([PhysicalRiskDatasetSummaryResponse],),
                 'auth': [
+                    'X-SustGlobal-APIKey',
                     'api_key'
                 ],
                 'endpoint_path': '/portfolios/{portfolio_name}/datasets/physical/summary',
@@ -614,6 +622,7 @@ class PortfoliosApi(object):
             settings={
                 'response_type': (MessageResponse,),
                 'auth': [
+                    'X-SustGlobal-APIKey',
                     'api_key'
                 ],
                 'endpoint_path': '/portfolios/{portfolio_name}/',
@@ -670,6 +679,7 @@ class PortfoliosApi(object):
             settings={
                 'response_type': ([PortfolioResponse],),
                 'auth': [
+                    'X-SustGlobal-APIKey',
                     'api_key'
                 ],
                 'endpoint_path': '/portfolios/',
@@ -719,6 +729,7 @@ class PortfoliosApi(object):
             settings={
                 'response_type': (PortfolioResponse,),
                 'auth': [
+                    'X-SustGlobal-APIKey',
                     'api_key'
                 ],
                 'endpoint_path': '/portfolios/{portfolio_name}/',

@@ -50,6 +50,12 @@ configuration = sust.api.generated.climate_explorer.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
+# Configure API key authorization: X-SustGlobal-APIKey
+configuration.api_key['X-SustGlobal-APIKey'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-SustGlobal-APIKey'] = 'Bearer'
+
 # Configure API key authorization: api_key
 configuration.api_key['api_key'] = 'YOUR_API_KEY'
 
@@ -106,6 +112,13 @@ Class | Method | HTTP request | Description
 
 
 ## Documentation For Authorization
+
+
+## X-SustGlobal-APIKey
+
+- **Type**: API key
+- **API key parameter name**: X-SustGlobal-APIKey
+- **Location**: HTTP header
 
 
 ## api_key

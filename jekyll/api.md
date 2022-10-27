@@ -16,7 +16,7 @@ This value will be referenced below as `$APIKEY`.
 Open a local terminal, then run the following `curl` command:
 
 ```
-curl "https://explorer.sustglobal.io/api/portfolios/?api_key=$APIKEY&project=ec-DEMO"
+curl "https://explorer.sustglobal.io/api/portfolios" --header "X-SustGlobal-APIKey: $APIKEY" --header "X-SustGlobal-Project: ec-DEMO"
 ```
 
 A successful response from the portfolios endpoint will contain a set of all portfolios you currently may access.
@@ -24,87 +24,88 @@ For example, a single portfolio named "MRTG_demo":
 
 ```
 {
-  "portfolio_id": "f150aac833c2c6c2",
-  "portfolio_name": "MRTG_demo",
-  "created_at": "2022-02-03T11:47:37Z",
-  "updated_at": "2022-02-12T23:28:59Z",
-  "status": "Risk data available"
+"portfolio_id": "632b0c0aae178b6e",
+"portfolio_name": "MRTG_demo_portfolio",
+"created_at": "2022-06-08T09:24:50Z",
+"updated_at": "2022-10-03T15:02:02Z",
+"status": "Risk data available"
 }
 ```
 
-This response tells us that the `MRTG_demo` portfolio already contains physical risk exposure data.
+This response status ("Risk data available") tells us that the `MRTG_demo_portfolio` portfolio already contains physical risk exposure data.
 Before we fetch any risk-related data, we will first retrieve the assets from the portfolio:
 
 ```
-curl "https://explorer.sustglobal.io/api/portfolios/MRTG_demo/assets?api_key=$APIKEY&project=ec-DEMO"
+curl "https://explorer.sustglobal.io/api/portfolios/MRTG_demo_portfolio/assets" --header "X-SustGlobal-APIKey: $APIKEY" --header "X-SustGlobal-Project: ec-DEMO"
 ```
 
 The output below is a single object from the list of assets you will observe:
 
 ```
 {
-  "portfolio_name": "MRTG_demo",
-  "portfolio_index": 30,
-  "entity_id": "",
-  "entity_name": "760",
-  "lat": 38.764016,
-  "lng": -121.244538,
-  "labels": {
-    "tag": "56,628 SF",
-    "type": "Office",
-  }
+"portfolio_name": "MRTG_demo_portfolio",
+"portfolio_index": 1,
+"entity_id": "",
+"entity_name": "282",
+"labels": {
+  "type": "Land",
+  "price": "$3,950,000.00",
+  "address": "Lower Buckeye Road, Buckeye, AZ, 85326"
+},
+"lat": 33.4210302,
+"lng": -112.6298175
 }
 ```
 
 Now, we can fetch a summary of the risk exposure data pertaining to this portfolio with the following command:
 
 ```
-curl "https://explorer.sustglobal.io/api/portfolios/MRTG_demo/datasets/physical/summary?api_key=$APIKEY&project=ec-DEMO"
+curl "https://explorer.sustglobal.io/api/portfolios/MRTG_demo_portfolio/datasets/physical/summary" --header "X-SustGlobal-APIKey: $APIKEY" --header "X-SustGlobal-Project: ec-DEMO"
 ```
 
 A single object from the response is displayed below:
 
 ```
 {
-  "portfolio_name": "MRTG_demo",
-  "portfolio_index": 228,
-  "entity_name": "302",
-  "entity_id": "",
-  "window": 15,
-  "window_start_year": 2022,
-  "scenario": "ssp126",
-  "risk_summaries": [
-    {
-      "hazard": "cyclone",
-      "risk_class": "LOW",
-      "risk_score": 0
-    },
-    {
-      "hazard": "flood_potential",
-      "risk_class": "LOW",
-      "risk_score": 0
-    },
-    {
-      "hazard": "heatwave",
-      "risk_class": "LOW",
-      "risk_score": 0.11072656322738
-    },
-    {
-      "hazard": "sea_level_rise",
-      "risk_class": "LOW",
-      "risk_score": 0
-    },
-    {
-      "hazard": "water_stress",
-      "risk_class": "LOW",
-      "risk_score": 0.472303866057673
-    },
-    {
-      "hazard": "wildfire",
-      "risk_class": "LOW",
-      "risk_score": 0
-    }
-  ]
+"portfolio_name": "MRTG_demo_portfolio",
+"portfolio_index": 0,
+"entity_name": "26",
+"entity_id": "",
+"window": 5,
+"window_start_year": 2022,
+"scenario": "ssp126",
+"risk_summaries": [
+  {
+    "hazard": "cyclone",
+    "risk_class": "LOW",
+    "risk_score": 0.0344486861607962
+  },
+  {
+    "hazard": "flood_potential",
+    "risk_class": "LOW",
+    "risk_score": 0
+  },
+  {
+    "hazard": "heatwave",
+    "risk_class": "LOW",
+    "risk_score": 0.055
+  },
+  {
+    "hazard": "sea_level_rise",
+    "risk_class": "LOW",
+    "risk_score": 0
+  },
+  {
+    "hazard": "water_stress",
+    "risk_class": "LOW",
+    "risk_score": 0.0756378421175013
+  },
+  {
+    "hazard": "wildfire",
+    "risk_class": "LOW",
+    "risk_score": 0.0080123366443584
+  }
+ ]
 }
 ```
 
@@ -112,33 +113,32 @@ To fetch the more granular timeseries data, we can use the "items" endpoint.
 We can also apply some filters this time around: `hazard=wildfire`, `scenario=ssp585`, and `start_date=2022`
 
 ```
-curl "https://explorer.sustglobal.io/api/portfolios/MRTG_demo/datasets/physical/items?api_key=$APIKEY&project=ec-DEMO&hazard=wildfire&scenario=ssp585&start_date=2022"
+curl "https://explorer.sustglobal.io/api/portfolios/MRTG_demo_portfolio/datasets/physical/items?hazard=wildfire&scenario=ssp585&start_date=2022" --header "X-SustGlobal-APIKey: $APIKEY" --header "X-SustGlobal-Project: ec-DEMO"
 ```
 
 Below is a truncated object from the response:
 
 ```
 {
-  "portfolio_name": "MRTG_demo",
-  "portfolio_index": 49,
-  "entity_id": "",
-  "entity_name": "167",
-  "scenario": "ssp585",
-  "hazard": "wildfire",
-  "indicator": "burned_area_norm",
-  "measure": "mid",
-  "risk_exposure": {
-    "2022": 1.530678391456604,
-    "2023": 5.00434160232544,
-    "2024": 1.4145750999450684,
-    "2025": 1.45624041557312,
-    "2026": 2.020421028137207,
-    "2027": 2.387681722640991,
-    "2028": 2.2932016849517822,
-    "2029": 2.7874271869659424,
-    "2030": 2.900757312774658,
-    "2031": 1.892580509185791,
-    ...
+"portfolio_name": "MRTG_demo_portfolio",
+"portfolio_index": 5,
+"entity_id": "",
+"entity_name": "171",
+"hazard": "wildfire",
+"indicator": "burned_area_norm",
+"scenario": "ssp585",
+"measure": "mid",
+"risk_exposure": {
+  "2022": 0.0024577002041041,
+  "2023": 0.0397371985018253,
+  "2024": 0.0130443815141916,
+  "2025": 0.0121267260983586,
+  "2026": 0.0074249189347028,
+  "2027": 0.0198366455733776,
+  "2028": 0.0168143846094608,
+  "2029": 0.0275528505444526,
+  "2030": 0.0196106024086475,
+   ...
 ```
 
 Read through the remainder of this document from here to learn about other aspects of the API.
@@ -150,20 +150,20 @@ Read through the remainder of this document from here to learn about other aspec
 All API requests must be authenticated using an API key.
 Find your own API key at in your [Climate Explorer User Profile](https://explorer.sustglobal.io/account/profile/).
 
-To authenticate an API request, simply pass your API key as a query parameter named `api_key`.
+To authenticate an API request, simply pass your API key as an HTTP header named `X-SustGlobal-APIKey`.
 For example, if your API key were `FOOBAR` then you would authenticate your request like so:
 
 ```
-curl "https://explorer.sustglobal.io/api/portfolios/?api_key=FOOBAR"
+curl "https://explorer.sustglobal.io/api/portfolios/" --header "X-SustGlobal-APIKey: FOOBAR"
 ```
 
 ### Projects
 
-Note that a project must typically be indicated via a `project` query parameter.
+Note that a project must typically be indicated via a `project` HTTP header.
 You can programmatically identify which projects you may access via the `/api/projects/` endpoint:
 
 ```
-% curl "https://explorer.sustglobal.io/api/projects/?api_key=$APIKEY"
+curl "https://explorer.sustglobal.io/api/projects/" --header "X-SustGlobal-APIKey: $APIKEY"
 [
   {
     "project_id": "a19b6282de313211",
@@ -172,17 +172,17 @@ You can programmatically identify which projects you may access via the `/api/pr
 ]
 ```
 
-You may use either the `project_id` or `project_name` value in the query parameter.
+You may use either the `project_id` or `project_name` value in the HTTP headers.
 For example, using the project name:
 
 ```
-curl "https://explorer.sustglobal.io/api/portfolios/?api_key=$APIKEY&project=ec-DEMO"
+curl "https://explorer.sustglobal.io/api/portfolios/" --header "X-SustGlobal-APIKey: $APIKEY" --header "X-SustGlobal-Project: ec-DEMO"
 ```
 
 ...or the project ID:
 
 ```
-curl "https://explorer.sustglobal.io/api/portfolios/?api_key=$APIKEY&project=a19b6282de313211"
+curl "https://explorer.sustglobal.io/api/portfolios/" --header "X-SustGlobal-APIKey: $APIKEY" --header "X-SustGlobal-Project: a19b6282de313211"
 ```
 
 ### Pagination
@@ -193,7 +193,7 @@ time reading a subset of the total result set.
 Users control pagination with the `page` and `rows` query parameters. The value of `rows` sets the maximum number of results
 that the API should return for a given `page`.
 
-The default `rows` value is 50, meaning that a client is forced to paginate their requests if more than 50 items exist in a given list.
+The default `rows` value is 50, meaning that a client is forced to paginate their requests if more than 50 items exist in a given list.  The max value of `rows` is 250, and datasets over this limit will require multiple API calls to load.  This can be accelerated by using filters such as `hazard=wildfire`, as described above.  An example of fetching with pagination in Python can be found [here](https://github.com/sustglobal/dev-center/blob/master/jupyter-notebooks/ClimateDataStudio/ClimateDataStudioExample.ipynb).
 
 An example of pagination over a set of 120 items might work like so:
 
@@ -201,8 +201,7 @@ An example of pagination over a set of 120 items might work like so:
 2. Request two sets `page=2` and `rows=50`, receiving 50 items
 3. Request two sets `page=3` and `rows=50`, receiving 20 items
 
-Note that once a set of items smaller in number than the value of `rows` is received from a paginated request, the client should
-halt any further requests.
+Note that once a set of items smaller in number than the value of `rows` is received from a paginated request, the client should halt any further requests.
 
 ## Error Responses
 
@@ -240,7 +239,7 @@ Note that many of the examples refer to environment variables that must be set m
 To create a new portfolio, simply run the following cURL command:
 
 ```
-curl -i -X POST "https://explorer.sustglobal.io/api/portfolios/?api_key=$APIKEY&project=$PROJECT&portfolio=$PORTFOLIO"
+curl -i -X POST "https://explorer.sustglobal.io/api/portfolios/" --header "X-SustGlobal-APIKey: $APIKEY" --header "X-SustGlobal-Project: $PROJECT" --data-raw "{\"portfolio_name\": \"$PORTFOLIO\"}"
 ```
 
 ### Upload Assets to a Portfolio
@@ -250,7 +249,7 @@ The value of `$ASSET_FILE` must be the location of a local CSV file containing a
 Please see the [Climate Explorer Guide](/explorer.html) for more information about assets and CSV file requirements.
 
 ```
-curl -i -F asset=@$ASSET_FILE "https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/assets/import?api_key=$APIKEY&project=$PROJECT"
+curl -i -F asset=@$ASSET_FILE "https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/assets/import/" --header "X-SustGlobal-APIKey: $APIKEY" --header "X-SustGlobal-Project: $PROJECT"
 ```
 
 ### Export Portfolio Assets
@@ -259,7 +258,7 @@ It may be useful to download all assets in a given portfolio to a local CSV file
 This is primarily useful when you intend to re-upload a modified set of assets to a portfolio.
 
 ```
-curl -OJ "https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/assets/export?api_key=$APIKEY&project=$PROJECT"
+curl -OJ "https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/assets/export" --header "X-SustGlobal-APIKey: $APIKEY" --header "X-SustGlobal-Project: $PROJECT"
 ```
 
 A CSV file will be written to the filesystem.
@@ -269,7 +268,7 @@ A CSV file will be written to the filesystem.
 After physical risk exposure data has been generated, one may interact with it natively via the API:
 
 ```
-curl -i "https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/datasets/physical/items?api_key=$APIKEY&project=$PROJECT"
+curl -i "https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/datasets/physical/items" --header "X-SustGlobal-APIKey: $APIKEY" --header "X-SustGlobal-Project: $PROJECT"
 ```
 
 Note that this endpoint will contain a lot of data, so you should be familiar with pagination controls. Documentation is
@@ -279,7 +278,7 @@ Additional query parameters that may be useful include `scenario`, `hazard`, `in
 An example of filtering the risk exposure dataset to SSP2-4.5 for a specific wildfire-related indicator:
 
 ```
-curl -i "https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/datasets/physical/items?api_key=$APIKEY&project=$PROJECT&scenario=ssp245&hazard=wildfire&indicator=burned_area_norm&measure=mid"
+curl -i "https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/datasets/physical/items?scenario=ssp245&hazard=wildfire&indicator=burned_area_norm&measure=mid" --header "X-SustGlobal-APIKey: $APIKEY" --header "X-SustGlobal-Project: $PROJECT"
 ```
 
 Please review the API Reference for documentation of all supported query parameters.
@@ -289,7 +288,7 @@ Please review the API Reference for documentation of all supported query paramet
 A summary of physical risk exposure data with an optional `scenario` filter is available via API:
 
 ```
-curl -i "https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/datasets/physical/summary?api_key=$APIKEY&project=PROJECT"
+curl -i "https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/datasets/physical/summary" --header "X-SustGlobal-APIKey: $APIKEY" --header "X-SustGlobal-Project: $PROJECT"
 ```
 
 ### Export Physical Risk Exposure
@@ -297,7 +296,7 @@ curl -i "https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/datasets/physi
 Download a ZIP archive containing the physical risk exposure data for a specific portfolio using the following command:
 
 ```
-curl -OJ "https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/datasets/physical/export?api_key=$APIKEY&project=$PROJECT"
+curl -OJ "https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/datasets/physical/export" --header "X-SustGlobal-APIKey: $APIKEY" --header "X-SustGlobal-Project: $PROJECT"
 ```
 
 A ZIP file will be written to the filesystem.

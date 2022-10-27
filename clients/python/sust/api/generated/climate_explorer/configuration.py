@@ -389,6 +389,15 @@ conf = sust.api.generated.climate_explorer.Configuration(
         :return: The Auth Settings information dict.
         """
         auth = {}
+        if 'X-SustGlobal-APIKey' in self.api_key:
+            auth['X-SustGlobal-APIKey'] = {
+                'type': 'api_key',
+                'in': 'header',
+                'key': 'X-SustGlobal-APIKey',
+                'value': self.get_api_key_with_prefix(
+                    'X-SustGlobal-APIKey',
+                ),
+            }
         if 'api_key' in self.api_key:
             auth['api_key'] = {
                 'type': 'api_key',
