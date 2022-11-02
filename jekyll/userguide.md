@@ -60,7 +60,7 @@ Note that the geocodes (lat/lng coordinates) of all the physical assets in your 
 
 To anonymize the risk graphics that appear on the dashboard views, you can use the *entity_id* field to do so. Simply, *entity_id* field is preferred to the lat and lng field. By doing so, this will effectively ‘hide’ the coordinates in the dashboard views.
 
-#### Portfolios in GeoJSON
+#### Portfolios in GeoJSON format
 
 As an alternative to CSV, Climate Explorer also supports uploading portfolios in [GeoJSON](https://geojson.org/) format. The snippet below shows the structure supported by Climate Explorer to upload portfolios in this format. An example of a portfolio in GeoJSON format can be found here: [demo portfolio](https://raw.githubusercontent.com/sustglobal/dev-center/master/resources/example_portfolio.json).
 
@@ -95,11 +95,19 @@ As an alternative to CSV, Climate Explorer also supports uploading portfolios in
 }
 ```
 
-Note that the *features* list can contain one or more features. Each one of these features contains three important attributes that are required: *type*, *properties*, and *geometry*.
+Note that the *features* list can contain one or more features. Each one of these features contains three important attributes: *type*, *properties*, and *geometry*. From these, only the *type* and *geometry* properties are required whereas the *properties* property is optional.
 
-The *type* attribute is self-explanatory. The *geometry* property contains geospatial information particular to the feature. This property is described by two required properties: *type* and *coordinates*. The former specifies the type of the geospatial information which can be either a *Point* or a *Polygon*, and the *coordinates* property specifies the geographic coordinates of said point or polygon. The *properties* attribute corresponds to specific information related to this point or polygon. This information is expressed in terms of three required properties: *entity_id*, *entity_name*, and *labels*. Each of these properties have the same meaning as those provided in CSV-based portfolios (see section above). 
+The *type* attribute is self-explanatory. It simply indicates that this element is a feature.
 
-### Mapping addresses to geocodes
+The *geometry* property contains geospatial information particular to the feature. This property is described by two required properties: *type* and *coordinates*. The former specifies the type of the geospatial information which can be either a *Point*, *Polygon* or *MultiPolygon*. Other geometry types such as *LineString* are **NOT** currently supported. The *coordinates* property specifies the geographic coordinates of said point or polygon. 
+
+There is currently a hard limit on the number of edges and total area described by the uploaded geometries. These limits are 35000 edges and 100000 km<sup>2</sup>.
+
+The *properties* attribute corresponds to specific information related to this point or polygon. This information is expressed in terms of three required properties: *entity_id*, *entity_name*, and *labels*. Each of these properties have the same meaning as those provided in CSV-based portfolios (see section above). 
+
+Finally, Climate Explorer only supports geometry files in GeoJSON format. To upload geometries represented in other formats such as shapefiles, these files should be first converted to GeoJSON using tools such as [ArcGIS](https://pro.arcgis.com/en/pro-app/latest/tool-reference/conversion/features-to-json.htm) or [QGIS](https://qgis.org/en/site/).
+
+### Mapping Physical Addresses to Geocodes
 
 If you only have addresses and not geocodes, you can use the [Mapbox Geocoding Playground](https://docs.mapbox.com/playground/geocoding/) to secure geocodes for a specific address. Alternatively, you can also secure the geocodes from [Google Maps](https://www.google.com/maps) by copying the numbers in the URL. 
 
