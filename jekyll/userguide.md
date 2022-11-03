@@ -37,7 +37,7 @@ To create a new portfolio, go to the [Portfolio View](https://explorer.sustgloba
 
 Portfolio information can be uploaded in two formats: CSV and GeoJSON. The sections below provide more details on how to upload portfolio information using any of these formats.
 
-Portfolios are currently limited to 5000 assets in size. Additional account-level portfolio size limits may apply. Please contact sales@sustglobal.com to increase your portfolio size limits.
+Portfolio size is currently limited to 5000 assets for CSV-based portfolios and 2000 assets for GeoJSON-based portfolios. Additional account-level portfolio size limits may apply. Please contact [sales@sustglobal.com](mailto:sales@sustglobal.com) to increase your portfolio size limits.
 
 #### Portfolios in CSV format
 
