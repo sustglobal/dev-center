@@ -84,7 +84,13 @@
 
 <p>To create a new portfolio, go to the <a href="https://explorer.sustglobal.io/portfolios/">Portfolio View</a> on Climate Explorer and click on the button labeled New Portfolio. When creating a new portfolio, make sure that the name has no spaces in it. Having given the portfolio a name, you can upload information on the physical assets.</p>
 
-<p>An example of a portfolio CSV file can be found here: <a href="https://raw.githubusercontent.com/sustglobal/dev-center/master/resources/example_portfolio.csv">demo portfolio</a>. This demo portfolio is a useful starting point if you are interested in building your own portfolio for use in Climate Explorer, whether via UI or API. Simply right click on the demo portfolio link above, select ‘Save Link As’, and add a .csv extension to the file name (so it becomes example_portfolio.csv) and this will change the file to a CSV. Open the portfolio file and add your assets before uploading the portfolio on the <a href="https://explorer.sustglobal.io/portfolios/">Portfolio View</a> on Climate Explorer as described above. Each of the supported fields in the portfolio CSV file is documented below:</p>
+<p>Portfolio information can be uploaded in two formats: CSV and GeoJSON. The sections below provide more details on how to upload portfolio information using any of these formats.</p>
+
+<p>Portfolio size is currently limited to 5000 assets for CSV-based portfolios and 2000 assets for GeoJSON-based portfolios. Additional account-level portfolio size limits may apply. Please contact <a href="mailto:sales@sustglobal.com">sales@sustglobal.com</a> to increase your portfolio size limits.</p>
+
+<h4 id="portfolios-in-csv-format">Portfolios in CSV format</h4>
+
+<p>An example of a portfolio CSV file can be found here: <a href="https://raw.githubusercontent.com/sustglobal/dev-center/master/resources/example_portfolio.csv">demo portfolio</a>. This demo portfolio is a useful starting point if you are interested in building your own portfolio for use in Climate Explorer, whether via UI or API. Simply right-click on the demo portfolio link above, select ‘Save Link As’, and add a .csv extension to the file name (so it becomes example_portfolio.csv) and this will change the file to a CSV. Open the portfolio file and add your assets before uploading the portfolio on the <a href="https://explorer.sustglobal.io/portfolios/">Portfolio View</a> on Climate Explorer as described above. Each of the supported fields in the portfolio CSV file is documented below:</p>
 
 <table>
   <thead>
@@ -137,10 +143,60 @@
   </tbody>
 </table>
 
-<p>Note that the geocodes (lat/lng coordinates) of all the physical assets in your portfolio are the only required fields. If you only have addresses and not the geocodes, you can use the Mapbox Geocoding Playground to secure geocodes for a specific address. Alternatively, you can also secure the geocodes from Google Maps by copying the numbers in the URL. 
-If you would like to ‘anonymise’ the risk graphics that appear on the dashboard views, you can use the entity_id field to do so. Simply, entity_id field is preferred to the lat and lng field. By doing so, this will effectively ‘hide’ the coordinates in the dashboard views.</p>
+<p>Note that the geocodes (lat/lng coordinates) of all the physical assets in your portfolio are the only required fields.</p>
 
-<p>Portfolios are currently limited to 5000 assets in size. Additional account-level portfolio size limits may apply. Please contact sales@sustglobal.com to increase your portfolio size limits.</p>
+<p>To anonymize the risk graphics that appear on the dashboard views, you can use the <em>entity_id</em> field to do so. Simply, <em>entity_id</em> field is preferred to the lat and lng field. By doing so, this will effectively ‘hide’ the coordinates in the dashboard views.</p>
+
+<h4 id="portfolios-in-geojson-format">Portfolios in GeoJSON format</h4>
+
+<p>As an alternative to CSV, Climate Explorer also supports uploading portfolios in <a href="https://geojson.org/">GeoJSON</a> format. The snippet below shows the structure supported by Climate Explorer to upload portfolios in this format. An example of a portfolio in GeoJSON format can be found here: <a href="https://raw.githubusercontent.com/sustglobal/dev-center/master/resources/example_portfolio.json">demo portfolio</a>.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FeatureCollection"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"features"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Feature"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"entity_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"YOS"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"entity_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yosemite National Park"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"labels"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US National Park"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9035 Village Dr, Yosemite Valley, CA 95389"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"geometry"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Polygon"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"coordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">[</span><span class="w">
+            </span><span class="p">[</span><span class="w"> </span><span class="mf">-119.54</span><span class="p">,</span><span class="w"> </span><span class="mf">37.85</span><span class="w"> </span><span class="p">],</span><span class="w">
+            </span><span class="p">[</span><span class="w"> </span><span class="mf">-119.52</span><span class="p">,</span><span class="w"> </span><span class="mf">37.85</span><span class="w"> </span><span class="p">],</span><span class="w">
+            </span><span class="p">[</span><span class="w"> </span><span class="mf">-119.52</span><span class="p">,</span><span class="w"> </span><span class="mf">37.87</span><span class="w"> </span><span class="p">],</span><span class="w">
+            </span><span class="p">[</span><span class="w"> </span><span class="mf">-119.54</span><span class="p">,</span><span class="w"> </span><span class="mf">37.87</span><span class="w"> </span><span class="p">],</span><span class="w">
+            </span><span class="p">[</span><span class="w"> </span><span class="mf">-119.54</span><span class="p">,</span><span class="w"> </span><span class="mf">37.85</span><span class="w"> </span><span class="p">]</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Note that the <em>features</em> list can contain one or more features. Each one of these features contains three important attributes: <em>type</em>, <em>properties</em>, and <em>geometry</em>. From these, only the <em>type</em> and <em>geometry</em> properties are required whereas the <em>properties</em> property is optional.</p>
+
+<p>The <em>type</em> attribute is self-explanatory. It simply indicates that this element is a feature.</p>
+
+<p>The <em>geometry</em> property contains geospatial information particular to the feature. This property is described by two required properties: <em>type</em> and <em>coordinates</em>. The former specifies the type of the geospatial information which can be either a <em>Point</em>, <em>Polygon</em> or <em>MultiPolygon</em>. Other geometry types such as <em>LineString</em> are <strong>NOT</strong> currently supported. The <em>coordinates</em> property specifies the geographic coordinates of said point or polygon.</p>
+
+<p>There is currently a hard limit on the number of edges and total area described by the uploaded geometries. These limits are 35000 edges and 100000 km<sup>2</sup>.</p>
+
+<p>The <em>properties</em> attribute corresponds to specific information related to this point or polygon. This information is expressed in terms of three required properties: <em>entity_id</em>, <em>entity_name</em>, and <em>labels</em>. Each of these properties have the same meaning as those provided in CSV-based portfolios (see section above).</p>
+
+<p>Finally, Climate Explorer only supports geometry files in GeoJSON format. To upload geometries represented in other formats such as shapefiles, these files should be first converted to GeoJSON using tools such as <a href="https://pro.arcgis.com/en/pro-app/latest/tool-reference/conversion/features-to-json.htm">ArcGIS</a> or <a href="https://qgis.org/en/site/">QGIS</a>.</p>
+
+<h3 id="mapping-physical-addresses-to-geocodes">
+<a class="anchor" href="#mapping-physical-addresses-to-geocodes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Mapping Physical Addresses to Geocodes</h3>
+
+<p>If you only have addresses and not geocodes, you can use the <a href="https://docs.mapbox.com/playground/geocoding/">Mapbox Geocoding Playground</a> to secure geocodes for a specific address. Alternatively, you can also secure the geocodes from <a href="https://www.google.com/maps">Google Maps</a> by copying the numbers in the URL.</p>
 
 <h3 id="using-the-graph-controls">
 <a class="anchor" href="#using-the-graph-controls" aria-hidden="true"><span class="octicon octicon-link"></span></a>Using the graph controls</h3>
@@ -187,6 +243,7 @@ If you would like to ‘anonymise’ the risk graphics that appear on the dashbo
 <ul>
 <li class="toc-entry toc-h3"><a href="#walkthrough-video">Walkthrough video</a></li>
 <li class="toc-entry toc-h3"><a href="#uploading-a-portfolio">Uploading a portfolio</a></li>
+<li class="toc-entry toc-h3"><a href="#mapping-physical-addresses-to-geocodes">Mapping Physical Addresses to Geocodes</a></li>
 <li class="toc-entry toc-h3"><a href="#using-the-graph-controls">Using the graph controls</a></li>
 </ul>
 </li>
