@@ -35,7 +35,13 @@ Please watch the below video to learn how to log into Climate Explorer and how t
 
 To create a new portfolio, go to the [Portfolio View](https://explorer.sustglobal.io/portfolios/) on Climate Explorer and click on the button labeled New Portfolio. When creating a new portfolio, make sure that the name has no spaces in it. Having given the portfolio a name, you can upload information on the physical assets.
 
-An example of a portfolio CSV file can be found here: [demo portfolio](https://raw.githubusercontent.com/sustglobal/dev-center/master/resources/example_portfolio.csv). This demo portfolio is a useful starting point if you are interested in building your own portfolio for use in Climate Explorer, whether via UI or API. Simply right click on the demo portfolio link above, select ‘Save Link As’, and add a .csv extension to the file name (so it becomes example_portfolio.csv) and this will change the file to a CSV. Open the portfolio file and add your assets before uploading the portfolio on the [Portfolio View](https://explorer.sustglobal.io/portfolios/) on Climate Explorer as described above. Each of the supported fields in the portfolio CSV file is documented below:
+Portfolio information can be uploaded in two formats: CSV and GeoJSON. The sections below provide more details on how to upload portfolio information using any of these formats.
+
+Portfolio size is currently limited to 5000 assets for CSV-based portfolios and 2000 assets for GeoJSON-based portfolios. Additional account-level portfolio size limits may apply. Please contact [sales@sustglobal.com](mailto:sales@sustglobal.com) to increase your portfolio size limits.
+
+#### Portfolios in CSV format
+
+An example of a portfolio CSV file can be found here: [demo portfolio](https://raw.githubusercontent.com/sustglobal/dev-center/master/resources/example_portfolio.csv). This demo portfolio is a useful starting point if you are interested in building your own portfolio for use in Climate Explorer, whether via UI or API. Simply right-click on the demo portfolio link above, select ‘Save Link As’, and add a .csv extension to the file name (so it becomes example_portfolio.csv) and this will change the file to a CSV. Open the portfolio file and add your assets before uploading the portfolio on the [Portfolio View](https://explorer.sustglobal.io/portfolios/) on Climate Explorer as described above. Each of the supported fields in the portfolio CSV file is documented below:
 
 
 | Field Name | Description |
@@ -50,10 +56,60 @@ An example of a portfolio CSV file can be found here: [demo portfolio](https://r
 | `label:<KEY>`   | **Optional.** Additional labels (any column header prefixed with `label:`) are preserved in the results, and are not meaningful to Climate Explorer.
 
 
-Note that the geocodes (lat/lng coordinates) of all the physical assets in your portfolio are the only required fields. If you only have addresses and not the geocodes, you can use the Mapbox Geocoding Playground to secure geocodes for a specific address. Alternatively, you can also secure the geocodes from Google Maps by copying the numbers in the URL. 
-If you would like to 'anonymise' the risk graphics that appear on the dashboard views, you can use the entity_id field to do so. Simply, entity_id field is preferred to the lat and lng field. By doing so, this will effectively ‘hide’ the coordinates in the dashboard views.
+Note that the geocodes (lat/lng coordinates) of all the physical assets in your portfolio are the only required fields.
 
-Portfolios are currently limited to 5000 assets in size. Additional account-level portfolio size limits may apply. Please contact sales@sustglobal.com to increase your portfolio size limits.
+To anonymize the risk graphics that appear on the dashboard views, you can use the *entity_id* field to do so. Simply, *entity_id* field is preferred to the lat and lng field. By doing so, this will effectively ‘hide’ the coordinates in the dashboard views.
+
+#### Portfolios in GeoJSON format
+
+As an alternative to CSV, Climate Explorer also supports uploading portfolios in [GeoJSON](https://geojson.org/) format. The snippet below shows the structure supported by Climate Explorer to upload portfolios in this format. An example of a portfolio in GeoJSON format can be found here: [demo portfolio](https://raw.githubusercontent.com/sustglobal/dev-center/master/resources/example_portfolio.json).
+
+```json
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "entity_id": "YOS",
+        "entity_name": "Yosemite National Park",
+        "labels": {
+          "type": "US National Park",
+          "address": "9035 Village Dr, Yosemite Valley, CA 95389"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [ -119.54, 37.85 ],
+            [ -119.52, 37.85 ],
+            [ -119.52, 37.87 ],
+            [ -119.54, 37.87 ],
+            [ -119.54, 37.85 ]
+          ]
+        ]
+      }
+    }
+  ]
+}
+```
+
+Note that the *features* list can contain one or more features. Each one of these features contains three important attributes: *type*, *properties*, and *geometry*. From these, only the *type* and *geometry* properties are required whereas the *properties* property is optional.
+
+The *type* attribute is self-explanatory. It simply indicates that this element is a feature.
+
+The *geometry* property contains geospatial information particular to the feature. This property is described by two required properties: *type* and *coordinates*. The former specifies the type of the geospatial information which can be either a *Point*, *Polygon* or *MultiPolygon*. Other geometry types such as *LineString* are **NOT** currently supported. The *coordinates* property specifies the geographic coordinates of said point or polygon. 
+
+There is currently a hard limit on the number of edges and total area described by the uploaded geometries. These limits are 35000 edges and 100000 km<sup>2</sup>.
+
+The *properties* attribute corresponds to specific information related to this point or polygon. This information is expressed in terms of three required properties: *entity_id*, *entity_name*, and *labels*. Each of these properties have the same meaning as those provided in CSV-based portfolios (see section above). 
+
+Finally, Climate Explorer only supports geometry files in GeoJSON format. To upload geometries represented in other formats such as shapefiles, these files should be first converted to GeoJSON using tools such as [ArcGIS](https://pro.arcgis.com/en/pro-app/latest/tool-reference/conversion/features-to-json.htm) or [QGIS](https://qgis.org/en/site/).
+
+### Mapping Physical Addresses to Geocodes
+
+If you only have addresses and not geocodes, you can use the [Mapbox Geocoding Playground](https://docs.mapbox.com/playground/geocoding/) to secure geocodes for a specific address. Alternatively, you can also secure the geocodes from [Google Maps](https://www.google.com/maps) by copying the numbers in the URL. 
 
 ### Using the graph controls
 

@@ -1,0 +1,81 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "entity_id": "YOS",
+        "entity_name": "Yosemite National Park",
+        "labels": {
+          "type": "US National Park",
+          "address": "9035 Village Dr, Yosemite Valley, CA 95389"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -119.54,
+              37.85
+            ],
+            [
+              -119.52,
+              37.85
+            ],
+            [
+              -119.52,
+              37.87
+            ],
+            [
+              -119.54,
+              37.87
+            ],
+            [
+              -119.54,
+              37.85
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "entity_id": "OLY",
+        "entity_name": "Olympic National Park",
+        "labels": {
+          "type": "US National Park",
+          "address": "3002 Mt Angeles Rd, Port Angeles, WA 98362"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -123.60,
+              47.78
+            ],
+            [
+              -123.58,
+              47.78
+            ],
+            [
+              -123.58,
+              47.80
+            ],
+            [
+              -123.60,
+              47.80
+            ],
+            [
+              -123.60,
+              47.78
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}
