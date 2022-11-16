@@ -1,6 +1,6 @@
 FROM python:3.8
 
-RUN pip3 install sphinx sphinx-rtd-theme
+RUN pip3 install sphinx==5.1.1 sphinx-rtd-theme==0.5.2
 
 ADD . /dev-center
 
