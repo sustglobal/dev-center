@@ -75,8 +75,6 @@ well. An example of this is available just above.
 +-----------------+--------------------------+
 | wildfire        | fire_kbdi_susceptibility |
 +-----------------+--------------------------+
-| wildfire        | unified_prob             |
-+-----------------+--------------------------+
 | wildfire        | obs_score                |
 +-----------------+--------------------------+
 | flood_potential | inland_flood_prob        |
@@ -86,10 +84,6 @@ well. An example of this is available just above.
 | water_stress    | spei_norm                |
 +-----------------+--------------------------+
 | water_stress    | score                    |
-+-----------------+--------------------------+
-| water_stress    | unified_score            |
-+-----------------+--------------------------+
-| water_stress    | obs_score                |
 +-----------------+--------------------------+
 | sea_level_rise  | change                   |
 +-----------------+--------------------------+
@@ -114,7 +108,6 @@ Summary datasets can also be filtered by summary window. Sust Global provides su
     df = pd.DataFrame(sm.to_dicts())
 
 These examples showcase how you can access risk exposure datasets and load them to dataframes as an entry point for exploration data analysis.
-
 Additional information is available in the `Sust Global Dev Center <https://developers.sustglobal.com>`_.
 
 
