@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="shortcut icon" type="image/ico" href="assets/images/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href='https://use.fontawesome.com/releases/v5.8.1/css/all.css'>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+            integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+            crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+            integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/assets/css/main.css?v=">
+
+    <title>Climate Data Guide - Floods</title>
+
+  </head>
+
+  <body>
+
+    <nav id="topnav" class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container">
+
+        <a class="navbar-brand" href="/">
+          <img src="/assets/images/sust-HexLogoONLYwhite.png" />
+          <span>Developer Center</span>
+        </a>
+
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="https://explorer.sustglobal.io/">
+              Climate Explorer
+              <i class="fas fa-external-link-alt fa-sm"></i>
+            </a>
+          </li>
+        </ul>
+
+      </div>
+    </nav>
+
+    <div class="container" id="allcontent">
+      <div class="d-flex flex-direction-row flex-nowrap">
+
+        <div class="flex-grow-1 col-9">
+          <div id="innercontent">
+            <h1>Climate Data Guide - Floods</h1>
+            <p><strong>Hazard Description</strong></p>
+
+<p>Flooding captures the likelihood of a location being directly exposed to flooding, both from precipitation-based inland flooding and from coastal flooding.  Flooding is among the deadlier natural disasters and poses direct risks to human health, infrastructure, and economic activity.</p>
+
+<h2 id="methodologies">
+<a class="anchor" href="#methodologies" aria-hidden="true"><span class="octicon octicon-link"></span></a>Methodologies</h2>
+
+<p><strong>Flood potential</strong></p>
+
+<p>Indicates the potential flood exposure from 2022 - 2100 expressed as a probability at the asset level. A value of 0.1 indicates that there is a 10% chance of flooding at any depth at that location.</p>
+
+<p>The output metric we use for inland flooding exposure ranges from 0 (low risk) to 1 (high risk). We derive this index from the collection of many simulations of flood inundated areas. We take into account multiple meteorological variables like precipitation, land surface pressure, humidity and elevation.</p>
+
+<p>We only cover only SSP5-RCP8.5 at the moment in the flood potential indicator.</p>
+
+<h2 id="known-limitations">
+<a class="anchor" href="#known-limitations" aria-hidden="true"><span class="octicon octicon-link"></span></a>Known Limitations</h2>
+<p>Floods are difficult to observe by satelite, due primarily to cloud cover.  No historic flood database is comprehensive, even for recent years in the satelite period.</p>
+
+<h2 id="sample-assessment">
+<a class="anchor" href="#sample-assessment" aria-hidden="true"><span class="octicon octicon-link"></span></a>Sample Assessment</h2>
+<h3 id="united-states-counties">
+<a class="anchor" href="#united-states-counties" aria-hidden="true"><span class="octicon octicon-link"></span></a>United States Counties</h3>
+
+<p align="center">
+<img height="300" src="assets/images/dataguide/flood_usa_1980_2020_v_2022-2052.png">
+</p>
+
+<p align="center">
+Projected mean annual flood risk exposure over 1980-2010 (left) and 2022-2052 (right) with SSP5-RCP8.5 scenario.
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>US Counties with top flood exposure over 2022-2052</th>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+    </tr>
+    <tr>
+      <th>State</th>
+      <th>County Name</th>
+      <th>Score (1980-2020)</th>
+      <th>Score (2022-2052)</th>
+      <th>Percent Change</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Panola</td>
+      <td>Mississippi</td>
+      <td>0.0</td>
+      <td>0.08</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <td>Garza</td>
+      <td>Texas</td>
+      <td>0.03</td>
+      <td>0.07</td>
+      <td>141</td>
+    </tr>
+    <tr>
+      <td>Sutter</td>
+      <td>California</td>
+      <td>0.0</td>
+      <td>0.07</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <td>Outagamie</td>
+      <td>Wisconsin</td>
+      <td>0.07</td>
+      <td>0.07</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <td>Clay</td>
+      <td>Illinois</td>
+      <td>0.04</td>
+      <td>0.06</td>
+      <td>47</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="english-counties">
+<a class="anchor" href="#english-counties" aria-hidden="true"><span class="octicon octicon-link"></span></a>English Counties</h3>
+<p align="center">
+<img height="500" src="assets/images/dataguide/england_floods_585_2022_2052.png">
+</p>
+
+<p align="center">
+Projected mean annual flood risk exposure over over 1980-2010 (left) and 2022-2052 (right) with SSP5-RCP8.5 scenario.
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>England Counties with top cyclone exposure over 2022-2052</th>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+    </tr>
+    <tr>
+      <th>Region Name</th>
+      <th>Score (1980-2020)</th>
+      <th>Score (2022-2052)</th>
+      <th>Percent Change</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Aberdeen City</td>
+      <td>0.12</td>
+      <td>0.06</td>
+      <td>-50</td>
+    </tr>
+    <tr>
+      <td>Bolton</td>
+      <td>0.0</td>
+      <td>0.04</td>
+      <td>800</td>
+    </tr>
+    <tr>
+      <td>Manchester</td>
+      <td>0.0</td>
+      <td>0.03</td>
+      <td>800</td>
+    </tr>
+    <tr>
+      <td>Essex</td>
+      <td>0.0</td>
+      <td>0.03</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <td>Manchester</td>
+      <td>0.0</td>
+      <td>0.02</td>
+      <td>N/A</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="data-sources">
+<a class="anchor" href="#data-sources" aria-hidden="true"><span class="octicon octicon-link"></span></a>Data Sources</h2>
+<ul>
+  <li><a href="https://www.wri.org/data/aqueduct-global-maps-30-data">Aqueduct</a></li>
+  <li><a href="https://www.nasa.gov/nex/gddp">NASA Global Downscaled Daily Projections - GDDP</a></li>
+</ul>
+
+<h2 id="references">
+<a class="anchor" href="#references" aria-hidden="true"><span class="octicon octicon-link"></span></a>References</h2>
+<ul>
+  <li>
+<a href="https://doi.org/10.46830/writn.18.00146">Global Aqueduct Methodology</a> (Page 35, Table 3)</li>
+  <li><a href="https://link.springer.com/article/10.1007/s00382-017-3740-8">SPEI</a></li>
+</ul>
+
+          </div>
+        </div>
+
+        
+        <div class="col-3">
+          <div id="toc-container">
+            <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h2"><a href="#methodologies">Methodologies</a></li>
+<li class="toc-entry toc-h2"><a href="#known-limitations">Known Limitations</a></li>
+<li class="toc-entry toc-h2"><a href="#sample-assessment">Sample Assessment</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#united-states-counties">United States Counties</a></li>
+<li class="toc-entry toc-h3"><a href="#english-counties">English Counties</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#data-sources">Data Sources</a></li>
+<li class="toc-entry toc-h2"><a href="#references">References</a></li>
+</ul>
+          </div>
+        </div>
+        
+
+      </div>
+
+    </div>
+
+  </body>
+</html>

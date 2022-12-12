@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="shortcut icon" type="image/ico" href="assets/images/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href='https://use.fontawesome.com/releases/v5.8.1/css/all.css'>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+            integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+            crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+            integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/assets/css/main.css?v=">
+
+    <title>Climate Data Guide - Cyclones</title>
+
+  </head>
+
+  <body>
+
+    <nav id="topnav" class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container">
+
+        <a class="navbar-brand" href="/">
+          <img src="/assets/images/sust-HexLogoONLYwhite.png" />
+          <span>Developer Center</span>
+        </a>
+
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="https://explorer.sustglobal.io/">
+              Climate Explorer
+              <i class="fas fa-external-link-alt fa-sm"></i>
+            </a>
+          </li>
+        </ul>
+
+      </div>
+    </nav>
+
+    <div class="container" id="allcontent">
+      <div class="d-flex flex-direction-row flex-nowrap">
+
+        <div class="flex-grow-1 col-9">
+          <div id="innercontent">
+            <h1>Climate Data Guide - Cyclones</h1>
+            <p><strong>Hazard Description</strong></p>
+
+<p>Tropical cyclones, also referred to as hurricanes and typhoons, are one of the costliest natural disasters. Since 1980, tropical cyclones in the U.S. have caused $997 billion in damages (NOAA), exceeding damages from all other weather disasters. Cyclone impacts can be widespread, including coastal and inland flooding and wind damage. These damages can affect livelihoods, assets, critical infrastructure, and economic activity.</p>
+
+<h2 id="methodologies">
+<a class="anchor" href="#methodologies" aria-hidden="true"><span class="octicon octicon-link"></span></a>Methodologies</h2>
+<p><strong>Future Cyclone Projections</strong></p>
+
+<p>We quantify current and forward-looking cyclone exposure by focusing on the probability of cyclones. This value represents the expected number of cyclones over a year, of any intensity.</p>
+
+<p>For forward-looking cyclone exposure, Sust Global combines the latest CMIP6-based cyclone track simulations with our proprietary bias-correction methodology to enable more accurate assessment of local exposure. The CMIP6 cyclone tracks are unique because they are based on high-resolution simulations specifically designed to enable more reliable assessment of climate risk from weather phenomena like tropical cyclones. These simulations are only achievable due to recent advancements in supercomputing power.</p>
+
+<p>The CMIP6-based cyclone track simulations are drawn from research led by Dr. Malcolm Roberts of the UK Met Office (<a href="https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2020GL088662">technical reference</a>). The simulations are based on CMIP6 HighResMIP simulations with resolutions as high as 25km. The CMIP6 HighResMIP project is co-chaired by Roberts. The authors applied two different cyclone track algorithms to determine when an input set of CMIP6 oceanic and atmospheric conditions over time and space constitutes a high likelihood of a tropical cyclone track.</p>
+
+<p><strong>Observed tropical cyclones</strong></p>
+
+<p>We use cyclone tracks from the International Best Track Archive for Climate Stewardship (<a href="https://www.ncei.noaa.gov/products/international-best-track-archive">IBTrACS</a>). The IBTrACS archive combines tropical cyclone datasets from global agencies and harmonizes them into a single dataset. It is endorsed by the World Meteorological Organization as the official data source for cyclone track data. For observed tropical cyclones, we filter points to only include Category 3, 4, and 5 storm points. We then assume a constant ‘impact radius’ of 150 miles/ 241km.</p>
+
+<h2 id="known-limitations">
+<a class="anchor" href="#known-limitations" aria-hidden="true"><span class="octicon octicon-link"></span></a>Known Limitations</h2>
+<p>Future cyclones, particularly the impact of climate change on frequency and intensity, is uncertain.  This is a very active area of research in the climate resilience community. For more information, see this <a href="https://www.theatlantic.com/science/archive/2022/09/climate-change-impact-hurricane-ian/671604/?utm_medium=email&amp;_hsmi=2&amp;_hsenc=p2ANqtz-90aWgEMe64CvrUI9IdvZw4nDF2AgK90jY4P-xHHeVouG1KBG-KSXRPTRb24d_9r3-3INFei7HCbHhKm3NffMPc_E9xDw3r5S-tHcPrg_8z2gmmo4U&amp;utm_content=2&amp;utm_source=hs_email">Atlantic article</a> on the state of cyclone science.</p>
+
+<h2 id="sample-assessments">
+<a class="anchor" href="#sample-assessments" aria-hidden="true"><span class="octicon octicon-link"></span></a>Sample Assessments</h2>
+<h3 id="united-states-counties">
+<a class="anchor" href="#united-states-counties" aria-hidden="true"><span class="octicon octicon-link"></span></a>United States Counties</h3>
+
+<p align="center">
+<img height="250" src="assets/images/dataguide/cyclones_usa_1980_2020_v_2022-2052.png">
+</p>
+
+<p align="center">
+Projected mean annual cyclone risk exposure over 1980-2010 (left) and 2022-2052 (right) with SSP5-RCP8.5 scenario.
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>US Counties with top cyclone exposure over 2022-2052</th>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+    </tr>
+    <tr>
+      <th>State</th>
+      <th>County Name</th>
+      <th>Score (1980-2020)</th>
+      <th>Score (2022-2052)</th>
+      <th>Percent Change</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>North Carolina</td>
+      <td>Dare</td>
+      <td>0.31</td>
+      <td>0.3</td>
+      <td>-4</td>
+    </tr>
+    <tr>
+      <td>North Carolina</td>
+      <td>Hyde</td>
+      <td>0.29</td>
+      <td>0.28</td>
+      <td>-6</td>
+    </tr>
+    <tr>
+      <td>North Carolina</td>
+      <td>Carteret</td>
+      <td>0.28</td>
+      <td>0.36</td>
+      <td>-9</td>
+    </tr>
+    <tr>
+      <td>North Carolina</td>
+      <td>Tyrell</td>
+      <td>0.24</td>
+      <td>0.25</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>North Carolina</td>
+      <td>Pamilco</td>
+      <td>0.27</td>
+      <td>0.25</td>
+      <td>-8</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr>
+
+<h3 id="indian-towns">
+<a class="anchor" href="#indian-towns" aria-hidden="true"><span class="octicon octicon-link"></span></a>Indian Towns</h3>
+
+<p align="center">
+<img height="300" src="assets/images/dataguide/cyclones_india_1980_2020_v_2022-2052.png">
+</p>
+
+<p align="center">
+Projected mean annual cyclone risk exposure over 1980-2010 (left) and 2022-2052 (right) with SSP5-RCP8.5 scenario.
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Indian Towns with top cyclone exposure over 2022-2052</th>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+    </tr>
+    <tr>
+      <th>Region Name</th>
+      <th>Score (1980-2020)</th>
+      <th>Score (2022-2052)</th>
+      <th>Percent Change</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Puri</td>
+      <td>0.25</td>
+      <td>0.23</td>
+      <td>-7</td>
+    </tr>
+    <tr>
+      <td>Srikakulam</td>
+      <td>0.27</td>
+      <td>0.25</td>
+      <td>-7</td>
+    </tr>
+    <tr>
+      <td>Visakhapatnam</td>
+      <td>0.28</td>
+      <td>0.26</td>
+      <td>-7</td>
+    </tr>
+    <tr>
+      <td>Vizianagaram</td>
+      <td>0.26</td>
+      <td>0.24</td>
+      <td>-9</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="data-sources">
+<a class="anchor" href="#data-sources" aria-hidden="true"><span class="octicon octicon-link"></span></a>Data Sources</h2>
+<ul>
+  <li><a href="%5Btechnical%20reference%5D(https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2020GL088662)">Future Cyclones, HighRes-MIP</a></li>
+  <li><a href="https://www.ncei.noaa.gov/products/international-best-track-archive">IBTrACS</a></li>
+</ul>
+
+<h2 id="references">
+<a class="anchor" href="#references" aria-hidden="true"><span class="octicon octicon-link"></span></a>References</h2>
+<ul>
+  <li><a href="https://www.theatlantic.com/science/archive/2022/09/climate-change-impact-hurricane-ian/671604/?utm_medium=email&amp;_hsmi=2&amp;_hsenc=p2ANqtz-90aWgEMe64CvrUI9IdvZw4nDF2AgK90jY4P-xHHeVouG1KBG-KSXRPTRb24d_9r3-3INFei7HCbHhKm3NffMPc_E9xDw3r5S-tHcPrg_8z2gmmo4U&amp;utm_content=2&amp;utm_source=hs_email">The Atlantic -  Honestly? The Link Between Climate Change and Hurricanes Is Complicated</a></li>
+  <li><a href="https://www.c2es.org/content/hurricanes-and-climate-change/?utm_medium=email&amp;_hsmi=2&amp;_hsenc=p2ANqtz-_NS-tc51pVP_ZsIZIdzAF746tfTIJ48PGKJ2JbNw4i5MqVZTn9XhhDZXlN83CYjA-eBMDLykl8YZW5CfyD1XPYDp2y2L5xCMTG7OUgoUVvOga6SKg&amp;utm_content=2&amp;utm_source=hs_email">Future Cyclone Science</a></li>
+</ul>
+
+          </div>
+        </div>
+
+        
+        <div class="col-3">
+          <div id="toc-container">
+            <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h2"><a href="#methodologies">Methodologies</a></li>
+<li class="toc-entry toc-h2"><a href="#known-limitations">Known Limitations</a></li>
+<li class="toc-entry toc-h2"><a href="#sample-assessments">Sample Assessments</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#united-states-counties">United States Counties</a></li>
+<li class="toc-entry toc-h3"><a href="#indian-towns">Indian Towns</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#data-sources">Data Sources</a></li>
+<li class="toc-entry toc-h2"><a href="#references">References</a></li>
+</ul>
+          </div>
+        </div>
+        
+
+      </div>
+
+    </div>
+
+  </body>
+</html>
