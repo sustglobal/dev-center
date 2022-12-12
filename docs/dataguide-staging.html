@@ -52,12 +52,12 @@
 
 <p>Our Climate Analytics covers risk from multiple perils:</p>
 <ul>
-  <li><a href="./dataguide_hazards/wildfire.html">Wildfire</a></li>
-  <li>Flood</li>
-  <li>Cyclone</li>
-  <li>Heatwave</li>
-  <li>Sea Level Rise (SLR)</li>
-  <li>Water Stress</li>
+  <li><a href="./wildfire.html">Wildfire</a></li>
+  <li><a href="./flood.html">Flood</a></li>
+  <li><a href="./cyclones.html">Cyclones</a></li>
+  <li><a href="./heatwaves.html">Heatwave</a></li>
+  <li><a href="./sea_level_rise.html">Sea Level Rise (SLR)</a></li>
+  <li><a href="./waterstress.html">Water Stress</a></li>
 </ul>
 
 <p>We do this by integrating General Circulation Models (GCMs) from the latest international modeling efforts (CMIP6) with high-resolution historic observations from satelites and sensors, using the latest machine-learning and artificial intelligence methods. This allows us to deliver spatial resolution that is orders of magnitudes finer than GCMs alone. Analysis sites can be supplied in the form of either points or regions/polygons, and risk exposure is delivered as a time series for each specific asset.</p>
@@ -78,6 +78,315 @@
 <strong>High Emissions (SSP5)</strong>: SSP5 reflects a future where the world continues on its current trajectory, also referred to as Fossil-Fueled Growth (SSP5-RCP8.5). In this scenario, both total population and per-capita consumption increase. Emissions peak around 2090 and global mean temperatures rising approximately 4.3°C by 2100.</li>
 </ol>
 
+<h2 id="fundamental-variables">
+<a class="anchor" href="#fundamental-variables" aria-hidden="true"><span class="octicon octicon-link"></span></a>Fundamental Variables</h2>
+
+<p><strong>Description</strong></p>
+
+<p>In addition to physical hazards products, Sust Global supplies fundamental indicators for fundamental climate variables aggregated annually across different scenarios from 1980 to 2100.</p>
+
+<ol>
+  <li>
+<strong>Annual Temperature</strong>: Mean annual daily temperature.</li>
+  <li>
+<strong>Annual Precipitation</strong>: Total annual precipitation, including rain and rain-equivalent snowfall.</li>
+  <li>
+<strong>Extreme Precipitation</strong>: Number of days in a given year where precipitation exceeds 2 inches (50.8mm).</li>
+</ol>
+
+<h2 id="summarization-labeling">
+<a class="anchor" href="#summarization-labeling" aria-hidden="true"><span class="octicon octicon-link"></span></a>Summarization Labeling</h2>
+
+<p>To create summarization labels we analyze a representative sample of global points, and define breakpoints that best represent the overall risk distribution.  Summarization labels are calculated based on the maximum risk over the 2022-2052 period, and bucketed using the following values:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Hazard</th>
+      <th>Unit</th>
+      <th>Low Range</th>
+      <th>Medium Range</th>
+      <th>High Range</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Wildfire</td>
+      <td>Probability</td>
+      <td>0.0 - 0.01</td>
+      <td>0.01 - 0.05</td>
+      <td>0.05 - 1.0</td>
+    </tr>
+    <tr>
+      <td>Inland Flood</td>
+      <td>Probability</td>
+      <td>0.0 - 0.01</td>
+      <td>0.01 - 0.05</td>
+      <td>0.05 - 1.0</td>
+    </tr>
+    <tr>
+      <td>Cyclone</td>
+      <td>Probability</td>
+      <td>0.0 - 0.025</td>
+      <td>0.025 - 0.075</td>
+      <td>0.075 - 1.0</td>
+    </tr>
+    <tr>
+      <td>Water Stress</td>
+      <td>Score</td>
+      <td>0.0 - 0.3</td>
+      <td>0.3 - 0.6</td>
+      <td>0.6 -  1.0</td>
+    </tr>
+    <tr>
+      <td>Heatwave</td>
+      <td>Number of days in year</td>
+      <td>0 - 30</td>
+      <td>30 - 50</td>
+      <td>50 - 366</td>
+    </tr>
+    <tr>
+      <td>Sea Level Rise</td>
+      <td>Relative change in meters</td>
+      <td>0.0 - 0.375</td>
+      <td>0.375 - 0.7</td>
+      <td>0.7 - 3.0</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+<b>Table 1</b>: Hazard summarization labeling ranges 
+</p>
+
+<h2 id="indicator-metadata">
+<a class="anchor" href="#indicator-metadata" aria-hidden="true"><span class="octicon octicon-link"></span></a>Indicator Metadata</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>hazard</th>
+      <th>indicator</th>
+      <th>unit</th>
+      <th>value_min</th>
+      <th>value_max</th>
+      <th>value_norm</th>
+      <th>spatial_resolution (in meters)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>wildfire</td>
+      <td>obs_score</td>
+      <td>score</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>500.0</td>
+    </tr>
+    <tr>
+      <td>wildfire</td>
+      <td>burned_area_norm</td>
+      <td>score</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.1</td>
+      <td>300.0</td>
+    </tr>
+    <tr>
+      <td>wildfire</td>
+      <td>fire_kbdi_susceptability</td>
+      <td>score</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.1</td>
+      <td>300.0</td>
+    </tr>
+    <tr>
+      <td>wildfire</td>
+      <td>unified_prob</td>
+      <td>probability</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.5</td>
+      <td>300.0</td>
+    </tr>
+    <tr>
+      <td>flood_potential</td>
+      <td>obs_score</td>
+      <td>score</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>250.0</td>
+    </tr>
+    <tr>
+      <td>flood_potential</td>
+      <td>inland_flood_prob</td>
+      <td>probability</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.5</td>
+      <td>4000.0</td>
+    </tr>
+    <tr>
+      <td>cyclone</td>
+      <td>obs_freq</td>
+      <td>frequency</td>
+      <td>0.0</td>
+      <td>7.0</td>
+      <td>2.0</td>
+      <td>1000.0</td>
+    </tr>
+    <tr>
+      <td>cyclone</td>
+      <td>prob</td>
+      <td>probability</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.5</td>
+      <td>50000.0</td>
+    </tr>
+    <tr>
+      <td>heatwave</td>
+      <td>freq</td>
+      <td>day</td>
+      <td>0.0</td>
+      <td>366.0</td>
+      <td>200.0</td>
+      <td>25000.0</td>
+    </tr>
+    <tr>
+      <td>sea_level_rise</td>
+      <td>change</td>
+      <td>meter</td>
+      <td>0.0</td>
+      <td>100.0</td>
+      <td>1.0</td>
+      <td>100000.0</td>
+    </tr>
+    <tr>
+      <td>water_stress</td>
+      <td>obs_score</td>
+      <td>score</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>500.0</td>
+    </tr>
+    <tr>
+      <td>water_stress</td>
+      <td>spei_norm</td>
+      <td>score</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>25000.0</td>
+    </tr>
+    <tr>
+      <td>water_stress</td>
+      <td>score</td>
+      <td>score</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>500.0</td>
+    </tr>
+    <tr>
+      <td>water_stress</td>
+      <td>unified_score</td>
+      <td>score</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>500.0</td>
+    </tr>
+    <tr>
+      <td>fundamental</td>
+      <td>temp</td>
+      <td>degree_celsius</td>
+      <td>-60.0</td>
+      <td>50.0</td>
+      <td>50.0</td>
+      <td>100000.0</td>
+    </tr>
+    <tr>
+      <td>fundamental</td>
+      <td>precip</td>
+      <td>millimeter</td>
+      <td>0.0</td>
+      <td>10000.0</td>
+      <td>10000.0</td>
+      <td>100000.0</td>
+    </tr>
+    <tr>
+      <td>fundamental</td>
+      <td>extreme_precip</td>
+      <td>day</td>
+      <td>0.0</td>
+      <td>366.0</td>
+      <td>366.0</td>
+      <td>100000.0</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+<b>Table 2</b>: Hazard and indicator metadata 
+</p>
+
+<h2 id="regional-statistics-using-polygon-processing">
+<a class="anchor" href="#regional-statistics-using-polygon-processing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Regional statistics using polygon processing</h2>
+
+<p>Processing of large area geographies into climate risk scores requires statistical reductions, such as taking the average risk over the area in question.  The table below details the reductions used at Sust Global to arrive at regional risk.</p>
+
+<p>By default, geospatial polygons are reduced by a mean statistic.  The following exceptions are noted below:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>hazard</th>
+      <th>spatial statistic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Wildfire</td>
+      <td>mean</td>
+    </tr>
+    <tr>
+      <td>Cyclone</td>
+      <td>max^</td>
+    </tr>
+    <tr>
+      <td>Inland Flood</td>
+      <td>weighted mean^^</td>
+    </tr>
+    <tr>
+      <td>Water Stress</td>
+      <td>mean</td>
+    </tr>
+    <tr>
+      <td>Heatwave</td>
+      <td>mean</td>
+    </tr>
+    <tr>
+      <td>Sea Level Rise</td>
+      <td>max</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+<b>Table 3</b>: spatial statistics for polygon aggregation 
+</p>
+
+<ul>
+  <li><i>^ For cyclones, using the maximum value across a region corresponds to a cyclone striking anywhere in that region.  Similarly for sea level rise, a maximum value over a region corresponds to the maximum sea level rise experienced in that region.</i></li>
+  <li><i>^^ Waterstress scores are derived from the WRI Aqueduct product, based on administrative areas and watersheds.  A weighted average is appropriate for reducing regions which intersect multiple differing regions.</i></li>
+</ul>
+
+
           </div>
         </div>
 
@@ -87,6 +396,10 @@
             <ul id="toc" class="section-nav">
 <li class="toc-entry toc-h2"><a href="#about-the-data-guide">About the Data Guide</a></li>
 <li class="toc-entry toc-h2"><a href="#climate-scenarios">Climate Scenarios</a></li>
+<li class="toc-entry toc-h2"><a href="#fundamental-variables">Fundamental Variables</a></li>
+<li class="toc-entry toc-h2"><a href="#summarization-labeling">Summarization Labeling</a></li>
+<li class="toc-entry toc-h2"><a href="#indicator-metadata">Indicator Metadata</a></li>
+<li class="toc-entry toc-h2"><a href="#regional-statistics-using-polygon-processing">Regional statistics using polygon processing</a></li>
 </ul>
           </div>
         </div>

@@ -12,7 +12,7 @@
             crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/assets/css/main.css?v=">
 
-    <title>Climate Data Guide - Heatwaves</title>
+    <title>Climate Data Guide - Floods</title>
 
   </head>
 
@@ -43,19 +43,25 @@
 
         <div class="flex-grow-1 col-9">
           <div id="innercontent">
-            <h1>Climate Data Guide - Heatwaves</h1>
+            <h1>Climate Data Guide - Floods</h1>
             <p><strong>Hazard Description</strong></p>
 
-<p>Heatwaves represent an extended period of perilously warm weather at a specific location or region. They are associated with excess mortality and other human health risks, greatly increased electricity demand, agricultural impacts, and disruption to many types of economic activity.</p>
+<p>Flooding captures the likelihood of a location being directly exposed to flooding, both from precipitation-based inland flooding and from coastal flooding.  Flooding is among the deadlier natural disasters and poses direct risks to human health, infrastructure, and economic activity.</p>
 
 <h2 id="methodologies">
 <a class="anchor" href="#methodologies" aria-hidden="true"><span class="octicon octicon-link"></span></a>Methodologies</h2>
-<p><strong>Heatwave Days per Year</strong> 
-This indicator uses NASA Global Downscaled Daily Projections (<a href="https://www.nasa.gov/nex/gddp">GDDP</a>) to estimate the number of days exceeding the historic 98th percentile of annual temperatures. This temperature threshold varies spatially, based on the 98th percentile of a given location.  As such, the heatwave metric indicates anomalously high temperatures relative to what was locally typical in the past.</p>
+
+<p><strong>Flood potential</strong></p>
+
+<p>Indicates the potential flood exposure from 2022 - 2100 expressed as a probability at the asset level. A value of 0.1 indicates that there is a 10% chance of flooding at any depth at that location.</p>
+
+<p>The output metric we use for inland flooding exposure ranges from 0 (low risk) to 1 (high risk). We derive this index from the collection of many simulations of flood inundated areas. We take into account multiple meteorological variables like precipitation, land surface pressure, humidity and elevation.</p>
+
+<p>We only cover only SSP5-RCP8.5 at the moment in the flood potential indicator.</p>
 
 <h2 id="known-limitations">
 <a class="anchor" href="#known-limitations" aria-hidden="true"><span class="octicon octicon-link"></span></a>Known Limitations</h2>
-<p>There are many ways to define a heatwave, based on intensity, duration, and potentially other factors. Our indicator uses a 98th percentile intensity, and a 1 day duration, which is appropriate for most use cases.</p>
+<p>Floods are difficult to observe by satelite, due primarily to cloud cover.  No historic flood database is comprehensive, even for recent years in the satelite period.</p>
 
 <h2 id="sample-assessment">
 <a class="anchor" href="#sample-assessment" aria-hidden="true"><span class="octicon octicon-link"></span></a>Sample Assessment</h2>
@@ -63,17 +69,17 @@ This indicator uses NASA Global Downscaled Daily Projections (<a href="https://w
 <a class="anchor" href="#united-states-counties" aria-hidden="true"><span class="octicon octicon-link"></span></a>United States Counties</h3>
 
 <p align="center">
-<img height="500" src="assets/images/dataguide/heatwaves_usa_1980_2020_v_2022-2052.png">
+<img height="300" src="assets/images/dataguide/flood_usa_1980_2020_v_2022-2052.png">
 </p>
 
 <p align="center">
-Projected mean annual heatwaves risk exposure over 2022-2052 with the SSP5-RCP8.5 scenario.
+Projected mean annual flood risk exposure over 1980-2010 (left) and 2022-2052 (right) with SSP5-RCP8.5 scenario.
 </p>
 
 <table>
   <thead>
     <tr>
-      <th>US Counties with top cyclone exposure over 2022-2052</th>
+      <th>US Counties with top flood exposure over 2022-2052</th>
       <th> </th>
       <th> </th>
       <th> </th>
@@ -89,59 +95,57 @@ Projected mean annual heatwaves risk exposure over 2022-2052 with the SSP5-RCP8.
   </thead>
   <tbody>
     <tr>
-      <td>Florida</td>
-      <td>Miami-Dade</td>
-      <td>0.69</td>
-      <td>38.12</td>
-      <td>450</td>
+      <td>Panola</td>
+      <td>Mississippi</td>
+      <td>0.0</td>
+      <td>0.08</td>
+      <td>N/A</td>
     </tr>
     <tr>
-      <td>Idaho</td>
-      <td>Cassia</td>
-      <td>7.88</td>
-      <td>34.18</td>
-      <td>333</td>
+      <td>Garza</td>
+      <td>Texas</td>
+      <td>0.03</td>
+      <td>0.07</td>
+      <td>141</td>
     </tr>
     <tr>
-      <td>Utah</td>
-      <td>Summit</td>
-      <td>8.11</td>
-      <td>34.13</td>
-      <td>326</td>
+      <td>Sutter</td>
+      <td>California</td>
+      <td>0.0</td>
+      <td>0.07</td>
+      <td>N/A</td>
     </tr>
     <tr>
-      <td>Utah</td>
-      <td>Morgan</td>
-      <td>8.1</td>
-      <td>34.08</td>
-      <td>321</td>
+      <td>Outagamie</td>
+      <td>Wisconsin</td>
+      <td>0.07</td>
+      <td>0.07</td>
+      <td>-1</td>
     </tr>
     <tr>
-      <td>Utah</td>
-      <td>Box Elder</td>
-      <td>8.04</td>
-      <td>33.72</td>
-      <td>319</td>
+      <td>Clay</td>
+      <td>Illinois</td>
+      <td>0.04</td>
+      <td>0.06</td>
+      <td>47</td>
     </tr>
   </tbody>
 </table>
 
-<hr>
-
-<h3 id="indian-towns">
-<a class="anchor" href="#indian-towns" aria-hidden="true"><span class="octicon octicon-link"></span></a>Indian Towns</h3>
+<h3 id="english-counties">
+<a class="anchor" href="#english-counties" aria-hidden="true"><span class="octicon octicon-link"></span></a>English Counties</h3>
 <p align="center">
-<img height="500" src="assets/images/dataguide/heatwaves_india_1980_2020_v_2022-2052.png">
+<img height="500" src="assets/images/dataguide/england_floods_585_2022_2052.png">
 </p>
 
 <p align="center">
-Projected mean annual heatwaves risk exposure over 2022-2052 with the SSP5-RCP8.5 scenario.
+Projected mean annual flood risk exposure over over 1980-2010 (left) and 2022-2052 (right) with SSP5-RCP8.5 scenario.
 </p>
 
 <table>
   <thead>
     <tr>
-      <th>Indian Towns with top heatwave exposure over 2022-2052</th>
+      <th>England Counties with top cyclone exposure over 2022-2052</th>
       <th> </th>
       <th> </th>
       <th> </th>
@@ -155,34 +159,34 @@ Projected mean annual heatwaves risk exposure over 2022-2052 with the SSP5-RCP8.
   </thead>
   <tbody>
     <tr>
-      <td>Jaipur</td>
-      <td>7.85</td>
-      <td>21.3</td>
-      <td>172</td>
+      <td>Aberdeen City</td>
+      <td>0.12</td>
+      <td>0.06</td>
+      <td>-50</td>
     </tr>
     <tr>
-      <td>Lakshwadeep</td>
-      <td>8.2</td>
-      <td>90.8</td>
-      <td>997</td>
+      <td>Bolton</td>
+      <td>0.0</td>
+      <td>0.04</td>
+      <td>800</td>
     </tr>
     <tr>
-      <td>Nagpur</td>
-      <td>7.85</td>
-      <td>21.51</td>
-      <td>174</td>
+      <td>Manchester</td>
+      <td>0.0</td>
+      <td>0.03</td>
+      <td>800</td>
     </tr>
     <tr>
-      <td>Sikar</td>
-      <td>7.8</td>
-      <td>21.2</td>
-      <td>173</td>
+      <td>Essex</td>
+      <td>0.0</td>
+      <td>0.03</td>
+      <td>N/A</td>
     </tr>
     <tr>
-      <td>Tonk</td>
-      <td>7.8</td>
-      <td>21.65</td>
-      <td>178</td>
+      <td>Manchester</td>
+      <td>0.0</td>
+      <td>0.02</td>
+      <td>N/A</td>
     </tr>
   </tbody>
 </table>
@@ -190,7 +194,16 @@ Projected mean annual heatwaves risk exposure over 2022-2052 with the SSP5-RCP8.
 <h2 id="data-sources">
 <a class="anchor" href="#data-sources" aria-hidden="true"><span class="octicon octicon-link"></span></a>Data Sources</h2>
 <ul>
+  <li><a href="https://www.wri.org/data/aqueduct-global-maps-30-data">Aqueduct</a></li>
   <li><a href="https://www.nasa.gov/nex/gddp">NASA Global Downscaled Daily Projections - GDDP</a></li>
+</ul>
+
+<h2 id="references">
+<a class="anchor" href="#references" aria-hidden="true"><span class="octicon octicon-link"></span></a>References</h2>
+<ul>
+  <li>
+<a href="https://doi.org/10.46830/writn.18.00146">Global Aqueduct Methodology</a> (Page 35, Table 3)</li>
+  <li><a href="https://link.springer.com/article/10.1007/s00382-017-3740-8">SPEI</a></li>
 </ul>
 
           </div>
@@ -205,10 +218,11 @@ Projected mean annual heatwaves risk exposure over 2022-2052 with the SSP5-RCP8.
 <li class="toc-entry toc-h2"><a href="#sample-assessment">Sample Assessment</a>
 <ul>
 <li class="toc-entry toc-h3"><a href="#united-states-counties">United States Counties</a></li>
-<li class="toc-entry toc-h3"><a href="#indian-towns">Indian Towns</a></li>
+<li class="toc-entry toc-h3"><a href="#english-counties">English Counties</a></li>
 </ul>
 </li>
 <li class="toc-entry toc-h2"><a href="#data-sources">Data Sources</a></li>
+<li class="toc-entry toc-h2"><a href="#references">References</a></li>
 </ul>
           </div>
         </div>
