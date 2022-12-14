@@ -50,21 +50,18 @@
 
 <h2 id="methodologies">
 <a class="anchor" href="#methodologies" aria-hidden="true"><span class="octicon octicon-link"></span></a>Methodologies</h2>
-<p><strong>Future Cyclone Projections</strong></p>
+<p><strong>Future Cyclone Projections</strong>
+Indicates the projected cyclone likelihood, expressed as timeseries of annual expected probability at the asset level.  This product is derived from the <a href="https://www.nature.com/articles/s41597-020-0381-2">STORM cyclone model</a>, which simulates future hurricane generation under climate change.  We estimate the likelihood of any cyclone (Category 1 and above) occurring in a given year.</p>
 
-<p>We quantify current and forward-looking cyclone exposure by focusing on the probability of cyclones. This value represents the expected number of cyclones over a year, of any intensity.</p>
-
-<p>For forward-looking cyclone exposure, Sust Global combines the latest CMIP6-based cyclone track simulations with our proprietary bias-correction methodology to enable more accurate assessment of local exposure. The CMIP6 cyclone tracks are unique because they are based on high-resolution simulations specifically designed to enable more reliable assessment of climate risk from weather phenomena like tropical cyclones. These simulations are only achievable due to recent advancements in supercomputing power.</p>
-
-<p>The CMIP6-based cyclone track simulations are drawn from research led by Dr. Malcolm Roberts of the UK Met Office (<a href="https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2020GL088662">technical reference</a>). The simulations are based on CMIP6 HighResMIP simulations with resolutions as high as 25km. The CMIP6 HighResMIP project is co-chaired by Roberts. The authors applied two different cyclone track algorithms to determine when an input set of CMIP6 oceanic and atmospheric conditions over time and space constitutes a high likelihood of a tropical cyclone track.</p>
-
-<p><strong>Observed tropical cyclones</strong></p>
-
-<p>We use cyclone tracks from the International Best Track Archive for Climate Stewardship (<a href="https://www.ncei.noaa.gov/products/international-best-track-archive">IBTrACS</a>). The IBTrACS archive combines tropical cyclone datasets from global agencies and harmonizes them into a single dataset. It is endorsed by the World Meteorological Organization as the official data source for cyclone track data. For observed tropical cyclones, we filter points to only include Category 3, 4, and 5 storm points. We then assume a constant ‘impact radius’ of 150 miles/ 241km.</p>
+<p><strong>Observed tropical cyclones</strong>
+We use cyclone tracks from the International Best Track Archive for Climate Stewardship (<a href="https://www.ncei.noaa.gov/products/international-best-track-archive">IBTrACS</a>). The IBTrACS archive combines tropical cyclone datasets from global agencies and harmonizes them into a single dataset. It is endorsed by the World Meteorological Organization as the official data source for cyclone track data. We then assume a constant ‘impact radius’ of 150 miles/ 241km around the central storm track.</p>
 
 <h2 id="known-limitations">
 <a class="anchor" href="#known-limitations" aria-hidden="true"><span class="octicon octicon-link"></span></a>Known Limitations</h2>
-<p>Future cyclones, particularly the impact of climate change on frequency and intensity, is uncertain.  This is a very active area of research in the climate resilience community. For more information, see this <a href="https://www.theatlantic.com/science/archive/2022/09/climate-change-impact-hurricane-ian/671604/?utm_medium=email&amp;_hsmi=2&amp;_hsenc=p2ANqtz-90aWgEMe64CvrUI9IdvZw4nDF2AgK90jY4P-xHHeVouG1KBG-KSXRPTRb24d_9r3-3INFei7HCbHhKm3NffMPc_E9xDw3r5S-tHcPrg_8z2gmmo4U&amp;utm_content=2&amp;utm_source=hs_email">Atlantic article</a> on the state of cyclone science.</p>
+<ul>
+  <li>Future cyclones, particularly the impact of climate change on frequency and intensity, is uncertain.  This is a very active area of research in the climate resilience community. For more information, see this <a href="https://www.theatlantic.com/science/archive/2022/09/climate-change-impact-hurricane-ian/671604/?utm_medium=email&amp;_hsmi=2&amp;_hsenc=p2ANqtz-90aWgEMe64CvrUI9IdvZw4nDF2AgK90jY4P-xHHeVouG1KBG-KSXRPTRb24d_9r3-3INFei7HCbHhKm3NffMPc_E9xDw3r5S-tHcPrg_8z2gmmo4U&amp;utm_content=2&amp;utm_source=hs_email">Atlantic article</a> on the state of cyclone science.</li>
+  <li>SSP1 and SSP2 are currently not available from the underlying data product, and our product is using SSP5 in place of SSP1/2 (SSP5 is duplicated in this product).</li>
+</ul>
 
 <h2 id="sample-assessments">
 <a class="anchor" href="#sample-assessments" aria-hidden="true"><span class="octicon octicon-link"></span></a>Sample Assessments</h2>
@@ -194,7 +191,7 @@ Projected mean annual cyclone risk exposure over 1980-2010 (left) and 2022-2052 
 <h2 id="data-sources">
 <a class="anchor" href="#data-sources" aria-hidden="true"><span class="octicon octicon-link"></span></a>Data Sources</h2>
 <ul>
-  <li><a href="%5Btechnical%20reference%5D(https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2020GL088662)">Future Cyclones, HighRes-MIP</a></li>
+  <li><a href="https://www.nature.com/articles/s41597-020-0381-2">STORM</a></li>
   <li><a href="https://www.ncei.noaa.gov/products/international-best-track-archive">IBTrACS</a></li>
 </ul>
 

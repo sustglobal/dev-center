@@ -9,20 +9,15 @@ permalink: /cyclones.html
 Tropical cyclones, also referred to as hurricanes and typhoons, are one of the costliest natural disasters. Since 1980, tropical cyclones in the U.S. have caused $997 billion in damages (NOAA), exceeding damages from all other weather disasters. Cyclone impacts can be widespread, including coastal and inland flooding and wind damage. These damages can affect livelihoods, assets, critical infrastructure, and economic activity.
 
 ## Methodologies
-**Future Cyclone Projections** 
-
-We quantify current and forward-looking cyclone exposure by focusing on the probability of cyclones. This value represents the expected number of cyclones over a year, of any intensity. 
-
-For forward-looking cyclone exposure, Sust Global combines the latest CMIP6-based cyclone track simulations with our proprietary bias-correction methodology to enable more accurate assessment of local exposure. The CMIP6 cyclone tracks are unique because they are based on high-resolution simulations specifically designed to enable more reliable assessment of climate risk from weather phenomena like tropical cyclones. These simulations are only achievable due to recent advancements in supercomputing power.  
-
-The CMIP6-based cyclone track simulations are drawn from research led by Dr. Malcolm Roberts of the UK Met Office ([technical reference](https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2020GL088662)). The simulations are based on CMIP6 HighResMIP simulations with resolutions as high as 25km. The CMIP6 HighResMIP project is co-chaired by Roberts. The authors applied two different cyclone track algorithms to determine when an input set of CMIP6 oceanic and atmospheric conditions over time and space constitutes a high likelihood of a tropical cyclone track.
+**Future Cyclone Projections**
+Indicates the projected cyclone likelihood, expressed as timeseries of annual expected probability at the asset level.  This product is derived from the [STORM cyclone model](https://www.nature.com/articles/s41597-020-0381-2), which simulates future hurricane generation under climate change.  We estimate the likelihood of any cyclone (Category 1 and above) occurring in a given year.
 
 **Observed tropical cyclones**
-
-We use cyclone tracks from the International Best Track Archive for Climate Stewardship ([IBTrACS](https://www.ncei.noaa.gov/products/international-best-track-archive)). The IBTrACS archive combines tropical cyclone datasets from global agencies and harmonizes them into a single dataset. It is endorsed by the World Meteorological Organization as the official data source for cyclone track data. For observed tropical cyclones, we filter points to only include Category 3, 4, and 5 storm points. We then assume a constant ‘impact radius’ of 150 miles/ 241km.
+We use cyclone tracks from the International Best Track Archive for Climate Stewardship ([IBTrACS](https://www.ncei.noaa.gov/products/international-best-track-archive)). The IBTrACS archive combines tropical cyclone datasets from global agencies and harmonizes them into a single dataset. It is endorsed by the World Meteorological Organization as the official data source for cyclone track data. We then assume a constant ‘impact radius’ of 150 miles/ 241km around the central storm track.
 
 ## Known Limitations
-Future cyclones, particularly the impact of climate change on frequency and intensity, is uncertain.  This is a very active area of research in the climate resilience community. For more information, see this [Atlantic article](https://www.theatlantic.com/science/archive/2022/09/climate-change-impact-hurricane-ian/671604/?utm_medium=email&_hsmi=2&_hsenc=p2ANqtz-90aWgEMe64CvrUI9IdvZw4nDF2AgK90jY4P-xHHeVouG1KBG-KSXRPTRb24d_9r3-3INFei7HCbHhKm3NffMPc_E9xDw3r5S-tHcPrg_8z2gmmo4U&utm_content=2&utm_source=hs_email) on the state of cyclone science. 
+- Future cyclones, particularly the impact of climate change on frequency and intensity, is uncertain.  This is a very active area of research in the climate resilience community. For more information, see this [Atlantic article](https://www.theatlantic.com/science/archive/2022/09/climate-change-impact-hurricane-ian/671604/?utm_medium=email&_hsmi=2&_hsenc=p2ANqtz-90aWgEMe64CvrUI9IdvZw4nDF2AgK90jY4P-xHHeVouG1KBG-KSXRPTRb24d_9r3-3INFei7HCbHhKm3NffMPc_E9xDw3r5S-tHcPrg_8z2gmmo4U&utm_content=2&utm_source=hs_email) on the state of cyclone science. 
+- SSP1 and SSP2 are currently not available from the underlying data product, and our product is using SSP5 in place of SSP1/2 (SSP5 is duplicated in this product).
 
 ## Sample Assessments
 ### United States Counties
@@ -65,7 +60,7 @@ Projected mean annual cyclone risk exposure over 1980-2010 (left) and 2022-2052 
 | Vizianagaram | 0.26 | 0.24 | -9 |
 
 ## Data Sources
-- [Future Cyclones, HighRes-MIP]([technical reference](https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2020GL088662))
+- [STORM](https://www.nature.com/articles/s41597-020-0381-2)
 - [IBTrACS](https://www.ncei.noaa.gov/products/international-best-track-archive)
 
 ## References

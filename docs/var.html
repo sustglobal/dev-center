@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="shortcut icon" type="image/ico" href="assets/images/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href='https://use.fontawesome.com/releases/v5.8.1/css/all.css'>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+            integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+            crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+            integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/assets/css/main.css?v=">
+
+    <title>Climate Data Guide - Value At Risk (VaR)</title>
+
+  </head>
+
+  <body>
+
+    <nav id="topnav" class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container">
+
+        <a class="navbar-brand" href="/">
+          <img src="/assets/images/sust-HexLogoONLYwhite.png" />
+          <span>Developer Center</span>
+        </a>
+
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="https://explorer.sustglobal.io/">
+              Climate Explorer
+              <i class="fas fa-external-link-alt fa-sm"></i>
+            </a>
+          </li>
+        </ul>
+
+      </div>
+    </nav>
+
+    <div class="container" id="allcontent">
+      <div class="d-flex flex-direction-row flex-nowrap">
+
+        <div class="flex-grow-1 col-9">
+          <div id="innercontent">
+            <h1>Climate Data Guide - Value At Risk (VaR)</h1>
+            <p><strong>Data Description</strong></p>
+
+<p>Physical perils produce damage that can be quantified using historical data.  The purpose of Value-at-Risk (VaR) is to estimate the annual damage to a structure using the full suite of hazard exposure data, in conjunction with structure type and purpose.  Value-at-Risk calculates a probabilistic estimate of annual damage for acute hazards:</p>
+<ul>
+  <li>Wildfires</li>
+  <li>Floods</li>
+  <li>Cyclones</li>
+</ul>
+
+<p>Using hazard exposure data on the frequency of different event intensities, we translate each event into an estimate of damage from that intensity using well-established and peer-reviewed damage functions.  We then integrate across all of these expected events, weighted by their likelihood, to come to a single annual value of percentage loss.</p>
+
+<h2 id="methodologies">
+<a class="anchor" href="#methodologies" aria-hidden="true"><span class="octicon octicon-link"></span></a>Methodologies</h2>
+<h3 id="floods">
+<a class="anchor" href="#floods" aria-hidden="true"><span class="octicon octicon-link"></span></a>Floods</h3>
+<p>To calculate VaR for flooding, we start with flood risk exposure data in the form of <i>annual exceedance probabilities</i> (also known as Return Periods).  This data essentially describes the annual likelihood of flooding of a given depth.  We combine this data with <i>Depth-Damage-Functions</i> from the US Army Corps of Engineers.  These functions (also known as <i>impact functions</i> or <i>vulnerability curves</i>) describe the expected damage to a given structure type for a given flood depth.  For example, a flood of depth 1m may damage 30% of a structure’s total value, for the typical single family wooden home.</p>
+
+<p>The curves provided by the Army Corps were designed specifically for the United States.  In order to adapt them for global use cases, we apply regional calibrations using data from the <a href="https://nhess.copernicus.org/articles/21/393/2021/">CLIMADA</a> risk analysis framework.  These calibrations account for large-scale differences in building standards around the world.  For example, these calibrations allow us to more accurately describe the impact of 1m of flooding in Japan (where building standards are very high) and other places of the world where standards may be lower.</p>
+
+<h3 id="cyclones">
+<a class="anchor" href="#cyclones" aria-hidden="true"><span class="octicon octicon-link"></span></a>Cyclones</h3>
+<p>To calculate VaR for cyclones, we start with wind speed exposure data in the form of <i>annual exceedance probabilities</i> (also known as Return Periods).  This data essentially describes the annual likelihood of a given wind speed.  We combine this data with regionally specific vulnerability curves from the <a href="https://nhess.copernicus.org/articles/21/393/2021/">CLIMADA</a> risk analysis framework.  These functions (also known as <i>impact functions</i> or <i>vulnerability curves</i>) describe the expected damage to a given structure type for a given wind speed.  For example, a wind speed of 60 meters per second may damage 50% of a structure’s total value, for the typical single family wooden home.</p>
+
+<h3 id="wildfires">
+<a class="anchor" href="#wildfires" aria-hidden="true"><span class="octicon octicon-link"></span></a>Wildfires</h3>
+<p>For wildfire, we take a different approach to measuring damage.  In the event of exposure to wildfire, we assume that 75% of an asset is damaged.  This number is derived from research on historic impacts from wildfires in California.</p>
+
+
+          </div>
+        </div>
+
+        
+        <div class="col-3">
+          <div id="toc-container">
+            <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h2"><a href="#methodologies">Methodologies</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#floods">Floods</a></li>
+<li class="toc-entry toc-h3"><a href="#cyclones">Cyclones</a></li>
+<li class="toc-entry toc-h3"><a href="#wildfires">Wildfires</a></li>
+</ul>
+</li>
+</ul>
+          </div>
+        </div>
+        
+
+      </div>
+
+    </div>
+
+  </body>
+</html>

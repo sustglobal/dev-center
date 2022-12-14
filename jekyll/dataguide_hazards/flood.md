@@ -9,17 +9,15 @@ permalink: /flood.html
 Flooding captures the likelihood of a location being directly exposed to flooding, both from precipitation-based inland flooding and from coastal flooding.  Flooding is among the deadlier natural disasters and poses direct risks to human health, infrastructure, and economic activity.
 
 ## Methodologies
-
 **Flood potential**
+Indicates the projected flood likelihood, expressed as timeseries of annual expected probability at the asset level.  We derive this method from WRI's [Aqueduct Flood Hazard Maps](https://www.wri.org/data/aqueduct-floods-hazard-maps) product, for both inland and coastal floods.  Using a suite of flood maps of varying intensity, we derive an estimate of the expeted recurrence period for any amount of flooding.
 
-Indicates the potential flood exposure from 2022 - 2100 expressed as a probability at the asset level. A value of 0.1 indicates that there is a 10% chance of flooding at any depth at that location.
-
-The output metric we use for inland flooding exposure ranges from 0 (low risk) to 1 (high risk). We derive this index from the collection of many simulations of flood inundated areas. We take into account multiple meteorological variables like precipitation, land surface pressure, humidity and elevation.
-
-We only cover only SSP5-RCP8.5 at the moment in the flood potential indicator.
+**Observed floods**
+Indicates whether flood was observed in a given year by satellites at the location of an asset. It is derived from [NASA MODIS](https://www.earthdata.nasa.gov/learn/find-data/near-real-time/modis-nrt-global-flood-product) data, for the period 2012 to present.  
 
 ## Known Limitations
-Floods are difficult to observe by satelite, due primarily to cloud cover.  No historic flood database is comprehensive, even for recent years in the satelite period.
+- Satellite-derived remote sensing of floods has several well-known limitations.  Floods are difficult to observe by satelite, due primarily to cloud cover, which contributes to False Negatives (reporting that there was no flooding, when in reality there was).  Additionally, algorithms to detect flooding can report False Positives (detecting a flood when there was none, due to shadows and ground moisture).  No historic flood database is comprehensive, even for recent years in the satelite period.
+- SSP1 is currently not available from the underlying data product, and our product is using SSP2 in place of SSP1 (SSP2 is duplicated in this product).
 
 ## Sample Assessment
 ### United States Counties
@@ -61,9 +59,6 @@ Projected mean annual flood risk exposure over over 1980-2010 (left) and 2022-20
 
 
 ## Data Sources
-- [Aqueduct](https://www.wri.org/data/aqueduct-global-maps-30-data)
-- [NASA Global Downscaled Daily Projections - GDDP](https://www.nasa.gov/nex/gddp) 
+- [Aqueduct](https://www.wri.org/data/aqueduct-floods-hazard-maps)
+- [NASA MODIS](https://www.earthdata.nasa.gov/learn/find-data/near-real-time/modis-nrt-global-flood-product) 
 
-## References
-- [Global Aqueduct Methodology](https://doi.org/10.46830/writn.18.00146) (Page 35, Table 3)
-- [SPEI](https://link.springer.com/article/10.1007/s00382-017-3740-8)
