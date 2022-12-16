@@ -64,9 +64,11 @@ We use the same methodology as the unified water stress indicator, except with o
 
 <h2 id="known-limitations">
 <a class="anchor" href="#known-limitations" aria-hidden="true"><span class="octicon octicon-link"></span></a>Known Limitations</h2>
-<p>…
-Unified Water Stress does not have a tangible interpretation, in the same way that other metrics do (probability, heatwave days, m SLR).
-Our modeling framework does not account for water transport between watersheds, which helps to meet demand in dry regions at the cost of transportation.</p>
+<ul>
+  <li>Unified Water Stress does not have a tangible interpretation, in the same way that other metrics do (probability, heatwave days, m SLR).  It can be used as a measure of relative risk across assets, with values over 0.8 generally corresponding to severe water stress.  In cases where an absolute metric is desired, the <i>Aqueduct Water Stress Score</i> indicator is recommended (see product documentation below).</li>
+  <li>SSP1 is currently not available from the underlying data product, and our product is using SSP2 in place of SSP1 (SSP2 is duplicated in this product).</li>
+  <li>Our modeling framework does not account for water transport between watersheds, which helps to meet demand in dry regions at the cost of transportation.</li>
+</ul>
 
 <h2 id="sample-assessment">
 <a class="anchor" href="#sample-assessment" aria-hidden="true"><span class="octicon octicon-link"></span></a>Sample Assessment</h2>

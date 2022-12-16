@@ -13,7 +13,9 @@ Heatwaves represent an extended period of perilously warm weather at a specific 
 This indicator uses NASA Global Downscaled Daily Projections ([GDDP](https://www.nasa.gov/nex/gddp)) to estimate the number of days exceeding the historic 98th percentile of annual temperatures. This temperature threshold varies spatially, based on the 98th percentile of a given location.  As such, the heatwave metric indicates anomalously high temperatures relative to what was locally typical in the past. 
 
 ## Known Limitations
-There are many ways to define a heatwave, based on intensity, duration, and potentially other factors. Our indicator uses a 98th percentile intensity, and a 1 day duration, which is appropriate for most use cases.  
+- There are many ways to define a heatwave, based on intensity, duration, and potentially other factors. Our indicator uses a 98th percentile intensity, and a 1 day duration, which is appropriate for most use cases.  
+- SSP1 is currently not available from the underlying data product, and our product is using SSP2 in place of SSP1 (SSP2 is duplicated in this product).
+
 
 ## Sample Assessment
 ### United States Counties

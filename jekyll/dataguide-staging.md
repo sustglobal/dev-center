@@ -14,7 +14,9 @@ Our Climate Analytics covers risk from multiple perils:
 - [Cyclones](./cyclones.html)
 - [Heatwave](./heatwaves.html)
 - [Sea Level Rise (SLR)](./sea_level_rise.html)
-- [Water Stress](./waterstress.html)
+- [Water Stress](./waterstress.html) 
+
+We also include expected financial loss information from the above physical perils, via our [Value-at-Risk](./var.html) methodology.
 
 We do this by integrating General Circulation Models (GCMs) from the latest international modeling efforts (CMIP6) with high-resolution historic observations from satelites and sensors, using the latest machine-learning and artificial intelligence methods. This allows us to deliver spatial resolution that is orders of magnitudes finer than GCMs alone. Analysis sites can be supplied in the form of either points or regions/polygons, and risk exposure is delivered as a time series for each specific asset. 
 
@@ -27,6 +29,16 @@ Sust Global's data covers three of the most representative scenarios from the IP
 1. **Strong Mitigation (SSP1)**: SSP1 covers the optimal sustainable path, also referred to as the Green Road (SSP1-RCP2.6). It encompasses socioeconomic and representative emissions pathways consistent with a sustained and pervasive global shift towards a more sustainable future. Carbon emissions begin to decline around 2020 and global mean temperatures rise approximately 1.8°C by 2100, a key goal of the Paris Climate Agreement.
 2. **Middle of the Road (SSP2)**: SSP2 covers a middle path, with challenges to climate mitigation (SSP2-RCP4.5). In this scenario, In this scenario, overall emissions continue to rise through mid-century before beginning to decline, environmental systems experience severe degradation, and climate change worsens through the end of the century. This is widely considered the likely scenario if governments and policy reflect a strong sense of urgency towards climate adaptation. Global mean temperatures rise approximately 2.4°C by 2100, but greater emissions raise the risk of tipping points.
 3. **High Emissions (SSP5)**: SSP5 reflects a future where the world continues on its current trajectory, also referred to as Fossil-Fueled Growth (SSP5-RCP8.5). In this scenario, both total population and per-capita consumption increase. Emissions peak around 2090 and global mean temperatures rising approximately 4.3°C by 2100.
+
+Sust Global currently draws on a wide range of public and private scientific datasets, which may not perfectly represent the SSPs listed above.  In cases where not all of the above SSPs are available, we use our best judgement at supplying the appropriate data.  The following substitutions currently apply to our use of SSPs:
+- **Floods**: SSP1 is currently not available from the underlying data product, and our product is using SSP2 in place of SSP1 (SSP2 is duplicated in this product).
+- **Waterstress**: SSP1 is currently not available from the underlying data product, and our product is using SSP2 in place of SSP1 (SSP2 is duplicated in this product).
+- **Heatwaves**: SSP1 is currently not available from the underlying data product, and our product is using SSP2 in place of SSP1 (SSP2 is duplicated in this product).
+
+## Data Bounds and Model Uncertainty
+Climate change is a fundamentally uncertain phenomena.  This is why CMIP6 uses an entire suite of different models, created by different institutions around the world, with a wide variety of designs and modeling strategies.  We supply uncertainty data in the form of upper and lower bounds for all hazards and projects, which represent projections from outlier models. 
+
+With the exception of cyclones, we supply the 84th and 16th percentile, approximately ±2 standard deviation.  For cyclones, we supply ±1 standard deviation.
 
 ## Fundamental Variables
 
