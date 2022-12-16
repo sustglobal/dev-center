@@ -368,12 +368,3 @@ sustglobal_asset_impact_{dataset_name}_{ScenarioID}.csv
 
 In these files, each row corresponds to one asset location, and the columns correspond to the expected percent annual Value-at-Risk.  These include information on `cyclones`, `wildfire`, and `floods`, for `baseline`, `2030`, `2050`, and `2080`.
 
-
-
-
-
-
-
-
-
-
