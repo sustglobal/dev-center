@@ -1,6 +1,6 @@
 # sust.api.generated.climate_explorer.PortfoliosApi
 
-All URIs are relative to *https://explorer.sustglobal.io/api*
+All URIs are relative to *http://explorer.sustglobal.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -15,6 +15,7 @@ Method | HTTP request | Description
 [**portfolios_delete**](PortfoliosApi.md#portfolios_delete) | **DELETE** /portfolios/{portfolio_name}/ | Delete Portfolio
 [**portfolios_list**](PortfoliosApi.md#portfolios_list) | **GET** /portfolios/ | List Portfolios
 [**portfolios_read**](PortfoliosApi.md#portfolios_read) | **GET** /portfolios/{portfolio_name}/ | Get Portfolio
+[**search_list**](PortfoliosApi.md#search_list) | **GET** /search | Get Physical Risk Exposure Summary
 
 
 # **portfolios_assets_export_list**
@@ -35,10 +36,10 @@ import sust.api.generated.climate_explorer
 from sust.api.generated.climate_explorer.api import portfolios_api
 from sust.api.generated.climate_explorer.model.errors_response import ErrorsResponse
 from pprint import pprint
-# Defining the host is optional and defaults to https://explorer.sustglobal.io/api
+# Defining the host is optional and defaults to http://explorer.sustglobal.io/api
 # See configuration.py for a list of all supported configuration parameters.
 configuration = sust.api.generated.climate_explorer.Configuration(
-    host = "https://explorer.sustglobal.io/api"
+    host = "http://explorer.sustglobal.io/api"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -138,10 +139,10 @@ from sust.api.generated.climate_explorer.api import portfolios_api
 from sust.api.generated.climate_explorer.model.errors_response import ErrorsResponse
 from sust.api.generated.climate_explorer.model.message_response import MessageResponse
 from pprint import pprint
-# Defining the host is optional and defaults to https://explorer.sustglobal.io/api
+# Defining the host is optional and defaults to http://explorer.sustglobal.io/api
 # See configuration.py for a list of all supported configuration parameters.
 configuration = sust.api.generated.climate_explorer.Configuration(
-    host = "https://explorer.sustglobal.io/api"
+    host = "http://explorer.sustglobal.io/api"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -243,10 +244,10 @@ from sust.api.generated.climate_explorer.api import portfolios_api
 from sust.api.generated.climate_explorer.model.errors_response import ErrorsResponse
 from sust.api.generated.climate_explorer.model.asset_response import AssetResponse
 from pprint import pprint
-# Defining the host is optional and defaults to https://explorer.sustglobal.io/api
+# Defining the host is optional and defaults to http://explorer.sustglobal.io/api
 # See configuration.py for a list of all supported configuration parameters.
 configuration = sust.api.generated.climate_explorer.Configuration(
-    host = "https://explorer.sustglobal.io/api"
+    host = "http://explorer.sustglobal.io/api"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -353,10 +354,10 @@ from sust.api.generated.climate_explorer.model.errors_response import ErrorsResp
 from sust.api.generated.climate_explorer.model.portfolio_create_request import PortfolioCreateRequest
 from sust.api.generated.climate_explorer.model.portfolio_response import PortfolioResponse
 from pprint import pprint
-# Defining the host is optional and defaults to https://explorer.sustglobal.io/api
+# Defining the host is optional and defaults to http://explorer.sustglobal.io/api
 # See configuration.py for a list of all supported configuration parameters.
 configuration = sust.api.generated.climate_explorer.Configuration(
-    host = "https://explorer.sustglobal.io/api"
+    host = "http://explorer.sustglobal.io/api"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -457,10 +458,10 @@ import sust.api.generated.climate_explorer
 from sust.api.generated.climate_explorer.api import portfolios_api
 from sust.api.generated.climate_explorer.model.errors_response import ErrorsResponse
 from pprint import pprint
-# Defining the host is optional and defaults to https://explorer.sustglobal.io/api
+# Defining the host is optional and defaults to http://explorer.sustglobal.io/api
 # See configuration.py for a list of all supported configuration parameters.
 configuration = sust.api.generated.climate_explorer.Configuration(
-    host = "https://explorer.sustglobal.io/api"
+    host = "http://explorer.sustglobal.io/api"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -560,10 +561,10 @@ from sust.api.generated.climate_explorer.api import portfolios_api
 from sust.api.generated.climate_explorer.model.errors_response import ErrorsResponse
 from sust.api.generated.climate_explorer.model.physical_risk_dataset_item_response import PhysicalRiskDatasetItemResponse
 from pprint import pprint
-# Defining the host is optional and defaults to https://explorer.sustglobal.io/api
+# Defining the host is optional and defaults to http://explorer.sustglobal.io/api
 # See configuration.py for a list of all supported configuration parameters.
 configuration = sust.api.generated.climate_explorer.Configuration(
-    host = "https://explorer.sustglobal.io/api"
+    host = "http://explorer.sustglobal.io/api"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -681,10 +682,10 @@ from sust.api.generated.climate_explorer.api import portfolios_api
 from sust.api.generated.climate_explorer.model.errors_response import ErrorsResponse
 from sust.api.generated.climate_explorer.model.physical_risk_metadata_response import PhysicalRiskMetadataResponse
 from pprint import pprint
-# Defining the host is optional and defaults to https://explorer.sustglobal.io/api
+# Defining the host is optional and defaults to http://explorer.sustglobal.io/api
 # See configuration.py for a list of all supported configuration parameters.
 configuration = sust.api.generated.climate_explorer.Configuration(
-    host = "https://explorer.sustglobal.io/api"
+    host = "http://explorer.sustglobal.io/api"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -784,10 +785,10 @@ from sust.api.generated.climate_explorer.api import portfolios_api
 from sust.api.generated.climate_explorer.model.errors_response import ErrorsResponse
 from sust.api.generated.climate_explorer.model.physical_risk_dataset_summary_response import PhysicalRiskDatasetSummaryResponse
 from pprint import pprint
-# Defining the host is optional and defaults to https://explorer.sustglobal.io/api
+# Defining the host is optional and defaults to http://explorer.sustglobal.io/api
 # See configuration.py for a list of all supported configuration parameters.
 configuration = sust.api.generated.climate_explorer.Configuration(
-    host = "https://explorer.sustglobal.io/api"
+    host = "http://explorer.sustglobal.io/api"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -899,10 +900,10 @@ from sust.api.generated.climate_explorer.api import portfolios_api
 from sust.api.generated.climate_explorer.model.errors_response import ErrorsResponse
 from sust.api.generated.climate_explorer.model.message_response import MessageResponse
 from pprint import pprint
-# Defining the host is optional and defaults to https://explorer.sustglobal.io/api
+# Defining the host is optional and defaults to http://explorer.sustglobal.io/api
 # See configuration.py for a list of all supported configuration parameters.
 configuration = sust.api.generated.climate_explorer.Configuration(
-    host = "https://explorer.sustglobal.io/api"
+    host = "http://explorer.sustglobal.io/api"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1002,10 +1003,10 @@ from sust.api.generated.climate_explorer.api import portfolios_api
 from sust.api.generated.climate_explorer.model.errors_response import ErrorsResponse
 from sust.api.generated.climate_explorer.model.portfolio_response import PortfolioResponse
 from pprint import pprint
-# Defining the host is optional and defaults to https://explorer.sustglobal.io/api
+# Defining the host is optional and defaults to http://explorer.sustglobal.io/api
 # See configuration.py for a list of all supported configuration parameters.
 configuration = sust.api.generated.climate_explorer.Configuration(
-    host = "https://explorer.sustglobal.io/api"
+    host = "http://explorer.sustglobal.io/api"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1095,10 +1096,10 @@ from sust.api.generated.climate_explorer.api import portfolios_api
 from sust.api.generated.climate_explorer.model.errors_response import ErrorsResponse
 from sust.api.generated.climate_explorer.model.portfolio_response import PortfolioResponse
 from pprint import pprint
-# Defining the host is optional and defaults to https://explorer.sustglobal.io/api
+# Defining the host is optional and defaults to http://explorer.sustglobal.io/api
 # See configuration.py for a list of all supported configuration parameters.
 configuration = sust.api.generated.climate_explorer.Configuration(
-    host = "https://explorer.sustglobal.io/api"
+    host = "http://explorer.sustglobal.io/api"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1154,6 +1155,102 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**PortfolioResponse**](PortfolioResponse.md)
+
+### Authorization
+
+[X-SustGlobal-APIKey](../README.md#X-SustGlobal-APIKey), [api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** |  |  -  |
+**401** |  |  -  |
+**403** |  |  -  |
+**404** |  |  -  |
+**405** |  |  -  |
+**409** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **search_list**
+> SearchResponse search_list(x_sust_global_project, lat, lng)
+
+Get Physical Risk Exposure Summary
+
+Retrieve a summary of the physical risk exposure dataset generated for a portfolio
+
+### Example
+
+* Api Key Authentication (X-SustGlobal-APIKey):
+* Api Key Authentication (api_key):
+
+```python
+import time
+import sust.api.generated.climate_explorer
+from sust.api.generated.climate_explorer.api import portfolios_api
+from sust.api.generated.climate_explorer.model.errors_response import ErrorsResponse
+from sust.api.generated.climate_explorer.model.search_response import SearchResponse
+from pprint import pprint
+# Defining the host is optional and defaults to http://explorer.sustglobal.io/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = sust.api.generated.climate_explorer.Configuration(
+    host = "http://explorer.sustglobal.io/api"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: X-SustGlobal-APIKey
+configuration.api_key['X-SustGlobal-APIKey'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-SustGlobal-APIKey'] = 'Bearer'
+
+# Configure API key authorization: api_key
+configuration.api_key['api_key'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api_key'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with sust.api.generated.climate_explorer.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = portfolios_api.PortfoliosApi(api_client)
+    x_sust_global_project = "X-SustGlobal-Project_example" # str | Name of project
+    lat = 3.14 # float | Latitude of the location
+    lng = 3.14 # float | Longitude of the location
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Get Physical Risk Exposure Summary
+        api_response = api_instance.search_list(x_sust_global_project, lat, lng)
+        pprint(api_response)
+    except sust.api.generated.climate_explorer.ApiException as e:
+        print("Exception when calling PortfoliosApi->search_list: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **x_sust_global_project** | **str**| Name of project |
+ **lat** | **float**| Latitude of the location |
+ **lng** | **float**| Longitude of the location |
+
+### Return type
+
+[**SearchResponse**](SearchResponse.md)
 
 ### Authorization
 

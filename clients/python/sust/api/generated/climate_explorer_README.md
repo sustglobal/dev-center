@@ -39,10 +39,11 @@ from sust.api.generated.climate_explorer.model.physical_risk_dataset_summary_res
 from sust.api.generated.climate_explorer.model.physical_risk_metadata_response import PhysicalRiskMetadataResponse
 from sust.api.generated.climate_explorer.model.portfolio_create_request import PortfolioCreateRequest
 from sust.api.generated.climate_explorer.model.portfolio_response import PortfolioResponse
-# Defining the host is optional and defaults to https://explorer.sustglobal.io/api
+from sust.api.generated.climate_explorer.model.search_response import SearchResponse
+# Defining the host is optional and defaults to http://explorer.sustglobal.io/api
 # See configuration.py for a list of all supported configuration parameters.
 configuration = sust.api.generated.climate_explorer.Configuration(
-    host = "https://explorer.sustglobal.io/api"
+    host = "http://explorer.sustglobal.io/api"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -80,7 +81,7 @@ project = "project_example" # str | Name of project. Param only required when us
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://explorer.sustglobal.io/api*
+All URIs are relative to *http://explorer.sustglobal.io/api*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -95,6 +96,7 @@ Class | Method | HTTP request | Description
 *PortfoliosApi* | [**portfolios_delete**](sust/api/generated/climate_explorer/docs/PortfoliosApi.md#portfolios_delete) | **DELETE** /portfolios/{portfolio_name}/ | Delete Portfolio
 *PortfoliosApi* | [**portfolios_list**](sust/api/generated/climate_explorer/docs/PortfoliosApi.md#portfolios_list) | **GET** /portfolios/ | List Portfolios
 *PortfoliosApi* | [**portfolios_read**](sust/api/generated/climate_explorer/docs/PortfoliosApi.md#portfolios_read) | **GET** /portfolios/{portfolio_name}/ | Get Portfolio
+*PortfoliosApi* | [**search_list**](sust/api/generated/climate_explorer/docs/PortfoliosApi.md#search_list) | **GET** /search | Get Physical Risk Exposure Summary
 
 
 ## Documentation For Models
@@ -104,11 +106,17 @@ Class | Method | HTTP request | Description
  - [MessageResponse](sust/api/generated/climate_explorer/docs/MessageResponse.md)
  - [PhysicalRiskDatasetItemResponse](sust/api/generated/climate_explorer/docs/PhysicalRiskDatasetItemResponse.md)
  - [PhysicalRiskDatasetSummaryResponse](sust/api/generated/climate_explorer/docs/PhysicalRiskDatasetSummaryResponse.md)
+ - [PhysicalRiskExposureExtent](sust/api/generated/climate_explorer/docs/PhysicalRiskExposureExtent.md)
+ - [PhysicalRiskExposureItem](sust/api/generated/climate_explorer/docs/PhysicalRiskExposureItem.md)
  - [PhysicalRiskMetadataIndicatorResponse](sust/api/generated/climate_explorer/docs/PhysicalRiskMetadataIndicatorResponse.md)
  - [PhysicalRiskMetadataResponse](sust/api/generated/climate_explorer/docs/PhysicalRiskMetadataResponse.md)
  - [PhysicalRiskSummaryItem](sust/api/generated/climate_explorer/docs/PhysicalRiskSummaryItem.md)
  - [PortfolioCreateRequest](sust/api/generated/climate_explorer/docs/PortfolioCreateRequest.md)
  - [PortfolioResponse](sust/api/generated/climate_explorer/docs/PortfolioResponse.md)
+ - [SearchResponse](sust/api/generated/climate_explorer/docs/SearchResponse.md)
+ - [SearchResponseFeature](sust/api/generated/climate_explorer/docs/SearchResponseFeature.md)
+ - [SearchResponsePhysicalRiskExposureProperty](sust/api/generated/climate_explorer/docs/SearchResponsePhysicalRiskExposureProperty.md)
+ - [SearchResponseProperties](sust/api/generated/climate_explorer/docs/SearchResponseProperties.md)
 
 
 ## Documentation For Authorization
