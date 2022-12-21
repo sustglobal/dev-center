@@ -16,7 +16,7 @@ Our Climate Analytics covers risk from multiple perils:
 - [Sea Level Rise (SLR)](./sea_level_rise.html)
 - [Water Stress](./waterstress.html) 
 
-We also include expected financial loss information from the above physical perils, via our [Value-at-Risk](./var.html) methodology.
+We also include expected financial loss information from the above physical perils, via our [Financial Risk Analysis](./var.html) methodology.
 
 We do this by integrating General Circulation Models (GCMs) from the latest international modeling efforts (CMIP6) with high-resolution historic observations from satelites and sensors, using the latest machine-learning and artificial intelligence methods. This allows us to deliver spatial resolution that is orders of magnitudes finer than GCMs alone. Analysis sites can be supplied in the form of either points or regions/polygons, and risk exposure is delivered as a time series for each specific asset. 
 
@@ -64,6 +64,7 @@ To create summarization labels we analyze a representative sample of global poin
 | Water Stress   | Score                     | 0.0 - 0.3             | 0.3 - 0.6                | 0.6 -  1.0 |
 | Heatwave       | Number of days in year    | 0 - 30              | 30 - 50                 | 50 - 366 |
 | Sea Level Rise | Relative change in meters | 0.0 - 0.375            | 0.375 - 0.7                | 0.7 - 3.0 |
+| Financial Risk Analysis (VaR) | Annualized Percent of Value at Risk | 0.0 - 0.01 | 0.01 - 0.05 | 0.05 - 1.0 |
 
 <p>
 <b>Table 1</b>: Hazard summarization labeling ranges 
