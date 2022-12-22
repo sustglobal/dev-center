@@ -24,10 +24,10 @@ The curves provided by the Army Corps were designed specifically for the United 
 To calculate financial risk for cyclones, we start with wind speed exposure data in the form of <i>annual exceedance probabilities</i> (also known as Return Periods).  This data essentially describes the annual likelihood of a given wind speed.  We combine this data with regionally specific vulnerability curves from the [CLIMADA](https://nhess.copernicus.org/articles/21/393/2021/) risk analysis framework.  These functions (also known as <i>impact functions</i> or <i>vulnerability curves</i>) describe the expected damage to a given structure type for a given wind speed.  For example, a wind speed of 60 meters per second may damage 50% of a structure's total value, for the typical single family wooden home.
 
 ### Wildfires
-For wildfire, we take a different approach to measuring damage.  In the event of exposure to wildfire, we assume that 75% of an asset is damaged.  This number is derived from research on historic impacts from wildfires in California.  
+For wildfire, we take a different approach to measuring damage.  In the event of exposure to wildfire within 1km of an asset, we assume that there is a 10% change that the asset is affected by the fire, and if affected, a fire would destroy 75% of an assets value.  These values are derived from research on historic impacts from wildfires in California.  
 
 ## Asset Type Specific Damages
-In order to more accurately calculate financial risk, it is possible to upload asset types, via the `label:asset_type` column.  This allows us to apply specialized impact functions based on the uploaded asset type, accounting for industry-specific characteristics.
+In order to more accurately calculate financial risk, it is possible to upload asset types, via the `label:type` column.  This allows us to apply specialized impact functions based on the uploaded asset type, accounting for industry-specific characteristics.
 
 **Available Asset Types**
 
