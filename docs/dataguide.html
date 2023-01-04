@@ -44,993 +44,144 @@
         <div class="flex-grow-1 col-9">
           <div id="innercontent">
             <h1>Climate Data Guide</h1>
-            <h2 id="introduction">
-<a class="anchor" href="#introduction" aria-hidden="true"><span class="octicon octicon-link"></span></a>Introduction</h2>
-<p>This Data Guide will provide you with an introduction to Sust Global’s data capabilities. We will provide an overview of climate scenarios and our data specification and capabilities. We will introduce you to climate analytics on each of the hazards and show how they can be used to generate business intelligence insights, and also list some measures you can take to adapt and mitigate climate risk.</p>
+            <h2 id="about-the-data-guide">
+<a class="anchor" href="#about-the-data-guide" aria-hidden="true"><span class="octicon octicon-link"></span></a>About the Data Guide</h2>
+<p>Sust Global enables users to access physical risk data across multiple perils and forward-looking time horizons. We take comprehensive measures to ensure data is validated and precise, so users can make climate-informed decisions.</p>
 
-<p>The world needs validated Climate Analytics. Without data that is consistently validated and objectively true, business decision-making becomes murky, disclosures and reporting become meaningless and managing for the changing climate becomes impossible.</p>
+<p>This document provides users with an introduction to Sust Global’s data capabilities. This includes an overview of climate modeling and scenario development, and how to use our hazard and indicator data to derive intelligence and insights.</p>
 
-<p>Sust Global’s mission is to enable leading businesses with the Climate analytics required to make strategic decisions in our ever-changing world. We take comprehensive measures to ensure data is validated, objectively true, and precise, so you can focus on your work. Sust Global enables users to access asset level,property level or portfolio level Climate Analytics for physical risk assessments across forward-looking time horizons and multiple climate scenarios.</p>
+<p>Our Climate Analytics covers risk from multiple perils:</p>
+<ul>
+  <li><a href="./wildfire.html">Wildfire</a></li>
+  <li><a href="./flood.html">Flood</a></li>
+  <li><a href="./cyclones.html">Cyclones</a></li>
+  <li><a href="./heatwaves.html">Heatwave</a></li>
+  <li><a href="./sea_level_rise.html">Sea Level Rise (SLR)</a></li>
+  <li><a href="./waterstress.html">Water Stress</a></li>
+</ul>
 
-<p>Our Climate Analytics covers risk from multiple perils: wildfire, flood, cyclone, heatwave, sea level rise and water stress. Through data transformations on ensembles of frontier General Circulation Models (GCMs), asset-level risk exposure is delivered as a time series for each specific asset. Using the latest satellite and sensor observations, we bias-correct the projections from the model ensembles to account for the most recent risk exposure observations. Asset level or regional processing – in conjunction with near real-time observation ingestion with artificial intelligence driven resolution enhancement, served using a scalable cloud-native data platform – allows our users to investigate risk exposure across small or large collections of assets or properties or regions.</p>
+<p>We also include expected financial loss information from the above physical perils, via our <a href="./var.html">Financial Risk Analysis</a> methodology.</p>
+
+<p>We do this by integrating General Circulation Models (GCMs) from the latest international modeling efforts (CMIP6) with high-resolution historic observations from satelites and sensors, using the latest machine-learning and artificial intelligence methods. This allows us to deliver spatial resolution that is orders of magnitudes finer than GCMs alone. Analysis sites can be supplied in the form of either points or regions/polygons, and risk exposure is delivered as a time series for each specific asset.</p>
 
 <p><strong>Data Validation</strong>: For every hazard, we derive asset level exposure data from forward looking indicators based on models from frontier climate science. We benchmark and validate data from these indicators on their hindcast (projections over historic time periods) against observations to qualify the most performant functional models used in our model ensembles.</p>
 
 <h2 id="climate-scenarios">
 <a class="anchor" href="#climate-scenarios" aria-hidden="true"><span class="octicon octicon-link"></span></a>Climate Scenarios</h2>
-<p>Sust Global covers climate scenario analysis following climate scenario definitions set forth from the Intergovernmental Panel for Climate Change - Coupled Model Intercomparison Project-Phase 6 <a href="https://www.carbonbrief.org/explainer-how-shared-socioeconomic-pathways-explore-future-climate-change/">IPCC CMIP6</a>. The IPCC AR6/CMIP6 combines frontier climate science from world leading scientific institutions with realistic climate scenario modeling. The IPCC has finalized the third part of the Sixth Assessment Report, Climate Change 2022: Mitigation of Climate Change on 4 April 2022. Climate scenarios can be thought of as a bundling of working hypotheses on the evolution of human development over the coming years.</p>
+<p>To model future climate change, some assumptions about society are needed - particularly, the quantity of planet-warming greenhouse gases that will be emitted over the coming decades.  There are established conventions for this, known as “Shared Socioeconomic Pathways”, or SSPs, that are used to standardize this assumption across models.  These climate scenarios can be thought of as a bundling of working hypotheses on the evolution of human development over the coming years. For an overview of climate scenario definitions, as set forth by the Intergovernmental Panel for Climate Change (IPCC), see this article <a href="https://www.carbonbrief.org/explainer-how-shared-socioeconomic-pathways-explore-future-climate-change/">Carbon Brief</a>.</p>
 
-<p>This guide covers the exposure of climate related hazards relating to three distinct climate scenarios:</p>
+<p>Sust Global’s data covers three of the most representative scenarios from the IPCC:</p>
 <ol>
   <li>
-<strong>Strong Mitigation</strong>: This scenario covers the optimal sustainable path, also referred to as the Green Road (SSP1-RCP2.6). It encompasses socioeconomic and representative emissions pathways consistent with a gradual and pervasive global shift towards a more sustainable future. Carbon emissions begin to decline around 2020 and global mean temperatures rise approximately 1.8°C by 2100, a key goal of the Paris Climate Agreement.</li>
+<strong>Strong Mitigation (SSP1)</strong>: SSP1 covers the optimal sustainable path, also referred to as the Green Road (SSP1-RCP2.6). It encompasses socioeconomic and representative emissions pathways consistent with a sustained and pervasive global shift towards a more sustainable future. Carbon emissions begin to decline around 2020 and global mean temperatures rise approximately 1.8°C by 2100, a key goal of the Paris Climate Agreement.</li>
   <li>
-<strong>Middle of the Road</strong>: This scenario covers a middle path, with challenges to climate mitigation (SSP2-RCP4.5). In this scenario, environmental systems experience degradation, and climate change worsens through the end of the century. In this scenario, overall emissions continue to rise through mid-century before beginning to decline.This is a likely scenario if governments and policy reflect a strong sense of urgency towards climate adaptation. Global mean temperatures rise approximately 2.4°C by 2100, but greater emissions raise the risk of tipping points.</li>
+<strong>Middle of the Road (SSP2)</strong>: SSP2 covers a middle path, with challenges to climate mitigation (SSP2-RCP4.5). In this scenario, In this scenario, overall emissions continue to rise through mid-century before beginning to decline, environmental systems experience severe degradation, and climate change worsens through the end of the century. This is widely considered the likely scenario if governments and policy reflect a strong sense of urgency towards climate adaptation. Global mean temperatures rise approximately 2.4°C by 2100, but greater emissions raise the risk of tipping points.</li>
   <li>
-<strong>High Emissions</strong>: This scenario covers a future where the world continues on its current trajectory, also referred to as Fossil-Fueled Growth (SSP5-RCP8.5). Global markets are increasingly integrated and both total population and per-capita consumption increase. Emissions peak around 2090 and global mean temperatures rising approximately 4.3°C by 2100.</li>
+<strong>High Emissions (SSP5)</strong>: SSP5 reflects a future where the world continues on its current trajectory, also referred to as Fossil-Fueled Growth (SSP5-RCP8.5). In this scenario, both total population and per-capita consumption increase. Emissions peak around 2090 and global mean temperatures rising approximately 4.3°C by 2100.</li>
 </ol>
 
-<p>Sust Global’s data product provides asset level exposure to specific climate related hazards. In the following sections, we will cover descriptions of each of the hazards covered. Climate Explorer, Sust Global’s dashboard product provides asset level exposure insights to specific hazards. These insights are presented as time series, summary heatmaps across a portfolio of assets and sorting of assets based on their exposure to a specific hazard.</p>
-
-<h2 id="wildfire">
-<a class="anchor" href="#wildfire" aria-hidden="true"><span class="octicon octicon-link"></span></a>Wildfire</h2>
-
-<p><strong>Description</strong></p>
-
-<p>Wildfire is an uncontrolled fire, caused by a combination of combustible fuels (such as dead, dry wood) and ignition sources (such as human activity or lightning).  It is strongly influenced by prevailing weather conditions, and typically occurs where human activity meets an accumulation of wild fuel.</p>
-
-<p><strong>Sample Assessment</strong></p>
-
-<p align="center">
-<img height="300" src="assets/images/dataguide/wildfire_unified_prob_usa_1980_2020_v_2022-2052.png">
-</p>
-
-<p align="center">
-Fig D1: United States Counties, Projected mean annual wildfire risk exposure over 1980-2010 and 2022-2052 with SSP5-RCP8.5 scenario.
-</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>State</th>
-      <th>County Name</th>
-      <th>Score (1980-2020)</th>
-      <th>Score (2022-2052)</th>
-      <th>Percent Change</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Idaho</td>
-      <td>Custer</td>
-      <td>0.03</td>
-      <td>0.08</td>
-      <td>143</td>
-    </tr>
-    <tr>
-      <td>California</td>
-      <td>Colusa</td>
-      <td>0.07</td>
-      <td>0.08</td>
-      <td>11</td>
-    </tr>
-    <tr>
-      <td>California</td>
-      <td>Glenn</td>
-      <td>0.06</td>
-      <td>0.07</td>
-      <td>15</td>
-    </tr>
-    <tr>
-      <td>Deer Lodge</td>
-      <td>Montana</td>
-      <td>0.02</td>
-      <td>0.06</td>
-      <td>170</td>
-    </tr>
-    <tr>
-      <td>Valley</td>
-      <td>Idaho</td>
-      <td>0.03</td>
-      <td>0.05</td>
-      <td>83</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>
-Table 1A: US Counties with top wildfire exposure projected over upcoming 30 years
-</p>
-
-<p align="center">
-<img height="300" src="assets/images/dataguide/wildfire_unified_prob_india_1980_2020_v_2022-2052.png">
-</p>
-
-<p align="center">
-Fig D2: Indian towns, projected mean annual wildfire risk exposure over 1980-2010 and 2022-2052 with SSP5-RCP8.5 scenario.
-</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Region Name</th>
-      <th>Score (1980-2020)</th>
-      <th>Score (2022-2052)</th>
-      <th>Percent Change</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Bastar</td>
-      <td>0.15</td>
-      <td>0.08</td>
-      <td>-45</td>
-    </tr>
-    <tr>
-      <td>Bijapur</td>
-      <td>0.12</td>
-      <td>0.07</td>
-      <td>-43</td>
-    </tr>
-    <tr>
-      <td>Dantewada</td>
-      <td>0.1</td>
-      <td>0.08</td>
-      <td>-25</td>
-    </tr>
-    <tr>
-      <td>Garhchiroli</td>
-      <td>0.15</td>
-      <td>0.08</td>
-      <td>-48</td>
-    </tr>
-    <tr>
-      <td>Kondagaon</td>
-      <td>0.1</td>
-      <td>0.07</td>
-      <td>-31</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>
-Table 1B: Indian towns with top wildfire exposure projected over upcoming 30 years
-</p>
-
-<p><strong>Indicators</strong></p>
-
-<p>We present 4 indicators for wildfire: observed wildfire, burned area fraction, wildfire susceptibility and unified wildfire exposure.</p>
-
-<ol>
-  <li>
-<strong>Observed Wildfire</strong>: We use satellite derived observations to provide asset level exposure to active wildfires. The observations are made using NASA MODIS satellites and processed using an active fire algorithm to produce the <a href="https://lpdaac.usgs.gov/documents/115/MCD64_ATBD_V6.pdf">MCD64A</a>. This covers the historical period of 2001 to present. This indicator shows the years in which a wildfire occurred within 1 kilometer of an asset.</li>
-  <li>
-<strong>Burned Area Fraction</strong>: We represent annual fire risk by ensembling CMIP6 model simulations of monthly wildfire burned area [% of grid cell]. <a href="https://lpdaac.usgs.gov/documents/115/MCD64_ATBD_V6.pdf">CMIP6 Wildfire models</a> incorporate factors such as temperature, precipitation, land cover type, and population to simulate fire occurrence and the associated area burned. For example, wildfire occurrence includes both lightning and human-induced ignitions, and high temperatures and drought lead to drier fuels and increased likelihood of fire. We use Sust Global’s proprietary methodologies for wildfire super resolution (<a href="https://www.climatechange.ai/papers/neurips2020/45">NeurIPS2020 technical reference</a>) on top of the model ensemble to enable high resolution wildfire projections. These projections are further processed using the latest satellite-derived land cover maps, filtering for the urban-wildland interface to further refine the projections.</li>
-  <li>
-<strong>Wildfire Susceptibility</strong>: This indicator relates to wildfire weather and the probability of wildfire under various weather conditions using the <a href="https://twc.tamu.edu/kbdi">Keetch-Byram Drought Index (KBDI)</a>.  This approach has several advantages for modeling fire dynamics as previously demonstrated.  Weather has been <a href="https://iopscience.iop.org/article/10.1088/2515-7620/abd836">previously shown</a> to be a major determinant of fire probability, and changing weather patterns are the primary reason wildfires will be a major hazard of climate change. Thus, in contrast to the Burned Area Fraction Indicator, this indicator does not use direct CMIP6 simulations of wildfire occurrence.  Instead, the Wildfire susceptibility estimates future fire risk using simulations of fire weather, combined with millions of historic observations of how weather affects fire risk.</li>
-  <li>
-<strong>Unified wildfire exposure</strong>: This indicator combines the projections from the burned area fraction and the susceptibility score, benchmarked against the observed wildfire indicator to create a unified measure of wildfire probability at a specific location.  It can be interpreted as the probability of wildfire occurring within one kilometer of an asset location within a given year. The unified wildfire indicator when aggregated over a period of time (10 yrs) provides for a measure of average annual probability of wildfire occurrence within 1 kilometer of the asset over the next 10 years.</li>
-</ol>
-
-<p>Each of the indicators: observed active fires, burned area fraction and the wildfire susceptibility provide a unique view into wildfire exposure. The observed fires demonstrate historic exposure of the asset to past occurrences of wildfire. Burned area fraction provides an indication of potential for exposure of the area around the asset to wildfire and wildfire susceptibility provides an indicator of wildfire probability based on environmental and weather conditions. The unified wildfire exposure indicator brings these indicators together towards a single annualized wildfire probability score.</p>
-
-<p>The wildfire projections from Sust Global draw on the latest, cutting edge simulations from the climate community of both fire occurrence and fire weather.  We then perform several value-adding steps, including using neural networks for super-resolving our estimates, as well as calibrating our models using millions of observations of historic fire.  We use native-resolution satellite imagery to fit and validate our models, and our unified indicator provides a more accurate multi-model ensemble view of fire risk.  Finally, our models are designed to be accurate globally, as opposed to many products that are restricted to only specific regions.</p>
-
-<p><strong>Data Usage</strong></p>
-
-<p>The burned area fraction is most suitable for when assessing wildfire exposure to the asset as well as burnable area in the region around the asset. Wildfire susceptibility is suitable when accounting for near term and long term risk exposure potential. The unified indicator is more suited as a single indicator of wildfire exposure probability.</p>
-
-<p>We have benchmarked wildfire exposure in the Pacific Northwest of the United States to characterize areas of high wildfire risk potential and used the extent of exposure in these wildfire prone land parcels in this region as a reference to benchmark other regions when characterizing them as LOW/MEDIUM/HIGH.</p>
-
-<p>On the Climate Explorer dashboard, we present the unified wildfire exposure indicator for forward looking projections. All indicators are accessible using the API or the CSV datasets available as a zip file through Climate Explorer.</p>
-
-<h2 id="inland-flood">
-<a class="anchor" href="#inland-flood" aria-hidden="true"><span class="octicon octicon-link"></span></a>Inland Flood</h2>
-
-<p><strong>Description</strong></p>
-
-<p>Inland flooding captures the likelihood of the asset being exposed to flooding from inland storms.</p>
-
-<p><strong>Sample Assessment</strong></p>
-
-<p align="center">
-<img height="300" src="assets/images/dataguide/flood_usa_1980_2020_v_2022-2052.png">
-</p>
-
-<p align="center">
-Fig D3: United States Counties, Projected mean annual flood risk exposure over 2022-2052 with SSP5-RCP8.5 scenario.
-</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>State</th>
-      <th>County Name</th>
-      <th>Score (1980-2020)</th>
-      <th>Score (2022-2052)</th>
-      <th>Percent Change</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Panola</td>
-      <td>Mississippi</td>
-      <td>0.0</td>
-      <td>0.08</td>
-      <td>N/A</td>
-    </tr>
-    <tr>
-      <td>Garza</td>
-      <td>Texas</td>
-      <td>0.03</td>
-      <td>0.07</td>
-      <td>141</td>
-    </tr>
-    <tr>
-      <td>Sutter</td>
-      <td>California</td>
-      <td>0.0</td>
-      <td>0.07</td>
-      <td>N/A</td>
-    </tr>
-    <tr>
-      <td>Outagamie</td>
-      <td>Wisconsin</td>
-      <td>0.07</td>
-      <td>0.07</td>
-      <td>-1</td>
-    </tr>
-    <tr>
-      <td>Clay</td>
-      <td>Illinois</td>
-      <td>0.04</td>
-      <td>0.06</td>
-      <td>47</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>
-Table 2A: US Counties with top flood exposure projected over upcoming 30 years
-</p>
-
-<p align="center">
-<img height="500" src="assets/images/dataguide/england_floods_585_2022_2052.png">
-</p>
-
-<p align="center">
-Fig D4: English Counties, Projected mean annual flood risk exposure over 2022-2052 with SSP5-RCP8.5 scenario.
-</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Region Name</th>
-      <th>Score (1980-2020)</th>
-      <th>Score (2022-2052)</th>
-      <th>Percent Change</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Aberdeen City</td>
-      <td>0.12</td>
-      <td>0.06</td>
-      <td>-50</td>
-    </tr>
-    <tr>
-      <td>Bolton</td>
-      <td>0.0</td>
-      <td>0.04</td>
-      <td>800</td>
-    </tr>
-    <tr>
-      <td>Manchester</td>
-      <td>0.0</td>
-      <td>0.03</td>
-      <td>800</td>
-    </tr>
-    <tr>
-      <td>Essex</td>
-      <td>0.0</td>
-      <td>0.03</td>
-      <td>N/A</td>
-    </tr>
-    <tr>
-      <td>Manchester</td>
-      <td>0.0</td>
-      <td>0.02</td>
-      <td>N/A</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>
-Table 2B: England counties with top flood exposure projected over upcoming 30 years
-</p>
-
-<p><strong>Indicators</strong></p>
-
-<p>We present two indicators: observed flooding and flood potential</p>
-<ol>
-  <li>
-<strong>Observed floods</strong>: Indicates whether flood was observed in a given year by satellites at the location of an asset. It is derived from NASA MODIS data, for the period 2012 to present.  Because the satellite record has a high rate of false positives from shadows and other sources of interference in mountainous and high-latitude areas, we additionally mask out satellite-reported flooding in areas sufficiently far from water bodies, where floods are unlikely.</li>
-  <li>
-<strong>Flood potential</strong>: Indicates the potential flood exposure from 2022 - 2100 expressed as a probability at the asset level. A value of 0.1 indicates that there is a 10% chance of flooding at any depth at that location.</li>
-</ol>
-
-<p>The output metric we use for inland flooding exposure ranges from 0 (low risk) to 1 (high risk). We derive this index from the collection of many simulations of flood inundated areas. We take into account multiple meteorological variables like precipitation, land surface pressure, humidity and elevation.</p>
-
-<p>We only cover only SSP5-RCP8.5 at the moment in the flood potential indicator.</p>
-
-<p><strong>Data Usage</strong></p>
-
-<p>Our flooding indicator shows where model simulations show a possibility of future flooding.  We do not account for flood depth, thus, this particular dataset is not suitable for applications requiring depth-damage functions.  However, this dataset does give an indication of where there is nonzero flood risk.</p>
-
-<p>Flooding is also one of our indicators with substantial disagreement among models, sometimes leading to uneven uncertainty.  We account for this by reporting the upper, median and lower quantiles of model estimates of flood probability.  In some cases, for example, both the median and lower bound will report a 0 probability of future flooding, while the upper bound will potentially by high. This means that the <em>majority</em> of models predict no flooding risk, but a <em>minority</em> of models predict nonzero risk.  The error bands around our predictions thus showcase the skew in the distribution of model predictions of flood risk.</p>
-
-<h2 id="tropical-cyclone">
-<a class="anchor" href="#tropical-cyclone" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tropical Cyclone</h2>
-
-<p><strong>Description</strong></p>
-
-<p>Tropical cyclones, also referred to as hurricanes and typhoons, are one of the costliest natural disasters fueled by climate change. Since 1980, tropical cyclones in the U.S. have caused $997 billion in damages (NOAA), exceeding damages from all other weather disasters. Cyclone impacts can be widespread, including coastal and inland flooding and wind damage. These damages can directly affect assets as well as critical local infrastructure.</p>
-
-<p><strong>Sample Assessment</strong></p>
-
-<p align="center">
-<img height="300" src="assets/images/dataguide/cyclones_usa_1980_2020_v_2022-2052.png">
-</p>
-
-<p align="center">
-Fig D5: United States Counties, Projected mean annual cyclone risk exposure over 1980-2010 and 2022-2052 with SSP5-RCP8.5 scenario.
-</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>State</th>
-      <th>County Name</th>
-      <th>Score (1980-2020)</th>
-      <th>Score (2022-2052)</th>
-      <th>Percent Change</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>North Carolina</td>
-      <td>Dare</td>
-      <td>0.31</td>
-      <td>0.3</td>
-      <td>-4</td>
-    </tr>
-    <tr>
-      <td>North Carolina</td>
-      <td>Hyde</td>
-      <td>0.29</td>
-      <td>0.28</td>
-      <td>-6</td>
-    </tr>
-    <tr>
-      <td>North Carolina</td>
-      <td>Carteret</td>
-      <td>0.28</td>
-      <td>0.36</td>
-      <td>-9</td>
-    </tr>
-    <tr>
-      <td>North Carolina</td>
-      <td>Tyrell</td>
-      <td>0.24</td>
-      <td>0.25</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td>North Carolina</td>
-      <td>Pamilco</td>
-      <td>0.27</td>
-      <td>0.25</td>
-      <td>-8</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>
-Table 3A: US Counties with top cyclone exposure over the upcoming 30 years
-</p>
-
-<p align="center">
-<img height="300" src="assets/images/dataguide/cyclones_india_1980_2020_v_2022-2052.png">
-</p>
-
-<p align="center">
-Fig D6: Indian Towns, Projected mean annual cyclone risk exposure over 1980-2010 and 2022-2052 with SSP5-RCP8.5 scenario.
-</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Region Name</th>
-      <th>Score (1980-2020)</th>
-      <th>Score (2022-2052)</th>
-      <th>Percent Change</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Puri</td>
-      <td>0.25</td>
-      <td>0.23</td>
-      <td>-7</td>
-    </tr>
-    <tr>
-      <td>Srikakulam</td>
-      <td>0.27</td>
-      <td>0.25</td>
-      <td>-7</td>
-    </tr>
-    <tr>
-      <td>Visakhapatnam</td>
-      <td>0.28</td>
-      <td>0.26</td>
-      <td>-7</td>
-    </tr>
-    <tr>
-      <td>Vizianagaram</td>
-      <td>0.26</td>
-      <td>0.24</td>
-      <td>-9</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>
-Table 3B: Indian Towns with top cyclone exposure over the upcoming 30 years
-</p>
-
-<p><strong>Indicators</strong></p>
-
-<p>We provide two indicators, one for observed cyclone exposure and another for projected cyclone frequency.</p>
-<ol>
-  <li>
-<strong>Observed tropical cyclones</strong>: we use cyclone tracks from the International Best Track Archive for Climate Stewardship (IBTrACS). The IBTrACS archive combines tropical cyclone datasets from global agencies and harmonizes them into a single dataset. It is endorsed by the World Meteorological Organization as the official data source for cyclone track data. For observed tropical cyclones, we filter points to only include Category 3, 4, and 5 storm points. We then assume a constant ‘impact radius’ of 150 miles/ 241km.</li>
-  <li>
-<strong>Forward looking Cyclone Pojections</strong>: We quantify current and forward-looking cyclone exposure by focusing on the frequency of extreme tropical cyclones. Extreme tropical cyclones, referred to as Category 3, 4, and 5 storms on the Saffir-Simpson hurricane scale, are defined as having maximum sustained winds above 110mph/178km/h. We focus on these extreme storms because of their heightened destructive potential relative to weaker storms. Since the number represents a frequency, it indicates the expected number of CAT3/4/5 cyclones over a year. By aggregating the values over a time range of 15 years, the user can arrive at a projected number of cyclones exposed to the asset over the 15 year window.</li>
-</ol>
-
-<p>For forward-looking cyclone exposure, Sust Global combines the latest CMIP6-based cyclone track simulations with our proprietary bias-correction methodology to enable more accurate assessment of local exposure. The CMIP6 cyclone tracks are unique because they are based on high-resolution simulations specifically designed to enable more reliable assessment of climate risk from weather phenomena like tropical cyclones. These simulations are only achievable due to recent advancements in supercomputing power.</p>
-
-<p>The CMIP6-based cyclone track simulations are drawn from research led by Dr. Malcolm Roberts of the UK Met Office (<a href="https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2020GL088662">technical reference</a>). The simulations are based on CMIP6 HighResMIP simulations with resolutions as high as 25km. The CMIP6 HighResMIP project is co-chaired by Roberts. The authors applied two different cyclone track algorithms to determine when an input set of CMIP6 oceanic and atmospheric conditions over time and space constitutes a high likelihood of a tropical cyclone track.</p>
-
-<p><strong>Data Usage</strong></p>
-
-<p>We have identified three regions for model evaluation known to have high historical exposure to extreme cyclones: the Gulf of Mexico, South Asia, and China. We have used these regions to benchmark and calibrate risk exposure to the different categories of HIGH, MEDIUM and LOW</p>
-
-<p>For forward looking cyclone exposure, our methodology translates these storm track points into geospatial polygons indicative of cyclone exposure. When determining asset exposure, we assume an ‘impact radius’ of 150 miles (241km) from the cyclone center to better capture coastal and inland flooding exposure. The simulations are only available for SSP5-8.5 to 2050.</p>
-
-<h2 id="sea-level-rise">
-<a class="anchor" href="#sea-level-rise" aria-hidden="true"><span class="octicon octicon-link"></span></a>Sea Level Rise</h2>
-
-<p><strong>Description</strong></p>
-
-<p>Global mean sea level increased by approximately 20cm in the past century, with up to 1 meter of rise expected by 2100. The major physical impacts of a rise in sea level include coastal flooding, erosion of beaches, inundation of deltas, and flooding and loss of marshes and wetlands.</p>
-
-<p><strong>Sample Assessment</strong></p>
-
-<p align="center">
-<img height="300" src="assets/images/dataguide/SLR_usa_1980_2020_v_2022-2052.png">
-</p>
-
-<p align="center">
-Fig D7: United States Counties, Projected mean annual sea level rise risk exposure over 1980-2010 and 2022-2052 with SSP5-RCP8.5 scenario.
-</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>State</th>
-      <th>Score (1980-2020)</th>
-      <th>Score (2022-2052)</th>
-      <th>Percent Change</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>New Jersey</td>
-      <td>0.16</td>
-      <td>0.28</td>
-      <td>79</td>
-    </tr>
-    <tr>
-      <td>Pennsylvania</td>
-      <td>0.13</td>
-      <td>0.28</td>
-      <td>117</td>
-    </tr>
-    <tr>
-      <td>Delaware</td>
-      <td>0.16</td>
-      <td>0.28</td>
-      <td>79</td>
-    </tr>
-    <tr>
-      <td>Virginia</td>
-      <td>0.16</td>
-      <td>0.28</td>
-      <td>78</td>
-    </tr>
-    <tr>
-      <td>Maryland</td>
-      <td>0.16</td>
-      <td>0.28</td>
-      <td>78</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>
-Table 4A: US States with top sea level rise exposure over the upcoming 30 years
-</p>
-
-<p align="center">
-<img height="300" src="assets/images/dataguide/SLR_india_1980_2020_v_2022-2052.png">
-</p>
-
-<p align="center">
-Fig D8: Indian towns, Projected mean annual sea level rise risk exposure over 1980-2010 and 2022-2052 with SSP5-RCP8.5 scenario.
-</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Region Name</th>
-      <th>Score (1980-2020)</th>
-      <th>Score (2022-2052)</th>
-      <th>Percent Change</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Baleshwar</td>
-      <td>0.19</td>
-      <td>0.23</td>
-      <td>16</td>
-    </tr>
-    <tr>
-      <td>Bhadrak</td>
-      <td>0.19</td>
-      <td>0.23</td>
-      <td>16</td>
-    </tr>
-    <tr>
-      <td>Jagatsinghapur</td>
-      <td>0.18</td>
-      <td>0.22</td>
-      <td>16</td>
-    </tr>
-    <tr>
-      <td>Kendrapara</td>
-      <td>0.19</td>
-      <td>0.22</td>
-      <td>16</td>
-    </tr>
-    <tr>
-      <td>North 24 Parganas</td>
-      <td>0.19</td>
-      <td>0.22</td>
-      <td>17</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>
-Table 4B: Indian towns with top sea level rise exposure over the upcoming 30 years
-</p>
-
-<p><strong>Indicator</strong></p>
-
-<p>The sea level rise indicator refers to the change in sea level across different climate scenarios and is consistent with projections from the IPCC Sixth Assessment Report. We base our modeling of projected sea level rise on both climate model simulations and an asset’s distance to the coast. Projected sea level rise from CMIP6 climate models incorporates the effects of thermal expansion from warming of the ocean, melting of Greenland and Antarctic ice sheets, melting of glaciers and ice caps, and local land subsidence and rebound. Land elevation rebound, whereby land elevation increases in response to ice melt, is more common in high latitude, polar regions.</p>
-
-<p>We enable asset level assessments of exposure to physical hazard from sea level rise. We express sea level rise relative to a 1995-2014 baseline period for assets within 5km from the coast. An asset’s distance to the nearest coastline is derived using 0.01 degree resolution, satellite-derived estimates of coastline locations from NASA’s Ocean Color Group. Assets beyond 5km from the nearest coastline are assumed to have no sea level risk in our assessments, though we can change this 5km threshold if needed.</p>
-
-<h2 id="water-stress">
-<a class="anchor" href="#water-stress" aria-hidden="true"><span class="octicon octicon-link"></span></a>Water Stress</h2>
-
-<p><strong>Description</strong></p>
-
-<p>Water is a requirement for societal development and progress. Water availability, or in its absence water scarcity, plays a critical role across sectors, including manufacturing, mining, agriculture, and electricity generation. Climate change coupled with increasing demand will have substantial impacts on water availability across the globe. Rigorous, high resolution water supply and demand data is therefore needed to enable reliable assessment of companies’ water scarcity exposure directly and throughout their supply chains. Projections of future water availability can help companies and investors prepare for the complex economic and social challenges related to water stress.</p>
-
-<p><strong>Sample Assessment</strong></p>
-
-<p align="center">
-<img height="300" src="assets/images/dataguide/water_stress_unified_score_usa_1980_2020_v_2022-2052.png">
-</p>
-
-<p align="center">
-Fig D9: United States Counties, Projected mean annual water stress risk exposure over 1980-2010 and 2022-2052 with SSP5-RCP8.5 scenario.
-</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>State</th>
-      <th>County Name</th>
-      <th>Score (1980-2020)</th>
-      <th>Score (2022-2052)</th>
-      <th>Percent Change</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Arizona</td>
-      <td>Yuma</td>
-      <td>0.56</td>
-      <td>0.91</td>
-      <td>63</td>
-    </tr>
-    <tr>
-      <td>California</td>
-      <td>Imperial</td>
-      <td>0.57</td>
-      <td>0.89</td>
-      <td>55</td>
-    </tr>
-    <tr>
-      <td>Arizona</td>
-      <td>La Paz</td>
-      <td>0.37</td>
-      <td>0.84</td>
-      <td>126</td>
-    </tr>
-    <tr>
-      <td>Washington</td>
-      <td>Grant</td>
-      <td>0.43</td>
-      <td>0.81</td>
-      <td>86</td>
-    </tr>
-    <tr>
-      <td>Arizona</td>
-      <td>Maricopa</td>
-      <td>0.55</td>
-      <td>0.79</td>
-      <td>42</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>
-Table 5A: US Counties with top water stress exposure
-</p>
-
-<p align="center">
-<img height="300" src="assets/images/dataguide/water_stress_unified_score_australia_1980_2020_v_2022-2052.png">
-</p>
-
-<p align="center">
-Fig D10: Australian Towns, Projected mean annual water stress risk exposure over 1980-2010 and 2022-2052 with SSP5-RCP8.5 scenario.
-</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>State</th>
-      <th>Region Name</th>
-      <th>Score (1980-2020)</th>
-      <th>Score (2022-2052)</th>
-      <th>Percent Change</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Western Australia</td>
-      <td>Wanneroo</td>
-      <td>0.54</td>
-      <td>0.74</td>
-      <td>39</td>
-    </tr>
-    <tr>
-      <td>Western Australia</td>
-      <td>Joondalup</td>
-      <td>0.55</td>
-      <td>0.74</td>
-      <td>36</td>
-    </tr>
-    <tr>
-      <td>Western Australia</td>
-      <td>Cockburn</td>
-      <td>0.35</td>
-      <td>0.73</td>
-      <td>110</td>
-    </tr>
-    <tr>
-      <td>Western Australia</td>
-      <td>Bayswater</td>
-      <td>0.34</td>
-      <td>0.73</td>
-      <td>114</td>
-    </tr>
-    <tr>
-      <td>Western Australia</td>
-      <td>Cambridge</td>
-      <td>0.48</td>
-      <td>0.73</td>
-      <td>54</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>
-Table 5B: Australian towns with top water stress exposure over the upcoming 30 years
-</p>
-
-<p><strong>Indicators</strong></p>
-
-<p>We provide 4 indicators: historic water stress, projected droughts, projected water stress score, projected unified water stress.</p>
-
-<ol>
-  <li>
-<strong>Water stress score indicator</strong>: We model current and forward-looking water stress scores using the World Resource Institute’s Aqueduct model. The state-of-the-art Aqueduct model has been extensively used by researchers in academia and industry to assess portfolio water risk. The water stress score is indicative of competition for local water resources. It is calculated as the ratio of water withdrawal to renewable water availability.</li>
-  <li>
-<strong>Drought indicator</strong>: This indicator is based on a drought index derived from CMIP6 monthly simulations of precipitation and temperature. The drought index, also referred to as the standardized precipitation evapotranspiration index, represents the magnitude of precipitation deficits (negative magnitude) or surplus (positive magnitude) over the preceding 12-month period, after accounting for temperature-driven effects on evapotranspiration. Our selection of a 12-month period reflects long-term precipitation patterns and better relates to reservoirs, groundwater, and streamflow.</li>
-  <li>
-<strong>Unified water stress indicator</strong>: This indicator combines the water stress score and the drought indicator to one single indicator for water stress, using a weighted mean, with weights derived from the methodology designed by the World Resources Institute in their <a href="https://doi.org/10.46830/writn.18.00146">Global Aqueduct Methodology</a> (Page 35, Table 3). This provides a comparable 0.0 to 1.0 range to indicate exposure to water stress.</li>
-  <li>
-<strong>Historic water stress indicator</strong>: We use the same methodology as the unified water stress indicator, except with observed rather than modeled datasets of water stress and drought.</li>
-</ol>
-
-<p>Water stress scores account for the availability and consumption of water at the specific location. The drought indicator accounts for environmental variables that create acute water shortage over a period of time. Both are chronic physical climate hazard indicators.</p>
-
-<p>Our water stress indicator is based on the world leading WRI water stress methodology (<a href="https://www.wri.org/data/aqueduct-global-maps-30-data">link</a>) and our drought indicator is based on the latest frontier climate research from the CMIP6(<a href="https://link.springer.com/article/10.1007/s00382-017-3740-8">link</a>).</p>
-
-<p><strong>Data Usage</strong></p>
-
-<p>A key avenue for mitigating water stress not considered in the modeling framework is the transport of water between watersheds. Such transport can help meet water demand, but it comes at a cost. Transporting water requires large amounts of energy, increasing greenhouse gas emissions, along with the development of transportation infrastructure. Water transport also carries with it a host of geopolitical and equity considerations.</p>
-
+<p>Sust Global currently draws on a wide range of public and private scientific datasets, which may not perfectly represent the SSPs listed above.  In cases where not all of the above SSPs are available, we use our best judgement at supplying the appropriate data.  The following substitutions currently apply to our use of SSPs:</p>
 <ul>
-  <li>Water stress scores are more suitable for use for assessments of impact from the changing climate to human water needs</li>
-  <li>Drought indicator is most useful for water stress impacts to agriculture and commodities</li>
-  <li>The unified water stress indicator is most useful across generic use cases</li>
+  <li>
+<strong>Floods</strong>: SSP1 is currently not available from the underlying data product, and our product is using SSP2 in place of SSP1 (SSP2 is duplicated in this product).</li>
+  <li>
+<strong>Waterstress</strong>: SSP1 is currently not available from the underlying data product, and our product is using SSP2 in place of SSP1 (SSP2 is duplicated in this product).</li>
+  <li>
+<strong>Heatwaves</strong>: SSP1 is currently not available from the underlying data product, and our product is using SSP2 in place of SSP1 (SSP2 is duplicated in this product).</li>
 </ul>
 
-<h2 id="heatwave">
-<a class="anchor" href="#heatwave" aria-hidden="true"><span class="octicon octicon-link"></span></a>Heatwave</h2>
+<h2 id="data-bounds-and-model-uncertainty">
+<a class="anchor" href="#data-bounds-and-model-uncertainty" aria-hidden="true"><span class="octicon octicon-link"></span></a>Data Bounds and Model Uncertainty</h2>
+<p>Climate change is a fundamentally uncertain phenomena.  This is why CMIP6 uses an entire suite of different models, created by different institutions around the world, with a wide variety of designs and modeling strategies.  We supply uncertainty data in the form of upper and lower bounds for all hazards and projects, which represent projections from outlier models.</p>
 
-<p><strong>Description</strong></p>
-
-<p>Heatwaves represent an extended period of perilously warm weather at a specific location or region.</p>
-
-<p><strong>Sample Assessment</strong></p>
-
-<p align="center">
-<img height="500" src="assets/images/dataguide/heatwaves_usa_1980_2020_v_2022-2052.png">
-</p>
-
-<p align="center">
-Fig D11: United States Counties, Projected mean annual heatwaves risk exposure over 2022-2052 with the SSP5-RCP8.5 scenario.
-</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>State</th>
-      <th>County Name</th>
-      <th>Score (1980-2020)</th>
-      <th>Score (2022-2052)</th>
-      <th>Percent Change</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Florida</td>
-      <td>Miami-Dade</td>
-      <td>0.69</td>
-      <td>38.12</td>
-      <td>450</td>
-    </tr>
-    <tr>
-      <td>Idaho</td>
-      <td>Cassia</td>
-      <td>7.88</td>
-      <td>34.18</td>
-      <td>333</td>
-    </tr>
-    <tr>
-      <td>Utah</td>
-      <td>Summit</td>
-      <td>8.11</td>
-      <td>34.13</td>
-      <td>326</td>
-    </tr>
-    <tr>
-      <td>Utah</td>
-      <td>Morgan</td>
-      <td>8.1</td>
-      <td>34.08</td>
-      <td>321</td>
-    </tr>
-    <tr>
-      <td>Utah</td>
-      <td>Box Elder</td>
-      <td>8.04</td>
-      <td>33.72</td>
-      <td>319</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>
-Table 6A: US Counties with top heatwave exposure
-</p>
-
-<p align="center">
-<img height="500" src="assets/images/dataguide/heatwaves_india_1980_2020_v_2022-2052.png">
-</p>
-
-<p align="center">
-Fig D12: Indian towns, Projected mean annual heatwaves risk exposure over 2022-2052 with the SSP5-RCP8.5 scenario.
-</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Region Name</th>
-      <th>Score (1980-2020)</th>
-      <th>Score (2022-2052)</th>
-      <th>Percent Change</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Jaipur</td>
-      <td>7.85</td>
-      <td>21.3</td>
-      <td>172</td>
-    </tr>
-    <tr>
-      <td>Lakshwadeep</td>
-      <td>8.2</td>
-      <td>90.8</td>
-      <td>997</td>
-    </tr>
-    <tr>
-      <td>Nagpur</td>
-      <td>7.85</td>
-      <td>21.51</td>
-      <td>174</td>
-    </tr>
-    <tr>
-      <td>Sikar</td>
-      <td>7.8</td>
-      <td>21.2</td>
-      <td>173</td>
-    </tr>
-    <tr>
-      <td>Tonk</td>
-      <td>7.8</td>
-      <td>21.65</td>
-      <td>178</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>
-Table 6B: Indian cities/towns with top heatwave exposure
-</p>
-
-<p><strong>Indicator</strong></p>
-
-<p>We calculate the number of days per year exceeding a temperature threshold. The temperature threshold at a given location is based on the 98th percentile of daily conditions during a baseline period between 1980 and 2100. Because this temperature threshold varies spatially, the heatwave metric indicates anomalously high temperatures relative to what is typical at the local level.</p>
-
-<p><strong>Data Usage</strong></p>
-
-<p>The heatwave indicator is derived from the world’s frontier climate research as part of the CMIP6. The user can interpret this metric at a specific asset location or region as the number of days in a calendar year of unusually warm weather</p>
+<p>With the exception of cyclones, we supply the 84th and 16th percentile, approximately ±2 standard deviation.  For cyclones, we supply ±1 standard deviation.</p>
 
 <h2 id="fundamental-variables">
 <a class="anchor" href="#fundamental-variables" aria-hidden="true"><span class="octicon octicon-link"></span></a>Fundamental Variables</h2>
 
 <p><strong>Description</strong></p>
 
-<p>These fundamental indicators represent fundamental climate variables aggregated annually at a specific location or region across different scenarios from 1980 to 2100.</p>
-
-<p><strong>Indicators</strong></p>
-
-<p>We present 3 fundamental indicators:</p>
+<p>In addition to physical hazards products, Sust Global supplies fundamental indicators for fundamental climate variables aggregated annually across different scenarios from 1980 to 2100.</p>
 
 <ol>
   <li>
-<strong>Annual Temperature</strong>: This fundamental indicator represents mean daily temperature for a given year.</li>
+<strong>Annual Temperature</strong>: Mean annual daily temperature.</li>
   <li>
-<strong>Annual Precipitation</strong>: This fundamental indicator represents total precipitation, including rain and rain-equivalent snowfall, for a given year.</li>
+<strong>Annual Precipitation</strong>: Total annual precipitation, including rain and rain-equivalent snowfall.</li>
   <li>
-<strong>Extreme Precipitation</strong>: This fundamental indicator represents the number of days in a given year where precipitation exceeds 2 inches (50.8mm).</li>
+<strong>Extreme Precipitation</strong>: Number of days in a given year where precipitation exceeds 2 inches (50.8mm).</li>
 </ol>
-
-<p><strong>Data Usage</strong>
-The fundamental indicators are derived from the world’s frontier climate research as part of the CMIP6. The user can interpret this metric as a measure of fundamental climate.</p>
 
 <h2 id="summarization-labeling">
 <a class="anchor" href="#summarization-labeling" aria-hidden="true"><span class="octicon octicon-link"></span></a>Summarization Labeling</h2>
+
+<p>To create summarization labels we analyze a representative sample of global points, and define breakpoints that best represent the overall risk distribution.  Summarization labels are calculated based on the maximum risk over the 2022-2052 period, and bucketed using the following values:</p>
 
 <table>
   <thead>
     <tr>
       <th>Hazard</th>
       <th>Unit</th>
-      <th>LOW Range (low)</th>
-      <th>LOW Range (high)</th>
-      <th>MEDIUM Range (low)</th>
-      <th>MEDIM Range (high)</th>
-      <th>HIGH Range (low)</th>
-      <th>HIGH Range (high)</th>
+      <th>Low Range</th>
+      <th>Medium Range</th>
+      <th>High Range</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>Wildfire</td>
       <td>Probability</td>
-      <td>0.0</td>
-      <td>0.01</td>
-      <td>0.01</td>
-      <td>0.05</td>
-      <td>0.05</td>
-      <td>1.0</td>
+      <td>0.0 - 0.01</td>
+      <td>0.01 - 0.05</td>
+      <td>0.05 - 1.0</td>
     </tr>
     <tr>
       <td>Inland Flood</td>
       <td>Probability</td>
-      <td>0</td>
-      <td>0.01</td>
-      <td>0.01</td>
-      <td>0.05</td>
-      <td>0.05</td>
-      <td>1.0</td>
+      <td>0.0 - 0.01</td>
+      <td>0.01 - 0.05</td>
+      <td>0.05 - 1.0</td>
     </tr>
     <tr>
       <td>Cyclone</td>
       <td>Probability</td>
-      <td>0.0</td>
-      <td>0.025</td>
-      <td>0.0.025</td>
-      <td>0.075</td>
-      <td>0.075</td>
-      <td>1.0</td>
+      <td>0.0 - 0.025</td>
+      <td>0.025 - 0.075</td>
+      <td>0.075 - 1.0</td>
     </tr>
     <tr>
       <td>Water Stress</td>
       <td>Score</td>
-      <td>0.0</td>
-      <td>0.3</td>
-      <td>0.3</td>
-      <td>0.6</td>
-      <td>0.6</td>
-      <td>1.0</td>
+      <td>0.0 - 0.3</td>
+      <td>0.3 - 0.6</td>
+      <td>0.6 -  1.0</td>
     </tr>
     <tr>
       <td>Heatwave</td>
       <td>Number of days in year</td>
-      <td>0</td>
-      <td>30</td>
-      <td>30</td>
-      <td>50</td>
-      <td>50</td>
-      <td>366</td>
+      <td>0 - 30</td>
+      <td>30 - 50</td>
+      <td>50 - 366</td>
     </tr>
     <tr>
       <td>Sea Level Rise</td>
       <td>Relative change in meters</td>
-      <td>0.0</td>
-      <td>0.375</td>
-      <td>0.375</td>
-      <td>0.7</td>
-      <td>0.7</td>
-      <td>3.0</td>
+      <td>0.0 - 0.375</td>
+      <td>0.375 - 0.7</td>
+      <td>0.7 - 3.0</td>
+    </tr>
+    <tr>
+      <td>Financial Risk Analysis (VaR)</td>
+      <td>Annualized Percent of Value at Risk (0 to 1.0)</td>
+      <td>0.0 - 0.01</td>
+      <td>0.01 - 0.05</td>
+      <td>0.05 - 1.0</td>
     </tr>
   </tbody>
 </table>
 
 <p>
-Table 7: Hazard summarization labeling ranges 
+<b>Table 1</b>: Hazard summarization labeling ranges 
 </p>
 
 <h2 id="indicator-metadata">
@@ -1206,7 +357,7 @@ Table 7: Hazard summarization labeling ranges
 </table>
 
 <p>
-Table 8: Hazard and indicator metadata 
+<b>Table 2</b>: Hazard and indicator metadata 
 </p>
 
 <h2 id="regional-statistics-using-polygon-processing">
@@ -1229,12 +380,12 @@ Table 8: Hazard and indicator metadata
       <td>mean</td>
     </tr>
     <tr>
-      <td>Inland Flood</td>
-      <td>weighted mean^^</td>
-    </tr>
-    <tr>
       <td>Cyclone</td>
       <td>max^</td>
+    </tr>
+    <tr>
+      <td>Inland Flood</td>
+      <td>weighted mean^^</td>
     </tr>
     <tr>
       <td>Water Stress</td>
@@ -1252,12 +403,13 @@ Table 8: Hazard and indicator metadata
 </table>
 
 <p>
-Table 9: spatial statistics for polygon aggregation 
+<b>Table 3</b>: spatial statistics for polygon aggregation 
 </p>
 
-<p>^ For cyclones, the maximum value across a region corresponds to a cyclone striking anywhere in that region.  Similarly for sea level rise, a maximum value over a region corresponds to the maximum sea level rise experienced in that region.</p>
-
-<p>^^ Waterstress scores are derived from the WRI Aqueduct product, based on administrative areas and watersheds.  A weighted average is appropriate for reducing regions which intersect multiple differing regions.</p>
+<ul>
+  <li><i>^ For cyclones, using the maximum value across a region corresponds to a cyclone striking anywhere in that region.  Similarly for sea level rise, a maximum value over a region corresponds to the maximum sea level rise experienced in that region.</i></li>
+  <li><i>^^ Waterstress scores are derived from the WRI Aqueduct product, based on administrative areas and watersheds.  A weighted average is appropriate for reducing regions which intersect multiple differing regions.</i></li>
+</ul>
 
 
           </div>
@@ -1267,14 +419,9 @@ Table 9: spatial statistics for polygon aggregation
         <div class="col-3">
           <div id="toc-container">
             <ul id="toc" class="section-nav">
-<li class="toc-entry toc-h2"><a href="#introduction">Introduction</a></li>
+<li class="toc-entry toc-h2"><a href="#about-the-data-guide">About the Data Guide</a></li>
 <li class="toc-entry toc-h2"><a href="#climate-scenarios">Climate Scenarios</a></li>
-<li class="toc-entry toc-h2"><a href="#wildfire">Wildfire</a></li>
-<li class="toc-entry toc-h2"><a href="#inland-flood">Inland Flood</a></li>
-<li class="toc-entry toc-h2"><a href="#tropical-cyclone">Tropical Cyclone</a></li>
-<li class="toc-entry toc-h2"><a href="#sea-level-rise">Sea Level Rise</a></li>
-<li class="toc-entry toc-h2"><a href="#water-stress">Water Stress</a></li>
-<li class="toc-entry toc-h2"><a href="#heatwave">Heatwave</a></li>
+<li class="toc-entry toc-h2"><a href="#data-bounds-and-model-uncertainty">Data Bounds and Model Uncertainty</a></li>
 <li class="toc-entry toc-h2"><a href="#fundamental-variables">Fundamental Variables</a></li>
 <li class="toc-entry toc-h2"><a href="#summarization-labeling">Summarization Labeling</a></li>
 <li class="toc-entry toc-h2"><a href="#indicator-metadata">Indicator Metadata</a></li>

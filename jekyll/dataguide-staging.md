@@ -64,7 +64,7 @@ To create summarization labels we analyze a representative sample of global poin
 | Water Stress   | Score                     | 0.0 - 0.3             | 0.3 - 0.6                | 0.6 -  1.0 |
 | Heatwave       | Number of days in year    | 0 - 30              | 30 - 50                 | 50 - 366 |
 | Sea Level Rise | Relative change in meters | 0.0 - 0.375            | 0.375 - 0.7                | 0.7 - 3.0 |
-| Financial Risk Analysis (VaR) | Annualized Percent of Value at Risk | 0.0 - 0.01 | 0.01 - 0.05 | 0.05 - 1.0 |
+| Financial Risk Analysis (VaR) | Annualized Percent of Value at Risk (0 to 1.0) | 0.0 - 0.01 | 0.01 - 0.05 | 0.05 - 1.0 |
 
 <p>
 <b>Table 1</b>: Hazard summarization labeling ranges 
