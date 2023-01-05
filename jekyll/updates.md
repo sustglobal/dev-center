@@ -5,6 +5,16 @@ toc: true
 
 The following is a list of running product updates to the Sust Global datasets and Climate Explorer.
 
+## **05JAN2023 Release**
+
+**Data Product Updates**
+1. Improved scenario driven, probabilistic flood projections at 1km resolution across climate scenarios SSP2-RCP45 and SSP5-RCP85.
+2. Improved probabilistic cyclone projections at 10km resolution across climate scenario SSP5-RCP8.5.
+
+**New Product Features**
+1. Our new financial risk analytics derived from asset level risk exposure to acute hazards (wildfire, flood, cyclone) processed through asset type and sector specific damage functions. These will be available through the CSV datasets and Climate Explorer dashboards.
+2. Our fast location-based risk insights search capability accessible through API and dashboard. This feature is available on request.
+
 ## **20SEP2022 Release**
 
 **Data Product Updates**
