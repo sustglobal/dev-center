@@ -15,7 +15,7 @@ Method | HTTP request | Description
 [**portfolios_delete**](PortfoliosApi.md#portfolios_delete) | **DELETE** /portfolios/{portfolio_name}/ | Delete Portfolio
 [**portfolios_list**](PortfoliosApi.md#portfolios_list) | **GET** /portfolios/ | List Portfolios
 [**portfolios_read**](PortfoliosApi.md#portfolios_read) | **GET** /portfolios/{portfolio_name}/ | Get Portfolio
-[**search_list**](PortfoliosApi.md#search_list) | **GET** /search | Get Physical Risk Exposure Summary
+[**search_list**](PortfoliosApi.md#search_list) | **GET** /search | Search API Physical Risk Exposure
 
 
 # **portfolios_assets_export_list**
@@ -1183,9 +1183,9 @@ Name | Type | Description  | Notes
 # **search_list**
 > SearchResponse search_list(x_sust_global_project, lat, lng)
 
-Get Physical Risk Exposure Summary
+Search API Physical Risk Exposure
 
-Retrieve a summary of the physical risk exposure dataset generated for a portfolio
+Retrieve physical risk summary scores using the instantaneous Search API
 
 ### Example
 
@@ -1232,7 +1232,7 @@ with sust.api.generated.climate_explorer.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        # Get Physical Risk Exposure Summary
+        # Search API Physical Risk Exposure
         api_response = api_instance.search_list(x_sust_global_project, lat, lng)
         pprint(api_response)
     except sust.api.generated.climate_explorer.ApiException as e:

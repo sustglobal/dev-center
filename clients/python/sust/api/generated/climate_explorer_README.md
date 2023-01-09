@@ -96,7 +96,7 @@ Class | Method | HTTP request | Description
 *PortfoliosApi* | [**portfolios_delete**](sust/api/generated/climate_explorer/docs/PortfoliosApi.md#portfolios_delete) | **DELETE** /portfolios/{portfolio_name}/ | Delete Portfolio
 *PortfoliosApi* | [**portfolios_list**](sust/api/generated/climate_explorer/docs/PortfoliosApi.md#portfolios_list) | **GET** /portfolios/ | List Portfolios
 *PortfoliosApi* | [**portfolios_read**](sust/api/generated/climate_explorer/docs/PortfoliosApi.md#portfolios_read) | **GET** /portfolios/{portfolio_name}/ | Get Portfolio
-*PortfoliosApi* | [**search_list**](sust/api/generated/climate_explorer/docs/PortfoliosApi.md#search_list) | **GET** /search | Get Physical Risk Exposure Summary
+*PortfoliosApi* | [**search_list**](sust/api/generated/climate_explorer/docs/PortfoliosApi.md#search_list) | **GET** /search | Search API Physical Risk Exposure
 
 
 ## Documentation For Models
