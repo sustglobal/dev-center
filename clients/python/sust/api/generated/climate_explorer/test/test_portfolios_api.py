@@ -103,7 +103,7 @@ class TestPortfoliosApi(unittest.TestCase):
     def test_search_list(self):
         """Test case for search_list
 
-        Get Physical Risk Exposure Summary  # noqa: E501
+        Search API Physical Risk Exposure  # noqa: E501
         """
         pass
 

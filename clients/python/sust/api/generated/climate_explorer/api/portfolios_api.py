@@ -1741,9 +1741,9 @@ class PortfoliosApi(object):
         lng,
         **kwargs
     ):
-        """Get Physical Risk Exposure Summary  # noqa: E501
+        """Search API Physical Risk Exposure  # noqa: E501
 
-        Retrieve a summary of the physical risk exposure dataset generated for a portfolio  # noqa: E501
+        Retrieve physical risk summary scores using the instantaneous Search API  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
