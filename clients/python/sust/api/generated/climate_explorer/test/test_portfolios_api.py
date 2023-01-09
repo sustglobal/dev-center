@@ -100,6 +100,13 @@ class TestPortfoliosApi(unittest.TestCase):
         """
         pass
 
+    def test_search_list(self):
+        """Test case for search_list
+
+        Get Physical Risk Exposure Summary  # noqa: E501
+        """
+        pass
+
 
 if __name__ == '__main__':
     unittest.main()
