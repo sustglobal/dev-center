@@ -110,10 +110,10 @@ By default, geospatial polygons are reduced by a mean statistic.  The following 
 | -              | -                 |
 | Wildfire       | mean              |
 | Cyclone        | max^              |
-| Inland Flood   | weighted mean^^   |
-| Water Stress   | mean              |
+| Inland Flood   | mean              |
+| Water Stress   | weighted mean^^   |
 | Heatwave       | mean              |
-| Sea Level Rise | max               |
+| Sea Level Rise | max^               |
 
 <p>
 <b>Table 3</b>: spatial statistics for polygon aggregation 
