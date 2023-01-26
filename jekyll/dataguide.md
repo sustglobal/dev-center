@@ -34,6 +34,7 @@ Sust Global currently draws on a wide range of public and private scientific dat
 - **Floods**: SSP1 is currently not available from the underlying data product, and our product is using SSP2 in place of SSP1 (SSP2 is duplicated in this product).
 - **Waterstress**: SSP1 is currently not available from the underlying data product, and our product is using SSP2 in place of SSP1 (SSP2 is duplicated in this product).
 - **Heatwaves**: SSP1 is currently not available from the underlying data product, and our product is using SSP2 in place of SSP1 (SSP2 is duplicated in this product).
+- **Cyclones**: SSP1 and SSP2 are currently not available from the underlying data product, and our product is using SSP5 in place of SSP1/2 (SSP5 is duplicated in this product).
 
 ## Data Bounds and Model Uncertainty
 Climate change is a fundamentally uncertain phenomena.  This is why CMIP6 uses an entire suite of different models, created by different institutions around the world, with a wide variety of designs and modeling strategies.  We supply uncertainty data in the form of upper and lower bounds for all hazards and projects, which represent projections from outlier models. 
