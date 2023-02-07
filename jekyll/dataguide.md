@@ -55,7 +55,7 @@ In addition to physical hazards products, Sust Global supplies fundamental indic
 
 ## Summarization Labeling
 
-To create summarization labels we analyze a representative sample of global points, and define breakpoints that best represent the overall risk distribution.  Summarization labels are calculated based on the maximum risk over the 2022-2052 period, and bucketed using the following values:
+To create summarization labels we analyze a representative sample of global points, and define breakpoints that best represent the overall risk distribution.  Summarization labels are calculated based on the maximum risk over the 2023-2052 period, and bucketed using the following values:
 
 | Hazard         | Unit                      | Low Range | Medium Range | High Range |
 | -              | -                         | -               | -                  | -                  |

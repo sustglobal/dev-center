@@ -9,7 +9,6 @@ This UI enables Sust Global customers to manage their physical asset portfolios 
 Developers are encouraged to integrate with Climate Explorer through the API.
 Please read the [Climate Explorer API Guide](./api.html) to learn about these capabilities.
 
-Climate Explorer is currently in beta and will be generally available in mid 2022.
 If you do not yet have a Climate Explorer account, please contact [sales@sustglobal.com](mailto:sales@sustglobal.com).
 
 # Introductory Video
