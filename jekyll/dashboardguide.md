@@ -42,13 +42,13 @@ When hovering over a specific asset you can see its data attributes, including t
 
 **Risk Heatmap** 
 For a selected `Climate Scenario` and `Projected Hazard`, we show categorical risk, using the maximum value of risk exposure over a projected time window:
-1. We use a 30 year window (2022-2051) for each hazard. For sea level rise we use a 2022-2100 window to account for sea level rises longer-term profound impacts.
+1. We use a 30 year window (2023-2052) for each hazard. For sea level rise we use a 2023-2100 window to account for sea level rises longer-term profound impacts.
 2. We use the maximum risk exposure value of each asset over all the years in the analysis time window. 
 3. We create categories using this maximum risk exposure, to classify each asset as Low, Medium, or High risk.  Each hazard has specific classification breakpoints, which are derived from a representative sample of global risk.  Risk categories are listed in the [Data Guide](./dataguide.html). 
 
 ### Riskiest Assets
 
-The top-right Climate Explorer bar chart shows the top 20 assets in a portfolio with greatest risk exposure over a 30 year time horizon (2022-2051). It also controlled by the selected `Projected Hazard` and `Climate Scenario` dropdowns.
+The top-right Climate Explorer bar chart shows the top 20 assets in a portfolio with greatest risk exposure over a 30 year time horizon (2023-2052). It also controlled by the selected `Projected Hazard` and `Climate Scenario` dropdowns.
 
 <p align="center">
 <img height="300" src="assets/images/userguide/RiskiestAssets_exposure.png">
@@ -59,7 +59,7 @@ The top-right Climate Explorer bar chart shows the top 20 assets in a portfolio 
 </p>
 
 This view allows you to quickly view assets that are most at-risk, and prioritize deeper investigation accordingly.  Check the units for the x-axis by looking at the Indicator metadata table in the [Data Guide](./dataguide.html). For a selected `Climate Scenario` and `Projected Hazard`, we show categorical risk, using the maximum value of risk exposure over a projected time window:
-1. We use a 30 year window (2022-2051) for each hazard. The exception is sea level rise, for which we use a 2022-2100 window to account for sea level rises longer-term profound impacts.
+1. We use a 30 year window (2023-2052) for each hazard. The exception is sea level rise, for which we use a 2023-2100 window to account for sea level rises longer-term profound impacts.
 2. We use the maximum risk exposure value of each asset over all the years in the analysis time window. 
 
 ### Historic Risk Event Occurrence
@@ -163,14 +163,14 @@ The summary risk values change if you toggle between the different scenarios by 
 
 **Risk Heatmap** 
 For a selected `Climate Scenario`, we use the mean over asset type, maximum over a projected time window:
-1. Within assets of a type, we take the mean risk value at each year. We use a 30 year window (2022-2051) for each hazard. For sea level rise we use a 2022-2100 window to account for sea level rises longer-term profound impacts.
+1. Within assets of a type, we take the mean risk value at each year. We use a 30 year window (2023-2052) for each hazard. For sea level rise we use a 2023-2100 window to account for sea level rises longer-term profound impacts.
 2. We use the maximum risk exposure value of each asset type over all the years in the analysis time window. 
 3. We create categories using this maximum risk exposure, to classify each asset as Low, Medium, or High risk.  Each hazard has specific classification breakpoints, which are derived from a representative sample of global risk.  Risk categories are listed in the [Data Guide](./dataguide.html). 
 
 
 ### Riskiest Assets by Value-at-Risk
 
-The top-right Climate Explorer bar chart shows the top 20 assets in a portfolio with greatest physical financial risk over a 30 year time horizon (2022-2051). It provides a way to easily view high priority assets, and prioritize deeper investigation.  For more information, see the [Data Guide - Value at Risk](./var.html).  This view is in contrast to the topmost Riskiest Assets view, which shows exposure without considering financial valuations of risk.
+The top-right Climate Explorer bar chart shows the top 20 assets in a portfolio with greatest physical financial risk over a 30 year time horizon (2023-2052). It provides a way to easily view high priority assets, and prioritize deeper investigation.  For more information, see the [Data Guide - Value at Risk](./var.html).  This view is in contrast to the topmost Riskiest Assets view, which shows exposure without considering financial valuations of risk.
 
 <p align="center">
 <img height="300" src="assets/images/userguide/ValueAtRisk_tmp2.png">
