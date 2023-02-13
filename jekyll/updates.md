@@ -5,6 +5,15 @@ toc: true
 
 The following is a list of running product updates to the Sust Global datasets and Climate Explorer.
 
+## **14FEB2023 V1.0.1 Release**
+
+**Data Product Updates**
+1. Improved accuracy of flood modeling, especially in FEMA and international flood zones.
+2. Improved parameterization of flooding damage curves to include a "doorstep" height that flooding must overcome to damage a structure.
+
+**New Product Features**
+1. Versioning included in metadata file for each release, labelling older releases as V1.0.0 and this release as V1.0.1
+
 ## **05JAN2023 Release**
 
 **Data Product Updates**
