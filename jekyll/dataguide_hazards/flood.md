@@ -10,7 +10,7 @@ Flooding captures the likelihood of a location being directly exposed to floodin
 
 ## Methodologies
 **Flood potential**
-Indicates the projected flood likelihood, expressed as timeseries of annual expected probability at the asset level.  We derive this method from WRI's [Aqueduct Flood Hazard Maps](https://www.wri.org/data/aqueduct-floods-hazard-maps) product, for both inland and coastal floods.  Using a suite of flood maps of varying intensity, we derive an estimate of the expeted recurrence period for any amount of flooding.
+Indicates the projected flood likelihood, expressed as timeseries of annual expected probability of flooding greater than 0.5 meters at the asset level.  We derive this method from WRI's [Aqueduct Flood Hazard Maps](https://www.wri.org/data/aqueduct-floods-hazard-maps) product, for both inland and coastal floods.  Using a suite of flood maps of varying intensity, we derive an estimate of the expected recurrence period for any amount of flooding.
 
 **Observed floods**
 Indicates whether flood was observed in a given year by satellites at the location of an asset. It is derived from [NASA MODIS](https://www.earthdata.nasa.gov/learn/find-data/near-real-time/modis-nrt-global-flood-product) data, for the period 2012 to present.  
