@@ -76,9 +76,9 @@ In the table below, the spatial resolution is measured in meters. To create the 
 | hazard    |  indicator  |   description   |  unit   |   value_min  |  value_max  |  value_norm  |  spatial_resolution |
 | - | - | - | - | - | - |- |- |
 | cyclone | obs_freq | Monthly asset level exposure to cyclones/hurricanes. We source cyclone tracks from the [NOAA IBTRACs](https://www.ncdc.noaa.gov/ibtracs/). Frequency of category 3/4/5 cyclones.| frequency | 0.0 | 7.0 | 2.0 | 1000.0 |
-| cyclone | prob  | Annual projection of probability of at least one hit by a category 3/4/5 cyclone | probability | 0.0 | 1.0 | 0.5 | 50000.0 |
+| cyclone | prob  | Annual projection of probability of at least one hit by a category 1/2/3/4/5 cyclone | probability | 0.0 | 1.0 | 0.5 | 10000.0 |
 | flood_potential | obs_score | Monthly exposure of assets to floods. We transform data from multiple flood observatories to report on active floods at the points of interest. The severity classes are based on the recurrence interval: (class 1) Large flood events: recurrence < 20 year; (class 2) Very large events: 20 year < recurrence < 100 year; (class 3) Extreme events: recurrence > 100 years. Values are set based on severity*0.333. | score | 0.0 | 1.0 | 1.0 | 1000.0 |
-| flood_potential | inland_flood_prob | Annual exposure of asset to floods | probability | 0.0 | 1.0 |  1.0 | 4000.0 |
+| flood_potential | inland_flood_prob | Annual exposure of asset to floods | probability | 0.0 | 1.0 |  1.0 | 1000.0 |
 | fundamental | temp | Annual mean annual temperature at the asset location | degree_celsius | -60.0 | 50.0 | 50.0 | 100000.0 |
 | fundamental | precip | Annual total precipitation at the asset location | millimeter | 0.0 | 10000.0 | 5000.0 | 100000.0 |
 | fundamental | extreme_precip | Annual days per year where precipitation exceeds 51mm | day | 0.0 | 366.0 | 366.0 | 100000.0 |
