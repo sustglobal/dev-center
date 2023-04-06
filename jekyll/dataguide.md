@@ -61,7 +61,7 @@ To create summarization labels we analyze a representative sample of global poin
 | -              | -                         | -               | -                  | -                  |
 | Wildfire       | Probability               | 0.0 - 0.01            | 0.01 - 0.05               | 0.05 - 1.0 |
 | Inland Flood   | Probability               | 0.0 - 0.01              | 0.01 - 0.05               | 0.05 - 1.0 |
-| Cyclone        | Probability               | 0.0 - 0.025          | 0.025 - 0.075              | 0.075 - 1.0 |
+| Cyclone        | Probability               | 0.0 - 0.01          | 0.01 - 0.05              | 0.05 - 1.0 |
 | Water Stress   | Score                     | 0.0 - 0.3             | 0.3 - 0.6                | 0.6 -  1.0 |
 | Heatwave       | Number of days in year    | 0 - 30              | 30 - 50                 | 50 - 366 |
 | Sea Level Rise | Relative change in meters | 0.0 - 0.375            | 0.375 - 0.7                | 0.7 - 3.0 |
