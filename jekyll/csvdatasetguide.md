@@ -155,50 +155,6 @@ The values in these columns show the median projected annual Wildfire Susceptibi
 
 For example, Asset X has a wildfire probability risk projection value of [0.05] in [Jan, 2023]. This means that in the year [2023], we project a [5]% probability of a wildfire occurring within 1km of the asset under the [Strong Mitigation] scenario.
 
-### Forward looking fire KBDI susceptibility datasets
-This section will look at CSVs with the Reporting Data Type {reporting_data_type} of `fire_kbdi_susceptibility`: `
-sustglobal_asset_fwd_fire_kbdi_susceptibility_risk_{dataset_name}_{ScenarioID}.csv`
- 
-In this example, we will look at the following dataset:
-`sustglobal_asset_fwd_fire_kbdi_susceptibility_risk_MRTG_demo_ssp126.csv`
-
-This dataset shows the forward looking median annual wildfire risk (KBDI susceptibility) for the selected portfolio, under an ssp126 scenario (Strong Mitigation).
-
-<p align="center">
-<img height="500" src="assets/images/userguide/UG_Fig19.png">
-</p>
-
-<p align="center">
-Fig 19: forward looking Wildfire KBDI susceptibility risk CSV
-</p>
-
-#### Interpretation of YYYY column
-The values in these columns show the median projected annual Wildfire Susceptibility values for a specific asset under the [Strong Mitigation] scenario.
-
-For example, Asset X has a Wildfire Susceptibility risk projection value of [0.05] in [Jan, 2023]. This means that in the year [2023], we project a [5]% probability of a wildfire occurring within 1km of the asset under the [Strong Mitigation] scenario.
-
-### Forward looking fire risk datasets
-This section will look at CSVs with the Reporting Data Type {reporting_data_type} of fire. This refers to `Wildfire Burned Area Fraction`: `sustglobal_asset_fwd_fire_risk_{dataset_name}_{ScenarioID}.csv`
- 
-In this example, we will look at the following dataset: `
-sustglobal_asset_fwd_fire_risk_MRTG_demo_ssp126.csv`
-
-This dataset shows the forward looking median annual Wildfire Risk (Burned Area Fraction) for the selected portfolio, under an ssp126 scenario (Strong Mitigation).
-
-<p align="center">
-<img height="500" src="assets/images/userguide/UG_Fig20.png">
-</p>
-
-<p align="center">
-Fig 20: forward looking Wildfire Burned Area Fraction risk CSV
-</p>
-
-#### Interpretation of YYYY column
-
-The values in these columns show the median projected annual Wildfire Burned Area Fraction values for a specific asset under the [Strong Mitigation] scenario.
-
-Asset X has a Wildfire Burned Area Fraction risk projection value of [0.03] in [Jan, 2023]. This means that in the year [2023], we project that [3]% of the land within a 12km neighborhood of asset X is at risk of being exposed to wildfire under the [Strong Mitigation] scenario.
-
 ### Forward looking flood risk datasets
 
 This section will look at CSVs with the Reporting Data Type {reporting_data_type} of `flood`: `sustglobal_asset_fwd_flood_risk_{dataset_name}_{ScenarioID}.csv`

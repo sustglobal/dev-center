@@ -31,10 +31,6 @@ ________________________________________________________________________________
 #### Wildfire
 
 
-**Q:** What are the different data modalities of wildfire?
-
-**A:** The different data modalities include:historic wildfire exposure; forward looking burned area fraction projection ; and forward looking wildfire susceptibility projection. Historic exposure is determined by derivatives from satellite imagery (observations) while forward looking projections are derived from global climate models (GCMs).
-
 **Q:** Why do I see active fires within the dataset, but no projected scenario based fire hazards?
 
 **A:** There are occasionally sites where we see observed active fires and no projected scenario based fire hazard. This could be due to: Human generated fires that are not controlled fires and not wildfires; Limitations of the wildfire projection models; Changing risk exposure.

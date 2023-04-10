@@ -57,15 +57,15 @@ In addition to physical hazards products, Sust Global supplies fundamental indic
 
 To create summarization labels we analyze a representative sample of global points, and define breakpoints that best represent the overall risk distribution.  Summarization labels are calculated based on the maximum risk over the 2023-2052 period, and bucketed using the following values:
 
-| Hazard         | Unit                      | Low Range | Medium Range | High Range |
-| -              | -                         | -               | -                  | -                  |
-| Wildfire       | Probability               | 0.0 - 0.01            | 0.01 - 0.05               | 0.05 - 1.0 |
-| Inland Flood   | Probability               | 0.0 - 0.01              | 0.01 - 0.05               | 0.05 - 1.0 |
-| Cyclone        | Probability               | 0.0 - 0.025          | 0.025 - 0.075              | 0.075 - 1.0 |
-| Water Stress   | Score                     | 0.0 - 0.3             | 0.3 - 0.6                | 0.6 -  1.0 |
-| Heatwave       | Number of days in year    | 0 - 30              | 30 - 50                 | 50 - 366 |
-| Sea Level Rise | Relative change in meters | 0.0 - 0.375            | 0.375 - 0.7                | 0.7 - 3.0 |
-| Financial Risk Analysis (VaR) | Annualized Percent of Value at Risk (0 to 1.0) | 0.0 - 0.01 | 0.01 - 0.05 | 0.05 - 1.0 |
+| Hazard                        | Unit                                           | Low Range      | Medium Range    | High Range |
+| -                             | -                                              | -              | -               | -          |
+| Wildfire                      | Probability                                    | 0.0 - 0.000075 | 0.000075 - 0.01 | 0.01 - 1.0 |
+| Inland Flood                  | Probability                                    | 0.0 - 0.01     | 0.01 - 0.05     | 0.05 - 1.0 |
+| Cyclone                       | Probability                                    | 0.0 - 0.01     | 0.01 - 0.05     | 0.05 - 1.0 |
+| Water Stress                  | Score                                          | 0.0 - 0.3      | 0.3 - 0.6       | 0.6 -  1.0 |
+| Heatwave                      | Number of days in year                         | 0 - 30         | 30 - 50         | 50 - 366   |
+| Sea Level Rise                | Relative change in meters                      | 0.0 - 0.375    | 0.375 - 0.75    | 0.75 - 3.0 |
+| Financial Risk Analysis (VaR) | Annualized Percent of Value at Risk (0 to 1.0) | 0.0 - 0.01     | 0.01 - 0.05     | 0.05 - 1.0 |
 
 <p>
 <b>Table 1</b>: Hazard summarization labeling ranges 
