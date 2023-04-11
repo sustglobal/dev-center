@@ -5,6 +5,14 @@ toc: true
 
 The following is a list of running product updates to the Sust Global datasets and Climate Explorer.
 
+## **11APR2023 V1.0.2 Release**
+
+**Data Product Updates**
+1. Improved accuracy of wildfire modeling, using many more variables to predict future wildfire risk.
+2. More precision in historic wildfire data, using 500m data instead of 1km data, and updating historic data to 2022.
+3. Improved modeling of cyclone probabilities, especially in Gulf of Mexico.
+4. Improved modeling of flood and cyclone value-at-risk, including better interpolation and integration algorithms.
+
 ## **14FEB2023 V1.0.1 Release**
 
 **Data Product Updates**

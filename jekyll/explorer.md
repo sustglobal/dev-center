@@ -87,5 +87,4 @@ In the table below, the spatial resolution is measured in meters. To create the 
 | water_stress | spei_norm | Annual projection of standard precipitation evapo-transipiration index |  score |  0.0 |  1.0 |  1.0 |  100000.0 |
 | water_stress | score | Annual ratio of water demand to renewable water availability | score | 0.0 | 4.0 | 4.0 | 500.0 |
 | wildfire | obs_score | Monthly active fire severity based on satellite observations. We transform the [NASA Active Fire Data](https://firms2.modaps.eosdis.nasa.gov/) to report on active fires. Note that because these values are based on satellite observations and we cannot discern wildfires from human generated fires. | score | 0.0 | 1.0 | 1.0 | 300.0 |
-| wildfire | burned_area_norm   | Annual fraction of land exposed to wildfire within 300km radius of the asset | score | 0.0 | 1.0 | 0.1 | 300.0 |
-| wildfire | fire_kbdi_susceptability | Average annual probability of a wildfire occurring across all land areas within 1km of the asset  |  score | 0.0 | 1.0 | 0.1 | 300.0 |
+| wildfire | wildfire_unfied_prob | Probability of occurence of wildfire within 300m radius of the asset | probability | 0.0 | 1.0 | 0.1 | 300.0 |

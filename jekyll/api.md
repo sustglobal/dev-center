@@ -125,7 +125,7 @@ Below is a truncated object from the response:
 "entity_id": "",
 "entity_name": "171",
 "hazard": "wildfire",
-"indicator": "burned_area_norm",
+"indicator": "wildfire_unified_prob",
 "scenario": "ssp585",
 "measure": "mid",
 "risk_exposure": {
