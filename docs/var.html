@@ -75,120 +75,188 @@
 <a class="anchor" href="#asset-type-specific-damages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Asset Type Specific Damages</h2>
 <p>In order to more accurately calculate financial risk, it is possible to upload asset types, via the <code class="language-plaintext highlighter-rouge">label:type</code> column.  This allows us to apply specialized impact functions based on the uploaded asset type, accounting for industry-specific characteristics.</p>
 
-<p><strong>Available Asset Types</strong></p>
+<h2 id="available-asset-types">
+<a class="anchor" href="#available-asset-types" aria-hidden="true"><span class="octicon octicon-link"></span></a>Available Asset Types</h2>
+
+<p>The available asset types are given in the table below.  For Climate Explorer to recognize an asset type, you must include a column named <code class="language-plaintext highlighter-rouge">label:type</code> that matches exactly the label given below in <strong>bold</strong>.</p>
 
 <table>
+  <thead>
+    <tr>
+      <th><em>Category</em></th>
+      <th><em>Label for use in CE</em></th>
+      <th><em>Examples of this type of asset</em></th>
+    </tr>
+  </thead>
   <tbody>
     <tr>
-      <td>Entertainment &amp; Recreation</td>
+      <td><em>Agriculture</em></td>
+      <td><strong>Agriculture</strong></td>
+      <td>Agricultural areas, horse stalls, veterinary offices</td>
     </tr>
     <tr>
-      <td>Retail Trade</td>
+      <td><em>Commercial</em></td>
+      <td><strong>Retail Trade</strong></td>
+      <td>Appliances, Auto Dealer, Auto Dealership, Bait Stand, Bait Stand, Bakery, Bakery, Boat Sales/Service, Book Store, Book Store, Camera Store, Candy Store, Carpet and Paint Shop, Clothing, Clothing Store, Clothing-Mens, Convenience Store, Crafts, Department Store, Department Store, Drive thru market, Drug, Drug Store, Fabric Store, Feed Store, Flea Market, Florist, Fruit Stand, Furniture, Furniture Store, Gas Station, Gas/Butane Supply, Gift Shop, Greenhouse, Gun Shop, Hardware, Hardware, Hobby Shop, Home Repair Store, Large Furniture, Large Grocery, Lawnmower, Liquor, Liquor Store, Liquor Store, Meat Market, Medium Grocery, Motorcycle Dealer, Music Center, Neighborhood Grocery, Nursery, Paint Store, Pawn Shop, Remnant Shop, Service Station, Service Station, Shoe Repair, Shoe Store, Small Grocery, Supermarket, Toy Store, Tractor Sales, Trophy Shop, Upholstery Shop, Used Appliances/Cloth, Used Furniture, Vacuum Cleaner Sales, Variety Store, Video Games, Wine Store.</td>
     </tr>
     <tr>
-      <td>Emergency Response</td>
+      <td> </td>
+      <td><strong>Parking</strong></td>
+      <td>Garage</td>
     </tr>
     <tr>
-      <td>Churches and Other Non-profit Org.</td>
+      <td> </td>
+      <td><strong>Wholesale Trade</strong></td>
+      <td>Auto Junk Yard, Auto Parts/Mufflers, Beer Warehouse, Bottled Gases Warehouse, Food Warehouse, Heavy Equipment Storage, Jewelry, Lumber Yard, Lumber, Machine Parts Storage, Medical Supplies, Municipal Storage Warehouse, Paper Products Warehouse, Private Storage, Quonset Hut Storage, Safety Equipment, Sporting Goods Warehouse, T.V. Repair, T.V. Station, Trailer Parts, Warehouse</td>
     </tr>
     <tr>
-      <td>Banks</td>
+      <td> </td>
+      <td><strong>Personal and Repair Services</strong></td>
+      <td>Auto Repair, Barber Shop, Beauty Salon, Boat Service, Car Wash, Cemetery, Cleaners substation, Funeral Home, Laundry, Photo Studio, Private Day Care, Re-Upholstery, Truck Mfg &amp; Sales, Washateria, Watch Repair</td>
     </tr>
     <tr>
-      <td>Construction</td>
+      <td> </td>
+      <td><strong>Professional/Technical Services</strong></td>
+      <td>Accounting Firm, Airport, Big Office Commercial, Boat Storage, Business, Filtering Plant, Import Sales, Legal Office, Office Building, Piers, Professional, Real Estate Office, Sewage Treatment, Transport Company, Utility Company</td>
     </tr>
     <tr>
-      <td>Parking</td>
+      <td> </td>
+      <td><strong>Banks</strong></td>
+      <td>Bank</td>
     </tr>
     <tr>
-      <td>Grade Schools</td>
-    </tr>
-    <tr>
-      <td>Personal and Repair Services</td>
-    </tr>
-    <tr>
-      <td>Agriculture</td>
-    </tr>
-    <tr>
-      <td>Single Family</td>
-    </tr>
-    <tr>
-      <td>Institutional Dormitory</td>
-    </tr>
-    <tr>
-      <td>Education</td>
-    </tr>
-    <tr>
-      <td>General Services</td>
-    </tr>
-    <tr>
-      <td>Government</td>
-    </tr>
-    <tr>
-      <td>Food/Drugs/Chemicals</td>
-    </tr>
-    <tr>
-      <td>High Technology</td>
-    </tr>
-    <tr>
-      <td>Residential</td>
-    </tr>
-    <tr>
-      <td>Medical Office/Clinic</td>
-    </tr>
-    <tr>
-      <td>Theaters</td>
-    </tr>
-    <tr>
-      <td>General</td>
-    </tr>
-    <tr>
-      <td>Industrial</td>
-    </tr>
-    <tr>
-      <td>Religion</td>
-    </tr>
-    <tr>
-      <td>Manuf.  Housing</td>
-    </tr>
-    <tr>
-      <td>Multifamily Dwelling</td>
-    </tr>
-    <tr>
-      <td>Temporary Lodging</td>
-    </tr>
-    <tr>
+      <td> </td>
+      <td><strong>Hospital</strong></td>
       <td>Hospital</td>
     </tr>
     <tr>
-      <td>Single Family Dwelling</td>
+      <td> </td>
+      <td><strong>Medical Office/Clinic</strong></td>
+      <td>Chiropractic Clinic, Dentist’s Office, Doctor’s Office, Medical Office, X-Ray Service</td>
     </tr>
     <tr>
-      <td>Nursing Home</td>
+      <td> </td>
+      <td><strong>Entertainment &amp; Recreation</strong></td>
+      <td>Bowling Alley, Cafeteria Restaurant, Country Club, Drive-In Restaurant, Fast Food Restaurant, Fishing Party Boat, Full-Service Restaurant, Lounge, Physical Fitness, Private Club, Private Golf Course, Private Pool, Recreation Facilities, Restaurant, T.V. Station, Tavern, Telephone Exchange</td>
     </tr>
     <tr>
-      <td>Colleges/Universities</td>
+      <td> </td>
+      <td><strong>Theaters</strong></td>
+      <td>Private Hall, Indoor Theater, Movie Theater, Organization Hall, Drive-In Theater</td>
     </tr>
     <tr>
-      <td>Professional/Technical Services</td>
+      <td> </td>
+      <td><strong>Commercial</strong></td>
+      <td>Generic grouping for items in <em>Commercial</em> category</td>
     </tr>
     <tr>
-      <td>Commercial</td>
+      <td><em>Education</em></td>
+      <td><strong>Grade Schools</strong></td>
+      <td>Commercial School, Library, School, Elementary School</td>
     </tr>
     <tr>
-      <td>Metals/Minerals Processing</td>
+      <td> </td>
+      <td><strong>Colleges/Universities</strong></td>
+      <td>College, University</td>
     </tr>
     <tr>
-      <td>Wholesale Trade</td>
+      <td> </td>
+      <td><strong>Education</strong></td>
+      <td>Generic grouping for items in <em>Education</em> category</td>
     </tr>
     <tr>
-      <td>Heavy</td>
+      <td>Government</td>
+      <td><strong>General Services</strong></td>
+      <td>City Hall, Post Office, Government facility</td>
     </tr>
     <tr>
-      <td>Light</td>
+      <td> </td>
+      <td><strong>Emergency Response</strong></td>
+      <td>Fire Station, Police Station</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td><strong>Government</strong></td>
+      <td>Generic grouping for items in <em>Government</em> category</td>
+    </tr>
+    <tr>
+      <td><em>Industrial</em></td>
+      <td><strong>Heavy</strong></td>
+      <td>Boiler Building, Cabinet Shop Mfg, Concrete Mfg, Door Mfg, Fabrication Shop, Heat Exchanger Mfg, Heavy Machine Shop, Lumber Mill, Metal Coatings Services, Metal Recycling, Pipe Threader Facility, Research Lab-Machine, Welding-Machine</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td><strong>Light</strong></td>
+      <td>Battery Mfg, Commercial Printing, Cooling Tower, Electronic Equip Mfg, Frame Shop, Furniture Mfg, Industrial Loading Dock, Instrument Mfg, Leather Goods Mfg, Locker Bldg, Maint Bldg-Mfg Facility, Newspaper Print Plant, Newspaper Sales Office, Office-Manuf Facility</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td><strong>Food/Drugs/Chemicals</strong></td>
+      <td>Chemical Laboratory, Chemical Plant Bonding, Chemical Plant, Chemical refinery, Detergent Manuf. Facility, Feed Mill, Food Processor, Meat Packing, Oil Storage Tanks, Plastic Mfg</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td><strong>Metals/Minerals Processing</strong></td>
+      <td>Foundry, Refinery-Lead, Sand &amp; Gravel, Sheet Metal</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td><strong>High Technology</strong></td>
+      <td>Data Center, Microchip Manuf.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td><strong>Construction</strong></td>
+      <td>Carpet Tile Flooring, Carpeting Service, Construction Co, Contractor Roofing, Contractor-Electric, Heating &amp; Air Conditioning Service, Pier Drilling Co, Plumbing Co, Plumbing Services, Sandblasting Co, Water Well Service</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td><strong>Industrial</strong></td>
+      <td>Generic grouping for items in <em>Industrial</em> category</td>
+    </tr>
+    <tr>
+      <td>Religion</td>
+      <td><strong>Churches and Other Non-profit Org.</strong></td>
+      <td>Church, Civic Association</td>
+    </tr>
+    <tr>
+      <td>Single Family</td>
+      <td><strong>Single Family Dwelling</strong></td>
+      <td>One, two, or three story, with or without basement</td>
+    </tr>
+    <tr>
+      <td><em>Residential</em></td>
+      <td><strong>Manuf.  Housing</strong></td>
+      <td>Mobile Home, Manufacture Home</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td><strong>Multifamily Dwelling</strong></td>
+      <td>Apartments, Condominium</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td><strong>Temporary Lodging</strong></td>
+      <td>Hotel, Motel</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td><strong>Institutional Dormitory</strong></td>
+      <td>Institutional Dormitory</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td><strong>Nursing Home</strong></td>
+      <td>Nursing Home, Rest Home</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td><strong>Residential</strong></td>
+      <td>Generic grouping for items in <em>Residential</em> category</td>
     </tr>
   </tbody>
 </table>
+
 
           </div>
         </div>
@@ -205,6 +273,7 @@
 </ul>
 </li>
 <li class="toc-entry toc-h2"><a href="#asset-type-specific-damages">Asset Type Specific Damages</a></li>
+<li class="toc-entry toc-h2"><a href="#available-asset-types">Available Asset Types</a></li>
 </ul>
           </div>
         </div>
