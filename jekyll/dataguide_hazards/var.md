@@ -29,41 +29,186 @@ For wildfire, we take a different approach to measuring damage.  In the event of
 ## Asset Type Specific Damages
 In order to more accurately calculate financial risk, it is possible to upload asset types, via the `label:type` column.  This allows us to apply specialized impact functions based on the uploaded asset type, accounting for industry-specific characteristics.
 
-**Available Asset Types**
+## Available Asset Types
 
-| Entertainment & Recreation | 
-| Retail Trade | 
-| Emergency Response | 
-| Churches and Other Non-profit Org. | 
-| Banks | 
-| Construction | 
-| Parking | 
-| Grade Schools | 
-| Personal and Repair Services | 
-| Agriculture | 
-| Single Family | 
-| Institutional Dormitory | 
-| Education | 
-| General Services | 
-| Government | 
-| Food/Drugs/Chemicals | 
-| High Technology | 
-| Residential | 
-| Medical Office/Clinic | 
-| Theaters | 
-| General | 
-| Industrial | 
-| Religion | 
-| Manuf.  Housing | 
-| Multifamily Dwelling | 
-| Temporary Lodging | 
-| Hospital | 
-| Single Family Dwelling | 
-| Nursing Home | 
-| Colleges/Universities | 
-| Professional/Technical Services | 
-| Commercial | 
-| Metals/Minerals Processing | 
-| Wholesale Trade | 
-| Heavy | 
-| Light | 
+The available asset types are given in the table below.  For Climate Explorer to recognize an asset type, you must include a column named `label:type` that matches exactly the label given below in **bold**.
+
+<table>
+  <thead>
+    <tr>
+      <th style="border-bottom: 2px solid black; border-right: 2px solid black;padding: 5px;"><em>CATEGORY</em></th>
+      <th style="border-bottom: 2px solid black; padding: 5px;"><em>LABEL FOR USE IN CE</em></th>
+      <th style="border-bottom: 2px solid black; border-left: 2px solid black;padding: 5px;"><em>EXAMPLES OF THIS TYPE OF ASSET</em></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border-top: 1px solid black; padding: 5px;"><em>Agriculture</em></td>
+      <td style="border: 1px solid black; padding: 5px;"><strong>Agriculture</strong></td>
+      <td style="border: 1px solid black; padding: 5px;">Agricultural areas, horse stalls, veterinary offices</td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <td style="border-top: 1px solid black; padding: 5px;"><em>Commercial</em></td>
+      <td style="border: 1px solid black; padding: 5px;"><strong>Retail Trade</strong></td>
+      <td style="border: 1px solid black; padding: 5px;">Appliances, Auto Dealer, Auto Dealership, Bait Stand, Bait Stand, Bakery, Bakery, Boat Sales/Service, Book Store, Book Store, Camera Store, Candy Store, Carpet and Paint Shop, Clothing, Clothing Store, Clothing-Mens, Convenience Store, Crafts, Department Store, Department Store, Drive thru market, Drug, Drug Store, Fabric Store, Feed Store, Flea Market, Florist, Fruit Stand, Furniture, Furniture Store, Gas Station, Gas/Butane Supply, Gift Shop, Greenhouse, Gun Shop, Hardware, Hardware, Hobby Shop, Home Repair Store, Large Furniture, Large Grocery, Lawnmower, Liquor, Liquor Store, Liquor Store, Meat Market, Medium Grocery, Motorcycle Dealer, Music Center, Neighborhood Grocery, Nursery, Paint Store, Pawn Shop, Remnant Shop, Service Station, Service Station, Shoe Repair, Shoe Store, Small Grocery, Supermarket, Toy Store, Tractor Sales, Trophy Shop, Upholstery Shop, Used Appliances/Cloth, Used Furniture, Vacuum Cleaner Sales, Variety Store, Video Games, Wine Store.</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td style="border: 1px solid black; padding: 5px;"><strong>Parking</strong></td>
+      <td style="border: 1px solid black; padding: 5px;">Garage</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td style="border: 1px solid black; padding: 5px;"><strong>Wholesale Trade</strong></td>
+      <td style="border: 1px solid black; padding: 5px;">Auto Junk Yard, Auto Parts/Mufflers, Beer Warehouse, Bottled Gases Warehouse, Food Warehouse, Heavy Equipment Storage, Jewelry, Lumber Yard, Lumber, Machine Parts Storage, Medical Supplies, Municipal Storage Warehouse, Paper Products Warehouse, Private Storage, Quonset Hut Storage, Safety Equipment, Sporting Goods Warehouse, T.V. Repair, T.V. Station, Trailer Parts, Warehouse</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td style="border: 1px solid black; padding: 5px;"><strong>Personal and Repair Services</strong></td>
+      <td style="border: 1px solid black; padding: 5px;">Auto Repair, Barber Shop, Beauty Salon, Boat Service, Car Wash, Cemetery, Cleaners substation, Funeral Home, Laundry, Photo Studio, Private Day Care, Re-Upholstery, Truck Mfg &amp; Sales, Washateria, Watch Repair</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td style="border: 1px solid black; padding: 5px;"><strong>Professional/Technical Services</strong></td>
+      <td style="border: 1px solid black; padding: 5px;">Accounting Firm, Airport, Big Office Commercial, Boat Storage, Business, Filtering Plant, Import Sales, Legal Office, Office Building, Piers, Professional, Real Estate Office, Sewage Treatment, Transport Company, Utility Company</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td style="border: 1px solid black; padding: 5px;"><strong>Banks</strong></td>
+      <td style="border: 1px solid black; padding: 5px;">Bank</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td style="border: 1px solid black; padding: 5px;"><strong>Hospital</strong></td>
+      <td style="border: 1px solid black; padding: 5px;">Hospital</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td style="border: 1px solid black; padding: 5px;"><strong>Medical Office/Clinic</strong></td>
+      <td style="border: 1px solid black; padding: 5px;">Chiropractic Clinic, Dentist’s Office, Doctor’s Office, Medical Office, X-Ray Service</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td style="border: 1px solid black; padding: 5px;"><strong>Entertainment &amp; Recreation</strong></td>
+      <td style="border: 1px solid black; padding: 5px;">Bowling Alley, Cafeteria Restaurant, Country Club, Drive-In Restaurant, Fast Food Restaurant, Fishing Party Boat, Full-Service Restaurant, Lounge, Physical Fitness, Private Club, Private Golf Course, Private Pool, Recreation Facilities, Restaurant, T.V. Station, Tavern, Telephone Exchange</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td style="border: 1px solid black; padding: 5px;"><strong>Theaters</strong></td>
+      <td style="border: 1px solid black; padding: 5px;">Private Hall, Indoor Theater, Movie Theater, Organization Hall, Drive-In Theater</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td style="border: 1px solid black; padding: 5px;"><strong>Commercial</strong></td>
+      <td style="border: 1px solid black; padding: 5px;">Generic grouping for items in <em>Commercial</em> category</td>
+    </tr>
+    <tr>
+      <td style="border-top: 1px solid black; padding: 5px;"><em>Education</em></td>
+      <td style="border: 1px solid black; padding: 5px;"><strong>Grade Schools</strong></td>
+      <td style="border: 1px solid black; padding: 5px;">Commercial School, Library, School, Elementary School</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td style="border: 1px solid black; padding: 5px;"><strong>Colleges/Universities</strong></td>
+      <td style="border: 1px solid black; padding: 5px;">College, University</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td style="border: 1px solid black; padding: 5px;"><strong>Education</strong></td>
+      <td style="border: 1px solid black; padding: 5px;">Generic grouping for items in <em>Education</em> category</td>
+    </tr>
+    <tr>
+      <td style="border-top: 1px solid black; padding: 5px;">Government</td>
+      <td style="border: 1px solid black; padding: 5px;"><strong>General Services</strong></td>
+      <td style="border: 1px solid black; padding: 5px;">City Hall, Post Office, Government facility</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td style="border: 1px solid black; padding: 5px;"><strong>Emergency Response</strong></td>
+      <td style="border: 1px solid black; padding: 5px;">Fire Station, Police Station</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td style="border: 1px solid black; padding: 5px;"><strong>Government</strong></td>
+      <td style="border: 1px solid black; padding: 5px;">Generic grouping for items in <em>Government</em> category</td>
+    </tr>
+    <tr>
+      <td style="border-top: 1px solid black; padding: 5px;"><em>Industrial</em></td>
+      <td style="border: 1px solid black; padding: 5px;"><strong>Heavy</strong></td>
+      <td style="border: 1px solid black; padding: 5px;">Boiler Building, Cabinet Shop Mfg, Concrete Mfg, Door Mfg, Fabrication Shop, Heat Exchanger Mfg, Heavy Machine Shop, Lumber Mill, Metal Coatings Services, Metal Recycling, Pipe Threader Facility, Research Lab-Machine, Welding-Machine</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td style="border: 1px solid black; padding: 5px;"><strong>Light</strong></td>
+      <td style="border: 1px solid black; padding: 5px;">Battery Mfg, Commercial Printing, Cooling Tower, Electronic Equip Mfg, Frame Shop, Furniture Mfg, Industrial Loading Dock, Instrument Mfg, Leather Goods Mfg, Locker Bldg, Maint Bldg-Mfg Facility, Newspaper Print Plant, Newspaper Sales Office, Office-Manuf Facility</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td style="border: 1px solid black; padding: 5px;"><strong>Food/Drugs/Chemicals</strong></td>
+      <td style="border: 1px solid black; padding: 5px;">Chemical Laboratory, Chemical Plant Bonding, Chemical Plant, Chemical refinery, Detergent Manuf. Facility, Feed Mill, Food Processor, Meat Packing, Oil Storage Tanks, Plastic Mfg</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td style="border: 1px solid black; padding: 5px;"><strong>Metals/Minerals Processing</strong></td>
+      <td style="border: 1px solid black; padding: 5px;">Foundry, Refinery-Lead, Sand &amp; Gravel, Sheet Metal</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td style="border: 1px solid black; padding: 5px;"><strong>High Technology</strong></td>
+      <td style="border: 1px solid black; padding: 5px;">Data Center, Microchip Manuf.</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td style="border: 1px solid black; padding: 5px;"><strong>Construction</strong></td>
+      <td style="border: 1px solid black; padding: 5px;">Carpet Tile Flooring, Carpeting Service, Construction Co, Contractor Roofing, Contractor-Electric, Heating &amp; Air Conditioning Service, Pier Drilling Co, Plumbing Co, Plumbing Services, Sandblasting Co, Water Well Service</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td style="border: 1px solid black; padding: 5px;"><strong>Industrial</strong></td>
+      <td style="border: 1px solid black; padding: 5px;">Generic grouping for items in <em>Industrial</em> category</td>
+    </tr>
+    <tr>
+      <td style="border-top: 1px solid black; padding: 5px;"><em>Religion</em></td>
+      <td style="border: 1px solid black; padding: 5px;"><strong>Churches and Other Non-profit Org.</strong></td>
+      <td style="border: 1px solid black; padding: 5px;">Church, Civic Association</td>
+    </tr>
+    <tr>
+      <td style="border-top: 1px solid black; padding: 5px;"><em>Single Family</em></td>
+      <td style="border: 1px solid black; padding: 5px;"><strong>Single Family Dwelling</strong></td>
+      <td style="border: 1px solid black; padding: 5px;">One, two, or three story, with or without basement</td>
+    </tr>
+    <tr>
+      <td style="border-top: 1px solid black; padding: 5px;"><em>Residential</em></td>
+      <td style="border: 1px solid black; padding: 5px;"><strong>Manuf.  Housing</strong></td>
+      <td style="border: 1px solid black; padding: 5px;">Mobile Home, Manufacture Home</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td style="border: 1px solid black; padding: 5px;"><strong>Multifamily Dwelling</strong></td>
+      <td style="border: 1px solid black; padding: 5px;">Apartments, Condominium</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td style="border: 1px solid black; padding: 5px;"><strong>Temporary Lodging</strong></td>
+      <td style="border: 1px solid black; padding: 5px;">Hotel, Motel</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td style="border: 1px solid black; padding: 5px;"><strong>Institutional Dormitory</strong></td>
+      <td style="border: 1px solid black; padding: 5px;">Institutional Dormitory</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td style="border: 1px solid black; padding: 5px;"><strong>Nursing Home</strong></td>
+      <td style="border: 1px solid black; padding: 5px;">Nursing Home, Rest Home</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td style="border: 1px solid black; padding: 5px;"><strong>Residential</strong></td>
+      <td style="border: 1px solid black; padding: 5px;">Generic grouping for items in <em>Residential</em> category</td>
+    </tr>
+  </tbody>
+</table>
+

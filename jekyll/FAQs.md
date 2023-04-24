@@ -23,6 +23,10 @@ toc: true
 
 **A:** Our dataset and analytics enable scenario driven analysis for climate change adaptation. Using our API product or the Climate Explorer dashboard, our customers and partners are enabled with asset-level assessments of climate risk exposure from acute and chronic climate related hazards.
 
+**Q** Are are the Low, Median, and High ranges determined for each hazard?
+
+**A** The ranges are determined based on typical ranges of exposures in areas where our customers assets are typically located.  Based on sampling from within these locations, we arrive at threshold values by giving consideration to what would be considered low, medium and high risk for the specific hazard in question.
+
 ______________________________________________________________________________________________________________
 
 ### Hazard Specific Questions
@@ -67,6 +71,9 @@ For more detail:
 
 **A:** We are yet to find reliable representations of inland flooding and cyclone projections for SSP1-RCP26 and SSP2-RCP45 and will update when we have them.
 
+**Q** The flooding data reports the probability of flooding exceeding 0.5 m - where does the 0.5 meters come from?
+
+**A** It is common for flood models to add a "doorstep" value below which flooding does no damage.  This is to account for the fact that buildings are sometimes raised a small distance above the ground, especially in flood-prone areas, and to account for the fact that a small amount of flooding can normally be contained using simple ad-hoc flood prevention measures like sandbags.  While there is no universally agreed upon value for this "doorstep" threshold, 0.5 meters is commonly used.
 
 ______________________________________________________________________________________________________________
 
