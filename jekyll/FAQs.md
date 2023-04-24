@@ -23,7 +23,7 @@ toc: true
 
 **A:** Our dataset and analytics enable scenario driven analysis for climate change adaptation. Using our API product or the Climate Explorer dashboard, our customers and partners are enabled with asset-level assessments of climate risk exposure from acute and chronic climate related hazards.
 
-**Q** Are are the Low, Median, and High ranges determined for each hazard?
+**Q** How are are the `Low`, `Medium`, and `High` risk ranges determined for each hazard?
 
 **A** The ranges are determined based on typical ranges of exposures in areas where our customers assets are typically located.  Based on sampling from within these locations, we arrive at threshold values by giving consideration to what would be considered low, medium and high risk for the specific hazard in question.
 
