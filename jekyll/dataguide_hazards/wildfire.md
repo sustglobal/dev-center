@@ -10,18 +10,15 @@ Wildfire is an uncontrolled fire, caused by a combination of combustible fuels (
 
 ## Methodologies
 **Unified Wildfire**
-This indicator combines the projections from Burned Area Fraction (BAF) and the Keetch-Byram Drought Index Susceptibility Score (KBDI), benchmarked against the observed wildfire indicator to create a measure of wildfire probability at a specific location.  It can be interpreted as the probability of wildfire occurring within one kilometer of an asset location within a given year. 
 
-Unified Wildfire is the recommended default indicator for future fire risk.
+Annual probability of wildfire at an asset location.
 
-**KBDI Susceptibility Score**: This indicator measures wildfire weather, or the probability of wildfire under various weather conditions, using the [Keetch-Byram Drought Index (KBDI)](https://twc.tamu.edu/kbdi).  This approach has several advantages for modeling fire dynamics as previously demonstrated.  Weather has been [previously shown](https://iopscience.iop.org/article/10.1088/2515-7620/abd836) to be a major determinant of fire probability, and changing weather patterns are the primary reason wildfires will be a major hazard of climate change. Thus, in contrast to the Burned Area Fraction Indicator, this indicator does not use direct CMIP6 simulations of wildfire occurrence.  Instead, the Wildfire susceptibility estimates future fire risk using simulations of fire weather, combined with millions of historic observations of how weather affects fire risk. 
-
-**Burned Area Fraction**: Starting from CMIP6 model simulations of monthly wildfire burned area -- which incorporate factors such as temperature, precipitation, land cover type, and population to simulate fire occurrence and severity -- we use proprietary artificial intelligence to enhance resolution. These projections are further processed using the latest satellite-derived land cover maps, filtering for the urban-wildland interface to further refine the projections.
+Using historic fire locations, landcover characteristics, and historic drought conditions, we use AI to model the relationship between observed fire and fire weather.  We constrain the model using a linear relationship to the [Keetch-Byram Drought Index (KBDI)](https://twc.tamu.edu/kbdi).  This approach has several advantages for modeling fire dynamics as previously demonstrated.  Weather has been [previously shown](https://iopscience.iop.org/article/10.1088/2515-7620/abd836) to be a major determinant of fire probability, and changing weather patterns are the primary reason wildfires will be a major hazard of climate change.  
 
 **Observational Dataset**: We use satellite derived observations to provide high-resolution exposure to wildfires. The observations are made using NASA MODIS satellites and processed using an active fire algorithm to produce the [MCD64A](https://lpdaac.usgs.gov/documents/115/MCD64_ATBD_V6.pdf). This covers the historical period of 2001 to present. This indicator shows the years in which a wildfire occurred within 1 kilometer of an asset. For point-based assets, this indicator is either 0 or 1, representing a binary detection of fire.  For polygon-based regions, this indicator is a floating point value between 0 and 1, representing the area detected as burned in any given year within the region.
 
 ## Known Limitations
-In addition to capturing historic wildfires, the satellite record also includes agricultural and prescribed burning.  This can cause a higher estimate of wildfire risk in areas where these activities are common.
+Our fire model relies on static landcover into the future.  This assumption is unlikely to hold given human development and changing forest extents, especially later into the 21st century.
 
 ## Sample Assessment
 ### United States Counties

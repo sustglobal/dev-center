@@ -11,6 +11,8 @@ Global mean sea level increased by approximately 20cm in the past century, with 
 ## Methodology
 **Sea Level Rise** 
 
+Expected Sea Level Rise in meters from historic baseline, within 5km of an asset location.
+
 Our <i>Sea Level Rise</i> indicator refers to the change in sea level across different climate scenarios and is consistent with projections from the IPCC Sixth Assessment Report. We base our modeling of projected sea level rise on both climate model simulations from [CMIP6](https://www.wcrp-climate.org/wgcm-cmip/wgcm-cmip6). 
 
 Projected sea level rise from CMIP6 climate models incorporates the effects of thermal expansion from warming of the ocean, melting of Greenland and Antarctic ice sheets, melting of glaciers and ice caps, and local land subsidence and rebound. Land elevation rebound, whereby land elevation increases in response to ice melt, is more common in high latitude, polar regions.  

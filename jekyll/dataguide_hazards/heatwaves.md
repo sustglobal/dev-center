@@ -10,6 +10,9 @@ Heatwaves represent an extended period of perilously warm weather at a specific 
 
 ## Methodologies
 **Heatwave Days per Year** 
+
+Total days in a given year exceeding the historic 98th percentile for temperature.
+
 This indicator uses NASA Global Downscaled Daily Projections ([GDDP](https://www.nasa.gov/nex/gddp)) to estimate the number of days exceeding the historic 98th percentile of annual temperatures. This temperature threshold varies spatially, based on the 98th percentile of a given location.  As such, the heatwave metric indicates anomalously high temperatures relative to what was locally typical in the past. 
 
 ## Known Limitations
