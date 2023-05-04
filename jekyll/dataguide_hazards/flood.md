@@ -10,6 +10,9 @@ Flooding captures the likelihood of a location being directly exposed to floodin
 
 ## Methodologies
 **Flood potential**
+
+Annual probability of a flood with depth greater than 0.5 meters at an asset location.
+
 Indicates the projected flood likelihood, expressed as timeseries of annual expected probability of flooding greater than 0.5 meters at the asset level.  We derive this method from WRI's [Aqueduct Flood Hazard Maps](https://www.wri.org/data/aqueduct-floods-hazard-maps) product, for both inland and coastal floods.  Using a suite of flood maps of varying intensity, we derive an estimate of the expected recurrence period for any amount of flooding.
 
 **Observed floods**

@@ -10,6 +10,9 @@ Water is a requirement for societal development and progress, and its availabili
 
 ## Methodologies
 **Unified Water Stress** 
+
+Unitless waterstress score, combining SPEI and WRI Aqueduct.  Higher values indicate greater waterstress, with values greater than 0.7 generally considered to be at high stress.
+
 This indicator combines the water stress score and the drought indicator to one single indicator for water stress, using a weighted mean, with weights derived from the methodology designed by the World Resources Institute in their [Global Aqueduct Methodology](https://doi.org/10.46830/writn.18.00146) (Page 35, Table 3). This provides a comparable 0.0 to 1.0 range to indicate exposure to water stress. The indicator captures both meteorological factors as well as anthropogenic factors associated with water stress.
 
 Unified Water Stress is the recommended default indicator for future water stress risk.

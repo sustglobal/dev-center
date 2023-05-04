@@ -10,6 +10,9 @@ Tropical cyclones, also referred to as hurricanes and typhoons, are one of the c
 
 ## Methodologies
 **Future Cyclone Projections**
+
+Annual probability of a Category 1 or higher cyclone at an asset location.
+
 Indicates the projected cyclone likelihood, expressed as timeseries of annual expected probability at the asset level. This product is derived from the [STORM cyclone model](https://www.science.org/doi/10.1126/sciadv.abm8438), which simulates future hurricane generation under climate change. We estimate the likelihood of any cyclone (Category 1 and above) occurring in a given year.
 
 **Observed tropical cyclones**
