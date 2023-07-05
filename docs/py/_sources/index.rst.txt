@@ -71,10 +71,6 @@ well. An example of this is available just above.
 +-----------------+--------------------------+
 | cyclone         | obs_freq                 |
 +-----------------+--------------------------+
-| wildfire        | burned_area_norm         |
-+-----------------+--------------------------+
-| wildfire        | fire_kbdi_susceptibility |
-+-----------------+--------------------------+
 | wildfire        | unified_prob             |
 +-----------------+--------------------------+
 | wildfire        | obs_score                |
