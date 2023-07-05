@@ -55,7 +55,7 @@ The following demonstrates how to access the physical risk exposure timeseries d
     import pandas as pd
 
     ds = pf.physical_risk_exposure()
-    ts = ds.timeseries(ds.scenarios.get('ssp585'), ds.indicators.get('wildfire', 'burned_area_norm'))
+    ts = ds.timeseries(ds.scenarios.get('ssp585'), ds.indicators.get('wildfire', 'unified_prob'))
     df = pd.DataFrame(ts.to_dicts())
 
 The Sust Global API supports several of the `IPCC CMIP6 climate scenarios <https://www.carbonbrief.org/cmip6-the-next-generation-of-climate-models-explained>`_, including ``ssp126``, ``ssp245`` and ``ssp585``).
