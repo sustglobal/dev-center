@@ -4,7 +4,7 @@ toc: true
 ---
 
 **Introduction**
-The tmpdatest Climate Explorer dashboard is intended as a simple view on asset and regional risk exposure.  It showcases projected and historic risk exposure, Value at Risk, and fundamental climate variables.  
+The Climate Explorer dashboard is intended as a simple view on asset and regional risk exposure.  It showcases projected and historic risk exposure, Value at Risk, and fundamental climate variables.  
 
 This document goes through the different panels and graphics on the dashboard, and explains the datasets behind it. It should be read in conjunction with the [Data Guide](./dataguide.html).
 

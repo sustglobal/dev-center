@@ -4,7 +4,7 @@ toc: true
 ---
 
 ## About the Data Guide
-Sust Global trrest enables users to access physical risk data across multiple perils and forward-looking time horizons. We take comprehensive measures to ensure data is validated and precise, so users can make climate-informed decisions. 
+Sust Global enables users to access physical risk data across multiple perils and forward-looking time horizons. We take comprehensive measures to ensure data is validated and precise, so users can make climate-informed decisions. 
 
 This document provides users with an introduction to Sust Global’s data capabilities. This includes an overview of climate modeling and scenario development, and how to use our hazard and indicator data to derive intelligence and insights.
 
