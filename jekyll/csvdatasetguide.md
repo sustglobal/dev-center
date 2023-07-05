@@ -15,7 +15,7 @@ Comma separated value (CSV) files contain the physical climate risk analysis inf
 
 Here are the descriptions of the naming parameters:
 
-1. Reporting Data Type {`reporting_data_type`}: This tells you the risk variable the CSV contains data for: annual_temperature, annual_precipitation, cyclones, extreme_precipitation, fire_kbdi_susceptibility, fire_risk, flood, heatwaves and drought(SPEI), sea level rise (SLR)
+1. Reporting Data Type {`reporting_data_type`}: This tells you the risk variable the CSV contains data for: annual_temperature, annual_precipitation, cyclones, extreme_precipitation, fire_risk, flood, heatwaves and drought (SPEI), sea level rise (SLR)
 2. Dataset Name {`dataset_name`}: This is the name assigned to project or dataset (portfolio) by the customer or Sust Global
 3. Scenario ID {`scenarioID`}: This tells you which scenario the data within the CSV file was generated under, and it can be either: ssp126 (Strong Mitigation); ssp245 (Middle of the Road); or ssp585 (High Emissions).
 4. Bounds: For some files, this will tell you whether the data presented is the `lbd` (lower bound, which is the 16th percentile), `ubd` (upper bound, which is the 84th percentile), or the `median` (in which case, there will be nothing additional written in the file name at all) outputs from the climate models. The exception is cyclones, which use a different upper and lower bound (+/- 1 standard deviation) and we use the mean, rather than the median, output from the climate models. 

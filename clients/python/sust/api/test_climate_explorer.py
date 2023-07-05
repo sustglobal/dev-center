@@ -73,7 +73,7 @@ class SmokeTestCase(unittest.TestCase):
         # one entry per asset...
         td = ds.timeseries(
                 ds.scenarios.get('ssp245'),
-                ds.indicators.get('wildfire', 'fire_kbdi_susceptibility'),
+                ds.indicators.get('wildfire', 'unified_prob'),
                 ds.measures.get('mid'),
         ).to_dicts()
         self.assertTrue(td)
