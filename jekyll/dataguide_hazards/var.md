@@ -7,12 +7,13 @@ permalink: /var.html
 
 **Data Description**
 
-Physical perils produce damage that can be quantified using historical data.  The purpose of Financial Risk Analysis (sometimes referred to as Value-at-Risk or VaR) is to estimate the annual damage to a structure using the full suite of hazard exposure data, in conjunction with structure type and purpose.  Financial Risk Analysis calculates a probabilistic estimate of annual damage for acute hazards:
-- Wildfires
-- Floods
-- Cyclones
+Physical perils produce damage that can be quantified using historical data.  Incorporating data on an assets economic function and structural function, we can get even more precise financial risk estimates.  Currently, Sust Global focuses on two forms of financial risk analysis (sometimes referred to as Value-at-Risk or VaR):
 
-Using hazard exposure data on the frequency of different event intensities, we translate each event into an estimate of damage from that intensity using well-established and peer-reviewed damage functions.  We then integrate across all of these expected events, weighted by their likelihood, to come to a single annual value of percentage loss.
+1. Structural Damage - Direct damage to structures, including homes, warehouses, businesses, etc., due to climate hazards, defined in terms of percentage of the structures value expected to be destroyed.  For structural damage, we estimate impacts from wildfires, floods (both coastal and inland), and tropical cyclones.
+
+2. Business Interruption - Processes that make it impossible to conduct business for a certain period of time, either by destroying business assets, including structures; by making business impossible to conduct; or by impacting transportation or energy grid networks in the nearby vicinity of the business.  We define business interruption in terms of days per year in which business cannot be conducted.  For business interruption, we estimate impacts from wildfires, floods (both coastal and inland), tropical cyclones, and heatwaves.  We use two tiers of business interruption: tier 1 involves impacts to structure itself, while tier 2 involves impacts to an asset's surrounding road network and powerlines.  Tier 1 is available through the API and dashboard, while tier 2 is available as a csv dataset on request.  We estimate days of interruption using a combination of empirical damage functions and models of future weather so severe business could not be conducted.
+
+The methodology involves determining an assets exposure to a given hazard under different scenarios of climate change throughout the 21st century.  This hazard exposure is then translated into expected losses, in terms of either structural damage or business interruption, via a damage function, also known as a vulnerability curve.  These damage functions are based on observational data and allow us to estimate how much damage a given hazard, at a given intensity would be expected to do to a specific type of asset, structure, or business.  Combining hazard exposure data with a damage function yields expected losses at a given hazard intensity.  Then, for hazards for which different levels of intensity exist, we integrate over the intensity values to derive a single annual value of expected loss.
 
 ## Methodologies
 ### Floods
@@ -26,8 +27,11 @@ To calculate financial risk for cyclones, we start with wind speed exposure data
 ### Wildfires
 For wildfire, we take a different approach to measuring damage.  In the event of exposure to wildfire within 1km of an asset, we assume that there is a 10% change that the asset is affected by the fire, and if affected, a fire would destroy 75% of an assets value.  These values are derived from research on historic impacts from wildfires in California.  
 
+### Heatwaves
+We use heatwaves in the business interruption analysis, which we define as days per year above the 98th percentile for temperature of the previous 30 years.  The 98th percentile value is location- and time period-specific due to the fact that whether a heatwave disrupts business depends in part on normal temperature ranges in a given location, as well as whether those normal ranges encourage the use of adaptive technology, such as air conditioners.
+
 ## Asset Type Specific Damages
-In order to more accurately calculate financial risk, it is possible to upload asset types, via the `label:type` column.  This allows us to apply specialized impact functions based on the uploaded asset type, accounting for industry-specific characteristics.
+In order to more accurately calculate financial risk, it is possible to upload asset types, via the `label:type` column.  This allows us to apply specialized impact functions based on the uploaded asset type, accounting for industry- and structure-specific characteristics.
 
 ## Available Asset Types
 
