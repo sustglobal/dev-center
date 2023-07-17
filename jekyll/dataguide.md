@@ -78,8 +78,6 @@ To create summarization labels we analyze a representative sample of global poin
 | hazard          | indicator                | unit           | value_min | value_max | value_norm | spatial_resolution (in meters) |
 | -               | -                        | -              | -         | -         | -          | -                              |
 | wildfire        | obs_score                | score          | 0.0       | 1.0       | 1.0        | 500.0                          |
-| wildfire        | burned_area_norm         | score          | 0.0       | 1.0       | 0.1        | 300.0                          |
-| wildfire        | fire_kbdi_susceptability | score          | 0.0       | 1.0       | 0.1        | 300.0                          |
 | wildfire        | unified_prob             | probability    | 0.0       | 1.0       | 0.5        | 300.0                          |
 | flood_potential | obs_score                | score          | 0.0       | 1.0       | 1.0        | 250.0                          |
 | flood_potential | inland_flood_prob        | probability    | 0.0       | 1.0       | 0.5        | 1000.0                         |

@@ -197,27 +197,9 @@ Giving you a representative response as follows:
 
 "hazard": "wildfire",
 
-"indicator": "burned_area_norm",
+"indicator": "unified_prob",
 
-"unit": "score",
-
-"value_min": 0.0,
-
-"value_max": 1.0,
-
-"value_norm": 1.0,
-
-"spatial_resolution": 6900.0
-
-},
-
-{
-
-"hazard": "wildfire",
-
-"indicator": "fire_kbdi_susceptibility",
-
-"unit": "score",
+"unit": "prob",
 
 "value_min": 0.0,
 
@@ -228,6 +210,7 @@ Giving you a representative response as follows:
 "spatial_resolution": 300.0
 
 },
+
 
 {
 

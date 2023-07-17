@@ -278,7 +278,7 @@ Additional query parameters that may be useful include `scenario`, `hazard`, `in
 An example of filtering the risk exposure dataset to SSP2-4.5 for a specific wildfire-related indicator:
 
 ```
-curl -i "https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/datasets/physical/items?scenario=ssp245&hazard=wildfire&indicator=burned_area_norm&measure=mid" --header "X-SustGlobal-APIKey: $APIKEY" --header "X-SustGlobal-Project: $PROJECT"
+curl -i "https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/datasets/physical/items?scenario=ssp245&hazard=wildfire&indicator=unfied_prob&measure=mid" --header "X-SustGlobal-APIKey: $APIKEY" --header "X-SustGlobal-Project: $PROJECT"
 ```
 
 Please review the API Reference for documentation of all supported query parameters.

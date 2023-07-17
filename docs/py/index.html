@@ -203,7 +203,7 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="n">ds</span> <span class="o">=</span> <span class="n">pf</span><span class="o">.</span><span class="n">physical_risk_exposure</span><span class="p">()</span>
-<span class="n">ts</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">timeseries</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">scenarios</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;ssp585&#39;</span><span class="p">),</span> <span class="n">ds</span><span class="o">.</span><span class="n">indicators</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;wildfire&#39;</span><span class="p">,</span> <span class="s1">&#39;burned_area_norm&#39;</span><span class="p">))</span>
+<span class="n">ts</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">timeseries</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">scenarios</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;ssp585&#39;</span><span class="p">),</span> <span class="n">ds</span><span class="o">.</span><span class="n">indicators</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;wildfire&#39;</span><span class="p">,</span> <span class="s1">&#39;unified_prob&#39;</span><span class="p">))</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">ts</span><span class="o">.</span><span class="n">to_dicts</span><span class="p">())</span>
 </pre></div>
 </div>
@@ -227,12 +227,6 @@ well. An example of this is available just above.</p>
 </tr>
 <tr class="row-odd"><td><p>cyclone</p></td>
 <td><p>obs_freq</p></td>
-</tr>
-<tr class="row-even"><td><p>wildfire</p></td>
-<td><p>burned_area_norm</p></td>
-</tr>
-<tr class="row-odd"><td><p>wildfire</p></td>
-<td><p>fire_kbdi_susceptibility</p></td>
 </tr>
 <tr class="row-even"><td><p>wildfire</p></td>
 <td><p>unified_prob</p></td>

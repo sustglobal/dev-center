@@ -316,7 +316,7 @@ available earlier in this guide.</p>
 <p>Additional query parameters that may be useful include <code class="language-plaintext highlighter-rouge">scenario</code>, <code class="language-plaintext highlighter-rouge">hazard</code>, <code class="language-plaintext highlighter-rouge">indicator</code> and `measure.
 An example of filtering the risk exposure dataset to SSP2-4.5 for a specific wildfire-related indicator:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -i "https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/datasets/physical/items?scenario=ssp245&amp;hazard=wildfire&amp;indicator=burned_area_norm&amp;measure=mid" --header "X-SustGlobal-APIKey: $APIKEY" --header "X-SustGlobal-Project: $PROJECT"
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -i "https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/datasets/physical/items?scenario=ssp245&amp;hazard=wildfire&amp;indicator=unfied_prob&amp;measure=mid" --header "X-SustGlobal-APIKey: $APIKEY" --header "X-SustGlobal-Project: $PROJECT"
 </code></pre></div></div>
 
 <p>Please review the API Reference for documentation of all supported query parameters.</p>
