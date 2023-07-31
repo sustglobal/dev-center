@@ -11,12 +11,12 @@ Tropical cyclones, also referred to as hurricanes and typhoons, are one of the c
 ## Methodologies
 **Future Cyclone Projections**
 
-Annual probability of a Category 1 or higher cyclone at an asset location.
+We present the modeled annual probability of a Category 1 or higher cyclone at an asset location.
 
-Indicates the projected cyclone likelihood, expressed as timeseries of annual expected probability at the asset level. This product is derived from the [STORM cyclone model](https://www.science.org/doi/10.1126/sciadv.abm8438), which simulates future hurricane generation under climate change. We estimate the likelihood of any cyclone (Category 1 and above) occurring in a given year.
+This product indicates the projected cyclone likelihood, expressed as timeseries of annual expected probability at the asset level. It is derived from the [STORM cyclone model](https://www.science.org/doi/10.1126/sciadv.abm8438), which simulates future hurricane generation under climate change. We estimate the likelihood of any cyclone (Category 1 and above) occurring in a given year.
 
 **Observed tropical cyclones**
-We use cyclone tracks from the International Best Track Archive for Climate Stewardship ([IBTrACS](https://www.ncei.noaa.gov/products/international-best-track-archive)). The IBTrACS archive combines tropical cyclone datasets from global agencies and harmonizes them into a single dataset. It is endorsed by the World Meteorological Organization as the official data source for cyclone track data. We then assume a constant ‘impact radius’ of 150 miles/ 241km around the central storm track.
+We present the observed annual frequency of Category 1 or higher cyclones at an asset location. We derive these observed frequencies from the International Best Track Archive for Climate Stewardship ([IBTrACS](https://www.ncei.noaa.gov/products/international-best-track-archive)) cyclone tracs. The IBTrACS archive combines tropical cyclone datasets from global agencies and harmonizes them into a single dataset. It is endorsed by the World Meteorological Organization as the official data source for cyclone track data. We then assume a constant ‘impact radius’ of 150 miles/ 241km around the central storm track.
 
 ## Known Limitations
 - Future cyclones, particularly the impact of climate change on frequency and intensity, is uncertain. This is a very active area of research in the climate resilience community. For more information, see this [Atlantic article](https://www.theatlantic.com/science/archive/2022/09/climate-change-impact-hurricane-ian/671604/?utm_medium=email&_hsmi=2&_hsenc=p2ANqtz-90aWgEMe64CvrUI9IdvZw4nDF2AgK90jY4P-xHHeVouG1KBG-KSXRPTRb24d_9r3-3INFei7HCbHhKm3NffMPc_E9xDw3r5S-tHcPrg_8z2gmmo4U&utm_content=2&utm_source=hs_email) on the state of cyclone science. 
