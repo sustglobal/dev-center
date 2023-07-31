@@ -83,7 +83,9 @@ To create summarization labels we analyze a representative sample of global poin
 | flood_potential | inland_flood_prob        | probability    | 0.0       | 1.0       | 0.5        | 1000.0                         |
 | cyclone         | obs_freq                 | frequency      | 0.0       | 7.0       | 2.0        | 1000.0                         |
 | cyclone         | prob                     | probability    | 0.0       | 1.0       | 0.5        | 10000.0                        |
+| heatwave        | obs_freq                 | day            | 0.0       | 366.0     | 200.0      | 10000.0                        |
 | heatwave        | freq                     | day            | 0.0       | 366.0     | 200.0      | 25000.0                        |
+| sea_level_rise  | obs_change               | meter          | -2.0      | 2.0       | 1.0        | 18500.0                        |
 | sea_level_rise  | change                   | meter          | 0.0       | 100.0     | 1.0        | 100000.0                       |
 | water_stress    | obs_score                | score          | 0.0       | 1.0       | 1.0        | 500.0                          |
 | water_stress    | spei_norm                | score          | 0.0       | 1.0       | 1.0        | 25000.0                        |
