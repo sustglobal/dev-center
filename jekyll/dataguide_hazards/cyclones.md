@@ -15,7 +15,7 @@ Annual probability of a Category 1 or higher cyclone at an asset location.
 
 This product indicates the projected cyclone likelihood, expressed as timeseries of annual expected probability at the asset level. It is derived from the [STORM cyclone model](https://www.science.org/doi/10.1126/sciadv.abm8438), which simulates future hurricane generation under climate change. We estimate the likelihood of any cyclone (Category 1 and above) occurring in a given year.
 
-**Observed tropical cyclones**
+**Observed Tropical Cyclones**
 We present the observed annual frequency of Category 1 or higher cyclones at an asset location. We derive these observed frequencies from the International Best Track Archive for Climate Stewardship ([IBTrACS](https://www.ncei.noaa.gov/products/international-best-track-archive)) cyclone tracs. The IBTrACS archive combines tropical cyclone datasets from global agencies and harmonizes them into a single dataset. It is endorsed by the World Meteorological Organization as the official data source for cyclone track data. We then assume a constant ‘impact radius’ of 150 miles/ 241km around the central storm track.
 
 ## Known Limitations
