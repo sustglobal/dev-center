@@ -19,7 +19,7 @@ Unified Water Stress is the recommended default indicator for future water stres
 
 **Aqueduct Water Stress Score**: The World Resource Institute’s <i>Aqueduct</i> models future water stress risk. This state-of-the-art model has been extensively used by researchers in academia and industry to assess portfolio water risk. The water stress score is calculated as the ratio of water withdrawal to renewable water availability, and is indicative of competition for local water resources. 
 
-**SPEI Drought**: Standardized Precipitation Evapotranspiration Index (SPEI) is a drought index base on precipitation and temperature.  Our product applied this index to NASA's Global Downscaled Daily Projections [GDDP](https://www.nasa.gov/nex/gddp). SPEI represents the magnitude of precipitation deficits or surplus over the preceding 12-month period, after accounting for temperature-driven effects on evapotranspiration. 
+**SPEI Drought**: Standardized Precipitation Evapotranspiration Index (SPEI) is a drought index based on precipitation and temperature.  Our product applied this index to NASA's Global Downscaled Daily Projections [GDDP](https://www.nasa.gov/nex/gddp). SPEI represents the magnitude of precipitation deficits or surplus over the preceding 12-month period, after accounting for temperature-driven effects on evapotranspiration. 
 
 **Historic Water Stress**
 We use the same methodology as the unified water stress indicator, except with observed rather than modeled datasets of water stress and drought.
