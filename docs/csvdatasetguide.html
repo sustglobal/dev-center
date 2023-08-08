@@ -376,12 +376,12 @@ Fig 27: summary scores CSV
 <p>Please note that the <code class="language-plaintext highlighter-rouge">window</code> field refers to the time horizon, which is 15 years in this case. <code class="language-plaintext highlighter-rouge">window</code> can have a value of 5 years, 15 years or 30 years. 
 This dataset shows maximum forward-looking risk exposure to a specific hazard for an asset over the specified time horizon. These numbers are used to categorize the asset as LOW, MEDIUM, or HIGH risk (as seen in the summary labels CSV dataset).</p>
 
-<h2 id="value-at-risk">
-<a class="anchor" href="#value-at-risk" aria-hidden="true"><span class="octicon octicon-link"></span></a>Value at Risk</h2>
+<h2 id="financial-risk">
+<a class="anchor" href="#financial-risk" aria-hidden="true"><span class="octicon octicon-link"></span></a>Financial Risk</h2>
 <p>The naming convention for the historic risk exposure datasets is as follows:
-sustglobal_asset_impact_{dataset_name}_{ScenarioID}.csv</p>
+<code class="language-plaintext highlighter-rouge">sustglobal_asset_{impact_type}_{dataset_name}_{ScenarioID}.csv</code>, where <code class="language-plaintext highlighter-rouge">impact_type</code> can be either <code class="language-plaintext highlighter-rouge">financial_risk</code>, corresponding to the risk of structural damage to an asset in terms of a percentage of an assets total value, or <code class="language-plaintext highlighter-rouge">business_interrpution</code>, corresponding to the risk of lost business income in terms of days of business interruption.</p>
 
-<p>In these files, each row corresponds to one asset location, and the columns correspond to the expected percent annual Value-at-Risk.  These include information on <code class="language-plaintext highlighter-rouge">cyclones</code>, <code class="language-plaintext highlighter-rouge">wildfire</code>, and <code class="language-plaintext highlighter-rouge">floods</code>, for <code class="language-plaintext highlighter-rouge">baseline</code>, <code class="language-plaintext highlighter-rouge">2030</code>, <code class="language-plaintext highlighter-rouge">2050</code>, and <code class="language-plaintext highlighter-rouge">2080</code>.</p>
+<p>In these files, each row corresponds to one asset location, and the columns correspond to the expected percent annual Value-at-Risk.  These include information on <code class="language-plaintext highlighter-rouge">cyclones</code>, <code class="language-plaintext highlighter-rouge">wildfire</code>, <code class="language-plaintext highlighter-rouge">floods</code> and <code class="language-plaintext highlighter-rouge">heatwaves</code>, for <code class="language-plaintext highlighter-rouge">baseline</code>, <code class="language-plaintext highlighter-rouge">2030</code>, <code class="language-plaintext highlighter-rouge">2050</code>, and <code class="language-plaintext highlighter-rouge">2080</code>.</p>
 
 
           </div>
@@ -412,7 +412,7 @@ sustglobal_asset_impact_{dataset_name}_{ScenarioID}.csv</p>
 <li class="toc-entry toc-h3"><a href="#forward-looking-summary-score-datasets">Forward looking summary score datasets</a></li>
 </ul>
 </li>
-<li class="toc-entry toc-h2"><a href="#value-at-risk">Value at Risk</a></li>
+<li class="toc-entry toc-h2"><a href="#financial-risk">Financial Risk</a></li>
 </ul>
           </div>
         </div>

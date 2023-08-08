@@ -132,9 +132,9 @@ This view is another Asset Type map which can be used to select assets for visua
 <b>Fig 8:</b> Asset Type map
 </p>
 
-### Value at Risk
+### Financial Risk
 
-This view describes asset-level Value-at-Risk for cyclones, floods, and wildfires.  It allows users to easily visalize the annual expected loss from exposure to physical perils, and to see how this risk changes in the future.  Results are shown for historic, near-term (2030), mid-term (2050) and long-term (2080).  For more information on the methodology behind Value-at-Risk, see the [Data Guide - Value at Risk](./var.html).
+This view describes asset-level financial risk for structural damage from cyclones, floods, and wildfires and for business interruption from cyclones, floods, wildfires, and heatwaves.  It allows users to easily visalize the annual expected loss from exposure to physical perils, and to see how this risk changes in the future.  Results are shown for historic, near-term (2030), mid-term (2050) and long-term (2080).  For more information on the methodology behind financial risk, see the [Data Guide - Financial Risk](./var.html).
 
 <p align="center">
 <img height="300" src="assets/images/userguide/ValueAtRisk_tmp.png">
@@ -168,9 +168,9 @@ For a selected `Climate Scenario`, we use the mean over asset type, maximum over
 3. We create categories using this maximum risk exposure, to classify each asset as Low, Medium, or High risk.  Each hazard has specific classification breakpoints, which are derived from a representative sample of global risk.  Risk categories are listed in the [Data Guide](./dataguide.html). 
 
 
-### Riskiest Assets by Value-at-Risk
+### Riskiest Assets by Financial Risk
 
-The top-right Climate Explorer bar chart shows the top 20 assets in a portfolio with greatest physical financial risk over a 30 year time horizon (2023-2052). It provides a way to easily view high priority assets, and prioritize deeper investigation.  For more information, see the [Data Guide - Value at Risk](./var.html).  This view is in contrast to the topmost Riskiest Assets view, which shows exposure without considering financial valuations of risk.
+The top-right Climate Explorer bar chart shows the top 20 assets in a portfolio with greatest financial risk due to structural damage or business interruption over a 30 year time horizon (2023-2052). It provides a way to easily view high priority assets, and prioritize deeper investigation.  For more information, see the [Data Guide - Financial Risk](./var.html).  This view is in contrast to the topmost Riskiest Assets view, which shows exposure without considering financial valuations of risk.
 
 <p align="center">
 <img height="300" src="assets/images/userguide/ValueAtRisk_tmp2.png">
