@@ -5,6 +5,26 @@ toc: true
 
 The following is a list of running product updates to the Sust Global datasets and Climate Explorer.
 
+## **08AUG2023 V1.0.3 Release**
+
+**Data Product Updates**
+1. Updates to observed indicators
+    * `Observed cyclones` - Updated to 2022 and to updated to reflect Cat1 and above storms rather than Cat3 and above storms provided previously, with monthly cadence.
+    * `Observed water stress` Updated to 2022, with monthly cadence.
+    * `Observed flood` Updated to April, 2022, with monthly cadence.
+    * `Observed heatwaves` New indicator available.
+    * `Observed SLR` New indicator available based on nearest tide gauge dataset, interpolated globally.
+2. Bug fixes and updates
+    * `Heatwaves` and `SPEI` have been updated to use the correct data for SSP1.
+    * For `Water Stress Score`, we have methodology updates, changing order in which interpolation, censoring and gap-filling occur for easier data processing.
+    * For `Water Stress Unified`, we fixed a bug that led to incorrect unification weights in some geographies.
+    * For `Cyclone Value-at-Risk`, we now interpolate probabilities, not wind speeds.
+    * For `Financial Risk`, we now calculate uncertainty separately for upper and lower bounds.
+
+**New Product Features**
+1. Financial risk analysis now include risk of business interruption, in terms of days of interruption due to cyclones, floods, wildfires, and heatwaves.
+2. Users can now download filtered downloads of CSVs through climate explorer, allowing users to download specific hazard summaries or indicator time series through the UI portfolio management. 
+
 ## **11APR2023 V1.0.2 Release**
 
 **Data Product Updates**
