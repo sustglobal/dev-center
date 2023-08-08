@@ -46,6 +46,44 @@
             <h1>Product Updates</h1>
             <p>The following is a list of running product updates to the Sust Global datasets and Climate Explorer.</p>
 
+<h2 id="08aug2023-v103-release">
+<a class="anchor" href="#08aug2023-v103-release" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>08AUG2023 V1.0.3 Release</strong>
+</h2>
+
+<p><strong>Data Product Updates</strong></p>
+<ol>
+  <li>Updates to observed indicators
+    <ul>
+      <li>
+<code class="language-plaintext highlighter-rouge">Observed cyclones</code> - Updated to 2022 and to updated to reflect Cat1 and above storms rather than Cat3 and above storms provided previously, with monthly cadence.</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">Observed water stress</code> Updated to 2022, with monthly cadence.</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">Observed flood</code> Updated to April, 2022, with monthly cadence.</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">Observed heatwaves</code> New indicator available.</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">Observed SLR</code> New indicator available based on nearest tide gauge dataset, interpolated globally.</li>
+    </ul>
+  </li>
+  <li>Bug fixes and updates
+    <ul>
+      <li>
+<code class="language-plaintext highlighter-rouge">Heatwaves</code> and <code class="language-plaintext highlighter-rouge">SPEI</code> have been updated to use the correct data for SSP1.</li>
+      <li>For <code class="language-plaintext highlighter-rouge">Water Stress Score</code>, we have methodology updates, changing order in which interpolation, censoring and gap-filling occur for easier data processing.</li>
+      <li>For <code class="language-plaintext highlighter-rouge">Water Stress Unified</code>, we fixed a bug that led to incorrect unification weights in some geographies.</li>
+      <li>For <code class="language-plaintext highlighter-rouge">Cyclone Value-at-Risk</code>, we now interpolate probabilities, not wind speeds.</li>
+      <li>For <code class="language-plaintext highlighter-rouge">Financial Risk</code>, we now calculate uncertainty separately for upper and lower bounds.</li>
+    </ul>
+  </li>
+</ol>
+
+<p><strong>New Product Features</strong></p>
+<ol>
+  <li>Financial risk analysis now include risk of business interruption, in terms of days of interruption due to cyclones, floods, wildfires, and heatwaves.</li>
+  <li>Users can now download filtered downloads of CSVs through climate explorer, allowing users to download specific hazard summaries or indicator time series through the UI portfolio management.</li>
+</ol>
+
 <h2 id="11apr2023-v102-release">
 <a class="anchor" href="#11apr2023-v102-release" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>11APR2023 V1.0.2 Release</strong>
 </h2>
@@ -611,6 +649,7 @@ Fig 08JUL2022 B: Relative change summary view
         <div class="col-3">
           <div id="toc-container">
             <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h2"><a href="#08aug2023-v103-release">08AUG2023 V1.0.3 Release</a></li>
 <li class="toc-entry toc-h2"><a href="#11apr2023-v102-release">11APR2023 V1.0.2 Release</a></li>
 <li class="toc-entry toc-h2"><a href="#14feb2023-v101-release">14FEB2023 V1.0.1 Release</a></li>
 <li class="toc-entry toc-h2"><a href="#05jan2023-release">05JAN2023 Release</a></li>
