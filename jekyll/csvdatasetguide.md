@@ -318,9 +318,9 @@ Fig 27: summary scores CSV
 Please note that the `window` field refers to the time horizon, which is 15 years in this case. `window` can have a value of 5 years, 15 years or 30 years. 
 This dataset shows maximum forward-looking risk exposure to a specific hazard for an asset over the specified time horizon. These numbers are used to categorize the asset as LOW, MEDIUM, or HIGH risk (as seen in the summary labels CSV dataset).
 
-## Value at Risk
+## Financial Risk
 The naming convention for the historic risk exposure datasets is as follows:
-sustglobal_asset_impact_{dataset_name}_{ScenarioID}.csv
+`sustglobal_asset_{impact_type}_{dataset_name}_{ScenarioID}.csv`, where `impact_type` can be either `financial_risk`, corresponding to the risk of structural damage to an asset in terms of a percentage of an assets total value, or `business_interrpution`, corresponding to the risk of lost business income in terms of days of business interruption.
 
-In these files, each row corresponds to one asset location, and the columns correspond to the expected percent annual Value-at-Risk.  These include information on `cyclones`, `wildfire`, and `floods`, for `baseline`, `2030`, `2050`, and `2080`.
+In these files, each row corresponds to one asset location, and the columns correspond to the expected percent annual Value-at-Risk.  These include information on `cyclones`, `wildfire`, `floods` and `heatwaves`, for `baseline`, `2030`, `2050`, and `2080`.
 
