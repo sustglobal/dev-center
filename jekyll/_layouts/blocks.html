@@ -1,0 +1,18 @@
+---
+layout: default
+---
+
+<div class="max-w-3xl">
+  <header class="mb-9">
+    <h1 class="font-display text-3xl tracking-tight text-slate-900 font-bold">{{ page.title }}</h1>
+    {% if page.subtitle and page.subtitle != empty %}
+      <p class="text-lg text-slate-600 mt-9">{{ page.subtitle }}</p>
+    {% endif %}
+  </header>
+  {% for block in page.blocks %}
+    {% include blocks/{{ block.block }}.html params=block %}
+  {% endfor %}
+</div>
+
+
+

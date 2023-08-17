@@ -1,0 +1,21 @@
+<div class="grid grid-cols-1 gap-7 md:gap-x-12 md:gap-y-14 md:grid-cols-2">
+  {% for item in include.params.cards %}
+    <div class="relative rounded-xl p-6 shadow-xl shadow-slate-200 bg-sky-500 group overflow-hidden">
+      {% if item.icon and item.icon != empty %}
+        <div class="absolute bottom-0 right-2 text-sky-400 svg-full w-36 h-36">
+          {% include icons/{{ item.icon }}.svg %}           
+        </div>
+      {% endif %}
+      <div class="relative">
+        <h2 class="font-display font-bold text-xl text-white">{{ item.heading }}</h2>
+        <p class="mt-2 text-base text-slate-100 leading-relaxed max-w-[18rem]">{{ item.copy }}</p>
+        {% if item.button.url and item.button.url != empty %}
+          <div class="inline-block mt-4 rounded-md bg-sky-600 px-2.5 py-1.5 text-sm font-semibold font-display text-white group-hover:bg-sky-700">{{ item.button.text }}</div>
+        {% endif %}
+      </div>
+      {% if item.button.url and item.button.url != empty %}
+        <a href="{{ item.button.url | relative_url }}" class="absolute inset-0" aria-label="{{ item.button.text }}"></a>
+      {% endif %}
+    </div>
+  {% endfor %}
+</div>

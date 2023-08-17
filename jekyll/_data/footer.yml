@@ -1,0 +1,26 @@
+---
+description: Home of Sust Global's developer tools, guides and reference documentation.
+menus:
+- heading: Products
+  links:
+  - text: Dashboard
+    url: "https://www.sustglobal.com/products/dashboard/"
+  - text: API
+    url: "https://www.sustglobal.com/products/api-integrations/"
+- heading: Company
+  links:
+  - text: Blog
+    url: "https://www.sustglobal.com/insights/blog/"
+  - text: About Us
+    url: "https://www.sustglobal.com/about/"
+  - text: Privacy Policy
+    url: "https://www.sustglobal.com/privacy/"
+- heading: Get in Touch
+  links:
+  - text: info@sustglobal.com 
+    url: "mailto:info@sustglobal.com"
+  - text: "US: +1 479 847 1813"
+    url: "tel:+1%479-847-1813"
+  - text: "UK: +44 2033 768 384"
+    url: "tel:+44%202033%20768%20384"
+ 

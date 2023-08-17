@@ -1,0 +1,30 @@
+<div class="grid grid-cols-1 gap-6 md:gap-x-12 md:gap-y-14 md:grid-cols-2 mt-7 md:mt-14">
+  {% for section in site.data.navigation_docs %}
+    <div>
+      <div class="flex items-center space-x-2">
+        {% if section.icon and section.icon != empty %}
+          <div class="text-slate-900">
+            {% include icons/{{ section.icon }}.svg %}           
+          </div>
+        {% endif %}
+        {% if section.docs %}
+          {% assign doc_url = section.docs[0] | prepend:"/" %}
+          {% assign p = site.docs | where:"url", doc_url | first %}
+        {% endif %}
+        <a href="{{ p.url | relative_url }}" class="group flex items-center space-x-3 text-slate-900 hover:text-sky-500">
+          <h2 class="font-display font-bold text-lg group-hover:underline underline-offset-4 decoration-1 text-sky-500">{{ section.title }}</h2>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-4 h-4 text-slate-400 group-hover:text-sky-500 mt-0.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+          </svg>
+          <span class="flex items-center space-x-2 border border-sky-100 px-1.5 py-0.5 rounded group-hover:border-sky-200">
+            {% if section.docs %}<span class="uppercase text-[0.6875rem] text-slate-500 group-hover:text-sky-500">{{ section.docs | size }} {{ site.data.translation[site.lang].articles | default: "articles" }}</span>{% endif %}
+          </span>
+        </a>
+      </div>
+      {% if section.description and section.description != empty %}
+        <p class="mt-4 text-base text-slate-500 leading-relaxed max-w-[23rem]">{{ section.description }}</p>
+      {% endif %}
+    </div>
+  {% endfor %}
+</div>

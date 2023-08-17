@@ -1,20 +1,63 @@
-theme: null
-markdown: kramdown
-
-toc:
-  min_level: 2
-  max_level: 3
+---
 
 title: Sust Global Developer Center
+description: Home of Sust Global's developer tools, guides and reference documentation.
+lang: en
+logo: /uploads/logo-wordmark-blue.png
+logo_mark: /uploads/sust-HexLogoONLYwhite.png
+permalink: "/:title/"
 
+social:
+  twitter: "https://twitter.com/sustglobal"
+  linkedin: "https://www.linkedin.com/company/sustglobal/"
+  github: "https://github.com/sustglobal"
+
+google_analytics: 
+
+markdown: kramdown
+highlighter: rouge
+
+toc:
+ min_level: 1
+ max_level: 3
+ list_class: toc
+
+plugins:
+- jekyll-seo-tag
+- jekyll-toc
+
+exclude:
+- vendor
+- ".bundle"
+- ".sass-cache"
+- config
+- Gemfile
+- Gemfile.lock
+- node_modules
+- log
+- tmp
+- Rakefile
+- package.json
+- CHANGELOG
+- LICENSE
+- README
+- "/docs"
+
+livereload: true
+
+collections:
+  docs:
+    output: true
+    permalink: /:name
+
+# Defaults
 defaults:
   - scope:
       path: ""
+      type: docs
     values:
-      layout: "default"
-
-plugins:
-- jekyll-toc
+      layout: doc
+      toc: true
 
 keep_files:
 - py

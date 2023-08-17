@@ -1,0 +1,27 @@
+<div class="mt-14">
+  {% if include.params.heading and include.params.heading != empty %}
+    <h2 class="text-2xl font-bold font-display text-slate-900 mb-4">{{ include.params.heading }}</h2>
+  {% endif %}
+  <div>
+    {% for item in include.params.faqs %}
+      <div x-data="{ expanded: false }" class="border-b border-slate-200">
+        <h3>
+          <button x-on:click="expanded = ! expanded"
+            class="w-full py-5 flex items-center text-left text-base font-semibold font-display text-slate-900 hover:text-sky-500">
+            <span class="grow" :class="{ 'text-sky-500': expanded }">{{ item.title }}</span>
+            <svg xmlns="http://www.w3.org/2000/svg"
+              :class="{ 'rotate-90 text-sky-500': expanded, 'transform-none': !(expanded) }"
+              class="h-5 w-5 duration-300 transform-none" viewBox="0 0 20 20" fill="currentcolor">
+              <path fill-rule="evenodd"
+                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414.0z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </h3>
+        <div x-show="expanded" x-collapse>
+          <div class="max-w-none prose prose-slate pb-8">{{ item.content | markdownify }}</div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
