@@ -1,77 +1,1104 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" class="scroll-smooth">
+
   <head>
-    <link rel="shortcut icon" type="image/ico" href="assets/images/favicon.ico">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link href='https://use.fontawesome.com/releases/v5.8.1/css/all.css'>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
-            integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
-            crossorigin="anonymous"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
-            integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
-            crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/assets/css/main.css?v=">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Sust Global Developer Center | Home of Sust Global’s developer tools, guides and reference documentation.</title>
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="Sust Global Developer Center" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="Home of Sust Global’s developer tools, guides and reference documentation." />
+<meta property="og:description" content="Home of Sust Global’s developer tools, guides and reference documentation." />
+<link rel="canonical" href="http://localhost:4000/" />
+<meta property="og:url" content="http://localhost:4000/" />
+<meta property="og:site_name" content="Sust Global Developer Center" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Sust Global Developer Center" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","description":"Home of Sust Global’s developer tools, guides and reference documentation.","headline":"Sust Global Developer Center","name":"Sust Global Developer Center","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/uploads/logo-wordmark-blue.png"}},"url":"http://localhost:4000/"}</script>
+<!-- End Jekyll SEO tag -->
 
-    <title>Sust Global Developer Center</title>
+  <meta property="og:image" content="">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="shortcut icon" type="image/png" href="http://localhost:4000/uploads/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@600;700&display=swap" rel="stylesheet">
+  <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  
+</head>
 
-  </head>
+  <body x-data="{ docs: false, mobile: false }" class="relative">
+  
+    <header @click.outside="mobile = false"
+  class="sticky top-0 z-50 bg-white shadow-md shadow-slate-900/5 transition duration-500">
+  <div class="mx-auto max-w-7xl flex flex-wrap items-center space-x-8 justify-between px-6 lg:px-8 py-4">
+    <div class="flex items-center">
+      <button @click="docs = ! docs" type="button" class="relative lg:hidden mr-3" aria-label="Open navigation">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"
+          class="h-6 w-6 stroke-slate-500">
+          <path d="M4 7h16M4 12h16M4 17h16"></path>
+        </svg>
+      </button>
+      <a href="/">
+        
+          <img class="h-7 hidden sm:block" src="http://localhost:4000/uploads/logo-wordmark-blue.png" width="125" height="32" alt="Sust Global Developer Center">
+          <img class="h-7 sm:hidden" src="http://localhost:4000/uploads/sust-HexLogoONLYwhite.png" width="28" height="28" alt="Sust Global Developer Center">
+        
+      </a>
+      
+      <nav class="hidden lg:flex lg:space-x-8 lg:ml-12 xl:ml-16">
+        
+          
 
-  <body>
+          
+            <div class="relative" x-data="{ dropdown: false }">
+              <button type="button" @click.prevent="dropdown = ! dropdown"
+                :class="{ 'text-sky-500': dropdown, 'text-slate-900': !(dropdown) }"
+                class="group inline-flex transform-none items-center text-sm font-display font-semibold hover:text-sky-500 py-2.5 focus:outline-none text-slate-900"
+                aria-expanded="false">
+                <span>Docs</span>
+                <svg
+                  :class="{ 'text-sky-500 rotate-180': dropdown, 'text-slate-900 transform-none': !(dropdown) }"
+                  class="ml-0.5 h-5 w-5 group-hover:text-sky-500 text-slate-900 transform-none"
+                  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentcolor" aria-hidden="true">
+                  <path fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414.0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414.0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd"></path>
+                </svg>
+              </button>
+              <div x-show="dropdown" :class="{ 'block': dropdown, 'hidden': !(dropdown) }"
+                x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 translate-y-1"
+                x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-150"
+                x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 translate-y-1"
+                @click.outside="dropdown = false"
+                class="absolute z-10 -ml-4 mt-3 w-screen max-w-[16rem] transform px-2 sm:px-0 lg:left-1/2 lg:ml-0 lg:-translate-x-1/2 hidden"
+                style="display: none;">
+                <div class="overflow-hidden rounded-2xl shadow-lg border border-slate-100">
+                  <div class="relative grid gap-6 bg-white p-8 sm:gap-8">
+                    
+                                          
+                      <a href="/user-guide"
+                        class="-m-4 flex items-start group rounded-xl p-4 text-slate-900 hover:text-sky-500">
+                        
+                          <div class="flex-shrink-0 mr-3">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M6.42857 9.75L2.25 12L6.42857 14.25M6.42857 9.75L12 12.75L17.5714 9.75M6.42857 9.75L2.25 7.5L12 2.25L21.75 7.5L17.5714 9.75M17.5714 9.75L21.75 12L17.5714 14.25M17.5714 14.25L21.75 16.5L12 21.75L2.25 16.5L6.42857 14.25M17.5714 14.25L12 17.25L6.42857 14.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                            
+                          </div>
+                        
+                        <div>
+                          <p class="text-sm font-display font-semibold">Introduction</p>
+                        </div>
+                      </a>
+                    
+                                          
+                      <a href="/data-guide/"
+                        class="-m-4 flex items-start group rounded-xl p-4 text-slate-900 hover:text-sky-500">
+                        
+                          <div class="flex-shrink-0 mr-3">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6.04168C10.4077 4.61656 8.30506 3.75 6 3.75C4.94809 3.75 3.93834 3.93046 3 4.26212V18.5121C3.93834 18.1805 4.94809 18 6 18C8.30506 18 10.4077 18.8666 12 20.2917M12 6.04168C13.5923 4.61656 15.6949 3.75 18 3.75C19.0519 3.75 20.0617 3.93046 21 4.26212V18.5121C20.0617 18.1805 19.0519 18 18 18C15.6949 18 13.5923 18.8666 12 20.2917M12 6.04168V20.2917" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                            
+                          </div>
+                        
+                        <div>
+                          <p class="text-sm font-display font-semibold">Data Guide</p>
+                        </div>
+                      </a>
+                    
+                                          
+                      <a href="/notebooks/"
+                        class="-m-4 flex items-start group rounded-xl p-4 text-slate-900 hover:text-sky-500">
+                        
+                          <div class="flex-shrink-0 mr-3">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 7.5L18.75 6.1875M21 7.5V9.75M21 7.5L18.75 8.8125M3 7.5L5.25 6.1875M3 7.5L5.25 8.8125M3 7.5V9.75M12 12.75L14.25 11.4375M12 12.75L9.75 11.4375M12 12.75V15M12 21.75L14.25 20.4375M12 21.75V19.5M12 21.75L9.75 20.4375M9.75 3.5625L12 2.25L14.25 3.5625M21 14.25V16.5L18.75 17.8125M5.25 17.8125L3 16.5V14.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                            
+                          </div>
+                        
+                        <div>
+                          <p class="text-sm font-display font-semibold">Jupyter Notebooks</p>
+                        </div>
+                      </a>
+                    
+                                          
+                      <a href="https://explorer.sustglobal.io/redoc/"
+                        class="-m-4 flex items-start group rounded-xl p-4 text-slate-900 hover:text-sky-500">
+                        
+                          <div class="flex-shrink-0 mr-3">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4806 3.49883C11.6728 3.03685 12.3272 3.03685 12.5193 3.49883L14.6453 8.61028C14.7263 8.80504 14.9095 8.93811 15.1197 8.95497L20.638 9.39736C21.1367 9.43735 21.339 10.0598 20.959 10.3853L16.7546 13.9867C16.5945 14.1239 16.5245 14.3392 16.5734 14.5444L17.8579 19.9293C17.974 20.416 17.4446 20.8007 17.0176 20.5398L12.2932 17.6542C12.1132 17.5443 11.8868 17.5443 11.7068 17.6542L6.98238 20.5398C6.55539 20.8007 6.02594 20.416 6.14203 19.9293L7.42652 14.5444C7.47546 14.3392 7.4055 14.1239 7.24531 13.9867L3.04099 10.3853C2.661 10.0598 2.86323 9.43735 3.36197 9.39736L8.88022 8.95497C9.09048 8.93811 9.27363 8.80504 9.35464 8.61028L11.4806 3.49883Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                            
+                          </div>
+                        
+                        <div>
+                          <p class="text-sm font-display font-semibold">API Spec</p>
+                        </div>
+                      </a>
+                    
+                                          
+                      <a href="/coming-soon/"
+                        class="-m-4 flex items-start group rounded-xl p-4 text-slate-900 hover:text-sky-500">
+                        
+                          <div class="flex-shrink-0 mr-3">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M15.9099 11.6722C16.1671 11.8151 16.1671 12.1849 15.9099 12.3278L10.3071 15.4405C10.0572 15.5794 9.75 15.3986 9.75 15.1127V8.88732C9.75 8.60139 10.0572 8.42065 10.3071 8.55951L15.9099 11.6722Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                            
+                          </div>
+                        
+                        <div>
+                          <p class="text-sm font-display font-semibold">Loom library</p>
+                        </div>
+                      </a>
+                    
+                                          
+                      <a href="/faq/"
+                        class="-m-4 flex items-start group rounded-xl p-4 text-slate-900 hover:text-sky-500">
+                        
+                          <div class="flex-shrink-0 mr-3">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M9.87891 7.51884C11.0505 6.49372 12.95 6.49372 14.1215 7.51884C15.2931 8.54397 15.2931 10.206 14.1215 11.2312C13.9176 11.4096 13.6917 11.5569 13.4513 11.6733C12.7056 12.0341 12.0002 12.6716 12.0002 13.5V14.25M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12ZM12 17.25H12.0075V17.2575H12V17.25Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                            
+                          </div>
+                        
+                        <div>
+                          <p class="text-sm font-display font-semibold">FAQ</p>
+                        </div>
+                      </a>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+        
+          
 
-    <nav id="topnav" class="navbar navbar-expand-lg navbar-dark fixed-top">
-      <div class="container">
+          
+            <a class="text-sm hover:text-sky-500 py-2.5 text-slate-900 font-display font-semibold" href="/updates/" >Product Updates</a>
+          
+        
+          
 
-        <a class="navbar-brand" href="/">
-          <img src="/assets/images/sust-HexLogoONLYwhite.png" />
-          <span>Developer Center</span>
-        </a>
+          
+            <a class="text-sm hover:text-sky-500 py-2.5 text-slate-900 font-display font-semibold" href="https://www.sustglobal.com/insights/blog/" target="_blank" rel="noopener" >Dev Blogs</a>
+          
+        
+          
 
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="https://explorer.sustglobal.io/">
-              Climate Explorer
-              <i class="fas fa-external-link-alt fa-sm"></i>
-            </a>
-          </li>
-        </ul>
-
-      </div>
-    </nav>
-
-    <div class="container" id="allcontent">
-      <div class="d-flex flex-direction-row flex-nowrap">
-
-        <div class="flex-grow-1 col-9">
-          <div id="innercontent">
-            <h1>Sust Global Developer Center</h1>
-            <p>Welcome! This is the home of <a href="https://www.sustglobal.com/">Sust Global</a>’s developer tools, guides and reference documentation.</p>
-
-<h2 id="references">References</h2>
-
-<ul>
-  <li>The <a href="./userguide.html">User Guide</a> is a great place for all users to start. It provides an introduction to Climate Explorer and the datasets from Sust Global.</li>
-  <li>The <a href="./api.html">Climate Explorer API Guide</a> is here to help developers learn how to work with the Climate Explorer API.</li>
-  <li>You may access the <a href="https://explorer.sustglobal.io/redoc/">Sust Global OpenAPI Specification</a>, which describes every REST endpoint, parameter, request and response.</li>
-</ul>
-
-<h2 id="resources">Resources</h2>
-
-<ul>
-  <li>Learn about the latest <a href="./updates.html">Product Updates</a> to Climate Explorer and our datasets.</li>
-  <li>Several <a href="./jupyter-notebooks.html">Jupyter Notebooks</a> are provided to help you explore Sust Global datasets on your local machine.</li>
-  <li>Find answers to frequently asked questions on our <a href="./FAQs.html">FAQ Page</a></li>
-</ul>
-
-<p>The Developer Center documentation and all the referenced tools are hosted on GitHub at <a href="https://github.com/sustglobal/dev-center">https://github.com/sustglobal/dev-center</a>.</p>
-
+          
+            <a class="text-sm hover:text-sky-500 py-2.5 text-slate-900 font-display font-semibold" href="https://explorer.sustglobal.io/account/login/?next=/" target="_blank" rel="noopener" >Climate Explorer</a>
+          
+                    
+      </nav>
+    </div>
+    <div class="flex items-center flex-1 justify-end">
+      <div class="w-full md:w-72 xl:w-96">
+        <div class="w-full">
+          <label for="search-input" class="sr-only">Search</label>
+          <div class="relative">
+            <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+              <svg class="h-5 w-5 text-slate-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd"
+                  d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </div>
+            <input id="search-input" name="search" data-minchars="1" data-maxitems="30"
+              class="block w-full rounded-md border-0 bg-white py-2.5 pl-10 pr-3 text-slate-900 ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-slate-300 sm:text-sm sm:leading-6"
+              placeholder="Search" type="search" autocomplete="off">
+              <ul class="absolute w-full mt-2 border border-slate-200 rounded-lg text-sm shadow-md bg-white text-slate-500 max-h-96 overflow-y-auto hidden" id="results-container"></ul>
           </div>
         </div>
+      </div>
+      <button @click="mobile = ! mobile" type="button" class="relative lg:hidden ml-4" aria-label="Open navigation">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"
+          class="h-6 w-6 stroke-slate-500">
+          <path d="M4 7h16M4 12h16M4 17h16"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
 
+  <div x-show="mobile"
+    :class="{ 'block': mobile, 'hidden': !(mobile) }"
+    x-transition:enter="duration-200 ease-out"
+    x-transition:enter-start="opacity-0 scale-95"
+    x-transition:enter-end="opacity-100 scale-100"
+    x-transition:leave="duration-100 ease-in"
+    x-transition:leave-start="opacity-100 scale-100"
+    x-transition:leave-end="opacity-0 scale-95"
+    class="z-10 origin-top transform transition hidden lg:hidden border-y border-gray-200"
+    >
+    <div class="overflow-hidden bg-white">
+      <div class="space-y-1 p-4 sm:p-6">
+        
+          
+
+          
+            <div x-data="{ accordion: false }">
+              <a
+                href="#"
+                class="flex items-center rounded-lg px-4 py-3 text-base font-medium font-display text-slate-900 hover:text-sky-500 hover:bg-slate-50"
+                @click.prevent="accordion = ! accordion"
+              >
+                <span class="flex-1">Docs</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  :class="{ 'rotate-90': accordion, 'transform-none': !(accordion) }"
+                  class="h-6 w-6"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </a>
+              <div x-show="accordion" :class="{ 'block': accordion, 'hidden': !(accordion) }">
+                
+                                      
+                  <a href="/user-guide" class="ml-4 flex items-center group rounded-lg px-4 py-3 text-slate-900 hover:text-sky-500 hover:bg-slate-50">
+                    
+                      <div class="flex-shrink-0 mr-2.5 group-hover:text-primary-600">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M6.42857 9.75L2.25 12L6.42857 14.25M6.42857 9.75L12 12.75L17.5714 9.75M6.42857 9.75L2.25 7.5L12 2.25L21.75 7.5L17.5714 9.75M17.5714 9.75L21.75 12L17.5714 14.25M17.5714 14.25L21.75 16.5L12 21.75L2.25 16.5L6.42857 14.25M17.5714 14.25L12 17.25L6.42857 14.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                            
+                      </div>
+                    
+                    <span class="text-base font-medium font-display">Introduction</span>
+                  </a>
+                
+                                      
+                  <a href="/data-guide/" class="ml-4 flex items-center group rounded-lg px-4 py-3 text-slate-900 hover:text-sky-500 hover:bg-slate-50">
+                    
+                      <div class="flex-shrink-0 mr-2.5 group-hover:text-primary-600">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6.04168C10.4077 4.61656 8.30506 3.75 6 3.75C4.94809 3.75 3.93834 3.93046 3 4.26212V18.5121C3.93834 18.1805 4.94809 18 6 18C8.30506 18 10.4077 18.8666 12 20.2917M12 6.04168C13.5923 4.61656 15.6949 3.75 18 3.75C19.0519 3.75 20.0617 3.93046 21 4.26212V18.5121C20.0617 18.1805 19.0519 18 18 18C15.6949 18 13.5923 18.8666 12 20.2917M12 6.04168V20.2917" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                            
+                      </div>
+                    
+                    <span class="text-base font-medium font-display">Data Guide</span>
+                  </a>
+                
+                                      
+                  <a href="/notebooks/" class="ml-4 flex items-center group rounded-lg px-4 py-3 text-slate-900 hover:text-sky-500 hover:bg-slate-50">
+                    
+                      <div class="flex-shrink-0 mr-2.5 group-hover:text-primary-600">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 7.5L18.75 6.1875M21 7.5V9.75M21 7.5L18.75 8.8125M3 7.5L5.25 6.1875M3 7.5L5.25 8.8125M3 7.5V9.75M12 12.75L14.25 11.4375M12 12.75L9.75 11.4375M12 12.75V15M12 21.75L14.25 20.4375M12 21.75V19.5M12 21.75L9.75 20.4375M9.75 3.5625L12 2.25L14.25 3.5625M21 14.25V16.5L18.75 17.8125M5.25 17.8125L3 16.5V14.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                            
+                      </div>
+                    
+                    <span class="text-base font-medium font-display">Jupyter Notebooks</span>
+                  </a>
+                
+                                      
+                  <a href="https://explorer.sustglobal.io/redoc/" class="ml-4 flex items-center group rounded-lg px-4 py-3 text-slate-900 hover:text-sky-500 hover:bg-slate-50">
+                    
+                      <div class="flex-shrink-0 mr-2.5 group-hover:text-primary-600">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4806 3.49883C11.6728 3.03685 12.3272 3.03685 12.5193 3.49883L14.6453 8.61028C14.7263 8.80504 14.9095 8.93811 15.1197 8.95497L20.638 9.39736C21.1367 9.43735 21.339 10.0598 20.959 10.3853L16.7546 13.9867C16.5945 14.1239 16.5245 14.3392 16.5734 14.5444L17.8579 19.9293C17.974 20.416 17.4446 20.8007 17.0176 20.5398L12.2932 17.6542C12.1132 17.5443 11.8868 17.5443 11.7068 17.6542L6.98238 20.5398C6.55539 20.8007 6.02594 20.416 6.14203 19.9293L7.42652 14.5444C7.47546 14.3392 7.4055 14.1239 7.24531 13.9867L3.04099 10.3853C2.661 10.0598 2.86323 9.43735 3.36197 9.39736L8.88022 8.95497C9.09048 8.93811 9.27363 8.80504 9.35464 8.61028L11.4806 3.49883Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                            
+                      </div>
+                    
+                    <span class="text-base font-medium font-display">API Spec</span>
+                  </a>
+                
+                                      
+                  <a href="/coming-soon/" class="ml-4 flex items-center group rounded-lg px-4 py-3 text-slate-900 hover:text-sky-500 hover:bg-slate-50">
+                    
+                      <div class="flex-shrink-0 mr-2.5 group-hover:text-primary-600">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M15.9099 11.6722C16.1671 11.8151 16.1671 12.1849 15.9099 12.3278L10.3071 15.4405C10.0572 15.5794 9.75 15.3986 9.75 15.1127V8.88732C9.75 8.60139 10.0572 8.42065 10.3071 8.55951L15.9099 11.6722Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                            
+                      </div>
+                    
+                    <span class="text-base font-medium font-display">Loom library</span>
+                  </a>
+                
+                                      
+                  <a href="/faq/" class="ml-4 flex items-center group rounded-lg px-4 py-3 text-slate-900 hover:text-sky-500 hover:bg-slate-50">
+                    
+                      <div class="flex-shrink-0 mr-2.5 group-hover:text-primary-600">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M9.87891 7.51884C11.0505 6.49372 12.95 6.49372 14.1215 7.51884C15.2931 8.54397 15.2931 10.206 14.1215 11.2312C13.9176 11.4096 13.6917 11.5569 13.4513 11.6733C12.7056 12.0341 12.0002 12.6716 12.0002 13.5V14.25M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12ZM12 17.25H12.0075V17.2575H12V17.25Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                            
+                      </div>
+                    
+                    <span class="text-base font-medium font-display">FAQ</span>
+                  </a>
+                
+              </div>
+            </div>
+          
+        
+          
+
+          
+            <a href="/updates/" class="block rounded-lg font-medium font-display tracking-wide px-4 py-3 text-base text-slate-900 hover:text-sky-500 hover:bg-slate-50" 
+            >Product Updates</a>
+          
+        
+          
+
+          
+            <a href="https://www.sustglobal.com/insights/blog/" class="block rounded-lg font-medium font-display tracking-wide px-4 py-3 text-base text-slate-900 hover:text-sky-500 hover:bg-slate-50" 
+            target="_blank" rel="noopener" >Dev Blogs</a>
+          
+        
+          
+
+          
+            <a href="https://explorer.sustglobal.io/account/login/?next=/" class="block rounded-lg font-medium font-display tracking-wide px-4 py-3 text-base text-slate-900 hover:text-sky-500 hover:bg-slate-50" 
+            target="_blank" rel="noopener" >Climate Explorer</a>
+          
+         
+      </div>
+    </div>
+  </div>
+</header>
+<script src="https://unpkg.com/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
+<script>
+	window.simpleJekyllSearch = new SimpleJekyllSearch({
+		searchInput: document.getElementById('search-input'),
+		resultsContainer: document.getElementById('results-container'),
+		searchResultTemplate: '<li><a class="px-3 py-3 block leading-tight hover:text-sky-500" href="{url}">{title}</a></li>',
+		noResultsText: '<li class="no-results px-3 py-3">No results found</li>',
+		json: "/search.json"
+	});
+	
+	searchResults();
+
+  var search = document.getElementById("search-input");
+  var results = document.getElementById("results-container");
+
+  search.addEventListener('input', function() {
+    if (search.value === '') {
+        results.classList.add('hidden');
+    } else {
+        results.classList.remove('hidden');
+    }
+  });
+
+	function searchResults() {
+
+		var currentItem = null;
+		var search = document.getElementById("search-input");
+		var results = document.getElementById( "results-container");
+
+		function removeActive() {
+			for (i = 0; i < results.children.length; i++) {
+				results.children[i].classList.remove("bg-slate-50");
+        results.children[i].classList.remove("text-sky-500");
+			}
+		}
+
+		results.addEventListener("mouseover", function(event) {
+
+			removeActive();
+			event.target.parentElement.classList.add("bg-slate-50");
+      event.target.parentElement.classList.add("text-sky-500");
+			currentItem = null;
+
+		});
+
+		results.addEventListener("mouseout", function(event) {
+			event.target.parentElement.classList.remove("bg-slate-50");
+      event.target.parentElement.classList.remove("text-sky-500");
+		});
+
+
+		search.addEventListener("keyup", function(event) {
+
+			var resultItems = results.children;
+			var resultCount = results.children.length;
+
+			if (event.keyCode === 40) {
+
+				if (currentItem < (resultCount - 1)) {
+					if (currentItem === null) {
+						currentItem = 0;
+					} else {
+						removeActive();
+						currentItem++;
+					}
+					removeActive();
+					resultItems[currentItem].classList.add("bg-slate-50");
+          resultItems[currentItem].classList.add("text-sky-500");
+				}
+
+			} else if (event.keyCode === 38) {
+				if (currentItem > 0) {
+					if (currentItem === null) {
+						currentItem = 0;
+					} else {
+						removeActive();
+						currentItem--;
+					}
+					removeActive();
+					resultItems[currentItem].classList.add("bg-slate-50");
+          resultItems[currentItem].classList.add("text-sky-500");
+				}
+
+			} else if (event.keyCode === 13 && currentItem !== null) {
+        resultItems[currentItem].children[0].click();
+      }
+
+		});
+
+	}
+</script>
+
+
+
+
+    <div class="relative mx-auto flex max-w-7xl justify-center px-2 lg:px-8">
+      <div class="hidden lg:relative lg:block lg:flex-none">
+        <div class="sticky top-[4.5rem] -ml-0.5 w-64 overflow-y-auto overflow-x-hidden pt-16 pl-0.5 pr-8 xl:w-72 xl:pr-16">
+          <nav class="text-sm">
+            <ul class="space-y-9">
+              
+                <li>
+                  
+                    <h2 class="font-display font-semibold text-slate-900">Introduction</h2>
+                    <ul class="mt-4 space-y-4 border-slate-200">
+                      
+                        
+                        
+                        <li class="relative">
+                          <a class="block w-full pl-3.5 before:pointer-events-none before:absolute before:left-0.5 before:top-1/2 before:h-0.5 before:w-1.5 before:-translate-y-1/2 
+                           text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-900 hover:before:block" href="/user-guide">Climate Explorer User Guide</a>
+                        </li>
+                      
+                        
+                        
+                        <li class="relative">
+                          <a class="block w-full pl-3.5 before:pointer-events-none before:absolute before:left-0.5 before:top-1/2 before:h-0.5 before:w-1.5 before:-translate-y-1/2 
+                           text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-900 hover:before:block" href="/dashboard-guide">Dashboard User Guide</a>
+                        </li>
+                      
+                        
+                        
+                        <li class="relative">
+                          <a class="block w-full pl-3.5 before:pointer-events-none before:absolute before:left-0.5 before:top-1/2 before:h-0.5 before:w-1.5 before:-translate-y-1/2 
+                           text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-900 hover:before:block" href="/dataset-guide">Sust Global CSV Dataset Guide</a>
+                        </li>
+                      
+                        
+                        
+                        <li class="relative">
+                          <a class="block w-full pl-3.5 before:pointer-events-none before:absolute before:left-0.5 before:top-1/2 before:h-0.5 before:w-1.5 before:-translate-y-1/2 
+                           text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-900 hover:before:block" href="/api-guide">API User Guide</a>
+                        </li>
+                      
+                        
+                        
+                        <li class="relative">
+                          <a class="block w-full pl-3.5 before:pointer-events-none before:absolute before:left-0.5 before:top-1/2 before:h-0.5 before:w-1.5 before:-translate-y-1/2 
+                           text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-900 hover:before:block" href="/search">Search API</a>
+                        </li>
+                      
+                    </ul>
+                  
+                </li>
+              
+                <li>
+                  
+                    <h2 class="font-display font-semibold text-slate-900">Data Guide</h2>
+                    <ul class="mt-4 space-y-4 border-slate-200">
+                      
+                        
+                        
+                        <li class="relative">
+                          <a class="block w-full pl-3.5 before:pointer-events-none before:absolute before:left-0.5 before:top-1/2 before:h-0.5 before:w-1.5 before:-translate-y-1/2 
+                           text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-900 hover:before:block" href="/data-guide">Climate Data Guide</a>
+                        </li>
+                      
+                        
+                        
+                        <li class="relative">
+                          <a class="block w-full pl-3.5 before:pointer-events-none before:absolute before:left-0.5 before:top-1/2 before:h-0.5 before:w-1.5 before:-translate-y-1/2 
+                           text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-900 hover:before:block" href="/wildfire">Wildfire</a>
+                        </li>
+                      
+                        
+                        
+                        <li class="relative">
+                          <a class="block w-full pl-3.5 before:pointer-events-none before:absolute before:left-0.5 before:top-1/2 before:h-0.5 before:w-1.5 before:-translate-y-1/2 
+                           text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-900 hover:before:block" href="/flood">Flood</a>
+                        </li>
+                      
+                        
+                        
+                        <li class="relative">
+                          <a class="block w-full pl-3.5 before:pointer-events-none before:absolute before:left-0.5 before:top-1/2 before:h-0.5 before:w-1.5 before:-translate-y-1/2 
+                           text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-900 hover:before:block" href="/cyclones">Cyclones</a>
+                        </li>
+                      
+                        
+                        
+                        <li class="relative">
+                          <a class="block w-full pl-3.5 before:pointer-events-none before:absolute before:left-0.5 before:top-1/2 before:h-0.5 before:w-1.5 before:-translate-y-1/2 
+                           text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-900 hover:before:block" href="/heatwaves">Heatwaves</a>
+                        </li>
+                      
+                        
+                        
+                        <li class="relative">
+                          <a class="block w-full pl-3.5 before:pointer-events-none before:absolute before:left-0.5 before:top-1/2 before:h-0.5 before:w-1.5 before:-translate-y-1/2 
+                           text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-900 hover:before:block" href="/sea-level-rise">Sea Level Rise</a>
+                        </li>
+                      
+                        
+                        
+                        <li class="relative">
+                          <a class="block w-full pl-3.5 before:pointer-events-none before:absolute before:left-0.5 before:top-1/2 before:h-0.5 before:w-1.5 before:-translate-y-1/2 
+                           text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-900 hover:before:block" href="/water-stress">Water Stress</a>
+                        </li>
+                      
+                        
+                        
+                        <li class="relative">
+                          <a class="block w-full pl-3.5 before:pointer-events-none before:absolute before:left-0.5 before:top-1/2 before:h-0.5 before:w-1.5 before:-translate-y-1/2 
+                           text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-900 hover:before:block" href="/value-at-risk">Financial Risk Analysis</a>
+                        </li>
+                      
+                    </ul>
+                  
+                </li>
+              
+                <li>
+                  
+                    <h2 class="font-display font-semibold text-slate-900">Jupyter Notebooks</h2>
+                    <ul class="mt-4 space-y-4 border-slate-200">
+                      
+                        
+                        
+                        <li class="relative">
+                          <a class="block w-full pl-3.5 before:pointer-events-none before:absolute before:left-0.5 before:top-1/2 before:h-0.5 before:w-1.5 before:-translate-y-1/2 
+                           text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-900 hover:before:block" href="/notebooks">Usage Guide</a>
+                        </li>
+                      
+                    </ul>
+                  
+                </li>
+              
+                <li>
+                  
+                    <h2 class="font-display font-semibold text-slate-900">Loom library</h2>
+                    <ul class="mt-4 space-y-4 border-slate-200">
+                      
+                        
+                        
+                        <li class="relative">
+                          <a class="block w-full pl-3.5 before:pointer-events-none before:absolute before:left-0.5 before:top-1/2 before:h-0.5 before:w-1.5 before:-translate-y-1/2 
+                           text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-900 hover:before:block" href="/coming-soon">Coming Soon!</a>
+                        </li>
+                      
+                    </ul>
+                  
+                </li>
+              
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="min-w-0 flex-auto px-4 pt-16 lg:max-w-none lg:pl-8 lg:pr-0 ">
+        <div>
+  <div>
+    
+    <p class="font-display text-sm font-bold text-sky-500 mb-1">Welcome</p>
+    
+    <h1 class="font-display text-3xl tracking-tight text-slate-900 font-bold">Sust Global Developer Center</h1>
+    
+      <p class="text-lg leading-relaxed text-slate-500 mt-8 max-w-2xl">This is the home of Sust Global's developer tools, guides and reference documentation.</p>
+    
+  </div>
+  <hr class="border-slate-200 mt-9 mb-14">
+
+  
+    <div class="relative rounded-xl p-8 shadow-xl shadow-slate-200 bg-sky-950 group overflow-hidden mt-7 md:mt-14">
+  
+    <div class="absolute bottom-2 right-6 text-sky-900 w-44 h-44 svg-full">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12.75 15L15.75 12M15.75 12L12.75 9M15.75 12L8.25 12M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+          
+    </div>
+  
+  <div class="relative">
+    <h2 class="font-display font-bold text-2xl text-white">Ready to get started?</h2>
+    <p class="mt-3 text-base text-slate-100 leading-relaxed max-w-2xl">The User Guide is a great place for all users to start. It provides an introduction to Climate Explorer and the datasets from Sust Global.</p>
+    
+      <div class="inline-block mt-6 rounded-md bg-sky-500 px-3.5 py-2 text-sm font-semibold font-display text-white group-hover:bg-sky-600">Get Started</div>
+    
+  </div>
+  
+    <a href="/user-guide/" class="absolute inset-0" aria-label="Get Started"></a>
+  
+</div>
+
+
+  
+    <div class="grid grid-cols-1 gap-6 md:gap-x-12 md:gap-y-14 md:grid-cols-2 mt-7 md:mt-14">
+  
+    <div>
+      <div class="flex items-center space-x-2">
+        
+          <div class="text-slate-900">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M6.42857 9.75L2.25 12L6.42857 14.25M6.42857 9.75L12 12.75L17.5714 9.75M6.42857 9.75L2.25 7.5L12 2.25L21.75 7.5L17.5714 9.75M17.5714 9.75L21.75 12L17.5714 14.25M17.5714 14.25L21.75 16.5L12 21.75L2.25 16.5L6.42857 14.25M17.5714 14.25L12 17.25L6.42857 14.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+           
+          </div>
+        
+        
+        <a href="/user-guide" class="group flex items-center space-x-3 text-slate-900 hover:text-sky-500">
+          <h2 class="font-display font-bold text-lg group-hover:underline underline-offset-4 decoration-1 text-sky-500">Introduction</h2>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-4 h-4 text-slate-400 group-hover:text-sky-500 mt-0.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+          </svg>
+          <span class="flex items-center space-x-2 border border-sky-100 px-1.5 py-0.5 rounded group-hover:border-sky-200">
+            <span class="uppercase text-[0.6875rem] text-slate-500 group-hover:text-sky-500">5 articles</span>
+          </span>
+        </a>
+      </div>
+      
+        <p class="mt-4 text-base text-slate-500 leading-relaxed max-w-[23rem]">Get started with Climate Explorer by following these user guides. Great for first time users.</p>
+      
+    </div>
+  
+    <div>
+      <div class="flex items-center space-x-2">
+        
+          <div class="text-slate-900">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6.04168C10.4077 4.61656 8.30506 3.75 6 3.75C4.94809 3.75 3.93834 3.93046 3 4.26212V18.5121C3.93834 18.1805 4.94809 18 6 18C8.30506 18 10.4077 18.8666 12 20.2917M12 6.04168C13.5923 4.61656 15.6949 3.75 18 3.75C19.0519 3.75 20.0617 3.93046 21 4.26212V18.5121C20.0617 18.1805 19.0519 18 18 18C15.6949 18 13.5923 18.8666 12 20.2917M12 6.04168V20.2917" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+           
+          </div>
+        
+        
+        <a href="/data-guide" class="group flex items-center space-x-3 text-slate-900 hover:text-sky-500">
+          <h2 class="font-display font-bold text-lg group-hover:underline underline-offset-4 decoration-1 text-sky-500">Data Guide</h2>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-4 h-4 text-slate-400 group-hover:text-sky-500 mt-0.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+          </svg>
+          <span class="flex items-center space-x-2 border border-sky-100 px-1.5 py-0.5 rounded group-hover:border-sky-200">
+            <span class="uppercase text-[0.6875rem] text-slate-500 group-hover:text-sky-500">8 articles</span>
+          </span>
+        </a>
+      </div>
+      
+        <p class="mt-4 text-base text-slate-500 leading-relaxed max-w-[23rem]">Learn more about our Climate Analytics data; wildfire, flood, cyclones, heatwaves, sea level rise, and water stress.</p>
+      
+    </div>
+  
+    <div>
+      <div class="flex items-center space-x-2">
+        
+          <div class="text-slate-900">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 7.5L18.75 6.1875M21 7.5V9.75M21 7.5L18.75 8.8125M3 7.5L5.25 6.1875M3 7.5L5.25 8.8125M3 7.5V9.75M12 12.75L14.25 11.4375M12 12.75L9.75 11.4375M12 12.75V15M12 21.75L14.25 20.4375M12 21.75V19.5M12 21.75L9.75 20.4375M9.75 3.5625L12 2.25L14.25 3.5625M21 14.25V16.5L18.75 17.8125M5.25 17.8125L3 16.5V14.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+           
+          </div>
+        
+        
+        <a href="/notebooks" class="group flex items-center space-x-3 text-slate-900 hover:text-sky-500">
+          <h2 class="font-display font-bold text-lg group-hover:underline underline-offset-4 decoration-1 text-sky-500">Jupyter Notebooks</h2>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-4 h-4 text-slate-400 group-hover:text-sky-500 mt-0.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+          </svg>
+          <span class="flex items-center space-x-2 border border-sky-100 px-1.5 py-0.5 rounded group-hover:border-sky-200">
+            <span class="uppercase text-[0.6875rem] text-slate-500 group-hover:text-sky-500">1 articles</span>
+          </span>
+        </a>
+      </div>
+      
+        <p class="mt-4 text-base text-slate-500 leading-relaxed max-w-[23rem]">Check out our interactive, open-source guides designed to help you explore Planet data, work with our APIs and tools, and learn how to extract insights from our climate scenario analysis datasets.</p>
+      
+    </div>
+  
+    <div>
+      <div class="flex items-center space-x-2">
+        
+          <div class="text-slate-900">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M15.9099 11.6722C16.1671 11.8151 16.1671 12.1849 15.9099 12.3278L10.3071 15.4405C10.0572 15.5794 9.75 15.3986 9.75 15.1127V8.88732C9.75 8.60139 10.0572 8.42065 10.3071 8.55951L15.9099 11.6722Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+           
+          </div>
+        
+        
+        <a href="/coming-soon" class="group flex items-center space-x-3 text-slate-900 hover:text-sky-500">
+          <h2 class="font-display font-bold text-lg group-hover:underline underline-offset-4 decoration-1 text-sky-500">Loom library</h2>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-4 h-4 text-slate-400 group-hover:text-sky-500 mt-0.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+          </svg>
+          <span class="flex items-center space-x-2 border border-sky-100 px-1.5 py-0.5 rounded group-hover:border-sky-200">
+            <span class="uppercase text-[0.6875rem] text-slate-500 group-hover:text-sky-500">1 articles</span>
+          </span>
+        </a>
+      </div>
+      
+        <p class="mt-4 text-base text-slate-500 leading-relaxed max-w-[23rem]">Coming soon!</p>
+      
+    </div>
+  
+</div>
+  
+    <div>
+    <br>
+</div>
+  
+    <div class="grid grid-cols-1 gap-7 md:gap-x-12 md:gap-y-14 md:grid-cols-2">
+  
+    <div class="relative rounded-xl p-6 shadow-xl shadow-slate-200 bg-sky-500 group overflow-hidden">
+      
+        <div class="absolute bottom-0 right-2 text-sky-400 svg-full w-36 h-36">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M4.25933 10.1468C3.98688 12.2308 3.82139 14.3485 3.76853 16.4941C6.66451 17.7032 9.41893 19.1836 12 20.9037C14.5811 19.1836 17.3355 17.7032 20.2315 16.4941C20.1786 14.3485 20.0131 12.2308 19.7407 10.1468M4.25933 10.1468C3.38362 9.85242 2.49729 9.5812 1.60107 9.33382C4.84646 7.05899 8.32741 5.09732 12 3.49268C15.6727 5.09732 19.1536 7.059 22.399 9.33383C21.5028 9.58122 20.6164 9.85245 19.7407 10.1468M4.25933 10.1468C6.94656 11.05 9.5338 12.171 12.0001 13.4888C14.4663 12.171 17.0535 11.0501 19.7407 10.1468M6.75 15.0001C7.16421 15.0001 7.5 14.6643 7.5 14.2501C7.5 13.8359 7.16421 13.5001 6.75 13.5001C6.33579 13.5001 6 13.8359 6 14.2501C6 14.6643 6.33579 15.0001 6.75 15.0001ZM6.75 15.0001V11.3246C8.44147 10.2736 10.1936 9.31107 12 8.44342M4.99264 19.9928C6.16421 18.8212 6.75 17.2857 6.75 15.7501V14.2501" stroke="currentColor" stroke-width="0.4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+           
+        </div>
+      
+      <div class="relative">
+        <h2 class="font-display font-bold text-xl text-white">Questions?</h2>
+        <p class="mt-2 text-base text-slate-100 leading-relaxed max-w-[18rem]">Find answers to frequently asked questions on our FAQ page.</p>
+        
+          <div class="inline-block mt-4 rounded-md bg-sky-600 px-2.5 py-1.5 text-sm font-semibold font-display text-white group-hover:bg-sky-700">Learn More</div>
+        
+      </div>
+      
+        <a href="/faq/" class="absolute inset-0" aria-label="Learn More"></a>
+      
+    </div>
+  
+    <div class="relative rounded-xl p-6 shadow-xl shadow-slate-200 bg-sky-500 group overflow-hidden">
+      
+        <div class="absolute bottom-0 right-2 text-sky-400 svg-full w-36 h-36">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M15.5904 14.3696C15.6948 14.8128 15.75 15.275 15.75 15.75C15.75 19.0637 13.0637 21.75 9.75 21.75V16.9503M15.5904 14.3696C19.3244 11.6411 21.75 7.22874 21.75 2.25C16.7715 2.25021 12.3595 4.67586 9.63122 8.40975M15.5904 14.3696C13.8819 15.6181 11.8994 16.514 9.75 16.9503M9.63122 8.40975C9.18777 8.30528 8.72534 8.25 8.25 8.25C4.93629 8.25 2.25 10.9363 2.25 14.25H7.05072M9.63122 8.40975C8.38285 10.1183 7.48701 12.1007 7.05072 14.25M9.75 16.9503C9.64659 16.9713 9.54279 16.9912 9.43862 17.0101C8.53171 16.291 7.70991 15.4692 6.99079 14.5623C7.00969 14.4578 7.02967 14.3537 7.05072 14.25M4.81191 16.6408C3.71213 17.4612 3 18.7724 3 20.25C3 20.4869 3.0183 20.7195 3.05356 20.9464C3.28054 20.9817 3.51313 21 3.75 21C5.22758 21 6.53883 20.2879 7.35925 19.1881M16.5 9C16.5 9.82843 15.8284 10.5 15 10.5C14.1716 10.5 13.5 9.82843 13.5 9C13.5 8.17157 14.1716 7.5 15 7.5C15.8284 7.5 16.5 8.17157 16.5 9Z" stroke="currentColor" stroke-width="0.4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+           
+        </div>
+      
+      <div class="relative">
+        <h2 class="font-display font-bold text-xl text-white">Check out our API</h2>
+        <p class="mt-2 text-base text-slate-100 leading-relaxed max-w-[18rem]">Access the Sust Global OpenAPI Specification, which describes every REST endpoint, parameter, request and response.</p>
+        
+          <div class="inline-block mt-4 rounded-md bg-sky-600 px-2.5 py-1.5 text-sm font-semibold font-display text-white group-hover:bg-sky-700">Learn More</div>
+        
+      </div>
+      
+        <a href="https://explorer.sustglobal.io/redoc/" class="absolute inset-0" aria-label="Learn More"></a>
+      
+    </div>
+  
+</div>
+  
+
+</div>
+      </div>
+      
+    </div>  
+    
+    <footer class="mx-auto max-w-7xl px-6 pb-8 pt-16 lg:px-8 lg:pt-28" aria-labelledby="footer-heading">
+  <h2 id="footer-heading" class="sr-only">Footer</h2>
+  <div class="lg:flex space-y-10 lg:space-y-0 lg:space-x-12">
+    <div class="lg:w-[29%]">
+      
+        <a href="/">
+          <img class="max-h-7 w-auto" src="http://localhost:4000/uploads/logo-wordmark-blue.png" width="173" height="28" alt="Sust Global Developer Center">
+        </a>
+      
+      
+        <p class="text-slate-500 text-sm leading-relaxed mt-5 max-w-xs">Home of Sust Global's developer tools, guides and reference documentation.</p>
+      
+      <div class="flex space-x-4 md:order-2 mt-6">
         
 
+
+  <a href="https://twitter.com/sustglobal" class="text-slate-400 hover:text-slate-500 svg-sm" target="_blank" rel="noopener noreferrer">
+    <span class="sr-only">Twitter</span>
+    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+    </svg>
+  </a>
+
+
+  <a href="https://www.linkedin.com/company/sustglobal/" class="text-slate-400 hover:text-slate-500 svg-sm" target="_blank" rel="noopener noreferrer">
+    <span class="sr-only">LinkedIn</span>
+    <svg class="h-6 w-6" fill="currentColor" viewBox="-2 -2 20 20" aria-hidden="true">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+    </svg>
+  </a>
+
+
+  <a href="https://github.com/sustglobal" class="text-slate-400 hover:text-slate-500 svg-sm" target="_blank" rel="noopener noreferrer">
+    <span class="sr-only">GitHub</span>
+    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+    </svg>
+  </a>
+
       </div>
-
     </div>
+    <div class="flex-1 grid grid-cols-2 md:grid-cols-4 gap-y-12 gap-x-6 sm:gap-x-12">
+      
+        <div>
+          <h3 class="text-sm font-display font-semibold text-slate-900">Products</h3>
+          <ul class="mt-5 space-y-4">
+            
+              <li>
+                <a href="https://www.sustglobal.com/products/dashboard/" class="text-sm text-slate-500 hover:text-slate-900"> Dashboard </a>
+              </li>
+            
+              <li>
+                <a href="https://www.sustglobal.com/products/api-integrations/" class="text-sm text-slate-500 hover:text-slate-900"> API </a>
+              </li>
+            
+          </ul>
+        </div>
+      
+        <div>
+          <h3 class="text-sm font-display font-semibold text-slate-900">Company</h3>
+          <ul class="mt-5 space-y-4">
+            
+              <li>
+                <a href="https://www.sustglobal.com/insights/blog/" class="text-sm text-slate-500 hover:text-slate-900"> Blog </a>
+              </li>
+            
+              <li>
+                <a href="https://www.sustglobal.com/about/" class="text-sm text-slate-500 hover:text-slate-900"> About Us </a>
+              </li>
+            
+              <li>
+                <a href="https://www.sustglobal.com/privacy/" class="text-sm text-slate-500 hover:text-slate-900"> Privacy Policy </a>
+              </li>
+            
+          </ul>
+        </div>
+      
+        <div>
+          <h3 class="text-sm font-display font-semibold text-slate-900">Get in Touch</h3>
+          <ul class="mt-5 space-y-4">
+            
+              <li>
+                <a href="mailto:info@sustglobal.com" class="text-sm text-slate-500 hover:text-slate-900"> info@sustglobal.com </a>
+              </li>
+            
+              <li>
+                <a href="tel:+1%479-847-1813" class="text-sm text-slate-500 hover:text-slate-900"> US: +1 479 847 1813 </a>
+              </li>
+            
+              <li>
+                <a href="tel:+44%202033%20768%20384" class="text-sm text-slate-500 hover:text-slate-900"> UK: +44 2033 768 384 </a>
+              </li>
+            
+          </ul>
+        </div>
+      
+    </div>
+  </div>
+  <!-- <div class="mt-16 border-t border-slate-200 pt-8 md:flex md:items-center md:justify-between">
+    <p class="mt-8 text-xs leading-5 text-slate-500 md:order-1 md:mt-0"></p>
+  </div> -->
+</footer>
+    <div x-show="docs"
+class="fixed inset-0 overflow-y-auto overflow-x-hidden bg-slate-900/20 backdrop-blur z-50 transform transition lg:hidden"
+style="display: none;">
+  <div @click.outside="docs = false" class="min-h-full w-full bg-white max-w-xs pt-7 pb-16 px-6 xl:pr-16">
+    <div class="flex justify-end">
+      <button @click="docs = ! docs" type="button"
+        class="inline-flex items-center justify-center text-slate-500 hover:text-sky-500 focus:outline-none"
+        aria-expanded="false">
+        <span class="sr-only">Toggle main menu</span>
+        <svg class="hh-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentcolor"
+          aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+    <nav>
+      <ul class="space-y-9">
+        
+          <li>
+            
+              <h2 class="font-display font-semibold text-slate-900">Introduction</h2>
+              <ul class="mt-3 space-y-3">
+                
+                  
+                  
+                  <li class="relative">
+                    <a class="block w-full pl-3.5 before:pointer-events-none before:absolute before:left-0.5 before:top-1/2 before:h-0.5 before:w-1.5 before:-translate-y-1/2 
+                     text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-900 hover:before:block" href="/user-guide">Climate Explorer User Guide</a>
+                  </li>
+                
+                  
+                  
+                  <li class="relative">
+                    <a class="block w-full pl-3.5 before:pointer-events-none before:absolute before:left-0.5 before:top-1/2 before:h-0.5 before:w-1.5 before:-translate-y-1/2 
+                     text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-900 hover:before:block" href="/dashboard-guide">Dashboard User Guide</a>
+                  </li>
+                
+                  
+                  
+                  <li class="relative">
+                    <a class="block w-full pl-3.5 before:pointer-events-none before:absolute before:left-0.5 before:top-1/2 before:h-0.5 before:w-1.5 before:-translate-y-1/2 
+                     text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-900 hover:before:block" href="/dataset-guide">Sust Global CSV Dataset Guide</a>
+                  </li>
+                
+                  
+                  
+                  <li class="relative">
+                    <a class="block w-full pl-3.5 before:pointer-events-none before:absolute before:left-0.5 before:top-1/2 before:h-0.5 before:w-1.5 before:-translate-y-1/2 
+                     text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-900 hover:before:block" href="/api-guide">API User Guide</a>
+                  </li>
+                
+                  
+                  
+                  <li class="relative">
+                    <a class="block w-full pl-3.5 before:pointer-events-none before:absolute before:left-0.5 before:top-1/2 before:h-0.5 before:w-1.5 before:-translate-y-1/2 
+                     text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-900 hover:before:block" href="/search">Search API</a>
+                  </li>
+                
+              </ul>
+            
+          </li>
+        
+          <li>
+            
+              <h2 class="font-display font-semibold text-slate-900">Data Guide</h2>
+              <ul class="mt-3 space-y-3">
+                
+                  
+                  
+                  <li class="relative">
+                    <a class="block w-full pl-3.5 before:pointer-events-none before:absolute before:left-0.5 before:top-1/2 before:h-0.5 before:w-1.5 before:-translate-y-1/2 
+                     text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-900 hover:before:block" href="/data-guide">Climate Data Guide</a>
+                  </li>
+                
+                  
+                  
+                  <li class="relative">
+                    <a class="block w-full pl-3.5 before:pointer-events-none before:absolute before:left-0.5 before:top-1/2 before:h-0.5 before:w-1.5 before:-translate-y-1/2 
+                     text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-900 hover:before:block" href="/wildfire">Wildfire</a>
+                  </li>
+                
+                  
+                  
+                  <li class="relative">
+                    <a class="block w-full pl-3.5 before:pointer-events-none before:absolute before:left-0.5 before:top-1/2 before:h-0.5 before:w-1.5 before:-translate-y-1/2 
+                     text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-900 hover:before:block" href="/flood">Flood</a>
+                  </li>
+                
+                  
+                  
+                  <li class="relative">
+                    <a class="block w-full pl-3.5 before:pointer-events-none before:absolute before:left-0.5 before:top-1/2 before:h-0.5 before:w-1.5 before:-translate-y-1/2 
+                     text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-900 hover:before:block" href="/cyclones">Cyclones</a>
+                  </li>
+                
+                  
+                  
+                  <li class="relative">
+                    <a class="block w-full pl-3.5 before:pointer-events-none before:absolute before:left-0.5 before:top-1/2 before:h-0.5 before:w-1.5 before:-translate-y-1/2 
+                     text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-900 hover:before:block" href="/heatwaves">Heatwaves</a>
+                  </li>
+                
+                  
+                  
+                  <li class="relative">
+                    <a class="block w-full pl-3.5 before:pointer-events-none before:absolute before:left-0.5 before:top-1/2 before:h-0.5 before:w-1.5 before:-translate-y-1/2 
+                     text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-900 hover:before:block" href="/sea-level-rise">Sea Level Rise</a>
+                  </li>
+                
+                  
+                  
+                  <li class="relative">
+                    <a class="block w-full pl-3.5 before:pointer-events-none before:absolute before:left-0.5 before:top-1/2 before:h-0.5 before:w-1.5 before:-translate-y-1/2 
+                     text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-900 hover:before:block" href="/water-stress">Water Stress</a>
+                  </li>
+                
+                  
+                  
+                  <li class="relative">
+                    <a class="block w-full pl-3.5 before:pointer-events-none before:absolute before:left-0.5 before:top-1/2 before:h-0.5 before:w-1.5 before:-translate-y-1/2 
+                     text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-900 hover:before:block" href="/value-at-risk">Financial Risk Analysis</a>
+                  </li>
+                
+              </ul>
+            
+          </li>
+        
+          <li>
+            
+              <h2 class="font-display font-semibold text-slate-900">Jupyter Notebooks</h2>
+              <ul class="mt-3 space-y-3">
+                
+                  
+                  
+                  <li class="relative">
+                    <a class="block w-full pl-3.5 before:pointer-events-none before:absolute before:left-0.5 before:top-1/2 before:h-0.5 before:w-1.5 before:-translate-y-1/2 
+                     text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-900 hover:before:block" href="/notebooks">Usage Guide</a>
+                  </li>
+                
+              </ul>
+            
+          </li>
+        
+          <li>
+            
+              <h2 class="font-display font-semibold text-slate-900">Loom library</h2>
+              <ul class="mt-3 space-y-3">
+                
+                  
+                  
+                  <li class="relative">
+                    <a class="block w-full pl-3.5 before:pointer-events-none before:absolute before:left-0.5 before:top-1/2 before:h-0.5 before:w-1.5 before:-translate-y-1/2 
+                     text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-900 hover:before:block" href="/coming-soon">Coming Soon!</a>
+                  </li>
+                
+              </ul>
+            
+          </li>
+        
+      </ul>
+    </nav>
+  </div>
+</div>
 
-  </body>
+
+    </body>
+
 </html>
