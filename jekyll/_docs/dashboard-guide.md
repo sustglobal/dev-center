@@ -44,14 +44,14 @@ The map also acts as a selection controller for the other graphs on this section
 When hovering over a specific asset you can see its data attributes, including the address, type, coordinates and index value. The top bar displays the legend, where each color indicates a specific asset type. Asset types can be manually changed to suit your needs. In this example, they show the different types of real estate, such as industrial, office or multifamily buildings. However, you could change this to be countries or cities, and this is done by creating a column called **label:type** in the input portfolio CSV and supplying values for each asset. Refer to the User Guide section [Uploading a portfolio](user-guide#uploading-a-portfolio) for more information on this.
 
 #### Risk Heatmap
-For a selected **Climate Scenario** and **Projected Hazard**, we show categorical risk, using the maximum value of risk exposure over a projected time window:
-1. We use a 30 year window (2023-2052) for each hazard. For sea level rise we use a 2023-2100 window to account for sea level rises longer-term profound impacts.
+For a selected **Climate Scenario** and **Climate Hazard**, we show categorical risk, using the maximum value of risk exposure over a projected time window:
+1. We use a 30 year window (2023-2052) for each hazard. For sea level rise we use a 2023-2100 window to account for sea level rise's longer-term profound impacts.
 2. We use the maximum risk exposure value of each asset over all the years in the analysis time window. 
 3. We create categories using this maximum risk exposure, to classify each asset as Low, Medium, or High risk.  Each hazard has specific classification breakpoints, which are derived from a representative sample of global risk.  Risk categories are listed in the [Data Guide](data-guide). 
 
 ### Riskiest Assets
 
-The top-right Climate Explorer bar chart shows the top 20 assets in a portfolio with greatest risk exposure over a 30 year time horizon (2023-2052). It also controlled by the selected **Projected Hazard** and **Climate Scenario** dropdowns.
+The top-right Climate Explorer bar chart shows the top 20 assets in a portfolio with greatest risk exposure over a 30 year time horizon (2023-2052). It also controlled by the selected **Climate Hazard** and **Climate Scenario** dropdowns.
 
 <p align="center">
 <img height="300" src="assets/images/userguide/RiskiestAssets_exposure.png">
@@ -61,8 +61,8 @@ The top-right Climate Explorer bar chart shows the top 20 assets in a portfolio 
 <b>Fig 3:</b> Riskiest 20 assets within a portfolio
 </p>
 
-This view allows you to quickly view assets that are most at-risk, and prioritize deeper investigation accordingly.  Check the units for the x-axis by looking at the Indicator metadata table in the [Data Guide](data-guide). For a selected **Climate Scenario** and **Projected Hazard**, we show categorical risk, using the maximum value of risk exposure over a projected time window:
-1. We use a 30 year window (2023-2052) for each hazard. The exception is sea level rise, for which we use a 2023-2100 window to account for sea level rises longer-term profound impacts.
+This view allows you to quickly view assets that are most at-risk, and prioritize deeper investigation accordingly.  Check the units for the x-axis by looking at the Indicator metadata table in the [Data Guide](data-guide). For a selected **Climate Scenario** and **Climate Hazard**, we show categorical risk, using the maximum value of risk exposure over a projected time window:
+1. We use a 30 year window (2023-2052) for each hazard. The exception is sea level rise, for which we use a 2023-2100 window to account for sea level rise's longer-term profound impacts.
 2. We use the maximum risk exposure value of each asset over all the years in the analysis time window. 
 
 ### Historic Risk Event Occurrence
@@ -77,13 +77,11 @@ This view shows the observed historic monthly risk event occurrence for a partic
 <b>Fig 4:</b> Historic event occurrence
 </p>
 
-Use the **Historic Hazard** dropdown to toggle between the different hazards. Please note that we currently offer observed historical data on wildfire, flooding, cyclones and water stress. 
-
 Check the units for the y-axis by looking at the table in the [Data Guide](data-guide) for the appropriate hazard. You can select a different asset using the map, which will change the historic time series.
 
 ### Projected Risk Exposure
 
-This view shows the projected annual risk exposure for a particular asset.  Use the **Projected Hazard** dropdown to toggle between the different hazards and this will change the graph. You can learn more about the units for the y-axis by looking at the table in the [Data Guide](data-guide). The selected asset is shown below  the selection map. You can select a different asset by clicking on that map, which will update the projected exposure graph.
+This view shows the projected annual risk exposure for a particular asset.  Use the **Climate Hazard** dropdown to toggle between the different hazards and this will change the graph. You can learn more about the units for the y-axis by looking at the table in the [Data Guide](data-guide). The selected asset is shown below  the selection map. You can select a different asset by clicking on that map, which will update the projected exposure graph.
 
 #### Annual Time Series
 The default view for this graph is a timeseries of annual risk, projected to the year 2100.  The central timeseries presented is the median of outputs from the climate models. The gray bounds represent the uncertainty of the climate model outputs.  For more information on model uncertainty, see the [Data Guide](data-guide).
@@ -165,7 +163,7 @@ The summary risk values change if you toggle between the different scenarios by 
 
 #### Risk Heatmap
 For a selected **Climate Scenario**, we use the mean over asset type, maximum over a projected time window:
-1. Within assets of a type, we take the mean risk value at each year. We use a 30 year window (2023-2052) for each hazard. For sea level rise we use a 2023-2100 window to account for sea level rises longer-term profound impacts.
+1. Within assets of a type, we take the mean risk value at each year. We use a 30 year window (2023-2052) for each hazard. For sea level rise we use a 2023-2100 window to account for sea level rise's longer-term profound impacts.
 2. We use the maximum risk exposure value of each asset type over all the years in the analysis time window. 
 3. We create categories using this maximum risk exposure, to classify each asset as Low, Medium, or High risk.  Each hazard has specific classification breakpoints, which are derived from a representative sample of global risk.  Risk categories are listed in the [Data Guide](data-guide). 
 

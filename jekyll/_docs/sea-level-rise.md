@@ -1,9 +1,9 @@
 ---
 layout: doc
 title: Sea Level Rise
-subtitle: Global mean sea level increased by approximately 20cm in the past century, with 1 meter or more of rise expected by 2100. The major physical impacts of rising seas include coastal flooding, erosion of beaches, saltwater intrusion into aquifers, inundation of fertile deltas, and loss of biodiversity in marshes and wetlands.
+subtitle: Global mean sea level increased by approximately 20cm in the past century, with 1 meter or more of rise expected by 2100. The major physical impacts of rising seas include coastal flooding, erosion of beaches, saltwater intrusion into aquifers, inundation of deltas, and loss of biodiversity in marshes and wetlands.
 date: 2023-01-01
-lastmod: 2023-08-20
+lastmod: 2023-08-21
 author: TB
 tags:
 - data
