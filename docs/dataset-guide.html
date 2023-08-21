@@ -1,0 +1,1439 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Sust Global CSV Dataset Guide | Sust Global Developer Center</title>
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="Sust Global CSV Dataset Guide" />
+<meta name="author" content="Matt Cooper" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="Before Getting Started" />
+<meta property="og:description" content="Before Getting Started" />
+<meta property="og:site_name" content="Sust Global Developer Center" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-01-01T00:00:00-07:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Sust Global CSV Dataset Guide" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Matt Cooper"},"dateModified":"2023-01-01T00:00:00-07:00","datePublished":"2023-01-01T00:00:00-07:00","description":"Before Getting Started","headline":"Sust Global CSV Dataset Guide","mainEntityOfPage":{"@type":"WebPage","@id":"/dataset-guide"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"/uploads/logo-wordmark-blue.png"},"name":"Matt Cooper"},"url":"/dataset-guide"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <meta property="og:image" content="">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="shortcut icon" type="image/png" href="/uploads/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@600;700&display=swap" rel="stylesheet">
+  <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  
+</head>
+
+  <body x-data="{ docs: false, mobile: false }" class="relative">
+  
+    <header @click.outside="mobile = false"
+  class="sticky top-0 z-50 bg-white shadow-md shadow-slate-900/5 transition duration-500">
+  <div class="mx-auto max-w-7xl flex flex-wrap items-center space-x-8 justify-between px-6 lg:px-8 py-4">
+    <div class="flex items-center">
+      <button @click="docs = ! docs" type="button" class="relative lg:hidden mr-3" aria-label="Open navigation">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"
+          class="h-6 w-6 stroke-slate-500">
+          <path d="M4 7h16M4 12h16M4 17h16"></path>
+        </svg>
+      </button>
+      <a href="/">
+        
+          <img class="h-7 hidden sm:block" src="/uploads/logo-wordmark-blue.png" width="125" height="32" alt="Sust Global Developer Center">
+          <img class="h-7 sm:hidden" src="/uploads/sust-HexLogoONLYwhite.png" width="28" height="28" alt="Sust Global Developer Center">
+        
+      </a>
+      
+      <nav class="hidden lg:flex lg:space-x-8 lg:ml-12 xl:ml-16">
+        
+          
+
+          
+            <div class="relative" x-data="{ dropdown: false }">
+              <button type="button" @click.prevent="dropdown = ! dropdown"
+                :class="{ 'text-sky-500': dropdown, 'text-slate-900': !(dropdown) }"
+                class="group inline-flex transform-none items-center text-sm font-display font-semibold hover:text-sky-500 py-2.5 focus:outline-none text-slate-900"
+                aria-expanded="false">
+                <span>Docs</span>
+                <svg
+                  :class="{ 'text-sky-500 rotate-180': dropdown, 'text-slate-900 transform-none': !(dropdown) }"
+                  class="ml-0.5 h-5 w-5 group-hover:text-sky-500 text-slate-900 transform-none"
+                  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentcolor" aria-hidden="true">
+                  <path fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414.0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414.0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd"></path>
+                </svg>
+              </button>
+              <div x-show="dropdown" :class="{ 'block': dropdown, 'hidden': !(dropdown) }"
+                x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 translate-y-1"
+                x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-150"
+                x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 translate-y-1"
+                @click.outside="dropdown = false"
+                class="absolute z-10 -ml-4 mt-3 w-screen max-w-[16rem] transform px-2 sm:px-0 lg:left-1/2 lg:ml-0 lg:-translate-x-1/2 hidden"
+                style="display: none;">
+                <div class="overflow-hidden rounded-2xl shadow-lg border border-slate-100">
+                  <div class="relative grid gap-6 bg-white p-8 sm:gap-8">
+                    
+                                          
+                      <a href="/user-guide"
+                        class="-m-4 flex items-start group rounded-xl p-4 text-slate-900 hover:text-sky-500">
+                        
+                          <div class="flex-shrink-0 mr-3">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M6.42857 9.75L2.25 12L6.42857 14.25M6.42857 9.75L12 12.75L17.5714 9.75M6.42857 9.75L2.25 7.5L12 2.25L21.75 7.5L17.5714 9.75M17.5714 9.75L21.75 12L17.5714 14.25M17.5714 14.25L21.75 16.5L12 21.75L2.25 16.5L6.42857 14.25M17.5714 14.25L12 17.25L6.42857 14.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                            
+                          </div>
+                        
+                        <div>
+                          <p class="text-sm font-display font-semibold">Introduction</p>
+                        </div>
+                      </a>
+                    
+                                          
+                      <a href="/data-guide/"
+                        class="-m-4 flex items-start group rounded-xl p-4 text-slate-900 hover:text-sky-500">
+                        
+                          <div class="flex-shrink-0 mr-3">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6.04168C10.4077 4.61656 8.30506 3.75 6 3.75C4.94809 3.75 3.93834 3.93046 3 4.26212V18.5121C3.93834 18.1805 4.94809 18 6 18C8.30506 18 10.4077 18.8666 12 20.2917M12 6.04168C13.5923 4.61656 15.6949 3.75 18 3.75C19.0519 3.75 20.0617 3.93046 21 4.26212V18.5121C20.0617 18.1805 19.0519 18 18 18C15.6949 18 13.5923 18.8666 12 20.2917M12 6.04168V20.2917" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                            
+                          </div>
+                        
+                        <div>
+                          <p class="text-sm font-display font-semibold">Data Guide</p>
+                        </div>
+                      </a>
+                    
+                                          
+                      <a href="/notebooks/"
+                        class="-m-4 flex items-start group rounded-xl p-4 text-slate-900 hover:text-sky-500">
+                        
+                          <div class="flex-shrink-0 mr-3">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 7.5L18.75 6.1875M21 7.5V9.75M21 7.5L18.75 8.8125M3 7.5L5.25 6.1875M3 7.5L5.25 8.8125M3 7.5V9.75M12 12.75L14.25 11.4375M12 12.75L9.75 11.4375M12 12.75V15M12 21.75L14.25 20.4375M12 21.75V19.5M12 21.75L9.75 20.4375M9.75 3.5625L12 2.25L14.25 3.5625M21 14.25V16.5L18.75 17.8125M5.25 17.8125L3 16.5V14.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                            
+                          </div>
+                        
+                        <div>
+                          <p class="text-sm font-display font-semibold">Jupyter Notebooks</p>
+                        </div>
+                      </a>
+                    
+                                          
+                      <a href="https://explorer.sustglobal.io/redoc/"
+                        class="-m-4 flex items-start group rounded-xl p-4 text-slate-900 hover:text-sky-500">
+                        
+                          <div class="flex-shrink-0 mr-3">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4806 3.49883C11.6728 3.03685 12.3272 3.03685 12.5193 3.49883L14.6453 8.61028C14.7263 8.80504 14.9095 8.93811 15.1197 8.95497L20.638 9.39736C21.1367 9.43735 21.339 10.0598 20.959 10.3853L16.7546 13.9867C16.5945 14.1239 16.5245 14.3392 16.5734 14.5444L17.8579 19.9293C17.974 20.416 17.4446 20.8007 17.0176 20.5398L12.2932 17.6542C12.1132 17.5443 11.8868 17.5443 11.7068 17.6542L6.98238 20.5398C6.55539 20.8007 6.02594 20.416 6.14203 19.9293L7.42652 14.5444C7.47546 14.3392 7.4055 14.1239 7.24531 13.9867L3.04099 10.3853C2.661 10.0598 2.86323 9.43735 3.36197 9.39736L8.88022 8.95497C9.09048 8.93811 9.27363 8.80504 9.35464 8.61028L11.4806 3.49883Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                            
+                          </div>
+                        
+                        <div>
+                          <p class="text-sm font-display font-semibold">API Spec</p>
+                        </div>
+                      </a>
+                    
+                                          
+                      <a href="/coming-soon/"
+                        class="-m-4 flex items-start group rounded-xl p-4 text-slate-900 hover:text-sky-500">
+                        
+                          <div class="flex-shrink-0 mr-3">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M15.9099 11.6722C16.1671 11.8151 16.1671 12.1849 15.9099 12.3278L10.3071 15.4405C10.0572 15.5794 9.75 15.3986 9.75 15.1127V8.88732C9.75 8.60139 10.0572 8.42065 10.3071 8.55951L15.9099 11.6722Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                            
+                          </div>
+                        
+                        <div>
+                          <p class="text-sm font-display font-semibold">Loom library</p>
+                        </div>
+                      </a>
+                    
+                                          
+                      <a href="/faq/"
+                        class="-m-4 flex items-start group rounded-xl p-4 text-slate-900 hover:text-sky-500">
+                        
+                          <div class="flex-shrink-0 mr-3">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M9.87891 7.51884C11.0505 6.49372 12.95 6.49372 14.1215 7.51884C15.2931 8.54397 15.2931 10.206 14.1215 11.2312C13.9176 11.4096 13.6917 11.5569 13.4513 11.6733C12.7056 12.0341 12.0002 12.6716 12.0002 13.5V14.25M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12ZM12 17.25H12.0075V17.2575H12V17.25Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                            
+                          </div>
+                        
+                        <div>
+                          <p class="text-sm font-display font-semibold">FAQ</p>
+                        </div>
+                      </a>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+        
+          
+
+          
+            <a class="text-sm hover:text-sky-500 py-2.5 text-slate-900 font-display font-semibold" href="/updates/" >Product Updates</a>
+          
+        
+          
+
+          
+            <a class="text-sm hover:text-sky-500 py-2.5 text-slate-900 font-display font-semibold" href="https://www.sustglobal.com/insights/blog/" target="_blank" rel="noopener" >Dev Blogs</a>
+          
+        
+          
+
+          
+            <a class="text-sm hover:text-sky-500 py-2.5 text-slate-900 font-display font-semibold" href="https://explorer.sustglobal.io/account/login/?next=/" target="_blank" rel="noopener" >Climate Explorer</a>
+          
+                    
+      </nav>
+    </div>
+    <div class="flex items-center flex-1 justify-end">
+      <div class="w-full md:w-72 xl:w-96">
+        <div class="w-full">
+          <label for="search-input" class="sr-only">Search</label>
+          <div class="relative">
+            <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+              <svg class="h-5 w-5 text-slate-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd"
+                  d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </div>
+            <input id="search-input" name="search" data-minchars="1" data-maxitems="30"
+              class="block w-full rounded-md border-0 bg-white py-2.5 pl-10 pr-3 text-slate-900 ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-slate-300 sm:text-sm sm:leading-6"
+              placeholder="Search" type="search" autocomplete="off">
+              <ul class="absolute w-full mt-2 border border-slate-200 rounded-lg text-sm shadow-md bg-white text-slate-500 max-h-96 overflow-y-auto hidden" id="results-container"></ul>
+          </div>
+        </div>
+      </div>
+      <button @click="mobile = ! mobile" type="button" class="relative lg:hidden ml-4" aria-label="Open navigation">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"
+          class="h-6 w-6 stroke-slate-500">
+          <path d="M4 7h16M4 12h16M4 17h16"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div x-show="mobile"
+    :class="{ 'block': mobile, 'hidden': !(mobile) }"
+    x-transition:enter="duration-200 ease-out"
+    x-transition:enter-start="opacity-0 scale-95"
+    x-transition:enter-end="opacity-100 scale-100"
+    x-transition:leave="duration-100 ease-in"
+    x-transition:leave-start="opacity-100 scale-100"
+    x-transition:leave-end="opacity-0 scale-95"
+    class="z-10 origin-top transform transition hidden lg:hidden border-y border-gray-200"
+    >
+    <div class="overflow-hidden bg-white">
+      <div class="space-y-1 p-4 sm:p-6">
+        
+          
+
+          
+            <div x-data="{ accordion: false }">
+              <a
+                href="#"
+                class="flex items-center rounded-lg px-4 py-3 text-base font-medium font-display text-slate-900 hover:text-sky-500 hover:bg-slate-50"
+                @click.prevent="accordion = ! accordion"
+              >
+                <span class="flex-1">Docs</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  :class="{ 'rotate-90': accordion, 'transform-none': !(accordion) }"
+                  class="h-6 w-6"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </a>
+              <div x-show="accordion" :class="{ 'block': accordion, 'hidden': !(accordion) }">
+                
+                                      
+                  <a href="/user-guide" class="ml-4 flex items-center group rounded-lg px-4 py-3 text-slate-900 hover:text-sky-500 hover:bg-slate-50">
+                    
+                      <div class="flex-shrink-0 mr-2.5 group-hover:text-primary-600">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M6.42857 9.75L2.25 12L6.42857 14.25M6.42857 9.75L12 12.75L17.5714 9.75M6.42857 9.75L2.25 7.5L12 2.25L21.75 7.5L17.5714 9.75M17.5714 9.75L21.75 12L17.5714 14.25M17.5714 14.25L21.75 16.5L12 21.75L2.25 16.5L6.42857 14.25M17.5714 14.25L12 17.25L6.42857 14.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                            
+                      </div>
+                    
+                    <span class="text-base font-medium font-display">Introduction</span>
+                  </a>
+                
+                                      
+                  <a href="/data-guide/" class="ml-4 flex items-center group rounded-lg px-4 py-3 text-slate-900 hover:text-sky-500 hover:bg-slate-50">
+                    
+                      <div class="flex-shrink-0 mr-2.5 group-hover:text-primary-600">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6.04168C10.4077 4.61656 8.30506 3.75 6 3.75C4.94809 3.75 3.93834 3.93046 3 4.26212V18.5121C3.93834 18.1805 4.94809 18 6 18C8.30506 18 10.4077 18.8666 12 20.2917M12 6.04168C13.5923 4.61656 15.6949 3.75 18 3.75C19.0519 3.75 20.0617 3.93046 21 4.26212V18.5121C20.0617 18.1805 19.0519 18 18 18C15.6949 18 13.5923 18.8666 12 20.2917M12 6.04168V20.2917" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                            
+                      </div>
+                    
+                    <span class="text-base font-medium font-display">Data Guide</span>
+                  </a>
+                
+                                      
+                  <a href="/notebooks/" class="ml-4 flex items-center group rounded-lg px-4 py-3 text-slate-900 hover:text-sky-500 hover:bg-slate-50">
+                    
+                      <div class="flex-shrink-0 mr-2.5 group-hover:text-primary-600">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 7.5L18.75 6.1875M21 7.5V9.75M21 7.5L18.75 8.8125M3 7.5L5.25 6.1875M3 7.5L5.25 8.8125M3 7.5V9.75M12 12.75L14.25 11.4375M12 12.75L9.75 11.4375M12 12.75V15M12 21.75L14.25 20.4375M12 21.75V19.5M12 21.75L9.75 20.4375M9.75 3.5625L12 2.25L14.25 3.5625M21 14.25V16.5L18.75 17.8125M5.25 17.8125L3 16.5V14.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                            
+                      </div>
+                    
+                    <span class="text-base font-medium font-display">Jupyter Notebooks</span>
+                  </a>
+                
+                                      
+                  <a href="https://explorer.sustglobal.io/redoc/" class="ml-4 flex items-center group rounded-lg px-4 py-3 text-slate-900 hover:text-sky-500 hover:bg-slate-50">
+                    
+                      <div class="flex-shrink-0 mr-2.5 group-hover:text-primary-600">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4806 3.49883C11.6728 3.03685 12.3272 3.03685 12.5193 3.49883L14.6453 8.61028C14.7263 8.80504 14.9095 8.93811 15.1197 8.95497L20.638 9.39736C21.1367 9.43735 21.339 10.0598 20.959 10.3853L16.7546 13.9867C16.5945 14.1239 16.5245 14.3392 16.5734 14.5444L17.8579 19.9293C17.974 20.416 17.4446 20.8007 17.0176 20.5398L12.2932 17.6542C12.1132 17.5443 11.8868 17.5443 11.7068 17.6542L6.98238 20.5398C6.55539 20.8007 6.02594 20.416 6.14203 19.9293L7.42652 14.5444C7.47546 14.3392 7.4055 14.1239 7.24531 13.9867L3.04099 10.3853C2.661 10.0598 2.86323 9.43735 3.36197 9.39736L8.88022 8.95497C9.09048 8.93811 9.27363 8.80504 9.35464 8.61028L11.4806 3.49883Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                            
+                      </div>
+                    
+                    <span class="text-base font-medium font-display">API Spec</span>
+                  </a>
+                
+                                      
+                  <a href="/coming-soon/" class="ml-4 flex items-center group rounded-lg px-4 py-3 text-slate-900 hover:text-sky-500 hover:bg-slate-50">
+                    
+                      <div class="flex-shrink-0 mr-2.5 group-hover:text-primary-600">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M15.9099 11.6722C16.1671 11.8151 16.1671 12.1849 15.9099 12.3278L10.3071 15.4405C10.0572 15.5794 9.75 15.3986 9.75 15.1127V8.88732C9.75 8.60139 10.0572 8.42065 10.3071 8.55951L15.9099 11.6722Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                            
+                      </div>
+                    
+                    <span class="text-base font-medium font-display">Loom library</span>
+                  </a>
+                
+                                      
+                  <a href="/faq/" class="ml-4 flex items-center group rounded-lg px-4 py-3 text-slate-900 hover:text-sky-500 hover:bg-slate-50">
+                    
+                      <div class="flex-shrink-0 mr-2.5 group-hover:text-primary-600">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M9.87891 7.51884C11.0505 6.49372 12.95 6.49372 14.1215 7.51884C15.2931 8.54397 15.2931 10.206 14.1215 11.2312C13.9176 11.4096 13.6917 11.5569 13.4513 11.6733C12.7056 12.0341 12.0002 12.6716 12.0002 13.5V14.25M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12ZM12 17.25H12.0075V17.2575H12V17.25Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                            
+                      </div>
+                    
+                    <span class="text-base font-medium font-display">FAQ</span>
+                  </a>
+                
+              </div>
+            </div>
+          
+        
+          
+
+          
+            <a href="/updates/" class="block rounded-lg font-medium font-display tracking-wide px-4 py-3 text-base text-slate-900 hover:text-sky-500 hover:bg-slate-50" 
+            >Product Updates</a>
+          
+        
+          
+
+          
+            <a href="https://www.sustglobal.com/insights/blog/" class="block rounded-lg font-medium font-display tracking-wide px-4 py-3 text-base text-slate-900 hover:text-sky-500 hover:bg-slate-50" 
+            target="_blank" rel="noopener" >Dev Blogs</a>
+          
+        
+          
+
+          
+            <a href="https://explorer.sustglobal.io/account/login/?next=/" class="block rounded-lg font-medium font-display tracking-wide px-4 py-3 text-base text-slate-900 hover:text-sky-500 hover:bg-slate-50" 
+            target="_blank" rel="noopener" >Climate Explorer</a>
+          
+         
+      </div>
+    </div>
+  </div>
+</header>
+<script src="https://unpkg.com/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
+<script>
+	window.simpleJekyllSearch = new SimpleJekyllSearch({
+		searchInput: document.getElementById('search-input'),
+		resultsContainer: document.getElementById('results-container'),
+		searchResultTemplate: '<li><a class="px-3 py-3 block leading-tight hover:text-sky-500" href="{url}">{title}</a></li>',
+		noResultsText: '<li class="no-results px-3 py-3">No results found</li>',
+		json: "/search.json"
+	});
+	
+	searchResults();
+
+  var search = document.getElementById("search-input");
+  var results = document.getElementById("results-container");
+
+  search.addEventListener('input', function() {
+    if (search.value === '') {
+        results.classList.add('hidden');
+    } else {
+        results.classList.remove('hidden');
+    }
+  });
+
+	function searchResults() {
+
+		var currentItem = null;
+		var search = document.getElementById("search-input");
+		var results = document.getElementById( "results-container");
+
+		function removeActive() {
+			for (i = 0; i < results.children.length; i++) {
+				results.children[i].classList.remove("bg-slate-50");
+        results.children[i].classList.remove("text-sky-500");
+			}
+		}
+
+		results.addEventListener("mouseover", function(event) {
+
+			removeActive();
+			event.target.parentElement.classList.add("bg-slate-50");
+      event.target.parentElement.classList.add("text-sky-500");
+			currentItem = null;
+
+		});
+
+		results.addEventListener("mouseout", function(event) {
+			event.target.parentElement.classList.remove("bg-slate-50");
+      event.target.parentElement.classList.remove("text-sky-500");
+		});
+
+
+		search.addEventListener("keyup", function(event) {
+
+			var resultItems = results.children;
+			var resultCount = results.children.length;
+
+			if (event.keyCode === 40) {
+
+				if (currentItem < (resultCount - 1)) {
+					if (currentItem === null) {
+						currentItem = 0;
+					} else {
+						removeActive();
+						currentItem++;
+					}
+					removeActive();
+					resultItems[currentItem].classList.add("bg-slate-50");
+          resultItems[currentItem].classList.add("text-sky-500");
+				}
+
+			} else if (event.keyCode === 38) {
+				if (currentItem > 0) {
+					if (currentItem === null) {
+						currentItem = 0;
+					} else {
+						removeActive();
+						currentItem--;
+					}
+					removeActive();
+					resultItems[currentItem].classList.add("bg-slate-50");
+          resultItems[currentItem].classList.add("text-sky-500");
+				}
+
+			} else if (event.keyCode === 13 && currentItem !== null) {
+        resultItems[currentItem].children[0].click();
+      }
+
+		});
+
+	}
+</script>
+
+
+
+
+    <div class="relative mx-auto flex max-w-7xl justify-center px-2 lg:px-8">
+      <div class="hidden lg:relative lg:block lg:flex-none">
+        <div class="sticky top-[4.5rem] -ml-0.5 w-64 overflow-y-auto overflow-x-hidden pt-16 pl-0.5 pr-8 xl:w-72 xl:pr-16">
+          <nav class="text-sm">
+            <ul class="space-y-9">
+              
+                <li>
+                  
+                    <h2 class="font-display font-semibold text-slate-900">Introduction</h2>
+                    <ul class="mt-4 space-y-4 border-slate-200">
+                      
+                        
+                        
+                        <li class="relative">
+                          <a class="block w-full pl-3.5 before:pointer-events-none before:absolute before:left-0.5 before:top-1/2 before:h-0.5 before:w-1.5 before:-translate-y-1/2 
+                           text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-900 hover:before:block" href="/user-guide">Climate Explorer User Guide</a>
+                        </li>
+                      
+                        
+                        
+                        <li class="relative">
+                          <a class="block w-full pl-3.5 before:pointer-events-none before:absolute before:left-0.5 before:top-1/2 before:h-0.5 before:w-1.5 before:-translate-y-1/2 
+                           text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-900 hover:before:block" href="/dashboard-guide">Dashboard User Guide</a>
+                        </li>
+                      
+                        
+                        
+                        <li class="relative">
+                          <a class="block w-full pl-3.5 before:pointer-events-none before:absolute before:left-0.5 before:top-1/2 before:h-0.5 before:w-1.5 before:-translate-y-1/2 
+                           text-sky-500 before:bg-sky-500" href="/dataset-guide">Sust Global CSV Dataset Guide</a>
+                        </li>
+                      
+                        
+                        
+                        <li class="relative">
+                          <a class="block w-full pl-3.5 before:pointer-events-none before:absolute before:left-0.5 before:top-1/2 before:h-0.5 before:w-1.5 before:-translate-y-1/2 
+                           text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-900 hover:before:block" href="/api-guide">API User Guide</a>
+                        </li>
+                      
+                        
+                        
+                        <li class="relative">
+                          <a class="block w-full pl-3.5 before:pointer-events-none before:absolute before:left-0.5 before:top-1/2 before:h-0.5 before:w-1.5 before:-translate-y-1/2 
+                           text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-900 hover:before:block" href="/search">Search API</a>
+                        </li>
+                      
+                    </ul>
+                  
+                </li>
+              
+                <li>
+                  
+                    <h2 class="font-display font-semibold text-slate-900">Data Guide</h2>
+                    <ul class="mt-4 space-y-4 border-slate-200">
+                      
+                        
+                        
+                        <li class="relative">
+                          <a class="block w-full pl-3.5 before:pointer-events-none before:absolute before:left-0.5 before:top-1/2 before:h-0.5 before:w-1.5 before:-translate-y-1/2 
+                           text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-900 hover:before:block" href="/data-guide">Climate Data Guide</a>
+                        </li>
+                      
+                        
+                        
+                        <li class="relative">
+                          <a class="block w-full pl-3.5 before:pointer-events-none before:absolute before:left-0.5 before:top-1/2 before:h-0.5 before:w-1.5 before:-translate-y-1/2 
+                           text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-900 hover:before:block" href="/wildfire">Wildfire</a>
+                        </li>
+                      
+                        
+                        
+                        <li class="relative">
+                          <a class="block w-full pl-3.5 before:pointer-events-none before:absolute before:left-0.5 before:top-1/2 before:h-0.5 before:w-1.5 before:-translate-y-1/2 
+                           text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-900 hover:before:block" href="/flood">Flood</a>
+                        </li>
+                      
+                        
+                        
+                        <li class="relative">
+                          <a class="block w-full pl-3.5 before:pointer-events-none before:absolute before:left-0.5 before:top-1/2 before:h-0.5 before:w-1.5 before:-translate-y-1/2 
+                           text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-900 hover:before:block" href="/cyclones">Cyclones</a>
+                        </li>
+                      
+                        
+                        
+                        <li class="relative">
+                          <a class="block w-full pl-3.5 before:pointer-events-none before:absolute before:left-0.5 before:top-1/2 before:h-0.5 before:w-1.5 before:-translate-y-1/2 
+                           text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-900 hover:before:block" href="/heatwaves">Heatwaves</a>
+                        </li>
+                      
+                        
+                        
+                        <li class="relative">
+                          <a class="block w-full pl-3.5 before:pointer-events-none before:absolute before:left-0.5 before:top-1/2 before:h-0.5 before:w-1.5 before:-translate-y-1/2 
+                           text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-900 hover:before:block" href="/sea-level-rise">Sea Level Rise</a>
+                        </li>
+                      
+                        
+                        
+                        <li class="relative">
+                          <a class="block w-full pl-3.5 before:pointer-events-none before:absolute before:left-0.5 before:top-1/2 before:h-0.5 before:w-1.5 before:-translate-y-1/2 
+                           text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-900 hover:before:block" href="/water-stress">Water Stress</a>
+                        </li>
+                      
+                        
+                        
+                        <li class="relative">
+                          <a class="block w-full pl-3.5 before:pointer-events-none before:absolute before:left-0.5 before:top-1/2 before:h-0.5 before:w-1.5 before:-translate-y-1/2 
+                           text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-900 hover:before:block" href="/value-at-risk">Financial Risk Analysis</a>
+                        </li>
+                      
+                    </ul>
+                  
+                </li>
+              
+                <li>
+                  
+                    <h2 class="font-display font-semibold text-slate-900">Jupyter Notebooks</h2>
+                    <ul class="mt-4 space-y-4 border-slate-200">
+                      
+                        
+                        
+                        <li class="relative">
+                          <a class="block w-full pl-3.5 before:pointer-events-none before:absolute before:left-0.5 before:top-1/2 before:h-0.5 before:w-1.5 before:-translate-y-1/2 
+                           text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-900 hover:before:block" href="/notebooks">Usage Guide</a>
+                        </li>
+                      
+                    </ul>
+                  
+                </li>
+              
+                <li>
+                  
+                    <h2 class="font-display font-semibold text-slate-900">Loom library</h2>
+                    <ul class="mt-4 space-y-4 border-slate-200">
+                      
+                        
+                        
+                        <li class="relative">
+                          <a class="block w-full pl-3.5 before:pointer-events-none before:absolute before:left-0.5 before:top-1/2 before:h-0.5 before:w-1.5 before:-translate-y-1/2 
+                           text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-900 hover:before:block" href="/coming-soon">Coming Soon!</a>
+                        </li>
+                      
+                    </ul>
+                  
+                </li>
+              
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="min-w-0 flex-auto px-4 pt-16 lg:max-w-none lg:pl-8 lg:pr-0  max-w-2xl xl:px-16 max-w-4xl xl:pl-16">
+        <article>
+  <header class="mb-9">
+    
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            <p class="font-display text-sm font-semibold text-sky-500 mb-1">Introduction</p>
+          
+        
+          
+          
+        
+          
+          
+        
+      
+    
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+    
+      
+        
+          
+          
+        
+      
+    
+      
+        
+          
+          
+        
+      
+    
+    <h1 class="font-display text-3xl tracking-tight text-slate-900 font-semibold">Sust Global CSV Dataset Guide</h1>
+    
+      
+      <div class="flex space-x-4 mt-4">
+        
+          
+          <div class="flex-none">
+              <img class="rounded-full" width="40" height="40" src="/uploads/sust-HexLogoONLYwhite.png" alt="Matt Cooper">
+          </div>
+        
+        
+        <div class="flex-1">
+          <p class="font-display font-semibold text-sm text-slate-900">Matt Cooper</p>
+          <p class="text-sm text-slate-500">Created: Jan 1, 2023 
+            - Updated: Aug 20, 2023
+            </p>
+        </div>
+        <div class="flex-none">
+          <a href="#share" class="rounded-md bg-sky-50 px-2.5 py-1.5 text-sm font-semibold font-display text-sky-500 shadow-sm hover:bg-sky-100">Share</a>
+        </div>
+      </div>
+    
+
+    
+      <p class="text-lg text-slate-600 mt-9">This section will go through each risk exposure dataset available for download and explain the methodology behind it. We will also show you how to use and interpret the numbers, which includes a written interpretation of the datasets.</p>
+    
+  </header>
+  <div class="prose prose-slate max-w-none prose-headings:scroll-mt-28 prose-headings:font-display prose-headings:font-semibold prose-lead:text-slate-500 prose-a:font-semibold prose-a:no-underline hover:prose-a:text-sky-500 prose-pre:rounded-xl prose-pre:bg-slate-900 prose-pre:shadow-lg"><h2 id="before-getting-started">Before Getting Started</h2>
+
+<p>Please note that you must change the sections of text in brackets <strong>[  ]</strong> to suit the specific values, hazards and scenarios you are describing.</p>
+
+<h2 id="what-are-the-csv-datasets">What are the CSV datasets?</h2>
+
+<p>Comma separated value (CSV) files contain the physical climate risk analysis information from Climate Explorer Dashboard product, which can be used for reporting, risk management and strategic planning needs. Using the CSV files are useful if you would like to use the underlying data to create your own graphs or charts for a report or presentation, to undergo further analysis (such as data aggregations, comparisons between assets etc.) or as an input into your Excel models.</p>
+
+<h2 id="file-naming-conventions">File naming conventions</h2>
+
+<p>Here are the descriptions of the naming parameters:</p>
+
+<ol>
+  <li>Reporting Data Type {<strong>reporting_data_type</strong>}: This tells you the risk variable the CSV contains data for: annual_temperature, annual_precipitation, cyclones, extreme_precipitation, fire_risk, flood, heatwaves and drought (SPEI), sea level rise (SLR)</li>
+  <li>Dataset Name {<strong>dataset_name</strong>}: This is the name assigned to project or dataset (portfolio) by the customer or Sust Global</li>
+  <li>Scenario ID {<strong>scenarioID</strong>}: This tells you which scenario the data within the CSV file was generated under, and it can be either: ssp126 (Strong Mitigation); ssp245 (Middle of the Road); or ssp585 (High Emissions).</li>
+  <li>Bounds: For some files, this will tell you whether the data presented is the <strong>lbd</strong> (lower bound, which is the 16th percentile), <strong>ubd</strong> (upper bound, which is the 84th percentile), or the <strong>median</strong> (in which case, there will be nothing additional written in the file name at all) outputs from the climate models. The exception is cyclones, which use a different upper and lower bound (+/- 1 standard deviation) and we use the mean, rather than the median, output from the climate models.</li>
+</ol>
+
+<h2 id="historic-risk-exposure">Historic risk exposure</h2>
+
+<p>The naming convention for the historic risk exposure datasets is as follows:
+<strong>sustglobal_asset_his_risk_{dataset_name}.csv</strong></p>
+
+<p>In these files, each row corresponds to one asset location, and there are individual columns for each month from Jan 2010 to Dec 2020 for Cyclone exposure; each year from 2001 to 2021 for Wildfire; and each year from 2012 to 2021 for Flooding.</p>
+
+<h4 id="interpretation">Interpretation</h4>
+<p>The example we are looking at here is called <strong>sustglobal_asset_his_risk_MRTG_demo.csv</strong></p>
+
+<p align="center">
+<img height="500" src="assets/images/userguide/UG_Fig14.png" />
+</p>
+
+<p align="center">
+Fig 14: Historical Risk CSV
+</p>
+
+<p><strong>M_FIRE_YYYY-MM-DD</strong>: This shows the yearly severity values for observed historical wildfires within 1km of an asset. 
+For example, Asset X has a Wildfire historic risk event severity value of [1/0] in [2018]. This means that in [2018], there [was/wasnt] a satellite-observed wildfire within within a 1km radius of asset X.</p>
+
+<p><strong>FLOOD_YYYY-MM-DD</strong>: This shows the yearly severity values for observed historical inland floods for a specific asset. 
+For example, Asset X has a Flood historic risk event severity value of [1/0] in [2018]. This means that in [2018], there [was/wasnt] a satellite-observed flood at the location of of asset X.</p>
+
+<p><strong>CYCLONE_YYYY-MM-DD</strong>: This shows the monthly severity values for observed historical cyclones for a specific asset. 
+For example, Asset X has a Cyclone historic risk event severity value of [1] in [Sep 2017]. This means that there was [one] Category 3, 4 or 5 cyclone observed in September 2017 within a 241km radius of Asset X.</p>
+
+<h2 id="forward-looking-risk-exposure">Forward looking risk exposure</h2>
+
+<p>The naming convention for the CSV files is as follows: <strong>sustglobal_asset_fwd_{reporting_data_type}<em>risk</em>{dataset_name}_{scenarioID}. csv</strong> 
+In every dataset CSV, each row corresponds to an asset in the data collection. We have columns for the individual asset attributes and a column for each year from 1980 to 2100. The columns for each year contain the projected risk value for a specific asset for a specific year based on the reporting outcomes description.
+Refer to the User Guide section ‘Uploading a portfolio’ for more information on the input fields, such as lat, lng and address. We will explain each of the output fields in turn below.</p>
+
+<p>Please note that each of the forward looking dataset CSVs will include projections for past years (1980 onwards) - these are climate model outputs incorporated into our proprietary machine learning techniques used to validate our data. We would advise using the forward looking projections only, and use the historical datasets for risk values from previous years.</p>
+
+<h3 id="forward-looking-annual-precipitation-datasets">Forward looking annual precipitation datasets</h3>
+<p>This section will look at CSVs with the Reporting Data Type {<strong>reporting_data_type</strong>} of <strong>annual_precipitation</strong>: <strong>sustglobal_asset_fwd_annual_precipitation_risk_{dataset_name}_{ScenarioID}.csv</strong></p>
+
+<p>In this example, we will look at the following dataset:
+<strong>sustglobal_asset_fwd_annual_precipitation_risk_MRTG_demo_ssp126_lbd.csv</strong></p>
+
+<p>This dataset shows the forward looking annual precipitation for assets in a selected portfolio, under an ssp126 scenario (Strong Mitigation), and shows the lower bound of the climate model outputs.</p>
+
+<p align="center">
+<img height="500" src="assets/images/userguide/UG_Fig15.png" />
+</p>
+
+<p align="center">
+Fig 15: forward looking annual precipitation CSV
+</p>
+
+<h4 id="interpretation-of-yyyy-column">Interpretation of YYYY column</h4>
+
+<p>The values in these columns show the [lower bound] of the projected annual precipitation values for a specific asset under the [Strong Mitigation] scenario.</p>
+
+<h3 id="forward-looking-annual-temperature-datasets">Forward looking annual temperature datasets</h3>
+
+<p>This section will look at CSVs with the Reporting Data Type {<strong>reporting_data_type</strong>} of <strong>annual_temperature</strong>: <strong>sustglobal_asset_fwd_annual_temperature_risk_{dataset_name}_{ScenarioID}.csv</strong></p>
+
+<p>In this example, we will look at the following dataset:
+<strong>sustglobal_asset_fwd_annual_temperature_risk_MRTG_demo_ssp126_lbd.csv</strong></p>
+
+<p>This dataset shows the forward looking annual temperature for assets in a selected portfolio, under an ssp126 scenario (Strong Mitigation), and shows the lower bound of the climate model outputs.</p>
+
+<p align="center">
+<img height="500" src="assets/images/userguide/UG_Fig16.png" />
+</p>
+
+<p align="center">
+Fig 16: forward looking annual temperature CSV
+</p>
+
+<h4 id="interpretation-of-yyyy-column-1">Interpretation of YYYY column</h4>
+<p>The values in these columns show the [lower bound] of the projected annual temperature values for a specific asset under the [Strong Mitigation] scenario.</p>
+
+<h3 id="forward-looking-extreme-precipitation-datasets">Forward looking extreme precipitation datasets</h3>
+
+<p>This section will look at CSVs with the Reporting Data Type {<strong>reporting_data_type</strong>} of <strong>extreme_precipitation</strong>: <strong>sustglobal_asset_fwd_extreme_precipitation_risk_{dataset_name}_{ScenarioID}.csv</strong>
+In this example, we will look at the following dataset:
+<strong>sustglobal_asset_fwd_extreme_precipitation_risk_MRTG_demo_ssp126.csv</strong></p>
+
+<p>This dataset shows the forward looking median annual extreme precipitation for the selected portfolio, under an ssp126 scenario (Strong Mitigation).</p>
+
+<p align="center">
+<img height="500" src="assets/images/userguide/UG_Fig17.png" />
+</p>
+
+<p align="center">
+Fig 18: forward looking extreme precipitation CSV
+</p>
+
+<h4 id="interpretation-of-yyyy-column-2">Interpretation of YYYY column</h4>
+<p>The values in these columns show the median projected annual extreme precipitation values for a specific asset under the [Strong Mitigation] scenario.</p>
+
+<h3 id="forward-looking-cyclone-datasets">Forward looking cyclone datasets</h3>
+
+<p>This section will look at CSVs with the Reporting Data Type {<strong>reporting_data_type</strong>} of <strong>cyclones</strong>: <strong>sustglobal_asset_fwd_cyclones_risk_{dataset_name}_{ScenarioID}.csv</strong>
+In this example, we will look at the following dataset: <strong>sustglobal_asset_fwd_cyclones_risk_MRTG_demo_ssp126.csv</strong></p>
+
+<p>This dataset shows the forward looking annual cyclone risk for the selected portfolio, under an ssp126 scenario (Strong Mitigation), and shows the mean of the climate model outputs.</p>
+
+<p align="center">
+<img height="500" src="assets/images/userguide/UG_Fig17.png" />
+</p>
+
+<p align="center">
+Fig 17: forward looking cyclone risk CSV
+</p>
+
+<h4 id="interpretation-of-yyyy-column-3">Interpretation of YYYY column</h4>
+<p>The values in these columns show the [mean] of the projected annual cyclone risk for a specific asset in a particular year under the [Strong Mitigation] scenario. For example, Asset X has a Tropical Cyclone risk projection value of [0.5] in [2045]. This means that in [2045], we project a [50]% probability of at least one hit by a category 3/4/5 cyclone within a 241km radius of the asset under the [Strong Mitigation] scenario.</p>
+
+<h3 id="forward-looking-unified-wildfire-datasets">Forward looking unified wildfire datasets</h3>
+<p>This section will look at CSVs with the Reporting Data Type {<strong>reporting_data_type</strong>} of <strong>wildfire_unified_prob</strong>: <strong>sustglobal_asset_fwd_wildfire_unified_prob_risk_{dataset_name}_{ScenarioID}.csv</strong></p>
+
+<p>In this example, we will look at the following dataset:
+<strong>sustglobal_asset_fwd_wildfire_unified_prob_risk_MRTG_demo_ssp126.csv</strong></p>
+
+<p>This dataset shows the forward looking median annual unified wildfire risk for the selected portfolio, under an ssp126 scenario (Strong Mitigation).</p>
+
+<p align="center">
+<img height="500" src="assets/images/userguide/UG_Fig19.png" />
+</p>
+
+<p align="center">
+Fig 19A: forward looking Unified wildfire risk CSV
+</p>
+
+<h4 id="interpretation-of-yyyy-column-4">Interpretation of YYYY column</h4>
+<p>The values in these columns show the median projected annual Wildfire Susceptibility values for a specific asset under the [Strong Mitigation] scenario.</p>
+
+<p>For example, Asset X has a wildfire probability risk projection value of [0.05] in [Jan, 2023]. This means that in the year [2023], we project a [5]% probability of a wildfire occurring within 1km of the asset under the [Strong Mitigation] scenario.</p>
+
+<h3 id="forward-looking-flood-risk-datasets">Forward looking flood risk datasets</h3>
+
+<p>This section will look at CSVs with the Reporting Data Type {<strong>reporting_data_type</strong>} of <strong>flood</strong>: <strong>sustglobal_asset_fwd_flood_risk_{dataset_name}_{ScenarioID}.csv</strong></p>
+
+<p>In this example, we will look at the following dataset: <strong>sustglobal_asset_fwd_flood_risk_MRTG_demo_ssp126.csv</strong>
+This dataset shows the forward looking median annual Inland Flooding risk for the selected portfolio, under an ssp126 scenario (Strong Mitigation).</p>
+
+<p align="center">
+<img height="500" src="assets/images/userguide/UG_Fig21.png" />
+</p>
+
+<p align="center">
+Fig 21: forward looking Inland Flooding risk CSV
+</p>
+
+<h4 id="interpretation-of-yyyy-column-5">Interpretation of YYYY column</h4>
+
+<p>The values in these columns show the median projected annual Inland Flooding risk values for a specific asset under the [Strong Mitigation] scenario.</p>
+
+<p>For example, Asset X has an Inland Flooding risk projection value of [0.1] in [Jan, 2023]. This means that in the year [2023], we project a [10]% probability of exposure to a flood under the [Strong Mitigation] scenario.</p>
+
+<h3 id="forward-looking-heatwave-risk-datasets">Forward looking heatwave risk datasets</h3>
+<p>This section will look at CSVs with the Reporting Data Type {<strong>reporting_data_type</strong>} of <strong>heatwaves</strong>:  <strong>sustglobal_asset_fwd_heatwaves_risk_{dataset_name}_{ScenarioID}.csv</strong></p>
+
+<p>In this example, we will look at the following dataset: <strong>sustglobal_asset_fwd_heatwaves_risk_MRTG_demo_ssp126.csv</strong>
+This dataset shows the forward looking median annual Heatwave risk for the selected portfolio, under an ssp126 scenario (Strong Mitigation).</p>
+
+<p align="center">
+<img height="500" src="assets/images/userguide/UG_Fig22.png" />
+</p>
+
+<p align="center">
+Fig 22: Forward Looking Heatwave risk CSV
+</p>
+
+<h4 id="interpretation-of-yyyy-column-6">Interpretation of YYYY column</h4>
+<p>The values in these columns show the median projected annual Heatwave risk values for a specific asset under the [Strong Mitigation] scenario.</p>
+
+<p>For example, Asset X has a Heatwave risk projection value of [108] in [Jan, 2023]. This means that in the year [2023], we project [108] heatwave days under the [Strong Mitigation] scenario.</p>
+
+<h3 id="forward-looking-sea-level-rise-slr-risk-datasets">Forward looking sea level rise (SLR) risk datasets</h3>
+<p>This section will look at CSVs with the Reporting Data Type {<strong>reporting_data_type</strong>} of <strong>sea level rise</strong>: <strong>sustglobal_asset_fwd_SLR_risk_{dataset_name}_{ScenarioID}.csv</strong>
+In this example, we will look at the following dataset: <strong>sustglobal_asset_fwd_SLR_risk_MRTG_demo_ssp126.csv</strong>
+This dataset shows the forward looking median annual SLR risk for the selected portfolio, under an ssp126 scenario (Strong Mitigation).</p>
+
+<p align="center">
+<img height="500" src="assets/images/userguide/UG_Fig23.png" />
+</p>
+
+<p align="center">
+Fig 23: Forward Looking sea level rise risk CSV
+</p>
+
+<h4 id="interpretation-of-yyyy-column-7">Interpretation of YYYY column</h4>
+<p>The values in these columns show the median projected annual Sea Level Rise risk values for a specific asset under the [Strong Mitigation] scenario.</p>
+
+<p>For example, Asset X has a Sea Level Rise risk projection value of [0.3] in [Jan, 2023]. This means that in the year [2023], we project that the sea level rise will be [0.3] meters above the average historic sea level rise from 1980-2010 under the [Strong Mitigation] scenario.</p>
+
+<h3 id="forward-looking-drought-spei-risk-datasets">Forward looking drought (SPEI) risk datasets</h3>
+<p>This section will look at CSVs with the Reporting Data Type {<strong>reporting_data_type</strong>} of <strong>Standardized Precipitation-Evapotraspiration Index (SPEI)</strong>: <strong>sustglobal_asset_fwd_SPEI_risk_{dataset_name}_{ScenarioID}.csv</strong>
+In this example, we will look at the following dataset: <strong>sustglobal_asset_fwd_SPEI_risk_MRTG_demo_ssp126.csv</strong>
+This dataset shows the forward looking median annual Drought risk for the selected portfolio, under an ssp126 scenario (Strong Mitigation).</p>
+
+<p align="center">
+<img height="500" src="assets/images/userguide/UG_Fig24.png" />
+</p>
+
+<p align="center">
+Fig 24: Forward Looking Drought (SPEI Index) risk CSV
+</p>
+
+<h4 id="interpretation-of-yyyy-column-8">Interpretation of YYYY column</h4>
+<p>The values in these columns show the median projected annual Drought risk values for a specific asset under the [Strong Mitigation] scenario.
+For example, Asset X has a Drought risk projection value of [0.8] in [Jan, 2023]. This means that in the year [2023], we project that the rescaled SPEI index will have a value of [0.8] under the [Strong Mitigation] scenario.</p>
+
+<p>The Drought indicator is a rescaled version of the drought (SPEI) index, meaning that values fall between an easy to interpret 0 to 1 range. Index values of 1.0 indicate that the drought exposure is high, at unprecedented levels relative to the 1950 to 2014 historical period, and values of 0.0 indicate no drought exposure.</p>
+
+<h3 id="forward-looking-water-stress-score-datasets">Forward looking water stress score datasets</h3>
+
+<p>This section will look at CSVs with the Reporting Data Type {<strong>reporting_data_type</strong>} of <strong>waterstressscore</strong>: <strong>sustglobal_asset_fwd_waterstressscore_risk_{dataset_name}_{ScenarioID}.csv</strong>
+In this example, we will look at the following dataset: <strong>sustglobal_asset_fwd_waterstressscore_risk_MRTG_demo_ssp126.csv</strong>
+This dataset shows the forward looking median annual Water Stress Scores for the selected portfolio, under an ssp126 scenario (Strong Mitigation).</p>
+
+<p align="center">
+<img height="500" src="assets/images/userguide/UG_Fig25.png" />
+</p>
+
+<p align="center">
+Fig 25: Forward Looking Water Stress Score risk CSV
+</p>
+
+<h4 id="interpretation-of-yyyy-column-9">Interpretation of YYYY column</h4>
+<p>The values in these columns show the median projected annual Water Stress Score risk values for a specific asset in a particular year under the [Strong Mitigation] scenario.</p>
+
+<p>For example, Asset X has a Water Stress Score risk projection value of [0.1] in [Jan, 2023]. This means that in the year [2023], we project that the annual ratio of water demand to renewable water availability will be 4 under the [High Emissions] scenario.</p>
+
+<p>A score of 0.0 indicates that there is no water stress, and a score of 4.0 indicates extreme water stress. The World Resources Institute set the threshold of 0.4 as ‘High’ based on existing scientific literature and expert judgment, but there is inherently a degree of subjectivity in defining thresholds. If you are interested in reading more, see section 5.1 of the <a href="https://files.wri.org/d8/s3fs-public/Aqueduct_Global_Maps_2.1-Constructing_Decicion-Relevant_Global_Water_Risk_Indicators_final_0.pdf">WRI Aqueduct documentation</a>.</p>
+
+<h3 id="forward-looking-unified-water-stress-score-datasets">Forward looking unified water stress score datasets</h3>
+
+<p>This section will look at CSVs with the Reporting Data Type {<strong>reporting_data_type</strong>} of <strong>water_stress_unified_score</strong>: <strong>sustglobal_asset_fwd_water_stress_unified_score_risk_{dataset_name}_{ScenarioID}.csv</strong>
+In this example, we will look at the following dataset: <strong>sustglobal_asset_fwd_water_stress_unified_score_risk_MRTG_demo_ssp126.csv</strong>
+This dataset shows the forward looking median annual Water Stress Scores for the selected portfolio, under an ssp126 scenario (Strong Mitigation).</p>
+
+<p align="center">
+<img height="500" src="assets/images/userguide/UG_Fig25.png" />
+</p>
+
+<p align="center">
+Fig 25A: Forward Looking Unified Water Stress Score risk CSV
+</p>
+
+<h4 id="interpretation-of-yyyy-column-10">Interpretation of YYYY column</h4>
+<p>The values in these columns show the median projected annual unified water stress score risk values for a specific asset in a particular year under the [Strong Mitigation] scenario that unified exposure to drought and water stress.</p>
+
+<p>For example, Asset X has a Unified Water Stress Score risk projection value of [0.1] in [Jan, 2023]. This means that in the year [2023], we project a [0.1] percent probability of water stress from drought, water consumption and water availability patterns under the [High Emissions] scenario.</p>
+
+<p>A score of 0.0 indicates that there is no water stress, and a score of 1.0 indicates extreme water stress. The World Resources Institute set the threshold of 0.4 as ‘High’ based on existing scientific literature and expert judgment, but there is inherently a degree of subjectivity in defining thresholds. If you are interested in reading more, see section 5.1 of the <a href="https://files.wri.org/d8/s3fs-public/Aqueduct_Global_Maps_2.1-Constructing_Decicion-Relevant_Global_Water_Risk_Indicators_final_0.pdf">WRI Aqueduct documentation</a>.</p>
+
+<h3 id="forward-looking-summary-labels-datasets">Forward looking summary labels datasets</h3>
+<p>This section will look at CSVs with the Reporting Data Type {<strong>reporting_data_type</strong>} of <strong>risk_summary_labels</strong>. <strong>sustglobal_asset_risk_summary_labels_{dataset_name}<em>{window}</em>{ScenarioID}.csv</strong>
+In this example, we will look at the following dataset:<strong>sustglobal_asset_risk_summary_labels_MRTG_demo_15yr_ssp126.csv</strong>
+This dataset shows the risk summary labels for the selected portfolio for the next 15 years, under an ssp126 scenario (Strong Mitigation).</p>
+
+<p align="center">
+<img height="500" src="assets/images/userguide/UG_Fig26.png" />
+</p>
+
+<p align="center">
+Fig 26: summary labels CSV
+</p>
+
+<p>This dataset shows the forward-looking risk classification for each asset across all the hazards. We look at the maximum risk exposure to a specific hazard for an asset over the specified time horizon, and use this to categorize the asset as LOW, MEDIUM, or HIGH risk.</p>
+
+<p>Please note that the <strong>window</strong> field refers to the time horizon, which is 15 years in this case. <strong>window</strong> can have a value of 5 years, 15 years or 30 years.</p>
+
+<h4 id="methodology">Methodology</h4>
+<p>For a selected scenario (SSP), we would look at the maximum value of risk exposure over the 30 year time window for all hazards, for each asset.</p>
+
+<p>We look at the maximum risk exposure value across the 30 year time horizon for all hazards, with the exception of sea level rise (SLR) and 2021-2100 for SLR as the input to the risk summary view.
+For a specific asset, we would look at the maximum risk value per year, across each hazard.
+For each hazard, we then identify the maximum risk exposure value of each asset over all the years in the analysis time window and use that value as input to a classification of LOW, MEDIUM or HIGH. Note that for drought (SPEI), we would use the rescaled values which fall between an easy to interpret 0 to 1 range, reaching index values of 1.0 if the drought exposure are at unprecedented levels relative to the 1950 to 2014 historical period and value of 0.0 indicating no drought exposure. For flooding, we use the number of years within a 30-year period where the risk exceeds a preset threshold (5%). This is to simulate a flood exceedance threshold from the flood exposure values. Maximum exposure values per hazard are listed in the table in the <a href="./dataguide.html">Data Guide</a>.</p>
+
+<h3 id="forward-looking-summary-score-datasets">Forward looking summary score datasets</h3>
+<p>This section will look at CSVs with the Reporting Data Type {<strong>reporting_data_type</strong>} of <strong>risk_summary_scores</strong>: <strong>sustglobal_asset_risk_summary_scores_{dataset_name}<em>{window}</em>{ScenarioID}.csv</strong>
+In this example, we will look at the following dataset: <strong>sustglobal_asset_risk_summary_scores_MRTG_demo_15yr_ssp126.csv</strong>
+This dataset shows the risk summary labels for the selected portfolio for the next 15 years, under an ssp126 scenario (Strong Mitigation).</p>
+
+<p align="center">
+<img height="500" src="assets/images/userguide/UG_Fig27.png" />
+</p>
+
+<p align="center">
+Fig 27: summary scores CSV
+</p>
+
+<p>Please note that the <strong>window</strong> field refers to the time horizon, which is 15 years in this case. <strong>window</strong> can have a value of 5 years, 15 years or 30 years. 
+This dataset shows maximum forward-looking risk exposure to a specific hazard for an asset over the specified time horizon. These numbers are used to categorize the asset as LOW, MEDIUM, or HIGH risk (as seen in the summary labels CSV dataset).</p>
+
+<h2 id="financial-risk">Financial Risk</h2>
+<p>The naming convention for the historic risk exposure datasets is as follows:
+<strong>sustglobal_asset_{impact_type}<em>{dataset_name}</em>{ScenarioID}.csv</strong>, where <strong>impact_type</strong> can be either <strong>financial_risk</strong>, corresponding to the risk of structural damage to an asset in terms of a percentage of an assets total value, or <strong>business_interrpution</strong>, corresponding to the risk of lost business income in terms of days of business interruption.</p>
+
+<p>In these files, each row corresponds to one asset location, and the columns correspond to the expected percent annual Value-at-Risk.  These include information on <strong>cyclones</strong>, <strong>wildfire</strong>, <strong>floods</strong> and <strong>heatwaves</strong>, for <strong>baseline</strong>, <strong>2030</strong>, <strong>2050</strong>, and <strong>2080</strong>.</p>
+</div>
+</article>
+<div id="share" class="flex space-x-4 mt-12 justify-center scroll-mt-[8.5rem]">
+  <button type="button" class="p-2 text-slate-400 hover:text-sky-500 transition duration-150 ease-in-out" title="Share this on LinkedIn" onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=/dataset-guide&title=&summary=&source=');">
+  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="inline-block">
+  <g clip-path="url(#clip0_243:8324)">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M3.70314 5.65983V15.8574H0.313648V5.65983H3.70314ZM3.92605 2.50586C3.92605 3.48446 3.19036 4.26753 2.00838 4.26753H2.00831H1.98628C0.848811 4.26753 0.113281 3.48446 0.113281 2.50586C0.113281 1.50523 0.871359 0.743896 2.0308 0.743896C3.19036 0.743896 3.90402 1.50523 3.92605 2.50586ZM9.15642 15.8921H5.76705C5.76705 15.8921 5.81153 6.6514 5.76705 5.69453H9.15651V7.13832C9.14887 7.15011 9.14132 7.16182 9.13388 7.17344H9.15651V7.13832C9.60696 6.44345 10.4132 5.45524 12.2112 5.45524C14.4412 5.45524 16.1134 6.91272 16.1134 10.045V15.8921H12.7242V10.4367C12.7242 9.06577 12.2336 8.13062 11.0071 8.13062C10.0707 8.13062 9.51298 8.76129 9.26795 9.37024C9.17845 9.58811 9.15642 9.89258 9.15642 10.1974V15.8921Z" fill="currentColor"/>
+  </g>
+  <defs>
+  <clipPath id="clip0_243:8324">
+  <rect width="16" height="16" fill="white" transform="translate(0.113281 0.279785)"/>
+  </clipPath>
+  </defs>
+  </svg>
+</button>  
+
+<button type="button" class="p-2 text-slate-400 hover:text-sky-500 transition duration-150 ease-in-out" title="Share this on Facebook" onclick="window.open('http://www.facebook.com/share.php?u=/dataset-guide');">
+  <svg width="11" height="20" viewBox="0 0 11 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="inline-block">
+  <g clip-path="url(#clip0_243:8327)">
+  <path d="M9.97629 7.56873L9.45803 10.9477H6.73428V19.1162H3.08132V10.9477H0.113281V7.56873H3.08132V4.99338C3.08132 2.0637 4.82652 0.445435 7.49661 0.445435C8.77561 0.445435 10.1133 0.673746 10.1133 0.673746V3.55046H8.63931C7.18725 3.55046 6.73428 4.4516 6.73428 5.37603V7.56873H9.97629Z" fill="currentColor"/>
+  </g>
+  <defs>
+  <clipPath id="clip0_243:8327">
+  <rect width="10" height="19" fill="white" transform="translate(0.113281 0.279785)"/>
+  </clipPath>
+  </defs>
+  </svg>
+</button>
+
+<button type="button" class="p-2 text-slate-400 hover:text-sky-500 transition duration-150 ease-in-out" title="Share this on Twitter" onclick="window.open('http://twitter.com/home?status=/dataset-guide');">
+  <svg width="21" height="18" viewBox="0 0 21 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="inline-block">
+  <g clip-path="url(#clip0_243:8330)">
+  <path d="M6.40288 16.8299C13.9501 16.8299 18.0781 10.5771 18.0781 5.1547C18.0781 4.9771 18.0781 4.8003 18.0661 4.6243C18.8692 4.04343 19.5624 3.3242 20.1133 2.5003C19.3644 2.83213 18.57 3.04976 17.7565 3.1459C18.6131 2.63309 19.2542 1.82652 19.5605 0.876297C18.755 1.35427 17.8738 1.69111 16.9549 1.8723C16.3362 1.21444 15.518 0.778832 14.6268 0.632868C13.7356 0.486904 12.8212 0.638726 12.0249 1.06484C11.2287 1.49096 10.5952 2.16761 10.2223 2.99009C9.84933 3.81257 9.7579 4.73501 9.96208 5.6147C8.33068 5.53292 6.73472 5.10896 5.27779 4.37037C3.82087 3.63178 2.53555 2.59506 1.50528 1.3275C0.980555 2.23083 0.819841 3.30019 1.05586 4.31785C1.29189 5.33552 1.9069 6.22496 2.77568 6.8051C2.12267 6.78575 1.4839 6.60959 0.913281 6.2915C0.913281 6.3083 0.913281 6.3259 0.913281 6.3435C0.91354 7.29088 1.24149 8.20899 1.84151 8.94213C2.44152 9.67527 3.27666 10.1783 4.20528 10.3659C3.60118 10.5307 2.96734 10.5547 2.35248 10.4363C2.61469 11.2516 3.12517 11.9646 3.81254 12.4756C4.4999 12.9865 5.32977 13.2698 6.18608 13.2859C4.73307 14.4279 2.93813 15.0478 1.09008 15.0459C0.763604 15.0453 0.437444 15.0255 0.113281 14.9867C1.98979 16.1909 4.17321 16.8297 6.40288 16.8267" fill="currentColor"/>
+  </g>
+  <defs>
+  <clipPath id="clip0_243:8330">
+  <rect width="20" height="17" fill="white" transform="translate(0.113281 0.279785)"/>
+  </clipPath>
+  </defs>
+  </svg>
+</button>
+
+<a class="p-2 text-slate-400 hover:text-sky-500 transition duration-150 ease-in-out" href="mailto:?subject=I wanted you to see this site&amp;body=Check out this article /dataset-guide" title="Share this by Email">
+  <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg" class="inline-block">
+  <g clip-path="url(#clip0_243:8333)">
+  <path d="M14.0665 11.5983L18.0201 7.64464C18.3663 7.29851 18.641 6.88757 18.8285 6.43528C19.0159 5.98299 19.1124 5.49821 19.1125 5.00862C19.1126 4.51903 19.0162 4.03422 18.829 3.58186C18.6417 3.1295 18.3671 2.71847 18.021 2.37221C17.6749 2.02596 17.2639 1.75127 16.8117 1.56383C16.3594 1.37639 15.8746 1.27988 15.385 1.27979C14.8954 1.2797 14.4106 1.37605 13.9582 1.56333C13.5059 1.75061 13.0948 2.02515 12.7486 2.37128L8.79492 6.32677" stroke="currentColor" stroke-width="1.58822" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M6.15812 8.96252L2.20636 12.9162C1.50682 13.6152 1.11363 14.5635 1.11328 15.5525C1.11293 16.5414 1.50545 17.49 2.2045 18.1895C2.90354 18.8891 3.85185 19.2823 4.84079 19.2826C5.82974 19.283 6.77832 18.8904 7.47786 18.1914L11.4315 14.2415" stroke="currentColor" stroke-width="1.58822" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M13.4096 6.98682L6.81836 13.5762" stroke="currentColor" stroke-width="1.58822" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <defs>
+  <clipPath id="clip0_243:8333">
+  <rect width="20" height="20" fill="white" transform="translate(0.113281 0.279785)"/>
+  </clipPath>
+  </defs>
+  </svg>
+</a>
+</div>
+
+
+  
+  
+
+  
+  
+
+  
+  
+    <dl class="mt-12 sm:flex justify-between">
+      <div>
+        
+          
+          
+          
+          <dt class="font-display text-sm font-semibold text-slate-900">Previous</dt>
+          <dd class="mt-1">
+            <a class="text-sm text-slate-600 hover:text-slate-900" href="/dashboard-guide">
+            <span aria-hidden="true">←</span> Dashboard User Guide
+            </a>
+          </dd>
+        
+      </div>
+      <div>
+        
+          
+          
+          
+          <dt class="font-display text-sm font-semibold text-slate-900">Next</dt>
+          <dd class="mt-1">
+            <a class="text-sm text-slate-600 hover:text-slate-900" href="/api-guide">
+              API User Guide <span aria-hidden="true">→</span>
+            </a>
+          </dd>
+        
+      </div>
+    </dl>
+    
+
+      </div>
+      
+        <div class="hidden xl:sticky xl:top-[4.5rem] xl:-mr-6 xl:block xl:h-[calc(100vh-4.5rem)] xl:flex-none xl:overflow-y-auto xl:py-16 xl:pr-6">
+          <nav aria-labelledby="on-this-page-title" class="w-56">
+            <h2 id="on-this-page-title" class="font-display text-sm font-semibold text-slate-900">On this page</h2>
+            <ul id="toc" class="toc">
+<li class="toc-entry toc-h2"><a href="#before-getting-started">Before Getting Started</a></li>
+<li class="toc-entry toc-h2"><a href="#what-are-the-csv-datasets">What are the CSV datasets?</a></li>
+<li class="toc-entry toc-h2"><a href="#file-naming-conventions">File naming conventions</a></li>
+<li class="toc-entry toc-h2"><a href="#historic-risk-exposure">Historic risk exposure</a></li>
+<li class="toc-entry toc-h2"><a href="#forward-looking-risk-exposure">Forward looking risk exposure</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#forward-looking-annual-precipitation-datasets">Forward looking annual precipitation datasets</a></li>
+<li class="toc-entry toc-h3"><a href="#forward-looking-annual-temperature-datasets">Forward looking annual temperature datasets</a></li>
+<li class="toc-entry toc-h3"><a href="#forward-looking-extreme-precipitation-datasets">Forward looking extreme precipitation datasets</a></li>
+<li class="toc-entry toc-h3"><a href="#forward-looking-cyclone-datasets">Forward looking cyclone datasets</a></li>
+<li class="toc-entry toc-h3"><a href="#forward-looking-unified-wildfire-datasets">Forward looking unified wildfire datasets</a></li>
+<li class="toc-entry toc-h3"><a href="#forward-looking-flood-risk-datasets">Forward looking flood risk datasets</a></li>
+<li class="toc-entry toc-h3"><a href="#forward-looking-heatwave-risk-datasets">Forward looking heatwave risk datasets</a></li>
+<li class="toc-entry toc-h3"><a href="#forward-looking-sea-level-rise-slr-risk-datasets">Forward looking sea level rise (SLR) risk datasets</a></li>
+<li class="toc-entry toc-h3"><a href="#forward-looking-drought-spei-risk-datasets">Forward looking drought (SPEI) risk datasets</a></li>
+<li class="toc-entry toc-h3"><a href="#forward-looking-water-stress-score-datasets">Forward looking water stress score datasets</a></li>
+<li class="toc-entry toc-h3"><a href="#forward-looking-unified-water-stress-score-datasets">Forward looking unified water stress score datasets</a></li>
+<li class="toc-entry toc-h3"><a href="#forward-looking-summary-labels-datasets">Forward looking summary labels datasets</a></li>
+<li class="toc-entry toc-h3"><a href="#forward-looking-summary-score-datasets">Forward looking summary score datasets</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#financial-risk">Financial Risk</a></li>
+</ul>
+          </nav>
+        </div>
+      
+    </div>  
+    
+    <footer class="mx-auto max-w-7xl px-6 pb-8 pt-16 lg:px-8 lg:pt-28" aria-labelledby="footer-heading">
+  <h2 id="footer-heading" class="sr-only">Footer</h2>
+  <div class="lg:flex space-y-10 lg:space-y-0 lg:space-x-12">
+    <div class="lg:w-[29%]">
+      
+        <a href="/">
+          <img class="max-h-7 w-auto" src="/uploads/logo-wordmark-blue.png" width="173" height="28" alt="Sust Global Developer Center">
+        </a>
+      
+      
+        <p class="text-slate-500 text-sm leading-relaxed mt-5 max-w-xs">Home of Sust Global's developer tools, guides and reference documentation.</p>
+      
+      <div class="flex space-x-4 md:order-2 mt-6">
+        
+
+
+  <a href="https://twitter.com/sustglobal" class="text-slate-400 hover:text-slate-500 svg-sm" target="_blank" rel="noopener noreferrer">
+    <span class="sr-only">Twitter</span>
+    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+    </svg>
+  </a>
+
+
+  <a href="https://www.linkedin.com/company/sustglobal/" class="text-slate-400 hover:text-slate-500 svg-sm" target="_blank" rel="noopener noreferrer">
+    <span class="sr-only">LinkedIn</span>
+    <svg class="h-6 w-6" fill="currentColor" viewBox="-2 -2 20 20" aria-hidden="true">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+    </svg>
+  </a>
+
+
+  <a href="https://github.com/sustglobal" class="text-slate-400 hover:text-slate-500 svg-sm" target="_blank" rel="noopener noreferrer">
+    <span class="sr-only">GitHub</span>
+    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+    </svg>
+  </a>
+
+      </div>
+    </div>
+    <div class="flex-1 grid grid-cols-2 md:grid-cols-4 gap-y-12 gap-x-6 sm:gap-x-12">
+      
+        <div>
+          <h3 class="text-sm font-display font-semibold text-slate-900">Products</h3>
+          <ul class="mt-5 space-y-4">
+            
+              <li>
+                <a href="https://www.sustglobal.com/products/dashboard/" class="text-sm text-slate-500 hover:text-slate-900"> Dashboard </a>
+              </li>
+            
+              <li>
+                <a href="https://www.sustglobal.com/products/api-integrations/" class="text-sm text-slate-500 hover:text-slate-900"> API </a>
+              </li>
+            
+          </ul>
+        </div>
+      
+        <div>
+          <h3 class="text-sm font-display font-semibold text-slate-900">Company</h3>
+          <ul class="mt-5 space-y-4">
+            
+              <li>
+                <a href="https://www.sustglobal.com/insights/blog/" class="text-sm text-slate-500 hover:text-slate-900"> Blog </a>
+              </li>
+            
+              <li>
+                <a href="https://www.sustglobal.com/about/" class="text-sm text-slate-500 hover:text-slate-900"> About Us </a>
+              </li>
+            
+              <li>
+                <a href="https://www.sustglobal.com/privacy/" class="text-sm text-slate-500 hover:text-slate-900"> Privacy Policy </a>
+              </li>
+            
+          </ul>
+        </div>
+      
+        <div>
+          <h3 class="text-sm font-display font-semibold text-slate-900">Get in Touch</h3>
+          <ul class="mt-5 space-y-4">
+            
+              <li>
+                <a href="mailto:info@sustglobal.com" class="text-sm text-slate-500 hover:text-slate-900"> info@sustglobal.com </a>
+              </li>
+            
+              <li>
+                <a href="tel:+1%479-847-1813" class="text-sm text-slate-500 hover:text-slate-900"> US: +1 479 847 1813 </a>
+              </li>
+            
+              <li>
+                <a href="tel:+44%202033%20768%20384" class="text-sm text-slate-500 hover:text-slate-900"> UK: +44 2033 768 384 </a>
+              </li>
+            
+          </ul>
+        </div>
+      
+    </div>
+  </div>
+  <!-- <div class="mt-16 border-t border-slate-200 pt-8 md:flex md:items-center md:justify-between">
+    <p class="mt-8 text-xs leading-5 text-slate-500 md:order-1 md:mt-0"></p>
+  </div> -->
+</footer>
+    <div x-show="docs"
+class="fixed inset-0 overflow-y-auto overflow-x-hidden bg-slate-900/20 backdrop-blur z-50 transform transition lg:hidden"
+style="display: none;">
+  <div @click.outside="docs = false" class="min-h-full w-full bg-white max-w-xs pt-7 pb-16 px-6 xl:pr-16">
+    <div class="flex justify-end">
+      <button @click="docs = ! docs" type="button"
+        class="inline-flex items-center justify-center text-slate-500 hover:text-sky-500 focus:outline-none"
+        aria-expanded="false">
+        <span class="sr-only">Toggle main menu</span>
+        <svg class="hh-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentcolor"
+          aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+    <nav>
+      <ul class="space-y-9">
+        
+          <li>
+            
+              <h2 class="font-display font-semibold text-slate-900">Introduction</h2>
+              <ul class="mt-3 space-y-3">
+                
+                  
+                  
+                  <li class="relative">
+                    <a class="block w-full pl-3.5 before:pointer-events-none before:absolute before:left-0.5 before:top-1/2 before:h-0.5 before:w-1.5 before:-translate-y-1/2 
+                     text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-900 hover:before:block" href="/user-guide">Climate Explorer User Guide</a>
+                  </li>
+                
+                  
+                  
+                  <li class="relative">
+                    <a class="block w-full pl-3.5 before:pointer-events-none before:absolute before:left-0.5 before:top-1/2 before:h-0.5 before:w-1.5 before:-translate-y-1/2 
+                     text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-900 hover:before:block" href="/dashboard-guide">Dashboard User Guide</a>
+                  </li>
+                
+                  
+                  
+                  <li class="relative">
+                    <a class="block w-full pl-3.5 before:pointer-events-none before:absolute before:left-0.5 before:top-1/2 before:h-0.5 before:w-1.5 before:-translate-y-1/2 
+                     text-sky-500 before:bg-sky-500" href="/dataset-guide">Sust Global CSV Dataset Guide</a>
+                  </li>
+                
+                  
+                  
+                  <li class="relative">
+                    <a class="block w-full pl-3.5 before:pointer-events-none before:absolute before:left-0.5 before:top-1/2 before:h-0.5 before:w-1.5 before:-translate-y-1/2 
+                     text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-900 hover:before:block" href="/api-guide">API User Guide</a>
+                  </li>
+                
+                  
+                  
+                  <li class="relative">
+                    <a class="block w-full pl-3.5 before:pointer-events-none before:absolute before:left-0.5 before:top-1/2 before:h-0.5 before:w-1.5 before:-translate-y-1/2 
+                     text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-900 hover:before:block" href="/search">Search API</a>
+                  </li>
+                
+              </ul>
+            
+          </li>
+        
+          <li>
+            
+              <h2 class="font-display font-semibold text-slate-900">Data Guide</h2>
+              <ul class="mt-3 space-y-3">
+                
+                  
+                  
+                  <li class="relative">
+                    <a class="block w-full pl-3.5 before:pointer-events-none before:absolute before:left-0.5 before:top-1/2 before:h-0.5 before:w-1.5 before:-translate-y-1/2 
+                     text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-900 hover:before:block" href="/data-guide">Climate Data Guide</a>
+                  </li>
+                
+                  
+                  
+                  <li class="relative">
+                    <a class="block w-full pl-3.5 before:pointer-events-none before:absolute before:left-0.5 before:top-1/2 before:h-0.5 before:w-1.5 before:-translate-y-1/2 
+                     text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-900 hover:before:block" href="/wildfire">Wildfire</a>
+                  </li>
+                
+                  
+                  
+                  <li class="relative">
+                    <a class="block w-full pl-3.5 before:pointer-events-none before:absolute before:left-0.5 before:top-1/2 before:h-0.5 before:w-1.5 before:-translate-y-1/2 
+                     text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-900 hover:before:block" href="/flood">Flood</a>
+                  </li>
+                
+                  
+                  
+                  <li class="relative">
+                    <a class="block w-full pl-3.5 before:pointer-events-none before:absolute before:left-0.5 before:top-1/2 before:h-0.5 before:w-1.5 before:-translate-y-1/2 
+                     text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-900 hover:before:block" href="/cyclones">Cyclones</a>
+                  </li>
+                
+                  
+                  
+                  <li class="relative">
+                    <a class="block w-full pl-3.5 before:pointer-events-none before:absolute before:left-0.5 before:top-1/2 before:h-0.5 before:w-1.5 before:-translate-y-1/2 
+                     text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-900 hover:before:block" href="/heatwaves">Heatwaves</a>
+                  </li>
+                
+                  
+                  
+                  <li class="relative">
+                    <a class="block w-full pl-3.5 before:pointer-events-none before:absolute before:left-0.5 before:top-1/2 before:h-0.5 before:w-1.5 before:-translate-y-1/2 
+                     text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-900 hover:before:block" href="/sea-level-rise">Sea Level Rise</a>
+                  </li>
+                
+                  
+                  
+                  <li class="relative">
+                    <a class="block w-full pl-3.5 before:pointer-events-none before:absolute before:left-0.5 before:top-1/2 before:h-0.5 before:w-1.5 before:-translate-y-1/2 
+                     text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-900 hover:before:block" href="/water-stress">Water Stress</a>
+                  </li>
+                
+                  
+                  
+                  <li class="relative">
+                    <a class="block w-full pl-3.5 before:pointer-events-none before:absolute before:left-0.5 before:top-1/2 before:h-0.5 before:w-1.5 before:-translate-y-1/2 
+                     text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-900 hover:before:block" href="/value-at-risk">Financial Risk Analysis</a>
+                  </li>
+                
+              </ul>
+            
+          </li>
+        
+          <li>
+            
+              <h2 class="font-display font-semibold text-slate-900">Jupyter Notebooks</h2>
+              <ul class="mt-3 space-y-3">
+                
+                  
+                  
+                  <li class="relative">
+                    <a class="block w-full pl-3.5 before:pointer-events-none before:absolute before:left-0.5 before:top-1/2 before:h-0.5 before:w-1.5 before:-translate-y-1/2 
+                     text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-900 hover:before:block" href="/notebooks">Usage Guide</a>
+                  </li>
+                
+              </ul>
+            
+          </li>
+        
+          <li>
+            
+              <h2 class="font-display font-semibold text-slate-900">Loom library</h2>
+              <ul class="mt-3 space-y-3">
+                
+                  
+                  
+                  <li class="relative">
+                    <a class="block w-full pl-3.5 before:pointer-events-none before:absolute before:left-0.5 before:top-1/2 before:h-0.5 before:w-1.5 before:-translate-y-1/2 
+                     text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-900 hover:before:block" href="/coming-soon">Coming Soon!</a>
+                  </li>
+                
+              </ul>
+            
+          </li>
+        
+      </ul>
+    </nav>
+  </div>
+</div>
+
+
+    </body>
+
+</html>

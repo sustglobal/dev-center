@@ -1,0 +1,35 @@
+- title: Introduction
+  icon: square-3-stack-3d
+  description: Get started with Climate Explorer by following these user guides. Great for first time users.
+  docs:
+  - user-guide
+  - dashboard-guide
+  - dataset-guide
+  - api-guide
+  - search
+
+- title: Data Guide
+  icon: book-open
+  description: 'Learn more about our Climate Analytics data; wildfire, flood, cyclones, heatwaves, sea level rise, and water stress.'
+  docs:
+  - data-guide
+  - wildfire
+  - flood
+  - cyclones
+  - heatwaves
+  - sea-level-rise
+  - water-stress
+  - value-at-risk
+
+- title: Jupyter Notebooks
+  icon: cube-transparent
+  description: Check out our interactive, open-source guides designed to help you explore Planet data, work with our APIs and tools, and learn how to extract insights from our climate scenario analysis datasets.
+  docs:
+  - notebooks
+
+- title: Loom library 
+  icon: play-circle
+  description: Coming soon!
+  docs:
+  - coming-soon
+ 

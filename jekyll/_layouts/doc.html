@@ -1,0 +1,85 @@
+---
+layout: default
+---
+
+<article>
+  <header class="mb-9">
+    {% for section in site.data.navigation_docs %}
+      {% if section.title %}
+        {% for doc in section.docs %}
+          {% assign doc_url = doc | prepend:"/" %}
+          {% if doc_url == page.url %}
+            <p class="font-display text-sm font-semibold text-sky-500 mb-1">{{ section.title }}</p>
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+    {% endfor %}
+    <h1 class="font-display text-3xl tracking-tight text-slate-900 font-semibold">{{ page.title | escape }}</h1>
+    {% if page.author %}
+      {% assign author = site.data.authors[page.author] %}
+      <div class="flex space-x-4 mt-4">
+        {% if author.image %}
+          {% assign domain = site.uploads | absolute_url %}
+          <div class="flex-none">
+              <img class="rounded-full" width="40" height="40" src="{{ domain }}{{ author.image }}" alt="{{ author.name }}">
+          </div>
+        {% endif %}
+        {% assign date_format = site.date_format | default: "%b %-d, %Y" %}
+        <div class="flex-1">
+          <p class="font-display font-semibold text-sm text-slate-900">{{ author.name }}</p>
+          <p class="text-sm text-slate-500">{{ site.data.translation[site.lang].created | default: "Created" }}: {{ page.date | date: date_format }} 
+            {% if page.lastmod %}- {{ site.data.translation[site.lang].updated | default: "Updated" }}: {{ page.lastmod | date: date_format }}{% endif %}
+            </p>
+        </div>
+        <div class="flex-none">
+          <a href="#share" class="rounded-md bg-sky-50 px-2.5 py-1.5 text-sm font-semibold font-display text-sky-500 shadow-sm hover:bg-sky-100">{{ site.data.translation[site.lang].share | default: 'Share' }}</a>
+        </div>
+      </div>
+    {% endif %}
+
+    {% if page.subtitle and page.subtitle != empty %}
+      <p class="text-lg text-slate-600 mt-9">{{ page.subtitle }}</p>
+    {% endif %}
+  </header>
+  <div class="prose prose-slate max-w-none prose-headings:scroll-mt-28 prose-headings:font-display prose-headings:font-semibold prose-lead:text-slate-500 prose-a:font-semibold prose-a:no-underline hover:prose-a:text-sky-500 prose-pre:rounded-xl prose-pre:bg-slate-900 prose-pre:shadow-lg">{{ content }}</div>
+</article>
+<div id="share" class="flex space-x-4 mt-12 justify-center scroll-mt-[8.5rem]">
+  {% include share.html %}
+</div>
+{% assign docs = site.data.navigation_docs | map: 'docs' | join: ',' | split: ',' %}
+{% for document in docs %}
+  {% assign document_url = document | prepend:"/" %}
+  {% if document_url == page.url %}
+    <dl class="mt-12 sm:flex justify-between">
+      <div>
+        {% if forloop.first %}
+        {% else %}
+          {% assign previous = forloop.index0 | minus: 1 %}
+          {% assign previous_page = docs[previous] | prepend:"/" %}
+          {% assign previous_doc = site.docs | where:"url", previous_page | first %}
+          <dt class="font-display text-sm font-semibold text-slate-900">{{ site.data.translation[site.lang].previous | default: 'Previous' }}</dt>
+          <dd class="mt-1">
+            <a class="text-sm text-slate-600 hover:text-slate-900" href="{{previous_page}}">
+            <span aria-hidden="true">←</span> {{previous_doc.title}}
+            </a>
+          </dd>
+        {% endif %}
+      </div>
+      <div>
+        {% if forloop.last %}
+        {% else %}
+          {% assign next = forloop.index0 | plus: 1 %}
+          {% assign next_page = docs[next] | prepend:"/" %}
+          {% assign next_doc = site.docs | where:"url", next_page | first %}
+          <dt class="font-display text-sm font-semibold text-slate-900">{{ site.data.translation[site.lang].next | default: 'Next' }}</dt>
+          <dd class="mt-1">
+            <a class="text-sm text-slate-600 hover:text-slate-900" href="{{next_page}}">
+              {{next_doc.title}} <span aria-hidden="true">→</span>
+            </a>
+          </dd>
+        {% endif %}
+      </div>
+    </dl>
+    {% break %}
+  {% endif %}
+{% endfor %}

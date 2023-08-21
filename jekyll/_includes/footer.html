@@ -1,0 +1,35 @@
+<footer class="mx-auto max-w-7xl px-6 pb-8 pt-16 lg:px-8 lg:pt-28" aria-labelledby="footer-heading">
+  <h2 id="footer-heading" class="sr-only">Footer</h2>
+  <div class="lg:flex space-y-10 lg:space-y-0 lg:space-x-12">
+    <div class="lg:w-[29%]">
+      {% if site.logo %}
+        <a href="{{ "/" | relative_url }}">
+          <img class="max-h-7 w-auto" src="{{ site.logo | absolute_url }}" width="173" height="28" alt="{{ site.title }}">
+        </a>
+      {% endif %}
+      {% if site.data.footer.description and site.data.footer.description != empty %}
+        <p class="text-slate-500 text-sm leading-relaxed mt-5 max-w-xs">{{ site.data.footer.description }}</p>
+      {% endif %}
+      <div class="flex space-x-4 md:order-2 mt-6">
+        {% include social-networks.html %}
+      </div>
+    </div>
+    <div class="flex-1 grid grid-cols-2 md:grid-cols-4 gap-y-12 gap-x-6 sm:gap-x-12">
+      {% for col in site.data.footer.menus %}
+        <div>
+          <h3 class="text-sm font-display font-semibold text-slate-900">{{ col.heading }}</h3>
+          <ul class="mt-5 space-y-4">
+            {% for item in col.links %}
+              <li>
+                <a href="{{ item.url | relative_url }}" class="text-sm text-slate-500 hover:text-slate-900"> {{ item.text }} </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  <!-- <div class="mt-16 border-t border-slate-200 pt-8 md:flex md:items-center md:justify-between">
+    <p class="mt-8 text-xs leading-5 text-slate-500 md:order-1 md:mt-0">{{ site.data.footer.copyright }}</p>
+  </div> -->
+</footer>

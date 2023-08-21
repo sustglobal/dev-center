@@ -1,19 +1,35 @@
 ---
+layout: home
+superheading: Welcome
 title: Sust Global Developer Center
+subtitle:  This is the home of Sust Global's developer tools, guides and reference documentation.
+
+blocks:
+- block: cta
+  heading: Ready to get started?
+  copy: The User Guide is a great place for all users to start. It provides an introduction to Climate Explorer and the datasets from Sust Global.
+  icon: arrow-right-circle
+  button:
+    text: Get Started
+    url: "/user-guide/"
+
+- block: navigation
+
+- block: spacer 
+
+- block: cards
+  cards:
+  - heading: Questions?
+    copy: Find answers to frequently asked questions on our FAQ page.
+    icon: thin-academic-cap
+    button:
+      text: Learn More
+      url: "/faq/"
+  - heading: Check out our API
+    copy: Access the Sust Global OpenAPI Specification, which describes every REST endpoint, parameter, request and response.
+    icon: thin-rocket
+    button:
+      text: Learn More
+      url: "https://explorer.sustglobal.io/redoc/"
+
 ---
-
-Welcome! This is the home of [Sust Global](https://www.sustglobal.com/)'s developer tools, guides and reference documentation.
-
-## References
-
-* The [User Guide](./userguide.html) is a great place for all users to start. It provides an introduction to Climate Explorer and the datasets from Sust Global.
-* The [Climate Explorer API Guide](./api.html) is here to help developers learn how to work with the Climate Explorer API.
-* You may access the [Sust Global OpenAPI Specification](https://explorer.sustglobal.io/redoc/), which describes every REST endpoint, parameter, request and response.
-
-## Resources
-
-* Learn about the latest [Product Updates](./updates.html) to Climate Explorer and our datasets.
-* Several [Jupyter Notebooks](./jupyter-notebooks.html) are provided to help you explore Sust Global datasets on your local machine.
-* Find answers to frequently asked questions on our [FAQ Page](./FAQs.html)
-
-The Developer Center documentation and all the referenced tools are hosted on GitHub at [https://github.com/sustglobal/dev-center](https://github.com/sustglobal/dev-center).
