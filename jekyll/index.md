@@ -11,7 +11,7 @@ blocks:
   icon: arrow-right-circle
   button:
     text: Get Started
-    url: "/user-guide/"
+    url: "/user-guide"
 
 - block: navigation
 
@@ -24,7 +24,7 @@ blocks:
     icon: thin-academic-cap
     button:
       text: Learn More
-      url: "/faq/"
+      url: "/faq"
   - heading: Check out our API
     copy: Access the Sust Global OpenAPI Specification, which describes every REST endpoint, parameter, request and response.
     icon: thin-rocket
