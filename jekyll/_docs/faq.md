@@ -1,6 +1,6 @@
 ---
 layout: blocks
-title: FAQsx
+title: FAQ
 tags:
 - faq
 - wildfire

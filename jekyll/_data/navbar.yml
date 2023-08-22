@@ -5,19 +5,19 @@
     url: "/user-guide"
     icon: square-3-stack-3d
   - text: Data Guide
-    url: "/data-guide/"
+    url: "/data-guide"
     icon: book-open
   - text: Jupyter Notebooks
-    url: "/notebooks/"
+    url: "/notebooks"
     icon: cube-transparent
   - text: API Spec
     url: "https://explorer.sustglobal.io/redoc/"
     icon: star
   - text: Loom library
-    url: "/coming-soon/"
+    url: "/coming-soon"
     icon: play-circle
   - text: FAQ
-    url: "/faq/"
+    url: "/faq"
     icon: question-mark-circle
 - text: Product Updates
   url: "/updates/"
