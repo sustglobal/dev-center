@@ -31,9 +31,9 @@ layout: default
             {% if page.lastmod %}- {{ site.data.translation[site.lang].updated | default: "Updated" }}: {{ page.lastmod | date: date_format }}{% endif %}
             </p>
         </div>
-        <div class="flex-none">
+        <!-- <div class="flex-none">
           <a href="#share" class="rounded-md bg-sky-50 px-2.5 py-1.5 text-sm font-semibold font-display text-sky-500 shadow-sm hover:bg-sky-100">{{ site.data.translation[site.lang].share | default: 'Share' }}</a>
-        </div>
+        </div> -->
       </div>
     {% endif %}
 
@@ -43,9 +43,9 @@ layout: default
   </header>
   <div class="prose prose-slate max-w-none prose-headings:scroll-mt-28 prose-headings:font-display prose-headings:font-semibold prose-lead:text-slate-500 prose-a:font-semibold prose-a:no-underline hover:prose-a:text-sky-500 prose-pre:rounded-xl prose-pre:bg-slate-900 prose-pre:shadow-lg">{{ content }}</div>
 </article>
-<div id="share" class="flex space-x-4 mt-12 justify-center scroll-mt-[8.5rem]">
+<!-- <div id="share" class="flex space-x-4 mt-12 justify-center scroll-mt-[8.5rem]">
   {% include share.html %}
-</div>
+</div> -->
 {% assign docs = site.data.navigation_docs | map: 'docs' | join: ',' | split: ',' %}
 {% for document in docs %}
   {% assign document_url = document | prepend:"/" %}

@@ -23,7 +23,7 @@
 
 - title: Jupyter Notebooks
   icon: cube-transparent
-  description: Check out our interactive, open-source guides designed to help you explore Planet data, work with our APIs and tools, and learn how to extract insights from our climate scenario analysis datasets.
+  description: Check out our interactive, open-source guides designed to help you explore Sust Global data, work with our APIs and tools, and learn how to extract insights from our climate scenario analysis datasets.
   docs:
   - notebooks
 
