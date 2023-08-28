@@ -20,7 +20,7 @@
     url: "/faq"
     icon: question-mark-circle
 - text: Product Updates
-  url: "/updates/"
+  url: "/updates"
 - text: Science Insights
   url: "https://www.sustglobal.com/insights/blog/"
 - text: Climate Explorer
