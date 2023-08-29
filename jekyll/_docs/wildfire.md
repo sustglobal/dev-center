@@ -14,14 +14,14 @@ tags:
 ## Methodologies
 **Unified Wildfire**
 
-Annual probability of wildfire at an asset location.
+Metric: Annual probability of wildfire at an asset location.
 
-Our model combines global, high-resolution historic fire observations from a mulit-decadal satellite record with historical data on a variety of factors that contribute to fire risk, including precipitation, temperature, topography, land cover, ignition sources, and ecology.   Using peer-reviewed and patented AI technology, our model is able to determine, for every location on earth, the component of fire risk that is weather-driven.  This lets us pinpoint the forests of the world where fire risk is most affected by weather conditions which will see sharp increases in fire risk under warming scenarios.  We then run model inferences using ensembled simulations of future weather under a variety of scenarios, which lets us provide validated, asset-level estimates of future fire risk.
+This indicator combines global, high-resolution historic fire observations from a mulit-decadal satellite record with historical data on a variety of factors that contribute to fire risk, including precipitation, temperature, topography, land cover, ignition sources, and ecology.   Using peer-reviewed and patented AI technology, our model is able to determine, for every location on earth, the component of fire risk that is weather-driven.  This lets us pinpoint the forests of the world where fire risk is most affected by weather conditions which will see sharp increases in fire risk under warming scenarios.  We then run model inferences using ensembled simulations of future weather under a variety of scenarios, which lets us provide validated, asset-level estimates of future fire risk.
 
-**Observational Dataset**: We use satellite derived observations to provide high-resolution exposure to wildfires. The observations are made using NASA MODIS satellites and processed using an active fire algorithm to produce the [MCD64A](https://lpdaac.usgs.gov/documents/115/MCD64_ATBD_V6.pdf). This covers the historical period of 2001 to present. This indicator shows the years in which a wildfire occurred within 1 kilometer of an asset. For point-based assets, this indicator is either 0 or 1, representing a binary detection of fire.  For polygon-based regions, this indicator is a floating point value between 0 and 1, representing the area detected as burned in any given year within the region.
+**Observational Dataset**: We use satellite derived observations to provide high-resolution exposure to wildfires. The observations are made using NASA MODIS satellites and processed using an active fire algorithm to produce the [MCD64A](https://lpdaac.usgs.gov/documents/115/MCD64_ATBD_V6.pdf). This covers the historical period of 2001 to present. This indicator shows the years in which a wildfire occurred within 1 kilometer of an asset. For point-based assets, this indicator is either 0 or 1, representing a binary detection of fire. For polygon-based regions, this indicator is a floating point value between 0 and 1, representing the area detected as burned in any given year within the region.
 
 ## Known Limitations
-Our fire model relies on static landcover into the future.  This assumption is unlikely to hold given human development and changing forest extents, especially later into the 21st century.
+Sust Global's fire model relies on static landcover into the future. This assumption is unlikely to hold given human development and changing forest extents, especially later into the 21st century.
 
 ## Sample Assessment
 ### United States Counties
