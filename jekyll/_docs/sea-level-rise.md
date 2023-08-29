@@ -15,19 +15,19 @@ tags:
 ## Methodology
 **Future Sea Level Rise** 
 
-Expected Sea Level Rise in meters from historic baseline, within 5km of an asset location.
+Metric: Expected Sea Level Rise in meters from historic baseline sea levels, within 5km of an asset location.
 
-Our <i>Sea Level Rise</i> indicator refers to the change in sea level across different climate scenarios and is consistent with projections from the IPCC Sixth Assessment Report. We base our modeling of projected sea level rise on both climate model simulations from [CMIP6](https://www.wcrp-climate.org/wgcm-cmip/wgcm-cmip6). 
+This indicator quantifies the change in sea level across different climate scenarios and is consistent with projections from the IPCC Sixth Assessment Report. We base our modeling of projected sea level rise on climate model simulations from [CMIP6](https://www.wcrp-climate.org/wgcm-cmip/wgcm-cmip6). 
 
 Projected sea level rise from CMIP6 climate models incorporates the effects of thermal expansion from warming of the ocean, melting of Greenland and Antarctic ice sheets, melting of glaciers and ice caps, and local land subsidence and rebound. Land elevation rebound, whereby land elevation increases in response to ice melt, is more common in high latitude, polar regions.  
 
-We express sea level rise relative to a 1995-2014 baseline period for assets within 5km from the coast. An asset’s distance to the nearest coastline is derived using 0.01 degree resolution, satellite-derived estimates of coastline locations from NASA’s [Ocean Color Group](https://oceancolor.gsfc.nasa.gov/docs/distfromcoast/).
+This indicator reflects sea level rise relative to a 1995-2014 baseline period for assets within 5km from the coast. An asset’s distance to the nearest coastline is derived using 0.01 degree resolution, satellite-derived estimates of coastline locations from NASA’s [Ocean Color Group](https://oceancolor.gsfc.nasa.gov/docs/distfromcoast/).
 
 **Observed Sea Level Rise**
-We derive observed sea level changes based on satellite data from NASA's Jet Propulsion Lab. The satellite data tracks sea surface height anomalies from a collection of different satellite sensors. This product has global coverage (-80 to 80 latitude) from 1993 to present. The data does not incorporate local land subsidence or rebound. 
+This indicator reflects observed sea level changes based on satellite data from NASA's Jet Propulsion Lab. The satellite data tracks sea surface height anomalies from a collection of different satellite sensors. This product has global coverage (-80 to 80 latitude) from 1993 to present. The data does not incorporate local land subsidence or rebound. 
 
 ## Known Limitations
-The <i>Sea Level Rise</i> indicator shows the largest sea level rise experienced within 5km of an asset.  This is in contrast to coastal flood products, which show flooding at an exact asset location. 
+The <i>Sea Level Rise</i> indicator shows the largest sea level rise experienced within 5km of an asset. This is in contrast to coastal flood products, which show flooding at an exact asset location. 
 
 ## Sample Assessment
 ### United States Counties
