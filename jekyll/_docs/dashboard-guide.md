@@ -13,7 +13,7 @@ tags:
 
 ## Scenario-based Exposure Summaries
 
-The top-left view on the Climate Explorer dashboard provides an overview of asset-level risk exposure.  It has controls to select Climate Scenario, Historic Hazard, and Project Hazard, and it includes 4 graphs:
+The top-left view on the Climate Explorer dashboard provides an overview of asset-level risk exposure.  It has controls to select Climate Scenario, Historic Hazard, and Projected Hazard, and it includes 4 graphs:
 - Asset Map
 - Riskiest Assets
 - Historic Risk Event Occurrence
