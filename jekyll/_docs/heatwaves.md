@@ -14,12 +14,12 @@ tags:
 ## Methodologies
 **Future Heatwave Days** 
 
-Total days in a given year exceeding the historic 98th percentile for temperature.
+Metric: Total days in a given year exceeding the historic 98th percentile for temperature.
 
-This product uses NASA Global Downscaled Daily Projections ([GDDP](https://www.nasa.gov/nex/gddp)) to estimate the number of days exceeding the historic 98th percentile of annual temperatures. This temperature threshold varies spatially, based on the 98th percentile of a given location during the years 1980 to 2010. As such, the heatwave metric indicates anomalously high temperatures relative to what was locally typical in the past. 
+This indicator utilizes NASA Global Downscaled Daily Projections ([GDDP](https://www.nasa.gov/nex/gddp)) to estimate the number of days exceeding the historic 98th percentile of annual temperatures at an asset location. This temperature threshold varies spatially, based on the 98th percentile of a given location during the years 1980 to 2010. As such, the heatwave metric indicates anomalously high temperatures relative to each location's historical temperature distribution. 
 
 **Observed Heatwave Days** 
-This product presents the same heatwave metric as the future heatwave product but instead utilizes observed temperature data from the European Centre for Medium-Range Weather Forecasts's ERA5-Land datasets. 
+This indicator presents the same heatwave metric as the future heatwave product but instead is based on observed temperature data from the European Centre for Medium-Range Weather Forecasts's ERA5-Land datasets. 
 
 ## Known Limitations
 - There are many ways to define a heatwave, based on intensity, duration, and potentially other factors. Our indicator uses a 98th percentile intensity, and a 1 day duration, which is appropriate for most use cases.  

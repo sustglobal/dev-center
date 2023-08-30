@@ -1,7 +1,7 @@
 ---
 layout: doc
 title: Flood
-subtitle: Flooding captures the likelihood of a location being directly exposed to flooding, both from precipitation-based inland flooding and from coastal flooding.  Flooding is among the deadlier natural disasters and poses direct risks to human health, infrastructure, and economic activity.
+subtitle: Flooding captures the likelihood of a location being directly exposed to flooding, both from precipitation-based inland flooding and from coastal flooding. Flooding is among the deadlier natural disasters and poses direct risks to human health, infrastructure, and economic activity.
 date: 2023-01-01
 lastmod: 2023-08-20
 author: TB
@@ -13,15 +13,15 @@ tags:
 ## Methodologies
 **Flood potential**
 
-Annual probability of a flood with depth greater than 0.5 meters at an asset location.
+Metric: Annual probability of a flood with depth greater than 0.5 meters at an asset location.
 
-Indicates the projected flood likelihood, expressed as timeseries of annual expected probability of flooding greater than 0.5 meters at the asset level.  We derive this method from WRI's [Aqueduct Flood Hazard Maps](https://www.wri.org/data/aqueduct-floods-hazard-maps) product, for both inland and coastal floods.  Using a suite of flood maps of varying intensity, we derive an estimate of the expected recurrence period for any amount of flooding.
+This indicator quantifies the projected flood likelihood, expressed as timeseries of annual expected probability of flooding greater than 0.5 meters at the asset level. We derive this method from WRI's [Aqueduct Flood Hazard Maps](https://www.wri.org/data/aqueduct-floods-hazard-maps) product, for both inland and coastal floods. Using a suite of flood maps of varying intensity, we derive an estimate of the expected recurrence period for any amount of flooding.
 
 **Observed floods**
-Indicates whether flood was observed in a given year by satellites at the location of an asset. It is derived from [NASA MODIS](https://www.earthdata.nasa.gov/learn/find-data/near-real-time/modis-nrt-global-flood-product) data, for the period 2012 to present.  
+This indicator reflects whether flooding was observed in a given year by satellites at the location of an asset. It is derived from [NASA MODIS](https://www.earthdata.nasa.gov/learn/find-data/near-real-time/modis-nrt-global-flood-product) data, for the period 2012 to present.  
 
 ## Known Limitations
-- Satellite-derived remote sensing of floods has several well-known limitations.  Floods are difficult to observe by satelite, due primarily to cloud cover, which contributes to False Negatives (reporting that there was no flooding, when in reality there was).  Additionally, algorithms to detect flooding can report False Positives (detecting a flood when there was none, due to shadows and ground moisture).  No historic flood database is comprehensive, even for recent years in the satelite period.
+- Satellite-derived remote sensing of floods has several well-known limitations. Floods are difficult to observe by satelite, due primarily to cloud cover, which contributes to False Negatives (reporting that there was no flooding, when in reality there was). Additionally, algorithms to detect flooding can report False Positives (detecting a flood when there was none, due to shadows and ground moisture). No historic flood database is comprehensive, even for recent years in the satelite period.
 - SSP1 is currently not available from the underlying data product, and our product is using SSP2 in place of SSP1 (SSP2 is duplicated in this product).
 
 ## Sample Assessment

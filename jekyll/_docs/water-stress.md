@@ -14,21 +14,21 @@ tags:
 ## Methodologies
 **Unified Water Stress** 
 
-Unitless waterstress score, combining SPEI and WRI Aqueduct.  Higher values indicate greater waterstress, with values greater than 0.6 and 0.8 generally considered to be at high and severe stress, respectively.
+Metric: Unitless water stress score, combining the Standardized Precipitation Evapotranspiration Index (SPEI) and WRI Aqueduct's water stress scores. Higher values indicate greater water stress, with values greater than 0.6 and 0.8 generally considered to be at high and severe water stress, respectively.
 
 This indicator combines the water stress score and the drought indicator to one single indicator for water stress, using a weighted mean, with weights derived from the methodology designed by the World Resources Institute in their [Global Aqueduct Methodology](https://doi.org/10.46830/writn.18.00146) (Page 35, Table 3). This provides a comparable 0.0 to 1.0 range to indicate exposure to water stress. The indicator captures both meteorological factors as well as anthropogenic factors associated with water stress.
 
 Unified Water Stress is the recommended default indicator for future water stress risk.
 
-**Aqueduct Water Stress Score**: The World Resource Institute’s <i>Aqueduct</i> models future water stress risk. This state-of-the-art model has been extensively used by researchers in academia and industry to assess portfolio water risk. The water stress score is calculated as the ratio of water withdrawal to renewable water availability, and is indicative of competition for local water resources. 
+**Aqueduct Water Stress Score**: The World Resource Institute’s <i>Aqueduct</i> product models future water stress risk. This state-of-the-art model has been extensively used by researchers in academia and industry to assess portfolio water risk. The water stress score is calculated as the ratio of water withdrawal to renewable water availability and is indicative of competition for local water resources. 
 
-**SPEI Drought**: Standardized Precipitation Evapotranspiration Index (SPEI) is a drought index based on precipitation and temperature.  Our product applied this index to NASA's Global Downscaled Daily Projections [GDDP](https://www.nasa.gov/nex/gddp). SPEI represents the magnitude of precipitation deficits or surplus over the preceding 12-month period, after accounting for temperature-driven effects on evapotranspiration. 
+**SPEI Drought**: The Standardized Precipitation Evapotranspiration Index (SPEI) is a drought index based on precipitation and temperature. Sust Global's product derives this index from NASA's Global Downscaled Daily Projections [GDDP](https://www.nasa.gov/nex/gddp). SPEI represents the magnitude of precipitation deficits or surplus over the preceding 12-month period, after accounting for temperature-driven effects on evapotranspiration. 
 
 **Historic Water Stress**
-We use the same methodology as the unified water stress indicator, except with observed rather than modeled datasets of water stress and drought.
+This indicator utilizes the same methodology as the unified water stress indicator, except with observed rather than modeled datasets of water stress and drought.
 
 ## Known Limitations
-- Unified Water Stress does not have a tangible interpretation, in the same way that other metrics do (probability, heatwave days, m SLR).  It can be used as a measure of relative risk across assets, with values over 0.8 generally corresponding to severe water stress.  In cases where an absolute metric is desired, the <i>Aqueduct Water Stress Score</i> indicator is recommended (see product documentation below).
+- Unified Water Stress can be used as a measure of relative risk across assets, with values over 0.8 generally corresponding to severe water stress. In cases where an absolute metric is desired, the <i>Aqueduct Water Stress Score</i> indicator is recommended (see product documentation below).
 - SSP1 is currently not available from the underlying data product, and our product is using SSP2 in place of SSP1 (SSP2 is duplicated in this product). 
 - Our modeling framework does not account for water transport between watersheds, which helps to meet demand in dry regions at the cost of transportation.
 
