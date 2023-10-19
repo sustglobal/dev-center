@@ -95,8 +95,8 @@ class PhysicalRiskMetadataIndicatorResponse(ModelNormal):
             'unit': (str,),  # noqa: E501
             'value_min': (float,),  # noqa: E501
             'value_max': (float,),  # noqa: E501
-            'value_norm': (float,),  # noqa: E501
             'spatial_resolution': (float,),  # noqa: E501
+            'value_norm': (float,),  # noqa: E501
         }
 
     @cached_property
@@ -110,8 +110,8 @@ class PhysicalRiskMetadataIndicatorResponse(ModelNormal):
         'unit': 'unit',  # noqa: E501
         'value_min': 'value_min',  # noqa: E501
         'value_max': 'value_max',  # noqa: E501
-        'value_norm': 'value_norm',  # noqa: E501
         'spatial_resolution': 'spatial_resolution',  # noqa: E501
+        'value_norm': 'value_norm',  # noqa: E501
     }
 
     read_only_vars = {
@@ -121,7 +121,7 @@ class PhysicalRiskMetadataIndicatorResponse(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, hazard, indicator, unit, value_min, value_max, value_norm, spatial_resolution, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, hazard, indicator, unit, value_min, value_max, spatial_resolution, *args, **kwargs):  # noqa: E501
         """PhysicalRiskMetadataIndicatorResponse - a model defined in OpenAPI
 
         Args:
@@ -130,7 +130,6 @@ class PhysicalRiskMetadataIndicatorResponse(ModelNormal):
             unit (str): Value unit (e.g. millimeter, day, degree_celsius, etc)
             value_min (float): Minimum possible value
             value_max (float): Maximum possible value
-            value_norm (float): Maximum value expected when value is normalized
             spatial_resolution (float): Spatial resolution of datapoint in meters
 
         Keyword Args:
@@ -164,6 +163,7 @@ class PhysicalRiskMetadataIndicatorResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            value_norm (float): Maximum value expected when value is normalized. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -196,7 +196,6 @@ class PhysicalRiskMetadataIndicatorResponse(ModelNormal):
         self.unit = unit
         self.value_min = value_min
         self.value_max = value_max
-        self.value_norm = value_norm
         self.spatial_resolution = spatial_resolution
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
@@ -218,7 +217,7 @@ class PhysicalRiskMetadataIndicatorResponse(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, hazard, indicator, unit, value_min, value_max, value_norm, spatial_resolution, *args, **kwargs):  # noqa: E501
+    def __init__(self, hazard, indicator, unit, value_min, value_max, spatial_resolution, *args, **kwargs):  # noqa: E501
         """PhysicalRiskMetadataIndicatorResponse - a model defined in OpenAPI
 
         Args:
@@ -227,7 +226,6 @@ class PhysicalRiskMetadataIndicatorResponse(ModelNormal):
             unit (str): Value unit (e.g. millimeter, day, degree_celsius, etc)
             value_min (float): Minimum possible value
             value_max (float): Maximum possible value
-            value_norm (float): Maximum value expected when value is normalized
             spatial_resolution (float): Spatial resolution of datapoint in meters
 
         Keyword Args:
@@ -261,6 +259,7 @@ class PhysicalRiskMetadataIndicatorResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            value_norm (float): Maximum value expected when value is normalized. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -291,7 +290,6 @@ class PhysicalRiskMetadataIndicatorResponse(ModelNormal):
         self.unit = unit
         self.value_min = value_min
         self.value_max = value_max
-        self.value_norm = value_norm
         self.spatial_resolution = spatial_resolution
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \

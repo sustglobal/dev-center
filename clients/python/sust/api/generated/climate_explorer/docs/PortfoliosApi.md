@@ -8,9 +8,12 @@ Method | HTTP request | Description
 [**portfolios_assets_import_create**](PortfoliosApi.md#portfolios_assets_import_create) | **POST** /portfolios/{portfolio_name}/assets/import/ | Import Portfolio Assets
 [**portfolios_assets_list**](PortfoliosApi.md#portfolios_assets_list) | **GET** /portfolios/{portfolio_name}/assets | List Portfolio Assets
 [**portfolios_create**](PortfoliosApi.md#portfolios_create) | **POST** /portfolios/ | Create Portfolio
+[**portfolios_datasets_physical_export_json_list**](PortfoliosApi.md#portfolios_datasets_physical_export_json_list) | **GET** /portfolios/{portfolio_name}/datasets/physical/export/json | Export Physical Risk Exposure JSON
 [**portfolios_datasets_physical_export_list**](PortfoliosApi.md#portfolios_datasets_physical_export_list) | **GET** /portfolios/{portfolio_name}/datasets/physical/export | Export Physical Risk Exposure Dataset
+[**portfolios_datasets_physical_items_export_list**](PortfoliosApi.md#portfolios_datasets_physical_items_export_list) | **GET** /portfolios/{portfolio_name}/datasets/physical/items/export | Get Physical Risk Exposure Data as a file
 [**portfolios_datasets_physical_items_list**](PortfoliosApi.md#portfolios_datasets_physical_items_list) | **GET** /portfolios/{portfolio_name}/datasets/physical/items | Get Physical Risk Exposure Data
 [**portfolios_datasets_physical_list**](PortfoliosApi.md#portfolios_datasets_physical_list) | **GET** /portfolios/{portfolio_name}/datasets/physical | Get Physical Risk Exposure Metadata
+[**portfolios_datasets_physical_summary_export_list**](PortfoliosApi.md#portfolios_datasets_physical_summary_export_list) | **GET** /portfolios/{portfolio_name}/datasets/physical/summary/export | Get Physical Risk Exposure Summary as a file
 [**portfolios_datasets_physical_summary_list**](PortfoliosApi.md#portfolios_datasets_physical_summary_list) | **GET** /portfolios/{portfolio_name}/datasets/physical/summary | Get Physical Risk Exposure Summary
 [**portfolios_delete**](PortfoliosApi.md#portfolios_delete) | **DELETE** /portfolios/{portfolio_name}/ | Delete Portfolio
 [**portfolios_list**](PortfoliosApi.md#portfolios_list) | **GET** /portfolios/ | List Portfolios
@@ -125,7 +128,7 @@ Name | Type | Description  | Notes
 
 Import Portfolio Assets
 
-Trigger an import operation of assets into existing portfolio. Format of the required CSV file is documented at https://developers.sustglobal.com/explorer.html.
+Trigger an import operation of assets into existing portfolio. Format of the required CSV file is documented at https://developers.sustglobal.com/user-guide
 
 ### Example
 
@@ -440,6 +443,108 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **portfolios_datasets_physical_export_json_list**
+> file_type portfolios_datasets_physical_export_json_list(portfolio_name)
+
+Export Physical Risk Exposure JSON
+
+Trigger an export operation of physical risk exposure data in JSON format.
+
+### Example
+
+* Api Key Authentication (X-SustGlobal-APIKey):
+* Api Key Authentication (api_key):
+
+```python
+import time
+import sust.api.generated.climate_explorer
+from sust.api.generated.climate_explorer.api import portfolios_api
+from sust.api.generated.climate_explorer.model.errors_response import ErrorsResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://explorer.sustglobal.io/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = sust.api.generated.climate_explorer.Configuration(
+    host = "https://explorer.sustglobal.io/api"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: X-SustGlobal-APIKey
+configuration.api_key['X-SustGlobal-APIKey'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-SustGlobal-APIKey'] = 'Bearer'
+
+# Configure API key authorization: api_key
+configuration.api_key['api_key'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api_key'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with sust.api.generated.climate_explorer.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = portfolios_api.PortfoliosApi(api_client)
+    portfolio_name = "portfolio_name_example" # str | Name for portfolio
+    project = "project_example" # str | Name of project. Param only required when user may access more than one. (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Export Physical Risk Exposure JSON
+        api_response = api_instance.portfolios_datasets_physical_export_json_list(portfolio_name)
+        pprint(api_response)
+    except sust.api.generated.climate_explorer.ApiException as e:
+        print("Exception when calling PortfoliosApi->portfolios_datasets_physical_export_json_list: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Export Physical Risk Exposure JSON
+        api_response = api_instance.portfolios_datasets_physical_export_json_list(portfolio_name, project=project)
+        pprint(api_response)
+    except sust.api.generated.climate_explorer.ApiException as e:
+        print("Exception when calling PortfoliosApi->portfolios_datasets_physical_export_json_list: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **portfolio_name** | **str**| Name for portfolio |
+ **project** | **str**| Name of project. Param only required when user may access more than one. | [optional]
+
+### Return type
+
+**file_type**
+
+### Authorization
+
+[X-SustGlobal-APIKey](../README.md#X-SustGlobal-APIKey), [api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  * Content-Disposition - Indicates the response contains an &#39;attachment&#39; with a human-friendly name <br>  * Content-Type - Media type describing the attached file <br>  |
+**400** |  |  -  |
+**401** |  |  -  |
+**403** |  |  -  |
+**404** |  |  -  |
+**405** |  |  -  |
+**409** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **portfolios_datasets_physical_export_list**
 > file_type portfolios_datasets_physical_export_list(portfolio_name)
 
@@ -513,6 +618,128 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **portfolio_name** | **str**| Name for portfolio |
  **project** | **str**| Name of project. Param only required when user may access more than one. | [optional]
+
+### Return type
+
+**file_type**
+
+### Authorization
+
+[X-SustGlobal-APIKey](../README.md#X-SustGlobal-APIKey), [api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  * Content-Disposition - Indicates the response contains an &#39;attachment&#39; with a human-friendly name <br>  * Content-Type - Media type describing the attached file <br>  |
+**400** |  |  -  |
+**401** |  |  -  |
+**403** |  |  -  |
+**404** |  |  -  |
+**405** |  |  -  |
+**409** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **portfolios_datasets_physical_items_export_list**
+> file_type portfolios_datasets_physical_items_export_list(portfolio_name)
+
+Get Physical Risk Exposure Data as a file
+
+Retrieve items from the physical risk exposure dataset generated for a portfolio, as a file
+
+### Example
+
+* Api Key Authentication (X-SustGlobal-APIKey):
+* Api Key Authentication (api_key):
+
+```python
+import time
+import sust.api.generated.climate_explorer
+from sust.api.generated.climate_explorer.api import portfolios_api
+from sust.api.generated.climate_explorer.model.errors_response import ErrorsResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://explorer.sustglobal.io/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = sust.api.generated.climate_explorer.Configuration(
+    host = "https://explorer.sustglobal.io/api"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: X-SustGlobal-APIKey
+configuration.api_key['X-SustGlobal-APIKey'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-SustGlobal-APIKey'] = 'Bearer'
+
+# Configure API key authorization: api_key
+configuration.api_key['api_key'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api_key'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with sust.api.generated.climate_explorer.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = portfolios_api.PortfoliosApi(api_client)
+    portfolio_name = "portfolio_name_example" # str | Name for portfolio
+    project = "project_example" # str | Name of project. Param only required when user may access more than one. (optional)
+    hazard = "hazard_example" # str | Climate hazard filter (optional)
+    indicator = "indicator_example" # str | Risk indicator filter (optional)
+    measure = "mid" # str | Indicator measure filter (optional)
+    start_date = "start_date_example" # str | Left boundary of time range filter in format YYYY-MM-DD (optional)
+    end_date = "end_date_example" # str | Right boundary of time range filter in format YYYY-MM-DD (optional)
+    rows = 1 # int | Maximum number of items to return per page (min=1, max=250) (optional)
+    page = 1 # int | Numerical index of current page, beginning at 1 (optional)
+    scenario = "ssp126" # str | Shared socioeconomic pathway filter (optional)
+    entity_id = "entity_id_example" # str | Limit results to those pertaining to assets with the provided entity_id. (optional)
+    file_format = "file_format_example" # str | Format of the file to download (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Get Physical Risk Exposure Data as a file
+        api_response = api_instance.portfolios_datasets_physical_items_export_list(portfolio_name)
+        pprint(api_response)
+    except sust.api.generated.climate_explorer.ApiException as e:
+        print("Exception when calling PortfoliosApi->portfolios_datasets_physical_items_export_list: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Get Physical Risk Exposure Data as a file
+        api_response = api_instance.portfolios_datasets_physical_items_export_list(portfolio_name, project=project, hazard=hazard, indicator=indicator, measure=measure, start_date=start_date, end_date=end_date, rows=rows, page=page, scenario=scenario, entity_id=entity_id, file_format=file_format)
+        pprint(api_response)
+    except sust.api.generated.climate_explorer.ApiException as e:
+        print("Exception when calling PortfoliosApi->portfolios_datasets_physical_items_export_list: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **portfolio_name** | **str**| Name for portfolio |
+ **project** | **str**| Name of project. Param only required when user may access more than one. | [optional]
+ **hazard** | **str**| Climate hazard filter | [optional]
+ **indicator** | **str**| Risk indicator filter | [optional]
+ **measure** | **str**| Indicator measure filter | [optional]
+ **start_date** | **str**| Left boundary of time range filter in format YYYY-MM-DD | [optional]
+ **end_date** | **str**| Right boundary of time range filter in format YYYY-MM-DD | [optional]
+ **rows** | **int**| Maximum number of items to return per page (min&#x3D;1, max&#x3D;250) | [optional]
+ **page** | **int**| Numerical index of current page, beginning at 1 | [optional]
+ **scenario** | **str**| Shared socioeconomic pathway filter | [optional]
+ **entity_id** | **str**| Limit results to those pertaining to assets with the provided entity_id. | [optional]
+ **file_format** | **str**| Format of the file to download | [optional]
 
 ### Return type
 
@@ -757,6 +984,122 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
+**400** |  |  -  |
+**401** |  |  -  |
+**403** |  |  -  |
+**404** |  |  -  |
+**405** |  |  -  |
+**409** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **portfolios_datasets_physical_summary_export_list**
+> file_type portfolios_datasets_physical_summary_export_list(portfolio_name)
+
+Get Physical Risk Exposure Summary as a file
+
+Retrieve a summary of the physical risk exposure dataset, generated for a portfolio, as a file.
+
+### Example
+
+* Api Key Authentication (X-SustGlobal-APIKey):
+* Api Key Authentication (api_key):
+
+```python
+import time
+import sust.api.generated.climate_explorer
+from sust.api.generated.climate_explorer.api import portfolios_api
+from sust.api.generated.climate_explorer.model.errors_response import ErrorsResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://explorer.sustglobal.io/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = sust.api.generated.climate_explorer.Configuration(
+    host = "https://explorer.sustglobal.io/api"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: X-SustGlobal-APIKey
+configuration.api_key['X-SustGlobal-APIKey'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-SustGlobal-APIKey'] = 'Bearer'
+
+# Configure API key authorization: api_key
+configuration.api_key['api_key'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api_key'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with sust.api.generated.climate_explorer.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = portfolios_api.PortfoliosApi(api_client)
+    portfolio_name = "portfolio_name_example" # str | Name for portfolio
+    project = "project_example" # str | Name of project. Param only required when user may access more than one. (optional)
+    rows = 1 # int | Maximum number of items to return per page (min=1, max=250) (optional)
+    page = 1 # int | Numerical index of current page, beginning at 1 (optional)
+    scenario = "ssp126" # str | Shared socioeconomic pathway filter (optional)
+    window = 1 # int | Number of years forward used to determine the Physical Risk Summary. Valid windows are currently 5, 15, and 30 (optional)
+    hazard = "hazard_example" # str | Climate hazard filter (optional)
+    entity_id = "entity_id_example" # str | Limit results to those pertaining to assets with the provided entity_id. (optional)
+    file_format = "file_format_example" # str | Format of the file to download (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Get Physical Risk Exposure Summary as a file
+        api_response = api_instance.portfolios_datasets_physical_summary_export_list(portfolio_name)
+        pprint(api_response)
+    except sust.api.generated.climate_explorer.ApiException as e:
+        print("Exception when calling PortfoliosApi->portfolios_datasets_physical_summary_export_list: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Get Physical Risk Exposure Summary as a file
+        api_response = api_instance.portfolios_datasets_physical_summary_export_list(portfolio_name, project=project, rows=rows, page=page, scenario=scenario, window=window, hazard=hazard, entity_id=entity_id, file_format=file_format)
+        pprint(api_response)
+    except sust.api.generated.climate_explorer.ApiException as e:
+        print("Exception when calling PortfoliosApi->portfolios_datasets_physical_summary_export_list: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **portfolio_name** | **str**| Name for portfolio |
+ **project** | **str**| Name of project. Param only required when user may access more than one. | [optional]
+ **rows** | **int**| Maximum number of items to return per page (min&#x3D;1, max&#x3D;250) | [optional]
+ **page** | **int**| Numerical index of current page, beginning at 1 | [optional]
+ **scenario** | **str**| Shared socioeconomic pathway filter | [optional]
+ **window** | **int**| Number of years forward used to determine the Physical Risk Summary. Valid windows are currently 5, 15, and 30 | [optional]
+ **hazard** | **str**| Climate hazard filter | [optional]
+ **entity_id** | **str**| Limit results to those pertaining to assets with the provided entity_id. | [optional]
+ **file_format** | **str**| Format of the file to download | [optional]
+
+### Return type
+
+**file_type**
+
+### Authorization
+
+[X-SustGlobal-APIKey](../README.md#X-SustGlobal-APIKey), [api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  * Content-Disposition - Indicates the response contains an &#39;attachment&#39; with a human-friendly name <br>  * Content-Type - Media type describing the attached file <br>  |
 **400** |  |  -  |
 **401** |  |  -  |
 **403** |  |  -  |

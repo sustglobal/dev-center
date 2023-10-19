@@ -68,6 +68,9 @@ class PhysicalRiskMetadataResponse(ModelNormal):
                 'pattern': r'^[-a-zA-Z0-9_]+$',  # noqa: E501
             },
         },
+        ('version',): {
+            'min_length': 1,
+        },
     }
 
     @cached_property
@@ -96,6 +99,7 @@ class PhysicalRiskMetadataResponse(ModelNormal):
             'portfolio_name': (str,),  # noqa: E501
             'created_at': (datetime,),  # noqa: E501
             'updated_at': (datetime,),  # noqa: E501
+            'version': (str,),  # noqa: E501
             'indicators': ([PhysicalRiskMetadataIndicatorResponse],),  # noqa: E501
         }
 
@@ -108,6 +112,7 @@ class PhysicalRiskMetadataResponse(ModelNormal):
         'portfolio_name': 'portfolio_name',  # noqa: E501
         'created_at': 'created_at',  # noqa: E501
         'updated_at': 'updated_at',  # noqa: E501
+        'version': 'version',  # noqa: E501
         'indicators': 'indicators',  # noqa: E501
     }
 
@@ -118,13 +123,14 @@ class PhysicalRiskMetadataResponse(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, portfolio_name, created_at, updated_at, indicators, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, portfolio_name, created_at, updated_at, version, indicators, *args, **kwargs):  # noqa: E501
         """PhysicalRiskMetadataResponse - a model defined in OpenAPI
 
         Args:
             portfolio_name (str): Name of the corresponding portfolio
             created_at (datetime): Date and Time when Risk Dataset was created and validated
             updated_at (datetime): Date and time portfolio was updated (UTC)
+            version (str): Version of the Risk Dataset
             indicators ([PhysicalRiskMetadataIndicatorResponse]): Metadata describing indicators available within the dataset
 
         Keyword Args:
@@ -188,6 +194,7 @@ class PhysicalRiskMetadataResponse(ModelNormal):
         self.portfolio_name = portfolio_name
         self.created_at = created_at
         self.updated_at = updated_at
+        self.version = version
         self.indicators = indicators
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
@@ -209,13 +216,14 @@ class PhysicalRiskMetadataResponse(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, portfolio_name, created_at, updated_at, indicators, *args, **kwargs):  # noqa: E501
+    def __init__(self, portfolio_name, created_at, updated_at, version, indicators, *args, **kwargs):  # noqa: E501
         """PhysicalRiskMetadataResponse - a model defined in OpenAPI
 
         Args:
             portfolio_name (str): Name of the corresponding portfolio
             created_at (datetime): Date and Time when Risk Dataset was created and validated
             updated_at (datetime): Date and time portfolio was updated (UTC)
+            version (str): Version of the Risk Dataset
             indicators ([PhysicalRiskMetadataIndicatorResponse]): Metadata describing indicators available within the dataset
 
         Keyword Args:
@@ -277,6 +285,7 @@ class PhysicalRiskMetadataResponse(ModelNormal):
         self.portfolio_name = portfolio_name
         self.created_at = created_at
         self.updated_at = updated_at
+        self.version = version
         self.indicators = indicators
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
