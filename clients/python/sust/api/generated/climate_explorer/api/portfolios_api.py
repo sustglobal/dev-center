@@ -295,6 +295,63 @@ class PortfoliosApi(object):
             },
             api_client=api_client
         )
+        self.portfolios_datasets_physical_export_json_list_endpoint = _Endpoint(
+            settings={
+                'response_type': (file_type,),
+                'auth': [
+                    'X-SustGlobal-APIKey',
+                    'api_key'
+                ],
+                'endpoint_path': '/portfolios/{portfolio_name}/datasets/physical/export/json',
+                'operation_id': 'portfolios_datasets_physical_export_json_list',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'portfolio_name',
+                    'project',
+                ],
+                'required': [
+                    'portfolio_name',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'portfolio_name':
+                        (str,),
+                    'project':
+                        (str,),
+                },
+                'attribute_map': {
+                    'portfolio_name': 'portfolio_name',
+                    'project': 'project',
+                },
+                'location_map': {
+                    'portfolio_name': 'path',
+                    'project': 'query',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
         self.portfolios_datasets_physical_export_list_endpoint = _Endpoint(
             settings={
                 'response_type': (file_type,),
@@ -340,6 +397,127 @@ class PortfoliosApi(object):
                 'location_map': {
                     'portfolio_name': 'path',
                     'project': 'query',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.portfolios_datasets_physical_items_export_list_endpoint = _Endpoint(
+            settings={
+                'response_type': (file_type,),
+                'auth': [
+                    'X-SustGlobal-APIKey',
+                    'api_key'
+                ],
+                'endpoint_path': '/portfolios/{portfolio_name}/datasets/physical/items/export',
+                'operation_id': 'portfolios_datasets_physical_items_export_list',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'portfolio_name',
+                    'project',
+                    'hazard',
+                    'indicator',
+                    'measure',
+                    'start_date',
+                    'end_date',
+                    'rows',
+                    'page',
+                    'scenario',
+                    'entity_id',
+                    'file_format',
+                ],
+                'required': [
+                    'portfolio_name',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                    'measure',
+                    'scenario',
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                    ('measure',): {
+
+                        "MID": "mid",
+                        "LB": "lb",
+                        "UB": "ub"
+                    },
+                    ('scenario',): {
+
+                        "SSP126": "ssp126",
+                        "SSP245": "ssp245",
+                        "SSP585": "ssp585"
+                    },
+                },
+                'openapi_types': {
+                    'portfolio_name':
+                        (str,),
+                    'project':
+                        (str,),
+                    'hazard':
+                        (str,),
+                    'indicator':
+                        (str,),
+                    'measure':
+                        (str,),
+                    'start_date':
+                        (str,),
+                    'end_date':
+                        (str,),
+                    'rows':
+                        (int,),
+                    'page':
+                        (int,),
+                    'scenario':
+                        (str,),
+                    'entity_id':
+                        (str,),
+                    'file_format':
+                        (str,),
+                },
+                'attribute_map': {
+                    'portfolio_name': 'portfolio_name',
+                    'project': 'project',
+                    'hazard': 'hazard',
+                    'indicator': 'indicator',
+                    'measure': 'measure',
+                    'start_date': 'start_date',
+                    'end_date': 'end_date',
+                    'rows': 'rows',
+                    'page': 'page',
+                    'scenario': 'scenario',
+                    'entity_id': 'entity_id',
+                    'file_format': 'file_format',
+                },
+                'location_map': {
+                    'portfolio_name': 'path',
+                    'project': 'query',
+                    'hazard': 'query',
+                    'indicator': 'query',
+                    'measure': 'query',
+                    'start_date': 'query',
+                    'end_date': 'query',
+                    'rows': 'query',
+                    'page': 'query',
+                    'scenario': 'query',
+                    'entity_id': 'query',
+                    'file_format': 'query',
                 },
                 'collection_format_map': {
                 }
@@ -513,6 +691,105 @@ class PortfoliosApi(object):
                 'location_map': {
                     'portfolio_name': 'path',
                     'project': 'query',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.portfolios_datasets_physical_summary_export_list_endpoint = _Endpoint(
+            settings={
+                'response_type': (file_type,),
+                'auth': [
+                    'X-SustGlobal-APIKey',
+                    'api_key'
+                ],
+                'endpoint_path': '/portfolios/{portfolio_name}/datasets/physical/summary/export',
+                'operation_id': 'portfolios_datasets_physical_summary_export_list',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'portfolio_name',
+                    'project',
+                    'rows',
+                    'page',
+                    'scenario',
+                    'window',
+                    'hazard',
+                    'entity_id',
+                    'file_format',
+                ],
+                'required': [
+                    'portfolio_name',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                    'scenario',
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                    ('scenario',): {
+
+                        "SSP126": "ssp126",
+                        "SSP245": "ssp245",
+                        "SSP585": "ssp585"
+                    },
+                },
+                'openapi_types': {
+                    'portfolio_name':
+                        (str,),
+                    'project':
+                        (str,),
+                    'rows':
+                        (int,),
+                    'page':
+                        (int,),
+                    'scenario':
+                        (str,),
+                    'window':
+                        (int,),
+                    'hazard':
+                        (str,),
+                    'entity_id':
+                        (str,),
+                    'file_format':
+                        (str,),
+                },
+                'attribute_map': {
+                    'portfolio_name': 'portfolio_name',
+                    'project': 'project',
+                    'rows': 'rows',
+                    'page': 'page',
+                    'scenario': 'scenario',
+                    'window': 'window',
+                    'hazard': 'hazard',
+                    'entity_id': 'entity_id',
+                    'file_format': 'file_format',
+                },
+                'location_map': {
+                    'portfolio_name': 'path',
+                    'project': 'query',
+                    'rows': 'query',
+                    'page': 'query',
+                    'scenario': 'query',
+                    'window': 'query',
+                    'hazard': 'query',
+                    'entity_id': 'query',
+                    'file_format': 'query',
                 },
                 'collection_format_map': {
                 }
@@ -935,7 +1212,7 @@ class PortfoliosApi(object):
     ):
         """Import Portfolio Assets  # noqa: E501
 
-        Trigger an import operation of assets into existing portfolio. Format of the required CSV file is documented at https://developers.sustglobal.com/explorer.html.  # noqa: E501
+        Trigger an import operation of assets into existing portfolio. Format of the required CSV file is documented at https://developers.sustglobal.com/user-guide  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1171,6 +1448,85 @@ class PortfoliosApi(object):
             data
         return self.portfolios_create_endpoint.call_with_http_info(**kwargs)
 
+    def portfolios_datasets_physical_export_json_list(
+        self,
+        portfolio_name,
+        **kwargs
+    ):
+        """Export Physical Risk Exposure JSON  # noqa: E501
+
+        Trigger an export operation of physical risk exposure data in JSON format.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.portfolios_datasets_physical_export_json_list(portfolio_name, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            portfolio_name (str): Name for portfolio
+
+        Keyword Args:
+            project (str): Name of project. Param only required when user may access more than one.. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            file_type
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['portfolio_name'] = \
+            portfolio_name
+        return self.portfolios_datasets_physical_export_json_list_endpoint.call_with_http_info(**kwargs)
+
     def portfolios_datasets_physical_export_list(
         self,
         portfolio_name,
@@ -1249,6 +1605,95 @@ class PortfoliosApi(object):
         kwargs['portfolio_name'] = \
             portfolio_name
         return self.portfolios_datasets_physical_export_list_endpoint.call_with_http_info(**kwargs)
+
+    def portfolios_datasets_physical_items_export_list(
+        self,
+        portfolio_name,
+        **kwargs
+    ):
+        """Get Physical Risk Exposure Data as a file  # noqa: E501
+
+        Retrieve items from the physical risk exposure dataset generated for a portfolio, as a file  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.portfolios_datasets_physical_items_export_list(portfolio_name, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            portfolio_name (str): Name for portfolio
+
+        Keyword Args:
+            project (str): Name of project. Param only required when user may access more than one.. [optional]
+            hazard (str): Climate hazard filter. [optional]
+            indicator (str): Risk indicator filter. [optional]
+            measure (str): Indicator measure filter. [optional]
+            start_date (str): Left boundary of time range filter in format YYYY-MM-DD. [optional]
+            end_date (str): Right boundary of time range filter in format YYYY-MM-DD. [optional]
+            rows (int): Maximum number of items to return per page (min=1, max=250). [optional]
+            page (int): Numerical index of current page, beginning at 1. [optional]
+            scenario (str): Shared socioeconomic pathway filter. [optional]
+            entity_id (str): Limit results to those pertaining to assets with the provided entity_id.. [optional]
+            file_format (str): Format of the file to download. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            file_type
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['portfolio_name'] = \
+            portfolio_name
+        return self.portfolios_datasets_physical_items_export_list_endpoint.call_with_http_info(**kwargs)
 
     def portfolios_datasets_physical_items_list(
         self,
@@ -1416,6 +1861,92 @@ class PortfoliosApi(object):
         kwargs['portfolio_name'] = \
             portfolio_name
         return self.portfolios_datasets_physical_list_endpoint.call_with_http_info(**kwargs)
+
+    def portfolios_datasets_physical_summary_export_list(
+        self,
+        portfolio_name,
+        **kwargs
+    ):
+        """Get Physical Risk Exposure Summary as a file  # noqa: E501
+
+        Retrieve a summary of the physical risk exposure dataset, generated for a portfolio, as a file.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.portfolios_datasets_physical_summary_export_list(portfolio_name, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            portfolio_name (str): Name for portfolio
+
+        Keyword Args:
+            project (str): Name of project. Param only required when user may access more than one.. [optional]
+            rows (int): Maximum number of items to return per page (min=1, max=250). [optional]
+            page (int): Numerical index of current page, beginning at 1. [optional]
+            scenario (str): Shared socioeconomic pathway filter. [optional]
+            window (int): Number of years forward used to determine the Physical Risk Summary. Valid windows are currently 5, 15, and 30. [optional]
+            hazard (str): Climate hazard filter. [optional]
+            entity_id (str): Limit results to those pertaining to assets with the provided entity_id.. [optional]
+            file_format (str): Format of the file to download. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            file_type
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['portfolio_name'] = \
+            portfolio_name
+        return self.portfolios_datasets_physical_summary_export_list_endpoint.call_with_http_info(**kwargs)
 
     def portfolios_datasets_physical_summary_list(
         self,

@@ -51,10 +51,24 @@ class TestPortfoliosApi(unittest.TestCase):
         """
         pass
 
+    def test_portfolios_datasets_physical_export_json_list(self):
+        """Test case for portfolios_datasets_physical_export_json_list
+
+        Export Physical Risk Exposure JSON  # noqa: E501
+        """
+        pass
+
     def test_portfolios_datasets_physical_export_list(self):
         """Test case for portfolios_datasets_physical_export_list
 
         Export Physical Risk Exposure Dataset  # noqa: E501
+        """
+        pass
+
+    def test_portfolios_datasets_physical_items_export_list(self):
+        """Test case for portfolios_datasets_physical_items_export_list
+
+        Get Physical Risk Exposure Data as a file  # noqa: E501
         """
         pass
 
@@ -69,6 +83,13 @@ class TestPortfoliosApi(unittest.TestCase):
         """Test case for portfolios_datasets_physical_list
 
         Get Physical Risk Exposure Metadata  # noqa: E501
+        """
+        pass
+
+    def test_portfolios_datasets_physical_summary_export_list(self):
+        """Test case for portfolios_datasets_physical_summary_export_list
+
+        Get Physical Risk Exposure Summary as a file  # noqa: E501
         """
         pass
 
