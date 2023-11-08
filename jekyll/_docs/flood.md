@@ -71,5 +71,8 @@ Projected mean annual flood risk exposure over over 1980-2010 (left) and 2022-20
 
 ## Data Sources
 - [Aqueduct](https://www.wri.org/data/aqueduct-floods-hazard-maps)
-- [NASA MODIS](https://www.earthdata.nasa.gov/learn/find-data/near-real-time/modis-nrt-global-flood-product) 
+- [NASA MODIS](https://www.earthdata.nasa.gov/learn/find-data/near-real-time/modis-nrt-global-flood-product)
+- [FEMA flood zones](https://catalog.data.gov/dataset/national-flood-hazard-layer-nfhl)
+- [UK flood zones](https://www.arcgis.com/home/webmap/viewer.html?url=https%3A%2F%2Fenvironment.data.gov.uk%2Farcgis%2Frest%2Fservices%2FEA%2FFloodMapForPlanningRiversAndSeaFloodZone3%2FFeatureServer%2F0&source=sd)
+- [Spain flood zones](https://www.miteco.gob.es/es/cartografia-y-sig/ide/descargas/agua/zi-lamina.aspx)
 
