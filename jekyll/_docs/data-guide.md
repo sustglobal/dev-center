@@ -3,7 +3,7 @@ layout: doc
 title: Climate Data Guide
 subtitle: This document provides users with an introduction to Sust Global’s data capabilities. This includes an overview of climate modeling and scenario development, and how to use our hazard and indicator data to derive intelligence and insights.
 date: 2023-01-01
-lastmod: 2023-08-20
+lastmod: 2023-11-08
 author: TB
 tags:
 - data
@@ -84,7 +84,7 @@ To create summarization labels we analyze a representative sample of global poin
 | wildfire        | obs_score                | score          | 0.0       | 1.0       | 1.0        | 500.0                          |
 | wildfire        | unified_prob             | probability    | 0.0       | 1.0       | 0.5        | 300.0                          |
 | flood_potential | obs_score                | score          | 0.0       | 1.0       | 1.0        | 250.0                          |
-| flood_potential | inland_flood_prob        | probability    | 0.0       | 1.0       | 0.5        | 1000.0                         |
+| flood_potential | inland_flood_prob        | probability    | 0.0       | 1.0       | 0.5        | 90.0                           |
 | cyclone         | obs_freq                 | frequency      | 0.0       | 7.0       | 2.0        | 1000.0                         |
 | cyclone         | prob                     | probability    | 0.0       | 1.0       | 0.5        | 10000.0                        |
 | heatwave        | obs_freq                 | day            | 0.0       | 366.0     | 200.0      | 10000.0                        |

@@ -707,7 +707,7 @@
         <div class="flex-1">
           <p class="font-display font-semibold text-sm text-slate-900">Tristan Ballard</p>
           <p class="text-sm text-slate-500">Created: Jan 1, 2023 
-            - Updated: Aug 20, 2023
+            - Updated: Nov 8, 2023
             </p>
         </div>
         <!-- <div class="flex-none">
@@ -725,7 +725,11 @@
 
 <p>Metric: Annual probability of a flood with depth greater than 0.5 meters at an asset location.</p>
 
-<p>This indicator quantifies the projected flood likelihood, expressed as timeseries of annual expected probability of flooding greater than 0.5 meters at the asset level. We derive this method from WRI’s <a href="https://www.wri.org/data/aqueduct-floods-hazard-maps">Aqueduct Flood Hazard Maps</a> product, for both inland and coastal floods. Using a suite of flood maps of varying intensity, we derive an estimate of the expected recurrence period for any amount of flooding.</p>
+<p>This indicator quantifies the projected flood likelihood, expressed as timeseries of annual expected probability of flooding greater than 0.5 meters at the asset level. We derive this from a combination of WRI’s <a href="https://www.wri.org/data/aqueduct-floods-hazard-maps">Aqueduct Flood Hazard Maps</a> product, high-resolution elevation data, and local information on flood zones. We support 90 meter regional and asset level assessments between latitudes  17N and 50N. This 90m indicator covers the contiguous U.S., southern Europe, as well as the majority of East Asia. Outside those latitudes, the same indicator is available but at a resolution of 1km.</p>
+
+<p>We first bias-correct Aqueduct flood data for both inland and coastal floods based on local information on flood zones. This flood zone information is derived from the Federal Emergency Management Agency (FEMA), the UK Environment Agency, and Spain’s Ministerio para la Transición Ecológica y el Reto Demográfico. We next derive terrain-adjusted flood depths and associated probabilities using high-resolution elevation data to enhance local exposure assessments. The terrain adjustment results in 90m downscaled flood depth projections and corresponding high-resolution probability projections.</p>
+
+<p>The elevation dataset is derived from tightly calibrated satellite data  from NASA that include the SRTM and ASTER sensors. Higher resolution flood projections are valuable as they provide detailed and accurate information essential for effective disaster preparedness, risk exposure assessment, financial impacts from structural damage, and business interruption.</p>
 
 <p><strong>Observed floods</strong>
 This indicator reflects whether flooding was observed in a given year by satellites at the location of an asset. It is derived from <a href="https://www.earthdata.nasa.gov/learn/find-data/near-real-time/modis-nrt-global-flood-product">NASA MODIS</a> data, for the period 2012 to present.</p>
@@ -865,6 +869,9 @@ Projected mean annual flood risk exposure over over 1980-2010 (left) and 2022-20
 <ul>
   <li><a href="https://www.wri.org/data/aqueduct-floods-hazard-maps">Aqueduct</a></li>
   <li><a href="https://www.earthdata.nasa.gov/learn/find-data/near-real-time/modis-nrt-global-flood-product">NASA MODIS</a></li>
+  <li><a href="https://catalog.data.gov/dataset/national-flood-hazard-layer-nfhl">FEMA flood zones</a></li>
+  <li><a href="https://www.arcgis.com/home/webmap/viewer.html?url=https%3A%2F%2Fenvironment.data.gov.uk%2Farcgis%2Frest%2Fservices%2FEA%2FFloodMapForPlanningRiversAndSeaFloodZone3%2FFeatureServer%2F0&amp;source=sd">UK flood zones</a></li>
+  <li><a href="https://www.miteco.gob.es/es/cartografia-y-sig/ide/descargas/agua/zi-lamina.aspx">Spain flood zones</a></li>
 </ul>
 
 </div>
