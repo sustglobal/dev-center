@@ -3,7 +3,7 @@ layout: doc
 title: Flood
 subtitle: Flooding captures the likelihood of a location being directly exposed to flooding, both from precipitation-based inland flooding and from coastal flooding. Flooding is among the deadlier natural disasters and poses direct risks to human health, infrastructure, and economic activity.
 date: 2023-01-01
-lastmod: 2023-08-20
+lastmod: 2023-11-08
 author: TB
 tags:
 - data
@@ -15,7 +15,13 @@ tags:
 
 Metric: Annual probability of a flood with depth greater than 0.5 meters at an asset location.
 
-This indicator quantifies the projected flood likelihood, expressed as timeseries of annual expected probability of flooding greater than 0.5 meters at the asset level. We derive this method from WRI's [Aqueduct Flood Hazard Maps](https://www.wri.org/data/aqueduct-floods-hazard-maps) product, for both inland and coastal floods. Using a suite of flood maps of varying intensity, we derive an estimate of the expected recurrence period for any amount of flooding.
+This indicator quantifies the projected flood likelihood, expressed as timeseries of annual expected probability of flooding greater than 0.5 meters at the asset level. We derive this from a combination of WRI's [Aqueduct Flood Hazard Maps](https://www.wri.org/data/aqueduct-floods-hazard-maps) product, high-resolution elevation data, and local information on flood zones. We support 90 meter regional and asset level assessments between latitudes  17N and 50N. This 90m indicator covers the contiguous U.S., southern Europe, as well as the majority of East Asia. Outside those latitudes, the same indicator is available but at a resolution of 1km. 
+
+
+We first bias-correct Aqueduct flood data for both inland and coastal floods based on local information on flood zones. This flood zone information is derived from the Federal Emergency Management Agency (FEMA), the UK Environment Agency, and Spain's Ministerio para la Transición Ecológica y el Reto Demográfico. We next derive terrain-adjusted flood depths and associated probabilities using high-resolution elevation data to enhance local exposure assessments. The terrain adjustment results in 90m downscaled flood depth projections and corresponding high-resolution probability projections.
+
+The elevation dataset is derived from tightly calibrated satellite data  from NASA that include the SRTM and ASTER sensors. Higher resolution flood projections are valuable as they provide detailed and accurate information essential for effective disaster preparedness, risk exposure assessment, financial impacts from structural damage, and business interruption.
+
 
 **Observed floods**
 This indicator reflects whether flooding was observed in a given year by satellites at the location of an asset. It is derived from [NASA MODIS](https://www.earthdata.nasa.gov/learn/find-data/near-real-time/modis-nrt-global-flood-product) data, for the period 2012 to present.  
@@ -65,5 +71,8 @@ Projected mean annual flood risk exposure over over 1980-2010 (left) and 2022-20
 
 ## Data Sources
 - [Aqueduct](https://www.wri.org/data/aqueduct-floods-hazard-maps)
-- [NASA MODIS](https://www.earthdata.nasa.gov/learn/find-data/near-real-time/modis-nrt-global-flood-product) 
+- [NASA MODIS](https://www.earthdata.nasa.gov/learn/find-data/near-real-time/modis-nrt-global-flood-product)
+- [FEMA flood zones](https://catalog.data.gov/dataset/national-flood-hazard-layer-nfhl)
+- [UK flood zones](https://www.arcgis.com/home/webmap/viewer.html?url=https%3A%2F%2Fenvironment.data.gov.uk%2Farcgis%2Frest%2Fservices%2FEA%2FFloodMapForPlanningRiversAndSeaFloodZone3%2FFeatureServer%2F0&source=sd)
+- [Spain flood zones](https://www.miteco.gob.es/es/cartografia-y-sig/ide/descargas/agua/zi-lamina.aspx)
 
