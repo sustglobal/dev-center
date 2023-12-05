@@ -6,19 +6,20 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Search API | Sust Global Developer Center</title>
+<title>Search User Guide | Sust Global Developer Center</title>
 <meta name="generator" content="Jekyll v4.3.2" />
-<meta property="og:title" content="Search API" />
+<meta property="og:title" content="Search User Guide" />
+<meta name="author" content="JPC" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="Data Description For rapid retrieval of a single data point, Sust Global has developed the Search API. Currently available in the United States, this feature allows users to supply a lat/lon pair, and instantly get a result on the risk at that location and in the nearby area, for both the near and medium term." />
-<meta property="og:description" content="Data Description For rapid retrieval of a single data point, Sust Global has developed the Search API. Currently available in the United States, this feature allows users to supply a lat/lon pair, and instantly get a result on the risk at that location and in the nearby area, for both the near and medium term." />
+<meta name="description" content="Search UI Quickstart" />
+<meta property="og:description" content="Search UI Quickstart" />
 <meta property="og:site_name" content="Sust Global Developer Center" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2023-11-30T11:20:46-07:00" />
+<meta property="article:published_time" content="2022-12-14T00:00:00-05:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Search API" />
+<meta property="twitter:title" content="Search User Guide" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-11-30T11:20:46-07:00","datePublished":"2023-11-30T11:20:46-07:00","description":"Data Description For rapid retrieval of a single data point, Sust Global has developed the Search API. Currently available in the United States, this feature allows users to supply a lat/lon pair, and instantly get a result on the risk at that location and in the nearby area, for both the near and medium term.","headline":"Search API","mainEntityOfPage":{"@type":"WebPage","@id":"/search"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"/uploads/Sust_Logo.png"}},"url":"/search"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"JPC"},"dateModified":"2022-12-14T00:00:00-05:00","datePublished":"2022-12-14T00:00:00-05:00","description":"Search UI Quickstart","headline":"Search User Guide","mainEntityOfPage":{"@type":"WebPage","@id":"/search"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"/uploads/Sust_Logo.png"},"name":"JPC"},"url":"/search"}</script>
 <!-- End Jekyll SEO tag -->
 
   <meta property="og:image" content="">
@@ -517,7 +518,7 @@
                         
                         <li class="relative">
                           <a class="block w-full pl-3.5 before:pointer-events-none before:absolute before:left-0.5 before:top-1/2 before:h-0.5 before:w-1.5 before:-translate-y-1/2 
-                           text-sky-500 before:bg-sky-500" href="/search">Search API</a>
+                           text-sky-500 before:bg-sky-500" href="/search">Search User Guide</a>
                         </li>
                       
                     </ul>
@@ -692,23 +693,246 @@
         
       
     
-    <h1 class="font-display text-3xl tracking-tight text-slate-900 font-semibold">Search API</h1>
+    <h1 class="font-display text-3xl tracking-tight text-slate-900 font-semibold">Search User Guide</h1>
+    
+      
+      <div class="flex space-x-4 mt-4">
+        
+        
+        <div class="flex-1">
+          <p class="font-display font-semibold text-sm text-slate-900"></p>
+          <p class="text-sm text-slate-500">Created: Dec 14, 2022 
+            - Updated: Dec 5, 2023
+            </p>
+        </div>
+        <!-- <div class="flex-none">
+          <a href="#share" class="rounded-md bg-sky-50 px-2.5 py-1.5 text-sm font-semibold font-display text-sky-500 shadow-sm hover:bg-sky-100">Share</a>
+        </div> -->
+      </div>
     
 
+    
+      <p class="text-lg text-slate-600 mt-9">Sust Global's Search API is a RESTful API interface to Sust Global's rapid retrieval of a single data point. The API currently allows users to supply a lat/lon pair, and instantly get a result on the risk at that location and in the nearby area, for both the near and medium term.</p>
     
   </header>
-  <div class="prose prose-slate max-w-none prose-headings:scroll-mt-28 prose-headings:font-display prose-headings:font-semibold prose-lead:text-slate-500 prose-a:font-semibold prose-a:no-underline hover:prose-a:text-sky-500 prose-pre:rounded-xl prose-pre:bg-slate-900 prose-pre:shadow-lg"><p><strong>Data Description</strong>
-For rapid retrieval of a single data point, Sust Global has developed the <strong>Search API</strong>.  Currently available in the United States, this feature allows users to supply a lat/lon pair, and instantly get a result on the risk at that location and in the nearby area, for both the near and medium term.</p>
+  <div class="prose prose-slate max-w-none prose-headings:scroll-mt-28 prose-headings:font-display prose-headings:font-semibold prose-lead:text-slate-500 prose-a:font-semibold prose-a:no-underline hover:prose-a:text-sky-500 prose-pre:rounded-xl prose-pre:bg-slate-900 prose-pre:shadow-lg"><h2 id="search-ui-quickstart">Search UI Quickstart</h2>
 
-<p>In the Climate Explorer dashboard, the Search API also permits users to search by an address.</p>
+<p>In the Climate Explorer dashboard, go to the Account menu and click on the <code class="language-plaintext highlighter-rouge">Search</code> option. On the screen presented, type in the address or the coordinates of the location you want to check.</p>
 
 <p align="center">
 <img height="400" src="assets/images/userguide/Search_dashboard.png" />
 </p>
 
 <p align="center">
+<img height="400" src="assets/images/userguide/search_dashboard_coords.png" />
+</p>
+
+<p align="center">
 Search functionality in the Climate Explorer dashboard
 </p>
+
+<h2 id="search-api-quickstart">Search API Quickstart</h2>
+
+<p>To quickly get up and going with the Climate Explorer Search API, you first must retrieve your API key. Navigate to your <a href="https://explorer.sustglobal.io/account/profile/">Climate Explorer User Profile</a> and copy the value of <strong>API Key</strong>. This value will be referenced below as <strong>$APIKEY</strong>.</p>
+
+<p>Open a local terminal, then run the following <code class="language-plaintext highlighter-rouge">curl</code> command (make sure to replace the <code class="language-plaintext highlighter-rouge">APIKEY</code>, <code class="language-plaintext highlighter-rouge">PROJECT</code>, <code class="language-plaintext highlighter-rouge">LAT</code>, and <code class="language-plaintext highlighter-rouge">LONG</code> with their corresponding values):</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl "https://explorer.sustglobal.io/api/search?lat=$LAT&amp;lng=$LONG" --header "X-SustGlobal-APIKey: $APIKEY" --header "X-SustGlobal-Project: $PROJECT"
+</code></pre></div></div>
+
+<p>A successful response from the portfolios endpoint will contain the risk information associated with the location (coordinates) provided. For example:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "physical_risk_exposure": {
+          "background": {
+            "15yr": [
+              {
+                "hazard": "floods",
+                "score": 0.10615108185447752,
+                "label": "HIGH"
+              },
+              {
+                "hazard": "cyclones",
+                "score": 0,
+                "label": "LOW"
+              },
+              {
+                "hazard": "drought",
+                "score": 0.07531279841012768,
+                "label": "LOW"
+              },
+              {
+                "hazard": "heatwaves",
+                "score": 13.536979079246521,
+                "label": "LOW"
+              },
+              {
+                "hazard": "sea_level_rise",
+                "score": 0.026802367565812456,
+                "label": "LOW"
+              },
+              {
+                "hazard": "wildfire",
+                "score": 0,
+                "label": "LOW"
+              }
+            ],
+            "30yr": [
+              {
+                "hazard": "floods",
+                "score": 0.11163490801118314,
+                "label": "HIGH"
+              },
+              {
+                "hazard": "cyclones",
+                "score": 0,
+                "label": "LOW"
+              },
+              {
+                "hazard": "drought",
+                "score": 0.0987541839030649,
+                "label": "LOW"
+              },
+              {
+                "hazard": "heatwaves",
+                "score": 16.12977159023285,
+                "label": "LOW"
+              },
+              {
+                "hazard": "sea_level_rise",
+                "score": 0.04028329250311741,
+                "label": "LOW"
+              },
+              {
+                "hazard": "wildfire",
+                "score": 0,
+                "label": "LOW"
+              }
+            ]
+          },
+          "local": {
+            "15yr": [
+              {
+                "hazard": "cyclones",
+                "score": 0,
+                "label": "LOW"
+              },
+              {
+                "hazard": "drought",
+                "score": 0.07122914524118835,
+                "label": "LOW"
+              },
+              {
+                "hazard": "heatwaves",
+                "score": 13.53125,
+                "label": "LOW"
+              },
+              {
+                "hazard": "sea_level_rise",
+                "score": 0.03152499967951014,
+                "label": "LOW"
+              },
+              {
+                "hazard": "floods",
+                "score": 0.2212430238723755,
+                "label": "HIGH"
+              },
+              {
+                "hazard": "wildfire",
+                "score": 0,
+                "label": "LOW"
+              }
+            ],
+            "30yr": [
+              {
+                "hazard": "cyclones",
+                "score": 0,
+                "label": "LOW"
+              },
+              {
+                "hazard": "drought",
+                "score": 0.09704220998046496,
+                "label": "LOW"
+              },
+              {
+                "hazard": "heatwaves",
+                "score": 16.00806427001953,
+                "label": "LOW"
+              },
+              {
+                "hazard": "sea_level_rise",
+                "score": 0.047384368968447506,
+                "label": "LOW"
+              },
+              {
+                "hazard": "floods",
+                "score": 0.23287193477153778,
+                "label": "HIGH"
+              },
+              {
+                "hazard": "wildfire",
+                "score": 0,
+                "label": "LOW"
+              }
+            ]
+          }
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.8242285597761,
+          47.09764797110564
+        ]
+      }
+    }
+  ]
+}
+</code></pre></div></div>
+
+<h2 id="api-mechanics">API Mechanics</h2>
+
+<p>The Search API mechanics follow the same guidelines as the ones presented in the <a href="https://developers.sustglobal.com/api-guide#api-mechanics">Climate Explorer API Guide</a>.</p>
+
+<h2 id="error-responses">Error Responses</h2>
+
+<p>When an API request fails, clients should always consider the HTTP status code. Status codes are used as accurately as possible. For example, when an invalid request is made, a <strong>400 Bad Request</strong> code will be returned.</p>
+
+<p>In addition to the status code, clients should also attempt to parse a JSON-encoded error response available in the HTTP response body. The JSON object contains one of more human-readable errors, represented as an array of strings. For example:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+  "errors": [
+    "project nonexistent or lacking authorization"
+  ]
+}
+</code></pre></div></div>
+
+<p>It is inadvisable to attempt to parse meaningful data from error strings, as they will evolve over time as Sust Global capabilities expand. In other words, there is no contract established in the content of error strings.</p>
+
+<h2 id="api-endpoint-reference">API Endpoint Reference</h2>
+
+<p>You may access the <a href="https://explorer.sustglobal.io/redoc/#operation/search_list">Climate Explorer Search API Reference</a>, which describes every REST endpoint, parameters, request and responses.</p>
+
+<h2 id="citing-sust-global-api">Citing Sust Global API</h2>
+
+<p>From a concept to adoption by an emerging group of early adopters, many people have invested time and energy in developing and enabling access to Sust Global’s capabilities. Please cite Sust Global when using our data and insights. To cite Sust Global’s data in publications, please use the following:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Sust Inc (2021). Sust Global Application Programming Interface: Transforming frontier climate science to actionable data. https://developers.sustglobal.com.
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@Misc{,
+  author       = {Sust Global Team},
+  organization = {Sust Inc},
+  title        = {Sust Global Application Programming Interface: Transforming frontier climate science to actionable data},
+  year         = {2021--},
+  url          = "https://developers.sustglobal.com"
+}
+</code></pre></div></div>
 </div>
 </article>
 <!-- <div id="share" class="flex space-x-4 mt-12 justify-center scroll-mt-[8.5rem]">
@@ -818,6 +1042,12 @@ Search functionality in the Climate Explorer dashboard
           <nav aria-labelledby="on-this-page-title" class="w-56">
             <h2 id="on-this-page-title" class="font-display text-sm font-semibold text-slate-900">On this page</h2>
             <ul id="toc" class="toc">
+<li class="toc-entry toc-h2"><a href="#search-ui-quickstart">Search UI Quickstart</a></li>
+<li class="toc-entry toc-h2"><a href="#search-api-quickstart">Search API Quickstart</a></li>
+<li class="toc-entry toc-h2"><a href="#api-mechanics">API Mechanics</a></li>
+<li class="toc-entry toc-h2"><a href="#error-responses">Error Responses</a></li>
+<li class="toc-entry toc-h2"><a href="#api-endpoint-reference">API Endpoint Reference</a></li>
+<li class="toc-entry toc-h2"><a href="#citing-sust-global-api">Citing Sust Global API</a></li>
 </ul>
           </nav>
         </div>
@@ -981,7 +1211,7 @@ style="display: none;">
                   
                   <li class="relative">
                     <a class="block w-full pl-3.5 before:pointer-events-none before:absolute before:left-0.5 before:top-1/2 before:h-0.5 before:w-1.5 before:-translate-y-1/2 
-                     text-sky-500 before:bg-sky-500" href="/search">Search API</a>
+                     text-sky-500 before:bg-sky-500" href="/search">Search User Guide</a>
                   </li>
                 
               </ul>
