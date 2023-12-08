@@ -329,6 +329,20 @@ to alphanumeric characters, underscores and hyphens.</p>
 <dd><p>Retrieve all Portfolio objects.</p>
 </dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="sust.api.climate_explorer.ClimateExplorerClient.search">
+<span class="sig-name descname"><span class="pre">search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">latitude</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">longitude</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sustglobal/dev-center/tree/master/clients/python/sust/api/climate_explorer.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sust.api.climate_explorer.ClimateExplorerClient.search" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve climate risk information associated with the given coordinates</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>latitude</strong> – latitude of the location</p></li>
+<li><p><strong>longitude</strong> – longitude of the location</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="py class">
@@ -389,9 +403,10 @@ Portfolio. The file-like object contains binary data.</p>
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sust.api.climate_explorer.</span></span><span class="sig-name descname"><span class="pre">PhysicalRiskExposureDataset</span></span><a class="reference external" href="https://github.com/sustglobal/dev-center/tree/master/clients/python/sust/api/climate_explorer.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sust.api.climate_explorer.PhysicalRiskExposureDataset" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="py method">
 <dt class="sig sig-object py" id="sust.api.climate_explorer.PhysicalRiskExposureDataset.export_zip">
-<span class="sig-name descname"><span class="pre">export_zip</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">IO</span></span></span><a class="reference external" href="https://github.com/sustglobal/dev-center/tree/master/clients/python/sust/api/climate_explorer.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sust.api.climate_explorer.PhysicalRiskExposureDataset.export_zip" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">export_zip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">IO</span></span></span><a class="reference external" href="https://github.com/sustglobal/dev-center/tree/master/clients/python/sust/api/climate_explorer.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sust.api.climate_explorer.PhysicalRiskExposureDataset.export_zip" title="Permalink to this definition">¶</a></dt>
 <dd><p>Export this physical risk exposure dataset as a zip file.
-The returned object is a binary file-like object.</p>
+The returned object is a binary file-like object.
+If file name is provided, the output will be saved to that location</p>
 </dd></dl>
 
 <dl class="py property">
@@ -453,6 +468,12 @@ be passed as a filter here to limit the results to the
 chosen scenario.</p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="sust.api.climate_explorer.PhysicalRiskExposureDataset.version">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">version</span></span><a class="reference external" href="https://github.com/sustglobal/dev-center/tree/master/clients/python/sust/api/climate_explorer.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sust.api.climate_explorer.PhysicalRiskExposureDataset.version" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve this dataset’s version number</p>
 </dd></dl>
 
 <dl class="py property">
