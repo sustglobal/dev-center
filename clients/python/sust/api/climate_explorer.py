@@ -247,10 +247,20 @@ class PhysicalRiskExposureDataset:
 
         return PhysicalRiskExposureSummary(objects)
 
-    def export_zip(self) -> IO:
+    def export_zip(self, file_name=None) -> IO:
         """Export this physical risk exposure dataset as a zip file.
-        The returned object is a binary file-like object."""
-        return self._client._openapi_request('portfolios_datasets_physical_export_list', (self.portfolio['portfolio_name'],), {})
+        The returned object is a binary file-like object.
+        If file name is provided, the output will be saved to that location"""
+        file: IO = self._client._openapi_request('portfolios_datasets_physical_export_list', (self.portfolio['portfolio_name'],), {})
+        if file_name is not None:
+            with open(file_name, 'wb') as f:
+                f.write(file.read())
+        return file
+
+    @property
+    def version(self):
+        """Retrieve this dataset's version number"""
+        return self._obj['version']
 
 
 class Portfolio:
@@ -347,9 +357,12 @@ class ClimateExplorerClient:
         openapi_client = ApiClient(self._openapi_config)
         self._openapi_instance = portfolios_api.PortfoliosApi(openapi_client)
 
-    def _openapi_request(self, request_name, request_args, request_kwargs):
-        rk = copy.deepcopy(self._default_req_kwargs)
-        rk.update(request_kwargs)
+    def _openapi_request(self, request_name, request_args, request_kwargs, use_default_kwargs=True):
+        if use_default_kwargs:
+            rk = copy.deepcopy(self._default_req_kwargs)
+            rk.update(request_kwargs)
+        else:
+            rk = request_kwargs
         return getattr(self._openapi_instance, request_name)(*request_args, **rk)
 
     def _paginated_openapi_request(self, request_name, request_args, request_kwargs):
@@ -381,6 +394,17 @@ class ClimateExplorerClient:
         """
         obj = self._openapi_request('portfolios_read', (portfolio_name,), {})
         return Portfolio(self, obj)
+
+    def search(self, latitude, longitude):
+        """Retrieve climate risk information associated with the given coordinates
+
+        :param latitude: latitude of the location
+        :param longitude: longitude of the location
+        """
+        obj = self._openapi_request('search_list', (), {'lat': latitude, 'lng': longitude,
+                                                        'x_sust_global_project': self._default_req_kwargs['project']},
+                                    use_default_kwargs=False)
+        return obj
 
 
 def _build_filter_kwargs(filters):

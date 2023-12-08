@@ -65,6 +65,8 @@ class SmokeTestCase(unittest.TestCase):
         for it in ds.scenarios:
             self.assertTrue(ds.scenarios.get(it.name))
 
+        self.assertTrue(len(ds.version) > 0)
+
     def test_physical_risk_exposure_timeseries(self):
         pf = self._portfolio()
         ds = pf.physical_risk_exposure()
@@ -72,9 +74,9 @@ class SmokeTestCase(unittest.TestCase):
         # represents a query that should be stable over time, returning
         # one entry per asset...
         td = ds.timeseries(
-                ds.scenarios.get('ssp245'),
-                ds.indicators.get('wildfire', 'unified_prob'),
-                ds.measures.get('mid'),
+            ds.scenarios.get('ssp245'),
+            ds.indicators.get('wildfire', 'unified_prob'),
+            ds.measures.get('mid'),
         ).to_dicts()
         self.assertTrue(td)
 
@@ -93,9 +95,9 @@ class SmokeTestCase(unittest.TestCase):
         # represents a query that should be stable over time, returning
         # one entry per asset...
         sd = ds.summary(
-                ds.scenarios.get('ssp245'),
-                ds.windows.get(30),
-                ds.hazards.get('water_stress'),
+            ds.scenarios.get('ssp245'),
+            ds.windows.get(30),
+            ds.hazards.get('water_stress'),
         ).to_dicts()
         self.assertTrue(sd)
 
@@ -106,3 +108,16 @@ class SmokeTestCase(unittest.TestCase):
         first = sd[0]
         self.assertTrue('portfolio_index' in first)
         self.assertTrue('risk_class' in first)
+
+    def test_physical_risk_exposure_zip_export_file(self):
+        file_name = 'foo.zip'
+        pf = self._portfolio()
+        ds = pf.physical_risk_exposure()
+        out = ds.export_zip(file_name=file_name)
+        self.assertIsNotNone(out)
+        self.assertTrue(os.path.exists(file_name))
+        os.remove(file_name)
+
+    def test_search(self):
+        features = self._client().search(latitude=47.09764797110564, longitude=-122.8242285597761)
+        self.assertTrue(len([features]))
