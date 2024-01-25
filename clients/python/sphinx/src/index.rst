@@ -1,16 +1,16 @@
 Sust Global Python API Client
 =============================
 
-This document details how to use the ``sust-api-client`` python package to interact with Sust Global's Climate Explorer API.
+This document details how to use the `sust-api-client <https://pypi.org/project/sust-api-client/>`_ python package to interact with Sust Global's Climate Explorer API.
 
 Much of this client is generated using OpenAPI:
 
-* Current OpenAPI spec: https://explorer.sustglobal.io/swagger.json
-* OpenAPI spec documentation: https://explorer.sustglobal.io/redoc/
+* `Current OpenAPI Spec <https://explorer.sustglobal.io/swagger.json>`_
+* `OpenAPI Spec Documentation <https://explorer.sustglobal.io/redoc/>`_
 
 More on our developer documentation can be found at:
 
-* Sust Global developer center: https://developers.sustglobal.com/
+* `Sust Global Developer Center <https://developers.sustglobal.com/>`_
 
 Install the client
 ------------------
@@ -20,6 +20,8 @@ You can install the client using ``pip``:
 .. code-block:: python
 
     pip install sust-api-client
+
+The current version of the client is `0.0.22 <https://pypi.org/project/sust-api-client/>`_.
 
 Introduction
 ------------
