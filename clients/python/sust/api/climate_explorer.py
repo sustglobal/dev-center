@@ -248,10 +248,19 @@ class PhysicalRiskExposureDataset:
         return PhysicalRiskExposureSummary(objects)
 
     def export_zip(self, file_name=None) -> IO:
-        """Export this physical risk exposure dataset as a zip file.
-        The returned object is a binary file-like object.
-        If file name is provided, the output will be saved to that location"""
-        file: IO = self._client._openapi_request('portfolios_datasets_physical_export_list', (self.portfolio['portfolio_name'],), {})
+        """Export this physical risk exposure dataset as a zip file. The returned object is a binary file-like object. If file name is provided, the output will be saved to that location.
+
+        :param file_name: Optional. The path to the location to save the zip file. If not provided, it will default to the current working directory
+
+        \nTypical usage example:
+
+            ds1 = pf.physical_risk_exposure()
+            \nout1 = ds1.export_zip(file_name='file.zip') #save to local directory
+            \nds2 = pf.physical_risk_exposure()
+            \nout2 = ds2.export_zip(file_name='/foo/bar/file.zip')
+        """
+        file: IO = self._client._openapi_request('portfolios_datasets_physical_export_list',
+                                                 (self.portfolio['portfolio_name'],), {})
         if file_name is not None:
             with open(file_name, 'wb') as f:
                 f.write(file.read())
