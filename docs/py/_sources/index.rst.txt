@@ -6,7 +6,7 @@ This document details how to use the ``sust-api-client`` python package to inter
 Much of this client is generated using OpenAPI:
 
 * Current OpenAPI spec: https://explorer.sustglobal.io/swagger.json
-* OpenAPI spec documenation: https://explorer.sustglobal.io/redoc/
+* OpenAPI spec documentation: https://explorer.sustglobal.io/redoc/
 
 More on our developer documentation can be found at:
 
@@ -47,6 +47,9 @@ The status could be one of ``No data available``, ``Waiting on risk data generat
         pf.import_assets_csv(af)
 
 Once asset level risk data is generated for your portfolio, the portfolio's status changes to ``Risk data available``. This process can take up to 24 hours depending on the size of the portfolio.
+
+Accessing Physical Risk Exposure
+--------------------------------
 
 The following demonstrates how to access the physical risk exposure timeseries data filtered to a specific scenario, hazard and indicator, then load it into a pandas dataframe for further analysis. Each row in the dataframe maps to an asset from the previously-uploaded CSV: 
 
@@ -113,6 +116,27 @@ These examples showcase how you can access risk exposure datasets and load them 
 
 Additional information is available in the `Sust Global Dev Center <https://developers.sustglobal.com>`_.
 
+Exporting Physical Risk Exposure
+--------------------------------
+
+The Physical Risk Exposure information retrieved with the client can be exported to a ZIP file by using the method below:
+
+.. code-block:: python
+
+    ds = portfolio.physical_risk_exposure()
+    ds.export_zip(file_name='AGE1.zip') #save to local directory
+    ds.export_zip(file_name='/foo/bar/AGE1.zip') #save to /foo/bar
+
+Using the Search Method with Coordinates
+----------------------------------------
+
+Retrieving Physical Risk Exposure information can also be retrieved by passing geographic coordinates to the Search method.
+
+.. code-block:: python
+
+    geo_risk = client.search(latitude=47.09764797110564, longitude=-122.8242285597761)
+
+For a detailed description of the output returned by the search method, visit the OpenAPI spec documentation.
 
 Python API Reference
 --------------------

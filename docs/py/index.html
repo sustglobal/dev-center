@@ -91,6 +91,9 @@
 <li><a class="reference internal" href="#">Sust Global Python API Client</a><ul>
 <li><a class="reference internal" href="#install-the-client">Install the client</a></li>
 <li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#accessing-physical-risk-exposure">Accessing Physical Risk Exposure</a></li>
+<li><a class="reference internal" href="#exporting-physical-risk-exposure">Exporting Physical Risk Exposure</a></li>
+<li><a class="reference internal" href="#using-the-search-method-with-coordinates">Using the Search Method with Coordinates</a></li>
 <li><a class="reference internal" href="#python-api-reference">Python API Reference</a></li>
 </ul>
 </li>
@@ -167,7 +170,7 @@
 <p>Much of this client is generated using OpenAPI:</p>
 <ul class="simple">
 <li><p>Current OpenAPI spec: <a class="reference external" href="https://explorer.sustglobal.io/swagger.json">https://explorer.sustglobal.io/swagger.json</a></p></li>
-<li><p>OpenAPI spec documenation: <a class="reference external" href="https://explorer.sustglobal.io/redoc/">https://explorer.sustglobal.io/redoc/</a></p></li>
+<li><p>OpenAPI spec documentation: <a class="reference external" href="https://explorer.sustglobal.io/redoc/">https://explorer.sustglobal.io/redoc/</a></p></li>
 </ul>
 <p>More on our developer documentation can be found at:</p>
 <ul class="simple">
@@ -199,6 +202,9 @@
 </pre></div>
 </div>
 <p>Once asset level risk data is generated for your portfolio, the portfolio’s status changes to <code class="docutils literal notranslate"><span class="pre">Risk</span> <span class="pre">data</span> <span class="pre">available</span></code>. This process can take up to 24 hours depending on the size of the portfolio.</p>
+</div>
+<div class="section" id="accessing-physical-risk-exposure">
+<h2>Accessing Physical Risk Exposure<a class="headerlink" href="#accessing-physical-risk-exposure" title="Permalink to this heading">¶</a></h2>
 <p>The following demonstrates how to access the physical risk exposure timeseries data filtered to a specific scenario, hazard and indicator, then load it into a pandas dataframe for further analysis. Each row in the dataframe maps to an asset from the previously-uploaded CSV:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
@@ -279,6 +285,23 @@ well. An example of this is available just above.</p>
 </div>
 <p>These examples showcase how you can access risk exposure datasets and load them to dataframes as an entry point for exploration data analysis.</p>
 <p>Additional information is available in the <a class="reference external" href="https://developers.sustglobal.com">Sust Global Dev Center</a>.</p>
+</div>
+<div class="section" id="exporting-physical-risk-exposure">
+<h2>Exporting Physical Risk Exposure<a class="headerlink" href="#exporting-physical-risk-exposure" title="Permalink to this heading">¶</a></h2>
+<p>The Physical Risk Exposure information retrieved with the client can be exported to a ZIP file by using the method below:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">portfolio</span><span class="o">.</span><span class="n">physical_risk_exposure</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">export_zip</span><span class="p">(</span><span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;AGE1.zip&#39;</span><span class="p">)</span> <span class="c1">#save to local directory</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">export_zip</span><span class="p">(</span><span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;/foo/bar/AGE1.zip&#39;</span><span class="p">)</span> <span class="c1">#save to /foo/bar</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="using-the-search-method-with-coordinates">
+<h2>Using the Search Method with Coordinates<a class="headerlink" href="#using-the-search-method-with-coordinates" title="Permalink to this heading">¶</a></h2>
+<p>Retrieving Physical Risk Exposure information can also be retrieved by passing geographic coordinates to the Search method.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">geo_risk</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">latitude</span><span class="o">=</span><span class="mf">47.09764797110564</span><span class="p">,</span> <span class="n">longitude</span><span class="o">=-</span><span class="mf">122.8242285597761</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>For a detailed description of the output returned by the search method, visit the OpenAPI spec documentation.</p>
 </div>
 <div class="section" id="python-api-reference">
 <h2>Python API Reference<a class="headerlink" href="#python-api-reference" title="Permalink to this heading">¶</a></h2>
@@ -404,9 +427,21 @@ Portfolio. The file-like object contains binary data.</p>
 <dd><dl class="py method">
 <dt class="sig sig-object py" id="sust.api.climate_explorer.PhysicalRiskExposureDataset.export_zip">
 <span class="sig-name descname"><span class="pre">export_zip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">IO</span></span></span><a class="reference external" href="https://github.com/sustglobal/dev-center/tree/master/clients/python/sust/api/climate_explorer.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sust.api.climate_explorer.PhysicalRiskExposureDataset.export_zip" title="Permalink to this definition">¶</a></dt>
-<dd><p>Export this physical risk exposure dataset as a zip file.
-The returned object is a binary file-like object.
-If file name is provided, the output will be saved to that location</p>
+<dd><p>Export this physical risk exposure dataset as a zip file. The returned object is a binary file-like object. If file name is provided, the output will be saved to that location.</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">param file_name</dt>
+<dd class="field-odd"><p>Optional. The path to the location to save the zip file. If not provided, it will default to the current working directory</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>Typical usage example:</p>
+<blockquote>
+<div><p>ds1 = pf.physical_risk_exposure()</p>
+</div></blockquote>
+<p>out1 = ds1.export_zip(file_name=’file.zip’) #save to local directory</p>
+<p>ds2 = pf.physical_risk_exposure()</p>
+<p>out2 = ds2.export_zip(file_name=’/foo/bar/file.zip’)</p>
 </dd></dl>
 
 <dl class="py property">
