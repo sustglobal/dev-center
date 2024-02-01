@@ -18,8 +18,14 @@ This value will be referenced below as **$APIKEY**.
 
 Open a local terminal, then run the following **curl** command:
 
-```
+```bash
 curl "https://api.nature.sustglobal.io/projects" --header "X-SustGlobal-APIKey: $APIKEY" --header "X-SustGlobal-Project: nc-demo"
+```
+
+If you have **jq** installed, you may prefer to pipe the result through for better viewing:
+
+```bash
+curl "https://api.nature.sustglobal.io/projects" --header "X-SustGlobal-APIKey: $APIKEY" --header "X-SustGlobal-Project: nc-demo" | jq .
 ```
 
 A successful response from the projects endpoint will contain a set of all sub-projects you currently may access.
@@ -28,7 +34,7 @@ For example, a single sub-project named "VCS1378 - ARR Chinchina River":
 ```
 [
   {
-    "id":"32951d00-6f75-11ee-9038-717268578676",
+    "id":"5e547b14-93cb-11ee-bb5b-3fac1250342e",
     "project":"nc-demo",
     "name":"VCS1378 - ARR Chinchina River",
     "status":"Processing Completed",
@@ -39,8 +45,13 @@ For example, a single sub-project named "VCS1378 - ARR Chinchina River":
 
 This response status ("Processing Completed") tells us that the **VCS1378 - ARR Chinchina River** sub-project already contains summary data. We can fetch this data with the following command, where the ID in the URL corresponds to the ID of the sub-project:
 
+```bash
+curl "https://api.nature.sustglobal.io/projects/5e547b14-93cb-11ee-bb5b-3fac1250342e/export" --header "X-SustGlobal-APIKey: $APIKEY" --header "X-SustGlobal-Project: nc-demo"
 ```
-curl "https://api.nature.sustglobal.io/projects/32951d00-6f75-11ee-9038-717268578676/export" --header "X-SustGlobal-APIKey: $APIKEY" --header "X-SustGlobal-Project: nc-demo"
+
+Likewise with **jq** included:
+```bash
+curl "https://api.nature.sustglobal.io/projects/5e547b14-93cb-11ee-bb5b-3fac1250342e/export" --header "X-SustGlobal-APIKey: $APIKEY" --header "X-SustGlobal-Project: nc-demo" | jq .
 ```
 
 A truncated version of the response is displayed below:
@@ -60,14 +71,13 @@ A truncated version of the response is displayed below:
         "label:poly_area": 1196.7751479009767
     },
     "summary": {
-        "var": "ssp585-mid",
-        "water_balance_2022_2072_MEAN_water_balance": 1135.5001212914913,
-        "pest_2022_2023_MEAN_pest": 4.0,
-        "carbon_percent_loss_2022_2023_MEAN_carbon_percent_loss": 0.9609010907672909,
-        "pga_2022_2023_MEAN_pga": 2.7344253333333333,
-        "fire_obs_2000-11-01_2022-12-01_MEAN_historic": 0.0,
-        "wildfire_ai_2023_2053_MEAN_ssp585-mid": 0.0005720844798136863,
-        "wildfire_ai_2040_2070_MEAN_ssp585-mid": 0.0006717108151462417
+        "pest_disease_baseline_mean": 4,
+        "seismic_baseline_mean": 2.7344253333333333,
+        "wildfire_carbon_loss_baseline_mean": 0.9609010907672909,
+        "wildfire_observed_baseline_mean": 0,
+        "wildfire_ssp585_baseline_mean": 0.0005720844798136863,
+        "wildfire_ssp585_2050_mean": 0.0006717108151462417,
+        "water_balance_ssp585_2050_mean": 1135.5001212914913
     }
 }
 ```
@@ -93,14 +103,18 @@ curl "https://api.nature.sustglobal.io/projects" --header "X-SustGlobal-APIKey: 
 Note that a project must typically be indicated via a **project** HTTP header.
 You can programmatically identify which projects you may access via the **/superprojects/** endpoint:
 
-```
+```bash
 curl "https://api.nature.sustglobal.io/superprojects" --header "X-SustGlobal-APIKey: $APIKEY"
+```
+
+Results will look like:
+```
 [
     "nc-demo"
 ]
 ```
 
-You must use the **project_name** value in the HTTP headers.
+Then for subsequence API calls, use the **project_name** value in the HTTP headers.
 For example:
 
 ```
@@ -115,11 +129,27 @@ Note that many of the examples refer to environment variables that must be set m
 * Your API key, must be set in the **$APIKEY** environment variable. See [Authentication](#authentication) to learn more about this.
 * The **$PROJECT** environment variable refers to the name of the project you wish to work with. You determine this value.
 
-### Upload a new Sub-Project
+### Upload a new Sub-Project From a File
 
-To upload a new sub-project, you will need to include a geojson representation of the project area. See the following example:
+To upload a new sub-project from a file, you will need to have access to a file with the geojson representation of the project area, 
+and [jq](https://jqlang.github.io/jq/) installed.
 
+See the following example for a file named **MYGEOJSONFILE.geojson** uploading to a sub-project named **My Project**:
+
+```bash
+jq -n --slurpfile geojson MYGEOJSONFILE.geojson '{"projectName": "My Project","geojson": $geojson[],"type": "NCS"}' \
+ | curl "https://api.nature.sustglobal.io/projects" \
+   --header "X-SustGlobal-Project: $PROJECT" \
+   --header "X-SustGlobal-APIKey: $APIKEY" \
+   --header "Content-Type: application/json" \
+   --data @-
 ```
+
+### Upload a new Sub-Project Directly From Command Line
+
+To upload a new sub-project directly from the command line, you will need to include a geojson representation of the project area. See the following example:
+
+```bash
 curl -i -X POST "https://api.nature.sustglobal.io/projects" \
 --header "X-SustGlobal-APIKey: $APIKEY" \
 --header "X-SustGlobal-Project: $PROJECT" \
@@ -181,13 +211,13 @@ curl -i -X POST "https://api.nature.sustglobal.io/projects" \
 
 ### Export Sub-Project Summary as File
 
-To export the sub-project summary results as a file:
+To export the sub-project summary results as a file (make sure to set the **$PROJECTID**):
 
 ```
-curl -OJ "https://api.nature.sustglobal.io/projects/32951d00-6f75-11ee-9038-717268578676/export" --header "X-SustGlobal-APIKey: $APIKEY" --header "X-SustGlobal-Project: $PROJECT"
+curl -OJ "https://api.nature.sustglobal.io/projects/$PROJECTID/export" --header "X-SustGlobal-APIKey: $APIKEY" --header "X-SustGlobal-Project: $PROJECT"
 ```
 
-A json file will be written to the filesystem.
+This will write a json file to the filesystem.
 
 
 ## API Endpoint Reference
