@@ -2,5 +2,8 @@ googlemaps
 jupyter
 numpy
 pandas
+geopandas
 plotly
+shapely
+folium
 sust-api-client==0.0.19
