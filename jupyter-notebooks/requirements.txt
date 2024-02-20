@@ -6,4 +6,5 @@ geopandas
 plotly
 shapely
 folium
+matplotlib
 sust-api-client==0.0.19
