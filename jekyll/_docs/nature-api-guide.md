@@ -1,7 +1,7 @@
 ---
 layout: doc
 title: Nature API User Guide
-subtitle: Sust Global's Nature API is a RESTful API interface to Sust Global's nature and carbon intelligence capabilities. This guide helps users learn how to work with the API directly.
+subtitle: Sust Global's Nature API is a RESTful API interface to Sust Global's durability (non-permanence) indicators for nature based carbon projects. This guide helps users learn how to work with the API directly.
 date: 2023-11-17
 lastmod: 2023-11-17
 author: TA
