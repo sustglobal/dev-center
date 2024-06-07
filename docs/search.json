@@ -1,6 +1,30 @@
 [
   
     {
+      "title"    : "Coming Soon!",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/coming-soon",
+      "date"     : "2024-06-07 16:07:53 -0600"
+    } ,
+  
+    {
+      "title"    : "FAQ",
+      "category" : "",
+      "tags"     : "faq, wildfire, flood, questions",
+      "url"      : "/faq",
+      "date"     : "2024-06-07 16:07:53 -0600"
+    } ,
+  
+    {
+      "title"    : "Search User Guide",
+      "category" : "",
+      "tags"     : "search, api, quickstart",
+      "url"      : "/search",
+      "date"     : "2022-12-14 00:00:00 -0700"
+    } ,
+  
+    {
       "title"    : "API User Guide",
       "category" : "",
       "tags"     : "api, quickstart",
@@ -9,11 +33,11 @@
     } ,
   
     {
-      "title"    : "Coming Soon!",
+      "title"    : "Cyclones",
       "category" : "",
-      "tags"     : "",
-      "url"      : "/coming-soon",
-      "date"     : "2024-02-01 12:07:01 -0700"
+      "tags"     : "data, cyclone",
+      "url"      : "/cyclones",
+      "date"     : "2023-01-01 00:00:00 -0700"
     } ,
   
     {
@@ -37,30 +61,6 @@
       "category" : "",
       "tags"     : "csv, dataset",
       "url"      : "/dataset-guide",
-      "date"     : "2023-01-01 00:00:00 -0700"
-    } ,
-  
-    {
-      "title"    : "FAQ",
-      "category" : "",
-      "tags"     : "faq, wildfire, flood, questions",
-      "url"      : "/faq",
-      "date"     : "2024-02-01 12:07:01 -0700"
-    } ,
-  
-    {
-      "title"    : "Search User Guide",
-      "category" : "",
-      "tags"     : "search, api, quickstart",
-      "url"      : "/search",
-      "date"     : "2022-12-14 00:00:00 -0700"
-    } ,
-  
-    {
-      "title"    : "Cyclones",
-      "category" : "",
-      "tags"     : "data, cyclone",
-      "url"      : "/cyclones",
       "date"     : "2023-01-01 00:00:00 -0700"
     } ,
   
@@ -94,14 +94,6 @@
       "tags"     : "data, sea, sea level, SLR",
       "url"      : "/sea-level-rise",
       "date"     : "2023-01-01 00:00:00 -0700"
-    } ,
-  
-    {
-      "title"    : "Product Updates",
-      "category" : "",
-      "tags"     : "updates",
-      "url"      : "/updates",
-      "date"     : "2024-02-01 12:07:01 -0700"
     } ,
   
     {
@@ -142,6 +134,30 @@
       "tags"     : "api, quickstart",
       "url"      : "/nature-api-guide",
       "date"     : "2023-11-17 00:00:00 -0700"
+    } ,
+  
+    {
+      "title"    : "Nature Data User Guide",
+      "category" : "",
+      "tags"     : "dataset, quickstart",
+      "url"      : "/nature-data-guide",
+      "date"     : "2023-11-17 00:00:00 -0700"
+    } ,
+  
+    {
+      "title"    : "Product Updates",
+      "category" : "",
+      "tags"     : "updates",
+      "url"      : "/updates",
+      "date"     : "2024-06-07 16:07:53 -0600"
+    } ,
+  
+    {
+      "title"    : "Zonal Climate Risk Statistics on Administrative Boundaries",
+      "category" : "",
+      "tags"     : "data, yearly",
+      "url"      : "/zonal-climate-stats",
+      "date"     : "2024-06-05 00:00:00 -0600"
     } 
   
 ]
