@@ -5,7 +5,15 @@
       "category" : "",
       "tags"     : "",
       "url"      : "/coming-soon",
-      "date"     : "2024-06-06 11:22:56 -0600"
+      "date"     : "2024-06-07 16:07:53 -0600"
+    } ,
+  
+    {
+      "title"    : "FAQ",
+      "category" : "",
+      "tags"     : "faq, wildfire, flood, questions",
+      "url"      : "/faq",
+      "date"     : "2024-06-07 16:07:53 -0600"
     } ,
   
     {
@@ -57,14 +65,6 @@
     } ,
   
     {
-      "title"    : "FAQ",
-      "category" : "",
-      "tags"     : "faq, wildfire, flood, questions",
-      "url"      : "/faq",
-      "date"     : "2024-06-06 11:22:56 -0600"
-    } ,
-  
-    {
       "title"    : "Flood",
       "category" : "",
       "tags"     : "data, flood",
@@ -94,14 +94,6 @@
       "tags"     : "data, sea, sea level, SLR",
       "url"      : "/sea-level-rise",
       "date"     : "2023-01-01 00:00:00 -0700"
-    } ,
-  
-    {
-      "title"    : "Product Updates",
-      "category" : "",
-      "tags"     : "updates",
-      "url"      : "/updates",
-      "date"     : "2024-06-06 11:22:56 -0600"
     } ,
   
     {
@@ -153,10 +145,18 @@
     } ,
   
     {
-      "title"    : "Annualized Data Dictionary",
+      "title"    : "Product Updates",
+      "category" : "",
+      "tags"     : "updates",
+      "url"      : "/updates",
+      "date"     : "2024-06-07 16:07:53 -0600"
+    } ,
+  
+    {
+      "title"    : "Zonal Climate Risk Statistics on Administrative Boundaries",
       "category" : "",
       "tags"     : "data, yearly",
-      "url"      : "/data-dictionary",
+      "url"      : "/zonal-climate-stats",
       "date"     : "2024-06-05 00:00:00 -0600"
     } 
   
