@@ -4,7 +4,8 @@ title: Sust Global Climate Risk Analytics
 ---
 ## Analyzing Utilities Through Snowflake
 
-Here's an example of energy and utility assets across California, Hawaii, and Florida. They can be analyzed through a dropdown for issuer or a dropdown for hazard. 
+Here is an example of US energy and utility assets grouped by issuers/holding companies across the states of California, Hawaii, and Florida. These asset level locations are from [Spatial Risk Systems](https://spatialrisksystems.com/) (SRS). We provide two dropdown selectors: one for issuer and one for hazard. On Snowflake, the SRS datasets can be found [here](https://app.snowflake.com/marketplace/listings/Spatial%20Risk%20Systems) and the Sust Global datasets can be accessed [here](https://app.snowflake.com/marketplace/listing/GZ2FQZRVGX1/sust-global-physical-climate-risk).
+
 
 <iframe
   src="https://snowflake-qenvgb35gq-uc.a.run.app/?embed=true"
@@ -14,4 +15,4 @@ Here's an example of energy and utility assets across California, Hawaii, and Fl
 
 ## Example Code
 
-View the code [here](https://github.com/sustglobal/dev-center/blob/master/integrations/snowflake/example.py).
+You can review the template code reference for the streamlit app code [here](https://github.com/sustglobal/dev-center/blob/master/integrations/snowflake/example.py).
