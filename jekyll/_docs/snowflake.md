@@ -9,7 +9,7 @@ Here is an example of US energy and utility assets grouped by issuers/holding co
 
 <iframe
   src="https://snowflake-qenvgb35gq-uc.a.run.app/?embed=true"
-  style="height: 810px; width: 800px;"
+  style="height: 1600px; width: 800px;"
 ></iframe>
 
 
