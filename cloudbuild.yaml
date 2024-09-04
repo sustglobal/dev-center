@@ -5,13 +5,13 @@ steps:
 
 - id: 'clients-python-build'
   name: 'gcr.io/${PROJECT_ID}/olympia/services/auto:stable'
-  args: ['/bin/bash', '-c', 'apt-get update && apt-get install -y git python3-venv && python3 -m pipx install build && pyproject-build']
+  args: ['/bin/bash', '-c', 'apt-get update && apt-get install -y git python3-venv && python3 -m pipx install build && pipx ensurepath && bash -lic "pyproject-build"']
   dir: 'clients/python'
   waitFor: ['fetch-git']
 
 - id: 'clients-python-publish'
   name: 'gcr.io/${PROJECT_ID}/olympia/services/auto:stable'
-  args: ['/bin/bash', '-c', 'if [[ "${TAG_NAME}" != clients-python-* ]]; then echo "Skipping publishing client"; exit 0; fi; python3 -m pipx install twine; twine upload dist/*']
+  args: ['/bin/bash', '-c', 'if [[ "${TAG_NAME}" != clients-python-* ]]; then echo "Skipping publishing client"; exit 0; fi; pipx install twine && pipx ensurepath; bash -lic "twine upload dist/*"']
   dir: 'clients/python'
   env:
   - "TWINE_USERNAME=__token__"
