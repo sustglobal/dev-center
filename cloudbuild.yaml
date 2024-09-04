@@ -5,7 +5,7 @@ steps:
 
 - id: 'clients-python-build'
   name: 'gcr.io/${PROJECT_ID}/olympia/services/auto:stable'
-  args: ['/bin/bash', '-c', 'apt-get update && apt-get install -y git python3-venv && python3 -m pipx install build && build']
+  args: ['/bin/bash', '-c', 'apt-get update && apt-get install -y git python3-venv && python3 -m pipx install build && pyproject-build']
   dir: 'clients/python'
   waitFor: ['fetch-git']
 
