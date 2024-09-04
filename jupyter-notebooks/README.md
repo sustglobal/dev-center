@@ -1,8 +1,7 @@
 # Sust Global Dev Center Jupyter Notebooks
 
 If you are looking for information regarding usage of these Jupyter notebooks, please start with the published
-documentation at 
-https://developers.sustglobal.com/jupyter-notebooks.html.
+documentation at https://developers.sustglobal.com/notebooks.
 
 ## Local Development
 
