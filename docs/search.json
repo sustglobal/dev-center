@@ -1,11 +1,19 @@
 [
   
     {
+      "title"    : "Search User Guide",
+      "category" : "",
+      "tags"     : "search, api, quickstart",
+      "url"      : "/search",
+      "date"     : "2022-12-14 00:00:00 +0000"
+    } ,
+  
+    {
       "title"    : "API User Guide",
       "category" : "",
       "tags"     : "api, quickstart",
       "url"      : "/api-guide",
-      "date"     : "2023-01-01 00:00:00 -0700"
+      "date"     : "2023-01-01 00:00:00 +0000"
     } ,
   
     {
@@ -13,7 +21,7 @@
       "category" : "",
       "tags"     : "",
       "url"      : "/coming-soon",
-      "date"     : "2024-07-22 14:40:18 -0600"
+      "date"     : "2024-09-26 15:36:55 +0000"
     } ,
   
     {
@@ -21,7 +29,7 @@
       "category" : "",
       "tags"     : "data, cyclone",
       "url"      : "/cyclones",
-      "date"     : "2023-01-01 00:00:00 -0700"
+      "date"     : "2023-01-01 00:00:00 +0000"
     } ,
   
     {
@@ -29,7 +37,7 @@
       "category" : "",
       "tags"     : "dashboard, risk, exposure",
       "url"      : "/dashboard-guide",
-      "date"     : "2023-01-01 00:00:00 -0700"
+      "date"     : "2023-01-01 00:00:00 +0000"
     } ,
   
     {
@@ -37,7 +45,7 @@
       "category" : "",
       "tags"     : "data",
       "url"      : "/data-guide",
-      "date"     : "2023-01-01 00:00:00 -0700"
+      "date"     : "2023-01-01 00:00:00 +0000"
     } ,
   
     {
@@ -45,7 +53,7 @@
       "category" : "",
       "tags"     : "csv, dataset",
       "url"      : "/dataset-guide",
-      "date"     : "2023-01-01 00:00:00 -0700"
+      "date"     : "2023-01-01 00:00:00 +0000"
     } ,
   
     {
@@ -53,15 +61,7 @@
       "category" : "",
       "tags"     : "faq, wildfire, flood, questions",
       "url"      : "/faq",
-      "date"     : "2024-07-22 14:40:18 -0600"
-    } ,
-  
-    {
-      "title"    : "Search User Guide",
-      "category" : "",
-      "tags"     : "search, api, quickstart",
-      "url"      : "/search",
-      "date"     : "2022-12-14 00:00:00 -0700"
+      "date"     : "2024-09-26 15:36:55 +0000"
     } ,
   
     {
@@ -69,7 +69,7 @@
       "category" : "",
       "tags"     : "data, flood",
       "url"      : "/flood",
-      "date"     : "2023-01-01 00:00:00 -0700"
+      "date"     : "2023-01-01 00:00:00 +0000"
     } ,
   
     {
@@ -77,7 +77,7 @@
       "category" : "",
       "tags"     : "data, heat, heatwave",
       "url"      : "/heatwaves",
-      "date"     : "2023-01-01 00:00:00 -0700"
+      "date"     : "2023-01-01 00:00:00 +0000"
     } ,
   
     {
@@ -85,7 +85,7 @@
       "category" : "",
       "tags"     : "jupyter, notebook, quickstart",
       "url"      : "/notebooks",
-      "date"     : "2023-01-01 00:00:00 -0700"
+      "date"     : "2023-01-01 00:00:00 +0000"
     } ,
   
     {
@@ -93,39 +93,7 @@
       "category" : "",
       "tags"     : "data, sea, sea level, SLR",
       "url"      : "/sea-level-rise",
-      "date"     : "2023-01-01 00:00:00 -0700"
-    } ,
-  
-    {
-      "title"    : "Climate Explorer User Guide",
-      "category" : "",
-      "tags"     : "start, intro, quickstart, climate explorer, walkthrough",
-      "url"      : "/user-guide",
-      "date"     : "2023-01-01 00:00:00 -0700"
-    } ,
-  
-    {
-      "title"    : "Financial Risk Analysis",
-      "category" : "",
-      "tags"     : "data, financial risk, var, value at risk",
-      "url"      : "/value-at-risk",
-      "date"     : "2023-01-01 00:00:00 -0700"
-    } ,
-  
-    {
-      "title"    : "Water Stress",
-      "category" : "",
-      "tags"     : "data, water, stress",
-      "url"      : "/water-stress",
-      "date"     : "2023-01-01 00:00:00 -0700"
-    } ,
-  
-    {
-      "title"    : "Wildfire",
-      "category" : "",
-      "tags"     : "data, fire, wildfire",
-      "url"      : "/wildfire",
-      "date"     : "2023-01-01 00:00:00 -0700"
+      "date"     : "2023-01-01 00:00:00 +0000"
     } ,
   
     {
@@ -133,7 +101,7 @@
       "category" : "",
       "tags"     : "api, quickstart",
       "url"      : "/nature-api-guide",
-      "date"     : "2023-11-17 00:00:00 -0700"
+      "date"     : "2023-11-17 00:00:00 +0000"
     } ,
   
     {
@@ -141,7 +109,7 @@
       "category" : "",
       "tags"     : "dataset, quickstart",
       "url"      : "/nature-data-guide",
-      "date"     : "2023-11-17 00:00:00 -0700"
+      "date"     : "2023-11-17 00:00:00 +0000"
     } ,
   
     {
@@ -149,7 +117,7 @@
       "category" : "",
       "tags"     : "",
       "url"      : "/snowflake",
-      "date"     : "2024-07-22 14:40:18 -0600"
+      "date"     : "2024-09-26 15:36:55 +0000"
     } ,
   
     {
@@ -157,7 +125,39 @@
       "category" : "",
       "tags"     : "updates",
       "url"      : "/updates",
-      "date"     : "2024-07-22 14:40:18 -0600"
+      "date"     : "2024-09-26 15:36:55 +0000"
+    } ,
+  
+    {
+      "title"    : "Climate Explorer User Guide",
+      "category" : "",
+      "tags"     : "start, intro, quickstart, climate explorer, walkthrough",
+      "url"      : "/user-guide",
+      "date"     : "2023-01-01 00:00:00 +0000"
+    } ,
+  
+    {
+      "title"    : "Financial Risk Analysis",
+      "category" : "",
+      "tags"     : "data, financial risk, var, value at risk",
+      "url"      : "/value-at-risk",
+      "date"     : "2023-01-01 00:00:00 +0000"
+    } ,
+  
+    {
+      "title"    : "Water Stress",
+      "category" : "",
+      "tags"     : "data, water, stress",
+      "url"      : "/water-stress",
+      "date"     : "2023-01-01 00:00:00 +0000"
+    } ,
+  
+    {
+      "title"    : "Wildfire",
+      "category" : "",
+      "tags"     : "data, fire, wildfire",
+      "url"      : "/wildfire",
+      "date"     : "2023-01-01 00:00:00 +0000"
     } ,
   
     {
@@ -165,7 +165,7 @@
       "category" : "",
       "tags"     : "data, yearly",
       "url"      : "/zonal-climate-stats",
-      "date"     : "2024-06-05 00:00:00 -0600"
+      "date"     : "2024-06-05 00:00:00 +0000"
     } 
   
 ]
