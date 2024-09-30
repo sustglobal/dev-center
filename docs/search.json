@@ -17,30 +17,6 @@
     } ,
   
     {
-      "title"    : "Coming Soon!",
-      "category" : "",
-      "tags"     : "",
-      "url"      : "/coming-soon",
-      "date"     : "2024-09-26 15:36:55 +0000"
-    } ,
-  
-    {
-      "title"    : "Cyclones",
-      "category" : "",
-      "tags"     : "data, cyclone",
-      "url"      : "/cyclones",
-      "date"     : "2023-01-01 00:00:00 +0000"
-    } ,
-  
-    {
-      "title"    : "Dashboard User Guide",
-      "category" : "",
-      "tags"     : "dashboard, risk, exposure",
-      "url"      : "/dashboard-guide",
-      "date"     : "2023-01-01 00:00:00 +0000"
-    } ,
-  
-    {
       "title"    : "Climate Data Guide",
       "category" : "",
       "tags"     : "data",
@@ -53,30 +29,6 @@
       "category" : "",
       "tags"     : "csv, dataset",
       "url"      : "/dataset-guide",
-      "date"     : "2023-01-01 00:00:00 +0000"
-    } ,
-  
-    {
-      "title"    : "FAQ",
-      "category" : "",
-      "tags"     : "faq, wildfire, flood, questions",
-      "url"      : "/faq",
-      "date"     : "2024-09-26 15:36:55 +0000"
-    } ,
-  
-    {
-      "title"    : "Flood",
-      "category" : "",
-      "tags"     : "data, flood",
-      "url"      : "/flood",
-      "date"     : "2023-01-01 00:00:00 +0000"
-    } ,
-  
-    {
-      "title"    : "Heatwaves",
-      "category" : "",
-      "tags"     : "data, heat, heatwave",
-      "url"      : "/heatwaves",
       "date"     : "2023-01-01 00:00:00 +0000"
     } ,
   
@@ -97,14 +49,6 @@
     } ,
   
     {
-      "title"    : "Nature API User Guide",
-      "category" : "",
-      "tags"     : "api, quickstart",
-      "url"      : "/nature-api-guide",
-      "date"     : "2023-11-17 00:00:00 +0000"
-    } ,
-  
-    {
       "title"    : "Nature Data User Guide",
       "category" : "",
       "tags"     : "dataset, quickstart",
@@ -113,11 +57,75 @@
     } ,
   
     {
+      "title"    : "Climate Explorer User Guide - Hazard Views",
+      "category" : "",
+      "tags"     : "dashboard, risk, exposure",
+      "url"      : "/ce-viewer-guide",
+      "date"     : "2024-09-27 00:00:00 +0000"
+    } ,
+  
+    {
+      "title"    : "Coming Soon!",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/coming-soon",
+      "date"     : "2024-09-30 20:57:33 +0000"
+    } ,
+  
+    {
+      "title"    : "Cyclones",
+      "category" : "",
+      "tags"     : "data, cyclone",
+      "url"      : "/cyclones",
+      "date"     : "2023-01-01 00:00:00 +0000"
+    } ,
+  
+    {
+      "title"    : "Dashboard User Guide",
+      "category" : "",
+      "tags"     : "dashboard, risk, exposure",
+      "url"      : "/dashboard-guide",
+      "date"     : "2023-01-01 00:00:00 +0000"
+    } ,
+  
+    {
+      "title"    : "FAQ",
+      "category" : "",
+      "tags"     : "faq, wildfire, flood, questions",
+      "url"      : "/faq",
+      "date"     : "2024-09-30 20:57:33 +0000"
+    } ,
+  
+    {
+      "title"    : "Flood",
+      "category" : "",
+      "tags"     : "data, flood",
+      "url"      : "/flood",
+      "date"     : "2023-01-01 00:00:00 +0000"
+    } ,
+  
+    {
+      "title"    : "Heatwaves",
+      "category" : "",
+      "tags"     : "data, heat, heatwave",
+      "url"      : "/heatwaves",
+      "date"     : "2023-01-01 00:00:00 +0000"
+    } ,
+  
+    {
+      "title"    : "Nature API User Guide",
+      "category" : "",
+      "tags"     : "api, quickstart",
+      "url"      : "/nature-api-guide",
+      "date"     : "2023-11-17 00:00:00 +0000"
+    } ,
+  
+    {
       "title"    : "Sust Global Climate Risk Analytics",
       "category" : "",
       "tags"     : "",
       "url"      : "/snowflake",
-      "date"     : "2024-09-26 15:36:55 +0000"
+      "date"     : "2024-09-30 20:57:33 +0000"
     } ,
   
     {
@@ -125,7 +133,7 @@
       "category" : "",
       "tags"     : "updates",
       "url"      : "/updates",
-      "date"     : "2024-09-26 15:36:55 +0000"
+      "date"     : "2024-09-30 20:57:33 +0000"
     } ,
   
     {
