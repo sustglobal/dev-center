@@ -1,67 +1,11 @@
 [
   
     {
-      "title"    : "Search User Guide",
+      "title"    : "Applications",
       "category" : "",
-      "tags"     : "search, api, quickstart",
-      "url"      : "/search",
-      "date"     : "2022-12-14 00:00:00 +0000"
-    } ,
-  
-    {
-      "title"    : "API User Guide",
-      "category" : "",
-      "tags"     : "api, quickstart",
-      "url"      : "/api-guide",
-      "date"     : "2023-01-01 00:00:00 +0000"
-    } ,
-  
-    {
-      "title"    : "Climate Data Guide",
-      "category" : "",
-      "tags"     : "data",
-      "url"      : "/data-guide",
-      "date"     : "2023-01-01 00:00:00 +0000"
-    } ,
-  
-    {
-      "title"    : "Sust Global CSV Dataset Guide",
-      "category" : "",
-      "tags"     : "csv, dataset",
-      "url"      : "/dataset-guide",
-      "date"     : "2023-01-01 00:00:00 +0000"
-    } ,
-  
-    {
-      "title"    : "Usage Guide",
-      "category" : "",
-      "tags"     : "jupyter, notebook, quickstart",
-      "url"      : "/notebooks",
-      "date"     : "2023-01-01 00:00:00 +0000"
-    } ,
-  
-    {
-      "title"    : "Sea Level Rise",
-      "category" : "",
-      "tags"     : "data, sea, sea level, SLR",
-      "url"      : "/sea-level-rise",
-      "date"     : "2023-01-01 00:00:00 +0000"
-    } ,
-  
-    {
-      "title"    : "Nature Data User Guide",
-      "category" : "",
-      "tags"     : "dataset, quickstart",
-      "url"      : "/nature-data-guide",
-      "date"     : "2023-11-17 00:00:00 +0000"
-    } ,
-  
-    {
-      "title"    : "Climate Explorer User Guide - Hazard Views",
-      "category" : "",
-      "tags"     : "dashboard, risk, exposure",
-      "url"      : "/ce-viewer-guide",
-      "date"     : "2024-09-27 00:00:00 +0000"
+      "tags"     : "",
+      "url"      : "/apps",
+      "date"     : "2024-11-18 15:28:31 -0700"
     } ,
   
     {
@@ -69,7 +13,23 @@
       "category" : "",
       "tags"     : "",
       "url"      : "/coming-soon",
-      "date"     : "2024-09-30 20:57:33 +0000"
+      "date"     : "2024-11-18 15:28:31 -0700"
+    } ,
+  
+    {
+      "title"    : "Data Integrations",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/data-integrations",
+      "date"     : "2024-11-18 15:28:31 -0700"
+    } ,
+  
+    {
+      "title"    : "Search User Guide",
+      "category" : "",
+      "tags"     : "search, api, quickstart",
+      "url"      : "/search",
+      "date"     : "2022-12-14 00:00:00 -0700"
     } ,
   
     {
@@ -77,23 +37,15 @@
       "category" : "",
       "tags"     : "data, cyclone",
       "url"      : "/cyclones",
-      "date"     : "2023-01-01 00:00:00 +0000"
+      "date"     : "2023-01-01 00:00:00 -0700"
     } ,
   
     {
-      "title"    : "Dashboard User Guide",
+      "title"    : "Climate Data Guide",
       "category" : "",
-      "tags"     : "dashboard, risk, exposure",
-      "url"      : "/dashboard-guide",
-      "date"     : "2023-01-01 00:00:00 +0000"
-    } ,
-  
-    {
-      "title"    : "FAQ",
-      "category" : "",
-      "tags"     : "faq, wildfire, flood, questions",
-      "url"      : "/faq",
-      "date"     : "2024-09-30 20:57:33 +0000"
+      "tags"     : "data",
+      "url"      : "/data-guide",
+      "date"     : "2023-01-01 00:00:00 -0700"
     } ,
   
     {
@@ -101,7 +53,7 @@
       "category" : "",
       "tags"     : "data, flood",
       "url"      : "/flood",
-      "date"     : "2023-01-01 00:00:00 +0000"
+      "date"     : "2023-01-01 00:00:00 -0700"
     } ,
   
     {
@@ -109,39 +61,15 @@
       "category" : "",
       "tags"     : "data, heat, heatwave",
       "url"      : "/heatwaves",
-      "date"     : "2023-01-01 00:00:00 +0000"
+      "date"     : "2023-01-01 00:00:00 -0700"
     } ,
   
     {
-      "title"    : "Nature API User Guide",
+      "title"    : "Sea Level Rise",
       "category" : "",
-      "tags"     : "api, quickstart",
-      "url"      : "/nature-api-guide",
-      "date"     : "2023-11-17 00:00:00 +0000"
-    } ,
-  
-    {
-      "title"    : "Sust Global Climate Risk Analytics",
-      "category" : "",
-      "tags"     : "",
-      "url"      : "/snowflake",
-      "date"     : "2024-09-30 20:57:33 +0000"
-    } ,
-  
-    {
-      "title"    : "Product Updates",
-      "category" : "",
-      "tags"     : "updates",
-      "url"      : "/updates",
-      "date"     : "2024-09-30 20:57:33 +0000"
-    } ,
-  
-    {
-      "title"    : "Climate Explorer User Guide",
-      "category" : "",
-      "tags"     : "start, intro, quickstart, climate explorer, walkthrough",
-      "url"      : "/user-guide",
-      "date"     : "2023-01-01 00:00:00 +0000"
+      "tags"     : "data, sea, sea level, SLR",
+      "url"      : "/sea-level-rise",
+      "date"     : "2023-01-01 00:00:00 -0700"
     } ,
   
     {
@@ -149,7 +77,7 @@
       "category" : "",
       "tags"     : "data, financial risk, var, value at risk",
       "url"      : "/value-at-risk",
-      "date"     : "2023-01-01 00:00:00 +0000"
+      "date"     : "2023-01-01 00:00:00 -0700"
     } ,
   
     {
@@ -157,7 +85,7 @@
       "category" : "",
       "tags"     : "data, water, stress",
       "url"      : "/water-stress",
-      "date"     : "2023-01-01 00:00:00 +0000"
+      "date"     : "2023-01-01 00:00:00 -0700"
     } ,
   
     {
@@ -165,7 +93,71 @@
       "category" : "",
       "tags"     : "data, fire, wildfire",
       "url"      : "/wildfire",
-      "date"     : "2023-01-01 00:00:00 +0000"
+      "date"     : "2023-01-01 00:00:00 -0700"
+    } ,
+  
+    {
+      "title"    : "Usage Guide",
+      "category" : "",
+      "tags"     : "jupyter, notebook, quickstart",
+      "url"      : "/notebooks",
+      "date"     : "2023-01-01 00:00:00 -0700"
+    } ,
+  
+    {
+      "title"    : "Sust Global Climate Risk Analytics",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/snowflake",
+      "date"     : "2024-11-18 15:28:31 -0700"
+    } ,
+  
+    {
+      "title"    : "API User Guide",
+      "category" : "",
+      "tags"     : "api, quickstart",
+      "url"      : "/api-guide",
+      "date"     : "2023-01-01 00:00:00 -0700"
+    } ,
+  
+    {
+      "title"    : "Dashboard User Guide",
+      "category" : "",
+      "tags"     : "dashboard, risk, exposure",
+      "url"      : "/dashboard-guide",
+      "date"     : "2023-01-01 00:00:00 -0700"
+    } ,
+  
+    {
+      "title"    : "Sust Global CSV Dataset Guide",
+      "category" : "",
+      "tags"     : "csv, dataset",
+      "url"      : "/dataset-guide",
+      "date"     : "2023-01-01 00:00:00 -0700"
+    } ,
+  
+    {
+      "title"    : "Climate Explorer User Guide",
+      "category" : "",
+      "tags"     : "start, intro, quickstart, climate explorer, walkthrough",
+      "url"      : "/user-guide",
+      "date"     : "2023-01-01 00:00:00 -0700"
+    } ,
+  
+    {
+      "title"    : "Nature API User Guide",
+      "category" : "",
+      "tags"     : "api, quickstart",
+      "url"      : "/nature-api-guide",
+      "date"     : "2023-11-17 00:00:00 -0700"
+    } ,
+  
+    {
+      "title"    : "Nature Data User Guide",
+      "category" : "",
+      "tags"     : "dataset, quickstart",
+      "url"      : "/nature-data-guide",
+      "date"     : "2023-11-17 00:00:00 -0700"
     } ,
   
     {
@@ -173,7 +165,47 @@
       "category" : "",
       "tags"     : "data, yearly",
       "url"      : "/zonal-climate-stats",
-      "date"     : "2024-06-05 00:00:00 +0000"
+      "date"     : "2024-06-05 00:00:00 -0600"
+    } ,
+  
+    {
+      "title"    : "Climate Modeling",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/introduction",
+      "date"     : "2024-11-18 15:28:31 -0700"
+    } ,
+  
+    {
+      "title"    : "FAQ",
+      "category" : "",
+      "tags"     : "faq, wildfire, flood, questions",
+      "url"      : "/faq",
+      "date"     : "2024-11-18 15:28:31 -0700"
+    } ,
+  
+    {
+      "title"    : "Climate Explorer User Guide - Hazard Views",
+      "category" : "",
+      "tags"     : "dashboard, risk, exposure",
+      "url"      : "/ce-viewer-guide",
+      "date"     : "2024-09-27 00:00:00 -0600"
+    } ,
+  
+    {
+      "title"    : "Sust Global CSV Visual Summary Dataset Guide",
+      "category" : "",
+      "tags"     : "csv, dataset, visual summary",
+      "url"      : "/visual-summary-data-guide",
+      "date"     : "2024-11-15 00:00:00 -0700"
+    } ,
+  
+    {
+      "title"    : "Visual Summary User Guide",
+      "category" : "",
+      "tags"     : "start, intro, quickstart, visual summary, walkthrough",
+      "url"      : "/visual-summary-user-guide",
+      "date"     : "2024-11-15 00:00:00 -0700"
     } 
   
 ]

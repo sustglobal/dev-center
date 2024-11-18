@@ -43,22 +43,32 @@ blocks:
     description: More details about the Visual Summary application.
     docs:      
       - name: User Guide
-        description: This User Guide will provide you with an overview of the Climate Explorer dashboard, a step-by-step guide of how to upload your assets, and how to interpret the risk data and graphics.
+        description: This User Guide will provide you with an overview of the Visual Summary dashboard, a step-by-step guide of how to upload your assets, and how to interpret the visualization of the data.
         button:
           text: View
-          url: /user-guide
+          url: /visual-summary-user-guide
       - name: CSV Guide
-        description: This section will go through each risk exposure dataset available for download and explain the methodology behind it. We will also show you how to use and interpret the numbers, which includes a written interpretation of the datasets.
+        description: This section will go through the dataset available for download and explain the methodology behind it. We will also show you how to use and interpret the numbers, which includes a written interpretation of the datasets.
         button:
           text: View
-          url: /dataset-guide
+          url: /visual-summary-data-guide
   - title: Nature Capital
     description: Learn more about Sust Global's Nature Capital dashboard!
-    docs:      
+    docs:
       - name: User Guide
         description: Coming Soon!
         button:
           text: View
           url: /coming-soon
+      - name: Data Guide
+        description: Sust Global's Nature API is a RESTful API interface to Sust Global's durability (non-permanence) indicators for nature based carbon projects. This guide helps users understand the indicators and datasets accessible using the API.
+        button:
+          text: View
+          url: /nature-data-guide
+      - name: API
+        description: Sust Global's Nature API is a RESTful API interface to Sust Global's durability (non-permanence) indicators for nature based carbon projects. This guide helps users learn how to work with the API directly.
+        button:
+          text: View
+          url: /nature-api-guide
 
 ---
