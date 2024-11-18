@@ -65,6 +65,10 @@ blocks:
     content: Distribution by type is a grouping of all assets of the same type to create one slice (category). This is based on the aggregated value of estimated loss, determined by the type of assets.
   - title: Why does the cyclone projection tend to be a flat line beyond the year 2050?
     content: We provide annual cyclone projections over the years 1980-2050. Beyond the year 2050, we use the mean probability of cyclone projections over the 2030-2050 window for that specific asset location.
+  - title: What do the upper and lower bounds represent?
+    content: Upper and lower bounds reflect the 16th and 84th confidence interval bands, which corresponds approximately to +/- 1 standard deviation. Occasionally, risk data skews towards either bound for a particular hazard type based on the hazard model. Generally, the probability bounds can never go below 0 or above 1. In the case of flood probability, values are capped at 0.5.
+  - title: Why are some hazards and subsequent financial risks constant with time?
+    content: If projected exposure and risk values are similar to present day, it suggests a weak or non-existent relationship between climate change and a given hazard at a particular location. Climate change will impact hazard severity and frequency in unique ways. Further, any changes will not be uniform across the globe. For another hazards like flooding and tropical cyclones, the absence of increasing risk likely reflects a weak or non-existent relationship between a hazard event and rising global temperatures. However, concerning wildfire, our hazard model considers not only weather conditions condusive to wildfires (i.e., fire weather), but variables such as historical burn scars and other metrics that increase ignition potential. While fire weather generally incerases with climate change, constant wildfire risk over time can reflect the lack of a detectable relationship between fire weather and fire risk at a given location.
 - block: faq
   heading: Dataset (CSV)
   faqs:
