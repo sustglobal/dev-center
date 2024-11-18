@@ -1,26 +1,18 @@
 ---
 - text: Docs
   dropdown:
-  - text: Introduction
-    url: "/user-guide"
-    icon: square-3-stack-3d
-  - text: Data Guide
-    url: "/data-guide"
+  - text: Climate Modeling
+    url: "/introduction"
     icon: book-open
-  - text: Jupyter Notebooks
-    url: "/notebooks"
-    icon: cube-transparent
-  - text: API Spec
-    url: "https://explorer.sustglobal.io/redoc/"
-    icon: star
-  - text: Loom library
-    url: "/coming-soon"
-    icon: play-circle
+  - text: Applications
+    url: "/apps"
+    icon: square-3-stack-3d
+  - text: Data Integrations
+    url: "/data-integrations"
+    icon: code-bracket-square
   - text: FAQ
     url: "/faq"
     icon: question-mark-circle
-- text: Product Updates
-  url: "/updates"
 - text: Science Insights
   url: "https://www.sustglobal.com/insights/blog/"
 - text: Climate Explorer

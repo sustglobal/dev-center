@@ -2,15 +2,15 @@
 layout: home
 superheading: Welcome
 title: Sust Global Developer Center
-subtitle:  This is the home of Sust Global's developer tools, guides and reference documentation.
+subtitle:  Home of Sust Global's developer tools, guides and reference documentation.
 
 blocks:
 - block: cta
   heading: Ready to get started?
-  copy: The User Guide is a great place for all users to start. It provides an introduction to Climate Explorer and the datasets from Sust Global.
-  icon: arrow-right-circle
+  copy: Sust Global's User Guide provides an introduction to Climate Explorer and our datasets.
+  icon: thin-document
   button:
-    text: Get Started
+    text: Show Me
     url: "/user-guide"
 
 - block: navigation

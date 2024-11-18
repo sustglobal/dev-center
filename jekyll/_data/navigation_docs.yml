@@ -21,16 +21,5 @@
   - sea-level-rise
   - water-stress
   - value-at-risk
-
-- title: Jupyter Notebooks
-  icon: cube-transparent
-  description: Check out our interactive, open-source guides designed to help you explore Sust Global data, work with our APIs and tools, and learn how to extract insights from our climate scenario analysis datasets.
-  docs:
-  - notebooks
-
-- title: Loom library 
-  icon: play-circle
-  description: Coming soon!
-  docs:
-  - coming-soon
+  
  
