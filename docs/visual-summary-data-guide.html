@@ -9,17 +9,17 @@
 <title>Sust Global CSV Visual Summary Dataset Guide | Sust Global Developer Center</title>
 <meta name="generator" content="Jekyll v4.3.2" />
 <meta property="og:title" content="Sust Global CSV Visual Summary Dataset Guide" />
-<meta name="author" content="Taylor Andrews" />
+<meta name="author" content="Tristan Ballard" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="Before Getting Started" />
-<meta property="og:description" content="Before Getting Started" />
+<meta name="description" content="What are the CSV datasets?" />
+<meta property="og:description" content="What are the CSV datasets?" />
 <meta property="og:site_name" content="Sust Global Developer Center" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2024-11-15T00:00:00-07:00" />
+<meta property="article:published_time" content="2024-11-15T00:00:00+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Sust Global CSV Visual Summary Dataset Guide" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Taylor Andrews"},"dateModified":"2024-11-15T00:00:00-07:00","datePublished":"2024-11-15T00:00:00-07:00","description":"Before Getting Started","headline":"Sust Global CSV Visual Summary Dataset Guide","mainEntityOfPage":{"@type":"WebPage","@id":"/visual-summary-data-guide"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"/uploads/Sust_Logo.png"},"name":"Taylor Andrews"},"url":"/visual-summary-data-guide"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Tristan Ballard"},"dateModified":"2024-11-15T00:00:00+00:00","datePublished":"2024-11-15T00:00:00+00:00","description":"What are the CSV datasets?","headline":"Sust Global CSV Visual Summary Dataset Guide","mainEntityOfPage":{"@type":"WebPage","@id":"/visual-summary-data-guide"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"/uploads/Sust_Logo.png"},"name":"Tristan Ballard"},"url":"/visual-summary-data-guide"}</script>
 <!-- End Jekyll SEO tag -->
 
   <meta property="og:image" content="">
@@ -589,14 +589,14 @@
         
           
           <div class="flex-none">
-              <img class="rounded-full" width="40" height="40" src="/uploads/Sust_Icon.png" alt="Taylor Andrews">
+              <img class="rounded-full" width="40" height="40" src="/uploads/Sust_Icon.png" alt="Tristan Ballard">
           </div>
         
         
         <div class="flex-1">
-          <p class="font-display font-semibold text-sm text-slate-900">Taylor Andrews</p>
+          <p class="font-display font-semibold text-sm text-slate-900">Tristan Ballard</p>
           <p class="text-sm text-slate-500">Created: Nov 15, 2024 
-            - Updated: Nov 18, 2024
+            - Updated: Nov 22, 2024
             </p>
         </div>
         <!-- <div class="flex-none">
@@ -609,19 +609,273 @@
       <p class="text-lg text-slate-600 mt-9">This section will go through the dataset available for download and explain the methodology behind it. We will also show you how to use and interpret the numbers, which includes a written interpretation of the datasets.</p>
     
   </header>
-  <div class="prose prose-slate max-w-none prose-headings:scroll-mt-28 prose-headings:font-display prose-headings:font-semibold prose-lead:text-slate-500 prose-a:font-semibold prose-a:no-underline hover:prose-a:text-sky-500 prose-pre:rounded-xl prose-pre:bg-slate-900 prose-pre:shadow-lg"><h2 id="before-getting-started">Before Getting Started</h2>
-
-<p>Please note that you must change the sections of text in brackets <strong>[  ]</strong> to suit the specific values, hazards and scenarios you are describing.</p>
-
-<h2 id="what-are-the-csv-datasets">What are the CSV datasets?</h2>
+  <div class="prose prose-slate max-w-none prose-headings:scroll-mt-28 prose-headings:font-display prose-headings:font-semibold prose-lead:text-slate-500 prose-a:font-semibold prose-a:no-underline hover:prose-a:text-sky-500 prose-pre:rounded-xl prose-pre:bg-slate-900 prose-pre:shadow-lg"><h2 id="what-are-the-csv-datasets">What are the CSV datasets?</h2>
 
 <p>Comma separated value (CSV) files contain the physical climate risk and financial impact analysis information from Visual Summary Dashboard product, which can be used for strategic planning needs. The CSV files are useful if you would like to use the underlying data to create your own graphs or charts for a report or presentation, to undergo further analysis (such as data aggregations, comparisons between assets etc.) or as an input into your Excel models.</p>
 
 <p>Likewise, the data is provided in geojson format for your convenience.</p>
 
-<h2 id="coming-soon">Coming Soon!</h2>
+<h2 id="data-dictionary">Data Dictionary</h2>
 
-<p>More information about the data export to follow.</p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ENTITY_ID</td>
+      <td>STRING</td>
+      <td>User provided identifier (Optional)</td>
+    </tr>
+    <tr>
+      <td>ENTITY_NAME</td>
+      <td>STRING</td>
+      <td>User provided asset name (Optional)</td>
+    </tr>
+    <tr>
+      <td>LNG</td>
+      <td>STRING</td>
+      <td>Latitude</td>
+    </tr>
+    <tr>
+      <td>LAT</td>
+      <td>STRING</td>
+      <td>Longitude</td>
+    </tr>
+    <tr>
+      <td>LABEL:TEXT</td>
+      <td>STRING</td>
+      <td>User provided supplementary columns (Optional)</td>
+    </tr>
+    <tr>
+      <td>TYPE</td>
+      <td>STRING</td>
+      <td>User provided asset type (Optional; Default = General)</td>
+    </tr>
+    <tr>
+      <td>SCENARIO</td>
+      <td>STRING</td>
+      <td>Carbon emissions scenario (ssp245 or ssp585)</td>
+    </tr>
+    <tr>
+      <td>HAZARD</td>
+      <td>STRING</td>
+      <td>Climate hazard (wildfire, cyclone, flood, heatwave, water_stress, sea_level_rise)</td>
+    </tr>
+    <tr>
+      <td>SUMMARY_SCORE_30YR</td>
+      <td>FLOAT</td>
+      <td>In a 30 year window (2024-2055), the maximum risk exposure</td>
+    </tr>
+    <tr>
+      <td>SUMMARY_LABEL_30YR</td>
+      <td>STRING</td>
+      <td>Low/Medium/High label determined by SUMMARY_SCORE_30YR</td>
+    </tr>
+    <tr>
+      <td>SUMMARY_SCORE_15YR</td>
+      <td>FLOAT</td>
+      <td>In a 15 year window (2024-2039), the maximum risk exposure</td>
+    </tr>
+    <tr>
+      <td>SUMMARY_LABEL_15YR</td>
+      <td>STRING</td>
+      <td>Low/Medium/High label determined by SUMMARY_SCORE_15YR</td>
+    </tr>
+    <tr>
+      <td>INDICATOR_BASELINE</td>
+      <td>FLOAT</td>
+      <td>The baseline value averaged from 1980-2010 for the given physical risk indicator</td>
+    </tr>
+    <tr>
+      <td>INDICATOR_BASELINE_LBD</td>
+      <td>FLOAT</td>
+      <td>The lower bound baseline value averaged from 1980-2010 for the given physical risk indicator</td>
+    </tr>
+    <tr>
+      <td>INDICATOR_BASELINE_UBD</td>
+      <td>FLOAT</td>
+      <td>The upper bound baseline value averaged from 1980-2010 for the given physical risk indicator</td>
+    </tr>
+    <tr>
+      <td>INDICATOR_2030</td>
+      <td>FLOAT</td>
+      <td>The value averaged from 2025-2035 for the given physical risk indicator</td>
+    </tr>
+    <tr>
+      <td>INDICATOR_2030_LBD</td>
+      <td>FLOAT</td>
+      <td>The lower bound value averaged from 2025-2035 for the given physical risk indicator</td>
+    </tr>
+    <tr>
+      <td>INDICATOR_2030_UBD</td>
+      <td>FLOAT</td>
+      <td>The upper bound value averaged from 2025-2035 for the given physical risk indicator</td>
+    </tr>
+    <tr>
+      <td>INDICATOR_2050</td>
+      <td>FLOAT</td>
+      <td>The value averaged from 2045-2055 for the given physical risk indicator</td>
+    </tr>
+    <tr>
+      <td>INDICATOR_2050_LBD</td>
+      <td>FLOAT</td>
+      <td>The lower bound value averaged from 2045-2055 for the given physical risk indicator</td>
+    </tr>
+    <tr>
+      <td>INDICATOR_2050_UBD</td>
+      <td>FLOAT</td>
+      <td>The upper bound value averaged from 2045-2055 for the given physical risk indicator</td>
+    </tr>
+    <tr>
+      <td>INDICATOR_2080</td>
+      <td>FLOAT</td>
+      <td>The value averaged from 2075-2085 for the given physical risk indicator</td>
+    </tr>
+    <tr>
+      <td>INDICATOR_2080_LBD</td>
+      <td>FLOAT</td>
+      <td>The lower bound value averaged from 2075-2085 for the given physical risk indicator</td>
+    </tr>
+    <tr>
+      <td>INDICATOR_2080_UBD</td>
+      <td>FLOAT</td>
+      <td>The upper bound value averaged from 2075-2085 for the given physical risk indicator</td>
+    </tr>
+    <tr>
+      <td>STRUCTURAL_DAMAGE_BASELINE</td>
+      <td>FLOAT</td>
+      <td>The baseline value averaged from 1980-2010 for the structural damage resulting from risk exposure. Range 0 to 1.</td>
+    </tr>
+    <tr>
+      <td>STRUCTURAL_DAMAGE_BASELINE_LBD</td>
+      <td>FLOAT</td>
+      <td>The lower bound baseline value averaged from 1980-2010 for the structural damage resulting from risk exposure. Range 0 to 1.</td>
+    </tr>
+    <tr>
+      <td>STRUCTURAL_DAMAGE_BASELINE_UBD</td>
+      <td>FLOAT</td>
+      <td>The upper bound baseline value averaged from 1980-2010 for the structural damage resulting from risk exposure. Range 0 to 1.</td>
+    </tr>
+    <tr>
+      <td>STRUCTURAL_DAMAGE_2030</td>
+      <td>FLOAT</td>
+      <td>The value averaged from 2025-2034 for the structural damage resulting from risk exposure. Range 0 to 1.</td>
+    </tr>
+    <tr>
+      <td>STRUCTURAL_DAMAGE_2030_LBD</td>
+      <td>FLOAT</td>
+      <td>The lower bound value averaged from 2025-2034 for the structural damage resulting from risk exposure. Range 0 to 1.</td>
+    </tr>
+    <tr>
+      <td>STRUCTURAL_DAMAGE_2030_UBD</td>
+      <td>FLOAT</td>
+      <td>The upper bound value averaged from 2025-2034 for the structural damage resulting from risk exposure. Range 0 to 1.</td>
+    </tr>
+    <tr>
+      <td>STRUCTURAL_DAMAGE_2050</td>
+      <td>FLOAT</td>
+      <td>The value averaged from 2045-2054 for the structural damage resulting from risk exposure. Range 0 to 1.</td>
+    </tr>
+    <tr>
+      <td>STRUCTURAL_DAMAGE_2050_LBD</td>
+      <td>FLOAT</td>
+      <td>The lower bound value averaged from 2045-2054 for the structural damage resulting from risk exposure. Range 0 to 1.</td>
+    </tr>
+    <tr>
+      <td>STRUCTURAL_DAMAGE_2050_UBD</td>
+      <td>FLOAT</td>
+      <td>The upper bound value averaged from 2045-2054 for the structural damage resulting from risk exposure. Range 0 to 1.</td>
+    </tr>
+    <tr>
+      <td>STRUCTURAL_DAMAGE_2080</td>
+      <td>FLOAT</td>
+      <td>The value averaged from 2075-2084 for the structural damage resulting from risk exposure. Range 0 to 1.</td>
+    </tr>
+    <tr>
+      <td>STRUCTURAL_DAMAGE_2080_LBD</td>
+      <td>FLOAT</td>
+      <td>The lower bound value averaged from 2075-2084 for the structural damage resulting from risk exposure. Range 0 to 1.</td>
+    </tr>
+    <tr>
+      <td>STRUCTURAL_DAMAGE_2080_UBD</td>
+      <td>FLOAT</td>
+      <td>The upper bound value averaged from 2075-2084 for the structural damage resulting from risk exposure. Range 0 to 1.</td>
+    </tr>
+    <tr>
+      <td>BUSINESS_INTERRUPTION_BASELINE</td>
+      <td>FLOAT</td>
+      <td>The baseline value averaged from 1980-2010 for the business interruption resulting from risk exposure. Range 0 to 1.</td>
+    </tr>
+    <tr>
+      <td>BUSINESS_INTERRUPTION_BASELINE_LBD</td>
+      <td>FLOAT</td>
+      <td>The lower bound baseline value averaged from 1980-2010 for the business interruption resulting from risk exposure. Range 0 to 1.</td>
+    </tr>
+    <tr>
+      <td>BUSINESS_INTERRUPTION_BASELINE_UBD</td>
+      <td>FLOAT</td>
+      <td>The upper bound baseline value averaged from 1980-2010 for the business interruption resulting from risk exposure. Range 0 to 1.</td>
+    </tr>
+    <tr>
+      <td>BUSINESS_INTERRUPTION_2030</td>
+      <td>FLOAT</td>
+      <td>The value averaged from 2025-2034 for the business interruption resulting from risk exposure. Range 0 to 1.</td>
+    </tr>
+    <tr>
+      <td>BUSINESS_INTERRUPTION_2030_LBD</td>
+      <td>FLOAT</td>
+      <td>The lower bound value averaged from 2025-2034 for the business interruption resulting from risk exposure. Range 0 to 1.</td>
+    </tr>
+    <tr>
+      <td>BUSINESS_INTERRUPTION_2030_UBD</td>
+      <td>FLOAT</td>
+      <td>The upper bound value averaged from 2025-2034 for the business interruption resulting from risk exposure. Range 0 to 1.</td>
+    </tr>
+    <tr>
+      <td>BUSINESS_INTERRUPTION_2050</td>
+      <td>FLOAT</td>
+      <td>The value averaged from 2045-2054 for the business interruption resulting from risk exposure. Range 0 to 1.</td>
+    </tr>
+    <tr>
+      <td>BUSINESS_INTERRUPTION_2050_LBD</td>
+      <td>FLOAT</td>
+      <td>The lower bound value averaged from 2045-2054 for the business interruption resulting from risk exposure. Range 0 to 1.</td>
+    </tr>
+    <tr>
+      <td>BUSINESS_INTERRUPTION_2050_UBD</td>
+      <td>FLOAT</td>
+      <td>The upper bound value averaged from 2045-2054 for the business interruption resulting from risk exposure. Range 0 to 1.</td>
+    </tr>
+    <tr>
+      <td>BUSINESS_INTERRUPTION_2080</td>
+      <td>FLOAT</td>
+      <td>The value averaged from 2075-2084 for the business interruption resulting from risk exposure. Range 0 to 1.</td>
+    </tr>
+    <tr>
+      <td>BUSINESS_INTERRUPTION_2080_LBD</td>
+      <td>FLOAT</td>
+      <td>The lower bound value averaged from 2075-2084 for the business interruption resulting from risk exposure. Range 0 to 1.</td>
+    </tr>
+    <tr>
+      <td>BUSINESS_INTERRUPTION_2080_UBD</td>
+      <td>FLOAT</td>
+      <td>The upper bound value averaged from 2075-2084 for the business interruption resulting from risk exposure. Range 0 to 1.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="scenario-analytics">Scenario Analytics</h2>
+
+<p>For more information about individual hazards, climate scenarios, summarization labeling (Low/Medium/High), uncertainty quantification, and structural damage and business interruption modeling, see the <a href="data-guide">Climate Data Guide</a>.</p>
+
+<h2 id="example-financial-impact-interpretation">Example Financial Impact Interpretation</h2>
+<p>Let’s say the csv value for structural damage is 0.035 and business interruption is 0.0137 (0.0137 X 365 = 5 days) for 2030 under SSP5-8.5 for cyclones. One interpretation of that would be: The asset is projected to have an expected annual damage of 3.5% and an expected annual business interruption of 5 days due to tropical cyclones for the 2030 period (2025-2034) under the high carbon emissions (SSP5-8.5) scenario.</p>
+
 </div>
 </article>
 <!-- <div id="share" class="flex space-x-4 mt-12 justify-center scroll-mt-[8.5rem]">
@@ -730,9 +984,10 @@
           <nav aria-labelledby="on-this-page-title" class="w-56">
             <h2 id="on-this-page-title" class="font-display text-sm font-semibold text-slate-900">On this page</h2>
             <ul id="toc" class="toc">
-<li class="toc-entry toc-h2"><a href="#before-getting-started">Before Getting Started</a></li>
 <li class="toc-entry toc-h2"><a href="#what-are-the-csv-datasets">What are the CSV datasets?</a></li>
-<li class="toc-entry toc-h2"><a href="#coming-soon">Coming Soon!</a></li>
+<li class="toc-entry toc-h2"><a href="#data-dictionary">Data Dictionary</a></li>
+<li class="toc-entry toc-h2"><a href="#scenario-analytics">Scenario Analytics</a></li>
+<li class="toc-entry toc-h2"><a href="#example-financial-impact-interpretation">Example Financial Impact Interpretation</a></li>
 </ul>
           </nav>
         </div>
