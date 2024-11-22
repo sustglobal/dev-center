@@ -3,17 +3,13 @@ layout: doc
 title: Sust Global CSV Visual Summary Dataset Guide
 subtitle: This section will go through the dataset available for download and explain the methodology behind it. We will also show you how to use and interpret the numbers, which includes a written interpretation of the datasets.
 date: 2024-11-15
-lastmod: 2024-11-18
-author: TA
+lastmod: 2024-11-22
+author: TB
 tags:
 - csv
 - dataset
 - visual summary
 ---
-
-## Before Getting Started
-
- Please note that you must change the sections of text in brackets **[  ]** to suit the specific values, hazards and scenarios you are describing.
 
 ## What are the CSV datasets?
 
@@ -76,4 +72,8 @@ Likewise, the data is provided in geojson format for your convenience.
 
 ## Scenario Analytics
 
-For more information about individual hazards, climate scenarios, summarization labeling (Low/Medium/High), and structural damage and business interruption modeling, see the [Climate Data Guide](data-guide).
+For more information about individual hazards, climate scenarios, summarization labeling (Low/Medium/High), uncertainty quantification, and structural damage and business interruption modeling, see the [Climate Data Guide](data-guide).
+
+## Example Financial Impact Interpretation
+For example, let’s say the value for structural damage is 0.035 and business interruption is 0.0137 (5 days) for 2030 under SSP5-8.5 for cyclones. One interpretation of that would be: The asset is projected to have an expected annual damage of 3.5% and an expected annual business interruption of 5 days due to tropical cyclones for the 2030 period (2025-2034) under the high carbon emissions (SSP5-8.5) scenario. 
+
