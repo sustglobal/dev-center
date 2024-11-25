@@ -1,12 +1,11 @@
-FROM jupyter/minimal-notebook:ubuntu-22.04
+FROM quay.io/jupyter/minimal-notebook:ubuntu-24.04
 
 USER root
 RUN apt-get update --fix-missing
 RUN apt-get install -y software-properties-common
 RUN apt-get install -y gcc g++
-RUN add-apt-repository -y ppa:ubuntugis/ppa
 RUN apt update
-RUN apt install -y gdal-bin libgdal-dev
+RUN apt install -y gdal-bin libgdal-dev python3-gdal
 
 USER $NB_UID
 
