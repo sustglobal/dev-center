@@ -8,6 +8,7 @@
   - dataset-guide
   - api-guide
   - search
+  - visual-summary-user-guide
 
 - title: Data Guide
   icon: book-open
@@ -21,5 +22,6 @@
   - sea-level-rise
   - water-stress
   - value-at-risk
+  - visual-summary-data-guide
   
  
