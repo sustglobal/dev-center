@@ -30,13 +30,13 @@ Currently, Sust Global provides two metrics of financial risk: (1) <i>Structural
 
 To create a new portfolio, go to the [Portfolio View](https://finance.sustglobal.io/portfolios) on Visual Summary and click on the button labeled New Portfolio. When creating a new portfolio, make sure that the name has no spaces in it. Having given the portfolio a name, you can upload information on the physical assets.
 
-Portfolio information must be uploaded according to the Sust Institutional Data Template. The section below provides more details on this format.
+Portfolio information must be uploaded according to the Sust Global Institutional Data Template. The section below provides more details on this format.
 
 Portfolio size is currently limited to 5000 assets for CSV-based portfolios and 2000 assets for GeoJSON-based portfolios. Additional account-level portfolio size limits may apply. Please contact [sales@sustglobal.com](mailto:sales@sustglobal.com) to increase your portfolio size limits.
 
-#### The Sust Institutional Data Template
+#### The Sust Global Institutional Data Template
 
-The Sust Institutional Data Template file can be found here: [example csv](https://docs.google.com/spreadsheets/d/1JKOk85TFckIgRuvdljzXZLV2pf-ZOj0NNoKYmqdkWBk/edit?usp=sharing). The example sheet is a useful starting point if you are interested in building your own portfolio for use in Visual Summary, whether via UI or API. Simply left-click on the example CSV link above, select **File** -> **Download** -> **Comma Separated Values**. Open the portfolio file and add your assets (if desired) before uploading the portfolio on the [Portfolio View](https://finance.sustglobal.io/portfolios) on Visual Summary as described above. Each of the supported fields in the portfolio CSV file is documented below:
+The Sust Global Institutional Data Template file can be found here: [example csv](https://docs.google.com/spreadsheets/d/1JKOk85TFckIgRuvdljzXZLV2pf-ZOj0NNoKYmqdkWBk/edit?usp=sharing). The example sheet is a useful starting point if you are interested in building your own portfolio for use in Visual Summary, whether via UI or API. Simply left-click on the example CSV link above, select **File** -> **Download** -> **Comma Separated Values**. Open the portfolio file and add your assets (if desired) before uploading the portfolio on the [Portfolio View](https://finance.sustglobal.io/portfolios) on Visual Summary as described above. Each of the supported fields in the portfolio CSV file is documented below:
 
 
 | Field Name | Description |
