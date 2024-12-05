@@ -139,7 +139,7 @@ Fig 17: forward looking cyclone risk CSV
 </p>
 
 #### Interpretation of YYYY column
-The values in these columns show the [mean] of the projected annual cyclone risk for a specific asset in a particular year under the [Strong Mitigation] scenario. For example, Asset X has a Tropical Cyclone risk projection value of [0.5] in [2045]. This means that in [2045], we project a [50]% probability of at least one hit by a category 3/4/5 cyclone within a 241km radius of the asset under the [Strong Mitigation] scenario.
+The values in these columns show the [mean] of the projected annual cyclone risk for a specific asset in a particular year under the [Strong Mitigation] scenario. For example, Asset X has a Tropical Cyclone risk projection value of [0.5] in [2045]. This means that in [2045], we project a [50]% probability of at least one hit by a category 3/4/5 cyclone within a 24 radius of the asset under the [Strong Mitigation] scenario.
 
 ### Forward looking unified wildfire datasets
 This section will look at CSVs with the Reporting Data Type {**reporting_data_type**} of **wildfire_unified_prob**: **sustglobal_asset_fwd_wildfire_unified_prob_risk_{dataset_name}_{ScenarioID}.csv**
@@ -160,7 +160,7 @@ Fig 19A: forward looking Unified wildfire risk CSV
 #### Interpretation of YYYY column
 The values in these columns show the median projected annual Wildfire Susceptibility values for a specific asset under the [Strong Mitigation] scenario.
 
-For example, Asset X has a wildfire probability risk projection value of [0.05] in [Jan, 2023]. This means that in the year [2023], we project a [5]% probability of a wildfire occurring within 1km of the asset under the [Strong Mitigation] scenario.
+For example, Asset X has a wildfire probability risk projection value of [0.05] in [Jan, 2023]. This means that in the year [2023], we project a [5]% probability of a wildfire occurring at the asset under the [Strong Mitigation] scenario.
 
 ### Forward looking flood risk datasets
 
