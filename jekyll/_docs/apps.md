@@ -39,6 +39,11 @@ blocks:
         button:
           text: View
           url: /api-guide
+      - name: SFDR Compliance
+        description: Sust Global covers a wide variety of hazards. This section highlights the specifics of that coverage.
+        button:
+          text: View
+          url: /sfdr-compliance
   - title: Visual Summary
     description: More details about the Visual Summary application.
     docs:      
