@@ -13,9 +13,9 @@ tags:
 ## Methodologies
 **Flood potential**
 
-Metric: Annual probability of a flood with depth greater than 0.5 meters at an asset location.
+Metric: Annual probability of an inland (fluvial) or coastal flood with depth greater than 0.5 meters at an asset location.
 
-This indicator quantifies the projected flood likelihood, expressed as timeseries of annual expected probability of flooding greater than 0.5 meters at the asset level. We derive this from a combination of WRI's [Aqueduct Flood Hazard Maps](https://www.wri.org/data/aqueduct-floods-hazard-maps) product, high-resolution elevation data, and local information on flood zones. We support 90 meter regional and asset level assessments between latitudes  17N and 50N. This 90m indicator covers the contiguous U.S., southern Europe, as well as the majority of East Asia. Outside those latitudes, the same indicator is available but at a resolution of 1km. 
+This indicator quantifies the projected flood likelihood, expressed as timeseries of annual expected probability of flooding greater than 0.5 meters at the asset level. This combines inland riverine (fluvial) floods, as well as coastal flooding induced by sea-level rise and storm surge. We derive this from a combination of WRI's [Aqueduct Flood Hazard Maps](https://www.wri.org/data/aqueduct-floods-hazard-maps) product, high-resolution elevation data, and local information on flood zones. We support 90 meter regional and asset level assessments between latitudes  17N and 50N. This 90m indicator covers the contiguous U.S., southern Europe, as well as the majority of East Asia. Outside those latitudes, the same indicator is available but at a resolution of 1km. 
 
 
 We first bias-correct Aqueduct flood data for both inland and coastal floods based on local information on flood zones. This flood zone information is derived from the Federal Emergency Management Agency (FEMA), the UK Environment Agency, and Spain's Ministerio para la Transición Ecológica y el Reto Demográfico. We next derive terrain-adjusted flood depths and associated probabilities using high-resolution elevation data to enhance local exposure assessments. The terrain adjustment results in 90m downscaled flood depth projections and corresponding high-resolution probability projections.
