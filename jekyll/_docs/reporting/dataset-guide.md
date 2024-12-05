@@ -2,17 +2,13 @@
 layout: doc
 title: Sust Global CSV Dataset Guide
 subtitle: This section will go through each risk exposure dataset available for download and explain the methodology behind it. We will also show you how to use and interpret the numbers, which includes a written interpretation of the datasets.
-date: 2023-01-01
-lastmod: 2023-08-20
-author: MC
+date: 2024-12-05
+lastmod: 2024-12-05
+author: TB
 tags:
 - csv
 - dataset
 ---
-
-## Before Getting Started
-
- Please note that you must change the sections of text in brackets **[  ]** to suit the specific values, hazards and scenarios you are describing.
 
 ## What are the CSV datasets?
 
@@ -32,7 +28,7 @@ Here are the descriptions of the naming parameters:
 The naming convention for the historic risk exposure datasets is as follows:
 **sustglobal_asset_his_risk_{dataset_name}.csv**
 
-In these files, each row corresponds to one asset location, and there are individual columns for each month from Jan 2010 to Dec 2020 for Cyclone exposure; each year from 2001 to 2021 for Wildfire; and each year from 2012 to 2021 for Flooding.
+In these files, each row corresponds to one asset location, and there are individual columns for each month from Jan 2010 to Dec 2022 for Cyclone, Heatwave, Sea-Level Rise, Water Stress, and Wildfire exposure. For historical flood risk, the data spans Jan 2012 to April 2022.
 
 #### Interpretation
 The example we are looking at here is called **sustglobal_asset_his_risk_MRTG_demo.csv**
@@ -45,14 +41,20 @@ The example we are looking at here is called **sustglobal_asset_his_risk_MRTG_de
 Fig 14: Historical Risk CSV
 </p>
 
-**M_FIRE_YYYY-MM-DD**: This shows the yearly severity values for observed historical wildfires within 1km of an asset. 
+**WILDFIRE_YYYY-MM-DD**: This shows the yearly severity values for observed historical wildfires within 1km of an asset. 
 For example, Asset X has a Wildfire historic risk event severity value of [1/0] in [2018]. This means that in [2018], there [was/wasnt] a satellite-observed wildfire within within a 1km radius of asset X.
 
 **FLOOD_YYYY-MM-DD**: This shows the yearly severity values for observed historical inland floods for a specific asset. 
 For example, Asset X has a Flood historic risk event severity value of [1/0] in [2018]. This means that in [2018], there [was/wasnt] a satellite-observed flood at the location of of asset X.
 
 **CYCLONE_YYYY-MM-DD**: This shows the monthly severity values for observed historical cyclones for a specific asset. 
-For example, Asset X has a Cyclone historic risk event severity value of [1] in [Sep 2017]. This means that there was [one] Category 3, 4 or 5 cyclone observed in September 2017 within a 241km radius of Asset X.
+For example, Asset X has a Cyclone historic risk event severity value of [1] in [Sep 2017]. This means that there was [one] Category 1 or stronger cyclone observed in September 2017 within a 241km radius of Asset X.
+
+**SLR_YYYY-MM-DD**: This shows the monthly observed sea-level rise in meters for a specific asset. 
+For example, Asset X has a SLR historic risk event severity value of [0.2] in [Sep 2017]. This means that there was 0.2m of SLR at the asset relative to a historical baseline. Note that these values can be negative. 
+
+**HEATWAVE_YYYY-MM-DD**: This shows the monthly observed heatwave days for a specific asset. 
+For example, Asset X has a Heatwave historic risk event severity value of [7] in [Sep 2017]. This means that there were 7 heatwave days at the asset during the month of September 2017.
 
 ## Forward looking risk exposure
 
