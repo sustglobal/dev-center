@@ -1,6 +1,6 @@
 ---
 layout: doc
-title: Climate Explorer User Guide - Hazard Views
+title: Visual Summary Hazard Views
 subtitle: This User Guide provides an overview of the Hazard View within the Climate Explorer dashboard, a walkthrough of its functionality (e.g., toggle through hazards), and tips on how to interpret the risk data and graphics. 
 date: 2024-09-27
 lastmod: 2024-09-30
