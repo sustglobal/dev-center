@@ -1,6 +1,6 @@
 ---
 layout: doc
-title: Sust Global CSV Dataset Guide
+title: Reporting CSV Dataset Guide
 subtitle: This section will go through each risk exposure dataset available for download and explain the methodology behind it. We will also show you how to use and interpret the numbers, which includes a written interpretation of the datasets.
 date: 2024-12-05
 lastmod: 2024-12-05
@@ -12,7 +12,7 @@ tags:
 
 ## What are the CSV datasets?
 
-Comma separated value (CSV) files contain the physical climate risk analysis information from Climate Explorer Dashboard product, which can be used for reporting, risk management and strategic planning needs. Using the CSV files are useful if you would like to use the underlying data to create your own graphs or charts for a report or presentation, to undergo further analysis (such as data aggregations, comparisons between assets etc.) or as an input into your Excel models.
+Comma separated value (CSV) files contain the physical climate risk analysis information from Climate Explorer Reporting product, which can be used for reporting, risk management and strategic planning needs. Using the CSV files are useful if you would like to use the underlying data to create your own graphs or charts for a report or presentation, to undergo further analysis (such as data aggregations, comparisons between assets etc.) or as an input into your Excel models.
 
 ## File naming conventions
 
