@@ -1,6 +1,6 @@
 ---
 layout: doc
-title: Sust Global CSV Visual Summary Dataset Guide
+title: Visual Summary CSV Dataset Guide
 subtitle: This section will go through the dataset available for download and explain the methodology behind it. We will also show you how to use and interpret the numbers, which includes a written interpretation of the datasets.
 date: 2024-11-15
 lastmod: 2024-11-22
