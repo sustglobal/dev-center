@@ -64,7 +64,7 @@ To create summarization labels we analyze a representative sample of global poin
 | Hazard                        | Unit                                           | Low Range      | Medium Range    | High Range |
 | -                             | -                                              | -              | -               | -          |
 | Wildfire                      | Probability                                    | 0.0 - 0.000075 | 0.000075 - 0.01 | 0.01 - 1.0 |
-| Inland Flood                  | Probability                                    | 0.0 - 0.01     | 0.01 - 0.05     | 0.05 - 1.0 |
+| Inland and Coastal Flood                  | Probability                                    | 0.0 - 0.01     | 0.01 - 0.05     | 0.05 - 1.0 |
 | Cyclone                       | Probability                                    | 0.0 - 0.01     | 0.01 - 0.05     | 0.05 - 1.0 |
 | Water Stress                  | Score                                          | 0.0 - 0.3      | 0.3 - 0.6       | 0.6 -  1.0 |
 | Heatwave                      | Number of days in year                         | 0 - 30         | 30 - 50         | 50 - 366   |
@@ -103,7 +103,7 @@ To create summarization labels we analyze a representative sample of global poin
 <b>Table 2</b>: Hazard and indicator metadata 
 </p>
 
-
+Note that while the indicator for _flood_potential_ is named _inland_flood_prob_, it includes both inland riverine and coastal flooding from sea-level rise and storm surge. 
 
 ## Regional statistics using polygon processing
 
@@ -115,7 +115,7 @@ By default, geospatial polygons are reduced by a mean statistic.  The following 
 | -              | -                 |
 | Wildfire       | mean              |
 | Cyclone        | max^              |
-| Inland Flood   | mean              |
+| Inland and Coastal Flood   | mean              |
 | Water Stress   | weighted mean^^   |
 | Heatwave       | mean              |
 | Sea Level Rise | max^               |

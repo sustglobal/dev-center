@@ -12,15 +12,15 @@ blocks:
   heading: General
   faqs: 
   - title: What time period does your historic observation dataset cover?
-    content: Our historic observation datasets cover the period from Jan 2010 to Dec 2020.
+    content: Our historic observation datasets cover the period from Jan 2010 to Dec 2022. If you would like data up to present day, or prior to 2010, please contact us. 
   - title: What time period does your forward looking projected outcome dataset cover?
-    content: Our forward looking projected outcomes assess the period from 2023 to 2100.
+    content: Our forward looking projected outcomes assess the period from 2024 to 2100.
   - title: What geographies does your dataset include?
     content: Our capabilities are global. We provide climate scenario analysis over the entirety of the earth’s landmass.
   - title: How does your dataset enable for climate change adaptation?
     content: Our dataset and analytics enable scenario driven analysis for climate change adaptation. Using our API product or the Climate Explorer dashboard, our customers and partners are enabled with asset-level assessments of climate risk exposure from acute and chronic climate related hazards.
   - title: How are are the Low, Medium, and High risk ranges determined for each hazard?
-    content: The ranges are determined based on typical ranges of exposures in areas where our customers assets are typically located.  Based on sampling from within these locations, we arrive at threshold values by giving consideration to what would be considered low, medium and high risk for the specific hazard in question.
+    content: The ranges, defined in the Climate Data Guide, are determined based on typical ranges of exposures in areas where our customers assets are typically located.  Based on sampling from within these locations, we arrive at threshold values by giving consideration to what would be considered low, medium and high risk for the specific hazard in question.
 - block: faq
   heading: Wildfire
   faqs:
@@ -47,9 +47,9 @@ blocks:
   heading: Flooding
   faqs:
   - title: Does historic and projected flooding include both coastal and inland flooding?
-    content: Historic flooding covers inland and coastal flooding. Projected flooding data only covers inland flooding. You can look at the cyclone projections and sea level rise projections as indicators of forward looking coastal flooding.
-  - title: In the user guide, it stated that all climate models for flooding and tropical cyclones run under the High Emissions (SSP5-RCP8.5) pathway scenario, thus all values shown for the Strong Mitigation (SSP1-RCP2.6) and Middle of the Road (SSP2-RCP4.5) scenarios are identical to those of the High Emissions scenario. Can you explain why this is the case?
-    content: We have yet to find reliable representations of inland flooding and cyclone projections for SSP1-RCP26 and SSP2-RCP45 and will update when we have them.
+    content: Both historic and projected flooding cover inland and coastal flooding. Coastal flooding accounts for storm surge as well as sea-level rise.
+  - title: Do you include fluvial (riverine) and pluvial flood risk?
+    content: The inland component of our flood risk model covers only riverine flood risk. We are exploring pluvial flood risk models, so contact us if this is critical.
   - title: The flooding data reports the probability of flooding exceeding 0.5 m - where does the 0.5 meters come from?
     content: It is common for flood models to add a "doorstep" value below which flooding does no damage.  This is to account for the fact that buildings are sometimes raised a small distance above the ground, especially in flood-prone areas, and to account for the fact that a small amount of flooding can normally be contained using simple ad-hoc flood prevention measures like sandbags.  While there is no universally agreed upon value for this "doorstep" threshold, 0.5 meters is commonly used.
 - block: faq
@@ -74,7 +74,5 @@ blocks:
   faqs:
   - title: What does the risk exposure file nomenclature mean (e.g., ubd vs lbd)?
     content: No postfix represents the midpoint value. ubd and lbd represent upper and lower bound values (usually mapped to the 16th and 84th percentiles from the distribution of simulation runs for climate models for the specific hazard), and are indicative of the values for the gray bars in the time series plot.
-  - title: Why do the historic values of a hazard change with each scenario?
-    content: The historic values of a hazard beginning in 2015 are derived from simulation runs across multiple scenarios. There will be minor variability for the historic years (2015-present) across scenarios.
 
 ---

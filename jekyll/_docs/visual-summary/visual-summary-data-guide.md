@@ -1,6 +1,6 @@
 ---
 layout: doc
-title: Sust Global CSV Visual Summary Dataset Guide
+title: Visual Summary CSV Dataset Guide
 subtitle: This section will go through the dataset available for download and explain the methodology behind it. We will also show you how to use and interpret the numbers, which includes a written interpretation of the datasets.
 date: 2024-11-15
 lastmod: 2024-11-22
@@ -29,7 +29,7 @@ Likewise, the data is provided in geojson format for your convenience.
 | TYPE | STRING | User provided asset type (Optional; Default = General) |
 | SCENARIO | STRING | Carbon emissions scenario (ssp245 or ssp585) |
 | HAZARD | STRING | Climate hazard (wildfire, cyclone, flood, heatwave, water_stress, sea_level_rise) |
-| SUMMARY_SCORE_30YR     | FLOAT | In a 30 year window (2024-2055), the maximum risk exposure | 
+| SUMMARY_SCORE_30YR     | FLOAT | In a 30 year window (2024-2054), the maximum risk exposure | 
 | SUMMARY_LABEL_30YR     | STRING | Low/Medium/High label determined by SUMMARY_SCORE_30YR | 
 | SUMMARY_SCORE_15YR     | FLOAT | In a 15 year window (2024-2039), the maximum risk exposure | 
 | SUMMARY_LABEL_15YR     | STRING | Low/Medium/High label determined by SUMMARY_SCORE_15YR | 

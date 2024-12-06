@@ -1,6 +1,6 @@
 ---
 layout: doc
-title: Climate Explorer User Guide - Hazard Views
+title: Visual Summary Hazard Views
 subtitle: This User Guide provides an overview of the Hazard View within the Climate Explorer dashboard, a walkthrough of its functionality (e.g., toggle through hazards), and tips on how to interpret the risk data and graphics. 
 date: 2024-09-27
 lastmod: 2024-09-30
@@ -49,7 +49,7 @@ When viewing hazard exposure, note that the marker legend has changed from the i
 Hazard exposure can be viewed for two different climate scenarios (for greater detail, see [Climate Scenarios](data-guide#climate-scenarios)). By clicking on the respective buttons, the user can toggle between <b>SSP2-RCP4.5</b> which corresponds to a "Middle of the Road" future and <b>SSP5-RCP8.5</b> which corresponds to a "High Emissions" future. The average global warming at 2100 associated with each scenario is 2.4°C and 4.3°C, respectively.
 
 ### Forecast Period
-In addition to toggling between climate scenarios, the user can select between two time-windows of data: <b>15yr</b> and <b>30yr</b>. The <b>15yr</b> window corresponds to the next 15 years (i.e., 2024-2039) with the <b>30yr</b> window showing exposure over the next 30 years (i.e., 2024-2055). 
+In addition to toggling between climate scenarios, the user can select between two time-windows of data: <b>15yr</b> and <b>30yr</b>. The <b>15yr</b> window corresponds to the next 15 years (i.e., 2024-2039) with the <b>30yr</b> window showing exposure over the next 30 years (i.e., 2024-2054). 
 ### Exposure Risk
 The legend for hazard risk color-shading appears at the bottom of the right-hand box. Note, the hazard map is sensitive to the choice of <b>Climate Scenario</b> and <b>Forecast Period</b>. For greater detail on hazard exposure metrics, see the [Data Guide](data-guide).
 

@@ -1,22 +1,18 @@
 ---
 layout: doc
-title: Sust Global CSV Dataset Guide
+title: Reporting CSV Dataset Guide
 subtitle: This section will go through each risk exposure dataset available for download and explain the methodology behind it. We will also show you how to use and interpret the numbers, which includes a written interpretation of the datasets.
-date: 2023-01-01
-lastmod: 2023-08-20
-author: MC
+date: 2024-12-05
+lastmod: 2024-12-05
+author: TB
 tags:
 - csv
 - dataset
 ---
 
-## Before Getting Started
-
- Please note that you must change the sections of text in brackets **[  ]** to suit the specific values, hazards and scenarios you are describing.
-
 ## What are the CSV datasets?
 
-Comma separated value (CSV) files contain the physical climate risk analysis information from Climate Explorer Dashboard product, which can be used for reporting, risk management and strategic planning needs. Using the CSV files are useful if you would like to use the underlying data to create your own graphs or charts for a report or presentation, to undergo further analysis (such as data aggregations, comparisons between assets etc.) or as an input into your Excel models.
+Comma separated value (CSV) files contain the physical climate risk analysis information from Climate Explorer Reporting product, which can be used for reporting, risk management and strategic planning needs. Using the CSV files are useful if you would like to use the underlying data to create your own graphs or charts for a report or presentation, to undergo further analysis (such as data aggregations, comparisons between assets etc.) or as an input into your Excel models.
 
 ## File naming conventions
 
@@ -32,7 +28,7 @@ Here are the descriptions of the naming parameters:
 The naming convention for the historic risk exposure datasets is as follows:
 **sustglobal_asset_his_risk_{dataset_name}.csv**
 
-In these files, each row corresponds to one asset location, and there are individual columns for each month from Jan 2010 to Dec 2020 for Cyclone exposure; each year from 2001 to 2021 for Wildfire; and each year from 2012 to 2021 for Flooding.
+In these files, each row corresponds to one asset location, and there are individual columns for each month from Jan 2010 to Dec 2022 for Cyclone, Heatwave, Sea-Level Rise, Water Stress, and Wildfire exposure. For historical flood risk, the data spans Jan 2012 to April 2022.
 
 #### Interpretation
 The example we are looking at here is called **sustglobal_asset_his_risk_MRTG_demo.csv**
@@ -45,14 +41,20 @@ The example we are looking at here is called **sustglobal_asset_his_risk_MRTG_de
 Fig 14: Historical Risk CSV
 </p>
 
-**M_FIRE_YYYY-MM-DD**: This shows the yearly severity values for observed historical wildfires within 1km of an asset. 
+**WILDFIRE_YYYY-MM-DD**: This shows the yearly severity values for observed historical wildfires within 1km of an asset. 
 For example, Asset X has a Wildfire historic risk event severity value of [1/0] in [2018]. This means that in [2018], there [was/wasnt] a satellite-observed wildfire within within a 1km radius of asset X.
 
 **FLOOD_YYYY-MM-DD**: This shows the yearly severity values for observed historical inland floods for a specific asset. 
 For example, Asset X has a Flood historic risk event severity value of [1/0] in [2018]. This means that in [2018], there [was/wasnt] a satellite-observed flood at the location of of asset X.
 
 **CYCLONE_YYYY-MM-DD**: This shows the monthly severity values for observed historical cyclones for a specific asset. 
-For example, Asset X has a Cyclone historic risk event severity value of [1] in [Sep 2017]. This means that there was [one] Category 3, 4 or 5 cyclone observed in September 2017 within a 241km radius of Asset X.
+For example, Asset X has a Cyclone historic risk event severity value of [1] in [Sep 2017]. This means that there was [one] Category 1 or stronger cyclone observed in September 2017 within a 241km radius of Asset X.
+
+**SLR_YYYY-MM-DD**: This shows the monthly observed sea-level rise in meters for a specific asset. 
+For example, Asset X has a SLR historic risk event severity value of [0.2] in [Sep 2017]. This means that there was 0.2m of SLR at the asset relative to a historical baseline. Note that these values can be negative. 
+
+**HEATWAVE_YYYY-MM-DD**: This shows the monthly observed heatwave days for a specific asset. 
+For example, Asset X has a Heatwave historic risk event severity value of [7] in [Sep 2017]. This means that there were 7 heatwave days at the asset during the month of September 2017.
 
 ## Forward looking risk exposure
 
@@ -137,7 +139,7 @@ Fig 17: forward looking cyclone risk CSV
 </p>
 
 #### Interpretation of YYYY column
-The values in these columns show the [mean] of the projected annual cyclone risk for a specific asset in a particular year under the [Strong Mitigation] scenario. For example, Asset X has a Tropical Cyclone risk projection value of [0.5] in [2045]. This means that in [2045], we project a [50]% probability of at least one hit by a category 3/4/5 cyclone within a 241km radius of the asset under the [Strong Mitigation] scenario.
+The values in these columns show the [mean] of the projected annual cyclone risk for a specific asset in a particular year under the [Strong Mitigation] scenario. For example, Asset X has a Tropical Cyclone risk projection value of [0.5] in [2045]. This means that in [2045], we project a [50]% probability of at least one hit by a category 3/4/5 cyclone within a 24 radius of the asset under the [Strong Mitigation] scenario.
 
 ### Forward looking unified wildfire datasets
 This section will look at CSVs with the Reporting Data Type {**reporting_data_type**} of **wildfire_unified_prob**: **sustglobal_asset_fwd_wildfire_unified_prob_risk_{dataset_name}_{ScenarioID}.csv**
@@ -158,7 +160,7 @@ Fig 19A: forward looking Unified wildfire risk CSV
 #### Interpretation of YYYY column
 The values in these columns show the median projected annual Wildfire Susceptibility values for a specific asset under the [Strong Mitigation] scenario.
 
-For example, Asset X has a wildfire probability risk projection value of [0.05] in [Jan, 2023]. This means that in the year [2023], we project a [5]% probability of a wildfire occurring within 1km of the asset under the [Strong Mitigation] scenario.
+For example, Asset X has a wildfire probability risk projection value of [0.05] in [Jan, 2023]. This means that in the year [2023], we project a [5]% probability of a wildfire occurring at the asset under the [Strong Mitigation] scenario.
 
 ### Forward looking flood risk datasets
 

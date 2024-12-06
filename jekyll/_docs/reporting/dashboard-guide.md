@@ -1,10 +1,10 @@
 ---
 layout: doc
-title: Dashboard User Guide
-subtitle: The Climate Explorer dashboard is intended as a simple view on asset and regional risk exposure. It showcases projected and historic risk exposure, Value at Risk, and fundamental climate variables.
-date: 2023-01-01
-lastmod: 2023-08-20
-author: MC
+title: Reporting User Guide
+subtitle: The Climate Explorer Reporting dashboard is intended as a simple view on asset and regional risk exposure. It showcases projected and historic risk exposure, Value at Risk, and fundamental climate variables.
+date: 2024-12-06
+lastmod: 2024-12-06
+author: TB
 tags:
 - dashboard
 - risk
@@ -13,7 +13,7 @@ tags:
 
 ## Scenario-based Exposure Summaries
 
-The top-left view on the Climate Explorer dashboard provides an overview of asset-level risk exposure.  It has controls to select Climate Scenario, Historic Hazard, and Projected Hazard, and it includes 4 graphs:
+The top-left view on the Reporting dashboard provides an overview of asset-level risk exposure.  It has controls to select Climate Scenario, Historic Hazard, and Projected Hazard, and it includes 4 graphs:
 - Asset Map
 - Riskiest Assets
 - Historic Risk Event Occurrence
