@@ -24,6 +24,26 @@ Currently, Sust Global provides two metrics of financial risk: (1) <i>Structural
 
 2. <i>Business Interruption</i> - Days per year in which business cannot be conducted due to a variety of direct (e.g., damage to asset structure) and indirect (e.g., damage to nearby energy grid or transportation networks) impacts. Business interruption estimates are available for wildfires, floods (both coastal and inland), tropical cyclones, and heatwaves.
 
+### Economic Zone Coverage
+
+When opening the app, only some countries have shading. While assets can be analyzed in every country, shading provides more contextual information about surrounding zones.
+
+Supported countries:
+
+- United States of America
+- Canada
+- United Kingdom
+- India
+- Australia
+- Brazil
+- France
+- Germany
+- Spain
+- The Netherlands
+- Belgium
+- Sweden
+- Japan
+
 ## How to use Visual Summary
 
 ### Uploading a portfolio
