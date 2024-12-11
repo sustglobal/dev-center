@@ -1,20 +1,26 @@
-- title: Introduction
-  icon: square-3-stack-3d
-  description: Get started with Climate Explorer by following these user guides. Great for first time users.
+- title: Reporting
+  icon: book-open
+  description: Get started with Climate Explorer's Reporting Dashboard by following these user guides. 
   docs:
   - user-guide
   - dashboard-guide
-  - ce-viewer-guide
   - dataset-guide
   - api-guide
+  - data-guide
   - search
-  - visual-summary-user-guide
 
-- title: Data Guide
+- title: Visual Summary
+  icon: map
+  description: Check out our visual summary workflow.
+  docs:
+  - visual-summary-user-guide
+  - visual-summary-data-guide
+  - ce-viewer-guide
+
+- title: Hazards
   icon: book-open
   description: 'Learn more about our Climate Analytics data; wildfire, flood, cyclones, heatwaves, sea level rise, and water stress.'
   docs:
-  - data-guide
   - wildfire
   - flood
   - cyclones
@@ -22,6 +28,5 @@
   - sea-level-rise
   - water-stress
   - value-at-risk
-  - visual-summary-data-guide
   
  
