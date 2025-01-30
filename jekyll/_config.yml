@@ -62,3 +62,4 @@ defaults:
 
 keep_files:
 - py
+- compose

@@ -1,0 +1,588 @@
+openapi: 3.1.0
+info:
+  title: Compositions API
+  description: |-
+    Geospatial compositions the process by which user defined functions (UDFs) are applied to geospatial and non-geospatial datasets to create new geospatial datasets. The UDFs can be simple operations like vector level addition or multiplication across layers or more complex like inference from an AI model. The input data can be raster or vector. 
+
+    #### Example Workflow
+
+      First, add a new vector. This vector will contain the data to perform operations on. In the case of this example, it's wildfire loss data.
+      ```
+      curl --location 'https://explorer.sustglobal.io/api/compositions/vector' \
+           --header 'X-SustGlobal-Project: compose-demo' \
+           --header 'X-SustGlobal-APIKey: ••••••'
+           --header 'Content-Type: application/json' \
+           --data '{
+               "name": "wildfire_loss",
+               "geojson": {"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[-81.688246,40.999109],[-81.688491,40.988588],[-81.6818,40.988571]]]},"properties":{"loss_wildfire_bsln":0.00001,"loss_wildfire_2050":0.00004,}},
+           }'
+      ```
+
+      Next, add a new UDF. This UDF takes the wildfire loss in 2050 and subtracts the baseline wildfire loss. Note UDFs are written in JQ.
+      ```
+      curl --location 'https://explorer.sustglobal.io/api/compositions/udf' \
+           --header 'X-SustGlobal-Project: compose-demo' \
+           --header 'X-SustGlobal-APIKey: ••••••'
+           --header 'Content-Type: application/json' \
+           --data '{
+               "name": "wildfire_loss_delta",
+               "equation": {
+                "inputLayers": [
+                  "wildfire_loss"
+                ],
+                "operation": ".features.[].properties
+                              | if .loss_wildfire_bsln == 0 then nan else
+                                  (.loss_wildfire_2050 - .loss_wildfire_bsln) / .loss_wildfire_bsln 
+                                 end
+                              | [., 0.0] | max
+                              | [., 2.0] | min"
+               }
+           }'
+      ```
+
+      The return value will look something like this:
+      ```
+      {
+        "id": "4444444444",
+        "name": "wildfire_loss_delta",
+        "createDate": "2025-01-17",
+        "updateDate": "2025-01-17"
+      }
+      ```
+      Activate your UDF once you've created it. This will make the result vector available in your project. (Use the ID from the previous return value in the new url)
+      ```
+      curl --location 'https://explorer.sustglobal.io/api/compositions/udf/4444444444/activate' \
+           --header 'X-SustGlobal-Project: compose-demo' \
+           --header 'X-SustGlobal-APIKey: ••••••'
+      ```
+
+      The return value will look something like this:
+      ```
+      {
+        "id": "999999999",
+        "name": "wildfire_loss_delta",
+        "createDate": "2024-03-20",
+        "updateDate": "2024-03-21",
+        "status": "available"
+      }
+      ```
+
+      Congrats! You can now use your new vector on any portfolios in your project.
+      ```
+      curl --location 'https://explorer.sustglobal.io/api/compositions/vector/999999999/apply?portfolio=test-portfolio' \
+           --header 'X-SustGlobal-Project: compose-demo' \
+           --header 'X-SustGlobal-APIKey: ••••••'
+      ```
+
+  contact:
+    name: Sust Global
+    email: support@sustglobal.com
+  version: beta
+externalDocs:
+  description: Find out more about Sust Global
+  url: https://developers.sustglobal.com
+servers:
+  - url: explorer.sustglobal.io/api/compositions
+tags:
+  - name: vector
+    description: Manage Vector Layers
+  - name: udf
+    description: Create User-Defined Functions
+  - name: admin
+    description: Administrate Compositions
+paths:
+  /vector:
+    get:
+      tags:
+        - vector
+      summary: Get all vectors
+      description: Returns full list of vectors
+      operationId: getAllVectors
+      parameters:
+        - name: X-SustGlobal-Project
+          in: header
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items: 
+                  $ref: '#/components/schemas/VectorSummary'
+      security:
+        - sustglobal_apikey: []
+    post:
+      tags:
+        - vector
+      summary: Add a new vector
+      description: Add a new vector to the compositions api
+      operationId: addVector
+      parameters:
+        - name: X-SustGlobal-Project
+          in: header
+          schema:
+            type: string
+          required: true
+      requestBody:
+        description: Create a new vector
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/LockedVectorUpload'
+            examples:
+              wildfire:
+                value:
+                  name: Wildfire Damage
+                  geojson: { "type": "Feature", "properties": { "lat": "37.82462", "lng": "-92.20766", "labels": { "label:fid": 2037, "label:LSAD": "06", "label:NAME": "Pulaski", "label:ALAND": 1417014581, "label:GEOID": "29169", "label:AWATER": 11312724, "label:STUSPS": "MO", "label:STATEFP": "29", "label:AFFGEOID": "0500000US29169", "label:COUNTYFP": "169", "label:COUNTYNS": "00758539", "label:NAMELSAD": "Pulaski County", "label:STATE_NAME": "Missouri" }, "scenario_analytics": { "ssp585": { "wildfire": { "summary_score_30yr": 0, "summary_label_30yr": "LOW", "summary_score_15yr": 0, "summary_label_15yr": "LOW", "indicator_baseline": 0, "indicator_baseline_lbd": 0, "indicator_baseline_ubd": 0, "indicator_2030": 0, "indicator_2030_lbd": 0, "indicator_2030_ubd": 0, "indicator_2050": 0, "indicator_2050_lbd": 0, "indicator_2050_ubd": 0, "indicator_2080": 0, "indicator_2080_lbd": 0, "indicator_2080_ubd": 0, "structural_damage_baseline": 0, "structural_damage_baseline_lbd": 0, "structural_damage_baseline_ubd": 0, "structural_damage_2030": 0, "structural_damage_2030_lbd": 0, "structural_damage_2030_ubd": 0, "structural_damage_2050": 0, "structural_damage_2050_lbd": 0, "structural_damage_2050_ubd": 0, "structural_damage_2080": 0, "structural_damage_2080_lbd": 0, "structural_damage_2080_ubd": 0, "business_interruption_baseline": 0, "business_interruption_baseline_lbd": 0, "business_interruption_baseline_ubd": 0, "business_interruption_2030": 0, "business_interruption_2030_lbd": 0, "business_interruption_2030_ubd": 0, "business_interruption_2050": 0, "business_interruption_2050_lbd": 0, "business_interruption_2050_ubd": 0, "business_interruption_2080": 0, "business_interruption_2080_lbd": 0, "business_interruption_2080_ubd": 0 } } } } }
+      responses:
+        '201':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VectorSummary'
+        '400':
+          description: Malformed request
+        '422':
+          description: Validation exception
+      security:
+        - sustglobal_apikey: []
+    put:
+      tags:
+        - admin
+      summary: Update an existing vector
+      description: Update an existing vector by id
+      operationId: updateVector
+      parameters:
+        - name: X-SustGlobal-Project
+          in: header
+          schema:
+            type: string
+          required: true
+      requestBody:
+        description: Update an existent vector
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/VectorUpload'
+        required: true
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VectorSummary'
+        '400':
+          description: Malformed request
+        '404':
+          description: Vector not found
+        '422':
+          description: Validation exception
+      security:
+        - sustglobal_apikey: []
+  /vector/{vectorId}:
+    get:
+      tags:
+        - admin
+      summary: Find vector by ID
+      description: Returns a single vector
+      operationId: getVectorById
+      parameters:
+        - name: X-SustGlobal-Project
+          in: header
+          schema:
+            type: string
+          required: true
+        - name: vectorId
+          in: path
+          description: ID of vector to return
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Vector'
+        '404':
+          description: Vector not found
+      security:
+        - sustglobal_apikey: []
+    delete:
+      tags:
+        - admin
+      summary: Delete a vector
+      description: Delete a single vector from the compositions api
+      operationId: deleteVector
+      parameters:
+        - name: X-SustGlobal-Project
+          in: header
+          schema:
+            type: string
+          required: true
+        - name: vectorId
+          in: path
+          description: ID of vector to delete
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Successful operation
+        '404':
+          description: Vector not found
+      security:
+        - sustglobal_apikey: []
+  /vector/{vectorId}/apply:
+    get:
+      tags:
+        - vector
+      summary: Apply a vector
+      description: Apply a vector layer to a portfolio of assets
+      operationId: applyVectorById
+      parameters:
+        - name: X-SustGlobal-Project
+          in: header
+          required: true
+          schema:
+            type: string
+        - name: vectorId
+          in: path
+          description: ID of vector to apply
+          required: true
+          schema:
+            type: string
+        - name: portfolio
+          in: query
+          description: Portfolio name
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VectorResult'
+        '404':
+          description: Vector not found
+      security:
+        - sustglobal_apikey: []
+  /udf:
+    get:
+      tags:
+        - udf
+      summary: Get all UDFs
+      description: Returns full list of user-defined functions
+      operationId: getAllUdfs
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items: 
+                  $ref: '#/components/schemas/UdfSummary'
+      security:
+        - sustglobal_apikey: []
+    post:
+      tags:
+        - udf
+      summary: Add a new UDF
+      description: Add a new user-defined function to the compositions api
+      operationId: addUdf
+      requestBody:
+        description: Create a new UDF
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LockedUdfUpload'
+            examples:
+                sum:
+                  value:
+                    name: Sum Physical Loss
+                    equation:
+                      inputLayers: [ county_level_risks ]
+                      operation: '.loss_flood_bsln + .loss_wildfire_bsln + .loss_cyclone_bsln'
+      responses:
+        '201':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UdfSummary'
+        '400':
+          description: Malformed request
+        '422':
+          description: Validation exception
+      security:
+        - sustglobal_apikey: []
+    put:
+      tags:
+        - admin
+      summary: Update an existing UDF
+      description: Update an existing user-defined function by id
+      operationId: updateUdf
+      requestBody:
+        description: Update an existent UDF
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UdfUpload'
+        required: true
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VectorSummary'
+        '400':
+          description: Malformed request
+        '404':
+          description: UDF not found
+        '422':
+          description: Validation exception
+      security:
+        - sustglobal_apikey: []
+  /udf/{udfId}:
+    get:
+      tags:
+        - admin
+      summary: Find a UDF by ID
+      description: Returns a single user-defined function 
+      operationId: getUdfById
+      parameters:
+        - name: udfId
+          in: path
+          description: ID of UDF to return
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Udf'
+        '404':
+          description: UDF not found
+      security:
+        - sustglobal_apikey: []
+    delete:
+      tags:
+        - admin
+      summary: Delete a UDF
+      description: Delete a single user-defined function from the compositions api
+      operationId: deleteUdf
+      parameters:
+        - name: udfId
+          in: path
+          description: ID of UDF to delete
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Successful operation
+        '404':
+          description: UDF not found
+      security:
+        - sustglobal_apikey: []
+  /udf/{udfId}/activate:
+    get:
+      tags:
+        - udf
+      summary: Run a UDF
+      description: Runs a single user-defined function, returns resulting layer
+      operationId: runUdfById
+      parameters:
+        - name: udfId
+          in: path
+          description: ID of UDF to run
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VectorSummary'
+        '404':
+          description: UDF not found
+      security:
+        - sustglobal_apikey: []
+components:
+  schemas:
+    Vector:
+      required:
+        - name
+      type: object
+      properties:
+        id:
+          type: string
+          examples: [999999999, 777777777]
+        name:
+          type: string
+          examples: [Wildfire Damage, GDP]
+        createDate:
+          type: string
+          format: date
+          examples: ['2024-03-20', '2024-09-17']
+        updateDate:
+          type: string
+          format: date
+          examples: ['2024-03-21', '2024-09-17']
+        status:
+          type: string
+          enum:
+            - available
+            - pending
+        geojson:
+          type: string
+          examples: [{}]
+    VectorSummary:
+      required:
+        - name
+      type: object
+      properties:
+        id:
+          type: string
+          examples: [999999999, 777777777]
+        name:
+          type: string
+          examples: [Wildfire Damage, GDP]
+        createDate:
+          type: string
+          format: date
+          examples: ['2024-03-20', '2024-09-17']
+        updateDate:
+          type: string
+          format: date
+          examples: ['2024-03-21', '2024-09-17']
+        status:
+          type: string
+          enum:
+            - available
+            - pending
+    VectorResult:
+      required:
+        - name
+      type: object
+      properties:
+        name:
+          type: string
+          examples: [GDP x Wildfire Risk]
+        csv:
+          type: string
+          format: binary
+          examples: [...]
+    LockedVectorUpload:
+      type: object
+      required:
+        - geojson
+        - name
+      schema:
+        $ref: '#/components/schemas/VectorUpload'
+    VectorUpload:
+      type: object
+      properties:
+        geojson:
+          type: string
+          format: binary
+        name:
+          type: string
+    Udf:
+      required:
+        - name
+      type: object
+      properties:
+        id:
+          type: string
+          examples: [999999999]
+        name:
+          type: string
+          examples: [Wildfire Damage x GDP]
+        createDate:
+          type: string
+          format: date
+          examples: ['2024-09-17']
+        updateDate:
+          type: string
+          format: date
+          examples: ['2024-09-17']
+        equation:
+          type: object
+          properties:
+            inputLayers:
+              type: array
+              items:
+                examples: [GDP, Wildfire Damage]
+            outputLayer:
+              type: string
+              examples: [Wildfire Damage x GDP]
+            operation:
+              type: string
+              examples: [Wildfire Damage / GDP]
+            
+    UdfSummary:
+      required:
+        - name
+      type: object
+      properties:
+        id:
+          type: string
+          examples: [5555555555]
+        name:
+          type: string
+          examples: [Sum Physical Loss]
+        createDate:
+          type: string
+          format: date
+          examples: ['2025-01-17']
+        updateDate:
+          type: string
+          format: date
+          examples: ['2025-01-17']
+    LockedUdfUpload:
+      type: object
+      required:
+        - name
+        - equation
+      schema:
+        $ref: '#/components/schemas/UdfUpload'
+    UdfUpload:
+      type: object
+      properties:
+        name:
+          type: string
+        equation:
+          type: object
+          properties:
+            inputLayers:
+              type: array
+              items:
+                examples: [GDP, Wildfire Damage]
+            outputLayer:
+              type: string
+              examples: [Wildfire Damage x GDP]
+            operation:
+              type: string
+              examples: ['.loss_flood_bsln + .loss_wildfire_bsln + .loss_cyclone_bsln']
+  securitySchemes:
+    sustglobal_apikey:
+      type: apiKey
+      name: X-SustGlobal-APIKey
+      in: header

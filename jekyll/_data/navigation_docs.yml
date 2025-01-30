@@ -5,9 +5,14 @@
   - user-guide
   - dashboard-guide
   - dataset-guide
-  - api-guide
   - data-guide
   - search
+  - api-guide
+  external:
+  - src: https://explorer.sustglobal.io/redoc/
+    title: API Redoc
+  - src: https://developers.sustglobal.com/py
+    title: Python Client
 
 - title: Visual Summary
   icon: map

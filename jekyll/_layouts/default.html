@@ -25,6 +25,12 @@
                           {% if doc_url == page.url %} text-sky-500 before:bg-sky-500{% else %} text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-900 hover:before:block{% endif %}" href="{{ p.url | relative_url }}">{{ p.title }}</a>
                         </li>
                       {% endfor %}
+                      {% for ext in section.external %}
+                      <li class="relative">
+                        <a class="block w-full pl-3.5 before:pointer-events-none before:absolute before:left-0.5 before:top-1/2 before:h-0.5 before:w-1.5 before:-translate-y-1/2 text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-900 hover:before:block"
+                           href="{{ ext.src }}">{{ ext.title }}</a>
+                      </li>
+                      {% endfor %}
                     </ul>
                   {% else %}
                     {% assign doc_url = section | prepend:"/" %}
@@ -52,7 +58,6 @@
     </div>  
     
     {% include footer.html %}
-    {% include nav-docs.html %}
 
     </body>
 
