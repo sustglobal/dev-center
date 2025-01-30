@@ -17,8 +17,8 @@ menus:
     url: "https://www.sustglobal.com/privacy/"
 - heading: Get in Touch
   links:
-  - text: info@sustglobal.com 
-    url: "mailto:info@sustglobal.com"
+  - text: support@sustglobal.com 
+    url: "mailto:support@sustglobal.com"
   - text: "US: +1 479 847 1813"
     url: "tel:+1%479-847-1813"
   - text: "UK: +44 2033 768 384"
