@@ -62,4 +62,4 @@ defaults:
 
 keep_files:
 - py
-- compose
+- compositions/api
