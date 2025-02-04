@@ -3,7 +3,7 @@
 title: Sust Global Developer Center
 description: Home of Sust Global's developer tools, guides and reference documentation.
 lang: en
-logo: /uploads/Sust_Logo.png
+logo: /uploads/logo_black.crop.png
 logo_mark: /uploads/Sust_Icon.png
 permalink: "/:title/"
 
@@ -62,4 +62,4 @@ defaults:
 
 keep_files:
 - py
-- compose
+- compositions/api

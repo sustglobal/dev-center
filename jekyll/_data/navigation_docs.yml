@@ -9,8 +9,10 @@
   - search
   - api-guide
   external:
-  - src: https://explorer.sustglobal.io/redoc/
-    title: API Redoc
+  - src: https://explorer.sustglobal.io/redoc
+    title: Climate Explorer OpenAPI Spec
+  - src: https://developers.sustglobal.com/compositions/api
+    title: Compositions OpenAPI Spec
   - src: https://developers.sustglobal.com/py
     title: Python Client
 
