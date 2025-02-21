@@ -5,7 +5,7 @@
       "category" : "",
       "tags"     : "",
       "url"      : "/apps",
-      "date"     : "2025-02-04 11:36:20 -0700"
+      "date"     : "2025-02-21 11:44:49 -0700"
     } ,
   
     {
@@ -13,7 +13,7 @@
       "category" : "",
       "tags"     : "",
       "url"      : "/coming-soon",
-      "date"     : "2025-02-04 11:36:20 -0700"
+      "date"     : "2025-02-21 11:44:49 -0700"
     } ,
   
     {
@@ -21,23 +21,7 @@
       "category" : "",
       "tags"     : "",
       "url"      : "/data-integrations",
-      "date"     : "2025-02-04 11:36:20 -0700"
-    } ,
-  
-    {
-      "title"    : "Search User Guide",
-      "category" : "",
-      "tags"     : "search, api, quickstart",
-      "url"      : "/search",
-      "date"     : "2022-12-14 00:00:00 -0700"
-    } ,
-  
-    {
-      "title"    : "SFDR Compliance",
-      "category" : "",
-      "tags"     : "compliance, hazard",
-      "url"      : "/sfdr-compliance",
-      "date"     : "2022-12-14 00:00:00 -0700"
+      "date"     : "2025-02-21 11:44:49 -0700"
     } ,
   
     {
@@ -117,7 +101,47 @@
       "category" : "",
       "tags"     : "",
       "url"      : "/snowflake",
-      "date"     : "2025-02-04 11:36:20 -0700"
+      "date"     : "2025-02-21 11:44:49 -0700"
+    } ,
+  
+    {
+      "title"    : "Zonal Climate Risk Statistics on Administrative Boundaries",
+      "category" : "",
+      "tags"     : "data, yearly",
+      "url"      : "/zonal-climate-stats",
+      "date"     : "2024-06-05 00:00:00 -0600"
+    } ,
+  
+    {
+      "title"    : "Climate Modeling",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/introduction",
+      "date"     : "2025-02-21 11:44:49 -0700"
+    } ,
+  
+    {
+      "title"    : "FAQ",
+      "category" : "",
+      "tags"     : "faq, wildfire, flood, questions",
+      "url"      : "/faq",
+      "date"     : "2025-02-21 11:44:49 -0700"
+    } ,
+  
+    {
+      "title"    : "Search User Guide",
+      "category" : "",
+      "tags"     : "search, api, quickstart",
+      "url"      : "/search",
+      "date"     : "2022-12-14 00:00:00 -0700"
+    } ,
+  
+    {
+      "title"    : "SFDR Compliance",
+      "category" : "",
+      "tags"     : "compliance, hazard",
+      "url"      : "/sfdr-compliance",
+      "date"     : "2022-12-14 00:00:00 -0700"
     } ,
   
     {
@@ -153,51 +177,11 @@
     } ,
   
     {
-      "title"    : "Zonal Climate Risk Statistics on Administrative Boundaries",
-      "category" : "",
-      "tags"     : "data, yearly",
-      "url"      : "/zonal-climate-stats",
-      "date"     : "2024-06-05 00:00:00 -0600"
-    } ,
-  
-    {
-      "title"    : "Climate Modeling",
-      "category" : "",
-      "tags"     : "",
-      "url"      : "/introduction",
-      "date"     : "2025-02-04 11:36:20 -0700"
-    } ,
-  
-    {
-      "title"    : "FAQ",
-      "category" : "",
-      "tags"     : "faq, wildfire, flood, questions",
-      "url"      : "/faq",
-      "date"     : "2025-02-04 11:36:20 -0700"
-    } ,
-  
-    {
       "title"    : "Visual Summary Hazard Views",
       "category" : "",
       "tags"     : "dashboard, risk, exposure",
       "url"      : "/ce-viewer-guide",
       "date"     : "2024-09-27 00:00:00 -0600"
-    } ,
-  
-    {
-      "title"    : "Visual Summary CSV Dataset Guide",
-      "category" : "",
-      "tags"     : "csv, dataset, visual summary",
-      "url"      : "/visual-summary-data-guide",
-      "date"     : "2024-11-15 00:00:00 -0700"
-    } ,
-  
-    {
-      "title"    : "Visual Summary User Guide",
-      "category" : "",
-      "tags"     : "start, intro, quickstart, visual summary, walkthrough",
-      "url"      : "/visual-summary-user-guide",
-      "date"     : "2024-11-15 00:00:00 -0700"
     } ,
   
     {
@@ -214,6 +198,30 @@
       "tags"     : "dashboard, risk, exposure",
       "url"      : "/dashboard-guide",
       "date"     : "2024-12-06 00:00:00 -0700"
+    } ,
+  
+    {
+      "title"    : "Product Updates",
+      "category" : "",
+      "tags"     : "updates",
+      "url"      : "/updates",
+      "date"     : "2025-02-21 11:44:49 -0700"
+    } ,
+  
+    {
+      "title"    : "Visual Summary CSV Dataset Guide",
+      "category" : "",
+      "tags"     : "csv, dataset, visual summary",
+      "url"      : "/visual-summary-data-guide",
+      "date"     : "2024-11-15 00:00:00 -0700"
+    } ,
+  
+    {
+      "title"    : "Visual Summary User Guide",
+      "category" : "",
+      "tags"     : "start, intro, quickstart, visual summary, walkthrough",
+      "url"      : "/visual-summary-user-guide",
+      "date"     : "2024-11-15 00:00:00 -0700"
     } 
   
 ]
