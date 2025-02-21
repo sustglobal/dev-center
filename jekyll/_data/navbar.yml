@@ -10,6 +10,9 @@
   - text: Data Integrations
     url: "/data-integrations"
     icon: code-bracket-square
+  - text: Product Updates
+    icon: rocket-launch
+    url: "/updates"
   - text: FAQ
     url: "/faq"
     icon: question-mark-circle
