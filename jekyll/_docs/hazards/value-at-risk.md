@@ -3,8 +3,8 @@ layout: doc
 title: Financial Risk Analysis
 subtitle: Sust Global is dedicated to providing asset managers with tools that assess and mitigate the financial risks associated with climate change. As climate-related hazards such as floods, wildfires, cyclones, and heatwaves increase in frequency and severity, it becomes crucial to quantify the potential losses for businesses and assets. Sust Global's financial impact and business interruption models are designed to address this need, quantifying the potential losses from these hazards through a framework that integrates hazard, exposure, and vulnerability.
 date: 2023-01-01
-lastmod: 2024-09-09
-author: MC
+lastmod: 2025-05-21
+author: TB
 tags:
 - data
 - financial risk
