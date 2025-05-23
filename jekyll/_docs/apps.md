@@ -57,6 +57,11 @@ blocks:
         button:
           text: View
           url: /visual-summary-data-guide
+      - name: Multimodal Guide
+        description: The section will go through the Multimodal feature of Visual Summary, that enables users to explore datasets that complement Sust Global's core climate risk and financial impact datasets. These complementary datasets span socio-demographic, economic, resilience, biodiversity, and other physical risks.
+        button:
+          text: View
+          url: /visual-summary-multimodal-guide
   - title: Nature Capital
     description: Learn more about Sust Global's Nature Capital dashboard!
     docs:
