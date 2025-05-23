@@ -44,4 +44,4 @@ Here we provide county-level visualization and download access to some of the da
 | Avalanche              | annual frequency           | U.S.                | [FEMA National Risk Index](https://hazards.fema.gov/nri/)                                                                                                                   |
 
 ## Multimodal Model Integration
-We support the development of customized multimodal modeling workflows tailored to your target variable. These workflows integrate the datasets listed above, our core climate modeling suite, and additional proprietary inputs and model architectures. Contact us to learn more.
+We support the development of customized [multimodal modeling workflows](https://www.sustglobal.com/insights/populous-unpacking-the-geospatial-dimension-for-multimodal-insights) tailored to your target variable. These workflows integrate the datasets listed above, our core climate modeling suite, and additional proprietary inputs and model architectures. Contact us to learn more.
