@@ -710,38 +710,261 @@
 <p>Here we provide <strong>county-level</strong> visualization and download access to some of the datasets used in our Populous framework. Many demographic variables listed here are available for specific years, as well as for short-term (1-year) and long-term (decade) changes. Higher resolution versions and additional historical years are available upon request.</p>
 
 <h2 id="data-dictionary">Data Dictionary</h2>
-<p>| Dataset                  | Summary Description | Units                      | Refresh Rate | Geographic Coverage | Source |
-|————————–|———————|—————————-|————–|———————|——–|
-| Population               | total population                    | count                      | annual       | U.S.                | <a href="https://www.census.gov">U.S. Census</a> |
-| GDP                      | gross domestic product                    | USD                        | annual       | U.S.                | <a href="https://www.bea.gov">U.S. Bureau of Economic Analysis</a> |
-| Median Income            | median household income                    | USD                        | annual       | U.S.                | <a href="https://www.census.gov">U.S. Census</a> |
-| Poverty Rate             | percent living below poverty line                    | percent                    | annual       | U.S.                | <a href="https://www.census.gov">U.S. Census</a> |
-| College Education        | percent of population with bachelors or higher degree                    | %                          | annual       | U.S.                | <a href="https://www.census.gov">U.S. Census</a> |
-| Commute Time             | average commute time                    | minutes                    | annual       | U.S.                | <a href="https://www.census.gov">U.S. Census</a> |
-| Total Housing Units      | total residential units                    | count                      | annual       | U.S.                | <a href="https://www.census.gov">U.S. Census</a> |
-| Home Construction Year   | median residential construction year                    | year                       | annual       | U.S.                | <a href="https://www.census.gov">U.S. Census</a> |
-| Vacancy Rate             | residential vacancy rate                    | rate                       | annual       | U.S.                | <a href="https://www.census.gov">U.S. Census</a> |
-| Insurance Premiums       | median residential insurance premium                    | USD                        | annual       | U.S.                | <a href="https://www.nber.org/system/files/working_papers/w32579/w32579.pdf">Keys and Mulder 2024</a> |
-| Insurance Nonrenewals    | residential insurance nonrenewal rate                    | rate                       | annual       | U.S.                | <a href="https://www.budget.senate.gov/imo/media/doc/next_to_fall_the_climate-driven_insurance_crisis_is_here__and_getting_worse.pdf">U.S. Senate Budget Committee</a> |
-| Social Resilience        | resilience based on multiple population attributes                    | score [0 to 1]             | infrequent       | U.S.                | <a href="https://sc.edu/study/colleges_schools/artsandsciences/centers_and_institutes/hvri/data_and_resources/bric/index.php"><code class="language-plaintext highlighter-rouge">Baseline Resilience Indicators for Communities</code></a> |
-| Economic Resilience      | resilience based on population financial well-being                    | score [0 to 1]             | infrequent       | U.S.                | <a href="https://sc.edu/study/colleges_schools/artsandsciences/centers_and_institutes/hvri/data_and_resources/bric/index.php"><code class="language-plaintext highlighter-rouge">Baseline Resilience Indicators for Communities</code></a> |
-| Infrastructure Resilience| resilience based on built environment                    | score [0 to 1]             | infrequent       | U.S.                | <a href="https://sc.edu/study/colleges_schools/artsandsciences/centers_and_institutes/hvri/data_and_resources/bric/index.php"><code class="language-plaintext highlighter-rouge">Baseline Resilience Indicators for Communities</code></a> |
-| Institutional Resilience | resilience based on governance and disaster preparedness                    | score [0 to 1]             | infrequent       | U.S.                | <a href="https://sc.edu/study/colleges_schools/artsandsciences/centers_and_institutes/hvri/data_and_resources/bric/index.php"><code class="language-plaintext highlighter-rouge">Baseline Resilience Indicators for Communities</code></a> |
-| Community Resilience     | resilience based on social connectivity                    | score [0 to 1]             | infrequent       | U.S.                | <a href="https://sc.edu/study/colleges_schools/artsandsciences/centers_and_institutes/hvri/data_and_resources/bric/index.php"><code class="language-plaintext highlighter-rouge">Baseline Resilience Indicators for Communities</code></a> |
-| Environmental Resilience | resilience based on natural resources and conditions                    | score [0 to 1]             | infrequent       | U.S.                | <a href="https://sc.edu/study/colleges_schools/artsandsciences/centers_and_institutes/hvri/data_and_resources/bric/index.php"><code class="language-plaintext highlighter-rouge">Baseline Resilience Indicators for Communities</code></a> |
-| Total Resilience         | sum of six resilience scores                    | score [0 to 6]             | infrequent       | U.S.                | <a href="https://sc.edu/study/colleges_schools/artsandsciences/centers_and_institutes/hvri/data_and_resources/bric/index.php"><code class="language-plaintext highlighter-rouge">Baseline Resilience Indicators for Communities</code></a> |
-| Biodiversity             |  priority areas for biodiversity conservation                   | score [0 to 100]           | infrequent       | Global              | <a href="https://unbiodiversitylab.org/en/about/">UN Biodiversity Lab</a> |
-| Earthquake              |  seismic risk                   | peak ground acceleration   | static       | Global              | <a href="https://www.globalquakemodel.org/product/global-seismic-hazard-map">Global Earthquake Model</a> |
-| Subsidence              | subsidence rate                    | mm/year                    | infrequent       | Global              | <a href="https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2023GL104497">Davydzenka et al. 2024, Colorado School of Mines</a> |
-| Hail                   | days with severe (&gt;1.0”) hail risk                   | days/year                  | annual       | U.S.                | <a href="https://www.spc.noaa.gov">NOAA Storm Prediction Center</a> |
-| Tornadoes              | days with severe (EF1+) tornado risk                    | days/year                  | annual       | U.S.                | <a href="https://www.spc.noaa.gov">NOAA Storm Prediction Center</a> |
-| Severe Wind            | days with severe (&gt;33m/s) non-hurricane wind risk                   | days/year                  | annual       | U.S.                | <a href="https://www.spc.noaa.gov">NOAA Storm Prediction Center</a> |
-| Severe Thunderstorms   | days with severe convective storms risk                    | days/year                  | annual       | U.S.                | <a href="https://www.spc.noaa.gov">NOAA Storm Prediction Center</a> |
-| Landslide              | landslide risk                   | annual frequency           | annual       | U.S.                | <a href="https://hazards.fema.gov/nri/">FEMA National Risk Index</a> |
-| Coldwave               | consecutive extreme low temperatures risk                    | annual frequency           | annual       | U.S.                | <a href="https://hazards.fema.gov/nri/">FEMA National Risk Index</a> |
-| Volcanic Activity      | volcanic risk                    | annual frequency           | annual       | U.S.                | <a href="https://hazards.fema.gov/nri/">FEMA National Risk Index</a> |
-| Tsunami                | tsunami risk                    | annual frequency           | annual       | U.S.                | <a href="https://hazards.fema.gov/nri/">FEMA National Risk Index</a> |
-| Avalanche              | avalanche risk                    | annual frequency           | annual       | U.S.                | <a href="https://hazards.fema.gov/nri/">FEMA National Risk Index</a> |</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Dataset</th>
+      <th>Summary Description</th>
+      <th>Units</th>
+      <th>Refresh Rate</th>
+      <th>Geographic Coverage</th>
+      <th>Source</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Population</td>
+      <td>total population</td>
+      <td>count</td>
+      <td>annual</td>
+      <td>U.S.</td>
+      <td><a href="https://www.census.gov">U.S. Census</a></td>
+    </tr>
+    <tr>
+      <td>GDP</td>
+      <td>gross domestic product</td>
+      <td>USD</td>
+      <td>annual</td>
+      <td>U.S.</td>
+      <td><a href="https://www.bea.gov">U.S. Bureau of Economic Analysis</a></td>
+    </tr>
+    <tr>
+      <td>Median Income</td>
+      <td>median household income</td>
+      <td>USD</td>
+      <td>annual</td>
+      <td>U.S.</td>
+      <td><a href="https://www.census.gov">U.S. Census</a></td>
+    </tr>
+    <tr>
+      <td>Poverty Rate</td>
+      <td>percent living below poverty line</td>
+      <td>percent</td>
+      <td>annual</td>
+      <td>U.S.</td>
+      <td><a href="https://www.census.gov">U.S. Census</a></td>
+    </tr>
+    <tr>
+      <td>College Education</td>
+      <td>percent of population with bachelors or higher degree</td>
+      <td>%</td>
+      <td>annual</td>
+      <td>U.S.</td>
+      <td><a href="https://www.census.gov">U.S. Census</a></td>
+    </tr>
+    <tr>
+      <td>Commute Time</td>
+      <td>average commute time</td>
+      <td>minutes</td>
+      <td>annual</td>
+      <td>U.S.</td>
+      <td><a href="https://www.census.gov">U.S. Census</a></td>
+    </tr>
+    <tr>
+      <td>Total Housing Units</td>
+      <td>total residential units</td>
+      <td>count</td>
+      <td>annual</td>
+      <td>U.S.</td>
+      <td><a href="https://www.census.gov">U.S. Census</a></td>
+    </tr>
+    <tr>
+      <td>Home Construction Year</td>
+      <td>median residential construction year</td>
+      <td>year</td>
+      <td>annual</td>
+      <td>U.S.</td>
+      <td><a href="https://www.census.gov">U.S. Census</a></td>
+    </tr>
+    <tr>
+      <td>Vacancy Rate</td>
+      <td>residential vacancy rate</td>
+      <td>rate</td>
+      <td>annual</td>
+      <td>U.S.</td>
+      <td><a href="https://www.census.gov">U.S. Census</a></td>
+    </tr>
+    <tr>
+      <td>Insurance Premiums</td>
+      <td>median residential insurance premium</td>
+      <td>USD</td>
+      <td>annual</td>
+      <td>U.S.</td>
+      <td><a href="https://www.nber.org/system/files/working_papers/w32579/w32579.pdf">Keys and Mulder 2024</a></td>
+    </tr>
+    <tr>
+      <td>Insurance Nonrenewals</td>
+      <td>residential insurance nonrenewal rate</td>
+      <td>rate</td>
+      <td>annual</td>
+      <td>U.S.</td>
+      <td><a href="https://www.budget.senate.gov/imo/media/doc/next_to_fall_the_climate-driven_insurance_crisis_is_here__and_getting_worse.pdf">U.S. Senate Budget Committee</a></td>
+    </tr>
+    <tr>
+      <td>Social Resilience</td>
+      <td>resilience based on multiple population attributes</td>
+      <td>score [0 to 1]</td>
+      <td>infrequent</td>
+      <td>U.S.</td>
+      <td><a href="https://sc.edu/study/colleges_schools/artsandsciences/centers_and_institutes/hvri/data_and_resources/bric/index.php">Baseline Resilience Indicators for Communities</a></td>
+    </tr>
+    <tr>
+      <td>Economic Resilience</td>
+      <td>resilience based on population financial well-being</td>
+      <td>score [0 to 1]</td>
+      <td>infrequent</td>
+      <td>U.S.</td>
+      <td><a href="https://sc.edu/study/colleges_schools/artsandsciences/centers_and_institutes/hvri/data_and_resources/bric/index.php">Baseline Resilience Indicators for Communities</a></td>
+    </tr>
+    <tr>
+      <td>Infrastructure Resilience</td>
+      <td>resilience based on built environment</td>
+      <td>score [0 to 1]</td>
+      <td>infrequent</td>
+      <td>U.S.</td>
+      <td><a href="https://sc.edu/study/colleges_schools/artsandsciences/centers_and_institutes/hvri/data_and_resources/bric/index.php">Baseline Resilience Indicators for Communities</a></td>
+    </tr>
+    <tr>
+      <td>Institutional Resilience</td>
+      <td>resilience based on governance and disaster preparedness</td>
+      <td>score [0 to 1]</td>
+      <td>infrequent</td>
+      <td>U.S.</td>
+      <td><a href="https://sc.edu/study/colleges_schools/artsandsciences/centers_and_institutes/hvri/data_and_resources/bric/index.php">Baseline Resilience Indicators for Communities</a></td>
+    </tr>
+    <tr>
+      <td>Community Resilience</td>
+      <td>resilience based on social connectivity</td>
+      <td>score [0 to 1]</td>
+      <td>infrequent</td>
+      <td>U.S.</td>
+      <td><a href="https://sc.edu/study/colleges_schools/artsandsciences/centers_and_institutes/hvri/data_and_resources/bric/index.php">Baseline Resilience Indicators for Communities</a></td>
+    </tr>
+    <tr>
+      <td>Environmental Resilience</td>
+      <td>resilience based on natural resources and conditions</td>
+      <td>score [0 to 1]</td>
+      <td>infrequent</td>
+      <td>U.S.</td>
+      <td><a href="https://sc.edu/study/colleges_schools/artsandsciences/centers_and_institutes/hvri/data_and_resources/bric/index.php">Baseline Resilience Indicators for Communities</a></td>
+    </tr>
+    <tr>
+      <td>Total Resilience</td>
+      <td>sum of six resilience scores</td>
+      <td>score [0 to 6]</td>
+      <td>infrequent</td>
+      <td>U.S.</td>
+      <td><a href="https://sc.edu/study/colleges_schools/artsandsciences/centers_and_institutes/hvri/data_and_resources/bric/index.php">Baseline Resilience Indicators for Communities</a></td>
+    </tr>
+    <tr>
+      <td>Biodiversity</td>
+      <td>priority areas for biodiversity conservation</td>
+      <td>score [0 to 100]</td>
+      <td>infrequent</td>
+      <td>Global</td>
+      <td><a href="https://unbiodiversitylab.org/en/about/">UN Biodiversity Lab</a></td>
+    </tr>
+    <tr>
+      <td>Earthquake</td>
+      <td>seismic risk</td>
+      <td>peak ground acceleration</td>
+      <td>static</td>
+      <td>Global</td>
+      <td><a href="https://www.globalquakemodel.org/product/global-seismic-hazard-map">Global Earthquake Model</a></td>
+    </tr>
+    <tr>
+      <td>Subsidence</td>
+      <td>subsidence rate</td>
+      <td>mm/year</td>
+      <td>infrequent</td>
+      <td>Global</td>
+      <td><a href="https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2023GL104497">Davydzenka et al. 2024, Colorado School of Mines</a></td>
+    </tr>
+    <tr>
+      <td>Hail</td>
+      <td>days with severe (&gt;1.0”) hail risk</td>
+      <td>days/year</td>
+      <td>annual</td>
+      <td>U.S.</td>
+      <td><a href="https://www.spc.noaa.gov">NOAA Storm Prediction Center</a></td>
+    </tr>
+    <tr>
+      <td>Tornadoes</td>
+      <td>days with severe (EF1+) tornado risk</td>
+      <td>days/year</td>
+      <td>annual</td>
+      <td>U.S.</td>
+      <td><a href="https://www.spc.noaa.gov">NOAA Storm Prediction Center</a></td>
+    </tr>
+    <tr>
+      <td>Severe Wind</td>
+      <td>days with severe (&gt;33m/s) non-hurricane wind risk</td>
+      <td>days/year</td>
+      <td>annual</td>
+      <td>U.S.</td>
+      <td><a href="https://www.spc.noaa.gov">NOAA Storm Prediction Center</a></td>
+    </tr>
+    <tr>
+      <td>Severe Thunderstorms</td>
+      <td>days with severe convective storms risk</td>
+      <td>days/year</td>
+      <td>annual</td>
+      <td>U.S.</td>
+      <td><a href="https://www.spc.noaa.gov">NOAA Storm Prediction Center</a></td>
+    </tr>
+    <tr>
+      <td>Landslide</td>
+      <td>landslide risk</td>
+      <td>annual frequency</td>
+      <td>annual</td>
+      <td>U.S.</td>
+      <td><a href="https://hazards.fema.gov/nri/">FEMA National Risk Index</a></td>
+    </tr>
+    <tr>
+      <td>Coldwave</td>
+      <td>consecutive extreme low temperatures risk</td>
+      <td>annual frequency</td>
+      <td>annual</td>
+      <td>U.S.</td>
+      <td><a href="https://hazards.fema.gov/nri/">FEMA National Risk Index</a></td>
+    </tr>
+    <tr>
+      <td>Volcanic Activity</td>
+      <td>volcanic risk</td>
+      <td>annual frequency</td>
+      <td>annual</td>
+      <td>U.S.</td>
+      <td><a href="https://hazards.fema.gov/nri/">FEMA National Risk Index</a></td>
+    </tr>
+    <tr>
+      <td>Tsunami</td>
+      <td>tsunami risk</td>
+      <td>annual frequency</td>
+      <td>annual</td>
+      <td>U.S.</td>
+      <td><a href="https://hazards.fema.gov/nri/">FEMA National Risk Index</a></td>
+    </tr>
+    <tr>
+      <td>Avalanche</td>
+      <td>avalanche risk</td>
+      <td>annual frequency</td>
+      <td>annual</td>
+      <td>U.S.</td>
+      <td><a href="https://hazards.fema.gov/nri/">FEMA National Risk Index</a></td>
+    </tr>
+  </tbody>
+</table>
 
 <h2 id="multimodal-model-integration">Multimodal Model Integration</h2>
 <p>We support the development of customized <a href="https://www.sustglobal.com/insights/populous-unpacking-the-geospatial-dimension-for-multimodal-insights">multimodal modeling workflows</a> tailored to your target variable. These workflows integrate the datasets listed above, our core climate modeling suite, and additional proprietary inputs and model architectures. Contact us to learn more.</p>
