@@ -1,6 +1,6 @@
 ---
 layout: doc
-title: Nature Data User Guide
+title: Nature Capital Data Guide
 subtitle: Sust Global's Nature API is a RESTful API interface to Sust Global's durability (non-permanence) indicators for nature based carbon projects. This guide helps users understand the indicators and datasets accessible using the API.
 date: 2023-11-17
 lastmod: 2024-03-05
