@@ -5,7 +5,7 @@
       "category" : "",
       "tags"     : "",
       "url"      : "/apps",
-      "date"     : "2025-05-29 10:56:22 -0600"
+      "date"     : "2025-05-30 10:33:10 -0600"
     } ,
   
     {
@@ -13,7 +13,7 @@
       "category" : "",
       "tags"     : "",
       "url"      : "/coming-soon",
-      "date"     : "2025-05-29 10:56:22 -0600"
+      "date"     : "2025-05-30 10:33:10 -0600"
     } ,
   
     {
@@ -21,7 +21,7 @@
       "category" : "",
       "tags"     : "",
       "url"      : "/data-integrations",
-      "date"     : "2025-05-29 10:56:22 -0600"
+      "date"     : "2025-05-30 10:33:10 -0600"
     } ,
   
     {
@@ -101,7 +101,7 @@
       "category" : "",
       "tags"     : "",
       "url"      : "/snowflake",
-      "date"     : "2025-05-29 10:56:22 -0600"
+      "date"     : "2025-05-30 10:33:10 -0600"
     } ,
   
     {
@@ -117,7 +117,7 @@
       "category" : "",
       "tags"     : "",
       "url"      : "/introduction",
-      "date"     : "2025-05-29 10:56:22 -0600"
+      "date"     : "2025-05-30 10:33:10 -0600"
     } ,
   
     {
@@ -125,7 +125,7 @@
       "category" : "",
       "tags"     : "faq, wildfire, flood, questions",
       "url"      : "/faq",
-      "date"     : "2025-05-29 10:56:22 -0600"
+      "date"     : "2025-05-30 10:33:10 -0600"
     } ,
   
     {
@@ -189,7 +189,7 @@
       "category" : "",
       "tags"     : "updates",
       "url"      : "/updates",
-      "date"     : "2025-05-29 10:56:22 -0600"
+      "date"     : "2025-05-30 10:33:10 -0600"
     } ,
   
     {
@@ -230,14 +230,6 @@
       "tags"     : "dataset, visual summary",
       "url"      : "/visual-summary-multimodal-guide",
       "date"     : "2025-05-22 00:00:00 -0600"
-    } ,
-  
-    {
-      "title"    : "Nature Capital Project Views",
-      "category" : "",
-      "tags"     : "nature, guide, user",
-      "url"      : "/nature-project-views",
-      "date"     : "2025-05-29 00:00:00 -0600"
     } ,
   
     {

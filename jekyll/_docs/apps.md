@@ -70,11 +70,6 @@ blocks:
         button:
           text: View
           url: /nature-user-guide
-      - name: Project Views
-        description: This document outlines the views in Sust Global's Nature Capital Dashboard.
-        button:
-          text: View
-          url: /nature-project-views
       - name: Data Guide
         description: Sust Global's Nature API is a RESTful API interface to Sust Global's durability (non-permanence) indicators for nature based carbon projects. This guide helps users understand the indicators and datasets accessible using the API.
         button:

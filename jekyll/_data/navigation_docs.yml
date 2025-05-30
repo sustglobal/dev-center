@@ -25,6 +25,14 @@
   - ce-viewer-guide
   - visual-summary-multimodal-guide
 
+- title: Nature Capital
+  icon: globe-alt
+  description: View our Nature Capital dashboard.
+  docs:
+  - nature-user-guide
+  - nature-data-guide
+  - nature-api-guide
+
 - title: Hazards
   icon: book-open
   description: 'Learn more about our Climate Analytics data; wildfire, flood, cyclones, heatwaves, sea level rise, and water stress.'
