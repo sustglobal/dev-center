@@ -544,6 +544,37 @@
               
                 <li>
                   
+                    <h2 class="font-display font-semibold text-slate-900">Nature Capital</h2>
+                    <ul class="mt-4 space-y-4 border-slate-200">
+                      
+                        
+                        
+                        <li class="relative">
+                          <a class="block w-full pl-3.5 before:pointer-events-none before:absolute before:left-0.5 before:top-1/2 before:h-0.5 before:w-1.5 before:-translate-y-1/2 
+                           text-sky-500 before:bg-sky-500" href="/nature-user-guide">Nature Capital User Guide</a>
+                        </li>
+                      
+                        
+                        
+                        <li class="relative">
+                          <a class="block w-full pl-3.5 before:pointer-events-none before:absolute before:left-0.5 before:top-1/2 before:h-0.5 before:w-1.5 before:-translate-y-1/2 
+                           text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-900 hover:before:block" href="/nature-data-guide">Nature Capital Data Guide</a>
+                        </li>
+                      
+                        
+                        
+                        <li class="relative">
+                          <a class="block w-full pl-3.5 before:pointer-events-none before:absolute before:left-0.5 before:top-1/2 before:h-0.5 before:w-1.5 before:-translate-y-1/2 
+                           text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-900 hover:before:block" href="/nature-api-guide">Nature Capital API User Guide</a>
+                        </li>
+                      
+                      
+                    </ul>
+                  
+                </li>
+              
+                <li>
+                  
                     <h2 class="font-display font-semibold text-slate-900">Hazards</h2>
                     <ul class="mt-4 space-y-4 border-slate-200">
                       
@@ -651,6 +682,21 @@
         
           
           
+            <p class="font-display text-sm font-semibold text-sky-500 mb-1">Nature Capital</p>
+          
+        
+          
+          
+        
+          
+          
+        
+      
+    
+      
+        
+          
+          
         
           
           
@@ -741,6 +787,44 @@
 <p>Please note, the Nature Capital app only supports geometry files in GeoJSON format. To upload geometries represented in other formats such as shapefiles, these files should be first converted to GeoJSON using tools such as <a href="https://pro.arcgis.com/en/pro-app/latest/tool-reference/conversion/features-to-json.htm">ArcGIS</a> or <a href="https://qgis.org/en/site/">QGIS</a>.</p>
 
 <p>Finally, select whether the project being evaluated is a <strong>Forest Carbon</strong> and <strong>Blue Carbon</strong> project.</p>
+
+<h2 id="nature-capital-project-views">Nature Capital Project Views</h2>
+<p>This section provides an overview of the views available within the Nature Capital dashboard to aid nature-based carbon project durability risk analysis.</p>
+
+<h3 id="overview">Overview</h3>
+<p>Once a project has been uploaded, the app provides a geospatial representation of risk across a project’s boundaries and detailed data on the project’s risk exposure to numerous perils. Users can select which project they’d like to assess using the orange dropdown menu in the top left part of the app.</p>
+
+<h3 id="project-risk-visualizations">Project Risk Visualizations</h3>
+
+<p align="center">
+<img height="300" src="assets/images/dataguide/nature_grid_example.png" />
+</p>
+
+<p><strong>Figure 1</strong>: Wildfire risk visualization at 300m X 300m grid cells across a forest carbon project.</p>
+
+<p>Upon selecting a project, users will be able to view hazard risk hotspots within their project boundaries. The visualization granularity for each hazard aligns with Sust Global’s modeled granularity for each hazard, which can be found in their <a href="data-guide">Climate Data Guide</a>. Risk visualizations can aid decision-making by enabling teams to identify material risk hotspots and develop mitigation strategies.</p>
+
+<h3 id="project-risk-exposure-data">Project Risk Exposure Data</h3>
+<p>In addition to risk visualizations, Sust Global also produces risk exposure data for numerous hazards. The full documentation of those data indicators can be found in the <a href="nature-data-guide">Nature Data Guide</a>.</p>
+
+<p>The Nature Capital data views enable users to analyze each hazard’s risk exposure aggregated across a project’s entire boundaries, or they can select a specific project subsection – which are broken down into evenly-sized parcels based on each hazard’s model resolution – to analyze risk within the subsection.</p>
+
+<p align="center">
+<img height="300" src="assets/images/dataguide/nature_sidebar_example.png" />
+</p>
+
+<p><strong>Figure 2</strong>: Modeled wildfire risk aggregated across a project (above) and modeled wildfire risk for the selected individual 300m X 300m parcel (below)</p>
+
+<p>Project-level risk data can be used to support project analysis workflows, such as project valuation or quantitative risk assessment, while parcel-level views can inform strategic decision-making, such as selection locations for adaptation investment.</p>
+
+<h3 id="peer-comparison">Peer Comparison</h3>
+<p>In addition to the raw score for each risk indicator, Sust Global has created a database of global forest and blue carbon projects enabling visibility into how a project’s risk exposure compares to its global peer projects.</p>
+
+<p align="center">
+<img height="300" src="assets/images/dataguide/nature_histogram_example.png" />
+</p>
+
+<p><strong>Figure 3</strong>: Carbon Loss From Wildfire indicator for a forest carbon project showing the risk indicator score (0.69) and a visual representation of how this score compares to peer projects</p>
 
 <h2 id="disclaimer-and-liability">Disclaimer and Liability</h2>
 
@@ -844,25 +928,35 @@
 
   
   
-
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-
+    <dl class="mt-12 sm:flex justify-between">
+      <div>
+        
+          
+          
+          
+          <dt class="font-display text-sm font-semibold text-slate-900">Previous</dt>
+          <dd class="mt-1">
+            <a class="text-sm text-slate-600 hover:text-slate-900" href="/visual-summary-multimodal-guide">
+            <span aria-hidden="true">←</span> Visual Summary Multimodal Guide
+            </a>
+          </dd>
+        
+      </div>
+      <div>
+        
+          
+          
+          
+          <dt class="font-display text-sm font-semibold text-slate-900">Next</dt>
+          <dd class="mt-1">
+            <a class="text-sm text-slate-600 hover:text-slate-900" href="/nature-data-guide">
+              Nature Capital Data Guide <span aria-hidden="true">→</span>
+            </a>
+          </dd>
+        
+      </div>
+    </dl>
+    
 
       </div>
       
@@ -876,6 +970,14 @@
 </ul>
 </li>
 <li class="toc-entry toc-h2"><a href="#uploading-a-project">Uploading a project</a></li>
+<li class="toc-entry toc-h2"><a href="#nature-capital-project-views">Nature Capital Project Views</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#overview">Overview</a></li>
+<li class="toc-entry toc-h3"><a href="#project-risk-visualizations">Project Risk Visualizations</a></li>
+<li class="toc-entry toc-h3"><a href="#project-risk-exposure-data">Project Risk Exposure Data</a></li>
+<li class="toc-entry toc-h3"><a href="#peer-comparison">Peer Comparison</a></li>
+</ul>
+</li>
 <li class="toc-entry toc-h2"><a href="#disclaimer-and-liability">Disclaimer and Liability</a></li>
 </ul>
           </nav>
