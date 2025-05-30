@@ -3,7 +3,7 @@ layout: doc
 title: Zonal Climate Risk Statistics on Administrative Boundaries
 subtitle: This document provides users with an introduction to Sust Global’s admin boundaries data.
 date: 2024-06-05
-lastmod: 2024-06-06
+lastmod: 2025-05-30
 author: TA
 tags:
 - data
@@ -64,50 +64,7 @@ Glossary of boundaries by country:
 
 ## Supported Data Layers
 
-| Layer | Coverage | Refresh Rate | 
-| ----- | -------- | ------------ |
-| State Level Insurance Premiums Percentage Change | United States | - |
-| State Level Insurance Premiums | United States | - |
-| Average Annual Premiums | United States | - |
-| Population | United States | - |
-| Population with Higher Education | United States | - |
-| Median Income Household Person Count | United States | - |
-| Percent of People with Higher Education | United States | - |
-| Median Age of House | United States | - |
-| Total Housing Units | United States | - |
-| Social Resilience | United States | - |
-| Economic Resilience | United States | - |
-| Infrastructure Resilience | United States | - |
-| Commercial Resilience | United States | - |
-| Institutional Resilience | United States | - |
-| Environmental Resilience | United States | - |
-| Total Resilience | United States | - |
-| Observed Fire 2000-2022 | United States | - |
-| Total Observed Fire | United States | - |
-| Observed Fire Previous Year | United States | - |
-| Observed Fire Previous 5 Years | United States | - |
-| Observed Cyclone 2010-2022 | United States | - |
-| Total Observed Cyclone | United States | - |
-| Observed Cyclone Previous Year | United States | - |
-| Observed Cyclone Previous 5 Years | United States | - |
-| Observed Flood 2012-2022 | United States | - |
-| Total Observed Flood | United States | - |
-| Observed Flood Previous Year | United States | - |
-| Observed Flood Previous 5 Years | United States | - |
-| GDP | United States | - |
-| FEMA NRI Hurricane Expected Annual Loss | United States | - |
-| FEMA NRI Coastal Expected Annual Loss | United States | - |
-| FEMA NRI Riverine Expected Annual Loss | United States | - |
-| FEMA NRI Wildfire Expected Annual Loss | United States | - |
-| FEMA NRI Total Expected Annual Loss | United States | - |
-| Modeled Cyclone Damage Baseline | United States | - |
-| Modeled Cyclone Damage 2050 | United States | - |
-| Modeled Flood Damage Baseline | United States | - |
-| Modeled Flood Damage 2050 | United States | - |
-| Modeled Wildfire Damage Baseline | United States | - |
-| Modeled Wildfire Damage 2050 | United States | - |
-| State Normlized Loan Distribution | United States | - |
-
+The supported data layers span physical risk factors, resilience scores, socioeconomic and demographic features, as well as biodiversity scores and other datasets. The full set of supported data layers is detailed in the [Visual Summary Multimodal Guide](https://developers.sustglobal.com/visual-summary-multimodal-guide). 
 
 ## Data Dictionary
 
