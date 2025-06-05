@@ -112,6 +112,77 @@ A single object from the response is displayed below:
 }
 ```
 
+We can also use the extended parameter to query for more information, including geometry and more detailed scenario-based analytics. For more information, see [Visual Summary](visual-summary-data-guide)
+
+```
+curl "https://explorer.sustglobal.io/api/portfolios/MRTG_demo_portfolio/datasets/physical/summary?extended=true" --header "X-SustGlobal-APIKey: $APIKEY" --header "X-SustGlobal-Project: ec-DEMO"
+```
+
+Below is a truncated response:
+
+```
+{
+  "portfolio_name": "MRTG_demo_portfolio",
+  "portfolio_index": 360,
+  "entity_id": "",
+  "entity_name": "300",
+  "geometry": { ... },
+  "labels": { ... },
+  "scenario_analytics": {
+    "ssp245": {
+      "heatwave": {
+        "business_interruption_2030": 0.00142,
+        "business_interruption_2030_lbd": 0.00075,
+        "business_interruption_2030_ubd": 0.0024,
+        "business_interruption_2050": 0.00078,
+        "business_interruption_2050_lbd": 0.00069,
+        "business_interruption_2050_ubd": 0.00084,
+        "business_interruption_2080": 0.00193,
+        "business_interruption_2080_lbd": 0.00167,
+        "business_interruption_2080_ubd": 0.00241,
+        "business_interruption_baseline": 0.00065,
+        "business_interruption_baseline_lbd": 0.00012,
+        "business_interruption_baseline_ubd": 0.00142,
+        "indicator_2030": 0.04359,
+        "indicator_2030_lbd": 0.02017,
+        "indicator_2030_ubd": 0.08269,
+        "indicator_2050": 0.06824,
+        "indicator_2050_lbd": 0.03661,
+        "indicator_2050_ubd": 0.10262,
+        "indicator_2080": 0.09664,
+        "indicator_2080_lbd": 0.06575,
+        "indicator_2080_ubd": 0.13624,
+        "indicator_baseline": 0.02964,
+        "indicator_baseline_lbd": 0.01121,
+        "indicator_baseline_ubd": 0.05405,
+        "structural_damage_2030": 0,
+        "structural_damage_2030_lbd": 0,
+        "structural_damage_2030_ubd": 0,
+        "structural_damage_2050": 0,
+        "structural_damage_2050_lbd": 0,
+        "structural_damage_2050_ubd": 0,
+        "structural_damage_2080": 0,
+        "structural_damage_2080_lbd": 0,
+        "structural_damage_2080_ubd": 0,
+        "structural_damage_baseline": 0,
+        "structural_damage_baseline_lbd": 0,
+        "structural_damage_baseline_ubd": 0,
+        "summary_label_15yr": "LOW",
+        "summary_label_30yr": "LOW",
+        "summary_score_15yr": 0.06027,
+        "summary_score_30yr": 0.07945
+      },
+      "flood": { ... },
+      "cyclone": { ... },
+      "sea_level_rise": { ... },
+      "water_stress": { ... },
+      "wildfire": { ... }
+    },
+    "ssp585": { ... }
+  }
+}
+```
+
 To fetch the more granular timeseries data, we can use the "items" endpoint.
 We can also apply some filters this time around: **hazard=wildfire**, **scenario=ssp585**, and **start_date=2022**
 
