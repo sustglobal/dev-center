@@ -18,7 +18,7 @@ Our Climate Analytics covers risk from multiple perils:
 - [Cyclones](cyclones)
 - [Heatwave](heatwaves)
 - [Sea Level Rise (SLR)](sea-level-rise)
-- [Water Stress](waterstress) 
+- [Water Stress](water-stress) 
 
 We also include expected financial loss information from the above physical perils, via our [Financial Risk Analysis](value-at-risk) methodology.
 
