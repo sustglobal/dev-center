@@ -67,7 +67,7 @@ The Sust Global Institutional Data Template file can be found here: [example csv
 | **entity_name**   | **Optional.** Name of the asset in the portfolio, could also be text string on the name of a city or location
 | **type**          | **Optional.** Type indicator for the asset. See [Value at Risk](/value-at-risk#available-asset-types) for more types
 | **label:Address** | **Optional.** Address of the asset.
-| **label:company_name**| **Optional.** Company attached to this particular asset.
+| **label:companyname**| **Optional.** Company attached to this particular asset.
 | **label:financial_exposure_weight**   | **Optional.** The decimal percent value of the proportion of this portfolio tied to this asset (e.g. 0.10)
 | **label:YOUR_KEY**   | **Optional.** Additional labels (any column header prefixed with `label:`) are preserved in the results, and are not meaningful to Visual Summary.
 
