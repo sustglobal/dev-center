@@ -3,7 +3,7 @@ layout: doc
 title: Reporting CSV Dataset Guide
 subtitle: This section will go through each risk exposure dataset available for download and explain the methodology behind it. We will also show you how to use and interpret the numbers, which includes a written interpretation of the datasets.
 date: 2024-12-05
-lastmod: 2024-12-05
+lastmod: 2025-07-23
 author: TB
 tags:
 - csv
@@ -28,7 +28,7 @@ Here are the descriptions of the naming parameters:
 The naming convention for the historic risk exposure datasets is as follows:
 **sustglobal_asset_his_risk_{dataset_name}.csv**
 
-In these files, each row corresponds to one asset location, and there are individual columns for each month from Jan 2010 to Dec 2022 for Cyclone, Heatwave, Sea-Level Rise, Water Stress, and Wildfire exposure. For historical flood risk, the data spans Jan 2012 to April 2022.
+In these files, each row corresponds to one asset location, and there are individual columns for each month from Jan 2010 to Dec 2024 for Cyclone, Heatwave, Water Stress, and Wildfire exposure. For historical Sea-Level Rise, the data spans Jan 2010 to Dec 2022. For historical flood risk, the data spans Jan 2012 to April 2022.
 
 #### Interpretation
 The example we are looking at here is called **sustglobal_asset_his_risk_MRTG_demo.csv**

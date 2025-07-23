@@ -12,9 +12,9 @@ blocks:
   heading: General
   faqs: 
   - title: What time period does your historic observation dataset cover?
-    content: Our historic observation datasets cover the period from Jan 2010 to Dec 2022. If you would like data up to present day, or prior to 2010, please contact us. 
+    content: Our historic observation datasets cover the period from Jan 2010 to Dec 2024 for Cyclone, Heatwave, Water Stress, and Wildfire exposure. For historical Sea-Level Rise, the data spans Jan 2010 to Dec 2022. For historical flood risk, the data spans Jan 2012 to April 2022.
   - title: What time period does your forward looking projected outcome dataset cover?
-    content: Our forward looking projected outcomes assess the period from 2024 to 2100.
+    content: Our forward looking projected outcomes assess the period from 2025 to 2100.
   - title: What geographies does your dataset include?
     content: Our capabilities are global. We provide climate scenario analysis over the entirety of the earth’s landmass.
   - title: How does your dataset enable for climate change adaptation?
