@@ -15,11 +15,11 @@
 <meta property="og:description" content="Why Admin Boundaries?" />
 <meta property="og:site_name" content="Sust Global Developer Center" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2024-06-05T00:00:00-06:00" />
+<meta property="article:published_time" content="2024-06-05T00:00:00+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Zonal Climate Risk Statistics on Administrative Boundaries" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Taylor Andrews"},"dateModified":"2024-06-05T00:00:00-06:00","datePublished":"2024-06-05T00:00:00-06:00","description":"Why Admin Boundaries?","headline":"Zonal Climate Risk Statistics on Administrative Boundaries","mainEntityOfPage":{"@type":"WebPage","@id":"/zonal-climate-stats"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"/uploads/logo_black.crop.png"},"name":"Taylor Andrews"},"url":"/zonal-climate-stats"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Taylor Andrews"},"dateModified":"2024-06-05T00:00:00+00:00","datePublished":"2024-06-05T00:00:00+00:00","description":"Why Admin Boundaries?","headline":"Zonal Climate Risk Statistics on Administrative Boundaries","mainEntityOfPage":{"@type":"WebPage","@id":"/zonal-climate-stats"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"/uploads/logo_black.crop.png"},"name":"Taylor Andrews"},"url":"/zonal-climate-stats"}</script>
 <!-- End Jekyll SEO tag -->
 
   <meta property="og:image" content="">
@@ -730,7 +730,7 @@
         <div class="flex-1">
           <p class="font-display font-semibold text-sm text-slate-900">Taylor Andrews</p>
           <p class="text-sm text-slate-500">Created: Jun 5, 2024 
-            - Updated: May 30, 2025
+            - Updated: Jul 24, 2025
             </p>
         </div>
         <!-- <div class="flex-none">
@@ -740,30 +740,33 @@
     
 
     
-      <p class="text-lg text-slate-600 mt-9">This document provides users with an introduction to Sust Global’s admin boundaries data.</p>
+      <p class="text-lg text-slate-600 mt-9">This document provides users with an introduction to Sust Global’s Zonal Climate Risk data which provides forward-looking hazard and financial impact scores aggregated across administrative boundaries.</p>
     
   </header>
   <div class="prose prose-slate max-w-none prose-headings:scroll-mt-28 prose-headings:font-display prose-headings:font-semibold prose-lead:text-slate-500 prose-a:font-semibold prose-a:no-underline hover:prose-a:text-sky-500 prose-pre:rounded-xl prose-pre:bg-slate-900 prose-pre:shadow-lg"><h2 id="why-admin-boundaries">Why Admin Boundaries?</h2>
 
-<p>Administrative divisions or boundaries are sub-sovereign geographical areas, often with their own system of administration or governance. They frequently coincide with economic zones, or concentrations of economic activity. This is useful with regards to physical risk exposure, as isolating physical risk by zone can lead to greater insights. For example, comparing coastal zones, which could be impacted by cyclones, to interior zones, which might be exposed to heatwaves or water stress, gives a more holistic picture across business interests.</p>
+<p>Administrative divisions or boundaries are sub-sovereign geographical areas, often with their own system of administration or governance. They frequently coincide with economic zones, or concentrations of economic activity. This is useful with regards to physical risk exposure, as isolating physical risk by zone can lead to greater insights. For example, comparing coastal zones, which could be impacted by cyclones, to interior zones, which might be exposed to heatwaves or water stress, gives a more holistic picture across business interests. Further, this product can be easily integrated into analysis with widely used boundary-native datasets such as US Census data (e.g., county-level GDP) for deeper analysis of climate-driven impacts on society (see our <a href="visual-summary-multimodal-guide">Multimodal Guide</a> for an example).</p>
 
 <h2 id="about-the-data">About the Data</h2>
 
-<p>Sust Global’s admin boundaries dataset provides highly granular physical risk exposure scores, and financial impact metrics, to help risk management and risk reporting teams across financial and sustainability organizations assess the impact of climate change on their portfolios, operational assets and supply chains.</p>
+<p>Derived from our industry-leading high-resolution hazard models, Sust Global’s admin boundaries dataset provides zonally-aggregated physical risk exposure scores, and financial impact metrics, to help risk management and risk reporting teams across financial and sustainability organizations assess the impact of climate change on their portfolios, operational assets and supply chains.</p>
 
-<p>The dataset covers six major climate hazards over two scenarios and four time periods:</p>
+<p>For each of our three metrics, physical risk exposure and the resulting structural damage and business interruption, we detail the following:</p>
+
 <ul>
-  <li>Projections from advanced climate physical hazard modeling leveraging CMIP6 climate models, regional risk zoning, space derived observational datasets and proprietary AI powered modeling techniques, and covering two future climate change scenarios: Medium (SSP2-RCP4.5) and High (SSP5-RCP8.5) physical climate risk metrics across baseline, 2025-2035, 2045-2055 and 2075-2085.</li>
-  <li>Physical risk scores and labels reflecting exposure to climate hazards across scenarios and time periods.</li>
-  <li>Financial impact metrics reflecting the value of financial impacts and losses from structural damage projected due to changing climate hazard exposure for a given asset within the zip code, expressed as a percentage of the asset value (% metric).</li>
-  <li>Financial impact metrics reflecting the value of financial impacts and losses from business interruption projected due to changing climate hazard exposure for a given asset within the zip code, expressed as a percentage of the number of days in a year (% metric).</li>
-  <li>Uncertainty bounds representing lower bound and upper bound for financial impact metrics for structural damage and business interruption.</li>
-  <li>Six (6) physical climate hazards covered are Coastal and Inland Flooding, Wildfire, Tropical Cyclone, Heatwaves, Water Stress and Sea level Rise.</li>
+  <li><strong>Two climate scenarios</strong>: SSP2-RCP4.5 (Medium Warming) and SSP5-RCP8.5 (High Warming)</li>
+  <li><strong>Four time horizons</strong>: Baseline, 2030, 2050, and 2080</li>
+  <li><strong>Six physical hazards</strong>: Cyclones, Flooding (inland + coastal), Wildfire, Heatwaves, Water Stress, and, Sea Level Rise</li>
 </ul>
+
+<h2 id="zonal-aggregation-approach">Zonal Aggregation Approach</h2>
+
+<p>To create our Zonal Statistics dataset, we first translate our high-resolution data to polygon-representative values. The reduction method (e.g., mean, maximum) for each hazard can be found in the <a href="data-guide#regional-statistics-using-polygon-processing">Climate Data Guide</a>. From these spatially aggregated hazard values, we then derive the <a href="value-at-risk">financial impact metrics</a>. For each of the three metrics (hazard exposure, structural damage, business interruption), we represent the inherent uncertainty of climate data by reporting lower and upper bounds of the data (i.e., 84th and 16th percentile respectively). Finally, we represent the geolocation of each administrative boundary by using the latitude and longitude of the centroid.</p>
 
 <h2 id="supported-countries">Supported Countries</h2>
 
 <p>Sust Global currently supports the following countries at the admin two, three, and four level:</p>
+
 <ul>
   <li>United States of America</li>
   <li>India</li>
@@ -900,19 +903,39 @@
       <td>Identifier (is not unique across datasets)</td>
     </tr>
     <tr>
-      <td>LAT</td>
+      <td>T_ID</td>
       <td>STRING</td>
-      <td>Latitude</td>
+      <td>[TODO]</td>
     </tr>
     <tr>
-      <td>LNG</td>
+      <td>COUNTRY</td>
       <td>STRING</td>
-      <td>Longitude</td>
+      <td>3 Letter Country Code</td>
     </tr>
     <tr>
       <td>ADMIN_PROCESSING_LEVEL</td>
       <td>STRING</td>
       <td>The admin boundary level to which this dataset corresponds (2,3,4)</td>
+    </tr>
+    <tr>
+      <td>LNG</td>
+      <td>STRING</td>
+      <td>Longitude of administrative boundary centroid</td>
+    </tr>
+    <tr>
+      <td>LAT</td>
+      <td>STRING</td>
+      <td>Latitude of administrative boundary centroid</td>
+    </tr>
+    <tr>
+      <td>POLYGON</td>
+      <td>STRING</td>
+      <td>Boolean indicating whether the input administrative boundary is a polygon</td>
+    </tr>
+    <tr>
+      <td>TESSELLATED</td>
+      <td>STRING</td>
+      <td>Boolean indicating whether tessellation has been performed within administrative boundary</td>
     </tr>
     <tr>
       <td>ADMIN0</td>
@@ -940,7 +963,12 @@
       <td>Admin 4 boundary ID (if applicable)</td>
     </tr>
     <tr>
-      <td>SCENARIO ANALYTICS</td>
+      <td>LABELS</td>
+      <td>OBJ</td>
+      <td>[TODO]</td>
+    </tr>
+    <tr>
+      <td>SCENARIO_ANALYTICS</td>
       <td>OBJ</td>
       <td>Contains the climate scenarios ssp245 and ssp585. Each scenario contains hazards wildfire, cyclone, flood, heatwave, water stress and sea level rise. For each hazard, data is windowed for baseline, 2030, 2050, and 2080. In turn the ubd (upper bound) and lbd (lower bound) values indicate the uncertainty for each window. (Special note on heatwave indicator and business interruption: values are normalized by 365 to give them in percents rather than days)</td>
     </tr>
@@ -953,6 +981,16 @@
       <td>SUMMARY_SCORE_15YR</td>
       <td>STRING</td>
       <td>In a 15 year window, the maximum risk exposure</td>
+    </tr>
+    <tr>
+      <td>SUMMARY_LABEL_30YR</td>
+      <td>STRING</td>
+      <td>Low/Medium/High label determined by SUMMARY_SCORE_30YR</td>
+    </tr>
+    <tr>
+      <td>SUMMARY_LABEL_15YR</td>
+      <td>STRING</td>
+      <td>Low/Medium/High label determined by SUMMARY_SCORE_15YR</td>
     </tr>
     <tr>
       <td>INDICATOR_BASELINE</td>
@@ -1134,6 +1172,11 @@
       <td>FLOAT</td>
       <td>The upper bound value averaged from 2075-2085 for the business interruption resulting from risk exposure</td>
     </tr>
+    <tr>
+      <td>GEOMETRY</td>
+      <td>OBJ</td>
+      <td>[TODO]</td>
+    </tr>
   </tbody>
 </table>
 
@@ -1276,6 +1319,7 @@
             <ul id="toc" class="toc">
 <li class="toc-entry toc-h2"><a href="#why-admin-boundaries">Why Admin Boundaries?</a></li>
 <li class="toc-entry toc-h2"><a href="#about-the-data">About the Data</a></li>
+<li class="toc-entry toc-h2"><a href="#zonal-aggregation-approach">Zonal Aggregation Approach</a></li>
 <li class="toc-entry toc-h2"><a href="#supported-countries">Supported Countries</a></li>
 <li class="toc-entry toc-h2"><a href="#supported-data-layers">Supported Data Layers</a></li>
 <li class="toc-entry toc-h2"><a href="#data-dictionary">Data Dictionary</a></li>
