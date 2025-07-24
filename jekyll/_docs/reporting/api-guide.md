@@ -6,8 +6,8 @@ date: 2023-01-01
 lastmod: 2023-08-20
 author: MC
 tags:
-- api
-- quickstart
+  - api
+  - quickstart
 ---
 
 ## Quickstart
@@ -112,6 +112,8 @@ A single object from the response is displayed below:
 }
 ```
 
+## Extended Summary
+
 We can also use the extended parameter to query for more information, including geometry and more detailed scenario-based analytics. For more information, see [Visual Summary](visual-summary-data-guide)
 
 ```
@@ -182,6 +184,8 @@ Below is a truncated response:
   }
 }
 ```
+
+## Filtering by Variable
 
 To fetch the more granular timeseries data, we can use the "items" endpoint.
 We can also apply some filters this time around: **hazard=wildfire**, **scenario=ssp585**, and **start_date=2022**
@@ -267,7 +271,7 @@ time reading a subset of the total result set.
 Users control pagination with the **page** and **rows** query parameters. The value of **rows** sets the maximum number of results
 that the API should return for a given **page**.
 
-The default **rows** value is 50, meaning that a client is forced to paginate their requests if more than 50 items exist in a given list.  The max value of **rows** is 250, and datasets over this limit will require multiple API calls to load.  This can be accelerated by using filters such as **hazard=wildfire**, as described above.  An example of fetching with pagination in Python can be found [here](https://github.com/sustglobal/dev-center/blob/master/jupyter-notebooks/ClimateDataStudio/ClimateDataStudioExample.ipynb).
+The default **rows** value is 50, meaning that a client is forced to paginate their requests if more than 50 items exist in a given list. The max value of **rows** is 250, and datasets over this limit will require multiple API calls to load. This can be accelerated by using filters such as **hazard=wildfire**, as described above. An example of fetching with pagination in Python can be found [here](https://github.com/sustglobal/dev-center/blob/master/jupyter-notebooks/ClimateDataStudio/ClimateDataStudioExample.ipynb).
 
 An example of pagination over a set of 120 items might work like so:
 
@@ -305,8 +309,9 @@ is no contract established in the content of error strings.
 This section contains a set of example commands you can run on your machine to interact with the API.
 
 Note that many of the examples refer to environment variables that must be set manually:
-* Your API key, must be set in the **$APIKEY** environment variable. See [Authentication](#authentication) to learn more about this.
-* The **$PORTFOLIO** environment variable refers to the name of the portfolio you wish to work with. You determine this value.
+
+- Your API key, must be set in the **$APIKEY** environment variable. See [Authentication](#authentication) to learn more about this.
+- The **$PORTFOLIO** environment variable refers to the name of the portfolio you wish to work with. You determine this value.
 
 ### Create a Portfolio
 
