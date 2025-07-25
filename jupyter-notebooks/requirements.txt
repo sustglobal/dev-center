@@ -11,3 +11,5 @@ sust-api-client==0.0.19
 contextily
 xarray
 rioxarray
+cartopy
+mapclassify
