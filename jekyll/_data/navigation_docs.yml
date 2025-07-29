@@ -8,6 +8,7 @@
   - data-guide
   - search
   - api-guide
+  - zonal-climate-stats
   external:
   - src: https://explorer.sustglobal.io/redoc
     title: Climate Explorer OpenAPI Spec
