@@ -52,6 +52,7 @@ Glossary of boundaries by country:
 | AUS  | Australia     | local gov      | postal codes   | localities          |
 | BEL  | Belgium       | provinces      | districts      | municipalities      |
 | CAN  | Canada        | counties       | districts      | census subdivisions |
+| CHN  | China         | prefecture     |       -        |          -          |
 | DEU  | Germany       | districts      | municipalities | towns               |
 | ESP  | Spain         | provinces      | counties       | municipalities      |
 | FRA  | France        | departments    | districts      | subdivisions        |
