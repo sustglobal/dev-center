@@ -14,11 +14,11 @@
 <meta property="og:description" content="The following is a list of running product updates to the Sust Global datasets and Climate Explorer." />
 <meta property="og:site_name" content="Sust Global Developer Center" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2025-07-29T13:33:41-06:00" />
+<meta property="article:published_time" content="2025-07-30T16:05:08+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Product Updates" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-07-29T13:33:41-06:00","datePublished":"2025-07-29T13:33:41-06:00","description":"The following is a list of running product updates to the Sust Global datasets and Climate Explorer.","headline":"Product Updates","mainEntityOfPage":{"@type":"WebPage","@id":"/updates"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"/uploads/logo_black.crop.png"}},"url":"/updates"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-07-30T16:05:08+00:00","datePublished":"2025-07-30T16:05:08+00:00","description":"The following is a list of running product updates to the Sust Global datasets and Climate Explorer.","headline":"Product Updates","mainEntityOfPage":{"@type":"WebPage","@id":"/updates"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"/uploads/logo_black.crop.png"}},"url":"/updates"}</script>
 <!-- End Jekyll SEO tag -->
 
   <meta property="og:image" content="">
@@ -732,9 +732,52 @@
   </header>
   <div class="prose prose-slate max-w-none prose-headings:scroll-mt-28 prose-headings:font-display prose-headings:font-semibold prose-lead:text-slate-500 prose-a:font-semibold prose-a:no-underline hover:prose-a:text-sky-500 prose-pre:rounded-xl prose-pre:bg-slate-900 prose-pre:shadow-lg"><p>The following is a list of running product updates to the Sust Global datasets and Climate Explorer.</p>
 
+<h2 id="30jul2025-v11-release"><strong>30JUL2025 V1.1 Release</strong></h2>
+
+<p><strong>Data Product Updates</strong></p>
+
+<ol>
+  <li>
+    <p>Updates to observed indicators</p>
+
+    <ul>
+      <li><strong>Observed cyclones</strong> - Updated through Dec 2024 with monthly cadence</li>
+      <li><strong>Observed wildfires</strong> - Updated through Dec 2024 with monthly cadence</li>
+      <li><strong>Observed water stress</strong> - Updated through Dec 2024 with monthly cadence</li>
+      <li><strong>Observed heatwaves</strong> - Updated through Dec 2024 with monthly cadence</li>
+      <li>Note: <strong>Flood</strong> and <strong>Sea Level Rise</strong> datasets remain current through 2022, due to lapses in funding for key satellite missions. We’ve identified promising new satellite-based sources to bridge the 2023–present gap, which are planned for inclusion in a future release</li>
+    </ul>
+  </li>
+  <li>
+    <p>Product improvements and updates</p>
+
+    <ul>
+      <li>Enhanced <strong>wildfire probability</strong> near historical burn areas - Updated our forward-looking wildfire model to improve risk estimation in and around previously burned areas</li>
+      <li>Refined <strong>wildfire risk thresholds</strong> - Raised the threshold for Medium risk classification to reduce false positives</li>
+      <li>More realistic <strong>heatwave business interruption</strong> estimates - Refined heat-related downtime modeling across asset classes to result in lower business interruption values for heatwaves compared to previous versions</li>
+    </ul>
+  </li>
+</ol>
+
+<p><strong>New Product Features</strong></p>
+
+<ol>
+  <li>Exhaustive portfolio-level climate risk access with our new <strong><a href="api-guide#extended-summary">Extended Summary API Endpoint</a></strong>
+    <ul>
+      <li>Allows programmatic access to comprehensive risk metrics—across multiple hazards, scenarios, and time horizons—generated within the Climate Explorer application. Ideal for advanced users conducting in-depth portfolio evaluations</li>
+    </ul>
+  </li>
+  <li>Climate exposure and impacts by administrative boundary with our new <strong><a href="zonal-climate-stats">Zonal Climate Statistics API Endpoint</a></strong> (available on demand)
+    <ul>
+      <li>Powerful new endpoint aggregates future hazard exposure and financial impacts across administrative zones (e.g., U.S. counties), making it easy to integrate with other regionally-anchored datasets like GDP or demographic statistics</li>
+    </ul>
+  </li>
+</ol>
+
 <h2 id="08aug2023-v103-release"><strong>08AUG2023 V1.0.3 Release</strong></h2>
 
 <p><strong>Data Product Updates</strong></p>
+
 <ol>
   <li>Updates to observed indicators
     <ul>
@@ -757,6 +800,7 @@
 </ol>
 
 <p><strong>New Product Features</strong></p>
+
 <ol>
   <li>Financial risk analysis now include risk of business interruption, in terms of days of interruption due to cyclones, floods, wildfires, and heatwaves.</li>
   <li>Users can now download filtered downloads of CSVs through climate explorer, allowing users to download specific hazard summaries or indicator time series through the UI portfolio management.</li>
@@ -765,6 +809,7 @@
 <h2 id="11apr2023-v102-release"><strong>11APR2023 V1.0.2 Release</strong></h2>
 
 <p><strong>Data Product Updates</strong></p>
+
 <ol>
   <li>Improved accuracy of wildfire modeling, using many more variables to predict future wildfire risk.</li>
   <li>More precision in historic wildfire data, using 500m data instead of 1km data, and updating historic data to 2022.</li>
@@ -775,12 +820,14 @@
 <h2 id="14feb2023-v101-release"><strong>14FEB2023 V1.0.1 Release</strong></h2>
 
 <p><strong>Data Product Updates</strong></p>
+
 <ol>
   <li>Improved accuracy of flood modeling, especially in FEMA and international flood zones.</li>
   <li>Improved parameterization of flooding damage curves to include a “doorstep” height that flooding must overcome to damage a structure.</li>
 </ol>
 
 <p><strong>New Product Features</strong></p>
+
 <ol>
   <li>Versioning included in metadata file for each release, labelling older releases as V1.0.0 and this release as V1.0.1</li>
 </ol>
@@ -788,12 +835,14 @@
 <h2 id="05jan2023-release"><strong>05JAN2023 Release</strong></h2>
 
 <p><strong>Data Product Updates</strong></p>
+
 <ol>
   <li>Improved scenario driven, probabilistic flood projections at 1km resolution across climate scenarios SSP2-RCP45 and SSP5-RCP85.</li>
   <li>Improved probabilistic cyclone projections at 10km resolution across climate scenario SSP5-RCP8.5.</li>
 </ol>
 
 <p><strong>New Product Features</strong></p>
+
 <ol>
   <li>Our new financial risk analytics derived from asset level risk exposure to acute hazards (wildfire, flood, cyclone) processed through asset type and sector specific damage functions. These will be available through the CSV datasets and Climate Explorer dashboards.</li>
   <li>Our fast location-based risk insights search capability accessible through API and dashboard. This feature is available on request.</li>
@@ -802,8 +851,9 @@
 <h2 id="20sep2022-release"><strong>20SEP2022 Release</strong></h2>
 
 <p><strong>Data Product Updates</strong></p>
+
 <ol>
-  <li>We are updating the historic flood exposure dataset to best reflect historic riverine and coastal floods through satellite derived observations. We start with satellite-derived measurements of impermanent standing water.  We then post-process the satellite data using hydrological data and topographic datasets.</li>
+  <li>We are updating the historic flood exposure dataset to best reflect historic riverine and coastal floods through satellite derived observations. We start with satellite-derived measurements of impermanent standing water. We then post-process the satellite data using hydrological data and topographic datasets.</li>
   <li>We are incorporating a more precise sea level rise projection capability that accounts for global glacier melts and land subsidence and rebound across different forward looking climate scenarios.</li>
   <li>To optimize the representation of inland flood potential and cyclone projections, we are providing a filtered version of annualized flood and cyclone data using a kernel weighted multi-decadal window. This will show a smoother annualized forward looking time series exposure projection on the Climate Explorer forward looking time series view.</li>
   <li>We have updated the unified wildfire indicator to account for specific fire climate conditions and burnable land to optimize wildfire projections in fire prone regions with limited to no historic wildfire exposure.</li>
@@ -812,6 +862,7 @@
 <h2 id="08jul2022-release"><strong>08JUL2022 Release</strong></h2>
 
 <p><strong>Data Product Updates</strong></p>
+
 <ol>
   <li>Increased resolution drought and heatwave: We have enabled high resolution climate data for the drought (hazard: <strong>water_stress</strong> indicator: <strong>spei_norm</strong>) and heatwave (hazard: <strong>heatwave</strong>) datasets. This increases the resolution of these datasets from 1 degree to 0.25 degree. These indicators are derived from NASA Global Daily Downscaled Projections <a href="https://www.nasa.gov/nex/gddp">(NEX-GDDP)</a>.</li>
   <li>Historic flood data: We have introduced high resolution satellite derived observed flooding for our historic exposure time series. The time series represent binary observed <strong>flood/no flood</strong> at the asset location at an annual cadence. This dataset is at a spatial resolution of <strong>250 meters</strong>, available globally and derived from the <a href="https://cdn.earthdata.nasa.gov/conduit/upload/17162/MCDWD_UserGuide_RevB.pdf">NASA MODIS NRT Global Flood</a> dataset.</li>
@@ -820,6 +871,7 @@
 </ol>
 
 <p><strong>New Product Features</strong></p>
+
 <ol>
   <li>Introducing the new unified wildfire indicator as an additional indicator for forward looking scenario based projections in Climate Explorer and the Sust Global API
     <ol>
@@ -843,7 +895,7 @@
   <li>Introducing the new historic water stress indicator as an additional historic indicator in Climate Explorer and the Sust Global API
     <ol>
       <li>For this indicator, we use the same methodology as the unified water stress indicator, except with observed rather than modeled datasets of water stress and drought.</li>
-      <li>The historic water stress indicator is available through API using the filters hazard: hazard: <strong>water_stress</strong>  and indicator name: <strong>obs_score</strong>.</li>
+      <li>The historic water stress indicator is available through API using the filters hazard: hazard: <strong>water_stress</strong> and indicator name: <strong>obs_score</strong>.</li>
       <li>Water stress scores are now capped at an upper limit of 1.0 instead of 4.0. A value of 1.0 indicates that annual water demand is equal to or exceeds the annual renewable supply. Demand can exceed renewable supply when non-renewable water sources like aquifers are accessed. The normalization value for standardizing values between 0.0 and 1.0 is now 1.0 instead of 4.0. This change impacts the magnitude of water stress score values displayed in the Climate Explorer <strong>Normalized multi-hazard time series view</strong> plot.</li>
     </ol>
   </li>
@@ -875,7 +927,7 @@ Fig 08JUL2022 B: Relative change summary view
 
 <p><strong>Data Change to Error Bar Calculations</strong></p>
 
-<p>As of May 1, 2022, we have made an update to how we estimate risk in order to more accurately represent uncertainty and the spread of modeled outcomes. Our error bars will now show the 16th and 84th percentile of represented models, rather than +/- one standard deviation.  Additionally, projections will show median instead of mean values, reducing the influence of outlier projections from our models.  Correspondingly, our Low/Medium/High calculations are now based on median values instead of mean values. <em>This feature has not yet been rolled out for cyclones.</em></p>
+<p>As of May 1, 2022, we have made an update to how we estimate risk in order to more accurately represent uncertainty and the spread of modeled outcomes. Our error bars will now show the 16th and 84th percentile of represented models, rather than +/- one standard deviation. Additionally, projections will show median instead of mean values, reducing the influence of outlier projections from our models. Correspondingly, our Low/Medium/High calculations are now based on median values instead of mean values. <em>This feature has not yet been rolled out for cyclones.</em></p>
 
 <p><strong>Drought Indicator Data Rescale</strong></p>
 
@@ -883,11 +935,11 @@ Fig 08JUL2022 B: Relative change summary view
 
 <p><strong>Wildfire Forward Looking Projection Data</strong></p>
 
-<p>As of April, 2022, the Climate Explorer backend data source for Wildfire Burned Area Fraction and Historic Fire has been updated to include a high spatial resolution mask of  non-burnable areas. The dataset now includes  higher resolution land cover masks to determine if an area is at risk of fire or has seen historic fires. For existing customers, there may be underlying data changes in those assets<em>, especially those</em> bordering urban/rural boundaries.</p>
+<p>As of April, 2022, the Climate Explorer backend data source for Wildfire Burned Area Fraction and Historic Fire has been updated to include a high spatial resolution mask of non-burnable areas. The dataset now includes higher resolution land cover masks to determine if an area is at risk of fire or has seen historic fires. For existing customers, there may be underlying data changes in those assets<em>, especially those</em> bordering urban/rural boundaries.</p>
 
 <p><strong>Automated Historic Fire Data</strong></p>
 
-<p>As of April, 2022, Sust Global now has an automated historic fire data ingestion process.  Historic fire data in Climate Explorer is now derived from a satellite feed, and continuously displays the latest data as soon as it is released.</p>
+<p>As of April, 2022, Sust Global now has an automated historic fire data ingestion process. Historic fire data in Climate Explorer is now derived from a satellite feed, and continuously displays the latest data as soon as it is released.</p>
 
 <h2 id="15apr2022-release"><strong>15APR2022 Release</strong></h2>
 
@@ -1246,7 +1298,7 @@ Fig 08JUL2022 B: Relative change summary view
 
 <p><strong>Service Accounts Feature</strong></p>
 
-<p>Starting April 1, 2022, customers will have access to a Service Accounts feature under a new “Project Settings’’ tab within Climate Explorer. Service accounts are non-user specific privileged accounts, and can be used by customers  executing applications and running automated services with our API. Service accounts offer a high level of security for customers accessing the Climate Explorer under a shared team login, and can easily be referenced in applications or processes.</p>
+<p>Starting April 1, 2022, customers will have access to a Service Accounts feature under a new “Project Settings’’ tab within Climate Explorer. Service accounts are non-user specific privileged accounts, and can be used by customers executing applications and running automated services with our API. Service accounts offer a high level of security for customers accessing the Climate Explorer under a shared team login, and can easily be referenced in applications or processes.</p>
 
 <h2 id="21mar2022-release"><strong>21MAR2022 Release</strong></h2>
 
@@ -1424,6 +1476,7 @@ Fig 08JUL2022 B: Relative change summary view
           <nav aria-labelledby="on-this-page-title" class="w-56">
             <h2 id="on-this-page-title" class="font-display text-sm font-semibold text-slate-900">On this page</h2>
             <ul id="toc" class="toc">
+<li class="toc-entry toc-h2"><a href="#30jul2025-v11-release">30JUL2025 V1.1 Release</a></li>
 <li class="toc-entry toc-h2"><a href="#08aug2023-v103-release">08AUG2023 V1.0.3 Release</a></li>
 <li class="toc-entry toc-h2"><a href="#11apr2023-v102-release">11APR2023 V1.0.2 Release</a></li>
 <li class="toc-entry toc-h2"><a href="#14feb2023-v101-release">14FEB2023 V1.0.1 Release</a></li>
