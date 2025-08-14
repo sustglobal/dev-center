@@ -325,7 +325,7 @@ curl -i -X POST "https://explorer.sustglobal.io/api/portfolios/" --header "X-Sus
 
 Once you have created a portfolio, you may upload a CSV file containing your assets using the following command.
 The value of **$ASSET_FILE** must be the location of a local CSV file containing assets.
-Please see the [Climate Explorer Guide](/explorer.html) for more information about assets and CSV file requirements.
+Please see the [Climate Explorer Guide](user-guide#uploading-a-portfolio) for more information about assets and CSV file requirements.
 
 ```
 curl -i -F asset=@$ASSET_FILE "https://explorer.sustglobal.io/api/portfolios/$PORTFOLIO/assets/import/" --header "X-SustGlobal-APIKey: $APIKEY" --header "X-SustGlobal-Project: $PROJECT"
