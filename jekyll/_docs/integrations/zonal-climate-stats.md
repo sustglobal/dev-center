@@ -137,6 +137,3 @@ For more information about individual hazards and climate scenarios, see the [Cl
 
 An example of heat mapping power plants in Idaho is available [here](https://github.com/sustglobal/dev-center/blob/master/jupyter-notebooks/SegmentedDatasetsAnalysis/HeatmappingExample.ipynb).
 
-## Using the Data
-
-You can purchase the data on [Snowflake](https://app.snowflake.com/marketplace/listing/GZ2FQZRVGX1/sust-global-physical-climate-risk).

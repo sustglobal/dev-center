@@ -13,11 +13,6 @@ blocks:
         description: This guide will walk you through how to use our provided Jupyter Notebooks.
         button:
           text: View
-          url: /notebooks      
-      - name: Snowflake
-        description: An example utilizing a snowflake integration.
-        button:
-          text: View
-          url: /snowflake
+          url: /notebooks
 
 ---
